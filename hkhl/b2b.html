@@ -8,15 +8,15 @@
         if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
             var version = parseFloat(RegExp.$1);
             if (version > 2.3) {
-                var phoneScale = parseInt(window.screen.width) / 640;
+                var phoneScale = parseInt(window.screen.width) / 750;
                 document.write('<meta name="viewport" content="width=640,minimum-scale=' + phoneScale + ',maximum-scale=' + phoneScale + ',target-densitydpi=device-dpi">');
             } else {
-                document.write('<meta name="viewport" content="width=640,target-densitydpi=device-dpi">');
+                document.write('<meta name="viewport" content="width=750,target-densitydpi=device-dpi">');
             }
         } else {
-            document.write('<meta name="viewport" content="width=640,user-scalable=no,target-densitydpi=device-dpi,minimal-ui">');
+            document.write('<meta name="viewport" content="width=750,user-scalable=no,target-densitydpi=device-dpi,minimal-ui">');
         }
-    </script><meta name="viewport" content="width=640,user-scalable=no,target-densitydpi=device-dpi,minimal-ui">
+    </script><meta name="viewport" content="width=750,user-scalable=no,target-densitydpi=device-dpi,minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!--移动端兼容适配 -->
     <script>
@@ -1054,26 +1054,43 @@ a {
     <div class="J_WarnPhone warn-phone"></div>
     <div class="friendly-words">为了更好的体验，请使用竖屏浏览</div>
 </div>
-<div class="music-bar">
+<div class="music-bar" style="display:none;">
     <div class="music-anim" style="opacity: 1;">
         <div class="music-row row-1"></div>
         <div class="music-row row-2"></div>
         <div class="music-row row-3"></div>
         <div class="music-row row-4"></div>
         <div class="music-tip" style="opacity: 0;"><span class="music-text">开启</span></div>
-        <audio id="J_MusicPlayer" data-name="Jazz Club" src="http://static.360buyimg.com/jshop/mall/music/Jazz Club.mp3" style="display:none;" loop="" preload="load"></audio>
+        <audio id="J_MusicPlayer" data-name="Jazz Club" src="" style="display:none;" loop="" preload="load"></audio>
     </div>
 </div>
 <!-- custom content -->
 <div id="J_opaPage" class="page"
-     style="width: 640px; height: 1138px; left: 50%; margin-left: -320px; overflow: hidden;">
+     style="">
     <div class="J_opaPannel pannels scene-1 current start-animate" data-index="0"
          style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
-        <div class="opa-stage stage-center" data-index="1" data-id="opa_stage_1"
-             style="background-image: url(http://img11.360buyimg.com/cms/s640x833_jfs/t955/347/617742474/69573/a47a085f/5535b7dbN44be97d3.png); background-color: #15163c ;"></div>
+        <div class="opa-stage stage" data-index="1" data-id="opa_stage_1"
+             style="background-image: url(../images/bg_full.jpg); background-color: #0050b2 ;">
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn" data-type="image" data-anim="mi-zoomIn"
+                             data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517"
+                             data-position="1"
+                             style="left: 212px; top: 271px; z-index: 1; width: 306px; height: 148px; right: auto; bottom: auto; padding: 0px; background-image: none; background-color: transparent;"
+                             data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate"
+                                 style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><a
+                                    href="http://www.jd.com/" target="_blank"
+                                    style="position: absolute; left: 0px; top: 0px; z-index: 9; width: 100%; height: 100%;"></a>
+
+                                <div class="img-wrap" style="width: 100%; height: 100%;"><img
+                                        src="../images/1_plane.png" style="width: 100%; height: 100%; margin: 0px;">
+                                </div>
+                            </div>
+                        </div>
+
+        </div>
     </div>
     <div class="J_opaPannel pannels scene-2" data-index="1"
-         style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; -webkit-transform: scale(2); transform: scale(2); opacity: 0;">
+         style="">
         <div class="opa-stage stage" data-index="2" data-id="opa_stage_2"
              style="background-image: url(http://img12.360buyimg.com/cms/s640x832_jfs/t925/134/552422787/58276/17230233/5535b871N11b21b8f.jpg); background-color: rgb(153, 153, 153);">
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn" data-type="image" data-anim="mi-zoomIn"
@@ -1093,20 +1110,7 @@ a {
             </div>
         </div>
     </div>
-    <div class="J_opaPannel pannels scene-3" data-index="2"
-         style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; -webkit-transform: scale(2); transform: scale(2); opacity: 0;">
-        <div class="opa-stage stage" data-index="3" data-id="opa_stage_3"
-             style="background-image:url(http://img12.360buyimg.com/cms/jfs/t688/139/1295390968/6927/2b7f5b2a/54ca0b26Nd81df9f5.png);"></div>
-    </div>
-    <div class="J_opaPannel pannels scene-4" data-last="true" data-index="3"
-         style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; -webkit-transform: scale(2); transform: scale(2); opacity: 0;">
-        <div class="opa-stage stage" data-index="4" data-id="opa_stage_4"
-             style="background-image:url(http://img12.360buyimg.com/cms/jfs/t688/139/1295390968/6927/2b7f5b2a/54ca0b26Nd81df9f5.png);"></div>
-        <div class="mi-copyright">
-            <div class="mi">10秒生成炫酷手机网页<a href="http://mi.jd.com/" target="_blank" class="mi-pc-link">mi.jd.com</a>
-            </div>
-        </div>
-    </div>
+
 </div>
 
 <a href="javascript:void(0);" class="u-guideTop z-move" id="J_GuideTop"></a>
@@ -1182,7 +1186,7 @@ a {
         body = document.documentElement || document.body,
         gTop = document.getElementById('J_GuideTop'),
         size = {
-            width: body.clientWidth > 640 ? 640 : body.clientWidth,
+            width: body.clientWidth > 750 ? 750 : body.clientWidth,
             height: body.clientHeight
         },
         musicTip = document.querySelector('.music-tip'),
