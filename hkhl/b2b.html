@@ -1041,21 +1041,51 @@ a {
 
     /* custom */
     .title{left:162px;top:135px;width:423px;height:137px;}
-    .p2-cir1{left:539px;top:338px;width:19px;height:19px;}
-    .p2-cir2{left:433px;top:411px;width:26px;height:26px;}
-    .p2-cir4{left:124px;top:622px;width:38px;height:38px;}
-    .p2-cir3{left:657px;top:824px;width:16px;height:16px;}
-    .p2-cir5{left:548px;top:714px;width:37px;height:37px;}
-    .p2-cir6{left:134px;top:796px;width:56px;height:56px;}
-    .p2-cir7{left:124px;top:401px;width:190px;height:190px;}
-    .p2-cir8{left:472px;top:466px;width:164px;height:164px;}
-    .p2-cir9{left:240px;top:574px;width:241px;height:241px;}
-    .p2-text1{left:149px;top:476px;width:118px;height:45px;z-index:11;}
-    .p2-text2{left:506px;top:526px;width:97px;height:46px;z-index:11;}
-    .p2-text3{left:292px;top:630px;width:139px;height:143px;z-index:11;}
+    .p2-cir1{left:539px;top:338px;width:19px;height:19px;z-index: 11;left: 526px;}
+    .p2-cir2{left:433px;top:411px;width:26px;height:26px;z-index: 11;left: 480px;}
+    .p2-cir4{left:124px;top:622px;width:38px;height:38px;z-index: 11;left: 333px;}
+    .p2-cir3{left:657px;top:824px;width:16px;height:16px;z-index: 11;left: 224px;}
+    .p2-cir5{left:548px;top:714px;width:37px;height:37px;z-index: 11;left: 275px;}
+    .p2-cir6{left:134px;top:796px;width:56px;height:56px;z-index: 11;left: 210px;}
+    .p2-cir7{left:124px;top:401px;width:190px;height:190px;z-index: 11;left: 366px;}
+    .p2-cir8{left:472px;top:466px;width:164px;height:164px;z-index: 11;left: 346px;}
+    .p2-cir9{left:240px;top:574px;width:241px;height:241px;z-index: 11;left: 195px;}
+    .p2-text1{left:149px;top:476px;width:118px;height:45px;z-index:12;}
+    .p2-text2{left:506px;top:526px;width:97px;height:46px;z-index:12;}
+    .p2-text3{left:292px;top:630px;width:139px;height:143px;z-index:12;}
     .p2-line1{left:173px;top:434px;width:405px;height:405px;}
     .p2-line2{left:100px;top:541px;width:521px;height:239px;z-index:9;}
     .p2-line3{left:146px;top:416px;width:446px;height:446px;z-index:8;}
+    .p2-cir{opacity: 0;transition:all .8s;}
+    .current .p2-cir1{left:539px;}
+    .current .p2-cir2{left:433px;}
+    .current .p2-cir3{left:657px;}
+    .current .p2-cir4{left:124px;}
+    .current .p2-cir5{left:548px;}
+    .current .p2-cir6{left:134px;}
+    .current .p2-cir7{left:124px;}
+    .current .p2-cir8{left:472px;}
+    .current .p2-cir9{left:240px;}
+    .current .p2-cir{opacity: 1;}
+    /* p3 */
+    .p3-cir1{left: 127px;top:450px;width: 125px;height: 125px;}
+    .p3-cir2{left: 420px;top:350px;width: 150px;height: 150px;}
+    .p3-cir3{left: 559px;top:555px;width: 136px;height: 136px;}
+    .p3-cir4{left: 282px;top:581px;width: 200px;height: 200px;}
+    .p3-cir5{left: 104px;top:745px;width: 150px;height: 150px;}
+    .p3-cir6{left: 493px;top:844px;width: 102px;height: 102px;}
+    .p3-icon1{left: 147px;top:483px;width: 83px;height: 69px;}
+    .p3-icon2{left:453px;top:382px;width: 84px;height: 81px;}
+    .p3-icon3{left:591px;top:586px;width: 75px;height: 75px;}
+    .p3-icon4{left:318px;top:620px;width: 129px;height: 129px;}
+.p3-icon5{left:147px;top:773px;width: 66px;height: 95px;}
+.p3-icon6{left:521px;top:870px;width: 44px;height: 49px;}
+.p3-text1{left:157px;top:591px;width: 66px;height: 32px;}
+.p3-text2{left:463px;top:506px;width: 63px;height: 31px;}
+.p3-text3{left:589px;top:720px;width: 66px;height: 32px;}
+.p3-text4{left:349px;top:791px;width: 67px;height: 31px;}
+.p3-text5{left:128px;top:905px;width: 96px;height: 69px;}
+.p3-text6{left:519px;top:958px;width: 66px;height: 32px;}
 </style>
 </head>
 <body>
@@ -1085,22 +1115,12 @@ a {
 <!-- custom content -->
 <div id="J_opaPage" class="page"
      style="">
-    <div class="J_opaPannel pannels scene-1 current start-animate" data-index="0"
-         style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
-        <div class="opa-stage stage" data-index="1" data-id="opa_stage_1"
-             style="background-image: url(../images/bg_full.jpg); background-color: #0050b2 ;">
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn" data-type="image" data-anim="mi-zoomIn"
-                             data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517"
-                             data-position="1"
-                             style="left: 212px; top: 271px; z-index: 1; width: 306px; height: 148px; right: auto; bottom: auto; padding: 0px; background-image: none; background-color: transparent;"
-                             data-delay="0" data-out-anim="noAnimate">
-                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate"
-                                 style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><a
-                                    href="http://www.jd.com/" target="_blank"
-                                    style="position: absolute; left: 0px; top: 0px; z-index: 9; width: 100%; height: 100%;"></a>
+    <div class="J_opaPannel pannels scene-1 current start-animate" data-index="0">
+        <div class="opa-stage stage" data-index="1" data-id="opa_stage_1" style="background-image: url(../images/bg_full.jpg); background-color: #0050b2 ;">
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" style="left: 212px; top: 271px; z-index: 1; width: 306px; height: 148px; right: auto; bottom: auto; padding: 0px; background-image: none; background-color: transparent;" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><a href="http://www.jd.com/" target="_blank" style="position: absolute; left: 0px; top: 0px; z-index: 9; width: 100%; height: 100%;"></a>
 
-                                <div class="img-wrap" style="width: 100%; height: 100%;"><img
-                                        src="../images/1_plane.png" style="width: 100%; height: 100%; margin: 0px;">
+                                <div class="img-wrap" style="width: 100%; height: 100%;"><img src="../images/1_plane.png" style="width: 100%; height: 100%; margin: 0px;">
                                 </div>
                             </div>
                         </div>
@@ -1108,74 +1128,73 @@ a {
 
         </div>
     </div>
-    <div class="J_opaPannel pannels scene-2" data-index="1"
-         style="">
+    <div class="J_opaPannel pannels scene-2" data-index="1" style="">
         <div class="opa-stage stage" data-index="2" data-id="opa_stage_2"
              style="background-image: url('../images/p2/p2_bg.jpg'); background-color: rgb(153, 153, 153);">
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title" data-type="image" data-anim="mi-zoomIn">
                                         <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                             <a href="http://www.jd.com/" target="_blank"></a>
                                             <div class="img-wrap"><img src="../images/p2/title.png">
                                             </div>
                                         </div>
                                     </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p2-cir1" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image p2-cir1 p2-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <a href="http://www.jd.com/" target="_blank"></a>
                     <div class="img-wrap"><img src="../images/p2/cir1_purple.png">
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p2-cir2" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image p2-cir2 p2-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p2/cir2_yellow.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p2-cir3" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image p2-cir3 p2-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p2/cir3_green.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p2-cir4" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image p2-cir4 p2-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p2/cir4_green_38.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p2-cir5" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image p2-cir5 p2-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p2/cir5_purple_.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p2-cir6" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image p2-cir6 p2-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p2/cir6_blue_.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p2-cir7" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image p2-cir7 p2-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p2/cir7_blue_wifi_.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p2-cir8" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image p2-cir8 p2-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p2/cir8_green_tech_.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p2-cir9" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image p2-cir9 p2-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p2/cir9_oriange_zs_.png">
@@ -1226,12 +1245,149 @@ a {
                                                             </div>
         </div>
     </div>
-
+<div class="J_opaPannel pannels scene-3" data-index="1" style="">
+        <div class="opa-stage stage" data-index="3" data-id="opa_stage_3" style="background-image: url('../images/p3/p3_bg.jpg'); background-color: rgb(153, 153, 153);">
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                                        <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                            <a href="http://www.jd.com/" target="_blank"></a>
+                                            <div class="img-wrap"><img src="../images/p3/title.png">
+                                            </div>
+                                        </div>
+                                    </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-cir1" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <a href="http://www.jd.com/" target="_blank"></a>
+                    <div class="img-wrap"><img src="../images/p3/cir1_purple.png">
+                    </div>
+                </div>
+            </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-cir2" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/cir2_yellow.png">
+                                </div>
+                            </div>
+                        </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-cir3" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/cir3_blue.png">
+                                </div>
+                            </div>
+                        </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-cir4" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/cir4_green.png">
+                                </div>
+                            </div>
+                        </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-cir5" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/cir5_greenblue.png">
+                                </div>
+                            </div>
+                        </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-cir6" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/cir6_oriange.png">
+                                </div>
+                            </div>
+                        </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-icon1" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <a href="http://www.jd.com/" target="_blank"></a>
+                    <div class="img-wrap"><img src="../images/p3/icon_1.png">
+                    </div>
+                </div>
+            </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-icon2" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/icon_2.png">
+                                </div>
+                            </div>
+                        </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-icon3" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/icon_3.png">
+                                </div>
+                            </div>
+                        </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-icon4" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/icon_4.png">
+                                </div>
+                            </div>
+                        </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-icon5" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/icon_5.png">
+                                </div>
+                            </div>
+                        </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-icon6" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/icon_6.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-text1" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <a href="http://www.jd.com/" target="_blank"></a>
+                    <div class="img-wrap"><img src="../images/p3/text_1.png">
+                    </div>
+                </div>
+            </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-text2" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/text_2.png">
+                                </div>
+                            </div>
+                        </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-text3" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/text_3.png">
+                                </div>
+                            </div>
+                        </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-text4" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/text_4.png">
+                                </div>
+                            </div>
+                        </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-text5" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/text_5.png">
+                                </div>
+                            </div>
+                        </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-text6" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/text_6.png">
+                                </div>
+                            </div>
+                        </div>
+            
+        </div>
+    </div>
 </div>
 
 <a href="javascript:void(0);" class="u-guideTop z-move" id="J_GuideTop"></a>
 <script src="../js/app.utils.min.js"></script>
-<script src="../js/spread.min.js"></script>
+<script src="../js/slide.min.js"></script>
 
 
 <script>
