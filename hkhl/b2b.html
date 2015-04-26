@@ -1036,16 +1036,23 @@ a {
 </style>
 <style>
     .pannels .delay_0_0s{-webkit-transition-delay:0.0s;-o-transition-delay:0.0s;transition-delay:0.0s;-webkit-animation-delay:0.0s;-o-animation-delay:0.0s;animation-delay:0.0s;}
+    .pannels .delay_0_2s{-webkit-transition-delay:0.2s;-o-transition-delay:0.2s;transition-delay:0.2s;-webkit-animation-delay:0.2s;-o-animation-delay:0.2s;animation-delay:0.2s;}
+    .pannels .delay_0_3s{-webkit-transition-delay:0.2s;-o-transition-delay:0.3s;transition-delay:0.3s;-webkit-animation-delay:0.3s;-o-animation-delay:0.3s;animation-delay:0.3s;}
 .pannels .delay_1_8s{-webkit-transition-delay:1.8s;-o-transition-delay:1.8s;transition-delay:1.8s;-webkit-animation-delay:1.8s;-o-animation-delay:1.8s;animation-delay:1.8s;}
 .pannels .duration_0_8s{-webkit-transition-duration:0.8s;-o-transition-duration:0.8s;transition-duration:0.8s;-webkit-animation-duration:0.8s;-o-animation-duration:0.8s;animation-duration:0.8s;}
-
+.pannels .duration_0_4s{-webkit-transition-duration:0.4s;-o-transition-duration:0.4s;transition-duration:0.4s;-webkit-animation-duration:0.4;-o-animation-duration:0.4s;animation-duration:0.4s;}
+.pannels .duration_0_5s{-webkit-transition-duration:0.5s;-o-transition-duration:0.5s;transition-duration:0.5s;-webkit-animation-duration:0.5;-o-animation-duration:0.5s;animation-duration:0.5s;}
+.pannels .duration_0_6s{-webkit-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;-webkit-animation-duration:0.6;-o-animation-duration:0.6s;animation-duration:0.6s;}
+.pannels .duration_1_0s{-webkit-transition-duration:1.0s;-o-transition-duration:1.0s;transition-duration:1.0s;-webkit-animation-duration:1.0;-o-animation-duration:1.0s;animation-duration:1.0s;}
     /* custom */
     .title{left:162px;top:135px;width:423px;height:137px;}
     .p2-cir1{left:539px;top:338px;width:19px;height:19px;z-index: 11;left: 526px;}
     .p2-cir2{left:433px;top:411px;width:26px;height:26px;z-index: 11;left: 480px;}
+    .p2-cir8 .mc-wrap,.p2-cir5 .mc-wrap,.p3-cir6 .mc-wrap{height: 100%;width: 100%;}
     .p2-cir4{left:124px;top:622px;width:38px;height:38px;z-index: 11;left: 333px;}
     .p2-cir3{left:657px;top:824px;width:16px;height:16px;z-index: 11;left: 224px;}
     .p2-cir5{left:548px;top:714px;width:37px;height:37px;z-index: 11;left: 275px;}
+
     .p2-cir6{left:134px;top:796px;width:56px;height:56px;z-index: 11;left: 210px;}
     .p2-cir7{left:124px;top:401px;width:190px;height:190px;z-index: 11;left: 366px;}
     .p2-cir8{left:472px;top:466px;width:164px;height:164px;z-index: 11;left: 346px;}
@@ -1068,12 +1075,13 @@ a {
     .current .p2-cir9{left:240px;}
     .current .p2-cir{opacity: 1;}
     /* p3 */
-    .p3-cir1{left: 127px;top:450px;width: 125px;height: 125px;}
-    .p3-cir2{left: 420px;top:350px;width: 150px;height: 150px;}
-    .p3-cir3{left: 559px;top:555px;width: 136px;height: 136px;}
-    .p3-cir4{left: 282px;top:581px;width: 200px;height: 200px;}
-    .p3-cir5{left: 104px;top:745px;width: 150px;height: 150px;}
-    .p3-cir6{left: 493px;top:844px;width: 102px;height: 102px;}
+    .scene-3 .title{left: 214px;}
+    .p3-cir1{left: 67px;top:450px;width: 155px;height: 155px;}
+    .p3-cir2{left: 420px;top:290px;width: 180px;height: 180px;}
+    .p3-cir3{left: 619px;top:555px;width: 176px;height: 176px;}
+    .p3-cir4{left: 282px;top:581px;width: 230px;height: 230px;}
+    .p3-cir5{left: 54px;top:745px;width: 180px;height: 180px;}
+    .p3-cir6{left: 543px;top:844px;width: 132px;height: 132px;}
     .p3-icon1{left: 147px;top:483px;width: 83px;height: 69px;}
     .p3-icon2{left:453px;top:382px;width: 84px;height: 81px;}
     .p3-icon3{left:591px;top:586px;width: 75px;height: 75px;}
@@ -1086,6 +1094,22 @@ a {
 .p3-text4{left:349px;top:791px;width: 67px;height: 31px;}
 .p3-text5{left:128px;top:905px;width: 96px;height: 69px;}
 .p3-text6{left:519px;top:958px;width: 66px;height: 32px;}
+.p3-line{left:-26px;top:327px;width: 655px;height: 666px;height: 0;transition:height 1s;overflow: hidden;}
+.p-cir{z-index: 11;transition:all .8s;opacity: 0.2;}
+.p-icon{z-index: 12}
+.p-text{z-index: 12}
+.current .p3-line{height: 666px;opacity: 1;}
+.current .p3-cir1{left: 127px;top:450px;width: 125px;height: 125px;}
+.current .p3-cir2{left: 420px;top:350px;width: 150px;height: 150px;}
+.current .p3-cir3{left: 559px;top:555px;width: 136px;height: 136px;}
+.current .p3-cir4{left: 282px;top:581px;width: 200px;height: 200px;}
+.current .p3-cir5{left: 104px;top:745px;width: 150px;height: 150px;}
+.current .p3-cir6{left: 493px;top:844px;width: 102px;height: 102px;}
+.current .p-cir{opacity: 1;}
+/* p2-wifi */
+.p2-wifi{width: 100%;height: 100%;overflow: hidden;background-color: rgba(0,0,0,.5);display: none;z-index: 21;font-size: 8rem;text-align: center;color: #fff;}
+.p2-wifi.show{display: block;}
+
 </style>
 </head>
 <body>
@@ -1169,7 +1193,7 @@ a {
             <div class="mc mc-image p2-cir5 p2-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p2/cir5_purple_.png">
+                                <div class="img-wrap"><img src="../images/p3/cir1_purple.png">
                                 </div>
                             </div>
                         </div>
@@ -1190,7 +1214,7 @@ a {
             <div class="mc mc-image p2-cir8 p2-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p2/cir8_green_tech_.png">
+                                <div class="img-wrap"><img src="../images/p3/cir4_green.png">
                                 </div>
                             </div>
                         </div>
@@ -1243,6 +1267,11 @@ a {
                                                                     </div>
                                                                 </div>
                                                             </div>
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p2-wifi" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    wifi内容XXXXXXXX
+                </div>
+            </div>
         </div>
     </div>
 <div class="J_opaPannel pannels scene-3" data-index="1" style="">
@@ -1254,133 +1283,139 @@ a {
                                             </div>
                                         </div>
                                     </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-cir1" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_2s duration_0_4s p3-cir1 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <a href="http://www.jd.com/" target="_blank"></a>
                     <div class="img-wrap"><img src="../images/p3/cir1_purple.png">
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-cir2" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_3s duration_0_6s p3-cir2 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p3/cir2_yellow.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-cir3" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_3s duration_0_5s p3-cir3 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p3/cir3_blue.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-cir4" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_0s duration_1_0s p3-cir4 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p3/cir4_green.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-cir5" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_3s duration_0_8s p3-cir5 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p3/cir5_greenblue.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-cir6" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_2s duration_0_6s p3-cir6 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p3/cir6_oriange.png">
+                                <div class="img-wrap"><img src="../images/p2/cir9_oriange_zs_.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-icon1" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_3s duration_0_4s mi-zoomIn p3-icon1 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <a href="http://www.jd.com/" target="_blank"></a>
                     <div class="img-wrap"><img src="../images/p3/icon_1.png">
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-icon2" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p3-icon2 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p3/icon_2.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-icon3" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p3-icon3 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p3/icon_3.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-icon4" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p3-icon4 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p3/icon_4.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-icon5" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p3-icon5 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p3/icon_5.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-icon6" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p3-icon6 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p3/icon_6.png">
                                 </div>
                             </div>
                         </div>
-                        <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-text1" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                        <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p3-text1 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <a href="http://www.jd.com/" target="_blank"></a>
                     <div class="img-wrap"><img src="../images/p3/text_1.png">
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-text2" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p3-text2 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p3/text_2.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-text3" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p3-text3 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p3/text_3.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-text4" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p3-text4 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p3/text_4.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-text5" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p3-text5 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p3/text_5.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p3-text6" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+            <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p3-text6 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
                                 <div class="img-wrap"><img src="../images/p3/text_6.png">
                                 </div>
                             </div>
                         </div>
-            
+<div class="mc mc-image delay_0_0s p3-line" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/p3/line_bg.png">
+                                </div>
+                            </div>
+                        </div>            
         </div>
     </div>
 </div>
@@ -1618,6 +1653,23 @@ a {
                 page.resize();
             }
         }, 100);
+
+
+        var wifiDom = document.querySelector('.p2-cir7');
+        var floatMask = document.querySelector('.p2-wifi');
+        
+        wifiDom.addEventListener(evs.touchdown, function(ev){
+            console.log('wifi touched');
+        }, false);
+        // debugger;
+        wifiDom.addEventListener(evs.touchup, function(ev){
+            App.Utils.addClass(floatMask,'show');
+            return false;
+        }, false);
+        floatMask.addEventListener(evs.touchup,function(ev){
+            App.Utils.removeClass(floatMask,'show');
+            return false;
+        }, false)
     };
 
     var evt = "onorientationchange" in window ? "orientationchange" : "resize",
@@ -1654,7 +1706,40 @@ a {
 
 
 <script type="text/javascript">
-    //ping.init();
+    //处理touch事件用做点击的效果
+    // function bindFastClickEvent() {
+    //     var lastTouch = {}
+    //     document.body.addEventListener('touchstart', function(ev) {
+    //         var touch = ev.changedTouches[0]
+    //         if (touch) {
+    //             var target = touch.target,
+    //                 className = getClassName(target)
+    //             if (className) {
+    //                 lastTouch = {
+    //                     target : target,
+    //                     clientX: touch.clientX,
+    //                     clientY: touch.clientY
+    //                 }
+    //             } else {
+    //                 lastTouch = {}
+    //             }
+    //         }
+    //     })
+    //     document.body.addEventListener('touchend', function(ev) {
+    //         var touch = ev.changedTouches[0]
+    //         if (touch) {
+    //             var target = touch.target
+    //             if (target == lastTouch.target && shouldFireClick(touch, lastTouch)) {
+    //                 fastClickOnEl(target)
+    //             }
+    //         }
+    //     })
+    // }
+    //在一定范围内移动也算做触发click
+    // function shouldFireClick(touch1, touch2) {
+    //     return (Math.abs(touch1.clientX - touch2.clientX) < 10 &&
+    //             Math.abs(touch1.clientY - touch2.clientY) < 10)
+    // }
 </script>
 
 <style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
