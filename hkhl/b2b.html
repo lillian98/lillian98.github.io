@@ -1092,7 +1092,7 @@ a {
   }
   @-webkit-keyframes slideInLeft24{
     0%{-webkit-transform:translateX(-380px)}
-    100%{-webkit-transform:translateX(0)}
+    100%{-webkit-transform:translateX(0);opacity: 1}
   }
   @-webkit-keyframes slideInLeft25{
     0%{-webkit-transform:translateX(168px)}
@@ -1133,9 +1133,9 @@ a {
 .p3-text5{left:132px;top:888px;width: 66px;height: 32px;}
 .p3-text6{left:538px;top:888px;width: 66px;height: 32px;}
 .p3-text7{left:343px;top:973px;width: 66px;height: 32px;}
-.scene-3 .p2-cir5{opacity: 0.5}
-.scene-3 .p2-cir4{opacity: 0.5}
-.scene-3 .p2-cir6{opacity: 0.5}
+.scene-3 .p2-cir5{opacity: 0.5；-webkit-transform:translateX(0);}
+.scene-3 .p2-cir4{opacity: 0.5;-webkit-transform:translateX(0);}
+.scene-3 .p2-cir6{opacity: 0.5;-webkit-transform:translateX(0);}
 .p3-line{left:0;top:314px;width: 655px;height: 666px;/*height: 0;transition:height .8s;overflow: hidden;transform: translate3d(0,0,0);*/}
 .p-cir{z-index: 11;}
 
@@ -1143,30 +1143,29 @@ a {
 .p-text{z-index: 12}
 .current .p3-line{height: 666px;opacity: 1;}
 .current .p3-cir1{-webkit-animation: slide31 .8s ease-out both;}
-.current .p3-cir2{-webkit-animation: slide32 .8s ease-out both;}
-.current .p3-cir3{-webkit-animation: slide33 .8s ease-out both;}
+.current .p3-cir2{-webkit-animation: slide32 .8s .1s ease-out both;}
+.current .p3-cir3{-webkit-animation: slide33 .8s .2s ease-out both;}
 .current .p3-cir4{-webkit-animation: slide34 .8s ease-out both;}
-.current .p3-cir5{-webkit-animation: slide35 .8s ease-out both;}
-.current .p3-cir6{-webkit-animation: slide36 .8s ease-out both;}
+.current .p3-cir5{-webkit-animation: slide35 .8s .1s ease-out both;}
+.current .p3-cir6{-webkit-animation: slide36 .8s .2s ease-out both;}
 .current .p3-cir7{-webkit-animation: slide37 .8s ease-out both;}
-.scene-3.current .p2-cir4{-webkit-animation: slide38 .6s ease-out both;}
-.scene-3.current .p2-cir5{-webkit-animation: slide39 .6s ease-out both;}
-.scene-3.current .p2-cir6{-webkit-animation: slide30 .6s ease-out both;}
+.scene-3.current .p2-cir4{-webkit-animation: slide38 .4s ease-out both;}
+.scene-3.current .p2-cir5{-webkit-animation: slide39 .4s ease-out both;}
+.scene-3.current .p2-cir6{-webkit-animation: slide30 .4s ease-out both;}
 @-webkit-keyframes slide31{
-    0%{-webkit-transform:translateX(311px) translateY(358px) scale(0.1)}
-    50%{-webkit-transform:translateX(148px) translateY(150px) scale(0.6);opacity: .5}
+    0%{-webkit-transform:translateX(100px) translateY(-17px) scale(0.1)}
     100%{-webkit-transform:translateX(0) translateY(0) scale(1);opacity: 1}
   }
   @-webkit-keyframes slide32{
-    0%{-webkit-transform:translateX(-91px) translateY(6px) scale(0.1)}
+    0%{-webkit-transform:translateX(-97px) translateY(-67px) scale(0.1)}
     100%{-webkit-transform:translateX(0) translateY(0) scale(1);opacity: 1}
   }
   @-webkit-keyframes slide33{
-    0%{-webkit-transform:translateX(-516px) translateY(-69px) scale(0.1)}
+    0%{-webkit-transform:translateX(-96px) translateY(-17px) scale(0.1)}
     100%{-webkit-transform:translateX(0) translateY(0) scale(1);opacity: 1}
   }
   @-webkit-keyframes slide34{
-    0%{-webkit-transform:translateX(-80px) translateY(-80px) scale(0.1)}
+    0%{-webkit-transform:translateX(80px) translateY(-10px) scale(0.1)}
     100%{-webkit-transform:translateX(0) translateY(0) scale(1);opacity: 1}
   }
   @-webkit-keyframes slide35{
@@ -1174,7 +1173,7 @@ a {
     100%{-webkit-transform:translateX(0) translateY(0) scale(1);opacity: 1}
   }
   @-webkit-keyframes slide36{
-    0%{-webkit-transform:translateX(-60px) translateY(-60px) scale(0.1)}
+    0%{-webkit-transform:translateX(10px) translateY(-30px) scale(0.1)}
     100%{-webkit-transform:translateX(0) translateY(0) scale(1);opacity: 1}
   }
   @-webkit-keyframes slide37{
@@ -1182,37 +1181,41 @@ a {
     100%{-webkit-transform:translateX(0) translateY(0) scale(1);opacity: 1}
   }
   @-webkit-keyframes slide38{
-    0%{-webkit-transform:scale(1);opacity: 0.5;;display: block;}
-    100%{-webkit-transform:translateX(131px) translateY(-131px) scale(2);opacity: 0;display: none;}
+    0%{-webkit-transform:scale(1) translateX(0);opacity: 0.5;;display: block;}
+    100%{-webkit-transform:translateX(131px) translateY(131px) scale(2);opacity: 0;display: none;}
   }
   @-webkit-keyframes slide39{
-    0%{-webkit-transform:scale(1);opacity: 0.5;display: block;}
+    0%{-webkit-transform:scale(1) translateX(0);opacity: 0.5;display: block;}
     100%{-webkit-transform:translateX(-60px) translateY(-60px) scale(2);opacity: 0;display: none;}
   }
    @-webkit-keyframes slide30{
-    0%{-webkit-transform:scale(1);opacity: 0.5;display: block;}
-    100%{-webkit-transform:translateX(-60px) translateY(200px) scale(10);opacity: 0;display: none;}
+    0%{-webkit-transform:scale(1) translateX(0);opacity: 0.5;display: block;}
+    100%{-webkit-transform:translateX(-60px) translateY(200px) scale(8);opacity: 0;display: none;}
   }
 /* p4 */
 .p4-cir1{left: 499px;top:352px;width: 119px;height: 119px;}
 .p4-cir2{left: 86px;top:509px;width: 88px;height: 88px;}
 .p4-cir3{left: 280px;top:469px;width: 188px;height: 188px;}
-.p4-cir4{left: 536px;top:648px;width: 144px;height: 144px;}
-.p4-cir5{left: 182px;top:762px;width: 115px;height: 115px;}
+.p4-cir4{left: 536px;top:545px;width: 144px;height: 144px;}
+.p4-cir5{left: 404px;top:777px;width: 140px;height: 140px;}
 .p4-cir6{left: 287px;top:418px;width: 23px;height: 23px;}
 .p4-cir7{left: 725px;top:555px;width: 14px;height: 14px;}
 .p4-cir8{left: 148px;top:681px;width: 23px;height: 23px;}
+.p4-cir9{left: 86px;top:780px;width: 115px;height: 115px;}
 .p4-icon1{left: 520px;top:378px;width: 77px;height: 65px;}
 .p4-icon2{left: 103px;top:529px;width: 52px;height: 48px;}
 .p4-icon3{left: 328px;top:516px;width: 89px;height: 106px;}
-.p4-icon4{left: 583px;top:690px;width: 55px;height: 69px;}
-.p4-icon5{left: 209px;top:790px;width: 62px;height: 62px;}
+.p4-icon4{left: 578px;top:585px;width: 55px;height: 69px;}
+.p4-icon5{left: 443px;top:816px;width: 62px;height: 62px;}
+.p4-icon9{left: 122px;top:809px;width: 50px;height: 64px;}
 .p4-text1{left: 576px;top:472px;width: 118px;height: 28px;}
 .p4-text2{left: 61px;top:603px;width: 110px;height: 26px;}
 .p4-text3{left: 310px;top:677px;width: 133px;height: 32px;}
-.p4-text4{left: 548px;top:799px;width: 132px;height: 32px;}
-.p4-text5{left: 173px;top:888px;width: 134px;height: 32px;}
+.p4-text4{left: 548px;top:689px;width: 132px;height: 32px;}
+.p4-text5{left: 411px;top:936px;width: 134px;height: 32px;}
+.p4-text9{left: 77px;top:908px;width: 134px;height: 32px;}
 .p4-line{left: 32px;top:391px;width: 696px;height: 469px;}
+.scene-4 .p-cir{opacity: 1;}
 /* p2-wifi */
 .p2-wifi{width: 100%;height: 100%;overflow: hidden;background-color: rgba(0,0,0,.5);display: none;z-index: 21;font-size: 8rem;text-align: center;color: #fff;}
 .p2-wifi.show{display: block;}
@@ -1587,56 +1590,63 @@ a {
             <div class="mc mc-image delay_0_2s duration_0_4s p4-cir1 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <a href="http://www.jd.com/" target="_blank"></a>
-                    <div class="img-wrap"><img src="../images/p3/cir4_green.png">
+                    <div class="img-wrap"><img src="../images/cir/cir_green.png">
                     </div>
                 </div>
             </div>
             <div class="mc mc-image delay_0_3s duration_0_6s p4-cir2 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p2/cir9_oriange_zs_.png">
+                                <div class="img-wrap"><img src="../images/cir/cir_oriange.png">
                                 </div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_3s duration_0_5s p4-cir3 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p4/cir_oriyel.png">
+                                <div class="img-wrap"><img src="../images/cir/cir_oriyel.png">
                                 </div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_0s duration_1_0s p4-cir4 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p3/cir3_blue.png">
+                                <div class="img-wrap"><img src="../images/cir/cir_blue.png">
                                 </div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_3s duration_0_8s p4-cir5 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p3/cir1_purple.png">
+                                <div class="img-wrap"><img src="../images/cir/cir_purple.png">
                                 </div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_2s duration_0_6s p4-cir6 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p3/cir3_blue.png">
+                                <div class="img-wrap"><img src="../images/cir/cir_blue.png">
                                 </div>
                             </div>
                         </div>
                         <div class="mc mc-image delay_0_3s duration_0_6s p4-cir7 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p2/cir9_oriange_zs_.png">
+                                <div class="img-wrap"><img src="../images/cir/cir_oriange.png">
                                 </div>
                             </div>
                         </div>
                         <div class="mc mc-image delay_0_2s duration_0_4s p4-cir8 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <a href="http://www.jd.com/" target="_blank"></a>
-                    <div class="img-wrap"><img src="../images/p3/cir4_green.png">
+                    <div class="img-wrap"><img src="../images/cir/cir_green.png">
+                    </div>
+                </div>
+            </div>
+            <div class="mc mc-image delay_0_2s duration_0_4s p4-cir9 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <a href="http://www.jd.com/" target="_blank"></a>
+                    <div class="img-wrap"><img src="../images/cir/cir_greenblue.png">
                     </div>
                 </div>
             </div>
@@ -1675,39 +1685,52 @@ a {
                                 </div>
                             </div>
                         </div>
-            
+            <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p4-icon9 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/icon/p4_6.png">
+                                </div>
+                            </div>
+                        </div>
                         <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p4-text1 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <a href="http://www.jd.com/" target="_blank"></a>
-                    <div class="img-wrap"><img src="../images/p4/text1.png">
+                    <div class="img-wrap"><img src="../images/text/p4_1.png">
                     </div>
                 </div>
             </div>
             <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p4-text2 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p4/text2.png">
+                                <div class="img-wrap"><img src="../images/text/p4_2.png">
                                 </div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p4-text3 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p4/text3.png">
+                                <div class="img-wrap"><img src="../images/text/p4_3.png">
                                 </div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p4-text4 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p4/text4.png">
+                                <div class="img-wrap"><img src="../images/text/p4_4.png">
                                 </div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p4-text5 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p4/text5.png">
+                                <div class="img-wrap"><img src="../images/text/p4_5.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mc mc-image delay_0_3s duration_0_8s mi-zoomIn p4-text9 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                                <a href="http://www.jd.com/" target="_blank"></a>
+                                <div class="img-wrap"><img src="../images/text/p4_6.png">
                                 </div>
                             </div>
                         </div>
