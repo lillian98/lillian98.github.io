@@ -150,10 +150,7 @@ a {
     left: 50%;
     bottom: 60px;
     z-index: 999;
-    margin-left: -24px;
-    width: 48px;
-    height: 30px;
-    background: url(http://img13.360buyimg.com/cms/jfs/t778/247/310330157/1328/f853ee1e/54a0b7e3Nc43fa5d6.png) center center no-repeat;
+    margin-left: -38px;
     -webkit-background-size: contain;
     background-size: contain;
     -webkit-transform-origin: center bottom;
@@ -1052,7 +1049,11 @@ a {
     .p1-logo{left: 188px;top: 460px;width: 355px;height: 113px;}
     .p1-slogan{left: 191px;top:613px;width: 362px;height: 78px;}
     .p1-about{left: 255px;top:823px;width: 239px;height: 81px;}
-    .title{left:162px;top:135px;width:423px;height:137px;}
+    .title{left:162px;top:135px;width:423px;height:138px;background-image: url(../images/title.png);background-repeat: no-repeat;background-size: 750px auto;}
+    .scene-2 .title{background-position: 0 0;}
+    .scene-3 .title{left: 197px;background-position: 0 -160px;}
+    .scene-4 .title{left: 197px;background-position: 0 -320px;}
+    .scene-5 .title{left: 205px;top:130px;width: 337px;height: 138px;background-position: 0 -480px;}
     /* p2 */
     .scene-2 .stage{background-image: url('../images/p2/p2_bg.jpg'); background-color: rgb(153, 153, 153);}
 
@@ -1121,7 +1122,7 @@ a {
         100%{-webkit-transform:translateX(0);opacity: 1}
     }
     /* p3 */
-    .scene-3 .title,.scene-4 .title{left: 197px;}
+    
     .p3-cir1{left: 152px;top:397px;width: 125px;height: 125px;-webkit-transform:translateX(311px) translateY(358px) scale(0.1)}
     .p3-cir2{left: 419px;top:333px;width: 150px;height: 150px;-webkit-transform:translateX(-91px) translateY(6px) scale(0.1)}
     .p3-cir3{left: 558px;top:544px;width: 136px;height: 136px;t-webkit-transform:translateX(-516px) translateY(-69px) scale(.1)}
@@ -1268,12 +1269,50 @@ a {
     100%{-webkit-transform:translateX(0) translateY(0) scale(1);opacity: 1}
   }
   /* p5 */
-  .scene-5 .title{left: 205px;top:130px;width: 337px;height: 138px;}
-  .scene-5 .title img{height: 138px;}
+  
   .p5-1{left: 150px;top:393px;width: 437px;height: 41px;}
   .p5-2{left: 150px;top:480px;width: 354px;height: 40px;}
   .p5-3{left: 150px;top:570px;width: 396px;height: 41px;}
   .p5-4{left: 206px;top:692px;width: 354px;height: 110px;}
+  .href-mail{position: absolute;width: 100%;height: 100%;}
+  /* icon */
+  .icon{background-image: url(../images/icon.png);background-repeat: no-repeat;background-size: 960px auto;}
+  .icon-3-1{background-position: 0 0;width: 68px;height: 68px;}
+  .icon-3-2{background-position: -160px 0;width: 84px;height: 81px;}
+  .icon-3-3{background-position: -320px 0;width: 75px;height: 75px;}
+  .icon-3-4{background-position: -480px 0;width: 121px;height: 101px;}
+  .icon-3-5{background-position: -640px 0;width: 66px;height: 95px;}
+  .icon-3-6{background-position: -800px 0;width: 44px;height: 49px;}
+  .icon-3-7{background-position: 0 -160px;width: 55px;height: 74px;}
+  .icon-4-1{background-position: -160px -160px;width: 77px;height: 65px;}
+  .icon-4-2{background-position: -320px -160px;width: 52px;height: 48px;}
+  .icon-4-3{background-position: -480px -160px;width: 89px;height: 106px;}
+  .icon-4-4{background-position: -640px -160px;width: 55px;height: 69px;}
+  .icon-4-5{background-position: -800px -160px;width: 62px;height: 62px;}
+  .icon-4-6{background-position: 0 -320px;width: 50px;height: 64px;}
+  /* text */
+  .text{background-image: url(../images/text.png);background-repeat: no-repeat;background-size: 960px auto;}
+  .text-2-1{background-position: 0 0;width: 97px;height: 94px;}
+  .text-2-2{background-position: -160px 0;width: 90px;height: 127px;}
+  .text-2-3{background-position: -320px 0;width: 138px;height: 143px;}
+  .text-2-4{background-position: -640px -320px;width: 72px;height: 70px;}
+  .text-3-1{background-position: -480px 0;width: 67px;height: 31px;}
+  .text-3-2{background-position: -640px 0;width: 63px;height: 31px;}
+  .text-3-3{background-position: -800px 0;width: 66px;height: 32px;}
+  .text-3-4{background-position: 0 -160px;width: 66px;height: 32px;}
+  .text-3-5{background-position: -160px -160px;width: 66px;height: 32px;}
+  .text-3-6{background-position: -320px -160px;width: 66px;height: 32px;}
+  .text-3-7{background-position: -480px -160px;width: 66px;height: 32px;}
+  .text-4-1{background-position: -640px -160px;width: 118px;height: 28px;}
+  .text-4-2{background-position: -800px -160px;width: 110px;height: 26px;}
+  .text-4-3{background-position: 0 -320px;width: 133px;height: 32px;}
+  .text-4-4{background-position: -160px -320px;width: 132px;height: 32px;}
+  .text-4-5{background-position: -320px -320px;width: 134px;height: 32px;}
+  .text-4-6{background-position: -480px -320px;width: 134px;height: 32px;}
+  /* arrow */
+  .u-guideTop{background: url(../images/arrow_icon.png) 0 -31px;width: 76px;height: 31px;background-size: 76px auto;}
+  .arrow-first{background: url(../images/arrow_icon.png) 0 0;}
+  .arrow-hide{display: none;}
 /* p2-wifi */
 .p2-wifi{width: 100%;height: 100%;overflow: hidden;background-color: rgba(0,0,0,.5);display: none;z-index: 21;font-size: 8rem;text-align: center;color: #fff;}
 .p2-wifi.show{display: block;}
@@ -1306,7 +1345,7 @@ a {
 </div>
 <!-- custom content -->
 <div id="J_opaPage" class="page">
-    <div class="J_opaPannel pannels scene-1 current start-animate" data-index="0">
+    <div class="J_opaPannel pannels scene-1 current start-animate" data-index="0" data-first="true">
         <div class="opa-stage stage" data-index="1" data-id="opa_stage_1" style="background-image: url(../images/bg_full.jpg); background-color: #0050b2 ;">
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p1-plane" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -1345,9 +1384,7 @@ a {
              style="">
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title" data-type="image" data-anim="mi-zoomIn">
                                         <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                            <a href="http://www.jd.com/" target="_blank"></a>
-                                            <div class="img-wrap"><img src="../images/p2/title.png">
-                                            </div>
+                                            <div class="title"></div>
                                         </div>
                                     </div>
             <div class="mc mc-image p2-cir1 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
@@ -1408,29 +1445,24 @@ a {
             </div>
             <div class="mc mc-image p2-text1 p-text delay_0_3s duration_0_6s mi-fadeIn" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <a href="http://www.jd.com/" target="_blank"></a>
-                    <div class="img-wrap"><img src="../images/text/p2_1.png">
-                    </div>
+                    <div class="text text-2-1"></div>
                 </div>
             </div>
             <div class="mc mc-image p2-text2 p-text delay_0_3s duration_0_6s mi-fadeIn" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <a href="http://www.jd.com/" target="_blank"></a>
-                    <div class="img-wrap"><img src="../images/text/p2_2.png">
+                   <div class="text text-2-2">
                     </div>
                 </div>
             </div>
             <div class="mc mc-image p2-text3 p-text delay_0_3s duration_0_6s mi-fadeIn" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <a href="http://www.jd.com/" target="_blank"></a>
-                    <div class="img-wrap"><img src="../images/text/p2_3.png">
+                    <div class="text text-2-3">
                     </div>
                 </div>
             </div>
             <div class="mc mc-image p2-text4 p-text delay_0_3s duration_0_6s mi-zoomIn" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <a href="http://www.jd.com/" target="_blank"></a>
-                    <div class="img-wrap"><img src="../images/text/p2_4.png">
+                   <div class="text text-2-4">
                     </div>
                 </div>
             </div>
@@ -1453,9 +1485,7 @@ a {
         <div class="opa-stage stage" data-index="3" data-id="opa_stage_3" style="background-image: url('../images/p3/p3_bg.jpg'); background-color: rgb(153, 153, 153);">
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                                         <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                            <a href="http://www.jd.com/" target="_blank"></a>
-                                            <div class="img-wrap"><img src="../images/p3/title.png">
-                                            </div>
+                                            <div class="title"></div>
                                         </div>
                                     </div>
             <div class="mc mc-image p3-cir1 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
@@ -1509,101 +1539,73 @@ a {
                         </div>
             <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon1 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <a href="http://www.jd.com/" target="_blank"></a>
-                    <div class="img-wrap"><img src="../images/icon/p3_1.png">
-                    </div>
+                    <div class="icon icon-3-1"></div>
                 </div>
             </div>
             <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon2 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/icon/p3_2.png">
-                                </div>
+                                <div class="icon icon-3-2"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon3 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/icon/p3_3.png">
-                                </div>
+                                <div class="icon icon-3-3"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon4 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/icon/p3_4.png">
-                                </div>
+                                <div class="icon icon-3-4"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon5 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/icon/p3_5.png">
-                                </div>
+                                <div class="icon icon-3-5"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon6 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/icon/p3_6.png">
-                                </div>
+                                <div class="icon icon-3-6"></div>
                             </div>
                         </div>
                         <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon7 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/icon/p3_7.png">
-                                </div>
+                                <div class="icon icon-3-7"></div>
                             </div>
                         </div>
                         
                         <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text1 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <a href="http://www.jd.com/" target="_blank"></a>
-                    <div class="img-wrap"><img src="../images/text/p3_1.png">
-                    </div>
+                    <div class="text text-3-1"></div>
                 </div>
             </div>
             <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text2 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/text/p3_2.png">
-                                </div>
+                                <div class="text text-3-2"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text3 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/text/p3_3.png">
-                                </div>
+                                <div class="text text-3-3"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text4 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/text/p3_4.png">
-                                </div>
+                                <div class="text text-3-4"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text5 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/text/p3_5.png">
-                                </div>
+                                <div class="text text-3-5"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text6 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/text/p3_6.png">
-                                </div>
+                                <div class="text text-3-6"></div>
                             </div>
                         </div>
                         <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text7 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/text/p3_7.png">
-                                </div>
+                                <div class="text text-3-7"></div>
                             </div>
                         </div>
             <div class="mc mc-image p3-line" data-type="image">
@@ -1620,9 +1622,7 @@ a {
         <div class="opa-stage stage" data-index="4" data-id="opa_stage_4" style="background-image: url('../images/p4/p4_bg.jpg'); background-color: rgb(153, 153, 153);">
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                                         <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                            <a href="http://www.jd.com/" target="_blank"></a>
-                                            <div class="img-wrap"><img src="../images/p4/title.png">
-                                            </div>
+                                            <div class="title"></div>
                                         </div>
                                     </div>
             <div class="mc mc-image p4-cir1 p-cir" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
@@ -1690,86 +1690,62 @@ a {
             </div>
             <div class="mc mc-image delay_0_3s duration_0_4s mi-zoomIn p4-icon1 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <a href="http://www.jd.com/" target="_blank"></a>
-                    <div class="img-wrap"><img src="../images/p4/icon1.png">
-                    </div>
+                    <div class="icon icon-4-1"></div>
                 </div>
             </div>
             <div class="mc mc-image delay_0_3s duration_0_4s mi-zoomIn p4-icon2 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p4/icon2.png">
-                                </div>
+                                <div class="icon icon-4-2"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_3s duration_0_4s mi-zoomIn p4-icon3 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p4/icon3.png">
-                                </div>
+                                <div class="icon icon-4-3"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_3s duration_0_4s mi-zoomIn p4-icon4 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p4/icon4.png">
-                                </div>
+                                <div class="icon icon-4-4"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_3s duration_0_4s mi-zoomIn p4-icon5 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/p4/icon5.png">
-                                </div>
+                                <div class="icon icon-4-5"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_3s duration_0_4s mi-zoomIn p4-icon9 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/icon/p4_6.png">
-                                </div>
+                                <div class="icon icon-4-6"></div>
                             </div>
                         </div>
                         <div class="mc mc-image delay_0_3s duration_0_4s mi-zoomIn p4-text1 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <a href="http://www.jd.com/" target="_blank"></a>
-                    <div class="img-wrap"><img src="../images/text/p4_1.png">
-                    </div>
+                    <div class="text text-4-1"></div>
                 </div>
             </div>
             <div class="mc mc-image delay_0_3s duration_0_4s mi-zoomIn p4-text2 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/text/p4_2.png">
-                                </div>
+                                <div class="text text-4-2"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_3s duration_0_4s mi-zoomIn p4-text3 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/text/p4_3.png">
-                                </div>
+                                <div class="text text-4-3"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_3s duration_0_4s mi-zoomIn p4-text4 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/text/p4_4.png">
-                                </div>
+                                <div class="text text-4-4"></div>
                             </div>
                         </div>
             <div class="mc mc-image delay_0_3s duration_0_4s mi-zoomIn p4-text5 p-text" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/text/p4_5.png">
-                                </div>
+                                <div class="text text-4-5"></div>
                             </div>
                         </div>
                         <div class="mc mc-image delay_0_3s duration_0_4s mi-zoomIn p4-text9 p-icon" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <a href="http://www.jd.com/" target="_blank"></a>
-                                <div class="img-wrap"><img src="../images/text/p4_6.png">
-                                </div>
+                                <div class="text text-4-6"></div>
                             </div>
                         </div>
             
@@ -1784,13 +1760,12 @@ a {
     </div>
 <!-- E scene4 -->
 <!-- S scene5 -->
-<div class="J_opaPannel pannels scene-5" data-index="4">
+<div class="J_opaPannel pannels scene-5" data-index="4" data-last="true">
         <div class="opa-stage stage" data-index="5" data-id="opa_stage_5" style="background-image: url(../images/bg/p5_bg.jpg); background-color: #0050b2 ;">
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
 
-                                <div class="img-wrap" style="width: 100%; height: 100%;"><img src="../images/text/p5_title.png">
-                                </div>
+                                <div class="title"></div>
                             </div>
                         </div>
             
@@ -1817,7 +1792,7 @@ a {
             </div>
             <div class="mc mc-image delay_0_6s duration_0_8s mi-zoomIn p5-4" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-
+<a href="mailto:ppzhaopin@jd.com" target="_blank" class="href-mail"></a>
                     <div class="img-wrap" style="width: 100%; height: 100%;"><img src="../images/text/p5_4.png">
                     </div>
                 </div>
@@ -1827,7 +1802,7 @@ a {
 <!-- E scene5 -->
 </div>
 
-<a href="javascript:void(0);" class="u-guideTop z-move" id="J_GuideTop"></a>
+<a href="javascript:void(0);" class="u-guideTop z-move arrow-first" id="J_GuideTop"></a>
 <script src="../js/app.utils.min.js"></script>
 <script src="../js/spread.min.js"></script>
 
@@ -2020,9 +1995,17 @@ a {
                 util.removeClass(sa, "start-animate");
                 util.addClass(box.querySelector(".current"), "start-animate");
                 if (box.querySelector(".current").getAttribute('data-last')) {
-                    gTop.style['visibility'] = 'hidden';
+                    //gTop.style['visibility'] = 'hidden';
+                    util.addClass(J_GuideTop, 'arrow-hide');
                 } else {
-                    gTop.style['visibility'] = 'visible';
+                    //gTop.style['visibility'] = 'visible';
+                    util.removeClass(J_GuideTop, 'arrow-hide');
+                }
+                if(box.querySelector('.current').getAttribute('data-first')){
+                    util.addClass(J_GuideTop, 'arrow-first');
+                }
+                else{
+                    util.removeClass(J_GuideTop, 'arrow-first');
                 }
             }
         });
