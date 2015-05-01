@@ -1322,10 +1322,10 @@ a {
 <body>
 
 <!-- loading -->
-<div class="loading" id="J_MiLoading" style="z-index: 0; visibility: hidden;">
+<div class="loading" id="J_MiLoading">
     <div class="loading-block">
         <img class="loading-img" src="http://img13.360buyimg.com/cms/jfs/t283/206/913455934/6017/6f27d16f/5429103aN9bed6283.gif">
-        <div class="loading-text j-loading-text">66%</div>
+        <div class="loading-text j-loading-text" id="process">66%</div>
     </div>
 </div>
 
@@ -1801,7 +1801,6 @@ a {
     </div>
 <!-- E scene5 -->
 </div>
-
 <a href="javascript:void(0);" class="u-guideTop z-move arrow-first" id="J_GuideTop"></a>
 <script src="../js/app.utils.min.js"></script>
 <script src="../js/spread.min.js"></script>
@@ -1868,8 +1867,54 @@ a {
 })();
 </script>-->
 
+
 <script>
+
 (function(window, undefined){
+    var PreLoad=function(a,b){var c=b||{};this.source=a,this.count=0,this.total=a.length,this.onload=c.onload,this.prefix=c.prefix||"",this.init()};PreLoad.prototype.init=function(){var a=this;a.source.forEach(function(b){var c=b.substr(b.lastIndexOf(".")+1).toLowerCase(),d=a.prefix+b;switch(c){case"js":a.script.call(a,d);break;case"css":a.stylesheet.call(a,d);break;case"svg":case"jpg":case"gif":case"png":case"jpeg":a.image.call(a,d)}})},PreLoad.prototype.getProgress=function(){return Math.round(this.count/this.total*100)},PreLoad.prototype.image=function(a){var b=document.createElement("img");this.load(b,a),b.src=a},PreLoad.prototype.stylesheet=function(a){var b=document.createElement("link");this.load(b,a),b.rel="stylesheet",b.type="text/css",b.href=a,document.head.appendChild(b)},PreLoad.prototype.script=function(a){var b=document.createElement("script");this.load(b,a),b.type="text/javascript",b.src=a,document.head.appendChild(b)},PreLoad.prototype.load=function(a,b){var c=this;a.onload=a.onerror=a.onabort=function(a){c.onload&&c.onload({count:++c.count,total:c.total,item:b,type:a.type})}
+    };
+    var tasks = [
+      "../images/bg_full.jpg",
+      "../images/1_plane.png",
+      "../images/1_logo.png",
+      "../images/1_slogan.png",
+      "../images/1_aboutus.png",
+      "../images/arrow_icon.png",
+      "../images/title.png",
+      "../images/text.png",
+      "../images/icon.png",
+      "../images/cir/cir_blue_opacity.png",
+      "../images/cir/cir_blue.png",
+      "../images/cir/cir_green.png",
+      "../images/cir/cir_greenblue.png",
+      "../images/cir/cir_oriange.png",
+      "../images/cir/cir_oriyel.png",
+      "../images/cir/cir_purple.png",
+      "../images/cir/cir_purpleblue.png",
+      "../images/cir/cir_yellow_50.png",
+      "../images/cir/cir_yellow_litter.png",
+    ];
+    var progress = document.getElementById('process');
+    function loading(load) {
+      var count = load.count
+      var total = load.total
+      progress && (progress.innerHTML = Math.round(100*count/total) + '%')
+      console.log(progress.innerHTML);
+      if(count === total) return complete()
+    }
+
+    function next(el, fn) {
+      el.className += ' scaleOut'
+      setTimeout(function(){
+        el.parentNode.removeChild(el)
+        fn && fn()
+      }, 1000)
+    }
+
+    function complete() {
+      loadOk();
+    }
+new PreLoad(tasks, {onload: loading});
 
     var loader = document.getElementById("J_MiLoading"),
         body = document.documentElement || document.body,
@@ -1902,20 +1947,6 @@ a {
             loader.style.visibility = "hidden";
         }
     }
-
-    var timer = setInterval(function(){
-        num = parseInt(num + Math.random() * 10, 10);
-        time++;
-        if (num > 90) {
-            num = 90;
-        } else {
-            bar.innerHTML = num + "%";
-        }
-        if (time > 10) {
-            clearInterval(timer);
-            loadOk();/* @fixme:loadOk逻辑要修改 */
-        }
-    }, 1000);
 
     var page = null,
         count = 0,
@@ -1983,9 +2014,7 @@ a {
 	}
 
     window.onload = function() {
-		backgroundJustify();
-        loadOk();
-
+		backgroundJustify();        
         page = new App.Opa({
             size: size,
             transEnd: function() {
