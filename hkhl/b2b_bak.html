@@ -1314,9 +1314,8 @@ a {
   .arrow-first{background: url(../images/arrow_icon.png) 0 0;}
   .arrow-hide{display: none;}
 /* p2-wifi */
-.float-mask{width: 100%;height: 100%;overflow: hidden;background-color: rgba(0,0,0,.5);display: none;font-size: 8rem;text-align: center;color: #fff;position:absolute;top:0;left:0;}
-    .float-show{z-index:1000;}
-.float-show .current .float-mask{display: block;z-index:100;opacity: 1!important;}
+.float-mask{width: 100%;height: 100%;overflow: hidden;background-color: rgba(0,0,0,.5);display: none;z-index: 21;font-size: 8rem;text-align: center;color: #fff;position:absolute;top:0;left:0;}
+.float-mask.show{display: block;z-index:30;}
 
 </style>
 </head>
@@ -1377,10 +1376,10 @@ a {
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_5s mi-zoomIn float-mask" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate"><div class="mc-wrap delay_1_8s duration_0_8s noAnimate"><img src="../images/detail/detail2-2.jpg"></div></div>
+
         </div>
     </div>
-    <div class="J_opaPannel pannels scene-2" data-index="1">
+    <div class="J_opaPannel pannels scene-2" data-index="1" style="">
         <div class="opa-stage stage" data-index="2" data-id="opa_stage_2"
              style="">
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title" data-type="image" data-anim="mi-zoomIn">
@@ -1474,10 +1473,9 @@ a {
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image delay_0_0s duration_0_5s mi-zoomIn float-mask" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate"><div class="mc-wrap delay_1_8s duration_0_8s noAnimate"><img src="../images/detail/detail1-2.jpg"></div></div>
         </div>
     </div>
-<div class="J_opaPannel pannels scene-3" data-index="2">
+<div class="J_opaPannel pannels scene-3" data-index="2" style="">
         <div class="opa-stage stage" data-index="3" data-id="opa_stage_3" style="background-image: url('../images/p3/p3_bg.jpg'); background-color: rgb(153, 153, 153);">
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                                         <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -1610,12 +1608,11 @@ a {
                                 <div class="img-wrap"><img src="../images/bg/p3_bg.png">
                                 </div>
                             </div>
-                        </div>
-            <div class="mc mc-image delay_0_0s duration_0_5s mi-zoomIn float-mask" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate"><div class="mc-wrap delay_1_8s duration_0_8s noAnimate"><img src="../images/detail/detail2-2.jpg"></div></div>
+                        </div>            
         </div>
     </div>
 <!-- S scene4 -->
-<div class="J_opaPannel pannels scene-4" data-index="3">
+<div class="J_opaPannel pannels scene-4" data-index="3" style="">
         <div class="opa-stage stage" data-index="4" data-id="opa_stage_4" style="background-image: url('../images/p4/p4_bg.jpg'); background-color: rgb(153, 153, 153);">
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate">
                                         <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -1752,8 +1749,7 @@ a {
                                 <div class="img-wrap"><img src="../images/p4/line_bg.png">
                                 </div>
                             </div>
-                        </div>
-            <div class="mc mc-image delay_0_0s duration_0_5s mi-zoomIn float-mask" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate"><div class="mc-wrap delay_1_8s duration_0_8s noAnimate"><img src="../images/detail/detail2-2.jpg"></div></div>
+                        </div>            
         </div>
     </div>
 <!-- E scene4 -->
@@ -1795,11 +1791,9 @@ a {
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image delay_0_0s duration_0_5s mi-zoomIn float-mask" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate"><div class="mc-wrap delay_1_8s duration_0_8s noAnimate"><img src="../images/detail/detail2-2.jpg"></div></div>
         </div>
     </div>
 <!-- E scene5 -->
-
 </div>
 <a href="javascript:void(0);" class="u-guideTop z-move arrow-first" id="J_GuideTop"></a>
 <script src="../js/app.utils.min.js"></script>
@@ -1893,23 +1887,6 @@ a {
       "../images/cir/cir_purpleblue.png",
       "../images/cir/cir_yellow_50.png",
       "../images/cir/cir_yellow_litter.png",
-        "../images/detail/detail2-1.jpg",
-        "../images/detail/detail2-2.jpg",
-        "../images/detail/detail2-3.jpg",
-        "../images/detail/detail2-4.jpg",
-        "../images/detail/detail3-1.jpg",
-                "../images/detail/detail3-2.jpg",
-                "../images/detail/detail3-3.jpg",
-                "../images/detail/detail3-4.jpg",
-        "../images/detail/detail3-5.jpg",
-                "../images/detail/detail3-6.jpg",
-                "../images/detail/detail3-7.jpg",
-        "../images/detail/detail4-1.jpg",
-                        "../images/detail/detail4-2.jpg",
-                        "../images/detail/detail4-3.jpg",
-                        "../images/detail/detail4-4.jpg",
-                "../images/detail/detail4-5.jpg",
-                        "../images/detail/detail4-6.jpg"
     ];
     var progress = document.getElementById('process');
     function loading(load) {
@@ -2092,59 +2069,29 @@ new PreLoad(tasks, {onload: loading});
 
 
         var floatDom = document.querySelectorAll('.mc');//.getAttribute('data-last');
-        var floatMask = document.querySelectorAll('.float-mask');
-        for (var i = 0; i < floatDom.length; i++) {
-            if (floatDom[i].hasAttribute('data-detail')) {
-                var t = floatDom[i].getAttribute('data-detail');
 
-                if (t.indexOf('1-') > -1) {
-                    floatDom[i].addEventListener(evs.touchup, function (ev) {
-                        App.Utils.addClass(document.getElementById('J_opaPage'), 'float-show');
-                        return false;
-                    }, false);
-                }
-                else if (t.indexOf('2-') > -1) {
-                    floatDom[i].addEventListener(evs.touchup, function (ev) {
-                        var tDom = this.parentNode.querySelector('.float-mask .mc-wrap');
-                        tDom.innerHTML = '<img src="../images/detail/detail2-' + this.getAttribute('data-detail').split('2-')[1] + '.jpg">';
-                        App.Utils.addClass(document.getElementById('J_opaPage'), 'float-show');
-                        return false;
-                    }, false);
-                }
-                else if (t.indexOf('3-') > -1) {
-                    floatDom[i].addEventListener(evs.touchup, function (ev) {
-                        var tDom = this.parentNode.querySelector('.float-mask .mc-wrap');
-                        tDom.innerHTML = '<img src="../images/detail/detail3-' + this.getAttribute('data-detail').split('3-')[1] + '.jpg">';
-                        App.Utils.addClass(document.getElementById('J_opaPage'), 'float-show');
-                        return false;
-                    }, false);
-                }
-                else if (t.indexOf('4-') > -1) {
-                    floatDom[i].addEventListener(evs.touchup, function (ev) {
-                        var tDom = this.parentNode.querySelector('.float-mask .mc-wrap');
-                        tDom.innerHTML = '<img src="../images/detail/detail4-' + this.getAttribute('data-detail').split('4-')[1] + '.jpg">';
-                        App.Utils.addClass(document.getElementById('J_opaPage'), 'float-show');
-                        return false;
-                    }, false);
-                }
-                else if (t.indexOf('5-') > -1) {
-                    floatDom[i].addEventListener(evs.touchup, function (ev) {
-                        App.Utils.addClass(document.getElementById('J_opaPage'), 'float-show');
-                        return false;
-                    }, false);
-                }
-
+        for(var i = 0;i<floatDom.length;i++){
+            if(floatDom[i].hasAttribute('data-detail')){
+                var floatMask;
+                floatDom[i].addEventListener(evs.touchup, function(ev){
+                    var t = this.getAttribute('data-detail');
+                    console.log(t);
+                                    var floatMaskT = '<div class="mc mc-image delay_0_0s duration_0_5s mi-zoomIn float-mask" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate"><div class="mc-wrap delay_1_8s duration_0_8s noAnimate"><img src="../detail/'+t+'.jpg"></div></div>';
+                                    floatMask = document.createElement("div");
+                                    floatMask.html = floatMaskT;
+                                    document.querySelector('.current').insertBefore(floatMask,null);
+                            App.Utils.addClass(floatMask,'show');
+                    console.log(floatMask.className);
+                            return false;
+                    floatMask.addEventListener(evs.touchup,function(ev){
+                                                App.Utils.removeClass(floatMask,'show');
+                                        floatMask.remove();
+                                                return false;
+                                            }, false)
+                        }, false);
 
             }
         }
-        for (var i = 0; i < floatMask.length; i++) {
-            floatMask[i].addEventListener(evs.touchup, function (ev) {
-                console.log(this);
-                App.Utils.removeClass(document.getElementById('J_opaPage'), 'float-show');
-                return false;
-            }, false);
-        }
-
         /*floatDom.addEventListener(evs.touchdown, function(ev){
             console.log('wifi touched');
         }, false);*/
