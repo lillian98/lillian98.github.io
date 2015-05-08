@@ -1391,7 +1391,7 @@ a {
                                 <div class="img-wrap"><div class="img-1-about title"></div></div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_5s  float-mask"><div class="mc-wrap delay_1_8s duration_0_8s noAnimate"><img src="../images/detail/detail2-2.jpg"></div></div>
+            <div class="mc mc-image delay_0_0s duration_0_5s  float-mask"><div class="mc-wrap delay_1_8s duration_0_8s noAnimate"><img src="../images/detail/detail1-1.png"></div></div>
         </div>
     </div>
     <div class="J_opaPannel pannels scene-2" data-index="1">
@@ -1809,7 +1809,7 @@ a {
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image delay_0_0s duration_0_5s float-mask" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate"><div class="mc-wrap delay_1_8s duration_0_8s noAnimate"><img src="../images/detail/detail2-2.jpg"></div></div>
+            <div class="mc mc-image delay_0_0s duration_0_5s float-mask" data-type="image" data-anim="mi-zoomIn" data-duration="0.8" data-out-delay="1" data-out-duration="0.8" data-aspect="4.275862068965517" data-position="1" data-delay="0" data-out-anim="noAnimate"><div class="mc-wrap delay_1_8s duration_0_8s noAnimate"><img src="../images/detail/detail5-1.jpg"></div></div>
         </div>
     </div>
 <!-- E scene5 -->
@@ -2106,15 +2106,29 @@ new PreLoad(tasks, {onload: loading});
 
         var floatDom = document.querySelectorAll('.mc');
         var floatMask = document.querySelectorAll('.float-mask');
+        var floatTimeOut;
         for (var i = 0; i < floatDom.length; i++) {
             if (floatDom[i].hasAttribute('data-detail')) {
                 var t = floatDom[i].getAttribute('data-detail');
                 floatDom[i].addEventListener(evs.touchup, function (ev) {
                     var t1 = this.getAttribute('data-detail');
                     var tDom = this.parentNode.querySelector('.float-mask .mc-wrap');
-                    App.Utils.removeClass(opaPage, 'float-show-hide');
-                    App.Utils.addClass(opaPage, 'float-show');
-                    App.Utils.addClass(this.parentNode.querySelector('.float-mask'), 'mi-zoomIn');
+                    var that = this;
+                    var fromDetailPage = (/\d+/).exec(t1)[0];
+                    if(floatTimeOut){
+                        clearTimeout(floatTimeOut);
+                    }
+                    floatTimeOut = setTimeout(function () {
+                        var nPage = opaPage.querySelector('.current');
+                    var nDetailPage = parseInt(nPage.getAttribute('data-index'));
+                        if(nDetailPage == fromDetailPage -1){
+                            App.Utils.removeClass(opaPage, 'float-show-hide');
+                                                    App.Utils.addClass(opaPage, 'float-show');
+                                                    App.Utils.addClass(that.parentNode.querySelector('.float-mask'), 'mi-zoomIn');
+                        }
+
+                    }, 400);
+
                     if(t1.indexOf('1-') > -1){}
                     else if(t1.indexOf('2-') > -1){
                         tDom.innerHTML = '<img src="../images/detail/detail2-' + this.getAttribute('data-detail').split('2-')[1] + '.jpg">';
