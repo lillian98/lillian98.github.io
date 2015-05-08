@@ -1324,23 +1324,24 @@ a {
 .float-show-hide .current .float-mask{-webkit-animation-name: zoomToBig; animation-name: zoomToBig; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out;z-index: 100;}*/
 .float-mask{z-index: -1;}
 .float-show{z-index:1000;}
-.float-show .current .float-mask{z-index: 20;-webkit-animation-name: float-s-ani; animation-name: float-s-ani; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out;-webkit-transition-duration:0.4s;animation-duration:0.4s;}
+.float-show .current .float-mask .mc-wrap{-webkit-animation-name: float-s-ani; animation-name: float-s-ani; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out;}
+    .float-show-hide .float-mask,.float-show .current .float-mask{z-index:20;opacity:1;}
     @-webkit-keyframes float-s-ani {
-      0%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3);top:48%;left:48%;}
+      0%{opacity:0;transform:scale(0.3);}
       100%{opacity:1;top:0;left:0;}
     }
     @keyframes float-s-ani {
-        0%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3);top:48%;left:48%;}
+        0%{opacity:0;transform:scale(0.3);}
               100%{opacity:1;top:0;left:0;}
     }
-.float-show-hide .float-mask{-webkit-animation-name: float-hide; animation-name: float-hide; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out;-webkit-transition-duration:0.4s;animation-duration:0.4s;z-index:20}
+.float-show-hide .float-mask .mc-wrap{-webkit-animation-name: float-hide; animation-name: float-hide; -webkit-animation-timing-function: linear; animation-timing-function: linear;}
 @-webkit-keyframes float-hide {
     0%{opacity:1;top:0;left:0;}
-          100%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3);top:35%;left:35%;}
+          100%{opacity:0;transform:scale(0.3);}
 }
 @keyframes float-hide {
     0%{opacity:1;top:0;left:0;}
-              100%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3);top:35%;left:35%;}
+              100%{opacity:0;transform:scale(0.3);}
 }
 </style>
 </head>
@@ -1397,7 +1398,7 @@ a {
                                 <div class="img-wrap"><div class="img-1-about title"></div></div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_5s  float-mask"><div class="mc-wrap delay_0_0s duration_0_5s noAnimate"><img src="../images/detail/detail1-1.png"></div></div>
+            <div class="mc mc-image delay_0_0s duration_0_4s  float-mask"><div class="mc-wrap delay_0_0s duration_0_4s noAnimate"><img src="../images/detail/detail1-1.png"></div></div>
         </div>
     </div>
     <div class="J_opaPannel pannels scene-2" data-index="1">
@@ -1484,7 +1485,7 @@ a {
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image delay_0_0s duration_0_5s float-mask"><div class="mc-wrap delay_0_0s duration_0_5s noAnimate"><img src="../images/detail/detail2-1.jpg"></div></div>
+            <div class="mc mc-image delay_0_0s duration_0_4s float-mask"><div class="mc-wrap delay_0_0s duration_0_4s noAnimate"><img src="../images/detail/detail2-1.jpg"></div></div>
         </div>
     </div>
 <div class="J_opaPannel pannels scene-3" data-index="2">
@@ -1616,7 +1617,7 @@ a {
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_5s float-mask"><div class="mc-wrap delay_0_0s duration_0_5s noAnimate"><img src="../images/detail/detail2-2.jpg"></div></div>
+            <div class="mc mc-image delay_0_0s duration_0_4s float-mask"><div class="mc-wrap delay_0_0s duration_0_4s noAnimate"><img src="../images/detail/detail2-2.jpg"></div></div>
         </div>
     </div>
 <!-- S scene4 -->
@@ -1748,7 +1749,7 @@ a {
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_5s float-mask"><div class="mc-wrap delay_0_0s duration_0_5s noAnimate"><img src="../images/detail/detail2-2.jpg"></div></div>
+            <div class="mc mc-image delay_0_0s duration_0_4s float-mask"><div class="mc-wrap delay_0_0s duration_0_4s noAnimate"><img src="../images/detail/detail2-2.jpg"></div></div>
         </div>
     </div>
 <!-- E scene4 -->
@@ -1785,7 +1786,7 @@ a {
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image delay_0_0s duration_0_5s float-mask"><div class="mc-wrap delay_0_0s duration_0_5s noAnimate"><img src="../images/detail/detail5-1.jpg"></div></div>
+            <div class="mc mc-image delay_0_0s duration_0_4s float-mask"><div class="mc-wrap delay_0_0s duration_0_4s noAnimate"><img src="../images/detail/detail5-1.jpg"></div></div>
         </div>
     </div>
 <!-- E scene5 -->
@@ -1865,10 +1866,6 @@ a {
     };
     var tasks = [
       "../images/bg_full.jpg",
-      "../images/1_plane.png",
-      "../images/1_logo.png",
-      "../images/1_slogan.png",
-      "../images/1_aboutus.png",
       "../images/arrow_icon.png",
       "../images/title.png",
       "../images/text.png",
@@ -1894,12 +1891,6 @@ a {
         "../images/detail/detail3-5.jpg",
                 "../images/detail/detail3-6.jpg",
                 "../images/detail/detail3-7.jpg",
-        "../images/detail/detail4-1.jpg",
-                        "../images/detail/detail4-2.jpg",
-                        "../images/detail/detail4-3.jpg",
-                        "../images/detail/detail4-4.jpg",
-                "../images/detail/detail4-5.jpg",
-                        "../images/detail/detail4-6.jpg"
     ];
     var progress = document.getElementById('process');
     function loading(load) {
