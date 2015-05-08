@@ -1875,19 +1875,21 @@ a {
       "../images/cir/cir_purple.png",
       "../images/cir/cir_purpleblue.png",
       "../images/cir/cir_yellow_50.png",
-      "../images/cir/cir_yellow_litter.png",
-        "../images/detail/detail2-1.jpg",
-        "../images/detail/detail2-2.jpg",
-        "../images/detail/detail2-3.jpg",
-        "../images/detail/detail2-4.jpg",
-        "../images/detail/detail3-1.jpg",
-                "../images/detail/detail3-2.jpg",
-                "../images/detail/detail3-3.jpg",
-                "../images/detail/detail3-4.jpg",
-        "../images/detail/detail3-5.jpg",
-                "../images/detail/detail3-6.jpg",
-                "../images/detail/detail3-7.jpg",
+      "../images/cir/cir_yellow_litter.png"
     ];
+    var tasks1 = [
+            "../images/detail/detail2-1.jpg",
+            "../images/detail/detail2-2.jpg",
+            "../images/detail/detail2-3.jpg",
+            "../images/detail/detail2-4.jpg",
+            "../images/detail/detail3-1.jpg",
+                    "../images/detail/detail3-2.jpg",
+                    "../images/detail/detail3-3.jpg",
+                    "../images/detail/detail3-4.jpg",
+            "../images/detail/detail3-5.jpg",
+                    "../images/detail/detail3-6.jpg",
+                    "../images/detail/detail3-7.jpg"
+        ];
     var progress = document.getElementById('process');
     function loading(load) {
       var count = load.count
@@ -1908,6 +1910,9 @@ a {
       loadOk();
     }
 new PreLoad(tasks, {onload: loading});
+    new PreLoad(tasks1, {onload: loading1});
+    function loading1(load) {
+        }
 
     var loader = document.getElementById("J_MiLoading"),
         body = document.documentElement || document.body,
