@@ -1319,15 +1319,15 @@ a {
   .arrow-hide{display: none;}
 .float-mask{z-index: -1;background:rgba(0,0,0,.5);width:100%;height:100%;}
 .float-show{z-index:1000;}
-.float-show .current .float-mask .mc-wrap{-webkit-animation-name: float-s-ani; animation-name: float-s-ani; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out;}
+.float-show .current .float-mask .mc-wrap{-webkit-animation-name: float-s-ani; animation-name: float-s-ani; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out;-webkit-transition-delay:1s;}
     .float-show-hide .float-mask{z-index:20;}
     .float-show .current .float-mask{z-index:20;opacity:1;}
     @-webkit-keyframes float-s-ani {
-      0%{opacity:0;transform:scale(0.3);}
+      0%{opacity:0.3;transform: scale3d(.3, .3, .3);}
       100%{opacity:1;}
     }
     @keyframes float-s-ani {
-        0%{opacity:0;transform:scale(0.3);}
+        0%{opacity:0.3;transform: scale3d(.3, .3, .3);}
               100%{opacity:1;}
     }
 .float-show-hide .float-mask .mc-wrap{-webkit-animation-name: float-hide; animation-name: float-hide; -webkit-animation-timing-function: linear; animation-timing-function: linear;-webkit-animation-fill-mode: forwards;animation-fill-mode: forwards;}
@@ -1481,7 +1481,7 @@ a {
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image delay_0_0s duration_0_4s float-mask"><div class="mc-wrap delay_0_0s duration_0_4s"><img src="../images/detail/detail2-1.jpg"></div></div>
+            <div class="mc mc-image duration_0_4s float-mask"><div class="mc-wrap duration_0_4s"><img src="../images/detail/detail2-1.jpg"></div></div>
         </div>
     </div>
 <div class="J_opaPannel pannels scene-3" data-index="2">
@@ -2099,11 +2099,11 @@ var floatTimeout;
                             if(floatTimeout){
                                 clearTimeout(floatTimeout);
                             }
-                            floatTimeout = setTimeout(function(){if (nDetailPage == fromDetailPage - 1) {
+                            //floatTimeout = setTimeout(function(){if (nDetailPage == fromDetailPage - 1) {
                                                             App.Utils.removeClass(opaPage, 'float-show-hide');
                                                             App.Utils.addClass(opaPage, 'float-show');
                                                             //App.Utils.addClass(that.parentNode.querySelector('.float-mask'), 'mi-zoomIn');
-                                                        }},400);
+                                                        //}},400);
 
 
                             if (t1.indexOf('1-') > -1) {
@@ -2129,9 +2129,9 @@ var floatTimeout;
                     floatMask[i].addEventListener(evs.touchup, function (ev) {
                         App.Utils.removeClass(opaPage, 'float-show');
                          App.Utils.addClass(opaPage, 'float-show-hide');
-                        setTimeout(function(){
+                       // setTimeout(function(){
                             App.Utils.removeClass(opaPage, 'float-show-hide');
-                        },400);
+                       // },600);
                         //App.Utils.removeClass(this, 'mi-zoomIn');
                         return false;
                     }, false);
