@@ -1325,7 +1325,7 @@ a {
 .float-mask{z-index: -1;}
 .float-show{z-index:1000;}
 .float-show .current .float-mask{z-index: 20;}
-.float-show-hide .float-mask{-webkit-animation-name: float-hide; animation-name: float-hide; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out;}
+.float-show-hide .float-mask{-webkit-animation-name: float-hide; animation-name: float-hide; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out;-webkit-transition-duration:0.8s;-o-transition-duration:0.8s;transition-duration:0.8s;-webkit-animation-duration:0.8s;-o-animation-duration:0.8s;animation-duration:0.8s;}
 @-webkit-keyframes float-hide {
   100%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}
   50%{opacity:1}
@@ -2110,24 +2110,20 @@ new PreLoad(tasks, {onload: loading});
         for (var i = 0; i < floatDom.length; i++) {
             if (floatDom[i].hasAttribute('data-detail')) {
                 var t = floatDom[i].getAttribute('data-detail');
-                floatDom[i].addEventListener(evs.touchup, function (ev) {
+                floatDom[i].addEventListener(evs.touchdown, function (ev) {
                     var t1 = this.getAttribute('data-detail');
                     var tDom = this.parentNode.querySelector('.float-mask .mc-wrap');
                     var that = this;
                     var fromDetailPage = (/\d+/).exec(t1)[0];
-                    if(floatTimeOut){
-                        clearTimeout(floatTimeOut);
-                    }
-                    floatTimeOut = setTimeout(function () {
+
                         var nPage = opaPage.querySelector('.current');
                     var nDetailPage = parseInt(nPage.getAttribute('data-index'));
+                        console.log('111',nDetailPage,fromDetailPage)
                         if(nDetailPage == fromDetailPage -1){
                             App.Utils.removeClass(opaPage, 'float-show-hide');
                                                     App.Utils.addClass(opaPage, 'float-show');
                                                     App.Utils.addClass(that.parentNode.querySelector('.float-mask'), 'mi-zoomIn');
                         }
-
-                    }, 400);
 
                     if(t1.indexOf('1-') > -1){}
                     else if(t1.indexOf('2-') > -1){
@@ -2151,6 +2147,7 @@ new PreLoad(tasks, {onload: loading});
             floatMask[i].addEventListener(evs.touchup, function (ev) {
                 App.Utils.removeClass(opaPage, 'float-show');
                  App.Utils.addClass(opaPage, 'float-show-hide');
+                App.Utils.removeClass(this, 'mi-zoomIn');
                 return false;
             }, false);
         }
