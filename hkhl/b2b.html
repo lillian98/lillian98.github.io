@@ -2115,7 +2115,7 @@ var floatTimeout;
                         App.Utils.removeClass(opaPage, 'float-show');
                          App.Utils.addClass(opaPage, 'float-show-hide');
                         setTimeout(function(){
-                            opaPage.querySelector('.float-mask').style='display:none';
+                            App.Utils.removeClass(opaPage, 'float-show-hide');
                         },400);
                         //App.Utils.removeClass(this, 'mi-zoomIn');
                         return false;
