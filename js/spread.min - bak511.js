@@ -52,8 +52,12 @@
                     posObj = ev.touches ? ev.touches[0] : ev, 
                     move.y = posObj.clientY || posObj.pageY, 
                     disy = move.y - start.y;
-                    
-                    //else{                                      
+                    if(curDom == null || curDom == 'undefined'){
+                        console.log('curDom null',ev.target.parentNode);
+                        _this.set("prevent", !1);
+                        
+                    }
+                    else{                                      
                         /*curDom = this.querySelector('.secene-sec-current'),
                         evtDom = this,
                         nowSecDom = evtDom.querySelectorAll('.secene-sec'),
@@ -63,13 +67,7 @@
                         if(Math.abs(disy)>20){
                             /* 下滑，上一页._this主线页面this:当前二级页 */
                             if(disy>0){
-                                
-                                if(curDom == null || curDom == 'undefined'){
-                                    console.log('curDom null',ev.target.parentNode);
-                                    _this.set("prevent", !1);
-                                    return false;
-                                }
-                                if(curDom.hasAttribute('data-sec-first')) {_this.set("sec-prevent",!1);return false;}
+                                if(curDom.hasAttribute('data-sec-first')) return false;
                                 if(nowSecIndex > 0){
                                     nextIndex = nowSecIndex-1;
                                     next = nowSecDom[nextIndex];
@@ -86,12 +84,7 @@
                                 }
                             }
                             else{
-                                if(curDom == null || curDom == 'undefined'){
-                                    console.log('curDom null',ev.target.parentNode);
-                                    _this.set("prevent", !1);
-                                    return false;
-                                }
-                                if(curDom.hasAttribute('data-sec-last')) {_this.set("sec-prevent",!1);return false;}                                
+                                if(curDom.hasAttribute('data-sec-last')) return false;
                                 if(nowSecIndex < nowSecLength -1){
                                     nextIndex = nowSecIndex+1;
                                     next = nowSecDom[nextIndex];
@@ -108,7 +101,7 @@
                                 }        
                             }
                         } 
-                   // }
+                    }
                     console.log('lillian move next',next);                    
                 }
                 else{
