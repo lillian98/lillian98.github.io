@@ -2165,7 +2165,8 @@ new PreLoad(tasks, {onload: loading});
                             var nPage = opaPage.querySelector('.current');
                             var nDetailPage = parseInt(nPage.getAttribute('data-index'));
                             for(var i = 0;i<detailDom.length;i++){
-                                App.Utils.removeClass(detailDom[i],'secene-sec-current')
+                                App.Utils.removeClass(detailDom[i],'secene-sec-current');
+                                detailDom[i].setAttribute('style','');
                             }
                             opaPage.querySelector('.current .float-mask').style.zIndex = 20;
                             App.Utils.addClass(opaPage, 'float-show');
