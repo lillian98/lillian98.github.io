@@ -2171,20 +2171,9 @@ new PreLoad(tasks, {onload: loading});
                             App.Utils.addClass(opaPage, 'float-show');
                             App.Utils.addClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show');
                             App.Utils.addClass(detailDom[inDetailPage],'secene-sec-current');
-                            /*if (t1.indexOf('1-') > -1) {
+                            if(fromDetailPage == '1' || fromDetailPage == '4' || fromDetailPage == '5' || fromDetailPage == '2' && inDetailPage == '4' || fromDetailPage == '3' && inDetailPage == '6'){
+                                gTop.style.zIndex = -1;
                             }
-                            else if (t1.indexOf('2-') > -1) {
-                                detailDom[inDetailPage].addClass('secene-sec-current');
-                            }
-                            else if (t1.indexOf('3-') > -1) {
-                                tDom.innerHTML = '<img src="../images/detail/detail3-' + this.getAttribute('data-detail').split('3-')[1] + '.jpg">';
-                            }
-                            else if (t1.indexOf('4-') > -1) {
-                                tDom.innerHTML = '<img src="../images/detail/detail4-' + this.getAttribute('data-detail').split('4-')[1] + '.jpg">';
-                            }
-                            else if (t1.indexOf('5-') > -1) {
-
-                            }*/
                         }, !1);
 
                     }
@@ -2192,6 +2181,9 @@ new PreLoad(tasks, {onload: loading});
                 for (var i = 0; i < floatClose.length; i++) {
                     floatClose[i].addEventListener(evs.touchup, function (ev) {   
                     var that = this;
+                        if(!opaPage.querySelector('.current').hasAttribute('data-last')){
+                            gTop.style.zIndex = 999;
+                        }
                         if(floatHideFlag){
                         }
                         else{
@@ -2199,6 +2191,7 @@ new PreLoad(tasks, {onload: loading});
                          App.Utils.removeClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show');  
                          App.Utils.addClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'),'float-wrap-hide');
                          App.Utils.removeClass(opaPage, 'float-show');
+
                         setTimeout(function(){
                             that.parentNode.style.zIndex = -1;
                             App.Utils.removeClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-hide');
