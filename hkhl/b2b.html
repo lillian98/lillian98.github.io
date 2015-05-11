@@ -1065,14 +1065,15 @@ a {
     .p2-cir2{left:42px;top:475px;width:183px;height:183px;z-index: 11;}
     .p2-cir4{left:464px;top:765px;width:120px;height:120px;z-index: 11;}
     .p2-cir3{left:265px;top:516px;width:262px;height:262px;z-index: 11;}
-    .p2-cir5{left:326px;top:339px;width:50px;height:50px;z-index: 11;}
-    .p2-cir6{left:114px;top:681px;width:38px;height:38px;z-index: 11;transform:translateX(183px);}
-    .p2-cir7{left:255px;top:834px;width:46px;height:46px;z-index: 11;}
+    .p2-cir5{left:239px;top:790px;width:50px;height:50px;z-index: 11;}
+    .p2-cir6{left:217px;top:327px;width:130px;height:130px;z-index: 11;/*transform:translateX(183px);*/}
+    .p2-cir7{left:360px;top:379px;width:46px;height:46px;z-index: 11;}
     .p2-cir8{left:657px;top:790px;width:16px;height:16px;z-index: 11;;}
     .p2-text1{left:517px;top:407px;width:97px;height:94px;z-index:12;}
-    .p2-text2{left:84px;top:502px;width:90px;height:127px;z-index:12;}
+    .p2-text2{left:84px;top:550px;width:90px;height:45px;z-index:12;}
     .p2-text3{left:325px;top:577px;width:138px;height:143px;z-index:12;}
     .p2-text4{left:488px;top:792px;width:72px;height:70px;z-index:12;}
+    .p2-text5{left:244px;top:366px;width:80px;height:40px;z-index:12;}
     .p2-bg{left:90px;top:337px;width:574px;height:515px;}
     .p2-cir{opacity: 0;transition:all .5s linear;}
     .current .p2-cir1{-webkit-animation: slideInLeft21 .3s 0s ease-out both;}
@@ -1148,7 +1149,7 @@ a {
 .p3-text5{left:132px;top:888px;width: 66px;height: 32px;}
 .p3-text6{left:538px;top:888px;width: 66px;height: 32px;}
 .p3-text7{left:343px;top:973px;width: 66px;height: 32px;}
-.scene-3 .p2-cir5{opacity: 0.5；-webkit-transform:translateX(0);}
+.scene-3 .p2-cir5{opacity: 0.5;-webkit-transform:translateX(0);}
 .scene-3 .p2-cir4{opacity: 0.5;-webkit-transform:translateX(0);}
 .scene-3 .p2-cir6{opacity: 0.5;-webkit-transform:translateX(0);}
 .p3-line{left:0;top:314px;width: 655px;height: 666px;}
@@ -1280,7 +1281,7 @@ a {
   .p5-4{left: 206px;top:692px;width: 354px;height: 110px;}
   .href-mail{position: absolute;width: 100%;height: 100%;}
   /* icon */
-  .icon{background-image: url(../images/icon.png);background-repeat: no-repeat;background-size: 960px auto;}
+  .icon{background-image: url(../images/icon1.png);background-repeat: no-repeat;background-size: 960px auto;}
   .icon-3-1{background-position: 0 0;width: 68px;height: 68px;}
   .icon-3-2{background-position: -160px 0;width: 84px;height: 81px;}
   .icon-3-3{background-position: -320px 0;width: 75px;height: 75px;}
@@ -1295,11 +1296,12 @@ a {
   .icon-4-5{background-position: -800px -160px;width: 62px;height: 62px;}
   .icon-4-6{background-position: 0 -320px;width: 50px;height: 64px;}
   /* text */
-  .text{background-image: url(../images/text.png);background-repeat: no-repeat;background-size: 960px auto;}
+  .text{background-image: url(../images/text1.png);background-repeat: no-repeat;background-size: 960px auto;}
   .text-2-1{background-position: 0 0;width: 97px;height: 94px;}
   .text-2-2{background-position: -160px 0;width: 90px;height: 127px;}
   .text-2-3{background-position: -320px 0;width: 138px;height: 143px;}
   .text-2-4{background-position: -640px -320px;width: 72px;height: 70px;}
+  .text-2-5{background-position: -800px -320px;width: 80px;height: 40px;}
   .text-3-1{background-position: -480px 0;width: 67px;height: 31px;}
   .text-3-2{background-position: -640px 0;width: 63px;height: 31px;}
   .text-3-3{background-position: -800px 0;width: 66px;height: 32px;}
@@ -1319,7 +1321,6 @@ a {
   .arrow-hide{display: none;}
 .float-mask{background:rgba(0,0,0,.9);width:100%;height:100%;opacity: 0;transition:opacity .5s;}
 .float-show .current .float-mask{opacity: 1;}
-.float-show{z-index:1000;}
 .float-mask .mc-wrap-detail.float-wrap-show{ -webkit-animation-name: float-s-ani; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out;-webkit-animation-delay:.1s;-webkit-animation-duration:.4s;}
     
     @-webkit-keyframes float-s-ani {
@@ -1341,11 +1342,13 @@ a {
               100%{opacity:0;transform:scale(0.3);-webkit-transform:scale(.3)}
 }
 /* sec */
-.mc-wrap-back{position: absolute;width: 500px;height: 100px;top:0;left: 0;font-size: 8rem;color: #fff;display: none;}
+.mc-wrap-back{position: absolute;bottom:148px;left: 233px;display: none;background-position:-160px -320px;width:273px;height:83px;}
 .float-show .mc-wrap-back{z-index: 31;display: block;}
 .mc-wrap-detail{width: 100%;height: 100%;}
 .secene-sec{position: absolute;top:0;left: 0;height: 100%;width: 100%;overflow: hidden;-webkit-transform-style: preserve-3d;transform-style: preserve-3d;-webkit-backface-visibility: hidden;backface-visibility: hidden;opacity: 0;/*background-color: #fff;*/}
 .secene-sec-current{opacity: 1;z-index: 20;}
+.scene-1 .mc-wrap-detail,.scene-2 .mc-wrap-detail{background-color:#0170cc;}
+.scene-3 .mc-wrap-detail{background-color:#03aa65;}
 </style>
 </head>
 <body>
@@ -1391,11 +1394,9 @@ a {
                 </div> -->
                 <!-- 二级页多个切换 -->
                 <div class="mc-wrap mc-wrap-detail">
-                    <div class="secene-sec secene-1-1 secene-sec-current" data-sec-index="0" data-sec-first="true" data-sec-last="true"><img src="../images/detail/detail1-1.jpg"></div>                    
+                    <div class="secene-sec secene-1-1" data-sec-index="0" data-sec-first="true" data-sec-last="true"><img src="../images/detail/detail1-1.jpg"></div>
                 </div>
-                <div class="mc-wrap mc-wrap-back">
-                    回主页
-                </div>
+                <div class="mc-wrap mc-wrap-back icon"></div>
             </div>
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p1-plane">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -1429,14 +1430,13 @@ a {
         <div class="opa-stage stage" data-index="2" data-id="opa_stage_2">
             <div class="mc mc-image delay_0_0s float-mask">
                 <div class="mc-wrap mc-wrap-detail">
-                    <div class="secene-sec secene-1-1 secene-sec-current" data-sec-index="0" data-sec-first="true"><img src="../images/detail/detail3-5.jpg"></div>
-                    <div class="secene-sec secene-1-2" data-sec-index="1"><img src="../images/detail/detail3-6.jpg"></div>
-                    <div class="secene-sec secene-1-3" data-sec-index="2"><img src="../images/detail/detail3-3.jpg"></div>
-                    <div class="secene-sec secene-1-4" data-sec-index="3" data-sec-last="true"><img src="../images/detail/detail3-4.jpg"></div>
+                    <div class="secene-sec secene-1-1" data-sec-index="0" data-sec-first="true"><img src="../images/detail/detail2-1.jpg"></div>
+                    <div class="secene-sec secene-1-2" data-sec-index="1"><img src="../images/detail/detail2-2.jpg"></div>
+                    <div class="secene-sec secene-1-3" data-sec-index="2"><img src="../images/detail/detail2-3.jpg"></div>
+                    <div class="secene-sec secene-1-4" data-sec-index="3"><img src="../images/detail/detail2-4.jpg"></div>
+                    <div class="secene-sec secene-1-5" data-sec-index="4" data-sec-last="true"><img src="../images/detail/detail2-5.jpg"></div>
                 </div>
-                <div class="mc-wrap mc-wrap-back">
-                    回主页
-                </div>
+                <div class="mc-wrap mc-wrap-back icon"></div>
             </div>
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title" data-type="image" data-anim="mi-zoomIn">
                                         <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -1451,19 +1451,19 @@ a {
             </div>
             <div class="mc mc-image p2-cir2 p-cir" data-detail="detail2-2">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="img-wrap"><img src="../images/cir/cir_blue.png">
+                    <div class="img-wrap"><img src="../images/cir/cir_purple.png">
                     </div>
                 </div>
             </div>
             <div class="mc mc-image p2-cir3 p-cir" data-detail="detail2-3">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="img-wrap"><img src="../images/cir/cir_oriange.png">
+                    <div class="img-wrap"><img src="../images/cir/cir_blue.png">
                     </div>
                 </div>
             </div>
             <div class="mc mc-image p2-cir4 p-cir" data-detail="detail2-4">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="img-wrap"><img src="../images/cir/cir_purple.png">
+                    <div class="img-wrap"><img src="../images/cir/cir_oriange.png">
                     </div>
                 </div>
             </div>
@@ -1473,9 +1473,9 @@ a {
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image p2-cir6 p-cir">
+            <div class="mc mc-image p2-cir6 p-cir" data-detail="detail2-5">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="img-wrap"><img src="../images/cir/cir_green.png">
+                    <div class="img-wrap"><img src="../images/cir/cir_oriyel.png">
                     </div>
                 </div>
             </div>
@@ -1514,6 +1514,12 @@ a {
                     </div>
                 </div>
             </div>
+            <div class="mc mc-image p2-text5 p-text delay_0_3s duration_0_6s mi-zoomIn" data-detail="detail2-5">
+                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                               <div class="text text-2-5">
+                                </div>
+                            </div>
+                        </div>
             <div class="mc mc-image p2-bg p-bg delay_0_0s duration_0_3s mi-zoomIn">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="img-wrap"><img src="../images/bg/p2_bg.png">
@@ -1527,14 +1533,15 @@ a {
         <div class="opa-stage stage" data-index="3" data-id="opa_stage_3" style="background-image: url('../images/p3/p3_bg.jpg'); background-color: rgb(153, 153, 153);">
             <div class="mc mc-image delay_0_0s float-mask">
                 <div class="mc-wrap mc-wrap-detail">
-                    <div class="secene-sec secene-1-1 secene-sec-current" data-sec-index="0" data-sec-first="true"><img src="../images/sec_detail/sec_2_2_1.jpg"></div>
-                    <div class="secene-sec secene-1-2" data-sec-index="1"><img src="../images/sec_detail/sec_2_2_2.jpg"></div>
-                    <div class="secene-sec secene-1-3" data-sec-index="2"><img src="../images/detail/detail3-1.jpg"></div>
-                    <div class="secene-sec secene-1-4" data-sec-index="3" data-sec-last="true"><img src="../images/detail/detail3-2.jpg"></div>
+                    <div class="secene-sec secene-2-1" data-sec-index="0" data-sec-first="true"><img src="../images/detail/detail3-1.jpg"></div>
+                    <div class="secene-sec secene-2-2" data-sec-index="1"><img src="../images/detail/detail3-2.jpg"></div>
+                    <div class="secene-sec secene-2-3" data-sec-index="2"><img src="../images/detail/detail3-3.jpg"></div>
+                    <div class="secene-sec secene-2-4" data-sec-index="3"><img src="../images/detail/detail3-4.jpg"></div>
+                    <div class="secene-sec secene-2-4" data-sec-index="4"><img src="../images/detail/detail3-5.jpg"></div>
+                                        <div class="secene-sec secene-2-5" data-sec-index="5"><img src="../images/detail/detail3-6.jpg"></div>
+                                        <div class="secene-sec secene-2-6" data-sec-index="6" data-sec-last="true"><img src="../images/detail/detail3-7.jpg"></div>
                 </div>
-                <div class="mc-wrap mc-wrap-back">
-                    回主页
-                </div>
+                <div class="mc-wrap mc-wrap-back icon"></div>
             </div>
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title">
                                         <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -1669,7 +1676,7 @@ a {
 <!-- S scene4 -->
 <div class="J_opaPannel pannels scene-4" data-index="3">
         <div class="opa-stage stage" data-index="4" data-id="opa_stage_4" style="background-image: url('../images/p4/p4_bg.jpg'); background-color: rgb(153, 153, 153);">
-            <div class="mc mc-image float-mask"><div class="mc-wrap"><img src="../images/detail/detail2-2.jpg"></div></div>
+           <!-- <div class="mc mc-image float-mask"><div class="mc-wrap"><img src="../images/detail/detail2-2.jpg"></div></div>-->
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title">
                                         <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                             <div class="title"></div>
@@ -1805,11 +1812,9 @@ a {
         <div class="opa-stage stage" data-index="5" data-id="opa_stage_5" style="background-image: url(../images/bg/p5_bg.jpg); background-color: #0050b2 ;">
             <div class="mc mc-image delay_0_0s float-mask">
                 <div class="mc-wrap mc-wrap-detail">
-                    <div class="secene-sec secene-1-1 secene-sec-current" data-sec-index="0" data-sec-first="true" data-sec-last="true"><img src="../images/detail/detail5-1.jpg"></div>
+                    <div class="secene-sec secene-1-1" data-sec-index="0" data-sec-first="true" data-sec-last="true"><img src="../images/detail/detail5-1.jpg"></div>
                 </div>
-                <div class="mc-wrap mc-wrap-back">
-                    回主页
-                </div>
+                <div class="mc-wrap mc-wrap-back icon"></div>
             </div>
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -1923,8 +1928,8 @@ a {
       "../images/bg_full.jpg",
       "../images/arrow_icon.png",
       "../images/title.png",
-      "../images/text.png",
-      "../images/icon.png",
+      "../images/text1.png",
+      "../images/icon1.png",
       "../images/cir/cir_blue_opacity.png",
       "../images/cir/cir_blue.png",
       "../images/cir/cir_green.png",
@@ -2151,28 +2156,25 @@ new PreLoad(tasks, {onload: loading});
                         floatDom[i].addEventListener(evs.touchup, function (ev) {
                             var t1 = this.getAttribute('data-detail');
                             var tDom = this.parentNode.querySelector('.float-mask .mc-wrap-detail');
+                            var detailDom = tDom.querySelectorAll('.secene-sec');
                             var that = this;
                             var fromDetailPage = (/\d+/).exec(t1)[0];
+                            var inDetailPage = (/\d+/).exec(t1.split('-')[1])[0]-1;
+                            console.log('fromDetailPage',fromDetailPage,'inDetailPage',inDetailPage);
                             var floatTimeout;
-
                             var nPage = opaPage.querySelector('.current');
                             var nDetailPage = parseInt(nPage.getAttribute('data-index'));
-                            if(floatTimeout){
-                                clearTimeout(floatTimeout);
+                            for(var i = 0;i<detailDom.length;i++){
+                                App.Utils.removeClass(detailDom[i],'secene-sec-current')
                             }
-                            //floatTimeout = setTimeout(function(){if (nDetailPage == fromDetailPage - 1) {
-                                                            //App.Utils.removeClass(opaPage, 'float-show-hide');
-                                                            opaPage.querySelector('.current .float-mask').style.zIndex = 20;
-                                                            App.Utils.addClass(opaPage, 'float-show');
-                                                            App.Utils.addClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show');
-                                                            //App.Utils.addClass(that.parentNode.querySelector('.float-mask'), 'mi-zoomIn');
-                                                        //}},400);
-
-
+                            opaPage.querySelector('.current .float-mask').style.zIndex = 20;
+                            App.Utils.addClass(opaPage, 'float-show');
+                            App.Utils.addClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show');
+                            App.Utils.addClass(detailDom[inDetailPage],'secene-sec-current');
                             /*if (t1.indexOf('1-') > -1) {
                             }
                             else if (t1.indexOf('2-') > -1) {
-                                tDom.innerHTML = '<img src="../images/detail/detail2-' + this.getAttribute('data-detail').split('2-')[1] + '.jpg">';
+                                detailDom[inDetailPage].addClass('secene-sec-current');
                             }
                             else if (t1.indexOf('3-') > -1) {
                                 tDom.innerHTML = '<img src="../images/detail/detail3-' + this.getAttribute('data-detail').split('3-')[1] + '.jpg">';
@@ -2182,20 +2184,15 @@ new PreLoad(tasks, {onload: loading});
                             }
                             else if (t1.indexOf('5-') > -1) {
 
-                            }       */   
-
-                            
-                            //return false;
+                            }*/
                         }, !1);
 
                     }
                 }                
                 for (var i = 0; i < floatClose.length; i++) {
                     floatClose[i].addEventListener(evs.touchup, function (ev) {   
-                    var that = this;      
-                    console.log('floatHideFlag',floatHideFlag);               
+                    var that = this;
                         if(floatHideFlag){
-
                         }
                         else{
                             floatHideFlag = true;
@@ -2203,14 +2200,11 @@ new PreLoad(tasks, {onload: loading});
                          App.Utils.addClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'),'float-wrap-hide');
                          App.Utils.removeClass(opaPage, 'float-show');
                         setTimeout(function(){
-                            console.log('222')
                             that.parentNode.style.zIndex = -1;
                             App.Utils.removeClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-hide');
                             floatHideFlag = false;
                         },500);
-                        
                         }
-                        
                         //return false;
                     }, false);
                 }
