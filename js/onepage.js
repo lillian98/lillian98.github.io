@@ -1,4 +1,4 @@
-/* 左右滑动 */
+/* 同页面处理 */
 !function (window) {
     function Opa(cfg) {
         var config;
@@ -30,7 +30,7 @@
         }, parsePannel: function () {
             var source, music, scon, _this = this, pn = _this.get("pageNode"), pans = _this.get("pannels"), len = _this.get("count"), animationName = _this.get("prefix") ? _this.get("prefix") + "AnimationName" : "animationName";
             _this.get("guideTop").style[animationName] = "fadeInRight", _this.get("guideTop").className += " mi-fadeInRight", _this.get("guideTop").style.bottom = "20px", _this.get("guideTop").style.backgroundImage = "url(http://img14.360buyimg.com/cms/jfs/t469/88/1194341676/1288/7f287e8b/54b8a9bbN68de03ce.png)", pn.style.position = "absolute", pn.style.left = "50%", pn.style.marginLeft = "-" + _this.get("vw") / 2 + "px";
-            for (var i = 0; len > i; i++)pans[i].setAttribute("data-index", i), pans[i].style.position = "relative", pans[i].style.float = "left", pans[i].style.width = _this.get("vw") + "px", pans[i].style.height = "100%", 0 == i && (Utils.addClass(pans[i], "current"), Utils.addClass(pans[i], "start-animate"));
+            for (var i = 0; len > i; i++)pans[i].setAttribute("data-index", i), pans[i].style.position = "absolute", pans[i].style.top = "0", pans[i].style.left = "0",pans[i].style.width = _this.get("vw") + "px", pans[i].style.height = "100%", 0 == i && (Utils.addClass(pans[i], "current"), Utils.addClass(pans[i], "start-animate"));
             pn.querySelector("#" + _this.get("dragger")) ? (pn.querySelector("#" + _this.get("dragger")).style.width = 100 * len + "%", pn.querySelector("#" + _this.get("dragger")).style.height = "100%") : (source = pn.innerHTML, music = source.replace(/<div\sclass="J_opaPannel(.|\n|\r)*<\/div>/g, ""), scon = source.replace(/<div\sclass="music\-anim"(.|\n|\r)*?(<div\sclass="J_opaPannel)/g, "$2"), pn.innerHTML = music + '<div id="' + _this.get("dragger") + '" class="page-scroller" style="width:' + 100 * len + '%;height: 100%;">' + scon + "</div>"), _this.set("dragger", document.querySelector("#" + _this.get("dragger"))), _this.set("pannels", pn.querySelectorAll("." + _this.get("pannel")))
         }, preload: function (index) {
             var pans = this.get("pannels"), nextIndex = index + 1;
@@ -57,15 +57,37 @@
                 x: 0,
                 y: 0
             }, end = {x: 0, y: 0}, dis = 0, touchStart = function (ev) {
+                console.log('1111111111',_this.get('prevent'))
                 if (_this.get("prevent"))return !1;
                 var evo = ev.touches ? ev.touches[0] : ev;
                 ofs = _this.get("offset"), start = {x: evo.clientX, y: evo.clientY}, dis = 0;
                 var touchMove = function (ev) {
+                    console.log('222222222222',_this.get('prevent'))
+                    if (_this.get("prevent"))return !1;
+                    _this.set("prevent", !0)
                     ev.preventDefault(), evo = ev.touches ? ev.touches[0] : ev, end = {
                         x: evo.clientX,
                         y: evo.clientY
-                    }, dis = end.x - start.x, Math.abs(dis) > 20 && (dragger.style[_this.get("transform")] = "translate3d(" + 100 * -(ofs.left / count - dis / (vw * count)) + "%, 0, 0)")
+                    }, dis = end.x - start.x;
+                    var current = page.querySelector(".current"), index = +current.getAttribute("data-index"), next = _this.getNext(index, dis > 0 ? "up" : "down");
+                    if (Utils.addClass(dragger, "has-transition"), next)if (Math.abs(dis) > 30) {
+                        var nextTop = +next.getAttribute("data-index");
+                        Utils.removeClass(current, "current"), Utils.addClass(next, "current"), _this.set("offset", {
+                            left: nextTop,
+                            top: 0
+                        }), _this.preload(+next.getAttribute("data-index")), setTimeout(function () {
+                            console.log('44444444444444')
+                            _this.set("prevent", !1), _this.get("transEnd").call(_this)
+                        }, 300)
+                    }
+                    setTimeout(function () {
+                        console.log('555555555555555')
+                        _this.set("prevent", !1), Utils.removeClass(dragger, "has-transition")
+                    }, 100)
                 }, touchEnd = function () {
+                   /* console.log('3333333333333',_this.get('prevent'))
+                    if (_this.get("prevent"))return !1;
+                    _this.set("prevent",!0)
                     if (Math.abs(dis) <= 20)return page.removeEventListener(EVENTS.touchmove, touchMove, !1), page.removeEventListener(EVENTS.touchup, touchEnd, !1), !1;
                     var current = page.querySelector(".current"), index = +current.getAttribute("data-index"), next = _this.getNext(index, dis > 0 ? "up" : "down");
                     if (Utils.addClass(dragger, "has-transition"), next)if (Math.abs(dis) > 50) {
@@ -79,7 +101,7 @@
                     } else dragger.style[_this.get("transform")] = "translate3d(" + -(index / count * 100) + "%, 0, 0)"; else dragger.style[_this.get("transform")] = "translate3d(" + -(index / count * 100) + "%, 0, 0)";
                     setTimeout(function () {
                         _this.set("prevent", !1), Utils.removeClass(dragger, "has-transition")
-                    }, 300), page.removeEventListener(EVENTS.touchmove, touchMove, !1), page.removeEventListener(EVENTS.touchup, touchEnd, !1)
+                    }, 300), page.removeEventListener(EVENTS.touchmove, touchMove, !1), page.removeEventListener(EVENTS.touchup, touchEnd, !1)*/
                 };
                 page.addEventListener(EVENTS.touchmove, touchMove, !1), page.addEventListener(EVENTS.touchup, touchEnd, !1)
             };
