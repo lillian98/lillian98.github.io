@@ -1054,6 +1054,7 @@ a {
     height: 76px;
     left: 179px;
     top: 53px;
+    display: none;
 }
     .stage .logo .icon {
         background-image: url(../images/b2c/logo.png);
@@ -1542,39 +1543,7 @@ a {
     var PreLoad=function(a,b){var c=b||{};this.source=a,this.count=0,this.total=a.length,this.onload=c.onload,this.prefix=c.prefix||"",this.init()};PreLoad.prototype.init=function(){var a=this;a.source.forEach(function(b){var c=b.substr(b.lastIndexOf(".")+1).toLowerCase(),d=a.prefix+b;switch(c){case"js":a.script.call(a,d);break;case"css":a.stylesheet.call(a,d);break;case"svg":case"jpg":case"gif":case"png":case"jpeg":a.image.call(a,d)}})},PreLoad.prototype.getProgress=function(){return Math.round(this.count/this.total*100)},PreLoad.prototype.image=function(a){var b=document.createElement("img");this.load(b,a),b.src=a},PreLoad.prototype.stylesheet=function(a){var b=document.createElement("link");this.load(b,a),b.rel="stylesheet",b.type="text/css",b.href=a,document.head.appendChild(b)},PreLoad.prototype.script=function(a){var b=document.createElement("script");this.load(b,a),b.type="text/javascript",b.src=a,document.head.appendChild(b)},PreLoad.prototype.load=function(a,b){var c=this;a.onload=a.onerror=a.onabort=function(a){c.onload&&c.onload({count:++c.count,total:c.total,item:b,type:a.type})}
     };
     var tasks = [
-      "../images/bg_full.jpg",
-      "../images/arrow_icon.png",
-      "../images/title.png",
-      "../images/text1.png",
-      "../images/icon1.png",
-      "../images/cir/cir_blue_opacity.png",
-      "../images/cir/cir_blue.png",
-      "../images/cir/cir_green.png",
-      "../images/cir/cir_greenblue.png",
-      "../images/cir/cir_oriange.png",
-      "../images/cir/cir_oriyel.png",
-      "../images/cir/cir_purple.png",
-      "../images/cir/cir_purpleblue.png",
-      "../images/cir/cir_yellow_50.png",
-      "../images/cir/cir_yellow_litter.png",
-        "../images/detail/detail2-1.jpg",
-                    "../images/detail/detail2-2.jpg",
-                    "../images/detail/detail2-3.jpg",
-                    "../images/detail/detail2-4.jpg"
     ];
-    var tasks1 = [
-            "../images/detail/detail2-1.jpg",
-            "../images/detail/detail2-2.jpg",
-            "../images/detail/detail2-3.jpg",
-            "../images/detail/detail2-4.jpg",
-            "../images/detail/detail3-1.jpg",
-                    "../images/detail/detail3-2.jpg",
-                    "../images/detail/detail3-3.jpg",
-                    "../images/detail/detail3-4.jpg",
-            "../images/detail/detail3-5.jpg",
-                    "../images/detail/detail3-6.jpg",
-                    "../images/detail/detail3-7.jpg"
-        ];
     var progress = document.getElementById('process');
     function loading(load) {
       var count = load.count

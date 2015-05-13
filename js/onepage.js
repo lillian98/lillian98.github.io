@@ -62,46 +62,25 @@
                 var evo = ev.touches ? ev.touches[0] : ev;
                 ofs = _this.get("offset"), start = {x: evo.clientX, y: evo.clientY}, dis = 0;
                 var touchMove = function (ev) {
-                    console.log('222222222222',_this.get('prevent'))
-                    if (_this.get("prevent"))return !1;
-                    _this.set("prevent", !0)
                     ev.preventDefault(), evo = ev.touches ? ev.touches[0] : ev, end = {
                         x: evo.clientX,
                         y: evo.clientY
-                    }, dis = end.x - start.x;
-                    var current = page.querySelector(".current"), index = +current.getAttribute("data-index"), next = _this.getNext(index, dis > 0 ? "up" : "down");
-                    if (Utils.addClass(dragger, "has-transition"), next)if (Math.abs(dis) > 30) {
-                        var nextTop = +next.getAttribute("data-index");
-                        Utils.removeClass(current, "current"), Utils.addClass(next, "current"), _this.set("offset", {
-                            left: nextTop,
-                            top: 0
-                        }), _this.preload(+next.getAttribute("data-index")), setTimeout(function () {
-                            console.log('44444444444444')
-                            _this.set("prevent", !1), _this.get("transEnd").call(_this)
-                        }, 300)
-                    }
-                    setTimeout(function () {
-                        console.log('555555555555555')
-                        _this.set("prevent", !1), Utils.removeClass(dragger, "has-transition")
-                    }, 100)
+                    }, dis = end.x - start.x
                 }, touchEnd = function () {
-                   /* console.log('3333333333333',_this.get('prevent'))
-                    if (_this.get("prevent"))return !1;
-                    _this.set("prevent",!0)
                     if (Math.abs(dis) <= 20)return page.removeEventListener(EVENTS.touchmove, touchMove, !1), page.removeEventListener(EVENTS.touchup, touchEnd, !1), !1;
                     var current = page.querySelector(".current"), index = +current.getAttribute("data-index"), next = _this.getNext(index, dis > 0 ? "up" : "down");
                     if (Utils.addClass(dragger, "has-transition"), next)if (Math.abs(dis) > 50) {
                         var nextTop = +next.getAttribute("data-index");
-                        dragger.style[_this.get("transform")] = "translate3d(" + -(nextTop / count * 100) + "%, 0, 0)", Utils.removeClass(current, "current"), Utils.addClass(next, "current"), _this.set("offset", {
+                        /*dragger.style[_this.get("transform")] = "translate3d(" + -(nextTop / count * 100) + "%, 0, 0)", */Utils.removeClass(current, "current"), Utils.addClass(next, "current")/*, _this.set("offset", {
                             left: nextTop,
                             top: 0
-                        }), _this.preload(+next.getAttribute("data-index")), setTimeout(function () {
+                        })*/, _this.preload(+next.getAttribute("data-index")), setTimeout(function () {
                             _this.set("prevent", !1), _this.get("transEnd").call(_this)
                         }, 300)
-                    } else dragger.style[_this.get("transform")] = "translate3d(" + -(index / count * 100) + "%, 0, 0)"; else dragger.style[_this.get("transform")] = "translate3d(" + -(index / count * 100) + "%, 0, 0)";
+                    } else return false;/*dragger.style[_this.get("transform")] = "translate3d(" + -(index / count * 100) + "%, 0, 0)"*/;
                     setTimeout(function () {
                         _this.set("prevent", !1), Utils.removeClass(dragger, "has-transition")
-                    }, 300), page.removeEventListener(EVENTS.touchmove, touchMove, !1), page.removeEventListener(EVENTS.touchup, touchEnd, !1)*/
+                    }, 300), page.removeEventListener(EVENTS.touchmove, touchMove, !1), page.removeEventListener(EVENTS.touchup, touchEnd, !1)
                 };
                 page.addEventListener(EVENTS.touchmove, touchMove, !1), page.addEventListener(EVENTS.touchup, touchEnd, !1)
             };
