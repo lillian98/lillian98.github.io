@@ -1041,6 +1041,7 @@ a {
 .stage .mc-wrap{
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 .stage .icon{
     background-image: url(../images/b2c/);
@@ -1048,6 +1049,7 @@ a {
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 .stage .logo {
     width: 384px;
@@ -1110,7 +1112,7 @@ a {
     .stage .person{
         width: 196px;
         height: 468px;
-        left: 292px;
+        left: 282px;
         top: 430px;
     }
     .stage .person .icon{
@@ -1231,6 +1233,114 @@ a {
         z-index: 11;
         font-size: 2.5rem;
     }
+
+
+    /* stage in animate */
+    .ani-0 .scene-1.start-animate .chair, .ani-0 .scene-1.start-animate .person{
+        -webkit-animation-name: chairT2L;
+        animation-name:chairT2L;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: .4s;
+        -webkit-animation-delay: .3s;
+    }
+    .ani-0 .scene-1.start-animate .window1{
+        -webkit-animation-name: win1R2L;
+        animation-name:chairT2L;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: .4s;
+    }
+    .ani-0 .scene-1.start-animate .window2{
+        -webkit-animation-name: win1R2L;
+        animation-name:chairT2L;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: .5s;
+        -webkit-animation-delay: .1s;
+    }
+    .ani-0 .scene-1.start-animate .window4{
+        -webkit-animation-name: win3R2L;
+        animation-name:chairT2L;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: .2s;
+        -webkit-animation-delay: .3s;
+    }
+    .ani-0 .scene-1.start-animate .window3{
+        -webkit-animation-name: win4R2L;
+        animation-name:chairT2L;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: .2s;
+        -webkit-animation-delay: .3s;
+    }
+    /* 750,610*/
+    @-webkit-keyframes chairT2L{
+        0%{
+            -webkit-transform: translate(160%,60px) rotate(15deg);
+            opacity: 0;
+        }
+        25%{
+            -webkit-transform: translate(120%,40px) rotate(10deg);
+            opacity: 0.3;
+        }
+        50%{
+            -webkit-transform: translate(80%,20px) rotate(10deg);
+            opacity: .6;
+        }
+        75%{
+            -webkit-transform: translate(40%,10px) rotate(5deg);
+            opacity: .9;
+        }
+        100%{
+            -webkit-transform: translateX(0) translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes win1R2L{
+        0%{
+            -webkit-transform: translate(600px,0px) rotate(5deg);
+            opacity: 0.3;
+        }
+        25%{
+            -webkit-transform: translate(450px,-36px) rotate(3deg);
+            opacity: 0.4;
+        }
+        50%{
+            -webkit-transform: translate(300px,-66px) rotate(0deg);
+            opacity: .6;
+        }
+        75%{
+            -webkit-transform: translate(150px,-40px) rotate(-3deg);
+            opacity: .8;
+        }
+        100%{
+            -webkit-transform: translateX(0) translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes win3R2L{
+        0%{
+            -webkit-transform: translate(100px,10px) rotate(3deg);
+            opacity: .3;
+        }
+        50%{
+            -webkit-transform: translate(50px,5px) rotate(1deg);
+            opacity: .7;
+        }
+        100%{
+            -webkit-transform: translateX(0) translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes win4R2L{
+
+        0%{
+            -webkit-transform: translate(150px,10px) rotate(3deg);
+            opacity: .8;
+        }
+        100%{
+            -webkit-transform: translateX(0) translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+    }
+
 </style>
 </head>
 <body>
@@ -1270,42 +1380,42 @@ a {
             </div>
             <!-- E logo -->
             <!-- S window1 -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn window window1">
+            <div class="mc mc-image delay_0_0s duration_0_8s window window1">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E window1 -->
             <!-- S window2 -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn window window2">
+            <div class="mc mc-image delay_0_0s duration_0_8s window window2">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E window2 -->
             <!-- S window3 -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn window window3">
+            <div class="mc mc-image delay_0_0s duration_0_8s window window3">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E window3 -->
             <!-- S window4 -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn window window4">
+            <div class="mc mc-image delay_0_0s duration_0_8s window window4">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E window4 -->
             <!-- S chair -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn window chair">
+            <div class="mc mc-image delay_0_0s duration_0_8s chair">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E chair -->
             <!-- S person -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn person">
+            <div class="mc mc-image delay_0_0s mi-zoomIn person">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
@@ -1348,6 +1458,7 @@ a {
             <!-- E text -->
         </div>
     </div>
+    <!-- E scene1 -->
     <!-- S scene2 -->
     <div class="J_opaPannel pannels scene-2" data-index="1">
         <div class="opa-stage stage" data-index="1" data-id="opa_stage_2" style="">
@@ -1380,14 +1491,14 @@ a {
             </div>
             <!-- E window4 -->
             <!-- S chair -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn window chair">
+            <div class="mc mc-image delay_0_0s duration_0_8s chair">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E chair -->
             <!-- S chair -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn window chair-lead chair">
+            <div class="mc mc-image delay_0_0s duration_0_8s chair-lead chair">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
@@ -1543,7 +1654,39 @@ a {
     var PreLoad=function(a,b){var c=b||{};this.source=a,this.count=0,this.total=a.length,this.onload=c.onload,this.prefix=c.prefix||"",this.init()};PreLoad.prototype.init=function(){var a=this;a.source.forEach(function(b){var c=b.substr(b.lastIndexOf(".")+1).toLowerCase(),d=a.prefix+b;switch(c){case"js":a.script.call(a,d);break;case"css":a.stylesheet.call(a,d);break;case"svg":case"jpg":case"gif":case"png":case"jpeg":a.image.call(a,d)}})},PreLoad.prototype.getProgress=function(){return Math.round(this.count/this.total*100)},PreLoad.prototype.image=function(a){var b=document.createElement("img");this.load(b,a),b.src=a},PreLoad.prototype.stylesheet=function(a){var b=document.createElement("link");this.load(b,a),b.rel="stylesheet",b.type="text/css",b.href=a,document.head.appendChild(b)},PreLoad.prototype.script=function(a){var b=document.createElement("script");this.load(b,a),b.type="text/javascript",b.src=a,document.head.appendChild(b)},PreLoad.prototype.load=function(a,b){var c=this;a.onload=a.onerror=a.onabort=function(a){c.onload&&c.onload({count:++c.count,total:c.total,item:b,type:a.type})}
     };
     var tasks = [
+      "../images/bg_full.jpg",
+      "../images/arrow_icon.png",
+      "../images/title.png",
+      "../images/text1.png",
+      "../images/icon1.png",
+      "../images/cir/cir_blue_opacity.png",
+      "../images/cir/cir_blue.png",
+      "../images/cir/cir_green.png",
+      "../images/cir/cir_greenblue.png",
+      "../images/cir/cir_oriange.png",
+      "../images/cir/cir_oriyel.png",
+      "../images/cir/cir_purple.png",
+      "../images/cir/cir_purpleblue.png",
+      "../images/cir/cir_yellow_50.png",
+      "../images/cir/cir_yellow_litter.png",
+        "../images/detail/detail2-1.jpg",
+                    "../images/detail/detail2-2.jpg",
+                    "../images/detail/detail2-3.jpg",
+                    "../images/detail/detail2-4.jpg"
     ];
+    var tasks1 = [
+            "../images/detail/detail2-1.jpg",
+            "../images/detail/detail2-2.jpg",
+            "../images/detail/detail2-3.jpg",
+            "../images/detail/detail2-4.jpg",
+            "../images/detail/detail3-1.jpg",
+                    "../images/detail/detail3-2.jpg",
+                    "../images/detail/detail3-3.jpg",
+                    "../images/detail/detail3-4.jpg",
+            "../images/detail/detail3-5.jpg",
+                    "../images/detail/detail3-6.jpg",
+                    "../images/detail/detail3-7.jpg"
+        ];
     var progress = document.getElementById('process');
     function loading(load) {
       var count = load.count
