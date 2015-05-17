@@ -1056,7 +1056,6 @@ a {
     height: 76px;
     left: 179px;
     top: 53px;
-    display: none;
 }
     .stage .logo .icon {
         background-image: url(../images/b2c/logo.png);
@@ -1150,7 +1149,7 @@ a {
         font-size: 4rem;
     }
 .stage .text .mc-wrap{
-    width: 100%;
+    height: auto;
 }
     .stage .text em{
         font-style: normal;
@@ -1236,12 +1235,12 @@ a {
 
 
     /* stage in animate */
-    .ani-0 .scene-1.start-animate .chair, .ani-0 .scene-1.start-animate .person{
-        -webkit-animation-name: chairT2L;
+    .ani-0 .scene-1.start-animate .chair, .ani-0 .scene-1.start-animate .person,.ani-0 .scene-1.start-animate .msg-wrap,.ani-0 .scene-1.start-animate .msg-wrap-small{
+        -webkit-animation-name: chairT2D;
         animation-name:chairT2L;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-duration: .4s;
-        -webkit-animation-delay: .3s;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: .2s;
+        -webkit-animation-delay: .5s;
     }
     .ani-0 .scene-1.start-animate .window1{
         -webkit-animation-name: win1R2L;
@@ -1253,7 +1252,7 @@ a {
         -webkit-animation-name: win1R2L;
         animation-name:chairT2L;
         -webkit-animation-timing-function: linear;
-        -webkit-animation-duration: .5s;
+        -webkit-animation-duration: .4s;
         -webkit-animation-delay: .1s;
     }
     .ani-0 .scene-1.start-animate .window4{
@@ -1270,7 +1269,55 @@ a {
         -webkit-animation-duration: .2s;
         -webkit-animation-delay: .3s;
     }
-    /* 750,610*/
+    .ani-0 .scene-1.start-animate .text{
+        -webkit-animation-name: bottomtext;
+        animation-name:bottomtext;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: .3s;
+        -webkit-animation-delay: 1.0s;
+    }
+    .ani-0 .scene-1.start-animate .text em{
+        -webkit-animation-name: bottomem;
+        animation-name:bottomem;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: .3s;
+        -webkit-animation-delay: 1.8s;
+    }
+    @-webkit-keyframes chairT2D{
+        0%{
+            -webkit-transform: translate(0,-560px);
+            opacity: 0;
+        }
+        100%{
+            -webkit-transform: translateX(0) translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes bottomtext{
+        0%{
+            -webkit-transform: translate(-50px,0);
+            opacity: 0;
+        }
+        60%{
+            -webkit-transform: translate(450px,0);
+            opacity: 0.7;
+        }
+        100%{
+            -webkit-transform: translateX(0) translateY(0);
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes bottomem {
+        0%{
+            -webkit-transform: rotate(-5deg);
+        }
+        50%{
+            -webkit-transform: rotate(5deg);
+        }
+        100%{
+            -webkit-transform: rotate(0);
+        }
+    }
     @-webkit-keyframes chairT2L{
         0%{
             -webkit-transform: translate(160%,60px) rotate(15deg);
@@ -1296,7 +1343,7 @@ a {
     @-webkit-keyframes win1R2L{
         0%{
             -webkit-transform: translate(600px,0px) rotate(5deg);
-            opacity: 0.3;
+            opacity: 0;
         }
         25%{
             -webkit-transform: translate(450px,-36px) rotate(3deg);
@@ -1318,7 +1365,7 @@ a {
     @-webkit-keyframes win3R2L{
         0%{
             -webkit-transform: translate(100px,10px) rotate(3deg);
-            opacity: .3;
+            opacity: 0;
         }
         50%{
             -webkit-transform: translate(50px,5px) rotate(1deg);
@@ -1340,7 +1387,115 @@ a {
             opacity: 1;
         }
     }
-
+/* ani-1 */
+    /* stage0 out animate*/
+    .ani-1 .scene-2.start-animate .window1,.ani-1 .scene-2.start-animate .logo{
+        opacity: 1;
+    }
+    .ani-1 .scene-2.start-animate  .window2{
+        opacity: 1;
+    }
+    .ani-1 .scene-2.current .window4{
+        -webkit-animation-name: win4L2R;
+        animation-name:win4L2R;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: .4s;
+        -webkit-animation-delay: .5s;
+    }
+    .ani-1 .scene-2.current .window3{
+        -webkit-animation-name: win3L2R;
+        animation-name:win3L2R;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: .2s;
+        -webkit-animation-delay: .5s;
+    }
+    .ani-1 .scene-2.current .text{
+        -webkit-animation-name: bottomtext;
+        animation-name:bottomtext;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: .2s;
+        -webkit-animation-delay: 1s;
+    }
+    .ani-1 .scene-2.start-animate .chair, .ani-1 .scene-2.start-animate .person,.ani-1 .scene-2.start-animate .msg-wrap,.ani-1 .scene-2.start-animate .msg-wrap-small{
+        -webkit-animation-name: chairL2R;
+        animation-name:chairL2R;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: .2s;
+        -webkit-animation-delay: .3s;
+    }
+    .ani-1 .scene-2.start-animate .person-lead, .ani-1 .scene-2.start-animate .chair-lead{
+        -webkit-animation-name: chairL2RIn;
+        animation-name:chairL2RIn;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: .2s;
+        -webkit-animation-delay: .3s;
+    }
+    .ani-1 .scene-2.start-animate .text em{
+        -webkit-animation-name: textZoomIn;
+        animation-name:textZoomIn;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: .2s;
+        -webkit-animation-delay: 1.3s;
+    }
+    @-webkit-keyframes win4L2R {
+        0%{
+            -webkit-transform: translate(-185px,0) rotate(0);
+            opacity: 1;
+        }
+        50%{
+            -webkit-transform: translate(-50px,0) scale(0.99);
+            opacity: 1;
+        }
+        100%{
+            -webkit-transform: translate(0,0) scale(0.97);
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes win3L2R {
+        0%{
+            -webkit-transform: translate(0,0) rotate(0);
+            opacity: 1;
+        }
+        /*50%{
+            -webkit-transform: translate(50px,5px) rotate(1deg);
+            opacity: .7;
+        }*/
+        100%{
+            -webkit-transform: translate(150px,10px) rotate(3deg);
+            opacity: 0;
+        }
+    }
+    @-webkit-keyframes chairL2R {
+        0%{
+            -webkit-transform: translate(-248px,0) rotate(0);
+            opacity: 1;
+        }
+        100%{
+            -webkit-transform: translate(0,0) rotate(0);
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes chairL2RIn {
+        0%{
+            -webkit-transform: translate(-248px,0) rotate(0);
+            opacity: 0;
+        }
+        100%{
+            -webkit-transform: translate(0,0) rotate(0);
+            opacity: 1;
+        }
+    }
+    /*@-webkit-keyframes textZoomIn {
+        0%{
+            -webkit-transform: scale(1);
+        }
+        50%{
+            -webkit-transform: scale(1.5);
+        }
+        100%{
+            -webkit-transform: scale(1);
+        }
+     }*/
 </style>
 </head>
 <body>
@@ -1463,28 +1618,35 @@ a {
     <div class="J_opaPannel pannels scene-2" data-index="1">
         <div class="opa-stage stage" data-index="1" data-id="opa_stage_2" style="">
             <!-- S logo -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
+            <div class="mc mc-image logo">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E logo -->
             <!-- S window1 -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn window window1">
+            <div class="mc mc-image window window1">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E window1 -->
             <!-- S window2 -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn window window2">
+            <div class="mc mc-image window window2">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E window2 -->
+            <!-- S window3 -->
+            <div class="mc mc-image delay_0_0s duration_0_8s window window3">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E window3 -->
             <!-- S window4 -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn window window4">
+            <div class="mc mc-image delay_0_0s duration_0_8s window window4">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
@@ -1505,49 +1667,49 @@ a {
             </div>
             <!-- E chair -->
             <!-- S person -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn person">
+            <div class="mc mc-image delay_0_0s duration_0_8s person">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E person -->
             <!-- S person -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn person-lead">
+            <div class="mc mc-image delay_0_0s duration_0_8s person-lead">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E person -->
             <!-- S phone -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn phone">
+            <div class="mc mc-image delay_0_0s duration_0_8s phone">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E phone -->
             <!-- S msg wrap -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn msg-wrap">
+            <div class="mc mc-image delay_0_0s duration_0_8s msg-wrap">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E msg wrap -->
             <!-- S msg wrap small -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn msg-wrap msg-wrap-small">
+            <div class="mc mc-image delay_0_0s duration_0_8s msg-wrap msg-wrap-small">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E msg wrap small -->
             <!-- S signal -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn signal">
+            <div class="mc mc-image delay_0_0s duration_0_8s signal">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E signal -->
             <!-- S text -->
-            <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
+            <div class="mc mc-text delay_0_0s duration_0_8s text">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="">使用<em>航空互联</em>终端</div>
                 </div>
@@ -1597,6 +1759,96 @@ a {
         </div>
     </div>
     <!-- E scene3-->
+    <!-- S scene4 -->
+    <div class="J_opaPannel pannels scene-1" data-index="0" data-first="true">
+        <div class="opa-stage stage" data-index="0" data-id="opa_stage_1" style="">
+            <!-- S logo -->
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E logo -->
+            <!-- S window1 -->
+            <div class="mc mc-image delay_0_0s duration_0_8s window window1">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E window1 -->
+            <!-- S window2 -->
+            <div class="mc mc-image delay_0_0s duration_0_8s window window2">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E window2 -->
+            <!-- S window3 -->
+            <div class="mc mc-image delay_0_0s duration_0_8s window window3">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E window3 -->
+            <!-- S window4 -->
+            <div class="mc mc-image delay_0_0s duration_0_8s window window4">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E window4 -->
+            <!-- S chair -->
+            <div class="mc mc-image delay_0_0s duration_0_8s chair">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E chair -->
+            <!-- S person -->
+            <div class="mc mc-image delay_0_0s person-lead">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E person -->
+            <!-- S phone -->
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn phone">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E phone -->
+            <!-- S msg wrap -->
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn msg-wrap">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E msg wrap -->
+            <!-- S msg wrap small -->
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn msg-wrap msg-wrap-small">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E msg wrap small -->
+            <!-- S signal -->
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn signal">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E signal -->
+            <!-- S text -->
+            <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="">地空联网无障碍</div>
+                </div>
+            </div>
+            <!-- E text -->
+        </div>
+    </div>
+    <!-- E scene4 -->
 </div>
 <a href="javascript:void(0);" class="u-guideTop mi-fadeInRight" id="J_GuideTop"></a>
 <script src="../js/app.utils.min.js"></script>
@@ -1705,6 +1957,7 @@ a {
 
     function complete() {
       loadOk();
+        App.Utils.addClass(document.getElementById("J_opaPage"),'ani-0')
     }
     function loading1(load) {
             }

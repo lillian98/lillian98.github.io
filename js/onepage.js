@@ -57,7 +57,6 @@
                 x: 0,
                 y: 0
             }, end = {x: 0, y: 0}, dis = 0, touchStart = function (ev) {
-                console.log('1111111111',_this.get('prevent'))
                 if (_this.get("prevent"))return !1;
                 var evo = ev.touches ? ev.touches[0] : ev;
                 ofs = _this.get("offset"), start = {x: evo.clientX, y: evo.clientY}, dis = 0;
@@ -71,7 +70,7 @@
                     var current = page.querySelector(".current"), index = +current.getAttribute("data-index"), next = _this.getNext(index, dis > 0 ? "up" : "down");
                     if (Utils.addClass(dragger, "has-transition"), next)if (Math.abs(dis) > 50) {
                         var nextTop = +next.getAttribute("data-index");
-                        /*dragger.style[_this.get("transform")] = "translate3d(" + -(nextTop / count * 100) + "%, 0, 0)", */Utils.removeClass(current, "current"), Utils.addClass(next, "current")/*, _this.set("offset", {
+                        /*dragger.style[_this.get("transform")] = "translate3d(" + -(nextTop / count * 100) + "%, 0, 0)", */Utils.removeClass(current, "current"), Utils.addClass(next, "current"),Utils.addClass(_this.get("pageNode"),'ani-'+nextTop)/*, _this.set("offset", {
                             left: nextTop,
                             top: 0
                         })*/, _this.preload(+next.getAttribute("data-index")), setTimeout(function () {
