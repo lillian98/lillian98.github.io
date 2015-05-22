@@ -1,0 +1,103 @@
+<div class="threePriceStart" module-function="goodsFollow,goodsShare" module-param="{}"  data-s="0.059">
+    <ul class="cf">
+        #foreach($!goods in $!goodsRecList)
+        <li data-sku="$!goods.goodsId" class='item'>
+            <div class="jItem">
+                <div class="jPic">
+                    <a target="_blank" href="$!jshopProduct.getBuyUrl($!goods.goodsId)"><img width="160" height="160" alt="$!goods.wname" src="$!jshopCommon.getImage($!goods.imageurl,1)" /><span class="icon-over"></span></a>
+                </div>
+                <div class="jGoodsInfo">
+                    <div title="$!goods.wname" class="jDesc">
+                        <a target="_blank" href="$!jshopProduct.getBuyUrl($!goods.goodsId)">$!goods.wname</a>
+                    </div>
+                    <div class="goodsInStock">
+                        <div class="goodsStockPro" data-pro="30"><i class="goodStockPro-before icon"></i><i class="goodStockPro-after icon"></i></div>
+                    </div>
+                    #if($!goods.promTag && $!goods.promTag!="" && $!goods.promTag.split('-').size() == 5)
+                    <div class="goodStockText" data-sale="$!goods.promTag.split('-').get(4)">
+                        <em>总库存$!goods.promTag.split('-').get(3)</em> 手慢无！
+                    </div>
+                    #end
+
+                    <div class="jPrice">
+                        #if($!goods.promTag && $!goods.promTag!="" && $!goods.promTag.split('-').size() == 5)
+                        <div class="jThreePrice">
+                            <ul class="cf">
+                                <li class="jPrice-1">
+                                    <div class="jPrice-no">?$!goods.promTag.split('-').get(0)<i class="icon"></i>
+                                    </div>
+                                    <div class="jPrice-desc">秒抢价</div>
+                                </li>
+                                <li class="jPrice-2">
+                                    <div class="jPrice-no">?$!goods.promTag.split('-').get(1)<i class="icon"></i>
+                                    </div>
+                                    <div class="jPrice-desc">快抢价</div>
+                                </li>
+                                <li class="jPrice-3">
+                                    <div class="jPrice-no">?$!goods.promTag.split('-').get(2)</div>
+                                    <div class="jPrice-desc">原价</div>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="jCurPrice">
+
+                            <span class="jCurPrice-desc">京东价<em>?</em></span><em class="jdNum"><span class="jdNumNo">$!jshopPrice.getJdPrice($!goods.goodsId)</span></em>
+                        </div>
+                        #end
+                    </div>
+                    <div class="jBuy">
+                        <a title="立即抢购" target="_blank" href="$!jshopProduct.getBuyUrl($!goods.goodsId)">立即抢购</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        #end
+    </ul>
+</div>
+<script>
+    (function(){
+        var animateObj = $('.threePriceStart .goodsStockPro');
+        var animateSale = [];
+        var staticSpeed = $('.threePriceStart').attr('data-s');
+        var nowTime = new Date().getMinutes();
+        var remainTime = (60-nowTime) * 60;
+        var saleWidth = parseInt(nowTime*60*staticSpeed);
+        $('.threePriceStart .goodStockText').each(function(index,k){
+            animateSale.push($(k).attr('data-sale'));
+        });
+        $(animateObj).each(function(i,k){
+            var that = k;
+            var thatI = i;
+            var remainWidth = 215 - saleWidth*animateSale[i]/10;
+            var endWidth = parseInt(215*(1-animateSale[i]/10));
+            $(that).css('width',remainWidth).animate({'width':endWidth},remainTime*1000);
+        });
+        function threePriceOver() {
+            $('.threePriceStart .jItem').each(function (i, k) {
+                var that = k;
+                var tCurDom = $(that).find('.jdNum .jdNumNo .jdNum').html();
+                var oldDom = $(that).find('.jPrice-3 .jPrice-no').html();
+                if (tCurDom != '' && tCurDom != ' ' && oldDom != '' && oldDom != ' ') {
+                    var tCurPrice = (/\d+/).exec(tCurDom)[0];
+                    var oldPrice = (/\d+/).exec(oldDom)[0];
+                    if (tCurPrice >= oldPrice) {
+                        $(that).addClass('threePriceStartMiaoE');
+                    }
+                }
+            })
+        }
+        var goInterval = setInterval(function(){
+            hasPrice();
+        },500);
+        function hasPrice(){
+            var tCurDom = $('.jdNum .jdNumNo .jdNum').eq(0).html();
+            var oldDom = $('.jPrice-3 .jPrice-no').eq(0).html();
+            if (tCurDom != '' && tCurDom != ' ' && oldDom != '' && oldDom != ' ') {
+                clearInterval(goInterval);
+                threePriceOver();
+            }
+        }
+
+    })()
+</script>
