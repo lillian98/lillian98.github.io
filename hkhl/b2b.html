@@ -1349,6 +1349,33 @@ a {
 .secene-sec-current{opacity: 1;z-index: 20;}
 .scene-1 .mc-wrap-detail,.scene-2 .mc-wrap-detail{background-color:#0170cc;}
 .scene-3 .mc-wrap-detail{background-color:#03aa65;}
+    /* p-cir-imp */
+    .scene-2.current .p-cir-imp,.scene-3.current .p-cir-imp{-webkit-animation-name: imp-2; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out;-webkit-animation-delay:.5s;-webkit-animation-duration:1s;-webkit-animation-iteration-count: infinite;}
+    @-webkit-keyframes imp-2 {
+        0%{-webkit-transform:translateX(0) translateY(0) scale(1);opacity: 1}
+        50%{-webkit-transform:translateX(0) translateY(0) scale(1.1);opacity: 1}
+        100%{-webkit-transform:translateX(0) translateY(0) scale(1);opacity: 1}
+    }
+    @keyframes imp-2 {
+        0%{transform:translateX(0) translateY(0) scale(1);opacity: 1}
+        50%{transform:translateX(0) translateY(0) scale(1.1);opacity: 1}
+        100%{transform:translateX(0) translateY(0) scale(1);opacity: 1}
+    }
+    .scene-1.current .p-cir-imp{-webkit-animation-name: imp-1; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out;-webkit-animation-delay:.5s;-webkit-animation-duration:2.5s;-webkit-animation-iteration-count: infinite;}
+    @-webkit-keyframes imp-1 {
+        0%{-webkit-transform:rotate(0deg) scale(1);opacity: 1}
+        25%{-webkit-transform:translateY(2px) rotate(1deg) scale(1);opacity: 1}
+        50%{-webkit-transform:rotate(0deg) scale(1);opacity: 1}
+        75%{-webkit-transform:translateY(-2px) rotate(-1deg) scale(1);opacity: 1}
+        100%{-webkit-transform:rotate(0deg) scale(1);opacity: 1}
+    }
+    @keyframes imp-1 {
+        0%{transform:rotate(0deg) scale(1);opacity: 1}
+        25%{transform:translateY(2px) rotate(1deg) scale(1);opacity: 1}
+        50%{transform:rotate(0deg) scale(1);opacity: 1}
+        75%{transform:translateY(-2px) rotate(-1deg) scale(1);opacity: 1}
+        100%{transform:rotate(0deg) scale(1);opacity: 1}
+    }
 </style>
 </head>
 <body>
@@ -1377,7 +1404,7 @@ a {
 </div>
 <!-- custom content -->
 <div id="J_opaPage" class="page">
-    <div class="J_opaPannel pannels scene-1 current start-animate" data-index="0" data-first="true">
+    <div class="J_opaPannel pannels scene-1" data-index="0" data-first="true">
         <div class="opa-stage stage" data-index="1" data-id="opa_stage_1" style="background-image: url(../images/bg_full.jpg); background-color: #0050b2 ;">
             <div class="mc mc-image delay_0_0s float-mask">
                 
@@ -1417,7 +1444,7 @@ a {
                                 <div class="img-wrap"><div class="img-1-slogan title"></div></div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p1-about" data-detail="detail1-1">
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn p1-about p-cir" data-detail="detail1-1">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
 
                                 <div class="img-wrap"><div class="img-1-about title"></div></div>
@@ -1430,9 +1457,9 @@ a {
         <div class="opa-stage stage" data-index="2" data-id="opa_stage_2">
             <div class="mc mc-image delay_0_0s float-mask">
                 <div class="mc-wrap mc-wrap-detail">
-                    <div class="secene-sec secene-1-1" data-sec-index="0" data-sec-first="true"><img src="../images/detail/detail2-1.jpg"></div>
+                    <div class="secene-sec secene-1-1" data-sec-index="0" data-sec-first="true"><img src="../images/detail/detail2-3.jpg"></div>
                     <div class="secene-sec secene-1-2" data-sec-index="1"><img src="../images/detail/detail2-2.jpg"></div>
-                    <div class="secene-sec secene-1-3" data-sec-index="2"><img src="../images/detail/detail2-3.jpg"></div>
+                    <div class="secene-sec secene-1-3" data-sec-index="2"><img src="../images/detail/detail2-1.jpg"></div>
                     <div class="secene-sec secene-1-4" data-sec-index="3"><img src="../images/detail/detail2-4.jpg"></div>
                     <div class="secene-sec secene-1-5" data-sec-index="4" data-sec-last="true"><img src="../images/detail/detail2-5.jpg"></div>
                 </div>
@@ -1443,21 +1470,22 @@ a {
                                             <div class="title"></div>
                                         </div>
                                     </div>
-            <div class="mc mc-image p2-cir1 p-cir" data-detail="detail2-1">
+            <div class="mc mc-image p2-cir3 p-cir" data-detail="detail2-1">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="img-wrap"><img src="../images/cir/cir_green.png">
+                    <div class="img-wrap"><img src="../images/cir/cir_blue.png">
                     </div>
                 </div>
             </div>
+
             <div class="mc mc-image p2-cir2 p-cir" data-detail="detail2-2">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="img-wrap"><img src="../images/cir/cir_purple.png">
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image p2-cir3 p-cir" data-detail="detail2-3">
+            <div class="mc mc-image p2-cir1 p-cir" data-detail="detail2-3">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="img-wrap"><img src="../images/cir/cir_blue.png">
+                    <div class="img-wrap"><img src="../images/cir/cir_green.png">
                     </div>
                 </div>
             </div>
@@ -1491,21 +1519,22 @@ a {
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image p2-text1 p-text delay_0_3s duration_0_6s mi-fadeIn" data-detail="detail2-1">
+            <div class="mc mc-image p2-text3 p-text delay_0_3s duration_0_6s mi-fadeIn" data-detail="detail2-1">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="text text-2-1"></div>
+                    <div class="text text-2-3">
+                    </div>
                 </div>
             </div>
+
             <div class="mc mc-image p2-text2 p-text delay_0_3s duration_0_6s mi-fadeIn" data-detail="detail2-2">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                    <div class="text text-2-2">
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image p2-text3 p-text delay_0_3s duration_0_6s mi-fadeIn" data-detail="detail2-3">
+            <div class="mc mc-image p2-text1 p-text delay_0_3s duration_0_6s mi-fadeIn" data-detail="detail2-3">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="text text-2-3">
-                    </div>
+                    <div class="text text-2-1"></div>
                 </div>
             </div>
             <div class="mc mc-image p2-text4 p-text delay_0_3s duration_0_6s mi-zoomIn" data-detail="detail2-4">
@@ -1533,12 +1562,12 @@ a {
         <div class="opa-stage stage" data-index="3" data-id="opa_stage_3" style="background-image: url('../images/p3/p3_bg.jpg'); background-color: rgb(153, 153, 153);">
             <div class="mc mc-image delay_0_0s float-mask">
                 <div class="mc-wrap mc-wrap-detail">
-                    <div class="secene-sec secene-2-1" data-sec-index="0" data-sec-first="true"><img src="../images/detail/detail3-1.jpg"></div>
-                    <div class="secene-sec secene-2-2" data-sec-index="1"><img src="../images/detail/detail3-2.jpg"></div>
-                    <div class="secene-sec secene-2-3" data-sec-index="2"><img src="../images/detail/detail3-3.jpg"></div>
-                    <div class="secene-sec secene-2-4" data-sec-index="3"><img src="../images/detail/detail3-4.jpg"></div>
-                    <div class="secene-sec secene-2-4" data-sec-index="4"><img src="../images/detail/detail3-5.jpg"></div>
-                                        <div class="secene-sec secene-2-5" data-sec-index="5"><img src="../images/detail/detail3-6.jpg"></div>
+                    <div class="secene-sec secene-2-1" data-sec-index="0" data-sec-first="true"><img src="../images/detail/detail3-4.jpg"></div>
+                    <div class="secene-sec secene-2-2" data-sec-index="1"><img src="../images/detail/detail3-6.jpg"></div>
+                    <div class="secene-sec secene-2-3" data-sec-index="2"><img src="../images/detail/detail3-5.jpg"></div>
+                    <div class="secene-sec secene-2-4" data-sec-index="3"><img src="../images/detail/detail3-1.jpg"></div>
+                    <div class="secene-sec secene-2-4" data-sec-index="4"><img src="../images/detail/detail3-3.jpg"></div>
+                                        <div class="secene-sec secene-2-5" data-sec-index="5"><img src="../images/detail/detail3-2.jpg"></div>
                                         <div class="secene-sec secene-2-6" data-sec-index="6" data-sec-last="true"><img src="../images/detail/detail3-7.jpg"></div>
                 </div>
                 <div class="mc-wrap mc-wrap-back icon"></div>
@@ -1548,39 +1577,40 @@ a {
                                             <div class="title"></div>
                                         </div>
                                     </div>
-            <div class="mc mc-image p3-cir1 p-cir" data-detail="detail3-1">
+            <div class="mc mc-image p3-cir4 p-cir" data-detail="detail3-1">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+
+                    <div class="img-wrap"><img src="../images/cir/cir_green.png">
+                    </div>
+                </div>
+            </div>
+            <div class="mc mc-image p3-cir1 p-cir" data-detail="detail3-4">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="img-wrap"><img src="../images/cir/cir_purple.png">
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image p3-cir2 p-cir"data-detail="detail3-2">
+            <div class="mc mc-image p3-cir2 p-cir"data-detail="detail3-6">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <div class="img-wrap"><img src="../images/cir/cir_yellow_litter.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image p3-cir3 p-cir" data-detail="detail3-3">
+            <div class="mc mc-image p3-cir3 p-cir" data-detail="detail3-5">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <div class="img-wrap"><img src="../images/cir/cir_blue.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image p3-cir4 p-cir" data-detail="detail3-4">
-                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
 
-                                <div class="img-wrap"><img src="../images/cir/cir_green.png">
-                                </div>
-                            </div>
-                        </div>
-            <div class="mc mc-image p3-cir5 p-cir" data-detail="detail3-5">
+            <div class="mc mc-image p3-cir5 p-cir" data-detail="detail3-3">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
 
                                 <div class="img-wrap"><img src="../images/cir/cir_greenblue.png">
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image p3-cir6 p-cir" data-detail="detail3-6">
+            <div class="mc mc-image p3-cir6 p-cir" data-detail="detail3-2">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
 
                                 <div class="img-wrap"><img src="../images/cir/cir_oriange.png">
@@ -1594,32 +1624,33 @@ a {
                                 </div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon1 p-icon" data-detail="detail3-1">
+            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon4 p-icon" data-detail="detail3-1">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon icon-3-4"></div>
+                </div>
+            </div>
+            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon1 p-icon" data-detail="detail3-4">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon icon-3-1"></div>
                 </div>
             </div>
-            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon2 p-icon" data-detail="detail3-2">
+            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon2 p-icon" data-detail="detail3-6">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <div class="icon icon-3-2"></div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon3 p-icon" data-detail="detail3-3">
+            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon3 p-icon" data-detail="detail3-5">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <div class="icon icon-3-3"></div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon4 p-icon" data-detail="detail3-4">
-                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <div class="icon icon-3-4"></div>
-                            </div>
-                        </div>
-            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon5 p-icon" data-detail="detail3-5">
+
+            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon5 p-icon" data-detail="detail3-3">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <div class="icon icon-3-5"></div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon6 p-icon" data-detail="detail3-6">
+            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-icon6 p-icon" data-detail="detail3-2">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <div class="icon icon-3-6"></div>
                             </div>
@@ -1629,32 +1660,33 @@ a {
                                 <div class="icon icon-3-7"></div>
                             </div>
                         </div>
-                        <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text1 p-text" data-detail="detail3-1">
+            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text4 p-text" data-detail="detail3-1">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="text text-3-4"></div>
+                </div>
+            </div>
+                        <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text1 p-text" data-detail="detail3-4">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="text text-3-1"></div>
                 </div>
             </div>
-            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text2 p-text" data-detail="detail3-2">
+            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text2 p-text" data-detail="detail3-6">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <div class="text text-3-2"></div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text3 p-text" data-detail="detail3-3">
+            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text3 p-text" data-detail="detail3-5">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <div class="text text-3-3"></div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text4 p-text" data-detail="detail3-4">
-                            <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                                <div class="text text-3-4"></div>
-                            </div>
-                        </div>
-            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text5 p-text" data-detail="detail3-5">
+
+            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text5 p-text" data-detail="detail3-3">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <div class="text text-3-5"></div>
                             </div>
                         </div>
-            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text6 p-text" data-detail="detail3-6">
+            <div class="mc mc-image delay_0_5s duration_0_4s mi-zoomIn p3-text6 p-text" data-detail="detail3-2">
                             <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                 <div class="text text-3-6"></div>
                             </div>
@@ -2010,6 +2042,13 @@ new PreLoad(tasks, {onload: loading});
             App.Utils.removeClass(loader, "active");
             loader.style.zIndex = "0";
             loader.style.visibility = "hidden";
+            App.Utils.removeClass(document.querySelector('.scene-1'),'start-animate');
+            setTimeout(function(){
+                App.Utils.addClass(document.querySelector('.scene-1'),'start-animate');
+            },10)
+            setTimeout(function(){
+                App.Utils.addClass(document.querySelector('.scene-1 .p-cir'),'p-cir-imp');
+            },1000)
         }
     }
 
@@ -2168,9 +2207,7 @@ new PreLoad(tasks, {onload: loading});
                                 App.Utils.addClass(opaPage, 'float-show');
                                 App.Utils.addClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show');
                                 App.Utils.addClass(detailDom[inDetailPage], 'secene-sec-current');
-                                if (fromDetailPage == '1' || fromDetailPage == '4' || fromDetailPage == '5' || fromDetailPage == '2' && inDetailPage == '4' || fromDetailPage == '3' && inDetailPage == '6') {
-                                    gTop.style.zIndex = -1;
-                                }
+
                             },300);
                         }, !1);
 
@@ -2179,9 +2216,7 @@ new PreLoad(tasks, {onload: loading});
                 for (var i = 0; i < floatClose.length; i++) {
                     floatClose[i].addEventListener(evs.touchup, function (ev) {   
                     var that = this;
-                        if(!opaPage.querySelector('.current').hasAttribute('data-last')){
-                            gTop.style.zIndex = 999;
-                        }
+
                         if(floatHideFlag){
                         }
                         else{
