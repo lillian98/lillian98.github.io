@@ -1117,6 +1117,14 @@ a {
     .stage .person .icon{
         background-image: url(../images/b2c/b_person.png);
     }
+    .stage .person .icon-body{
+        background-image: url("../images/b2c/b_person_body.png");
+        width: 196px;
+        height: 291px;
+    }
+    .stage .person .icon-left-hand{
+
+    }
     .stage .phone{
 
     }
@@ -1505,9 +1513,6 @@ a {
 </style>
 </head>
 <body>
-#if($!shopAttention.url && ($!shopAttention.url !="") && ($!shopAttention.url !="http://"))
-<a  href="$!shopAttention.url"></a>
-#end
 <!-- loading -->
 <div class="loading" id="J_MiLoading">
     <div class="loading-block">
@@ -1580,7 +1585,11 @@ a {
             <!-- S person -->
             <div class="mc mc-image delay_0_0s mi-zoomIn person">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
+                    <div class="icon icon-body"></div>
+                    <div class="icon icon-left-hand"></div>
+                    <div class="icon icon-right-hand"></div>
+                    <div class="icon icon-left-foot"></div>
+                    <div class="icon icon-right-foot"></div>
                 </div>
             </div>
             <!-- E person -->
