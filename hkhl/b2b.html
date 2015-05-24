@@ -1320,7 +1320,7 @@ a {
   .arrow-first{background: url(../images/arrow_icon.png) 0 0;}
   .arrow-hide{display: none;}
 .float-mask{background:rgba(0,0,0,.9);width:100%;height:100%;opacity: 0;transition:opacity .5s;}
-.float-show .current .float-mask{opacity: 1;}
+.float-show .current .float-mask{opacity: 1;z-index: 10;}
 .float-mask .mc-wrap-detail.float-wrap-show{ -webkit-animation-name: float-s-ani; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out;-webkit-animation-delay:.1s;-webkit-animation-duration:.4s;}
 
     @-webkit-keyframes float-s-ani {
@@ -1379,8 +1379,8 @@ a {
     /* mc-wrap-page */
     .float-show{z-index: 1000;}
     .mc-wrap-page{position: absolute;bottom: 60px;z-index: 1000;width: 100%;height: 31px;overflow: hidden;text-align: center}
-    .mc-wrap-page span{display: inline-block;width: 14px;height: 14px;background-image: url(../images/arrow_icon1.png);background-position: 0 -76px;background-size: 76px auto;margin-right: 10px;}
-    .mc-wrap-page span.page-current{background-position: 0 -62px;}
+    .mc-wrap-page span{display: inline-block;width: 14px;height: 14px;background-image: url(../images/arrow_icon2.png);background-position: 0 -62px;background-size: 76px auto;margin-right: 10px;opacity: .5}
+    .mc-wrap-page span.page-current{background-position: 0 -62px;opacity: 1}
 </style>
 </head>
 <body>
@@ -1581,9 +1581,9 @@ a {
                     <div class="secene-sec secene-2-2" data-sec-index="1"><img src="../images/detail/detail3-6.jpg"></div>
                     <div class="secene-sec secene-2-3" data-sec-index="2"><img src="../images/detail/detail3-5.jpg"></div>
                     <div class="secene-sec secene-2-4" data-sec-index="3"><img src="../images/detail/detail3-1.jpg"></div>
-                    <div class="secene-sec secene-2-4" data-sec-index="4"><img src="../images/detail/detail3-3.jpg"></div>
-                                        <div class="secene-sec secene-2-5" data-sec-index="5"><img src="../images/detail/detail3-2.jpg"></div>
-                                        <div class="secene-sec secene-2-6" data-sec-index="6" data-sec-last="true"><img src="../images/detail/detail3-7.jpg"></div>
+                    <div class="secene-sec secene-2-5" data-sec-index="4"><img src="../images/detail/detail3-3.jpg"></div>
+                                        <div class="secene-sec secene-2-6" data-sec-index="5"><img src="../images/detail/detail3-2.jpg"></div>
+                                        <div class="secene-sec secene-2-7" data-sec-index="6" data-sec-last="true"><img src="../images/detail/detail3-7.jpg"></div>
                 </div>
                 <div class="mc-wrap mc-wrap-page">
                     <span class="icon"></span>
@@ -1732,7 +1732,15 @@ a {
 <!-- S scene4 -->
 <div class="J_opaPannel pannels scene-4" data-index="3">
         <div class="opa-stage stage" data-index="4" data-id="opa_stage_4" style="background-image: url('../images/p4/p4_bg.jpg'); background-color: rgb(153, 153, 153);">
-           <!-- <div class="mc mc-image float-mask"><div class="mc-wrap"><img src="../images/detail/detail2-2.jpg"></div></div>-->
+            <div class="mc mc-image delay_0_0s float-mask">
+                <div class="mc-wrap mc-wrap-detail">
+                    <div class="secene-sec secene-1-1" data-sec-index="0" data-sec-first="true" data-sec-last="true"><img src="../images/detail/detail5-1.jpg"></div>
+                </div>
+                <div class="mc-wrap mc-wrap-page">
+                    <span class="icon"></span>
+                </div>
+                <div class="mc-wrap mc-wrap-back icon"></div>
+            </div>
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title">
                                         <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                                             <div class="title"></div>
@@ -1870,6 +1878,9 @@ a {
                 <div class="mc-wrap mc-wrap-detail">
                     <div class="secene-sec secene-1-1" data-sec-index="0" data-sec-first="true" data-sec-last="true"><img src="../images/detail/detail5-1.jpg"></div>
                 </div>
+                <div class="mc-wrap mc-wrap-page">
+                    <span class="icon"></span>
+                </div>
                 <div class="mc-wrap mc-wrap-back icon"></div>
             </div>
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn title">
@@ -1896,7 +1907,7 @@ a {
                     </div>
                 </div>
             </div>
-            <div class="mc mc-image delay_0_6s duration_0_8s mi-zoomIn p5-4" data-detail="detail5-1">
+            <div class="mc mc-image delay_0_6s duration_0_8s mi-zoomIn p5-4 p-cir" data-detail="detail5-1">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="img-wrap"><img src="../images/text/p5_4.png">
                     </div>
@@ -1910,7 +1921,7 @@ a {
 </div>
 <a href="javascript:void(0);" class="u-guideTop z-move arrow-first" id="J_GuideTop"></a>
 <script src="../js/app.utils.min.js"></script>
-<script src="../js/spread.min.js"></script>
+<script src="../js/spread.min - 0524.js"></script>
 
 
 <script>
@@ -2203,65 +2214,67 @@ new PreLoad(tasks, {onload: loading});
 
         var floatHideFlag = false;
         var floatDom = document.querySelectorAll('.mc');
-                var floatMask = document.querySelectorAll('.float-mask');
-                var floatClose = document.querySelectorAll('.mc-wrap-back');
-                var floatTimeOut;
-                for (var i = 0; i < floatDom.length; i++) {
-                    if (floatDom[i].hasAttribute('data-detail') && !floatHideFlag) {
-                        var t = floatDom[i].getAttribute('data-detail');
-                        floatDom[i].addEventListener(evs.touchup, function (ev) {
-                            var t1 = this.getAttribute('data-detail');
-                            var tDom = this.parentNode.querySelector('.float-mask .mc-wrap-detail');
-                            var detailDom = tDom.querySelectorAll('.secene-sec');
-                            var detailPage = this.parentNode.querySelectorAll('.mc-wrap-page .icon');
-                            var that = this;
-                            var fromDetailPage = (/\d+/).exec(t1)[0];
-                            var inDetailPage = (/\d+/).exec(t1.split('-')[1])[0]-1;
-                            var floatTimeout;
-                            var nPage = opaPage.querySelector('.current');
-                            var nDetailPage = parseInt(nPage.getAttribute('data-index'));
-                            if(floatTimeout){
-                                clearTimeout(floatTimeout)
-                            }
-                            floatTimeout = setTimeout(function () {
-                                for (var i = 0; i < detailDom.length; i++) {
-                                    App.Utils.removeClass(detailDom[i], 'secene-sec-current');
-                                    detailDom[i].setAttribute('style', '');
-                                }
-                                App.Utils.addClass(detailPage[inDetailPage],'page-current');
-                                opaPage.querySelector('.current .float-mask').style.zIndex = 20;
-                                App.Utils.addClass(opaPage, 'float-show');
-                                App.Utils.addClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show');
-                                App.Utils.addClass(detailDom[inDetailPage], 'secene-sec-current');
+        var floatMask = document.querySelectorAll('.float-mask');
+        var floatClose = document.querySelectorAll('.mc-wrap-back');
+        var floatTimeOut;
+        for (var i = 0; i < floatDom.length; i++) {
+            if (floatDom[i].hasAttribute('data-detail') && !floatHideFlag) {
+                var t = floatDom[i].getAttribute('data-detail');
+                floatDom[i].addEventListener(evs.touchup, function (ev) {
+                    if(!opaPage.querySelector('.current .float-mask .mc-wrap-detail .secene-sec-current') ){
+                        var t1 = this.getAttribute('data-detail');
+                        var tDom = this.parentNode.querySelector('.float-mask .mc-wrap-detail');
+                        var detailDom = tDom.querySelectorAll('.secene-sec');
+                        var detailPage = this.parentNode.querySelectorAll('.mc-wrap-page .icon');
+                        var that = this;
+                        var fromDetailPage = (/\d+/).exec(t1)[0];
+                        var inDetailPage = (/\d+/).exec(t1.split('-')[1])[0] - 1;
+                        var floatTimeout;
+                        var nPage = opaPage.querySelector('.current');
+                        var nDetailPage = parseInt(nPage.getAttribute('data-index'));
+                        if (floatTimeout) {
+                            clearTimeout(floatTimeout)
+                        }
+                        for (var i = 0; i < detailDom.length; i++) {
+                            App.Utils.removeClass(detailDom[i], 'secene-sec-current');
+                            detailDom[i].setAttribute('style', '');
+                        }
+                        floatTimeout = setTimeout(function () {
 
-                            },300);
-                        }, !1);
-
+                            App.Utils.addClass(detailPage[inDetailPage], 'page-current');
+                            opaPage.querySelector('.current .float-mask').style.zIndex = 20;
+                            App.Utils.addClass(opaPage, 'float-show');
+                            App.Utils.addClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show');
+                            App.Utils.addClass(detailDom[inDetailPage], 'secene-sec-current');
+                        }, 300);
                     }
-                }                
-                for (var i = 0; i < floatClose.length; i++) {
-                    floatClose[i].addEventListener(evs.touchup, function (ev) {   
-                    var that = this;
+                }, !1);
 
-                        if(floatHideFlag){
-                        }
-                        else{
-                            floatHideFlag = true;
-                         App.Utils.removeClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show');  
-                         App.Utils.addClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'),'float-wrap-hide');
-                         App.Utils.removeClass(opaPage, 'float-show');
-                         App.Utils.removeClass(opaPage.querySelector('.current .float-mask .page-current'), 'page-current');
-                            App.Utils.removeClass(opaPage.querySelector('.current .float-mask .secene-sec-current'), 'secene-sec-current');
-                        setTimeout(function(){
-                            that.parentNode.style.zIndex = -1;
-                            App.Utils.removeClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-hide');
-                            floatHideFlag = false;
-                        },500);
-                        }
-                        //return false;
-                    }, false);
+            }
+        }
+        /*for (var i = 0; i < floatClose.length; i++) {
+            floatClose[i].addEventListener(evs.touchup, function (ev) {
+                var that = this;
+
+                if (floatHideFlag) {
                 }
-            };
+                else {
+                    floatHideFlag = true;
+                    App.Utils.removeClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show');
+                    App.Utils.addClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-hide');
+                    App.Utils.removeClass(opaPage, 'float-show');
+                    setTimeout(function () {
+                        that.parentNode.style.zIndex = -1;
+                        App.Utils.removeClass(opaPage.querySelector('.current .float-mask .page-current'), 'page-current');
+                        App.Utils.removeClass(opaPage.querySelector('.current .float-mask .secene-sec-current'), 'secene-sec-current');
+                        App.Utils.removeClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-hide');
+                        floatHideFlag = false;
+                    }, 320);
+                }
+                //return false;
+            }, false);
+        }*/
+    };
 
     var evt = "onorientationchange" in window ? "orientationchange" : "resize",
         ort = document.querySelector("#J_Orientation");
