@@ -2221,7 +2221,7 @@ new PreLoad(tasks, {onload: loading});
             if (floatDom[i].hasAttribute('data-detail') && !floatHideFlag) {
                 var t = floatDom[i].getAttribute('data-detail');
                 floatDom[i].addEventListener(evs.touchup, function (ev) {
-                    if(!opaPage.querySelector('.current .float-mask .mc-wrap-detail .secene-sec-current') ){
+
                         var t1 = this.getAttribute('data-detail');
                         var tDom = this.parentNode.querySelector('.float-mask .mc-wrap-detail');
                         var detailDom = tDom.querySelectorAll('.secene-sec');
@@ -2247,7 +2247,7 @@ new PreLoad(tasks, {onload: loading});
                             App.Utils.addClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show');
                             App.Utils.addClass(detailDom[inDetailPage], 'secene-sec-current');
                         }, 300);
-                    }
+
                 }, !1);
 
             }

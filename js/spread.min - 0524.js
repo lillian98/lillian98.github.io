@@ -108,8 +108,11 @@
                 }
                 else{
 _this.set("prevent", !1);
+                    //console.log('target:',target,'<br>ev.target:',ev.target);
+                    if(target){
                 posObj = ev.touches ? ev.touches[0] : ev, move.y = posObj.clientY || posObj.pageY, disy = move.y - start.y, Math.abs(disy) > 20 && (disy > 0 ? target.getAttribute("data-index") > 0 ? (next = _this.getNext.call(_this, index, -1), target.style[pre + "Transform"] = "scale(" + (1 + disy / vh) + ")", target.style.transform = "scale(" + (1 + disy / vh) + ")", target.style.opacity = 1 - disy / vh, next.style[pre + "Transform"] = "scale(" + (2 - disy / vh) + ")", next.style.transform = "scale(" + (2 - disy / vh) + ")", next.style.opacity = disy / vh) : next = null : target.getAttribute("data-index") < len - 1 ? (next = _this.getNext.call(_this, index, 1), target.style[pre + "Transform"] = "scale(" + (1 + -disy / vh) + ")", target.style.transform = "scale(" + (1 + -disy / vh) + ")", target.style.opacity = 1 - -disy / vh, next.style[pre + "Transform"] = "scale(" + (2 - -disy / vh) + ")", next.style.transform = "scale(" + (2 - -disy / vh) + ")", next.style.opacity = -disy / vh) : next = null), ev.preventDefault();
                 setTimeout(function(){App.Utils.removeClass(document.querySelector("#J_opaPage"), 'float-show-hide'),App.Utils.removeClass(document.querySelector("#J_opaPage"), 'float-show'),App.Utils.removeClass(document.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show'),document.querySelector('.current .float-mask').style.zIndex=-1},400);
+                    }
                 }
             }
 
@@ -194,12 +197,14 @@ _this.set("prevent", !1);
                 /* E 没有二级页面 */
                 /* S 没有二级页面 */
                 else if(!_this.get('prevent')){
+                    if(target){
                     aniTime = (index == 0)? 1600:800;
                     next ? (posObj = ev.changedTouches ? ev.changedTouches[0] : ev, move.y = posObj.clientY || posObj.pageY, disy = move.y - start.y, next = disy > 0 ? _this.getNext.call(_this, index, -1) : _this.getNext.call(_this, index, 1), util.addClass(next, "has-transition"), util.addClass(target, "has-transition"), Math.abs(disy) > _this.get("diff") ? (next.style[pre + "Transform"] = "scale(1)", next.style.transform = "scale(1)", next.style.opacity = 1, target.style[pre + "Transform"] = "scale(2)", target.style.transform = "scale(2)", target.style.opacity = 0, target.querySelector('.p-cir-imp.p-cir') && util.removeClass(target.querySelector('.p-cir-imp.p-cir'), "p-cir-imp"),target.querySelector('.p-cir-imp.p-text') && util.removeClass(target.querySelector('.p-cir-imp.p-text'), "p-cir-imp"),target.querySelector('.p-cir-imp.p-icon') && util.removeClass(target.querySelector('.p-cir-imp.p-icon'), "p-cir-imp"), setTimeout(function () {
                         util.removeClass(target, "current"), util.removeClass(target, "has-transition"), util.addClass(next, "current"), util.removeClass(next, "has-transition"), _this.preLoad(next.getAttribute("data-index")), _this.set("prevent", !1),_this.set("sec-prevent", !1), _this.get("transEnd") && _this.get("transEnd").call(_this),App.Utils.removeClass(document.querySelector("#J_opaPage"), 'float-show-hide'),App.Utils.removeClass(document.querySelector("#J_opaPage"),'float-show'),App.Utils.removeClass(target.querySelector('.float-mask .mc-wrap-detail'), 'float-wrap-show'),target.querySelector('.float-mask').style.zIndex=-1
                     }, 600),setTimeout(function(){next.querySelectorAll('.p-cir')[0] && util.addClass(next.querySelectorAll('.p-cir')[0],"p-cir-imp"),next.querySelectorAll('.p-text')[0] && util.addClass(next.querySelectorAll('.p-text')[0], "p-cir-imp"),next.querySelectorAll('.p-icon')[0] && util.addClass(next.querySelectorAll('.p-icon')[0],"p-cir-imp")},aniTime)) : (target.style[pre + "Transform"] = "scale(1)", target.style.transform = "scale(1)", target.style.opacity = 1, next.style[pre + "Transform"] = "scale(2)", next.style.transform = "scale(2)", next.style.opacity = 0, setTimeout(function () {
                         _this.set("prevent", !1), util.removeClass(target, "has-transition"), util.removeClass(next, "has-transition")
                     }, 600))) : (_this.set("prevent", !1), target.getAttribute("data-index") == len - 1 && _this.get("pb") && (_this.get("pbTimer") && (clearTimeout(_this.get("pbTimer")), _this.pbTimer = null), _this.get("pb").style.visibility = "visible", _this.get("pb").style.zIndex = 100, _this.get("pb").style.opacity = 1)), _this.set("sec-prevent", !1),page.removeEventListener(EVENTS.touchmove, moveHandler, !1), page.removeEventListener(EVENTS.touchup, endHandler, !1);
+                    }
                 }
                 /* E 没有二级页面 */
             }
