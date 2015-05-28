@@ -1292,20 +1292,27 @@ a {
     }
 
     /* stage in animate */
-    .ani-0 .scene-1.start-animate .bg,.ani-0 .scene-1.start-animate .window{
+    .ani-0 .scene-1.start-animate .bg{
+        -webkit-animation-name: opacity0ZoomBt;
+        animation-name:opacity0ZoomBt;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0.8s;
+    }
+    .ani-0 .scene-1.start-animate .window{
         -webkit-animation-name: opacity0Zoom;
         animation-name:opacity0Zoom;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 0.8s;
     }
-    /*{
-        -webkit-animation-name: opacity0Zoom;
-        animation-name:opacity0Zoom;
+    .ani-0 .scene-1.start-animate .logo{
+        -webkit-animation-name: logoZoomTranslate;
+        animation-name:logoZoomTranslate;
         -webkit-animation-timing-function: ease-out;
-        -webkit-animation-duration: .4s;
-        -webkit-animation-delay: 0.8s;
-    }*/
+        -webkit-animation-duration: 1s;
+        -webkit-animation-delay: 0s;
+    }
     .ani-0 .scene-1.start-animate .chair, .ani-0 .scene-1.start-animate .person,.ani-0 .scene-1.start-animate .msg-wrap,.ani-0 .scene-1.start-animate .msg-wrap-small{
         -webkit-animation-name: chairT2D;
         animation-name:chairT2L;
@@ -1313,39 +1320,13 @@ a {
         -webkit-animation-duration: .2s;
         -webkit-animation-delay: 1.5s;
     }
-    /*.ani-0 .scene-1.start-animate .window1{
-        -webkit-animation-name: win1R2L;
-        animation-name:chairT2L;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-duration: .4s;
-    }
-    .ani-0 .scene-1.start-animate .window2{
-        -webkit-animation-name: win1R2L;
-        animation-name:chairT2L;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-duration: .4s;
-        -webkit-animation-delay: .1s;
-    }
-    .ani-0 .scene-1.start-animate .window4{
-        -webkit-animation-name: win3R2L;
-        animation-name:chairT2L;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-duration: .2s;
-        -webkit-animation-delay: .3s;
-    }
-    .ani-0 .scene-1.start-animate .window3{
-        -webkit-animation-name: win4R2L;
-        animation-name:chairT2L;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-duration: .2s;
-        -webkit-animation-delay: .3s;
-    }*/
+
     .ani-0 .scene-1.start-animate .text{
         -webkit-animation-name: bottomtext;
         animation-name:bottomtext;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: .3s;
-        -webkit-animation-delay: 1.0s;
+        -webkit-animation-delay: 1.5s;
     }
     .ani-0 .scene-1.start-animate .text em{
         -webkit-animation-name: bottomem;
@@ -1354,9 +1335,35 @@ a {
         -webkit-animation-duration: .3s;
         -webkit-animation-delay: 1.8s;
     }
+    @-webkit-keyframes logoZoomTranslate{
+        0%{
+            -webkit-transform: translate(0,200px) scale(0.2);
+            opacity: 0;
+        }
+        40%{
+            -webkit-transform: translate(0,200px) scale(1.2);
+            opacity: 1;
+        }
+        45%{
+            -webkit-transform: translate(0,200px) scale(1.1);
+            opacity: 1;
+        }
+        50%{
+            -webkit-transform: translate(0,200px) scale(1);
+            opacity: 1;
+        }
+        70%{
+            -webkit-transform: translate(0,200px) scale(1);
+            opacity: 1;
+        }
+        100%{
+            -webkit-transform: translate(0,0) scale(1);
+            opacity: 1;
+        }
+    }
     @-webkit-keyframes opacity1Zoom{
          0%{
-             -webkit-transform: translate(0,100px) scale(1.5);
+             -webkit-transform: translate(0,200px) scale(1.5);
              opacity: 1;
          }
          100%{
@@ -1374,12 +1381,26 @@ a {
             opacity: 1;
         }
     }
+    @-webkit-keyframes opacity0ZoomBt{
+        0%{
+            -webkit-transform: translate(0,300px) scale(1.5);
+            opacity: 0;
+        }
+        30%{
+            -webkit-transform: translate(0,300px) scale(1.5);
+            opacity: 1;
+        }
+        100%{
+            -webkit-transform: translate(0,0) scale(1) rotateX(0);
+            opacity: 1;
+        }
+    }
     @-webkit-keyframes opacity0Zoom{
         0%{
             -webkit-transform: translate(0,100px) scale(1.5);
             opacity: 0;
         }
-        30%{
+        20%{
             -webkit-transform: translate(0,100px) scale(1.5);
             opacity: 1;
         }
@@ -1649,8 +1670,8 @@ a {
             </div>
             <!-- E bg -->
             <!-- S logo -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+            <div class="mc mc-image logo">
+                <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
