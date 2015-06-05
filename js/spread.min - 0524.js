@@ -60,15 +60,15 @@
                     //console.log('2这里是move事件 curDom',curDom,' nowSecIndex ', nowSecIndex, 'move.y', move.y, 'disy' ,disy,'nowSecLength' ,nowSecLength, 'evtDom' ,evtDom)
                         
                         if(Math.abs(disy)>20){
+
                             /* 下滑，上一页._this主线页面this:当前二级页 */
                             if(disy>0){
-
                                 if(curDom == null || curDom == 'undefined'){
                                     _this.set("prevent", !1);
                                     return false;
                                 }
-                                //if(curDom.hasAttribute('data-sec-first')) {_this.set("sec-prevent",!1);return false;}
                                 if(nowSecIndex > 0){
+                                    util.addClass(curDom.parentNode.parentNode, "secene-sec-changing");
                                     nextIndex = nowSecIndex-1;
                                     next = nowSecDom[nextIndex];
                                     curDom.style[pre + "Transform"] = "scale(" + (1 + disy / vh) + ")", 
@@ -89,6 +89,7 @@
                                     return false;
                                 }
                                 if(nowSecIndex < nowSecLength -1){
+                                    util.addClass(curDom.parentNode.parentNode, "secene-sec-changing");
                                     nextIndex = nowSecIndex+1;
                                     next = nowSecDom[nextIndex];
                                     curDom.style[pre + "Transform"] = "scale(" + (1 + -disy / vh) + ")", 
@@ -119,13 +120,6 @@ _this.set("prevent", !1);
             function endHandler(ev) {
                 if(document.querySelector("#J_opaPage").className.indexOf('float-show')>-1 && document.querySelector("#J_opaPage").className.indexOf('float-show-') <0){
                     ev.preventDefault();
-                    /*curDom = ev.target.parentNode,
-                        nowSecIndex = parseInt(curDom.getAttribute('data-sec-index')),
-                        evtDom = curDom.parentNode,
-                        nowSecDom = curDom.parentNode.querySelectorAll('.secene-sec'),
-                        nowSecLength = nowSecDom.length;*/
-                   //console.log('3这里是end处理 next',next,ev.target);
-
                     if(ev.target.className.indexOf('mc-wrap-back') > 0){
                         /* 关闭浮层 */
                         util.removeClass(document.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show');
@@ -139,7 +133,7 @@ _this.set("prevent", !1);
                             document.querySelector('.current .float-mask .page-current') && util.removeClass(document.querySelector('.current .float-mask .page-current'), 'page-current');
                             document.querySelector('.current .float-mask .secene-sec-current') && util.removeClass(document.querySelector('.current .float-mask .secene-sec-current'), 'secene-sec-current');
                             _this.set("prevent",!1);_this.set("sec-prevent",!1);_this.set("sec-close-prevent", !1);
-                        }, 600);
+                        }, 300);
                         /* E 关浮层 */
                     }
                     else if(curDom == null || curDom == 'undefined'){
@@ -154,11 +148,11 @@ _this.set("prevent", !1);
                             if(Math.abs(disy) > 20){
                                 _this.set("sec-prevent", !0);
                                 next.style[pre + "Transform"] = "scale(1)", next.style.transform = "scale(1)", next.style.opacity = 1, curDom.style[pre + "Transform"] = "scale(2)", curDom.style.transform = "scale(2)", curDom.style.opacity = 0/*, curcloseDom.style.opacity = 0*/, setTimeout(function () {
-                                    tnext = next,tcur = curDom, tnext.style[pre + "Transform"] = "scale(1)", tnext.style.transform = "scale(1)", tnext.style.opacity = 1, tcur.style[pre + "Transform"] = "scale(2)", tcur.style.transform = "scale(2)", tcur.style.opacity = 0,util.removeClass(tcur, "secene-sec-current"), util.removeClass(tcur, "has-transition"), util.removeClass(document.querySelector('.current .float-mask .page-current'), "page-current"), util.addClass(document.querySelectorAll('.current .float-mask .icon')[nextIndex], "page-current"), util.addClass(tnext, "secene-sec-current"), util.removeClass(tnext, "has-transition") /*, curcloseDom.style.opacity = 1*/, _this.preLoad(tcur.getAttribute("data-sec-index")), _this.set("prevent", !1), _this.set("sec-prevent",!1),  _this.get("transEnd") && _this.get("transEnd").call(_this)}, 610);
+                                    tnext = next,tcur = curDom, tnext.style[pre + "Transform"] = "scale(1)", tnext.style.transform = "scale(1)", tnext.style.opacity = 1, tcur.style[pre + "Transform"] = "scale(2)", tcur.style.transform = "scale(2)", tcur.style.opacity = 0,util.removeClass(tcur, "secene-sec-current"), util.removeClass(tcur, "has-transition"), util.removeClass(document.querySelector('.current .float-mask .page-current'), "page-current"), util.addClass(document.querySelectorAll('.current .float-mask .icon')[nextIndex], "page-current"), util.addClass(tnext, "secene-sec-current"), util.removeClass(tnext, "has-transition"), util.removeClass(curDom.parentNode.parentNode, "secene-sec-changing")/*, curcloseDom.style.opacity = 1*/, _this.preLoad(tcur.getAttribute("data-sec-index")), _this.set("prevent", !1), _this.set("sec-prevent",!1),  _this.get("transEnd") && _this.get("transEnd").call(_this)}, 310);
                         }
                         else{
                             curDom.style[pre + "Transform"] = "scale(1)", curDom.style.transform = "scale(1)", curDom.style.opacity = 1, next.style[pre + "Transform"] = "scale(2)", next.style.transform = "scale(2)", next.style.opacity = 0, setTimeout(function () {
-                        _this.set("prevent", !1), _this.set("sec-prevent",!1),util.removeClass(curDom, "has-transition"), util.removeClass(next, "has-transition")}, 600)
+                        _this.set("prevent", !1), _this.set("sec-prevent",!1),util.removeClass(curDom, "has-transition"), util.removeClass(next, "has-transition")}, 300)
                         }
                     }
                     else{
@@ -167,6 +161,7 @@ _this.set("prevent", !1);
                                 util.removeClass(document.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show');
                                 util.addClass(document.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-hide');
                                 util.removeClass(document.querySelector('.current .float-mask .page-current'), 'page-current');
+                                util.removeClass(curDom.parentNode.parentNode, "secene-sec-changing");
                                 /*for(var i = 0;i<document.querySelectorAll('.current .flaot-mask .icon').lenght;i++){
                                     util.removeClass(document.querySelectorAll[i], 'secene-sec-current');
                                 }*/
@@ -180,7 +175,7 @@ _this.set("prevent", !1);
                                     /*document.querySelector('.current .float-mask .secene-sec-current') &&*/ util.removeClass(document.querySelector('.current .float-mask .secene-sec-current'), 'secene-sec-current');
                                     _this.set("prevent",!1);_this.set("sec-prevent",!1);_this.set("sec-close-prevent", !1);
 
-                            }, 600);
+                            }, 300);
                                 /* E 关浮层 */
                             }
                             else{
