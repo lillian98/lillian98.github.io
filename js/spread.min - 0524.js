@@ -133,7 +133,7 @@ _this.set("prevent", !1);
                             document.querySelector('.current .float-mask .page-current') && util.removeClass(document.querySelector('.current .float-mask .page-current'), 'page-current');
                             document.querySelector('.current .float-mask .secene-sec-current') && util.removeClass(document.querySelector('.current .float-mask .secene-sec-current'), 'secene-sec-current');
                             _this.set("prevent",!1);_this.set("sec-prevent",!1);_this.set("sec-close-prevent", !1);
-                        }, 300);
+                        }, 500);
                         /* E 关浮层 */
                     }
                     else if(curDom == null || curDom == 'undefined'){
@@ -147,12 +147,12 @@ _this.set("prevent", !1);
                             util.addClass(next, "has-transition"), util.addClass(curDom, "has-transition");
                             if(Math.abs(disy) > 20){
                                 _this.set("sec-prevent", !0);
-                                next.style[pre + "Transform"] = "scale(1)", next.style.transform = "scale(1)", next.style.opacity = 1, curDom.style[pre + "Transform"] = "scale(2)", curDom.style.transform = "scale(2)", curDom.style.opacity = 0/*, curcloseDom.style.opacity = 0*/, setTimeout(function () {
-                                    tnext = next,tcur = curDom, tnext.style[pre + "Transform"] = "scale(1)", tnext.style.transform = "scale(1)", tnext.style.opacity = 1, tcur.style[pre + "Transform"] = "scale(2)", tcur.style.transform = "scale(2)", tcur.style.opacity = 0,util.removeClass(tcur, "secene-sec-current"), util.removeClass(tcur, "has-transition"), util.removeClass(document.querySelector('.current .float-mask .page-current'), "page-current"), util.addClass(document.querySelectorAll('.current .float-mask .icon')[nextIndex], "page-current"), util.addClass(tnext, "secene-sec-current"), util.removeClass(tnext, "has-transition"), util.removeClass(curDom.parentNode.parentNode, "secene-sec-changing")/*, curcloseDom.style.opacity = 1*/, _this.preLoad(tcur.getAttribute("data-sec-index")), _this.set("prevent", !1), _this.set("sec-prevent",!1),  _this.get("transEnd") && _this.get("transEnd").call(_this)}, 310);
+                                next.style[pre + "Transform"] = "scale(1)", next.style.transform = "scale(1)", next.style.opacity = 1, curDom.style[pre + "Transform"] = "scale(2)", curDom.style.transform = "scale(2)", curDom.style.opacity = 0, util.removeClass(curDom.parentNode.parentNode, "secene-sec-changing")/*, curcloseDom.style.opacity = 0*/, setTimeout(function () {
+                                    tnext = next,tcur = curDom, tnext.style[pre + "Transform"] = "scale(1)", tnext.style.transform = "scale(1)", tnext.style.opacity = 1, tcur.style[pre + "Transform"] = "scale(2)", tcur.style.transform = "scale(2)", tcur.style.opacity = 0,util.removeClass(tcur, "secene-sec-current"), util.removeClass(tcur, "has-transition"), util.removeClass(document.querySelector('.current .float-mask .page-current'), "page-current"), util.addClass(document.querySelectorAll('.current .float-mask .icon')[nextIndex], "page-current"), util.addClass(tnext, "secene-sec-current"), util.removeClass(tnext, "has-transition")/*, curcloseDom.style.opacity = 1*/, _this.preLoad(tcur.getAttribute("data-sec-index")), _this.set("prevent", !1), _this.set("sec-prevent",!1),  _this.get("transEnd") && _this.get("transEnd").call(_this)}, 510);
                         }
                         else{
                             curDom.style[pre + "Transform"] = "scale(1)", curDom.style.transform = "scale(1)", curDom.style.opacity = 1, next.style[pre + "Transform"] = "scale(2)", next.style.transform = "scale(2)", next.style.opacity = 0, setTimeout(function () {
-                        _this.set("prevent", !1), _this.set("sec-prevent",!1),util.removeClass(curDom, "has-transition"), util.removeClass(next, "has-transition")}, 300)
+                        _this.set("prevent", !1), _this.set("sec-prevent",!1),util.removeClass(curDom, "has-transition"), util.removeClass(next, "has-transition")}, 500)
                         }
                     }
                     else{
@@ -175,7 +175,7 @@ _this.set("prevent", !1);
                                     /*document.querySelector('.current .float-mask .secene-sec-current') &&*/ util.removeClass(document.querySelector('.current .float-mask .secene-sec-current'), 'secene-sec-current');
                                     _this.set("prevent",!1);_this.set("sec-prevent",!1);_this.set("sec-close-prevent", !1);
 
-                            }, 300);
+                            }, 500);
                                 /* E 关浮层 */
                             }
                             else{

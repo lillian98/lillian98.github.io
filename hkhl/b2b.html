@@ -1378,11 +1378,14 @@ a {
     }
     /* mc-wrap-page */
     .float-show{z-index: 1000;}
-    .mc-wrap-page{position: absolute;bottom: 60px;z-index: 1000;width: 100%;height: 31px;overflow: hidden;text-align: center;transition:opacity .1s;}
+    .mc-wrap-page{position: absolute;bottom: 60px;z-index: 1000;width: 100%;height: 31px;overflow: hidden;text-align: center;transition:opacity .2s;}
     .mc-wrap-page span{display: inline-block;width: 14px;height: 14px;background-image: url(../images/arrow_icon2.png);background-position: 0 -62px;background-size: 76px auto;margin-right: 10px;opacity: 0.5;}
     .mc-wrap-page span.page-current{background-position: 0 -62px;opacity: 1}
-    .secene-sec-changing .mc-wrap-back,.secene-sec-changing .mc-wrap-page{opacity: 0;}
+
     .float-wrap-hide ~ .mc-wrap-back,.float-wrap-hide ~ .mc-wrap-page{opacity: 0;transition:opacity .2s;}
+    .float-wrap-show ~ .mc-wrap-back{opacity: 1;transition:opacity .1s .2s;}
+    .secene-sec-changing .float-wrap-show ~  .mc-wrap-back{opacity: 0;transition:opacity .2s;}
+    .scene-1 .mc-wrap.mc-wrap-page,.scene-5 .mc-wrap.mc-wrap-page{opacity: 0;}
 </style>
 </head>
 <body>
