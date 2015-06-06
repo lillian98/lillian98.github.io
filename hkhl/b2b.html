@@ -1384,6 +1384,7 @@ a {
 
     .float-wrap-hide ~ .mc-wrap-back,.float-wrap-hide ~ .mc-wrap-page{opacity: 0;transition:opacity .2s;}
     .float-wrap-show ~ .mc-wrap-back{opacity: 1;transition:opacity .1s .3s;}
+    .float-wrap-show-first  .mc-wrap-back{opacity: 1;transition:opacity .1s 0.4s;}
     .secene-sec-changing .float-wrap-show ~  .mc-wrap-back{opacity: 0;transition:opacity .2s;}
     .scene-1 .mc-wrap.mc-wrap-page,.scene-5 .mc-wrap.mc-wrap-page{opacity: 0;}
 </style>
@@ -2253,11 +2254,14 @@ new PreLoad(tasks, {onload: loading});
 
                             App.Utils.addClass(detailPage[inDetailPage], 'page-current');
                             opaPage.querySelector('.current .float-mask').style.zIndex = 20;
-                            App.Utils.addClass(opaPage, 'float-show');
+                            App.Utils.addClass(opaPage, 'float-show float-wrap-show-first');
                             App.Utils.addClass(opaPage.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show');
                             App.Utils.addClass(detailDom[inDetailPage], 'secene-sec-current');
+                            removeFirstClass();
                         }, 300);
-
+                        function removeFirstClass(){
+                            setTimeout(function(){App.Utils.removeClass(opaPage, 'float-wrap-show-first');},300)
+                        }
                 }, !1);
 
             }
