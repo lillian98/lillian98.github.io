@@ -1059,7 +1059,7 @@ a {
     .img-1-slogan{background-position: 0 -985px;width: 361px;height: 78px;}
     .img-1-about{background-position: 0 -643px;width: 239px;height: 81px;}
     /* p2 */
-    .scene-2 .stage{background-image: url('../images/p2/p2_bg.jpg'); background-color: rgb(153, 153, 153);}
+    .scene-2 .stage{background-image: url('../images/bg/p2_bg.jpg'); background-color: rgb(153, 153, 153);}
 
     .p2-cir1{left:485px;top:373px;width:164px;height:164px;z-index: 11;}
     .p2-cir2{left:42px;top:475px;width:183px;height:183px;z-index: 11;}
@@ -1416,7 +1416,7 @@ a {
 <!-- custom content -->
 <div id="J_opaPage" class="page">
     <div class="J_opaPannel pannels scene-1" data-index="0" data-first="true">
-        <div class="opa-stage stage" data-index="1" data-id="opa_stage_1" style="background-image: url(../images/bg_full.jpg); background-color: #0050b2 ;">
+        <div class="opa-stage stage" data-index="1" data-id="opa_stage_1" style="background-image: url(../images/bg/bg_full.jpg); background-color: #0050b2 ;">
             <div class="mc mc-image delay_0_0s float-mask">
 
                 <!-- <div class="opa-sec-stage">
@@ -1580,7 +1580,7 @@ a {
         </div>
     </div>
 <div class="J_opaPannel pannels scene-3" data-index="2">
-        <div class="opa-stage stage" data-index="3" data-id="opa_stage_3" style="background-image: url('../images/p3/p3_bg.jpg'); background-color: rgb(153, 153, 153);">
+        <div class="opa-stage stage" data-index="3" data-id="opa_stage_3" style="background-image: url('../images/bg/p3_bg.jpg'); background-color: rgb(153, 153, 153);">
             <div class="mc mc-image delay_0_0s float-mask">
                 <div class="mc-wrap mc-wrap-detail">
                     <div class="secene-sec secene-2-1" data-sec-index="0" data-sec-first="true"><img src="../images/detail/detail3-4.jpg"></div>
@@ -1737,7 +1737,7 @@ a {
     </div>
 <!-- S scene4 -->
 <div class="J_opaPannel pannels scene-4" data-index="3">
-        <div class="opa-stage stage" data-index="4" data-id="opa_stage_4" style="background-image: url('../images/p4/p4_bg.jpg'); background-color: rgb(153, 153, 153);">
+        <div class="opa-stage stage" data-index="4" data-id="opa_stage_4" style="background-image: url('../images/bg/p4_bg.jpg'); background-color: rgb(153, 153, 153);">
             <div class="mc mc-image delay_0_0s float-mask">
                 <div class="mc-wrap mc-wrap-detail">
                     <div class="secene-sec secene-3-1" data-sec-index="0" data-sec-first="true" data-sec-last="true"><img src="../images/detail/detail4-1.jpg"></div>
@@ -1889,7 +1889,7 @@ a {
 
             <div class="mc mc-image delay_0_0s duration_0_4s p4-line mi-zoomIn">
                             <div class="mc-wrap delay_0_8s duration_0_8s noAnimate">
-                                <div class="img-wrap"><img src="../images/p4/line_bg.png">
+                                <div class="img-wrap"><img src="../images/bg/line_bg_4.png">
                                 </div>
                             </div>
                         </div>
@@ -2018,7 +2018,7 @@ a {
     var PreLoad=function(a,b){var c=b||{};this.source=a,this.count=0,this.total=a.length,this.onload=c.onload,this.prefix=c.prefix||"",this.init()};PreLoad.prototype.init=function(){var a=this;a.source.forEach(function(b){var c=b.substr(b.lastIndexOf(".")+1).toLowerCase(),d=a.prefix+b;switch(c){case"js":a.script.call(a,d);break;case"css":a.stylesheet.call(a,d);break;case"svg":case"jpg":case"gif":case"png":case"jpeg":a.image.call(a,d)}})},PreLoad.prototype.getProgress=function(){return Math.round(this.count/this.total*100)},PreLoad.prototype.image=function(a){var b=document.createElement("img");this.load(b,a),b.src=a},PreLoad.prototype.stylesheet=function(a){var b=document.createElement("link");this.load(b,a),b.rel="stylesheet",b.type="text/css",b.href=a,document.head.appendChild(b)},PreLoad.prototype.script=function(a){var b=document.createElement("script");this.load(b,a),b.type="text/javascript",b.src=a,document.head.appendChild(b)},PreLoad.prototype.load=function(a,b){var c=this;a.onload=a.onerror=a.onabort=function(a){c.onload&&c.onload({count:++c.count,total:c.total,item:b,type:a.type})}
     };
     var tasks = [
-      "../images/bg_full.jpg",
+      "../images/bg/bg_full.jpg",
       "../images/arrow_icon.png",
       "../images/title2.png",
       "../images/text2.png",
