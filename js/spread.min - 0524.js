@@ -57,7 +57,6 @@
                     evtDom = curDom.parentNode,
                     nowSecDom = curDom.parentNode.querySelectorAll('.secene-sec'),
                     nowSecLength = nowSecDom.length;
-                    //console.log('2这里是move事件 curDom',curDom,' nowSecIndex ', nowSecIndex, 'move.y', move.y, 'disy' ,disy,'nowSecLength' ,nowSecLength, 'evtDom' ,evtDom)
                         
                         if(Math.abs(disy)>20){
 
@@ -71,7 +70,7 @@
                                     util.addClass(curDom.parentNode.parentNode, "secene-sec-changing");
                                     nextIndex = nowSecIndex-1;
                                     next = nowSecDom[nextIndex];
-                                    curDom.style[pre + "Transform"] = "scale(" + (1 + disy / vh) + ")", 
+                                    curDom.style[pre + "Transform"] = "scale(" + (1 + disy / vh) + ")",
                                     curDom.style.transform = "scale(" + (1 + disy / vh) + ")", 
                                     curDom.style.opacity = 1 - disy / vh, 
                                     next.style[pre + "Transform"] = "scale(" + (2 - disy / vh) + ")", 
@@ -92,24 +91,24 @@
                                     util.addClass(curDom.parentNode.parentNode, "secene-sec-changing");
                                     nextIndex = nowSecIndex+1;
                                     next = nowSecDom[nextIndex];
-                                    curDom.style[pre + "Transform"] = "scale(" + (1 + -disy / vh) + ")", 
-                                    curDom.style.transform = "scale(" + (1 + -disy / vh) + ")", 
-                                    curDom.style.opacity = 1 - -disy / vh, 
-                                    next.style[pre + "Transform"] = "scale(" + (2 - -disy / vh) + ")", 
-                                    next.style.transform = "scale(" + (2 - -disy / vh) + ")", 
+                                    curDom.style[pre + "Transform"] = "scale(" + (1 + -disy / vh) + ")",
+                                    curDom.style.transform = "scale(" + (1 + -disy / vh) + ")",
+                                    curDom.style.opacity = 1 - -disy / vh,
+                                    next.style[pre + "Transform"] = "scale(" + (2 - -disy / vh) + ")",
+                                    next.style.transform = "scale(" + (2 - -disy / vh) + ")",
                                     next.style.opacity = -disy / vh;
                                     ev.preventDefault();
                                 }
                                 else{
                                     next = null
-                                }        
+                                }
                             }
-                        } 
+                        }
                    // }
                 }
                 else{
 _this.set("prevent", !1);
-                    //console.log('target:',target,'<br>ev.target:',ev.target);
+
                     if(target){
                 posObj = ev.touches ? ev.touches[0] : ev, move.y = posObj.clientY || posObj.pageY, disy = move.y - start.y, Math.abs(disy) > 20 && (disy > 0 ? target.getAttribute("data-index") > 0 ? (next = _this.getNext.call(_this, index, -1), target.style[pre + "Transform"] = "scale(" + (1 + disy / vh) + ")", target.style.transform = "scale(" + (1 + disy / vh) + ")", target.style.opacity = 1 - disy / vh, next.style[pre + "Transform"] = "scale(" + (2 - disy / vh) + ")", next.style.transform = "scale(" + (2 - disy / vh) + ")", next.style.opacity = disy / vh) : next = null : target.getAttribute("data-index") < len - 1 ? (next = _this.getNext.call(_this, index, 1), target.style[pre + "Transform"] = "scale(" + (1 + -disy / vh) + ")", target.style.transform = "scale(" + (1 + -disy / vh) + ")", target.style.opacity = 1 - -disy / vh, next.style[pre + "Transform"] = "scale(" + (2 - -disy / vh) + ")", next.style.transform = "scale(" + (2 - -disy / vh) + ")", next.style.opacity = -disy / vh) : next = null), ev.preventDefault();
                 setTimeout(function(){App.Utils.removeClass(document.querySelector("#J_opaPage"), 'float-show-hide'),App.Utils.removeClass(document.querySelector("#J_opaPage"), 'float-show'),App.Utils.removeClass(document.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-show'),document.querySelector('.current .float-mask').style.zIndex=-1},400);
@@ -130,8 +129,9 @@ _this.set("prevent", !1);
                             document.querySelector('.current .float-mask').style.zIndex = -1;
                             util.removeClass(document.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-hide');
                             util.removeClass(_this.get('pageNode'), 'float-show');
-                            document.querySelector('.current .float-mask .page-current') && util.removeClass(document.querySelector('.current .float-mask .page-current'), 'page-current');
-                            document.querySelector('.current .float-mask .secene-sec-current') && util.removeClass(document.querySelector('.current .float-mask .secene-sec-current'), 'secene-sec-current');
+                            /*document.querySelector('.current .float-mask .mc-wrap-detail').parentNode.removeChild(document.querySelector('.current .float-mask .mc-wrap-detail'));*/
+                            document.querySelector('.current .float-mask .mc-wrap-detail').innerHTML = '';
+                            /*document.querySelector('.current .float-mask .page-current') && util.removeClass(document.querySelector('.current .float-mask .page-current'), 'page-current');*/
                             _this.set("prevent",!1);_this.set("sec-prevent",!1);_this.set("sec-close-prevent", !1);
                         }, 500);
                         /* E 关浮层 */
@@ -142,7 +142,7 @@ _this.set("prevent", !1);
                     }
                     else{
                        posObj = ev.changedTouches ? ev.changedTouches[0] : ev, move.y = posObj.clientY || posObj.pageY, disy = move.y - start.y;
-                        //console.log('这里是end处理,cur', curDom,'next',next)
+
                         if(next){
                             util.addClass(next, "has-transition"), util.addClass(curDom, "has-transition");
                             if(Math.abs(disy) > 20){
@@ -162,17 +162,18 @@ _this.set("prevent", !1);
                                 util.addClass(document.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-hide');
                                 util.removeClass(document.querySelector('.current .float-mask .page-current'), 'page-current');
                                 util.removeClass(curDom.parentNode.parentNode, "secene-sec-changing");
-                                /*for(var i = 0;i<document.querySelectorAll('.current .flaot-mask .icon').lenght;i++){
-                                    util.removeClass(document.querySelectorAll[i], 'secene-sec-current');
+                                //document.querySelector('.current .float-mask .mc-wrap-detail').parentNode.removeChild(document.querySelector('.current .float-mask .mc-wrap-detail'));
+                                /*for(var i = 0;i<document.querySelectorAll('.current .float-mask .mc-wrap-detail .secene-sec').length;i++){
+                                    var nDom = document.querySelectorAll('.current .float-mask .mc-wrap-detail .secene-sec')[i].querySelector('img');
+                                    nDom.parentNode.removeChild(nDom);
                                 }*/
-                                //util.removeClass(document.querySelector('.current .float-mask .secene-sec-current'), 'secene-sec-current');
+                                document.querySelector('.current .float-mask .mc-wrap-detail').innerHTML = '';
                                 _this.set("sec-close-prevent",!0);
                                 _this.set("prevent",!0);
                                 setTimeout(function () {
                                     document.querySelector('.current .float-mask').style.zIndex = -1;
                                     util.removeClass(document.querySelector('.current .float-mask .mc-wrap-detail'), 'float-wrap-hide');
                                     util.removeClass(_this.get('pageNode'), 'float-show');
-                                    /*document.querySelector('.current .float-mask .secene-sec-current') &&*/ util.removeClass(document.querySelector('.current .float-mask .secene-sec-current'), 'secene-sec-current');
                                     _this.set("prevent",!1);_this.set("sec-prevent",!1);_this.set("sec-close-prevent", !1);
 
                             }, 500);
@@ -184,7 +185,7 @@ _this.set("prevent", !1);
                             }
                             curDom.getAttribute("data-sec-index") == nowSecLength - 1 && _this.get("pb") && (_this.get("pbTimer") && (clearTimeout(_this.get("pbTimer")), _this.pbTimer = null), _this.get("pb").style.visibility = "visible", _this.get("pb").style.zIndex = 100, _this.get("pb").style.opacity = 1)
                         }
-                        //console.log('我执行了吗',evtDom)
+
                         page.removeEventListener(EVENTS.touchmove, moveHandler, !1), page.removeEventListener(EVENTS.touchup, endHandler, !1);
                     }
 
@@ -204,7 +205,6 @@ _this.set("prevent", !1);
                 /* E 没有二级页面 */
             }
             if(document.querySelector("#J_opaPage").className.indexOf('float-show')>-1 && document.querySelector("#J_opaPage").className.indexOf('float-show-') <0){
-                //console.log('继续怀疑吧',_this.get("sec-prevent"))
                 if (_this.get("sec-prevent"))return!1;
                     _this.set("sec-prevent", !0);
 
@@ -219,7 +219,6 @@ _this.set("prevent", !1);
                         vh = _this.get("vh"),
                         posObj = ev.touches ? ev.touches[0] : ev;
                     start.y = posObj.clientY || posObj.pageY;
-                //console.log('1这里绑定事件,start.y', start.y)
                 page.addEventListener(EVENTS.touchmove, moveHandler, !1), page.addEventListener(EVENTS.touchup, endHandler, !1);
                 }
                 else{
