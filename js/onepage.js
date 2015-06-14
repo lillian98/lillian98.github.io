@@ -57,15 +57,18 @@
                 x: 0,
                 y: 0
             }, end = {x: 0, y: 0}, dis = 0, touchStart = function (ev) {
+                //console.log('touchStart',_this.get("prevent"));
                 if (_this.get("prevent"))return !1;
                 var evo = ev.touches ? ev.touches[0] : ev;
                 ofs = _this.get("offset"), start = {x: evo.clientX, y: evo.clientY}, dis = 0;
                 var touchMove = function (ev) {
+                    //console.log('move');
                     ev.preventDefault(), evo = ev.touches ? ev.touches[0] : ev, end = {
                         x: evo.clientX,
                         y: evo.clientY
                     }, dis = end.x - start.x
                 }, touchEnd = function () {
+                    //console.log('touchEnd',Math.abs(dis));
                     if (Math.abs(dis) <= 20)return page.removeEventListener(EVENTS.touchmove, touchMove, !1), page.removeEventListener(EVENTS.touchup, touchEnd, !1), !1;
                     var current = page.querySelector(".current"), index = +current.getAttribute("data-index"), next = _this.getNext(index, dis > 0 ? "up" : "down");
                     if (Utils.addClass(dragger, "has-transition"), next)if (Math.abs(dis) > 50) {
@@ -83,6 +86,7 @@
                 };
                 page.addEventListener(EVENTS.touchmove, touchMove, !1), page.addEventListener(EVENTS.touchup, touchEnd, !1)
             };
+            //console.log('bind',page);
             page.addEventListener(EVENTS.touchdown, touchStart, !1), page.addEventListener(EVENTS.touchmove, function (ev) {
                 ev.preventDefault()
             }, !1)

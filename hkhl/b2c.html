@@ -1047,7 +1047,7 @@ a {
         height: 550px;
         bottom: 0;
     }
-/*.page{background-image: url(../images/b2c/bg_double.png)}*/
+.start-animate .bg{opacity: 1}
 .stage .mc-wrap{
     width: 100%;
     height: 100%;
@@ -1125,9 +1125,19 @@ a {
         top: 430px;
         position: relative;
     }
+    .person .mc-wrap,.person-lead .mc-wrap{overflow: visible}
     .stage .person .icon{
         background-image: url(../images/b2c/b_person.png);
         position: absolute;
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        -webkit-animation-fill-mode: forwards;
+    }
+    .stage .person-lead .icon{
+        position: absolute;
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        -webkit-animation-fill-mode: forwards;
     }
     .stage .person .icon-body{
         background-image: url("../images/b2c/b_person_body.png");
@@ -1179,6 +1189,7 @@ a {
     }
     .stage .msg-wrap  .icon{
         background-image: url(../images/b2c/msg.png);
+        background-position: 0 bottom;
     }
     .stage .msg-wrap-small{
         width: 37px;
@@ -1189,6 +1200,14 @@ a {
     .stage .msg-wrap-small .icon{
         background: url("../images/b2c/msg_small.png");
     }
+    .stage .msg-wrap-mask {
+ /*       background: url("../images/b2c/msg_wrap_mask.png");
+        width: 155px;
+        height: 128px;
+        top: 284px;
+        left: 332px;
+        opacity: 1;*/
+    }
     .stage .signal{
         display: none;
     }
@@ -1198,6 +1217,7 @@ a {
         color: #ffffff;
         width: 100%;
         font-size: 4rem;
+        z-index: 30;
     }
 .stage .text .mc-wrap{
     height: auto;
@@ -1205,6 +1225,8 @@ a {
     .stage .text em{
         font-style: normal;
     }
+
+
 /* scene-2 */
     .scene-2 .window4{
         left: 717px;
@@ -1233,6 +1255,7 @@ a {
     }
     .person-lead .icon{
         background-image: url("../images/b2c/person.png");
+        position: absolute;
     }
     /* scene-3 */
     .scene-3 .hand{
@@ -1290,9 +1313,520 @@ a {
         height: 537px;
         width: 237px;
     }
+    /* ani-4 */
+    .scene-5 .chair1 .icon,.scene-5 .chair3 .icon {
+        background-image: url(../images/b2c/chair_nobody.png);
+    }
+    .scene-5 .chair1 {
+        width: 239px;
+        height: 410px;
+        left: 5px;
+    }
+    .scene-5 .chair2 {
+        left: 256px;
+        transition-duration:0s;
+    }
+    .scene-5 .chair3 {
+        width: 239px;
+        height: 410px;
+        left: 494px;
+    }
+    .scene-5  .person-lead {
+        top:374px;
+        left: 260px;
+    }
+    .scene-5  .person-lead .icon-body{
+        background-image: url(../images/b2c/p5_person_body.png);
+        width: 237px;
+        height: 537px;
+    }
+    .scene-5 .person-lead .icon-left-hand {
+        background-image: url(../images/b2c/p5_person_left_hand.png);
+        width: 52px;
+        height: 126px;
+        left: 160px;
+        top: 201px;
+        position: absolute;
+    }
+    .scene-5 .person-lead .icon-right-hand {
+        background: url(../images/b2c/p5_person_right_hand.png);
+        width: 92px;
+        height: 126px;
+
+        left: 20px;
+        top: 203px;
+        position: absolute;
+    }
+    .scene-5 .person-lead .icon-glass {
+        background-image: url(../images/b2c/p5_glass.png);
+        width: 110px;
+        height: 25px;
+        left: 57px;
+        top:58px;
+        position: absolute;
+        opacity: 0;
+    }
+    .scene-5 .person-lead .icon-popcorn {
+        background-image: url(../images/b2c/p5_popcorn.png);
+        width: 83px;
+        height: 101px;
+        left: 60px;
+        top: 216px;
+        position: absolute;
+        opacity: 0;
+    }
+    .scene-5 .person-lead .icon-cola {
+        background-image: url(../images/b2c/p5_cola.png);
+        width: 37px;
+        height: 67px;
+        left: 142px;
+        top: 250px;
+        opacity: 0;
+    }
+    .scene-5 .person-lead .icon-last-phone{
+        background-image: url(../images/b2c/p4_phone.png);
+        width: 32px;
+        height: 20px;
+        left: 109px;
+        top: 292px;
+    }
+    /* scene-6 */
+    .scene-6 .person-lead {
+        z-index: 10;
+    }
+    .scene-6 .person-lead .icon-body {
+        background-image: url(../images/b2c/p5_person_body.png);
+        width: 235px;
+        height: 535px;
+    }
+    .scene-6 .person-lead .icon-left-hand {
+        background-image: url(../images/b2c/p6_left_hand.png);
+        width: 123px;
+        height: 116px;
+        left: 164px;
+        top: 103px;
+        opacity: 0;;
+    }
+    .scene-6 .person-lead .icon-right-hand {
+        background-image: url(../images/b2c/p6_right_hand.png);
+        width: 126px;
+        height: 123px;
+        left: -58px;
+        top: 100px;
+        opacity: 0;;
+    }
+    .scene-6 .person-lead .icon-phone {
+        background-image: url(../images/b2c/p6_phone.png);
+        width: 40px;
+        height: 49px;
+        left: 249px;
+        top: 72px;
+        opacity: 0;;
+    }
+    .scene-6 .stock-bg {
+        background-image: url(../images/b2c/stock_bg.png);
+        width: 713px;
+        height: 375px;
+        left: 19px;
+        top: 185px;
+    }
+    .scene-6 .stock-line {
+        background-image: url(../images/b2c/stock_line.png);
+        width: 600px;
+        height: 255px;
+        left: 54px;
+        top:269px;
+    }
+    .scene-6 .money {
+        background-image: url(../images/b2c/money.png);
+        width: 310px;
+        height: 146px;
+        left: 218px;
+        top: 826px;
+        z-index: 20;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .scene-6 .person-lead .icon-left-hand-last{
+        background-image: url(../images/b2c/p5_person_left_hand.png);
+        width: 52px;
+        height: 126px;
+        left: 160px;
+        top: 201px;
+        position: absolute;
+    }
+    .scene-6 .person-lead .icon-right-hand-last{
+        background: url(../images/b2c/p5_person_right_hand.png);
+        width: 92px;
+        height: 126px;
+        left: 20px;
+        top: 203px;
+        position: absolute;
+    }
+    .scene-6 .person-lead .icon-glass-last {
+        background-image: url(../images/b2c/p5_glass.png);
+        width: 110px;
+        height: 25px;
+        left: 57px;
+        top:58px;
+        position: absolute;
+        opacity: 1;
+        z-index: 3;
+    }
+    .scene-6 .person-lead .icon-popcorn-last {
+        background-image: url(../images/b2c/p5_popcorn.png);
+        width: 83px;
+        height: 101px;
+        left: 60px;
+        top: 216px;
+        opacity: 1;
+        z-index: 3;
+    }
+    .scene-6 .person-lead .icon-cola-last {
+        background-image: url(../images/b2c/p5_cola.png);
+        width: 37px;
+        height: 67px;
+        left: 142px;
+        top: 250px;
+        opacity: 1;
+        z-index: 3;
+    }
+    /* scene-7 */
+    .scene-7 .person-lead .icon-body {
+        background-image: url(../images/b2c/p5_person_body.png);
+        width: 235px;
+        height: 535px;
+    }
+    .scene-7 .person-lead .icon-left-hand {
+        background-image: url(../images/b2c/p7_left_hand.png);
+        width: 81px;
+        height: 149px;
+        left: 151px;
+        top: 223px;
+        opacity: 0;
+    }
+    .scene-7 .person-lead .icon-right-hand {
+        background-image: url(../images/b2c/p7_right_hand.png);
+        width: 84px;
+        height: 150px;
+        left: 28px;
+        top: 225px;
+        opacity: 0;
+    }
+    .scene-7 .icon-game-handler {
+        background-image: url(../images/b2c/p7_gamehander.png);
+        width: 70px;
+        height: 28px;
+        left: 97px;
+        top:349px;
+        opacity: 0;
+    }
+    .scene-7 .icon-game-line {
+        background-image: url(../images/b2c/p7_line.png);
+        width: 50px;
+        height: 212px;
+        left: 131px;
+        top:367px;
+        opacity: 0;
+    }
+    .scene-7 .clock {
+        background-image: url(../images/b2c/p7_clock.png);
+        width: 123px;
+        height: 122px;
+        left: 490px;
+        top:224px;
+    }
+    .scene-7 .door {
+        background-image: url(../images/b2c/p7_door.png);
+        width: 201px;
+        height: 498px;
+        left: 79px;
+        top:336px;
+    }
+    .scene-7 .food {
+        background-image: url(../images/b2c/p7_food.png);
+        width: 143px;
+        height: 185px;
+        left: 532px;
+        top:644px;
+    }
+    .scene-7 .wii {
+        background-image: url(../images/b2c/p7_WII.png);
+        width: 201px;
+        height: 80px;
+        left: 274px;
+        top:922px;
+    }
+    .scene-7 .person-lead .icon-left-hand-last {
+        background-image: url(../images/b2c/p6_left_hand.png);
+        width: 123px;
+        height: 116px;
+        left: 164px;
+        top: 103px;
+        opacity: 1;
+    }
+    .scene-7 .person-lead .icon-right-hand-last {
+        background-image: url(../images/b2c/p6_right_hand.png);
+        width: 126px;
+        height: 123px;
+        left: -58px;
+        top: 100px;
+        opacity: 1;
+    }
+    .scene-7 .icon-phone-last{
+        background-image: url(../images/b2c/p6_phone.png);
+        width: 40px;
+        height: 49px;
+        left: 249px;
+        top: 72px;
+        opacity: 1;
+    }
+    /* scene-8 */
+    .scene-8 .person-lead .icon-body {
+        background-image: url(../images/b2c/p5_person_body.png);
+        width: 235px;
+        height: 535px;
+    }
+    .scene-8 .person-lead .icon-left-hand {
+        background-image: url(../images/b2c/p8_left_hand.png);
+        width: 126px;
+        height: 54px;
+        left: 159px;
+        top: 204px;
+    }
+    .scene-8 .person-lead .icon-right-hand {
+        background-image: url(../images/b2c/p8_right_hand.png);
+        width: 83px;
+        height: 150px;
+        left: 17px;
+        top: 200px;
+    }
+    .scene-8 .person-lead .icon-shoe {
+        background-image: url(../images/b2c/p8_shoe.png);
+        width: 30px;
+        height: 55px;
+        left: 274px;
+        top: 175px;
+    }
+    .scene-8 .light {
+        background-image: url(../images/b2c/p8_light.png);
+        width: 465px;
+        height: 34px;
+        left: 146px;
+        top: 182px;
+    }
+    .scene-8 .ray {
+        background-image: url(../images/b2c/p8_ray.png);
+        width: 504px;
+        height: 64px;
+        left: 126px;
+        top: 215px;
+    }
+    .scene-8 .shoe-rack {
+        background-image: url(../images/b2c/p8_shoe_rack.png);
+        width: 583px;
+        height: 368px;
+        left: 83px;
+        top: 302px;
+        z-index: -1;
+    }
+    .scene-8 .shoe {
+        background-image: url(../images/b2c/p8_shoe.png);
+        width: 30px;
+        height: 55px;
+        left: 214px;
+        top: 845px;
+        z-index: 10;
+    }
+    .scene-8 .shoe-box {
+        background-image: url(../images/b2c/p8_shoebox1.png);
+        width: 96px;
+        height: 63px;
+        left: 180px;
+        top: 884px;
+    }
+    .scene-8 .shoe-box-1 {
+        z-index: 10;
+    }
+    .scene-8 .shoe-box-2 {
+        background-image: url(../images/b2c/p8_shoebox2.png);
+        width: 96px;
+        height: 63px;
+        left: 180px;
+        top: 921px;
+    }
+    .scene-8 .mirror {
+        background-image: url(../images/b2c/p8_mirror.png);
+        width: 86px;
+        height: 145px;
+        left: 528px;
+        top: 855px;
+    }
+    /* scene-9 */
+    .scene-9 .person-lead .icon-body {
+        background-image: url(../images/b2c/p5_person_body.png);
+        width: 235px;
+        height: 535px;
+    }
+    .scene-9 .person-lead .icon-left-hand {
+        background-image: url(../images/b2c/p9_left_hand.png);
+        width: 72px;
+        height: 104px;
+        left: 141px;
+        top: 198px
+    }
+    .scene-9 .person-lead .icon-right-hand {
+        background-image: url(../images/b2c/p9_right_hand.png);
+        width: 129px;
+        height: 51px;
+        left: -56px;
+        top: 202px
+    }
+    .scene-9 .person-lead .icon-book {
+        background-image: url(../images/b2c/p9_book.png);
+        width: 75px;
+        height: 59px;
+        left: 84px;
+        top: 253px;
+    }
+    .scene-9 .lamp {
+        background-image: url(../images/b2c/p9_lamp.png);
+        width: 90px;
+        height: 151px;
+        left: 111px;
+        top: 516px;
+    }
+    .scene-9 .lamp-light {
+        background-image: url(../images/b2c/p9_lamp_light.png);
+        width: 109px;
+        height: 51px;
+        left: 99px;
+        top: 585px;
+    }
+    .scene-9 .bedstand {
+        background-image: url(../images/b2c/p9_bedstand.png);
+        width: 199px;
+        height: 206px;
+        left: 59px;
+        top: 653px;
+    }
+    .scene-9 .bed {
+        background-image: url(../images/b2c/p9_bed.png);
+        width: 254px;
+        height: 355px;
+        left: 495px;
+        top: 505px;
+    }
+    /* scene-10 */
+    .scene-10 .person-lead .icon-body {
+        background-image: url(../images/b2c/p5_person_body.png);
+        width: 235px;
+        height: 535px;
+    }
+    .scene-10 .person-lead .icon-left-hand {
+        background-image: url(../images/b2c/p10_left_hand.png);
+        width: 73px;
+        height: 104px;
+        left: 140px;
+        top: 198px;
+    }
+    .scene-10 .person-lead .icon-right-hand {
+        background-image: url(../images/b2c/p10_right_hand.png);
+        width: 82px;
+        height: 71px;
+        left: 17px;
+        top: 199px
+    }
+    .scene-10 .person-lead .icon-glass {
+        background-image: url(../images/b2c/p10_glass.png);
+        left: 60px;
+        top: 58px;
+        width: 108px;
+        height: 36px;
+    }
+    .scene-10 .person-lead .icon-cola {
+        background-image: url(../images/b2c/p10_cola.png);
+        width: 35px;
+        height: 94px;
+        left: 80px;
+        top: 136px;
+    }
+    .scene-10 .umbrella {
+        background-image: url(../images/b2c/p10_umb.png);
+        width: 502px;
+        height: 531px;
+        left: 0;
+        top: 280px;
+    }
+    .scene-10 .tea-table {
+        background-image: url(../images/b2c/p10_tea_table.png);
+        width: 239px;
+        height: 202px;
+        left: 27px;
+        top: 641px;
+    }
+    .scene-10 .coconut {
+        background-image: url(../images/b2c/p10_coconut.png);
+        width: 260px;
+        height: 623px;
+        left: 491px;
+        top: 196px
+    }
+    /* scene-11 */
+    .scene-11  .person-lead .icon-body{
+        background-image: url(../images/b2c/p5_person_body.png);
+        width: 237px;
+        height: 537px;
+    }
+    .scene-11 .person-lead .icon-left-hand {
+        background-image: url(../images/b2c/p11_left_hand.png);
+        width: 53px;
+        height: 116px;
+        left: 163px;
+        top: 200px;
+        position: absolute;
+    }
+    .scene-11 .person-lead .icon-right-hand {
+        background: url(../images/b2c/p11_right_hand.png);
+        width: 39px;
+        height: 166px;
+        left: 32px;
+        top: 200px;
+        position: absolute;
+    }
+    .scene-11 .person-lead .icon-phone {
+        background: url(../images/b2c/p11_phone.png);
+        width: 40px;
+        height: 50px;
+        left: 147px;
+        top: 303px;
+        position: absolute;
+    }
+    .scene-11 .chair-2 {
+        left: 495px;
+        top: 451px;
+    }
+    .scene-11 .person-lady {
+        background-image: url(../images/b2c/p11_lady.png);
+        width: 206px;
+        height: 535px;
+        left: 544px;
+        top: 376px;
+    }
+    .scene-11 .icon-window3 {
+        display: none;
+    }
+    .scene-11 .icon-window4 {
+        left: 723px;
+    }
+    /* test */
+ /*   .scene-11  .mc-wrap , .scene-11  .mc{
+        opacity: 1;
+    }*/
 
     /* stage in animate */
     .ani-0 .scene-1.start-animate .bg{
+        opacity: 0;
         -webkit-animation-name: opacity0ZoomBt;
         animation-name:opacity0ZoomBt;
         -webkit-animation-timing-function: linear;
@@ -1313,14 +1847,49 @@ a {
         -webkit-animation-duration: 1s;
         -webkit-animation-delay: 0s;
     }
-    .ani-0 .scene-1.start-animate .chair, .ani-0 .scene-1.start-animate .person,.ani-0 .scene-1.start-animate .msg-wrap,.ani-0 .scene-1.start-animate .msg-wrap-small{
+    .ani-0 .scene-1.start-animate .chair{
         -webkit-animation-name: chairT2D;
         animation-name:chairT2L;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: .2s;
         -webkit-animation-delay: 1.5s;
     }
-
+    .ani-0 .scene-1.start-animate .person{
+        -webkit-animation-name: chairT2D;
+        animation-name:chairT2L;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: .2s;
+        -webkit-animation-delay: 2s;
+    }
+    .ani-0 .scene-1.start-animate .stage .person .icon-right-hand{
+        -webkit-animation-name: blackPersonRight;
+        animation-name:blackPersonRight;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-delay: 2.6s;
+        -webkit-animation-iteration-count: infinite;
+    }
+    .ani-0 .scene-1.start-animate .msg-wrap{
+        -webkit-animation-name: fadeToTop;
+        animation-name:fadeToTop;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: .2s;
+        -webkit-animation-delay: 2.4s;
+    }
+    .ani-0 .scene-1.start-animate .msg-wrap-small{
+        -webkit-animation-name: fadeToTopSmall;
+        animation-name:fadeToTop;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: .2s;
+        -webkit-animation-delay: 2.2s;
+    }
+    .ani-0 .scene-1.start-animate .msg-wrap-mask{
+        -webkit-animation-name: fadeToTop;
+        animation-name:fadeToTop;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: .2s;
+        -webkit-animation-delay: 2.2s;
+    }
     .ani-0 .scene-1.start-animate .text{
         -webkit-animation-name: bottomtext;
         animation-name:bottomtext;
@@ -1400,7 +1969,7 @@ a {
             -webkit-transform: translate(0,100px) scale(1.5);
             opacity: 0;
         }
-        20%{
+        10%{
             -webkit-transform: translate(0,100px) scale(1.5);
             opacity: 1;
         }
@@ -1411,8 +1980,12 @@ a {
     }
     @keyframes opacity0Zoom{
         0%{
-            transform: translate(0,100px) scale(1.5);
+            transform: translate(0,100px) scale(1);
             opacity: 0;
+        }
+        10%{
+            transform: translate(0,100px) scale(1.5);
+            opacity: 1;
         }
         100%{
             transform: translate(0,0) scale(1);
@@ -1426,6 +1999,38 @@ a {
         }
         100%{
             -webkit-transform: translateX(0) translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes fadeToTop{
+        0%{
+            -webkit-transform: translate(0,89px);
+            height: 0;
+        }
+        100%{
+            -webkit-transform: translate(0,0);
+            height: 89px;
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes fadeToTopSmall{
+        0%{
+            -webkit-transform: translate(0,21px);
+            height: 0;
+        }
+        100%{
+            -webkit-transform: translate(0,0);
+            height: 21px;
+            opacity: 1;
+        }
+    }
+    @-webkit-keyframes blackPersonRight{
+        0%{
+            -webkit-transform: rotate(17deg);
+            opacity: 1;
+        }
+        100%{
+            -webkit-transform: rotate(0);
             opacity: 1;
         }
     }
@@ -1521,6 +2126,35 @@ a {
         100%{
             -webkit-transform: translateX(0) translateY(0) rotate(0deg);
             opacity: 1;
+        }
+    }
+    @-webkit-keyframes  textZoomIn{
+        0%{
+            -webkit-transform: translate(0,48px) scale(0.1);
+            transform-origin: 50% 50%;
+            opacity: 0;
+        }
+        85%{
+            -webkit-transform: translate(0,-10px) scale(1.1);
+            transform-origin: 50% 50%;
+            opacity: 0.85;
+        }
+        100%{
+            -webkit-transform: translate(0,0) scale(1);
+            transform-origin: 50% 50%;
+            opacity: 1;
+        }
+     }
+    @-webkit-keyframes textZoomOut{
+        0%{
+            -webkit-transform: translate(0,0) scale(1);
+            transform-origin: 50% 50%;
+            opacity: 1;
+        }
+        100%{
+            -webkit-transform: translate(0,0) scale(0.1);
+            transform-origin: 50% 50%;
+            opacity: 0;
         }
     }
 /* ani-1 */
@@ -1621,17 +2255,361 @@ a {
             opacity: 1;
         }
     }
-    /*@-webkit-keyframes textZoomIn {
+    /* ani-3 */
+    .ani-3 .scene-4.start-animate .window{
+        -webkit-animation-name: opacity0Zoom;
+        animation-name:opacity0Zoom;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 0.8s;
+    }
+    .ani-3 .scene-4.start-animate .person-lead, .ani-3 .scene-4.start-animate .chair{
+        opacity: 1;
+    }
+    .ani-3 .scene-4.start-animate .text{
+        -webkit-animation-name: textZoomIn;
+        animation-name:textZoomIn;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 0.8s;
+    }
+    /* ani-4 */
+    /* scene-4 out */
+    .ani-4 .scene-4 .window{
+        -webkit-animation-name: opacity0ZoomAni;
+        animation-name:opacity0Zoom;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 0s;
+    }
+    .ani-4 .scene-4 .chair{
+        transition-duration: 0s;
+    }
+    .ani-4 .scene-4 .text{
+        -webkit-animation-name: textZoomOut;
+        animation-name:textZoomOut;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 0s;
+    }
+    @-webkit-keyframes opacity0ZoomAni{
         0%{
-            -webkit-transform: scale(1);
-        }
-        50%{
-            -webkit-transform: scale(1.5);
+            -webkit-transform: translate(0,0) scale(1);
+            opacity: 1;
         }
         100%{
-            -webkit-transform: scale(1);
+            -webkit-transform: translate(0,100px) scale(1.5);
+            opacity: 0;
         }
-     }*/
+     }
+    /* scene-5 in */
+    .ani-4 .scene-5.start-animate .chair2,.ani-4 .scene-5.start-animate .person-lead{
+        opacity: 1;
+        transition-duration: 0s;
+    }
+    .ani-4 .scene-5.start-animate .chair1{
+        -webkit-animation-name: chairYL2R;
+        animation-name:chairYL2R;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 0.5s;
+    }
+    .ani-4 .scene-5.start-animate .chair3{
+        -webkit-animation-name: chairYR2L;
+        animation-name:chairYR2L;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 0.5s;
+    }
+    .ani-4 .scene-5.start-animate .person-lead .icon-right-hand{
+        -webkit-animation-name: handOut;
+        animation-name:handOut;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.6s;
+        -webkit-animation-delay: 1s;
+    }
+    .ani-4 .scene-5.start-animate .person-lead .icon-last-phone{
+        -webkit-animation-name: handOutDisappear;
+        animation-name:handOutDisappear;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.6s;
+        -webkit-animation-delay: 1s;
+        -webkit-animation-fill-mode: forwards;
+    }
+    .ani-4 .scene-5.start-animate .person-lead .icon-glass{
+        -webkit-animation-name: top2Cur;
+        animation-name:top2Cur;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: 1.3s;
+    }
+    .ani-4 .scene-5.start-animate .person-lead .icon-popcorn{
+        -webkit-animation-name: top2Cur;
+        animation-name:top2Cur;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 1.8s;
+    }
+    .ani-4 .scene-5.start-animate .person-lead .icon-cola{
+        -webkit-animation-name: top2Cur;
+        animation-name:top2Cur;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.2s;
+        -webkit-animation-delay: 2s;
+    }
+    .ani-4 .scene-5.start-animate .text{
+        -webkit-animation-name: textZoomIn;
+        animation-name:textZoomIn;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 2.1s;
+    }
+    @-webkit-keyframes chairYL2R{
+        0%{-webkit-transform: translate(-239px,0);opacity: 1}
+        100%{-webkit-transform: translate(0,0);opacity: 1}
+    }
+    @-webkit-keyframes chairYR2L{
+        0%{-webkit-transform: translate(250px,0);opacity: 1}
+        100%{-webkit-transform: translate(0,0);opacity: 1}
+    }
+    @-webkit-keyframes handOut{
+        0%{-webkit-transform: rotate(0deg);opacity: 1}
+        50%{-webkit-transform: rotate(17deg);opacity: 1}
+        100%{-webkit-transform: rotate(0deg);opacity: 1}
+    }
+    @-webkit-keyframes handOutDisappear{
+        0%{-webkit-transform: rotate(0deg);opacity: 1}
+        50%{-webkit-transform: rotate(17deg);opacity: 0}
+        100%{opacity: 0}
+    }
+    @-webkit-keyframes top2Cur{
+        0%{-webkit-transform: translate(0,-400px);opacity: 1}
+        100%{-webkit-transform: translate(0,0);opacity: 1}
+    }
+/* scene-5 out */
+    .ani-5 .scene-5 .chair2{transition-duration: 0s;}
+    .ani-5 .scene-5 .chair1{
+        -webkit-animation-name: chairYL2RAni;
+        animation-name:chairYL2RAni;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0.3s;
+    }
+    .ani-5 .scene-5 .chair3{
+        -webkit-animation-name: chairYR2LAni;
+        animation-name:chairYR2LAni;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0.3s;
+    }
+    .ani-5 .scene-5 .text{
+        -webkit-animation-name: textZoomOut;
+        animation-name:textZoomOut;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0s;
+    }
+    .ani-5 .scene-6.start-animate .icon-popcorn-last{
+        -webkit-animation-name: popcornRotateOut;
+        animation-name:popcornRotateOut;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 1.2s;
+    }
+    .ani-5 .scene-6.start-animate .icon-cola-last{
+        -webkit-animation-name: colaRotateOut;
+        animation-name:colaRotateOut;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 1.2s;
+    }
+    .ani-5 .scene-6.start-animate .icon-glass-last{
+        -webkit-animation-name: glassRotateOut;
+        animation-name:glassRotateOut;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 1.4s;
+    }
+    .ani-5 .scene-6.start-animate .icon-left-hand-last,.ani-5 .scene-6.start-animate .icon-right-hand-last{
+        -webkit-animation-name: opacity0;
+        animation-name:opacity0;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: 1.2s;
+    }
+    @-webkit-keyframes opacity0{
+        0%{opacity: 1}
+        100%{opacity: 0}
+    }
+    @-webkit-keyframes opacity1{
+        0%{opacity: 0}
+        100%{opacity: 1}
+    }
+    @-webkit-keyframes chairYL2RAni{
+        0%{-webkit-transform: translate(0,0);opacity: 1}
+        100%{-webkit-transform: translate(-239px,0);opacity: 0}
+    }
+    @-webkit-keyframes chairYR2LAni{
+        0%{-webkit-transform: translate(0,0);opacity: 1}
+        100%{-webkit-transform: translate(250px,0);opacity: 0}
+    }
+    @-webkit-keyframes popcornRotateOut{
+        0%{-webkit-transform: translate(0,0);opacity: 1}
+        40%{-webkit-transform: translate(-150px,-200px) rotate(-25deg);opacity: 1}
+        45%{-webkit-transform: translate(-150px,-200px) rotate(0deg);opacity: 1}
+        50%{-webkit-transform: translate(-150px,-200px) rotate(25deg);opacity: 1}
+        55%{-webkit-transform: translate(-150px,-200px) rotate(50deg);opacity: 1}
+        60%{-webkit-transform: translate(-150px,-200px) rotate(90deg);opacity: 0.8}
+        70%{-webkit-transform: translate(-195px,-240px) rotate(125deg);opacity: 0.7}
+        85%{-webkit-transform: translate(-280px,-260px) rotate(175deg);opacity: 0.6}
+        90%{-webkit-transform: translate(-380px,-340px) rotate(210deg);opacity: 0.5}
+        95%{-webkit-transform: translate(-400px,-500px) rotate(275deg);opacity: 0.4}
+        100%{-webkit-transform: translate(-500px,-550px) rotate(0deg);opacity: 0}
+    }
+    @-webkit-keyframes colaRotateOut{
+        0%{-webkit-transform: translate(0,0);opacity: 1}
+        40%{-webkit-transform: translate(150px,-200px) rotate(-25deg);opacity: 1}
+        45%{-webkit-transform: translate(150px,-200px) rotate(0deg);opacity: 1}
+        50%{-webkit-transform: translate(150px,-200px) rotate(25deg);opacity: 1}
+        55%{-webkit-transform: translate(150px,-200px) rotate(50deg);opacity: 1}
+        60%{-webkit-transform: translate(150px,-200px) rotate(90deg);opacity: 0.8}
+        70%{-webkit-transform: translate(195px,-240px) rotate(125deg);opacity: 0.7}
+        85%{-webkit-transform: translate(280px,-260px) rotate(175deg);opacity: 0.6}
+        90%{-webkit-transform: translate(380px,-340px) rotate(210deg);opacity: 0.5}
+        95%{-webkit-transform: translate(400px,-500px) rotate(275deg);opacity: 0.4}
+        100%{-webkit-transform: translate(500px,-550px) rotate(0deg);opacity: 0}
+    }
+    @-webkit-keyframes glassRotateOut{
+        0%{-webkit-transform: translate(0,0);opacity: 1}
+        10%{-webkit-transform: translate(0,0) rotate(-25deg);opacity: 1}
+        20%{-webkit-transform: translate(-100px,-200px) rotate(-25deg);opacity: 1}
+        40%{-webkit-transform: translate(-100px,-200px) rotate(50deg);opacity: 1}
+        50%{-webkit-transform: translate(-100px,-200px) rotate(90deg);opacity: 0.8}
+        70%{-webkit-transform: translate(-150px,-240px) rotate(125deg);opacity: 0.7}
+        85%{-webkit-transform: translate(-230px,-260px) rotate(175deg);opacity: 0.6}
+        90%{-webkit-transform: translate(-330px,-340px) rotate(210deg);opacity: 0.5}
+        95%{-webkit-transform: translate(-350px,-500px) rotate(275deg);opacity: 0.4}
+        100%{-webkit-transform: translate(-350px,-550px) rotate(0deg);opacity: 0}
+    }
+/* scene-6 in */
+    .ani-5 .scene-6.start-animate .chair,.ani-5 .scene-6.start-animate .person-lead{
+        opacity: 1;
+        transition-duration: 0s;
+        z-index: 3;
+    }
+    .ani-5 .scene-6.start-animate .person-lead .icon-left-hand,.ani-5 .scene-6.start-animate .person-lead .icon-right-hand{
+        opacity: 0;
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: 1.2s;
+    }
+    .ani-5 .scene-6.start-animate .person-lead .icon-phone{
+        -webkit-animation-name: top2Cur;
+        animation-name:top2Cur;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.2s;
+        -webkit-animation-delay: 1.8s;
+    }
+    .ani-5 .scene-6.start-animate .stock-bg{
+        -webkit-animation-name: stockRotateIn;
+        animation-name:stockRotateIn;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.4s;
+        -webkit-animation-delay: 0.6s;
+    }
+
+    .ani-5 .scene-6.start-animate .money{
+        -webkit-animation-name: moneyIn;/*挤压过程，有个扁的形态*/
+        animation-name:moneyIn;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.4s;
+        -webkit-animation-delay: 0.8s;
+    }
+    .ani-5 .scene-6.start-animate .stock-line{
+        -webkit-animation-name: lineIn;/*宽度变化，1/3时扔可乐和爆米花，2/3时扔眼镜，出现文字*/
+        animation-name:lineIn;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.6s;
+        -webkit-animation-delay: 1s;
+    }
+    .ani-5 .scene-6.start-animate .text{
+        -webkit-animation-name: textZoomIn;
+        animation-name:textZoomIn;
+        -webkit-animation-timing-function: ease-in;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 1.5s;
+    }
+    @-webkit-keyframes stockRotateIn{
+        0%{-webkit-transform: translate(-713px,0) rotateY(35deg);opacity: 1}
+        75%{-webkit-transform: translate(40px,0) rotateY(35deg);opacity: 1}
+        100%{-webkit-transform: translate(0px,0) rotateY(0deg);opacity: 1}
+    }
+    @-webkit-keyframes moneyIn{
+        0%{-webkit-transform: translate(0,-400px);opacity: 0}
+        80%{-webkit-transform: translate(-15px,15px);opacity: 0.8;width: 340px;height: 126px}
+        100%{-webkit-transform: translate(0px,0);opacity: 1;width: 310px;height: 146px;}
+    }
+    @-webkit-keyframes lineIn{
+        0%{width:0;opacity: 1}
+        100%{width:600px;opacity:1}
+    }
+/* scene-6 out */
+    .ani-6 .scene-6 .stock-bg{
+        -webkit-animation-name: stockRotateOut;
+        animation-name:stockRotateOut;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0s;
+    }
+    .ani-6 .scene-6 .stock-line{
+        -webkit-animation-name: stockRotateOut;
+        animation-name:stockRotateOut;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0s;
+    }
+    .ani-6 .scene-6 .money{
+        -webkit-animation-name: stockRotateOut;
+        animation-name:stockRotateOut;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0s;
+    }
+
+    @-webkit-keyframes stockRotateOut{
+        0%{
+            -webkit-transform: translate(0,0) rotate(0);
+            opacity: 1;
+        }
+        100%{
+            -webkit-transform: translate(700px,10px) rotate(3deg);
+            opacity: 0;
+        }
+    }
+/* scene-7 in */
+    .ani-6 .scene-7.start-animate .chair,.ani-6 .scene-7.start-animate .person-lead{
+        opacity: 1;
+        transition-duration: 0s;
+    }
+    .ani-6 .scene-7.start-animate .clock,.ani-6 .scene-7.start-animate .door,.ani-6 .scene-7.start-animate .tea-table{
+        -webkit-animation-name: rotateIn;
+        animation-name:rotateIn;
+        -webkit-animation-timing-function: ease-in;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 0.3s;
+    }
+    @-webkit-keyframes rotateIn{
+        0%{
+            -webkit-transform: translate(-700px,-10px) rotate(-3deg);
+            opacity: 0;
+        }
+        100%{
+            -webkit-transform: translate(0,0) rotate(0deg);
+            opacity: 1;
+        }
+    }
 </style>
 </head>
 <body>
@@ -1705,27 +2683,27 @@ a {
                 </div>
             </div>
             <!-- E person -->
-            <!-- S phone -->
-            <!--<div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn phone">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>-->
-            <!-- E phone -->
             <!-- S msg wrap -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn msg-wrap">
+            <div class="mc mc-image msg-wrap">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E msg wrap -->
             <!-- S msg wrap small -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn msg-wrap msg-wrap-small">
+            <div class="mc mc-image msg-wrap msg-wrap-small">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E msg wrap small -->
+            <!-- S wrap mask -->
+            <div class="mc mc-image msg-wrap-mask">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E wrap mask -->
             <!-- S signal -->
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn signal">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -1744,8 +2722,15 @@ a {
     </div>
     <!-- E scene1 -->
     <!-- S scene2 -->
-    <div class="J_opaPannel pannels scene-2" data-index="1">
+    <div class="J_opaPannel pannels scene-2 has-bg" data-index="1">
         <div class="opa-stage stage" data-index="1" data-id="opa_stage_2" style="">
+            <!-- S bg -->
+            <div class="mc mc-image bg">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E bg -->
             <!-- S logo -->
             <div class="mc mc-image logo">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -1848,8 +2833,15 @@ a {
     </div>
     <!-- E scene2-->
     <!-- S scene3 -->
-    <div class="J_opaPannel pannels scene-3" data-index="2">
+    <div class="J_opaPannel pannels scene-3 has-bg" data-index="2">
         <div class="opa-stage stage" data-index="2" data-id="opa_stage_3" style="">
+            <!-- S bg -->
+            <div class="mc mc-image bg">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E bg -->
             <!-- S phone -->
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn phone">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -1889,8 +2881,15 @@ a {
     </div>
     <!-- E scene3-->
     <!-- S scene4 -->
-    <div class="J_opaPannel pannels scene-4" data-index="3" data-first="true">
+    <div class="J_opaPannel pannels scene-4 has-bg" data-index="3">
         <div class="opa-stage stage" data-index="3" data-id="opa_stage_4" style="">
+            <!-- S bg -->
+            <div class="mc mc-image bg">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E bg -->
             <!-- S logo -->
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -1898,37 +2897,19 @@ a {
                 </div>
             </div>
             <!-- E logo -->
-            <!-- S window1 -->
-            <div class="mc mc-image delay_0_0s duration_0_8s window window1">
+            <!-- S window -->
+            <div class="mc mc-image window">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
+                    <div class="icon icon-window1"></div>
+                    <div class="icon icon-window2"></div>
+                    <div class="icon icon-window3"></div>
+                    <div class="icon icon-window4"></div>
                 </div>
             </div>
-            <!-- E window1 -->
-            <!-- S window2 -->
-            <div class="mc mc-image delay_0_0s duration_0_8s window window2">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E window2 -->
-            <!-- S window3 -->
-            <div class="mc mc-image delay_0_0s duration_0_8s window window3">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E window3 -->
-            <!-- S window4 -->
-            <div class="mc mc-image delay_0_0s duration_0_8s window window4">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E window4 -->
+            <!-- E window -->
             <!-- S chair -->
-            <div class="mc mc-image delay_0_0s duration_0_8s chair">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+            <div class="mc mc-image   chair">
+                <div class="mc-wrap   noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
@@ -1942,34 +2923,6 @@ a {
                 </div>
             </div>
             <!-- E person -->
-            <!-- S phone -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn phone">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E phone -->
-            <!-- S msg wrap -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn msg-wrap">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E msg wrap -->
-            <!-- S msg wrap small -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn msg-wrap msg-wrap-small">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E msg wrap small -->
-            <!-- S signal -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn signal">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E signal -->
             <!-- S text -->
             <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -1980,6 +2933,523 @@ a {
         </div>
     </div>
     <!-- E scene4 -->
+    <!-- S scene5 -->
+    <div class="J_opaPannel pannels scene-5 has-bg" data-index="4">
+        <div class="opa-stage stage" data-index="4" data-id="opa_stage_5" style="">
+            <!-- S bg -->
+            <div class="mc mc-image bg">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E bg -->
+            <!-- S logo -->
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E logo -->
+            <!-- S chair -->
+            <div class="mc mc-image chair chair1">
+                <div class="mc-wrap   noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E chair -->
+            <!-- S chair -->
+            <div class="mc mc-image  chair chair2">
+                <div class="mc-wrap   noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E chair -->
+            <!-- S chair -->
+            <div class="mc mc-image   chair chair3">
+                <div class="mc-wrap   noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E chair -->
+            <!-- S person -->
+            <div class="mc mc-image person-lead">
+                <div class="mc-wrap ">
+                    <div class="icon icon-body"></div>
+                    <div class="icon icon-left-hand"></div>
+                    <div class="icon icon-right-hand"></div>
+                    <div class="icon icon-glass"></div>
+                    <div class="icon icon-popcorn"></div>
+                    <div class="icon icon-cola"></div>
+                    <div class="icon icon-last-phone"></div>
+                </div>
+            </div>
+            <!-- E person -->
+            <!-- S text -->
+            <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="">海量视频随便看</div>
+                </div>
+            </div>
+            <!-- E text -->
+        </div>
+    </div>
+    <!-- E scene5 -->
+    <!-- S scene6 -->
+    <div class="J_opaPannel pannels scene-6 has-bg" data-index="5">
+        <div class="opa-stage stage" data-index="5" data-id="opa_stage_6" style="">
+            <!-- S bg -->
+            <div class="mc mc-image bg">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E bg -->
+            <!-- S logo -->
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E logo -->
+            <!-- S chair -->
+            <div class="mc mc-image  chair">
+                <div class="mc-wrap noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E chair -->
+            <!-- S person -->
+            <div class="mc mc-image delay_0_0s person-lead">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon icon-left-hand-last"></div>
+                    <div class="icon icon-right-hand-last"></div>
+                    <div class="icon icon-glass-last"></div>
+                    <div class="icon icon-popcorn-last"></div>
+                    <div class="icon icon-cola-last"></div>
+                    <div class="icon icon-body"></div>
+                    <div class="icon icon-left-hand"></div>
+                    <div class="icon icon-right-hand"></div>
+                    <div class="icon icon-phone"></div>
+                </div>
+            </div>
+            <!-- E person -->
+            <!-- S stockbg -->
+            <div class="mc mc-image delay_0_0s stock-bg">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E stockbg -->
+            <!-- S stockline -->
+            <div class="mc mc-image stock-line">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E stockline -->
+            <!-- S money -->
+            <div class="mc mc-image money">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E money -->
+            <!-- S text -->
+            <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="">最新资讯及时看</div>
+                </div>
+            </div>
+            <!-- E text -->
+        </div>
+    </div>
+    <!-- E scene6 -->
+    <!-- S scene7 -->
+    <div class="J_opaPannel pannels scene-7 has-bg" data-index="6">
+        <div class="opa-stage stage" data-index="6" data-id="opa_stage_7" style="">
+            <!-- S bg -->
+            <div class="mc mc-image bg">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E bg -->
+            <!-- S logo -->
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E logo -->
+            <!-- S door -->
+            <div class="mc mc-image door">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E door -->
+            <!-- S chair -->
+            <div class="mc mc-image chair">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E chair -->
+            <!-- S person -->
+            <div class="mc mc-image person-lead">
+                <div class="mc-wrap">
+                    <div class="icon icon-body"></div>
+                    <div class="icon icon-left-hand-last"></div>
+                    <div class="icon icon-right-hand-last"></div>
+                    <div class="icon icon-left-hand"></div>
+                    <div class="icon icon-right-hand"></div>
+                    <div class="icon icon-game-handler"></div>
+                    <div class="icon icon-game-line"></div>
+                    <div class="icon icon-phone-last"></div>
+                </div>
+            </div>
+            <!-- E person -->
+            <!-- S clock -->
+            <div class="mc mc-image clock">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E clock -->
+
+            <!-- S food -->
+            <div class="mc mc-image food">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E food -->
+            <!-- S tv -->
+            <div class="mc mc-image tv">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E tv -->
+            <!-- S wii -->
+            <div class="mc mc-image wii">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E wii -->
+
+            <!-- S text -->
+            <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="">游戏大作任性玩</div>
+                </div>
+            </div>
+            <!-- E text -->
+        </div>
+    </div>
+    <!-- E scene7 -->
+    <!-- S scene8 -->
+    <div class="J_opaPannel pannels scene-8 has-bg" data-index="7">
+        <div class="opa-stage stage" data-index="7" data-id="opa_stage_8" style="">
+            <!-- S bg -->
+            <div class="mc mc-image bg">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E bg -->
+            <!-- S logo -->
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E logo -->
+            <!-- S chair -->
+            <div class="mc mc-image chair">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E chair -->
+            <!-- S person -->
+            <div class="mc mc-image person-lead">
+                <div class="mc-wrap">
+                    <div class="icon icon-body"></div>
+                    <div class="icon icon-left-hand"></div>
+                    <div class="icon icon-right-hand"></div>
+                    <div class="icon icon-shoe"></div>
+                </div>
+            </div>
+            <!-- E person -->
+            <!-- S light -->
+            <div class="mc mc-image light">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E light -->
+            <!-- S ray -->
+            <div class="mc mc-image ray">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E ray -->
+            <!-- S shoe-rack -->
+            <div class="mc mc-image shoe-rack">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E shoe-rack -->
+            <!-- S shoe-box -->
+            <div class="mc mc-image shoe-box shoe-box-1">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E shoe-box -->
+            <!-- S shoe-box -->
+            <div class="mc mc-image shoe-box shoe-box-2">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E shoe-box -->
+            <!-- S shoe -->
+            <div class="mc mc-image shoe">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E shoe -->
+            <!-- S mirror -->
+            <div class="mc mc-image mirror">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E mirror -->
+
+            <!-- S text -->
+            <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="">网上购物畅快买</div>
+                </div>
+            </div>
+            <!-- E text -->
+        </div>
+    </div>
+    <!-- E scene8 -->
+    <!-- S scene9 -->
+    <div class="J_opaPannel pannels scene-9 has-bg" data-index="8">
+        <div class="opa-stage stage" data-index="8" data-id="opa_stage_9" style="">
+            <!-- S bg -->
+            <div class="mc mc-image bg">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E bg -->
+            <!-- S logo -->
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E logo -->
+            <!-- S chair -->
+            <div class="mc mc-image chair">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E chair -->
+            <!-- S person -->
+            <div class="mc mc-image person-lead">
+                <div class="mc-wrap">
+                    <div class="icon icon-body"></div>
+                    <div class="icon icon-left-hand"></div>
+                    <div class="icon icon-right-hand"></div>
+                    <div class="icon icon-book"></div>
+                </div>
+            </div>
+            <!-- E person -->
+            <!-- S bed -->
+            <div class="mc mc-image bed">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E bed -->
+            <!-- S bedstand -->
+            <div class="mc mc-image bedstand">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E bedstand -->
+            <!-- S lamp -->
+            <div class="mc mc-image lamp">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E lamp -->
+            <!-- S lamp-light -->
+            <div class="mc mc-image lamp-light">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E lamp-light -->
+            <!-- S text -->
+            <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="">星级酒店提前订</div>
+                </div>
+            </div>
+            <!-- E text -->
+        </div>
+    </div>
+    <!-- E scene9 -->
+    <!-- S scene10 -->
+    <div class="J_opaPannel pannels scene-10 has-bg" data-index="9">
+        <div class="opa-stage stage" data-index="9" data-id="opa_stage_10" style="">
+            <!-- S bg -->
+            <div class="mc mc-image bg">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E bg -->
+            <!-- S logo -->
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E logo -->
+            <!-- S chair -->
+            <div class="mc mc-image chair">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E chair -->
+            <!-- S person -->
+            <div class="mc mc-image person-lead">
+                <div class="mc-wrap">
+                    <div class="icon icon-body"></div>
+                    <div class="icon icon-left-hand"></div>
+                    <div class="icon icon-right-hand"></div>
+                    <div class="icon icon-glass"></div>
+                    <div class="icon icon-cola"></div>
+                </div>
+            </div>
+            <!-- E person -->
+            <!-- S tea-table -->
+            <div class="mc mc-image tea-table">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E tea-table -->
+            <!-- S umbrella -->
+            <div class="mc mc-image umbrella">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E umbrella -->
+            <!-- S coconut -->
+            <div class="mc mc-image coconut">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E coconut -->
+
+            <!-- S text -->
+            <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="">景点旅游悠闲看</div>
+                </div>
+            </div>
+            <!-- E text -->
+        </div>
+    </div>
+    <!-- E scene10 -->
+    <!-- S scene11 -->
+    <div class="J_opaPannel pannels scene-11 has-bg" data-index="10">
+        <div class="opa-stage stage" data-index="10" data-id="opa_stage_11" style="">
+            <!-- S bg -->
+            <div class="mc mc-image bg">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E bg -->
+            <!-- S logo -->
+            <div class="mc mc-image logo">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E logo -->
+            <!-- S window -->
+            <div class="mc mc-image window">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon icon-window1"></div>
+                    <div class="icon icon-window2"></div>
+                    <div class="icon icon-window3"></div>
+                    <div class="icon icon-window4"></div>
+                </div>
+            </div>
+            <!-- E window -->
+            <!-- S chair -->
+            <div class="mc mc-image delay_0_0s duration_0_8s chair chair-1">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E chair -->
+            <!-- S chair -->
+            <div class="mc mc-image delay_0_0s duration_0_8s chair chair-2">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E chair -->
+            <!-- S person -->
+            <div class="mc mc-image person-lady">
+                <div class="mc-wrap noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E person -->
+            <!-- S person -->
+            <div class="mc mc-image  person-lead">
+                <div class="mc-wrap noAnimate">
+                    <div class="icon icon-body"></div>
+                    <div class="icon icon-left-hand"></div>
+                    <div class="icon icon-right-hand"></div>
+                    <div class="icon icon-phone"></div>
+                </div>
+            </div>
+            <!-- E person -->
+            <!-- S text -->
+            <div class="mc mc-text delay_0_0s duration_0_8s text">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="">同班机舱愉快聊</div>
+                </div>
+            </div>
+            <!-- E text -->
+        </div>
+    </div>
+    <!-- E scene11-->
 </div>
 <a href="javascript:void(0);" class="u-guideTop mi-fadeInRight" id="J_GuideTop"></a>
 <script src="../js/app.utils.min.js"></script>
@@ -2037,25 +3507,16 @@ a {
     var PreLoad=function(a,b){var c=b||{};this.source=a,this.count=0,this.total=a.length,this.onload=c.onload,this.prefix=c.prefix||"",this.init()};PreLoad.prototype.init=function(){var a=this;a.source.forEach(function(b){var c=b.substr(b.lastIndexOf(".")+1).toLowerCase(),d=a.prefix+b;switch(c){case"js":a.script.call(a,d);break;case"css":a.stylesheet.call(a,d);break;case"svg":case"jpg":case"gif":case"png":case"jpeg":a.image.call(a,d)}})},PreLoad.prototype.getProgress=function(){return Math.round(this.count/this.total*100)},PreLoad.prototype.image=function(a){var b=document.createElement("img");this.load(b,a),b.src=a},PreLoad.prototype.stylesheet=function(a){var b=document.createElement("link");this.load(b,a),b.rel="stylesheet",b.type="text/css",b.href=a,document.head.appendChild(b)},PreLoad.prototype.script=function(a){var b=document.createElement("script");this.load(b,a),b.type="text/javascript",b.src=a,document.head.appendChild(b)},PreLoad.prototype.load=function(a,b){var c=this;a.onload=a.onerror=a.onabort=function(a){c.onload&&c.onload({count:++c.count,total:c.total,item:b,type:a.type})}
     };
     var tasks = [
-      "../images/bg_full.jpg",
-      "../images/arrow_icon.png",
-      "../images/title.png",
-      "../images/text1.png",
-      "../images/icon1.png",
-      "../images/cir/cir_blue_opacity.png",
-      "../images/cir/cir_blue.png",
-      "../images/cir/cir_green.png",
-      "../images/cir/cir_greenblue.png",
-      "../images/cir/cir_oriange.png",
-      "../images/cir/cir_oriyel.png",
-      "../images/cir/cir_purple.png",
-      "../images/cir/cir_purpleblue.png",
-      "../images/cir/cir_yellow_50.png",
-      "../images/cir/cir_yellow_litter.png",
-        "../images/detail/detail2-1.jpg",
-                    "../images/detail/detail2-2.jpg",
-                    "../images/detail/detail2-3.jpg",
-                    "../images/detail/detail2-4.jpg"
+        "../images/b2c/b_person_body.png",
+        "../images/b2c/b_person_left_foot.png",
+        "../images/b2c/b_person_left_hand.png",
+        "../images/b2c/b_person_right_foot.png",
+        "../images/b2c/b_person_right_hand.png",
+        "../images/b2c/bg.png",
+        "../images/b2c/bg_circle.png",
+        "../images/b2c/chair.png",
+        "../images/b2c/chair_nobody.png",
+        "../images/b2c/p5_person_body.png"
     ];
     var progress = document.getElementById('process');
     function loading(load) {
