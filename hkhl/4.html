@@ -1034,18 +1034,17 @@
         }
     </style>
     <style>
+        html{-webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
         .pannels .delay_0_0s{-webkit-transition-delay:0.0s;-o-transition-delay:0.0s;transition-delay:0.0s;-webkit-animation-delay:0.0s;-o-animation-delay:0.0s;animation-delay:0.0s;}
-        .pannels .delay_0_2s{-webkit-transition-delay:0.2s;-o-transition-delay:0.2s;transition-delay:0.2s;-webkit-animation-delay:0.2s;-o-animation-delay:0.2s;animation-delay:0.2s;}
-        .pannels .delay_0_3s{-webkit-transition-delay:0.3s;-o-transition-delay:0.3s;transition-delay:0.3s;-webkit-animation-delay:0.3s;-o-animation-delay:0.3s;animation-delay:0.3s;}
-        .pannels .delay_0_5s{-webkit-transition-delay:0.5s;-o-transition-delay:0.5s;transition-delay:0.5s;-webkit-animation-delay:0.5s;-o-animation-delay:0.5s;animation-delay:0.5s;}
         .pannels .delay_1_8s{-webkit-transition-delay:1.8s;-o-transition-delay:1.8s;transition-delay:1.8s;-webkit-animation-delay:1.8s;-o-animation-delay:1.8s;animation-delay:1.8s;}
         .pannels .duration_0_8s{-webkit-transition-duration:0.8s;-o-transition-duration:0.8s;transition-duration:0.8s;-webkit-animation-duration:0.8s;-o-animation-duration:0.8s;animation-duration:0.8s;}
         .pannels .duration_0_4s{-webkit-transition-duration:0.4s;-o-transition-duration:0.4s;transition-duration:0.4s;-webkit-animation-duration:0.4;-o-animation-duration:0.4s;animation-duration:0.4s;}
-        .pannels .duration_0_3s{-webkit-transition-duration:0.3s;-o-transition-duration:0.3s;transition-duration:0.3s;-webkit-animation-duration:0.3;-o-animation-duration:0.3s;animation-duration:0.3s;}
-        .pannels .duration_0_5s{-webkit-transition-duration:0.5s;-o-transition-duration:0.5s;transition-duration:0.5s;-webkit-animation-duration:0.5;-o-animation-duration:0.5s;animation-duration:0.5s;}
-        .pannels .duration_0_6s{-webkit-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;-webkit-animation-duration:0.6;-o-animation-duration:0.6s;animation-duration:0.6s;}
-        .pannels .duration_1_0s{-webkit-transition-duration:1.0s;-o-transition-duration:1.0s;transition-duration:1.0s;-webkit-animation-duration:1.0;-o-animation-duration:1.0s;animation-duration:1.0s;}
-.href-back{position: absolute;left: 510px;top:52px;background-position:-160px -320px;width:273px;height:83px;transform:scale(0.6);-webkit-transform:scale(0.6);opacity:1;transition:opacity .1s;background-size: 960px auto;background-image: url(../images/icon3.png)}
+        .href-back{position: absolute;left: 510px;top:52px;background-position:-160px -320px;width:273px;height:83px;transform:scale(0.6);-webkit-transform:scale(0.6);opacity:1;background-size: 960px auto;background-image: url(../images/icon3.png);transition:opacity .4s .1s;opacity:0}
+        .href-back-init{opacity: 1;}
+        .href-back-hide{opacity: 0;}
+        .mc-wrap-page{position: absolute;bottom: 60px;z-index: 1000;width: 100%;height: 31px;overflow: hidden;text-align: center;transition:opacity .2s;}
+        .mc-wrap-page span{display: inline-block;width: 14px;height: 14px;background-image: url(../images/arrow_icon2.png);background-position: 0 -62px;background-size: 76px auto;margin-right: 10px;opacity: 0.5;}
+        .mc-wrap-page span.page-current{background-position: 0 -62px;opacity: 1}
     </style>
 </head>
 <body>
@@ -1145,6 +1144,17 @@
         </div>
     </div>
 </div>
+<div class="mc-wrap-page">
+    <span class="icon"></span>
+    <span class="icon"></span>
+    <span class="icon"></span>
+    <span class="icon"></span>
+    <span class="icon"></span>
+    <span class="icon"></span>
+    <span class="icon"></span>
+    <span class="icon"></span>
+    <span class="icon"></span>
+</div>
 <a href="javascript:void(0);" class="u-guideTop z-move arrow-first " id="J_GuideTop"></a>
 <a href="b2b_android.html#p=3" class="href-back" id="hrefBack"></a>
 <script src="../js/app.utils.min.js"></script>
@@ -1200,51 +1210,11 @@
 <script>
 
     (function(window, undefined){
-
-
-        var loader = document.getElementById("J_MiLoading"),
-                body = document.documentElement || document.body,
-                gTop = document.getElementById('J_GuideTop'),
+        var body = document.documentElement || document.body,
                 size = {
                     width: body.clientWidth > 750 ? 750 : body.clientWidth,
                     height: body.clientHeight
-                },
-                musicTip = document.querySelector('.music-tip'),
-                musicPlayer = document.getElementById('J_MusicPlayer'),
-                evs = {
-                    touchdown: 'ontouchstart' in window ? 'touchstart' : 'mousedown',
-                    touchmove: 'ontouchmove' in window ? 'touchmove' : 'mousemove',
-                    touchup: 'ontouchend' in window ? 'touchend' : 'mouseup'
                 };
-
-        //loading
-        var bar = loader.querySelector(".j-loading-text"),
-                opaPage = document.querySelector("#J_opaPage"),
-                num = 0,
-                time = 0,
-                state = true;
-
-        function loadOk(){
-            if(state){
-                state = false;
-                bar.innerHTML = "100%";
-                App.Utils.removeClass(loader, "active");
-                loader.style.zIndex = "0";
-                loader.style.visibility = "hidden";
-                App.Utils.removeClass(document.querySelector('.scene-1'),'start-animate');
-                setTimeout(function(){
-                    App.Utils.addClass(document.querySelector('.scene-1'),'start-animate');
-                },10)
-                setTimeout(function(){
-                    App.Utils.addClass(document.querySelector('.scene-1 .p-cir'),'p-cir-imp');
-                },1000)
-            }
-        }
-
-        var page = null,
-                count = 0,
-                initState = true;
-
         function executeMult(d, b) {
             var a = 0,
                     f = d.toString(),
@@ -1257,7 +1227,6 @@
             } catch(g) {}
             return Number(f.replace(".", "")) * Number(c.replace(".", "")) / Math.pow(10, a)
         }
-
         function executeDivi(arg1, arg2) {
             var t1 = 0,
                     t2 = 0,
@@ -1274,7 +1243,6 @@
                 return executeMult(r1 / r2, pow(10, t2 - t1));
             }
         }
-
         function backgroundJustify(){
             var bgEles = document.querySelectorAll(".stage-bg-edit"),
                     scale = executeDivi(body.clientHeight,960);
@@ -1331,35 +1299,6 @@
                     }
                 }
             });
-
-            musicTip = document.querySelector('.music-tip');
-            musicPlayer = document.getElementById('J_MusicPlayer');
-
-            musicTip.parentNode.style['opacity'] = 1;
-            setTimeout(function(){
-                musicTip.style['opacity'] = 0;
-            }, 3000);
-
-            musicPlayer.pause();
-            opaPage.addEventListener(evs.touchdown, function(ev){
-                if (initState) {
-                    musicPlayer.play();
-                    App.Utils.addClass(musicTip.parentNode, 'active');
-                    initState = false;
-                }
-            }, false);
-            // debugger;
-            musicTip.parentNode.addEventListener(evs.touchup, function(ev){
-                if (App.Utils.hasClass(musicTip.parentNode, 'active')) {
-                    musicPlayer.pause();
-                    App.Utils.removeClass(musicTip.parentNode, 'active');
-                } else {
-                    musicPlayer.play();
-                    App.Utils.addClass(musicTip.parentNode, 'active');
-                }
-                return false;
-            }, false);
-
             setInterval(function(){
                 if (page) {
                     page.resize();

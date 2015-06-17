@@ -1399,12 +1399,13 @@
 </head>
 <body>
 <script>
+    var body = document.documentElement || document.body;
     var curPage = window.location.hash;
     if(curPage == '' || curPage == ' '){
-        document.body.className = document.body.className + ' from-main';
+        body.className = body.className + ' from-main';
     }
     else{
-        document.body.className = document.body.className + ' from-detail';
+        body.className = body.className + ' from-detail';
     }
     </script>
 <!-- loading -->
