@@ -1036,20 +1036,28 @@ a {
 }
 </style>
 <style>
+    .page{
+        background-image: url(../images/b2c/bg1.png);
+
+    }
     .ani-0 .scene-1.start-animate{
         background-image: url(../images/b2c/bg.png);
     }
     .ani-1{
         background-image: url(../images/b2c/bg1.png);
+        background-image: url(../images/b2c/bg2.png);
     }
     .u-guideTop{animation:fadeInRight 1.5s infinite;-webkit-animation: fadeInRight 1.5s infinite;
         bottom: 20px;  backface-visibility: hidden;}
     .stage .bg{
         background-image: url(../images/b2c/bg_circle.png);
+        background-image: url(../images/b2c/bg_circle1.png);
         background-size: cover;
         width: 750px;
         height: 550px;
-        bottom: 0;
+        height: 422px;
+        /*bottom:0;*/
+        top: 784px;
         display: none;
     }
     .scene-1 .stage .bg{display: block}
@@ -2053,6 +2061,7 @@ a {
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 0.8s;
+        -webkit-animation-fill-mode: forwards
     }
     .ani-0 .scene-1.start-animate .window{
         -webkit-animation-name: opacity0Zoom;
@@ -2181,7 +2190,7 @@ a {
             opacity: 1;
         }
         100%{
-            -webkit-transform: translate(0,0) scale(1) rotateX(0);
+            -webkit-transform: translate(0,0) scale(1);
             opacity: 1;
         }
     }
@@ -4623,7 +4632,6 @@ new PreLoad(tasks, {onload: loading});
         num = 0,
         time = 0,
         state = true;
-
     function loadOk(){
         if(state){
             state = false;
