@@ -1036,8 +1036,11 @@ a {
 }
 </style>
 <style>
-    .page{
+    .ani-0 .scene-1.start-animate{
         background-image: url(../images/b2c/bg.png);
+    }
+    .ani-1{
+        background-image: url(../images/b2c/bg1.png);
     }
     .u-guideTop{animation:fadeInRight 1.5s infinite;-webkit-animation: fadeInRight 1.5s infinite;
         bottom: 20px;  backface-visibility: hidden;}
@@ -1047,7 +1050,9 @@ a {
         width: 750px;
         height: 550px;
         bottom: 0;
+        display: none;
     }
+    .scene-1 .stage .bg{display: block}
 .start-animate .bg{opacity: 1}
 .stage .mc-wrap{
     width: 100%;
@@ -2609,14 +2614,14 @@ a {
         animation-name:chairYL2RAni;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.3s;
-        -webkit-animation-delay: 0.3s;
+        -webkit-animation-delay: 0s;
     }
     .ani-5 .scene-5.last-animate .chair3{
         -webkit-animation-name: chairYR2LAni;
         animation-name:chairYR2LAni;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.3s;
-        -webkit-animation-delay: 0.3s;
+        -webkit-animation-delay: 0s;
     }
     .ani-5 .scene-5.last-animate .text{
         -webkit-animation-name: textZoomOut;
