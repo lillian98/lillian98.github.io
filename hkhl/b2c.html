@@ -1115,6 +1115,7 @@ a {
         height: 425px;
         left: 256px;
         top: 451px;
+        z-index: 10;
     }
     .stage .chair .icon{
         background-image: url(../images/b2c/chair.png);
@@ -1125,6 +1126,7 @@ a {
         left: 282px;
         top: 430px;
         position: relative;
+        z-index: 15;
     }
     .person .mc-wrap,.person-lead .mc-wrap{overflow: visible}
     .stage .person .icon{
@@ -1253,6 +1255,7 @@ a {
         height: 530px;
         left: 263px;
         top: 376px;
+        z-index: 15;
     }
     .person-lead .icon{
         background-image: url("../images/b2c/person.png");
@@ -1560,6 +1563,7 @@ a {
         height: 80px;
         left: 274px;
         top:918px;
+        z-index: 20;
     }
     .scene-7 .person-lead .icon-left-hand-last {
         background-image: url(../images/b2c/p6_left_hand.png);
@@ -1592,6 +1596,17 @@ a {
         height: 212px;
         left: 213px;
         top: 709px;
+        z-index: 20;
+    }
+    .scene-7 .money {
+        background-image: url(../images/b2c/money.png);
+        width: 310px;
+        height: 146px;
+        left: 218px;
+        top: 826px;
+        z-index: 21;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     /* scene-8 */
     .scene-8 .person-lead .icon-body {
@@ -1637,6 +1652,7 @@ a {
         height: 80px;
         left: 274px;
         top:918px;
+        z-index: 20;
     }
     .scene-8 .tv{
         background-image: url(../images/b2c/p7_tv.png);
@@ -1644,6 +1660,7 @@ a {
         height: 212px;
         left: 213px;
         top: 709px;
+        z-index: 20;
     }
     .scene-8 .person-lead .icon-left-hand {
         background-image: url(../images/b2c/p8_left_hand.png);
@@ -1697,7 +1714,7 @@ a {
         height: 55px;
         left: 214px;
         top: 845px;
-        z-index: 10;
+        z-index: 21;
     }
     .scene-8 .shoe-box {
         background-image: url(../images/b2c/p8_shoebox1.png);
@@ -1705,9 +1722,10 @@ a {
         height: 63px;
         left: 180px;
         top: 884px;
+        z-index: 20;
     }
-    .scene-8 .shoe-box-1 {
-        z-index: 10;
+    .scene-8 .shoe-box-1{
+        z-index: 21;
     }
     .scene-8 .shoe-box-2 {
         background-image: url(../images/b2c/p8_shoebox2.png);
@@ -1722,6 +1740,7 @@ a {
         height: 145px;
         left: 528px;
         top: 855px;
+        z-index: 20;
     }
     /* scene-9 */
     .scene-9 .person-lead .icon-body {
@@ -1947,6 +1966,7 @@ a {
         height: 535px;
         left: 544px;
         top: 376px;
+        z-index: 15;
     }
     .scene-11 .icon-window3 {
         display: none;
@@ -2565,7 +2585,7 @@ a {
         100%{-webkit-transform: translate(0,0);opacity: 1}
     }
     @-webkit-keyframes chairYR2L{
-        0%{-webkit-transform: translate(250px,0);opacity: 1}
+        0%{-webkit-transform: translate(270px,0);opacity: 1}
         100%{-webkit-transform: translate(0,0);opacity: 1}
     }
     @-webkit-keyframes handOut{
@@ -2766,12 +2786,13 @@ a {
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 0s;
     }
-    .ani-6 .scene-6 .money{
-        -webkit-animation-name: stockRotateOut;
-        animation-name:stockRotateOut;
+    .ani-6 .scene-6.last-animate .money{
+        -webkit-animation-name: moneyRotateOut;
+        animation-name:moneyRotateOut;
         -webkit-animation-timing-function: ease-out;
-        -webkit-animation-duration: 0.3s;
+        -webkit-animation-duration: .3s;
         -webkit-animation-delay: 0s;
+        z-index: 21;
     }
     .ani-6 .scene-6.last-animate .text{
         -webkit-animation-name: textZoomOut;
@@ -2787,6 +2808,16 @@ a {
         }
         100%{
             -webkit-transform: translate(700px,10px) rotate(3deg);
+            opacity: 0;
+        }
+    }
+    @-webkit-keyframes moneyRotateOut{
+        0%{
+            -webkit-transform: translate(0,0) rotate(0);
+            opacity: 1;
+        }
+        100%{
+            -webkit-transform: translate(218px,10px) rotate(3deg);
             opacity: 0;
         }
     }
@@ -2824,8 +2855,8 @@ a {
         -webkit-animation-delay: 1.3s;
     }
     .ani-6 .scene-7.start-animate .icon-game-handler{
-        -webkit-animation-name: handerTopDown;
-        animation-name:handerTopDown;
+        -webkit-animation-name: handlerTopDown;
+        animation-name:handlerTopDown;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 1.3s;
@@ -2969,9 +3000,9 @@ a {
             opacity: 1;
         }
     }
-    @-webkit-keyframes handerTopDown{
+    @-webkit-keyframes handlerTopDown{
         0%{
-            -webkit-transform: translate(0,-728px);
+            -webkit-transform: translate(0,-798px);
             opacity: 0;
         }
         100%{
