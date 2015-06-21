@@ -10,6 +10,7 @@
     }
     var curHash = window.location.hash;
     var curPageNo = (curHash!='')?parseInt(curHash.split('=')[1]):0;
+    console.log('111',curHash,curHash.split('=')[1])
     window.App = window.App || {};
     var _default = {
         page: "J_opaPage", dragger: "J_opaScroll", pannel: "J_opaPannel", transEnd: function () {
@@ -24,17 +25,18 @@
     };
     Opa.prototype = {
         init: function () {
-            this.set("pageNode", document.querySelector("#" + this.get("page"))), this.set("pannels", this.get("pageNode").querySelectorAll("." + this.get("pannel"))), this.set("count", this.get("pannels").length), this.set("page-wrap", document.querySelector(".mc-wrap-page")),this.set("offset", {
+            this.set("pageNode", document.querySelector("#" + this.get("page"))), this.set("pannels", this.get("pageNode").querySelectorAll("." + this.get("pannel"))), this.set("count", this.get("pannels").length), this.set("offset", {
                 left: 0,
                 top: 0
             }), this.get("size") ? (this.set("vw", this.get("size").width || (body.clientWidth > 750 ? 750 : body.clientWidth)), this.set("vh", this.get("size").height || body.clientHeight)) : (this.set("vw", body.clientWidth > 750 ? 750 : body.clientWidth), this.set("vh", body.clientHeight)), this.set("prefix", css3Surport().prefix), this.get("prefix") ? this.set("transform", this.get("prefix") + "Transform") : this.set("transform", "transform"), this.set("guideTop", document.querySelector("#J_GuideTop")), this.set("prevent", !1), this.parsePannel(), this.preload(0), this.bindEvent();
-            for(var i = 0;i<=curPageNo;i++){
+            this.get("pageNode").className = "page ani-" + curPageNo;
+            /*for(var i = 0;i<=curPageNo;i++){
                 this.get("pageNode").className = this.get("pageNode").className + " ani-"+i
-            }
+            }*/
         }, parsePannel: function () {
             var source, music, scon, _this = this, pn = _this.get("pageNode"), pans = _this.get("pannels"), len = _this.get("count"), animationName = _this.get("prefix") ? _this.get("prefix") + "AnimationName" : "animationName";
-            _this.get("guideTop").style[animationName] = "fadeInRight", _this.get("guideTop").className += " mi-fadeInRight", _this.get("guideTop").style.bottom = "20px", _this.get("guideTop").style.backgroundImage = "url(http://img14.360buyimg.com/cms/jfs/t469/88/1194341676/1288/7f287e8b/54b8a9bbN68de03ce.png)", pn.style.position = "absolute", pn.style.left = "50%", pn.style.marginLeft = "-" + _this.get("vw") / 2 + "px", Utils.addClass(_this.get("page-wrap").querySelectorAll(".icon")[curPageNo], "page-current");
-            for (var i = 0; len > i; i++)pans[i].setAttribute("data-index", i), pans[i].style.position = "absolute", pans[i].style.top = "0", pans[i].style.left = "0",pans[i].style.width = _this.get("vw") + "px", pans[i].style.height = "100%", curPageNo == i && (Utils.addClass(pans[i], "current"), Utils.addClass(pans[i], "start-animate")) ;
+            _this.get("guideTop").style[animationName] = "fadeInRight", _this.get("guideTop").className += " mi-fadeInRight", _this.get("guideTop").style.bottom = "20px", _this.get("guideTop").style.backgroundImage = "url(http://img14.360buyimg.com/cms/jfs/t469/88/1194341676/1288/7f287e8b/54b8a9bbN68de03ce.png)", pn.style.position = "absolute", pn.style.left = "50%", pn.style.marginLeft = "-" + _this.get("vw") / 2 + "px";
+            for (var i = 0; len > i; i++)pans[i].setAttribute("data-index", i), pans[i].style.position = "absolute", pans[i].style.top = "0", pans[i].style.left = "0",pans[i].style.width = _this.get("vw") + "px", pans[i].style.height = "100%", curPageNo == i && (Utils.addClass(pans[i], "current"), Utils.addClass(pans[i], "start-animate"));
             pn.querySelector("#" + _this.get("dragger")) ? (pn.querySelector("#" + _this.get("dragger")).style.width = 100 * len + "%", pn.querySelector("#" + _this.get("dragger")).style.height = "100%") : (source = pn.innerHTML, music = source.replace(/<div\sclass="J_opaPannel(.|\n|\r)*<\/div>/g, ""), scon = source.replace(/<div\sclass="music\-anim"(.|\n|\r)*?(<div\sclass="J_opaPannel)/g, "$2"), pn.innerHTML = music + '<div id="' + _this.get("dragger") + '" class="page-scroller" style="width:' + 100 * len + '%;height: 100%;">' + scon + "</div>"), _this.set("dragger", document.querySelector("#" + _this.get("dragger"))), _this.set("pannels", pn.querySelectorAll("." + _this.get("pannel")))
         }, preload: function (index) {
             var pans = this.get("pannels"), nextIndex = index + 1;
@@ -77,9 +79,15 @@
                     var current = page.querySelector(".current"), index = +current.getAttribute("data-index"), next = _this.getNext(index, dis > 0 ? "up" : "down");
                     if (Utils.addClass(dragger, "has-transition"), next)if (Math.abs(dis) > 50) {
                         var nextTop = +next.getAttribute("data-index");
-                        /*dragger.style[_this.get("transform")] = "translate3d(" + -(nextTop / count * 100) + "%, 0, 0)", */Utils.addClass(current, "last-animate"), Utils.removeClass(current, "current"), Utils.addClass(next, "current"),Utils.addClass(_this.get("pageNode"),'ani-'+nextTop), Utils.removeClass(document.querySelector(".mc-wrap-page .page-current"), "page-current"), Utils.addClass(_this.get("page-wrap").querySelectorAll(".icon")[nextTop], "page-current"), _this.preload(+next.getAttribute("data-index")), setTimeout(function () {
-                            _this.set("prevent", !1), _this.get("transEnd").call(_this),Utils.removeClass(page.querySelector(".last-animate"),"last-animate")
-                        }, 300)
+                        (page.querySelector(".last-animate")) && (Utils.removeClass(page.querySelector(".last-animate"),"last-animate"))
+                        Utils.addClass(current, "last-animate");
+                        console.log('111',current)
+                        /*dragger.style[_this.get("transform")] = "translate3d(" + -(nextTop / count * 100) + "%, 0, 0)", */ Utils.removeClass(current, "current"), Utils.addClass(next, "current"),_this.get("pageNode").className = "page ani-"+nextTop/*Utils.addClass(_this.get("pageNode"),'ani-'+nextTop)*//*, _this.set("offset", {
+                            left: nextTop,
+                            top: 0
+                        })*/, _this.preload(+next.getAttribute("data-index")), setTimeout(function () {
+                            _this.set("prevent", !1), _this.get("transEnd").call(_this)
+                        }, 300),(index == 8) && (Utils.removeClass(current,"ani-8-change-hand"),Utils.removeClass(current,"ani-8-change-hand-2")),(nextTop == 8) && (setTimeout(function(){Utils.addClass(next, "ani-8-change-hand")},1200),setTimeout(function(){Utils.addClass(next, "ani-8-change-hand-2")},1400))
                     } else return false;/*dragger.style[_this.get("transform")] = "translate3d(" + -(index / count * 100) + "%, 0, 0)"*/;
                     setTimeout(function () {
                         _this.set("prevent", !1), Utils.removeClass(dragger, "has-transition")
