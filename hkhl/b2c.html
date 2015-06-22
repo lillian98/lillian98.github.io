@@ -66,7 +66,7 @@ body {
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
-    font-family:'\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
     /*text-shadow: 0 0 0 transparent, 0 0 0;*/
 }
 
@@ -1036,11 +1036,29 @@ a {
 }
 </style>
 <style>
+    .delay_0_8s{
+        -webkit-transition-duration:0.8s;-o-transition-duration:0.8s;transition-duration:0.8s;-webkit-animation-duration:0.8s;-o-animation-duration:0.8s;animation-duration:0.8s;
+    }
+    .delay_1_4s{
+        -webkit-transition-delay:1.4s;-o-transition-delay:1.4s;transition-delay:1.4s;-webkit-animation-delay:1.4s;-o-animation-delay:1.4s;animation-delay:1.4s;
+    }
+    .delay_1_1s{
+        -webkit-transition-delay:1.1s;-o-transition-delay:1.1s;transition-delay:1.1s;-webkit-animation-delay:1.1s;-o-animation-delay:1.1s;animation-delay:1.1s;
+    }
+    .delay_1_6s{
+        -webkit-transition-delay:1.6s;-o-transition-delay:1.6s;transition-delay:1.6s;-webkit-animation-delay:1.6s;-o-animation-delay:1.6s;animation-delay:1.6s;
+    }
+    .duration_0_3s{
+        -webkit-transition-duration:0.3s;-o-transition-duration:0.3s;transition-duration:0.3s;-webkit-animation-duration:0.3s;-o-animation-duration:0.3s;animation-duration:0.3s;
+    }
+    .duration_0_2s{
+        -webkit-transition-duration:0.2s;-o-transition-duration:0.2s;transition-duration:0.2s;-webkit-animation-duration:0.2s;-o-animation-duration:0.2s;animation-duration:0.2s;
+    }
     .page{
         background-image: url(../images/b2c/bg1.png);
 
     }
-    .ani-0 .scene-1.start-animate{
+    .ani-0 .scene-1.start-animate, .ani-12 .scene-13.start-animate{
         background-image: url(../images/b2c/bg.png);
     }
     .ani-1{
@@ -1068,24 +1086,26 @@ a {
     overflow: hidden;
 }
 .stage .icon{
-    background-image: url(../images/b2c/);
+    /*background-image: url(../images/b2c/);*/
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
 }
-.stage .logo {
-    width: 384px;
-    height: 76px;
-    left: 179px;
-    top: 53px;
+.stage .logo-new {
+    width: 314px;
+    height: 188px;
+    left: 50%;
+    top: 50%;
+    margin-top: -147px;
+    margin-left: -157px;
 }
-    .stage .logo .icon {
-        background-image: url(../images/b2c/logo.png);
+    .stage .logo-new .icon {
+        background-image: url(../images/b2c/logo_1.png);
     }
     .stage .window{
-        background-image: url(../images/b2c);
+        /*background-image: url(../images/b2c);*/
         width: 100%;
         height: 242px;
         top: 430px;
@@ -1133,11 +1153,11 @@ a {
     .stage .chair .icon{
         background-image: url(../images/b2c/chair.png);
     }
-    .stage .person{
+    .stage .person, .stage .person-lead{
         width: 196px;
         height: 468px;
-        left: 282px;
-        top: 430px;
+        left: 263px;
+        top: 376px;
         position: relative;
         z-index: 15;
     }
@@ -1156,9 +1176,9 @@ a {
         -webkit-animation-fill-mode: forwards;
     }
     .stage .person .icon-body{
-        background-image: url("../images/b2c/b_person_body.png");
-        width: 196px;
-        height: 291px;
+        background-image: url("../images/b2c/p1_person_body.png");
+        width: 235px;
+        height: 535px;
         top: 0;
         left: 0;
     }
@@ -1175,20 +1195,6 @@ a {
         height: 85px;
         left: 1px;top: 153px;
         z-index: 3;
-    }
-    .stage .person .icon-left-foot{
-        background-image: url("../images/b2c/b_person_left_foot.png");
-        width: 75px;
-        height: 151px;
-        left: 120px;
-        top: 258px;
-    }
-    .stage .person .icon-right-foot{
-        background-image: url("../images/b2c/b_person_right_foot.png");
-        width: 70px;
-        height: 192px;
-        left: 4px;
-        top: 277px;
     }
     .stage .person .icon-phone{
         background-image: url("../images/b2c/p1_phone.png");
@@ -1207,23 +1213,6 @@ a {
         background-image: url(../images/b2c/msg.png);
         background-position: 0 bottom;
     }
-    .stage .msg-wrap-small{
-        width: 37px;
-        height: 21px;
-        left: 375px;
-        top: 389px;
-    }
-    .stage .msg-wrap-small .icon{
-        background: url("../images/b2c/msg_small.png");
-    }
-    .stage .msg-wrap-mask {
- /*       background: url("../images/b2c/msg_wrap_mask.png");
-        width: 155px;
-        height: 128px;
-        top: 284px;
-        left: 332px;
-        opacity: 1;*/
-    }
     .stage .signal{
         display: none;
     }
@@ -1241,96 +1230,209 @@ a {
     .stage .text em{
         font-style: normal;
     }
-
-
-/* scene-2 */
-    .scene-2 .window4{
-        left: 717px;
-    }
-    .scene-2 .msg-wrap{
-        left: 541px;
-    }
-    .scene-2 .msg-wrap-small{
-        left: 583px;
-    }
-    .scene-2 .person{
-        left: 524px;
-        top: 430px;
-    }
-    .scene-2 .chair{
-        left: 498px;
-    }
-    .scene-2 .chair-lead{
-        left: 252px;
-    }
-    .stage .person-lead{
-        width: 224px;
-        height: 530px;
-        left: 263px;
-        top: 376px;
-        z-index: 15;
-    }
-    .person-lead .icon{
-        background-image: url("../images/b2c/person.png");
+/* scene-1 */
+.scene-1 .person .icon-left-hand{
+    background-image: url(../images/b2c/p11_left_hand.png);
+    width: 53px;
+    height: 116px;
+    left: 163px;
+    top: 200px;
+    position: absolute;
+}
+    .scene-1 .person .icon-right-hand {
+        background: url(../images/b2c/p11_right_hand.png);
+        width: 39px;
+        height: 166px;
+        left: 32px;
+        top: 200px;
         position: absolute;
     }
-    /* scene-3 */
-    .scene-3 .hand{
-        width: 482px ;
-        height: 467px;
-        top: 868px;
+    .scene-1 .thinking{
+        background-image: url(../images/b2c/p12_thinking_bg.png);
+        width: 154px;
+        height: 110px;
+        left: 464px;
+        top: 237px;
+    }
+    .scene-1 .thinking-text{
+        background-image: url(../images/b2c/p1_think_text.png);
+        width: 121px;
+        height: 53px;
+        left: 478px;
+        top: 255px;
+    }
+    .scene-1 .thinking-text .icon-mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
         left: 0;
-        z-index: 5;
+        background-color: #eaeced;
     }
-    .scene-3 .phone{
-        width: 509px ;
-        height: 1035px;
-        left: 140px;
-        top: 142px;
-        z-index: 6;
+    .scene-1.start-animate .chair, .scene-1.start-animate .person{
+        opacity: 1;
     }
-    .scene-3 .finger{
-        width: 215px ;
+/* scene-2 */
+    .scene-2.start-animate .window{
+        opacity: 1;
+    }
+    .scene-2 .pad{
+        background-image: url(../images/b2c/p12_phone.png);
+        width: 54px;
+        height: 29px;
+        left: 358px;
+        top: 229px;
+        z-index: 21;
+    }
+    .scene-2 .person .icon-left-hand{
+        background-image: url(../images/b2c/p11_left_hand.png);
+        width: 53px;
+        height: 116px;
+        left: 163px;
+        top: 200px;
+        position: absolute;
+    }
+    .scene-2 .person .icon-right-hand {
+        background: url(../images/b2c/p11_right_hand.png);
+        width: 39px;
+        height: 166px;
+        left: 32px;
+        top: 200px;
+        position: absolute;
+    }
+    .scene-2 .person .icon-body-new{
+        background-image: url("../images/b2c/p23_person_body.png");
+        width: 235px;
+        height: 535px;
+        top: 0;
+        left: 0;
+        position: absolute;
+        opacity: 0;
+    }
+    /* scene-3 */
+    .scene-3.start-animate .window{
+        opacity: 1;
+    }
+    .scene-3 .pad{
+        background-image: url(../images/b2c/p12_phone.png);
+        width: 54px;
+        height: 29px;
+        left: 358px;
+        top: 229px;
+        z-index: 21;
+    }
+    .scene-3 .person .icon-left-hand-last{
+        background-image: url(../images/b2c/p11_left_hand.png);
+        width: 53px;
+        height: 116px;
+        left: 163px;
+        top: 200px;
+        position: absolute;
+    }
+    .scene-3 .person .icon-right-hand-last {
+        background: url(../images/b2c/p11_right_hand.png);
+        width: 39px;
+        height: 166px;
+        left: 32px;
+        top: 200px;
+        position: absolute;
+    }
+    .scene-3 .person .icon-left-hand {
+        background-image: url(../images/b2c/p7_left_hand.png);
+        width: 81px;
+        height: 149px;
+        left: 141px;
+        top: 199px;
+        opacity: 0;
+        position: absolute;
+    }
+    .scene-3 .person .icon-right-hand {
+        background-image: url(../images/b2c/p7_right_hand.png);
+        width: 84px;
+        height: 150px;
+        left: 17px;
+        top: 200px;
+        opacity: 0;
+        position: absolute;
+    }
+    .scene-3 .person .icon-body{
+        background-image: url("../images/b2c/p23_person_body.png");
+        opacity: 1;
+    }
+    .scene-3 .thinking{
+        background-image: url(../images/b2c/p12_thinking_bg.png);
+        width: 154px;
+        height: 110px;
+        left: 464px;
+        top: 237px;
+    }
+    .scene-3 .thinking-text{
+        background-image: url(../images/b2c/p3_think_text.png);
+        width: 121px;
+        height: 53px;
+        left: 478px;
+        top: 255px;
+    }
+    .scene-3 .thinking-text .icon-mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left: 0;
+        background-color: #eaeced;
+    }
+    /* scene-4 */
+    .scene-4 .left-hand{
+        background-image: url("../images/b2c/p4_left_hand.png");
+        width: 398px;
+        height: 426px;
+        top: 825px;
+        right: 0;
+    }
+    .scene-4 .right-finger{
+        background-image: url("../images/b2c/p4_right_finger.png");
+        width: 215px;
         height: 186px;
-        top: 965px;
-        left: 69px;
-        z-index: 7;
+        left: 4px;
+        bottom: 182px;
     }
-    .scene-3 .logo{
-        width: 324px;
-        height: 64px;
-        left: 233px;
-        top: 393px;
-        z-index: 11;
+    .scene-4 .right-hand{
+        background-image: url("../images/b2c/p4_right_hand.png");
+        width: 408px;
+        height: 462px;
+        left: 0;
+        bottom: 0;
     }
-    .scene-3 .logo {
-        background-size: cover;
+    .scene-4 .pad{
+        background-image: url("../images/b2c/p4_pad.png");
+        width: 641px;
+        height: 955px;
+        left: 55px;
+        top: 187px;
     }
-    .scene-3 .hand .icon{
-        background-image: url("../images/b2c/p2_hand.png");
+    .scene-4 .pad-logo{
+        background-image: url("../images/b2c/logo_1.png");
+        width: 165px;
+        height: 99px;
+        background-size: 100% 100%;
+        left: 293px;
+        top: 482px;
     }
-    .scene-3 .phone .icon{
-        background-image: url("../images/b2c/p2_phone.png");
+    .scene-4 .userinfo{
+        background-image: url("../images/b2c/p4_userinfo.png");
+        width: 384px;
+        height: 144px;
+        left: 184px;
+        top: 630px
     }
-    .scene-3 .finger .icon{
-        background-image: url("../images/b2c/p2_finger.png");
+    .scene-4 .login{
+        background-image: url("../images/b2c/p4_login.png");
+        width: 281px;
+        height: 59px;
+        left: 236px;
+        top: 810px;
     }
-    .scene-3 .text{
-        top: 618px;
-        left: 257px;
-        width: 284px;
-        height: 177px;
-        z-index: 11;
-        font-size: 2.5rem;
-    }
-    .scene-4 .person-lead .icon{
-        background-image: url("../images/b2c/lead_person_nohands.png");
-    }
-    .scene-4 .person-lead {
-        height: 537px;
-        width: 237px;
-    }
-    /* ani-4 */
+    /* scene-5 */
     .scene-5 .chair1 .icon,.scene-5 .chair3 .icon {
         background-image: url(../images/b2c/chair_nobody.png);
     }
@@ -1434,10 +1536,10 @@ a {
     }
     .scene-6 .person-lead .icon-phone {
         background-image: url(../images/b2c/p6_phone.png);
-        width: 40px;
-        height: 49px;
-        left: 249px;
-        top: 72px;
+        width: 62px;
+        height: 73px;
+        left: 232px;
+        top: 50px;
         opacity: 0;;
     }
     .scene-6 .stock-bg {
@@ -1596,10 +1698,10 @@ a {
     }
     .scene-7 .icon-phone-last{
         background-image: url(../images/b2c/p6_phone.png);
-        width: 40px;
-        height: 49px;
-        left: 249px;
-        top: 72px;
+        width: 62px;
+        height: 73px;
+        left: 232px;
+        top: 50px;
         opacity: 1;
         -webkit-transform-origin: right 0;
     }
@@ -1607,7 +1709,7 @@ a {
         background-image: url(../images/b2c/p7_tv.png);
         width: 361px;
         height: 212px;
-        left: 213px;
+        left: 198px;
         top: 709px;
         z-index: 20;
     }
@@ -1961,13 +2063,14 @@ a {
         opacity: 0;
     }
     .scene-11 .person-lead .icon-phone {
-        background: url(../images/b2c/p11_phone.png);
-        width: 40px;
-        height: 50px;
-        left: 142px;
-        top: 283px;
+        background-image: url(../images/b2c/p6_phone.png);
+        width: 62px;
+        height: 73px;
+        left: 94px;
+        top: 264px;
         position: absolute;
         opacity: 0;
+        -webkit-transform: rotateZ(-45deg);
     }
     .scene-11 .chair-2 {
         left: 495px;
@@ -2048,8 +2151,124 @@ a {
         -webkit-transform-origin: center center;
         transform-origin: center center;
     }
-    /* test */
- /*   .scene-11  .mc-wrap , .scene-11  .mc{
+    /* scene-12 */
+    .scene-12.start-animate .window{
+        opacity: 1;
+    }
+    .scene-12 .audio{
+        background-image: url(../images/b2c/p12_audio_bg.png);
+        width: 492px;
+        height: 168px;
+        top: 94px;
+        left: 106px;
+    }
+    .scene-12 .audio-text{
+        width: 450px;
+        height: 56px;
+        left: 140px;
+    }
+    .scene-12 .audio-text .icon-mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left: 0;
+        background-color: #eaeced;
+    }
+    .scene-12 .audio-text-1{
+        background-image: url(../images/b2c/p12_audio_text_1.png);
+        top: 122px;
+    }
+    .scene-12 .audio-text-2{
+        background-image: url(../images/b2c/p12_audio_text_2.png);
+        top: 178px;
+    }
+    .scene-12 .thinking{
+        background-image: url(../images/b2c/p12_thinking_bg.png);
+        width: 154px;
+        height: 110px;
+        left: 464px;
+        top: 291px;
+    }
+    .scene-12 .thinking-text{
+        background-image: url(../images/b2c/p12_think_text.png);
+        width: 113px;
+        height: 33px;
+        left: 487px;
+        top: 318px;
+    }
+    .scene-12  .person-lead .icon-body{
+        background-image: url(../images/b2c/p5_person_body.png);
+        width: 237px;
+        height: 537px;
+    }
+    .scene-12 .person-lead .icon-left-hand {
+        background-image: url(../images/b2c/p12_left_hand.png);
+        width: 67px;
+        height: 102px;
+        left: 123px;
+        top: 201px;
+        position: absolute;
+        opacity: 0;
+    }
+    .scene-12 .person-lead .icon-right-hand {
+        background-image: url(../images/b2c/p12_right_hand.png);
+        width: 86px;
+        height: 118px;
+        left: 28px;
+        top: 199px;
+        position: absolute;
+        opacity: 0;
+    }
+    .scene-12 .person-lead .icon-phone {
+        background-image: url(../images/b2c/p12_phone.png);
+        width: 54px;
+        height: 29px;
+        left: 94px;
+        top: 291px;
+        position: absolute;
+        opacity: 0;
+    }
+    .scene-12 .person-lead .icon-left-hand-last {
+        background-image: url(../images/b2c/p11_left_hand.png);
+        width: 53px;
+        height: 116px;
+        left: 163px;
+        top: 200px;
+        position: absolute;
+        opacity: 1;
+    }
+    .scene-12 .person-lead .icon-right-hand-last {
+        background: url(../images/b2c/p11_right_hand.png);
+        width: 39px;
+        height: 166px;
+        left: 32px;
+        top: 200px;
+        position: absolute;
+        opacity: 1;
+    }
+    .scene-12 .person-lead .icon-phone-last {
+        background-image: url(../images/b2c/p6_phone.png);
+        width: 62px;
+        height: 73px;
+        left: 94px;
+        top: 264px;
+        position: absolute;
+        opacity: 1;
+        -webkit-transform: rotateZ(-45deg);
+    }
+    /* scene-13 */
+    .scene-13 .slogan{
+        background-image: url(../images/b2c/slogan.png);
+        width: 439px;
+        height: 77px;
+        left: 50%;
+        top: 50%;
+        margin-top: 133px;
+        margin-left: -220px;
+    }
+
+ /*   .scene-12  .mc-wrap , .scene-12  .mc{
         opacity: 1;
     }*/
 
@@ -2069,6 +2288,8 @@ a {
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 0.8s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
     }
     .ani-0 .scene-1.start-animate .logo{
         -webkit-animation-name: logoZoomTranslate;
@@ -2082,57 +2303,51 @@ a {
         animation-name:chairT2L;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: .2s;
-        -webkit-animation-delay: 1.5s;
+        -webkit-animation-delay: 1.3s;
     }
     .ani-0 .scene-1.start-animate .person{
         -webkit-animation-name: chairT2D;
         animation-name:chairT2L;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: .2s;
-        -webkit-animation-delay: 2s;
+        -webkit-animation-delay: 1.6s;
     }
     .ani-0 .scene-1.start-animate .stage .person .icon-right-hand{
-        -webkit-animation-name: blackPersonRight;
+        /*-webkit-animation-name: blackPersonRight;
         animation-name:blackPersonRight;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 1s;
         -webkit-animation-delay: 2.6s;
-        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;*/
     }
-    .ani-0 .scene-1.start-animate .msg-wrap{
-        -webkit-animation-name: fadeToTop;
-        animation-name:fadeToTop;
+    .ani-0 .scene-1.start-animate .thinking{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
         -webkit-animation-timing-function: linear;
-        -webkit-animation-duration: .2s;
-        -webkit-animation-delay: 2.4s;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 1.8s;
     }
-    .ani-0 .scene-1.start-animate .msg-wrap-small{
-        -webkit-animation-name: fadeToTopSmall;
-        animation-name:fadeToTop;
-        -webkit-animation-timing-function: ease-out;
-        -webkit-animation-duration: .2s;
-        -webkit-animation-delay: 2.2s;
+    .ani-0 .scene-1.start-animate .thinking-text{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: 2.1s;
     }
-    .ani-0 .scene-1.start-animate .msg-wrap-mask{
-        -webkit-animation-name: fadeToTop;
-        animation-name:fadeToTop;
-        -webkit-animation-timing-function: ease-out;
-        -webkit-animation-duration: .2s;
-        -webkit-animation-delay: 2.2s;
+    .ani-0 .scene-1.start-animate .thinking-text .icon-mask{
+        -webkit-animation-name: widthL2R;
+        animation-name:widthL2R;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 1.8s;
+        -webkit-animation-delay: 2.1s;
+        -webkit-animation-fill-mode: forwards;
     }
     .ani-0 .scene-1.start-animate .text{
         -webkit-animation-name: bottomtext;
         animation-name:bottomtext;
-        -webkit-animation-timing-function: linear;
+        -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: .3s;
-        -webkit-animation-delay: 1.5s;
-    }
-    .ani-0 .scene-1.start-animate .text em{
-        -webkit-animation-name: bottomem;
-        animation-name:bottomem;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-duration: .3s;
-        -webkit-animation-delay: 1.8s;
+        -webkit-animation-delay: 2.5s;
     }
     @-webkit-keyframes logoZoomTranslate{
         0%{
@@ -2266,29 +2481,19 @@ a {
     }
     @-webkit-keyframes bottomtext{
         0%{
-            -webkit-transform: translate(-50px,0);
+            -webkit-transform: translate(0,-10px);
             opacity: 0;
         }
-        40%{
-            -webkit-transform: translate(50px,0);
-            opacity: 0.7;
+        80%{
+            -webkit-transform: translate(0,10px) scale(1.1);
+            opacity: 0.8;
         }
         100%{
-            -webkit-transform: translateX(0) translateY(0);
+            -webkit-transform: translate(0,0) scale(1);
             opacity: 1;
         }
     }
-    @-webkit-keyframes bottomem {
-        0%{
-            -webkit-transform: rotate(-5deg);
-        }
-        50%{
-            -webkit-transform: rotate(5deg);
-        }
-        100%{
-            -webkit-transform: rotate(0);
-        }
-    }
+
     @-webkit-keyframes chairT2L{
         0%{
             -webkit-transform: translate(160%,60px) rotate(15deg);
@@ -2389,54 +2594,32 @@ a {
     }
 /* ani-1 */
     /* stage0 out animate*/
-    .ani-1 .scene-2.start-animate .window1,.ani-1 .scene-2.start-animate .logo{
+    .ani-1 .scene-2.start-animate .logo{
         opacity: 1;
     }
-    .ani-1 .scene-2.start-animate  .window2{
+    .ani-1 .scene-2.start-animate .person,.ani-1 .scene-2.start-animate .chair{
         opacity: 1;
+        transition-duration: 0s;
     }
-    .ani-1 .scene-2.current .window4{
-        -webkit-animation-name: win4L2R;
-        animation-name:win4L2R;
+    .ani-1 .scene-2.start-animate .pad{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
         -webkit-animation-timing-function: linear;
-        -webkit-animation-duration: .4s;
-        -webkit-animation-delay: .5s;
+        -webkit-animation-duration: 0.2s;
+        -webkit-animation-delay: 0.2s;
     }
-    .ani-1 .scene-2.current .window3{
-        -webkit-animation-name: win3L2R;
-        animation-name:win3L2R;
+    .ani-1 .scene-2.start-animate .icon-body-new{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
         -webkit-animation-timing-function: linear;
-        -webkit-animation-duration: .2s;
-        -webkit-animation-delay: .5s;
+        -webkit-animation-duration: 0.2s;
+        -webkit-animation-delay: 0.5s;
     }
-    .ani-1 .scene-2.current .text{
-        -webkit-animation-name: bottomtext;
-        animation-name:bottomtext;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-duration: .2s;
-        -webkit-animation-delay: 1s;
-    }
-    .ani-1 .scene-2.start-animate .chair, .ani-1 .scene-2.start-animate .person,.ani-1 .scene-2.start-animate .msg-wrap,.ani-1 .scene-2.start-animate .msg-wrap-small{
-        -webkit-animation-name: chairL2R;
-        animation-name:chairL2R;
-        -webkit-animation-timing-function: ease-out;
-        -webkit-animation-duration: .2s;
-        -webkit-animation-delay: .3s;
-    }
-    .ani-1 .scene-2.start-animate .person-lead, .ani-1 .scene-2.start-animate .chair-lead{
-        -webkit-animation-name: chairL2RIn;
-        animation-name:chairL2RIn;
-        -webkit-animation-timing-function: ease-out;
-        -webkit-animation-duration: .2s;
-        -webkit-animation-delay: .3s;
-    }
-    .ani-1 .scene-2.start-animate .text em{
-        -webkit-animation-name: textZoomIn;
-        animation-name:textZoomIn;
-        -webkit-animation-timing-function: ease-out;
-        -webkit-animation-duration: .2s;
-        -webkit-animation-delay: 1.3s;
-    }
+    @-webkit-keyframes changeBg {
+            100%{
+                background-image:url("../images/b2c/p23_person_body.png")
+            }
+     }
     @-webkit-keyframes win4L2R {
         0%{
             -webkit-transform: translate(-185px,0) rotate(0);
@@ -2483,6 +2666,79 @@ a {
         100%{
             -webkit-transform: translate(0,0) rotate(0);
             opacity: 1;
+        }
+    }
+    /* ani-2 */
+    .ani-2 .scene-3.start-animate .person,.ani-2 .scene-3.start-animate .chair{
+        opacity: 1;
+        transition-duration: 0s;
+    }
+    .ani-2 .scene-3.start-animate .pad{
+        -webkit-animation-name: s2PadTop2Down;
+        animation-name:s2PadTop2Down;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0s;
+    }
+    .ani-2 .scene-3.start-animate .person .icon-left-hand{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: .2s;
+    }
+    .ani-2 .scene-3.start-animate .person .icon-right-hand{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: .2s;
+    }
+    .ani-2 .scene-3.start-animate .person .icon-right-hand-last{
+        -webkit-animation-name: opacity0;
+        animation-name:opacity0;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: .2s;
+        -webkit-animation-fill-mode: forwards;
+    }
+    .ani-2 .scene-3.start-animate .person .icon-left-hand-last{
+        -webkit-animation-name: opacity0;
+        animation-name:opacity0;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: .2s;
+        -webkit-animation-fill-mode: forwards;
+    }
+    .ani-2 .scene-3.start-animate .thinking{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0.3s;
+    }
+    .ani-2 .scene-3.start-animate .thinking-text{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: .3s;
+    }
+    .ani-2 .scene-3.start-animate .thinking-text .icon-mask{
+        -webkit-animation-name: widthL2R;
+        animation-name:widthL2R;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 1.8s;
+        -webkit-animation-delay: .3s;
+        -webkit-animation-fill-mode: forwards;
+    }
+    @-webkit-keyframes s2PadTop2Down{
+        0%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 1;
+            -webkit-transform: translate(0,476px);
         }
     }
     /* ani-3 */
@@ -3505,6 +3761,7 @@ a {
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 2s;
+        -webkit-animation-fill-mode: forwards;
     }
     .ani-10 .scene-11.start-animate .text{
         -webkit-animation-name: textZoomIn;
@@ -3631,6 +3888,156 @@ a {
             opacity: 0;
         }
     }
+    /* scene-11 out */
+    .ani-11 .scene-11.last-animate .text{
+        -webkit-animation-name: textZoomOut;
+        animation-name:textZoomOut;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0s;
+    }
+    .ani-11 .scene-11.last-animate .person-lady, .ani-11 .scene-11.last-animate  .chair-2{
+        -webkit-animation-name: stockRotateOut;
+        animation-name:stockRotateOut;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.7s;
+        -webkit-animation-delay: 0s;
+        opacity: 1;
+        -webkit-animation-fill-mode: forwards;
+    }
+    /* scene-12 in */
+    .ani-11 .scene-12.start-animate .chair,.ani-11 .scene-12.start-animate .person-lead{
+        opacity: 1;
+        transition-duration: 0s;
+    }
+    .ani-11 .scene-12.start-animate .icon-window3,.ani-11 .scene-12.start-animate .icon-window4{
+        -webkit-animation-name: chairYR2L;
+        animation-name:chairYR2L;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 0s;
+    }
+    .ani-11 .scene-12.start-animate .icon-left-hand-last{
+        -webkit-animation-name: opacity0;
+        animation-name:opacity0;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: 0.5s;
+    }
+    .ani-11 .scene-12.start-animate .icon-left-hand{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: 0.5s;
+    }
+    .ani-11 .scene-12.start-animate .icon-right-hand-last{
+        -webkit-animation-name: opacity0;
+        animation-name:opacity0;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: 0.6s;
+    }
+    .ani-11 .scene-12.start-animate .icon-right-hand{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: 0.6s;
+    }
+    .ani-11 .scene-12.start-animate .icon-phone-last{
+        -webkit-animation-name: phoneLastR2L;
+        animation-name:phoneLastR2L;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0.5s;
+    }
+    .ani-11 .scene-12.start-animate .icon-phone{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: 0.7s;
+    }
+    .ani-11 .scene-12.start-animate .audio{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0.8s;
+    }
+    .ani-11 .scene-12.start-animate .audio-text{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: 1.1s;
+    }
+    .ani-11 .scene-12.start-animate .audio-text-1 .icon-mask{
+        -webkit-animation-name: widthL2R;
+        animation-name:widthL2R;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 1.1s;
+        -webkit-animation-fill-mode: forwards;
+    }
+    .ani-11 .scene-12.start-animate .audio-text-2 .icon-mask{
+        -webkit-animation-name: widthL2R;
+        animation-name:widthL2R;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 1.6s;
+        -webkit-animation-fill-mode: forwards;
+    }
+    .ani-11 .scene-12.start-animate .thinking{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 2.2s;
+    }
+    .ani-11 .scene-12.start-animate .thinking-text{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: 2.5s;
+    }
+    .ani-11 .scene-12.start-animate .thinking-text .icon-mask{
+        -webkit-animation-name: widthL2R;
+        animation-name:widthL2R;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 1.8s;
+        -webkit-animation-delay: 1.1s;
+        -webkit-animation-fill-mode: forwards;
+    }
+    @-webkit-keyframes widthL2R{
+        0%{
+            -webkit-transform: translate(0,0);
+        }
+        100%{
+            -webkit-transform: translate(450px,0);
+        }
+    }
+    @-webkit-keyframes phoneLastR2L{
+        0%{
+
+        }
+        80%{
+            -webkit-transform: translate(-37px,0) rotatez(-45deg);
+            opacity: 0.5;
+        }
+        90%{
+            -webkit-transform: translate(-5px,0) rotatez(-22deg);
+            opacity: 0.1;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+    /* scene-12 out */
+
+    /* scene-13 in */
     /* mc-wrap-page */
     .mc-wrap-page{position: absolute;bottom: 60px;z-index: 1000;width: 100%;height: 31px;overflow: hidden;text-align: center;transition:opacity .2s;}
     .mc-wrap-page span{display: inline-block;width: 14px;height: 14px;background-image: url(../images/arrow_icon2.png);background-position: 0 -62px;background-size: 76px auto;margin-right: 10px;opacity: 0.5;}
@@ -3702,44 +4109,29 @@ a {
                     <div class="icon icon-body"></div>
                     <div class="icon icon-left-hand"></div>
                     <div class="icon icon-right-hand"></div>
-                    <div class="icon icon-left-foot"></div>
-                    <div class="icon icon-right-foot"></div>
-                    <div class="icon icon-phone"></div>
                 </div>
             </div>
             <!-- E person -->
-            <!-- S msg wrap -->
-            <div class="mc mc-image msg-wrap">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+            <!-- S thinking -->
+            <div class="mc mc-image thinking">
+                <div class="mc-wrap">
                     <div class="icon"></div>
+                    <div class="icon-mask"></div>
                 </div>
             </div>
-            <!-- E msg wrap -->
-            <!-- S msg wrap small -->
-            <div class="mc mc-image msg-wrap msg-wrap-small">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+            <!-- E thinking -->
+            <!-- S thinking text -->
+            <div class="mc mc-image thinking-text">
+                <div class="mc-wrap">
                     <div class="icon"></div>
+                    <div class="icon-mask"></div>
                 </div>
             </div>
-            <!-- E msg wrap small -->
-            <!-- S wrap mask -->
-            <div class="mc mc-image msg-wrap-mask">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E wrap mask -->
-            <!-- S signal -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn signal">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E signal -->
+            <!-- E thinking text -->
             <!-- S text -->
             <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="">飞机旅途怕“<em>失联</em>”？</div>
+                    <div class="">时间怎会如此漫长？</div>
                 </div>
             </div>
             <!-- E text -->
@@ -3747,7 +4139,7 @@ a {
     </div>
     <!-- E scene1 -->
     <!-- S scene2 -->
-    <div class="J_opaPannel pannels scene-2 has-bg" data-index="1">
+    <div class="J_opaPannel pannels scene-2" data-index="1">
         <div class="opa-stage stage" data-index="1" data-id="opa_stage_2" style="">
             <!-- S bg -->
             <div class="mc mc-image bg">
@@ -3758,165 +4150,6 @@ a {
             <!-- E bg -->
             <!-- S logo -->
             <div class="mc mc-image logo">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E logo -->
-            <!-- S window1 -->
-            <div class="mc mc-image window window1">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E window1 -->
-            <!-- S window2 -->
-            <div class="mc mc-image window window2">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E window2 -->
-            <!-- S window3 -->
-            <div class="mc mc-image delay_0_0s duration_0_8s window window3">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E window3 -->
-            <!-- S window4 -->
-            <div class="mc mc-image delay_0_0s duration_0_8s window window4">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E window4 -->
-            <!-- S chair -->
-            <div class="mc mc-image delay_0_0s duration_0_8s chair">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E chair -->
-            <!-- S chair -->
-            <div class="mc mc-image delay_0_0s duration_0_8s chair-lead chair">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E chair -->
-            <!-- S person -->
-            <div class="mc mc-image delay_0_0s duration_0_8s person">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E person -->
-            <!-- S person -->
-            <div class="mc mc-image delay_0_0s duration_0_8s person-lead">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E person -->
-            <!-- S phone -->
-            <div class="mc mc-image delay_0_0s duration_0_8s phone">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E phone -->
-            <!-- S msg wrap -->
-            <div class="mc mc-image delay_0_0s duration_0_8s msg-wrap">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E msg wrap -->
-            <!-- S msg wrap small -->
-            <div class="mc mc-image delay_0_0s duration_0_8s msg-wrap msg-wrap-small">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E msg wrap small -->
-            <!-- S signal -->
-            <div class="mc mc-image delay_0_0s duration_0_8s signal">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E signal -->
-            <!-- S text -->
-            <div class="mc mc-text delay_0_0s duration_0_8s text">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="">使用<em>航空互联</em>终端</div>
-                </div>
-            </div>
-            <!-- E text -->
-        </div>
-    </div>
-    <!-- E scene2-->
-    <!-- S scene3 -->
-    <div class="J_opaPannel pannels scene-3 has-bg" data-index="2">
-        <div class="opa-stage stage" data-index="2" data-id="opa_stage_3" style="">
-            <!-- S bg -->
-            <div class="mc mc-image bg">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E bg -->
-            <!-- S phone -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn phone">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E phone -->
-            <!-- S logo -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E logo -->
-            <!-- S hand -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn hand">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E hand -->
-            <!-- S finger -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn finger">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E finger -->
-            <!-- S text -->
-            <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="">欢迎使用航空互联，新一代航旅联网工具</div>
-                </div>
-            </div>
-            <!-- E text -->
-        </div>
-    </div>
-    <!-- E scene3-->
-    <!-- S scene4 -->
-    <div class="J_opaPannel pannels scene-4 has-bg" data-index="3">
-        <div class="opa-stage stage" data-index="3" data-id="opa_stage_4" style="">
-            <!-- S bg -->
-            <div class="mc mc-image bg">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E bg -->
-            <!-- S logo -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
@@ -3933,34 +4166,51 @@ a {
             </div>
             <!-- E window -->
             <!-- S chair -->
-            <div class="mc mc-image   chair">
-                <div class="mc-wrap   noAnimate">
+            <div class="mc mc-image  chair">
+                <div class="mc-wrap noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E chair -->
             <!-- S person -->
-            <div class="mc mc-image delay_0_0s person-lead">
+            <div class="mc mc-image delay_0_0s person">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon icon-body"></div>
+                    <div class="icon icon-body-new"></div>
                     <div class="icon icon-left-hand"></div>
                     <div class="icon icon-right-hand"></div>
                 </div>
             </div>
             <!-- E person -->
-            <!-- S text -->
-            <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="">地空联网无障碍</div>
+            <!-- S pad -->
+            <div class="mc mc-image  pad">
+                <div class="mc-wrap noAnimate">
+                    <div class="icon"></div>
                 </div>
             </div>
-            <!-- E text -->
+            <!-- E pad -->
+            <!-- S thinking -->
+            <div class="mc mc-image thinking">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                    <div class="icon-mask"></div>
+                </div>
+            </div>
+            <!-- E thinking -->
+            <!-- S thinking text -->
+            <div class="mc mc-image thinking-text">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                    <div class="icon-mask"></div>
+                </div>
+            </div>
+            <!-- E thinking text -->
         </div>
     </div>
-    <!-- E scene4 -->
-    <!-- S scene5 -->
-    <div class="J_opaPannel pannels scene-5 has-bg" data-index="4">
-        <div class="opa-stage stage" data-index="4" data-id="opa_stage_5" style="">
+    <!-- E scene2-->
+    <!-- S scene3 -->
+    <div class="J_opaPannel pannels scene-3" data-index="2">
+        <div class="opa-stage stage" data-index="2" data-id="opa_stage_3" style="">
             <!-- S bg -->
             <div class="mc mc-image bg">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -3968,6 +4218,133 @@ a {
                 </div>
             </div>
             <!-- E bg -->
+            <!-- S logo -->
+            <div class="mc mc-image logo">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E logo -->
+            <!-- S window -->
+            <div class="mc mc-image window">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon icon-window1"></div>
+                    <div class="icon icon-window2"></div>
+                    <div class="icon icon-window3"></div>
+                    <div class="icon icon-window4"></div>
+                </div>
+            </div>
+            <!-- E window -->
+            <!-- S chair -->
+            <div class="mc mc-image  chair">
+                <div class="mc-wrap noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E chair -->
+            <!-- S person -->
+            <div class="mc mc-image delay_0_0s person">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon icon-body"></div>
+                    <div class="icon icon-left-hand-last"></div>
+                    <div class="icon icon-right-hand-last"></div>
+                    <div class="icon icon-left-hand"></div>
+                    <div class="icon icon-right-hand"></div>
+                </div>
+            </div>
+            <!-- E person -->
+            <!-- S pad -->
+            <div class="mc mc-image  pad">
+                <div class="mc-wrap noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E pad -->
+            <!-- S thinking -->
+            <div class="mc mc-image thinking">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                    <div class="icon-mask"></div>
+                </div>
+            </div>
+            <!-- E thinking -->
+            <!-- S thinking text -->
+            <div class="mc mc-image thinking-text">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                    <div class="icon-mask"></div>
+                </div>
+            </div>
+            <!-- E thinking text -->
+        </div>
+    </div>
+    <!-- E scene3-->
+    <!-- S scene4 -->
+    <div class="J_opaPannel pannels scene-4" data-index="3">
+        <div class="opa-stage stage" data-index="3" data-id="opa_stage_4" style="">
+            <!-- S logo -->
+            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
+                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E logo -->
+            <!-- S right hand -->
+            <div class="mc mc-image right-hand delay_0_0s duration_0_8s mi-zoomIn logo">
+                <div class="mc-wrap   noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E right hand -->
+            <!-- S pad -->
+            <div class="mc mc-image pad delay_0_0s duration_0_8s mi-zoomIn logo">
+                <div class="mc-wrap   noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E pad -->
+            <!-- S right finger -->
+            <div class="mc mc-image right-finger delay_0_0s duration_0_8s mi-zoomIn logo">
+                <div class="mc-wrap   noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E right finger -->
+            <!-- S pad-logo -->
+            <div class="mc mc-image pad-logo delay_0_8s duration_0_3s mi-zoomIn">
+                <div class="mc-wrap   noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E pad-logo -->
+            <!-- S userinfo -->
+            <div class="mc mc-image userinfo delay_1_1s duration_0_3s mi-zoomIn">
+                <div class="mc-wrap   noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E userinfo -->
+            <!-- S login -->
+            <div class="mc mc-image login delay_1_4s duration_0_2s mi-zoomIn">
+                <div class="mc-wrap   noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E login -->
+            <!-- S left hand -->
+            <div class="mc mc-image left-hand delay_1_6s duration_0_2s mi-zoomIn logo">
+                <div class="mc-wrap   noAnimate">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E left hand -->
+        </div>
+    </div>
+    <!-- E scene4 -->
+    <!-- S scene5 -->
+    <div class="J_opaPannel pannels scene-5" data-index="4">
+        <div class="opa-stage stage" data-index="4" data-id="opa_stage_5" style="">
+
             <!-- S logo -->
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -4012,7 +4389,7 @@ a {
             <!-- S text -->
             <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="">海量视频随便看</div>
+                    <div class="">海量视频看起来</div>
                 </div>
             </div>
             <!-- E text -->
@@ -4020,15 +4397,9 @@ a {
     </div>
     <!-- E scene5 -->
     <!-- S scene6 -->
-    <div class="J_opaPannel pannels scene-6 has-bg" data-index="5">
+    <div class="J_opaPannel pannels scene-6" data-index="5">
         <div class="opa-stage stage" data-index="5" data-id="opa_stage_6" style="">
-            <!-- S bg -->
-            <div class="mc mc-image bg">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon"></div>
-                </div>
-            </div>
-            <!-- E bg -->
+
             <!-- S logo -->
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -4052,9 +4423,9 @@ a {
                     <div class="icon icon-left-hand-last"></div>
                     <div class="icon icon-right-hand-last"></div>
                     <div class="icon icon-body"></div>
+                    <div class="icon icon-phone"></div>
                     <div class="icon icon-left-hand"></div>
                     <div class="icon icon-right-hand"></div>
-                    <div class="icon icon-phone"></div>
                 </div>
             </div>
             <!-- E person -->
@@ -4082,7 +4453,7 @@ a {
             <!-- S text -->
             <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="">最新资讯及时看</div>
+                    <div class="">最新资讯读起来</div>
                 </div>
             </div>
             <!-- E text -->
@@ -4090,7 +4461,7 @@ a {
     </div>
     <!-- E scene6 -->
     <!-- S scene7 -->
-    <div class="J_opaPannel pannels scene-7 has-bg" data-index="6">
+    <div class="J_opaPannel pannels scene-7" data-index="6">
         <div class="opa-stage stage" data-index="6" data-id="opa_stage_7" style="">
             <!-- S bg -->
             <div class="mc mc-image bg">
@@ -4167,7 +4538,7 @@ a {
             <!-- S text -->
             <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="">游戏大作任性玩</div>
+                    <div class="">联机游戏玩起来</div>
                 </div>
             </div>
             <!-- E text -->
@@ -4175,7 +4546,7 @@ a {
     </div>
     <!-- E scene7 -->
     <!-- S scene8 -->
-    <div class="J_opaPannel pannels scene-8 has-bg" data-index="7">
+    <div class="J_opaPannel pannels scene-8" data-index="7">
         <div class="opa-stage stage" data-index="7" data-id="opa_stage_8" style="">
             <!-- S bg -->
             <div class="mc mc-image bg">
@@ -4279,7 +4650,7 @@ a {
             <!-- S text -->
             <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="">网上购物畅快买</div>
+                    <div class="">空中电商购起来</div>
                 </div>
             </div>
             <!-- E text -->
@@ -4287,7 +4658,7 @@ a {
     </div>
     <!-- E scene8 -->
     <!-- S scene9 -->
-    <div class="J_opaPannel pannels scene-9 has-bg" data-index="8">
+    <div class="J_opaPannel pannels scene-9" data-index="8">
         <div class="opa-stage stage" data-index="8" data-id="opa_stage_9" style="">
             <!-- S bg -->
             <div class="mc mc-image bg">
@@ -4364,7 +4735,7 @@ a {
     </div>
     <!-- E scene9 -->
     <!-- S scene10 -->
-    <div class="J_opaPannel pannels scene-10 has-bg" data-index="9">
+    <div class="J_opaPannel pannels scene-10" data-index="9">
         <div class="opa-stage stage" data-index="9" data-id="opa_stage_10" style="">
             <!-- S bg -->
             <div class="mc mc-image bg">
@@ -4426,7 +4797,7 @@ a {
             <!-- S text -->
             <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="">景点旅游悠闲看</div>
+                    <div class="">景点旅游嗨起来</div>
                 </div>
             </div>
             <!-- E text -->
@@ -4434,7 +4805,7 @@ a {
     </div>
     <!-- E scene10 -->
     <!-- S scene11 -->
-    <div class="J_opaPannel pannels scene-11 has-bg" data-index="10">
+    <div class="J_opaPannel pannels scene-11" data-index="10">
         <div class="opa-stage stage" data-index="10" data-id="opa_stage_11" style="">
             <!-- S bg -->
             <div class="mc mc-image bg">
@@ -4501,16 +4872,113 @@ a {
             <!-- S text -->
             <div class="mc mc-text delay_0_0s duration_0_8s text">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="">同班机舱愉快聊</div>
+                    <div class="">同班机友聊起来</div>
                 </div>
             </div>
             <!-- E text -->
         </div>
     </div>
     <!-- E scene11-->
+    <!-- S scene12 -->
+    <div class="J_opaPannel pannels scene-12" data-index="11">
+        <div class="opa-stage stage" data-index="10" data-id="opa_stage_11" style="">
+            <!-- S window -->
+            <div class="mc mc-image window">
+                <div class="mc-wrap">
+                    <div class="icon icon-window1"></div>
+                    <div class="icon icon-window2"></div>
+                    <div class="icon icon-window3"></div>
+                    <div class="icon icon-window4"></div>
+                </div>
+            </div>
+            <!-- E window -->
+            <!-- S chair -->
+            <div class="mc mc-image chair">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E chair -->
+            <!-- S person -->
+            <div class="mc mc-image  person-lead">
+                <div class="mc-wrap">
+                    <div class="icon icon-body"></div>
+                    <div class="icon icon-phone-last"></div>
+                    <div class="icon icon-left-hand-last"></div>
+                    <div class="icon icon-right-hand-last"></div>
+                    <div class="icon icon-phone"></div>
+                    <div class="icon icon-left-hand"></div>
+                    <div class="icon icon-right-hand"></div>
+                </div>
+            </div>
+            <!-- E person -->
+            <!-- S audio -->
+            <div class="mc mc-image audio">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E audio -->
+            <!-- S audio text -->
+            <div class="mc mc-image audio-text audio-text-1">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                    <div class="icon-mask"></div>
+                </div>
+            </div>
+            <!-- E audio text -->
+            <!-- S audio text -->
+            <div class="mc mc-image audio-text audio-text-2">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                    <div class="icon-mask"></div>
+                </div>
+            </div>
+            <!-- E audio text -->
+            <!-- S thinking -->
+            <div class="mc mc-image thinking">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                    <div class="icon-mask"></div>
+                </div>
+            </div>
+            <!-- E thinking -->
+            <!-- S thinking text -->
+            <div class="mc mc-image thinking-text">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                    <div class="icon-mask"></div>
+                </div>
+            </div>
+            <!-- E thinking text -->
+        </div>
+    </div>
+    <!-- E scene12-->
+    <!-- S scene13 -->
+    <div class="J_opaPannel pannels scene-13" data-index="12" data-last="true">
+        <div class="opa-stage stage" data-index="10" data-id="opa_stage_11" style="">
+            <!-- S logo -->
+            <div class="mc mc-image logo-new mi-zoomIn duration_0_8s">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E logo -->
+            <!-- S slogan -->
+            <div class="mc mc-image slogan mi-zoomIn duration_0_8s">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E slogan -->
+        </div>
+    </div>
+    <!-- E scene13-->
 </div>
 <a href="javascript:void(0);" class="u-guideTop mi-fadeInRight" id="J_GuideTop"></a>
 <div class="mc-wrap-page">
+    <span class="icon"></span>
+    <span class="icon"></span>
     <span class="icon"></span>
     <span class="icon"></span>
     <span class="icon"></span>
