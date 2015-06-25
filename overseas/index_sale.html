@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>Welcome to JD.com Global! </title>
+    <link href="http://misc.360buyimg.com/lib/skin/2013/base.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/index_sale.css">
+    <!--<script src="http://misc.360buyimg.com/jdf/lib/jquery-1.6.4.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://misc.360buyimg.com/jdf/1.0.0/unit/base/1.0.0/base.js"></script>-->
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/base.js"></script>
+</head>
+
+<body data-width="1300" class="wrap-russian">
+<script type="text/javascript">
+    (function() {
+        //判断访问终端
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                }
+            }()
+        }
+        function getPrefix(brow) {
+            var pre = "";
+            return pre = brow.webKit ? "-Webkit" : brow.gecko ? "-Moz" : brow.trident ? "-Ms" : brow.presto ? "-O" : ""
+        }
+        //browser.versions.trident返回真假，真则是IE内核，以此类推browser.versions.webKit是否为谷歌内核
+        if (browser.versions.mobile) {
+            document.body.className = document.body.className + ' m-body';
+            var tScale = 'scale('+document.body.clientWidth/document.body.getAttribute('data-width') +')';
+            document.body.style.zoom = document.body.clientWidth/document.body.getAttribute('data-width');/* body zoom*/
+        }
+        var browserIE=navigator.appName;
+        var b_version=navigator.appVersion;
+        var version=b_version.split(";");
+        var trim_Version=version[1].replace(/[ ]/g,"");
+        if((browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE6.0") || (browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE7.0") ||(browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE8.0")|| (browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE9.0")){
+            document.body.className = document.body.className + ' no-ani';
+        }
+    })()
+</script>
+
+<!-- header-top start -->
+<div class="header-top" style="width:1300px">
+    <div class="w">
+        <ul class="header-top-r">
+            <li class="fore1"><a href="#">about JD</a></li><li class="spacer"></li>
+            <li class="fore2"><a href="#">Help</a></li><li class="spacer"></li>
+            <li class="fore3" id="lan-sel">
+                <div class="dt">Ship to us / language<s></s></div>
+                <div class="lan-box">
+                    <div class="spacer"></div>
+                    <div class="mt">
+                        <h4>Select Regional Settings</h4>
+                        <span class="mr20">Ship to</span><span><select name="" class="sel-s"><option value="United States">United States</option></select></span>
+                    </div>
+                    <div class="mc">
+                        <span class="f-cb"></span>
+                        <span>Multi-Language Sites：</span>
+                        <ul>
+                            <li><a href="#" target="_blank">Global Site (English)</a></li>
+                            <li><a href="" target="_blank">Сайт на русском</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- header-top end -->
+
+<!-- header start -->
+<div class="header">
+    <div class="w">
+        <a href="#" class="logo"></a>
+
+        <form action="" class="search-form">
+            <div class="search-operate-box f-fl">
+                <div class="search-cate-title"><span id="search-category-value" class="search-category-value">All Categories</span><s></s><div class="spacer"></div></div>
+                <div class="search-cate-list">
+                    <ul>
+                        <li><a href="#">JD Exclusive</a></li>
+                        <li><a href="#">Cell phone</a></li>
+                        <li><a href="#">JD Exclusive</a></li>
+                        <li><a href="#">Iphone6 accessories</a></li>
+                        <li><a href="#">Camera accessoriesCamera accessoriesCamera accessoriesCamera accessories</a></li>
+                        <li><a href="#">JD Exclusive</a></li>
+                        <li><a href="#">Iphone6 accessories</a></li>
+                        <li><a href="#">Cell phone</a></li>
+                        <li><a href="#">JD Exclusive</a></li>
+                        <li><a href="#">JD Exclusive</a></li>
+                        <li><a href="#">Cell phone</a></li>
+                        <li><a href="#">Iphone6 accessories</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="search-key-box f-fr">
+                <input type="text" class="search-key" placeholder="Shopping For..." maxlength="50" autocomplete="off" value="" name="SearchText" class="search-key">
+                <input type="submit" class="search-button" value="">
+            </div>
+            <div class="search-key-list">
+                <strong>JD Exclusive</strong>
+                <ul>
+                    <li><a href="#">JD Exclusive</a></li>
+                    <li><a href="#">Cell phone</a></li>
+                    <li><a href="#">JD Exclusive</a></li>
+                    <li><a href="#">Iphone6 accessories</a></li>
+                    <li><a href="#">Camera accessoriesCamera accessoriesCamera accessoriesCamera accessories</a></li>
+                    <li><a href="#">JD Exclusive</a></li>
+                    <li><a href="#">Iphone6 accessories</a></li>
+                    <li><a href="#">Cell phone</a></li>
+                    <li><a href="#">JD Exclusive</a></li>
+                    <li><a href="#">JD Exclusive</a></li>
+                    <li><a href="#">Cell phone</a></li>
+                    <li><a href="#">Iphone6 accessories</a></li>
+                </ul>
+            </div>
+            <script type="text/javascript">
+                $(function(){
+
+
+                })
+            </script>
+        </form>
+
+        <ul class="tools-box">
+            <li><a href="#" class="cart"><s></s><span>Cart</span></a></li>
+            <li><a href="#" class="wish"><s></s><span>Wish</span></a></li>
+            <li class="item-sign">
+                <div class="sign"><s></s><span>Sign in</span></div>
+                <!-- 登录后 -->
+                <div class="sign-box s-1" >
+                    <div class="spacer"></div>
+                    <div class="mt">
+                        <a href="#" target="_blank">Welcome, isaac</a>
+                    </div>
+                    <div class="mc">
+                        <p><a href="" target="_blank">My Order</a></p>
+                        <p><a href="" target="_blank">My Wish List</a></p>
+                        <p><a href="" target="_blank">Account Settings</a></p>
+                        <a href="#" class="btn-join">Join Free</a>
+                    </div>
+                </div>
+                <!-- 登录前 -->
+                <div class="sign-box s-2" style="display: none">
+                    <div class="spacer"></div>
+                    <div class="mt">
+                        <a href="#" class="btn-sign">Sign in</a>
+                        <div class="sign-open">
+                            <span>Sign in with:</span>
+                            <span><a href="#" class="icon_face"></a><a href="#" class="icon_jd"></a></span>
+                        </div>
+                    </div>
+                    <div class="mc">
+                        <p><a href="" target="_blank">New Customer？</a></p>
+                        <a href="#" class="btn-join">Join Free</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- header end -->
+
+
+<!-- S 页面内容 -->
+
+<div class="wrapper">
+    <!-- S hd -->
+    <div class="wrap-hd">
+        <!-- S banner锚点 -->
+        <div class="wrap-hd-extra">
+            <div class="map">
+                <a href="#flr1" class="item-1"></a>
+                <a href="#flr2" class="item-2"></a>
+                <a href="#flr3" class="item-3"></a>
+                <a href="#flr4" class="item-4"></a>
+                <a href="#flr5" class="item-5"></a>
+                <a href="#flr6" class="item-6"></a>
+            </div>
+        </div>
+        <!-- E banner锚点 -->
+    </div>
+    <!-- E hd -->
+<!-- S bd -->
+<div class="wrap-bd">
+    <!-- S flr1 -->
+<div class="wrap-flr flr1">
+    <a href="javascript:void(0)" class="href-map" id="flr1"></a>
+    <div class="flr-hd wrap-990">
+        <i class="icon"><a href="http://en.jd.com/search?category=&keywords=Yumi&categoryName=All%2520Categories" class="href-icon" target="_blank" title="more"></a></i>
+        <h2>CANIS,a new women's clothing brand, which is founded in 2014 in China. The product include women's
+            dress, leggings, swimwear and kids' clothing. Bikini set is our main product. We will offer you beautifu
+            bikinis with special design and good quality, makes you more charming and attracting.</h2>
+    </div>
+    <div class="flr-bd wrap-990">
+        <!-- S goodslist -->
+    <div class="goods-list" id="goodsWrap1"></div>
+        <!-- E goodslist -->
+    </div>
+    <!-- S flr-ft -->
+    <div class="flr-ft wrap-990">
+        <a href="http://en.jd.com/search?category=&keywords=Yumi&categoryName=All%2520Categories" class="href-more" target="_blank" title="more" data-text="MORE&nbsp&gt;">MORE&nbsp&gt;</a>
+    </div>
+    <!-- E flr-ft -->
+    <!-- S flr-extra -->
+    <div class="flr-extra"><a href="http://en.jd.com/search?category=&keywords=Yumi&categoryName=All%2520Categories" class="href-flr-extra" target="_blank" title="more"></a></div>
+    <!-- E flr-extra -->
+</div>
+    <!-- E flr1 -->
+    <!-- S flr2 -->
+    <div class="wrap-flr flr2">
+        <a href="javascript:void(0)" class="href-map" id="flr2"></a>
+        <div class="flr-hd wrap-990">
+            <i class="icon"><a href="http://en.jd.com/search?category=&keywords=SKMEI&categoryName=All%2520Categories" class="href-icon" target="_blank" title="more"></a></i>
+            <h2>CANIS,a new women's clothing brand, which is founded in 2014 in China. The product include women's
+                dress, leggings, swimwear and kids' clothing. Bikini set is our main product. We will offer you beautifu
+                bikinis with special design and good quality, makes you more charming and attracting.</h2>
+        </div>
+        <div class="flr-bd wrap-990">
+            <!-- S goodslist -->
+            <div class="goods-list" id="goodsWrap2">
+
+                </div>
+                <!-- E goodslist -->
+            </div>
+            <!-- S flr-ft -->
+            <div class="flr-ft wrap-990">
+                <a href="http://en.jd.com/search?category=&keywords=SKMEI&categoryName=All%2520Categories" class="href-more" target="_blank" title="more" data-text="MORE&nbsp&gt;">MORE&nbsp&gt;</a>
+            </div>
+            <!-- E flr-ft -->
+            <!-- S flr-extra -->
+            <div class="flr-extra"><a href="http://en.jd.com/search?category=&keywords=SKMEI&categoryName=All%2520Categories" class="href-flr-extra" target="_blank" title="more"></a></div>
+            <!-- E flr-extra -->
+        </div>
+        <!-- E flr2 -->
+        <!-- S flr3 -->
+        <div class="wrap-flr flr3">
+            <a href="javascript:void(0)" class="href-map" id="flr3"></a>
+            <div class="flr-hd wrap-990">
+                <i class="icon"></i>
+                <h2>CANIS,a new women's clothing brand, which is founded in 2014 in China. The product include women's
+                    dress, leggings, swimwear and kids' clothing. Bikini set is our main product. We will offer you beautifu
+                    bikinis with special design and good quality, makes you more charming and attracting.</h2>
+            </div>
+            <div class="flr-bd wrap-990">
+                <!-- S goodslist -->
+                <div class="goods-list" id="goodsWrap3">
+
+                </div>
+                <!-- E goodslist -->
+            </div>
+            <!-- S flr-ft -->
+            <div class="flr-ft wrap-990">
+                <a href="http://en.jd.com/search?category=&keywords=CANIS%2520women&categoryName=All%2520Categories" class="href-more" target="_blank" title="more" data-text="MORE&nbsp&gt;">MORE&nbsp&gt;</a>
+            </div>
+            <!-- E flr-ft -->
+            <!-- S flr-extra -->
+            <div class="flr-extra"><a href="http://en.jd.com/search?category=&keywords=CANIS%2520women&categoryName=All%2520Categories" class="href-flr-extra" target="_blank" title="more"></a></div>
+            <!-- E flr-extra -->
+        </div>
+        <!-- E flr3 -->
+        <!-- S flr4 -->
+        <div class="wrap-flr flr4">
+            <a href="javascript:void(0)" class="href-map" id="flr4"></a>
+            <div class="flr-hd wrap-990">
+                <i class="icon"></i>
+                <h2>CANIS,a new women's clothing brand, which is founded in 2014 in China. The product include women's
+                    dress, leggings, swimwear and kids' clothing. Bikini set is our main product. We will offer you beautifu
+                    bikinis with special design and good quality, makes you more charming and attracting.</h2>
+            </div>
+            <div class="flr-bd wrap-990">
+                <!-- S goodslist -->
+                <div class="goods-list" id="goodsWrap4">
+
+                </div>
+                <!-- E goodslist -->
+            </div>
+            <!-- S flr-ft -->
+            <div class="flr-ft wrap-990">
+                <a href="http://en.jd.com/search?sellerName=ANDA%2BLUMEN&seller=21" class="href-more" target="_blank" title="more" data-text="MORE&nbsp&gt;">MORE&nbsp&gt;</a>
+            </div>
+            <!-- E flr-ft -->
+            <!-- S flr-extra -->
+            <div class="flr-extra"><a href="http://en.jd.com/search?sellerName=ANDA%2BLUMEN&seller=21" class="href-flr-extra" target="_blank" title="more"></a></div>
+            <!-- E flr-extra -->
+        </div>
+        <!-- E flr4 -->
+        <!-- S flr5 -->
+        <div class="wrap-flr flr5">
+            <a href="javascript:void(0)" class="href-map" id="flr5"></a>
+            <div class="flr-hd wrap-990">
+                <i class="icon"></i>
+                <h2>CANIS,a new women's clothing brand, which is founded in 2014 in China. The product include women's
+                    dress, leggings, swimwear and kids' clothing. Bikini set is our main product. We will offer you beautifu
+                    bikinis with special design and good quality, makes you more charming and attracting.</h2>
+            </div>
+            <div class="flr-bd wrap-990">
+                <!-- S goodslist -->
+                <div class="goods-list" id="goodsWrap5">
+
+                </div>
+                <!-- E goodslist -->
+            </div>
+            <!-- S flr-ft -->
+            <div class="flr-ft wrap-990">
+                <a href="http://en.jd.com/search?category=&keywords=HONGZHUI&categoryName=All%2520Categories" class="href-more" target="_blank" title="more" data-text="MORE&nbsp&gt;">MORE&nbsp&gt;</a>
+            </div>
+            <!-- E flr-ft -->
+            <!-- S flr-extra -->
+            <div class="flr-extra"><a href="http://en.jd.com/search?category=&keywords=HONGZHUI&categoryName=All%2520Categories" class="href-flr-extra" target="_blank" title="more"></a></div>
+            <!-- E flr-extra -->
+        </div>
+        <!-- E flr5 -->
+        <!-- S flr6 -->
+        <div class="wrap-flr flr6">
+            <a href="javascript:void(0)" class="href-map" id="flr6"></a>
+            <div class="flr-hd wrap-990">
+                <i class="icon"></i>
+                <h2>CANIS,a new women's clothing brand, which is founded in 2014 in China. The product include women's
+                    dress, leggings, swimwear and kids' clothing. Bikini set is our main product. We will offer you beautifu
+                    bikinis with special design and good quality, makes you more charming and attracting.</h2>
+            </div>
+            <div class="flr-bd wrap-990">
+                <!-- S goodslist -->
+                <div class="goods-list" id="goodsWrap6">
+
+                </div>
+                <!-- E goodslist -->
+            </div>
+            <!-- S flr-ft -->
+            <div class="flr-ft wrap-990">
+                <a href="http://en.jd.com/search?sellerName=ANDA%2BLUMEN&seller=21" class="href-more" target="_blank" title="more" data-text="MORE&nbsp&gt;">MORE&nbsp&gt;</a>
+            </div>
+            <!-- E flr-ft -->
+            <!-- S flr-extra -->
+            <div class="flr-extra"><a href="http://en.jd.com/search?sellerName=ANDA%2BLUMEN&seller=21" class="href-flr-extra" target="_blank" title="more"></a></div>
+            <!-- E flr-extra -->
+        </div>
+        <!-- E flr6 -->
+    </div>
+    <!-- E bd -->
+
+</div>
+<!-- E 页面内容 -->
+<!-- S 吸顶导航 -->
+<div class="map-fix float-top" id="mapFix">
+    <div class="wrap-990">
+        <a href="#flr1" class="item-1">YUMI</a>
+        <a href="#flr2" class="item-2">SKMEI</a>
+        <a href="#flr3" class="item-3">CANIS</a>
+        <a href="#flr4" class="item-4">TRONSMART</a>
+        <a href="#flr5" class="item-5">HONGZHUI</a>
+        <a href="#flr6" class="item-6">LUMINTOP</a>
+    </div>
+</div>
+<!-- E 吸顶导航 -->
+<!-- S 海外购底部 -->
+<div class="hyperchannel">
+    <div class="w">
+        <div class="item fore1">
+            <a href="#" target="_blank">
+                <s></s>
+                <h4>Buyer Protection</h4>
+            </a>
+            <p>We will refund if the item is not as
+                described or is of poor quality</p>
+        </div>
+        <div class="item  fore2">
+            <a href="#" target="_blank">
+                <s></s>
+                <h4>Delivery Guarantee</h4>
+            </a>
+            <p>You will get a full refund if your
+                order does not receive</p>
+        </div>
+        <div class="item  fore3">
+            <a href="#" target="_blank">
+                <s></s>
+                <h4>Safe Payment</h4>
+            </a>
+            <p>Pay with popular and
+                secure payment methods</p>
+        </div>
+        <div class="item  fore4">
+            <a href="#" target="_blank">
+                <s></s>
+                <h4>China Brands Selection</h4>
+            </a>
+            <p>100% Brand Suppliers</p>
+        </div>
+    </div>
+</div>
+<!-- E 海外购底部 -->
+<!-- footer start -->
+<div class="footer">
+    <div class="w">
+        <div class="links">
+            <dl>
+                <dt>About JD</dt>
+                <dd><a href="#" target="_blank">Corporate Profile</a></dd>
+                <dd><a href="#" target="_blank">Founder’s Profile</a></dd>
+                <dd><a href="#" target="_blank">Mission & Values</a></dd>
+                <dd><a href="#" target="_blank">Investor Relations</a></dd>
+            </dl>
+            <dl>
+                <dt>Make Money with Us</dt>
+                <dd><a href="">Wholesale by JD</a></dd>
+                <dd><a href="">Become an Affiliate</a></dd>
+            </dl>
+            <dl>
+                <dt>Buyer Protection</dt>
+                <dd><a href="">Safe Payment</a></dd>
+                <dd><a href="">Refund & Returns</a></dd>
+                <dd><a href="">Privacy Policy</a></dd>
+            </dl>
+            <dl>
+                <dt>Let Us Help You</dt>
+                <dd><a href="">Contact Us</a></dd>
+                <dd><a href="">Terms & Conditions</a></dd>
+            </dl>
+            <div class="fd">
+                <form action="">
+                    <input type="text"  class="ipt-text" value="" placeholder="Your Email to Get latest discounts"/>
+                    <input type="button"  class="ipt-submit"  value="Subscribe"/>
+                </form>
+                <a href="#" class="link-facebook"><s></s>Like Us on Facebook</a>
+            </div>
+        </div>
+        <div class="cpright">
+            <p>Copyright © 2006-2015 360buy Ltd. All Rights Reserved</p>
+        </div>
+    </div>
+</div>
+<!-- footer end -->
+<span id="top"></span>
+<!-- S 底部搜索交互js -->
+<script type="text/javascript">
+    seajs.use(['jdf/1.0.0/unit/event/1.0.0/event','jdf/1.0.0/ui/switchable/1.0.0/switchable','jdf/1.0.0/ui/lazyload/1.0.0/lazyload','jdf/1.0.0/ui/placeholder/1.0.0/placeholder'],function(event,switchable,lazyload,placeholder){
+
+        //修复全站的输入框提示placeholder
+        $('input[placeholder], textarea').placeholder();
+
+        //搜索交互
+        $(".search-cate-title").click(function(){
+            $(this).parent().toggleClass("cat-open");
+            $(".search-key-list").hide();
+        });
+
+        $(".search-cate-list li a").click(function(){
+            $("#search-category-value").html($(this).html());
+            $(this).parents(".search-operate-box").removeClass("cat-open");
+        });
+
+        //搜索关键词交互
+        var len = $(".search-key-list li").length,index = -1;
+        $(".search-key").click(function(){
+            $(".search-key-list").show();
+            $(".search-operate-box").removeClass("cat-open");
+        });
+
+        $(".search-key-list li a").click(function(){
+            $(".search-key").val($(this).text());
+            $(".search-key-list").hide();
+            return false;
+        });
+
+        $(document).keydown(function(e){
+            if(e.keyCode == 38 && index > 0){
+                $(".search-key-list li").removeClass("cur").eq(--index).addClass("cur");
+            }else if (e.keyCode == 40 && index < len-1){
+                $(".search-key-list li").removeClass("cur").eq(++index).addClass("cur");
+            } else if (e.which == 13) {//回车
+                $(".search-key").val($(".search-key-list li.cur").text());
+                $(".search-key-list").hide();
+                return false;
+            }
+        });
+
+        //焦点图
+        $('#focus').switchable({
+            type:'focus',
+            hasPage:true,
+            autoPlay:true,
+            callback :function(){
+                this.main.each(function(){
+                    if($(this).hasClass("ui-switchable-panel-selected")) {
+                        $(".focus").css({"background" : $(this).attr("data-color")})
+                    }
+                })
+            }
+        });
+
+
+        //滚动固定搜索栏
+        // $(window).scroll(function(){
+        //     if( $(window).scrollTop() > $(".worth-buying").position().top) {
+        //         $(".header").addClass("header-fix");
+        //     } else {
+        //         $(".header").removeClass("header-fix");
+        //     }
+        // })
+
+
+        //左侧类目交互
+        $(".categorys .item").hover(function(){
+            $(this).find(".cate-name").addClass("hover");
+            $(this).find(".sub-cate").show();
+            $(".search-operate-box").removeClass("cat-open");
+            $(".search-key-list").hide();
+        },function(){
+            $(this).find(".cate-name").removeClass("hover");
+            $(this).find(".sub-cate").hide();
+        });
+
+        //hover弹出交互
+        $("#lan-sel,.item-sign").hover(function(){
+            $(this).addClass("hover");
+            $(".search-operate-box").removeClass("cat-open");
+            $(".search-key-list").hide();
+        },function(){
+            $(this).removeClass("hover");
+        });
+
+        //back to top
+        var oTop = $("#top");
+        $(window).scroll(function(){
+            (oTop.position().top > $(window).height()) ? oTop.show() : oTop.hide();
+        }).trigger("scroll");
+        oTop.click(function(){
+            $('html, body').animate({scrollTop : 0},800);
+            return false;
+        });
+    })
+</script>
+<!-- E 底部搜索交互js -->
+<!-- S arttemplate -->
+<script type="text/javascript">var template=function(b,a){return template[typeof a==="object"?"render":"compile"].apply(template,arguments)};(function(a,c){a.version="2.0.0";a.openTag="<%";a.closeTag="%>";a.isEscape=true;a.isCompress=false;a.parser=null;a.render=function(i,h){var g=f(i);if(g===undefined){return d({id:i,name:"Render Error",message:"No Template"})}return g(h)};a.compile=function(n,k){var m=arguments;var h=m[2];var j="anonymous";if(typeof k!=="string"){h=m[1];k=m[0];n=j}try{var g=b(k,h)}catch(l){l.id=n||k;l.name="Syntax Error";return d(l)}function i(o){try{return new g(o)+""}catch(p){if(!h){return a.compile(n,k,true)(o)}p.id=n||k;p.name="Render Error";p.source=k;return d(p)}}i.prototype=g.prototype;i.toString=function(){return g.toString()};if(n!==j){e[n]=i}return i};a.helper=function(g,h){a.prototype[g]=h};a.onerror=function(h){var g="[template]:\n"+h.id+"\n\n[name]:\n"+h.name;if(h.message){g+="\n\n[message]:\n"+h.message}if(h.line){g+="\n\n[line]:\n"+h.line;g+="\n\n[source]:\n"+h.source.split(/\n/)[h.line-1].replace(/^[\s\t]+/,"")}if(h.temp){g+="\n\n[temp]:\n"+h.temp}if(c.console){console.error(g)}};var e={};var f=function(j){var g=e[j];if(g===undefined&&"document" in c){var h=document.getElementById(j)||window.frames.iframePageTemplate.document.getElementById(j);if(h){var i=h.value||h.innerHTML;return a.compile(j,i.replace(/^\s*|\s*$/g,""))}}else{if(e.hasOwnProperty(j)){return g}}};var d=function(h){a.onerror(h);function g(){return g+""}g.toString=function(){return"{Template Error}"};return g};var b=(function(){a.prototype={$render:a.render,$escape:function(l){return typeof l==="string"?l.replace(/&(?![\w#]+;)|[<>"']/g,function(m){return{"<":"&#60;",">":"&#62;",'"':"&#34;","'":"&#39;","&":"&#38;"}[m]}):l},$string:function(l){if(typeof l==="string"||typeof l==="number"){return l}else{if(typeof l==="function"){return l()}else{return""}}}};var g=Array.prototype.forEach||function(o,m){var l=this.length>>>0;for(var n=0;n<l;n++){if(n in this){o.call(m,this[n],n,this)}}};var j=function(m,l){g.call(m,l)};var k="break,case,catch,continue,debugger,default,delete,do,else,false,finally,for,function,if,in,instanceof,new,null,return,switch,this,throw,true,try,typeof,var,void,while,with,abstract,boolean,byte,char,class,const,double,enum,export,extends,final,float,goto,implements,import,int,interface,long,native,package,private,protected,public,short,static,super,synchronized,throws,transient,volatile,arguments,let,yield,undefined";var h=new RegExp(["/\\*(.|\n)*?\\*/|//[^\n]*\n|//[^\n]*$","'[^']*'|\"[^\"]*\"","\\.[s\t\n]*[\\$\\w]+","\\b"+k.replace(/,/g,"\\b|\\b")+"\\b"].join("|"),"g");var i=function(l){l=l.replace(h,",").replace(/[^\w\$]+/g,",").replace(/^,|^\d+|,\d+|,$/g,"");return l?l.split(","):[]};return function(A,C){var y=a.openTag;var t=a.closeTag;var p=a.parser;var m=A;var o="";var v=1;var z={$data:true,$helpers:true,$out:true,$line:true};var B=a.prototype;var x={};var s="var $helpers=this,"+(C?"$line=0,":"");var F="".trim;var H=F?["$out='';","$out+=",";","$out"]:["$out=[];","$out.push(",");","$out.join('')"];var r=F?"if(content!==undefined){$out+=content;return content}":"$out.push(content);";var q="function(content){"+r+"}";var l="function(id,data){if(data===undefined){data=$data}var content=$helpers.$render(id,data);"+r+"}";j(m.split(y),function(L,K){L=L.split(t);var J=L[0];var I=L[1];if(L.length===1){o+=u(J)}else{o+=D(J);if(I){o+=u(I)}}});m=o;if(C){m="try{"+m+"}catch(e){e.line=$line;throw e}"}m="'use strict';"+s+H[0]+m+"return new String("+H[3]+")";try{var G=new Function("$data",m);G.prototype=x;return G}catch(E){E.temp="function anonymous($data) {"+m+"}";throw E}function u(I){v+=I.split(/\n/).length-1;if(a.isCompress){I=I.replace(/[\n\r\t\s]+/g," ")}I=I.replace(/('|\\)/g,"\\$1").replace(/\r/g,"\\r").replace(/\n/g,"\\n");I=H[1]+"'"+I+"'"+H[2];return I+"\n"}function D(K){var L=v;if(p){K=p(K)}else{if(C){K=K.replace(/\n/g,function(){v++;return"$line="+v+";"})}}if(K.indexOf("=")===0){var J=K.indexOf("==")!==0;K=K.replace(/^=*|[\s;]*$/g,"");if(J&&a.isEscape){var I=K.replace(/\s*\([^\)]+\)/,"");if(!B.hasOwnProperty(I)&&!/^(include|print)$/.test(I)){K="$escape($string("+K+"))"}}else{K="$string("+K+")"}K=H[1]+K+H[2]}if(C){K="$line="+L+";"+K}w(K);return K+"\n"}function w(I){I=i(I);j(I,function(J){if(!z.hasOwnProperty(J)){n(J);z[J]=true}})}function n(I){var J;if(I==="print"){J=q}else{if(I==="include"){x["$render"]=B["$render"];J=l}else{J="$data."+I;if(B.hasOwnProperty(I)){x[I]=B[I];if(I.indexOf("$")===0){J="$helpers."+I}else{J=J+"===undefined?$helpers."+I+":"+J}}}}s+=I+"="+J+","}}})()})(template,this);if(typeof define==="function"){define(function(b,a,c){c.exports=template})}else{if(typeof exports!=="undefined"){module.exports=template}};
+</script>
+<!-- E arttemplate -->
+<!-- S 模板 -->
+<script type="text/html" id="goodTpl">
+    <ul class="cf">
+        <% var sections = data.data; if(sections.length>0){ %>
+        <% for(var i=0;i<sections.length;i++){ %>
+        <% var sdata = sections[i] %>
+        <li>
+            <div class="goods-img">
+                <a href="<%= sdata.link %>" target="_blank" class="href-goods-img"><img src="<%= sdata.img %>" alt="<%= sdata.nameRussian %>"/></a>
+            </div>
+            <div class="goods-info">
+                <a href="<%= sdata.link %>" target="_blank" class="href-goods-name"><%= sdata.nameRussian %></a>
+                <div class="goods-price">
+                    <em>$<%= sdata.price %></em><span class="price-old">$<%= sdata.oldPrice %></span>
+                </div>
+                <div class="goods-promote"><%= sdata.discount %>OFF</div>
+            </div>
+            <div class="layer-border">
+                <a href="<%= sdata.link %>" target="_blank" class="href-goods-border" title="<%= sdata.name %>"></a>
+            </div>
+        </li>
+
+        <% }} %>
+    </ul>
+</script>
+<!-- E 模板 -->
+<!-- 数据 -->
+<script type="text/javascript">
+    var goodsData =[
+        {
+            'id': 1,//楼层序号
+            'nameRussian': '服装',//楼层标题
+            'link1': '',//楼层标题更多链接
+            'img': '',//楼层氛围图
+            'link2': '',//楼层氛围图链接
+            'tpl': 1,
+            'data': [
+                {
+                    "name": "Botanical Print Skater Dress",
+                    "link": "http://en.jd.com/product/Yumi-Botanical-Posies-Dress_672266.html",
+                    "nameRussian": "Платье с растительными принтами",
+                    "img": "tmp/goods1-1.jpg",
+                    "price": "83.00",
+                    "oldPrice": "108.55",
+                    "discount": "24%"
+                },
+                {
+                    "name": "Bird Print Lace Dress",
+                    "link": "http://en.jd.com/product/BIRD-PRINT-LACE-DRESS_673810.html",
+                    "nameRussian": "кружевное платье с принтом птицы",
+                    "img": "tmp/goods1-2.jpg",
+                    "price": "71.00",
+                    "oldPrice": "75.15",
+                    "discount": "6%"
+                },
+                {
+                    "name": "Stripe Lace Skater Dress",
+                    "link": "http://en.jd.com/product/STRIPE-LACE-SKATER-DRESS_673812.html",
+                    "nameRussian": "Полосатое кружевное платье",
+                    "img": "tmp/goods1-3.jpg",
+                    "price": "85.00",
+                    "oldPrice": "83.00",
+                    "discount": "2%"
+                },
+                {
+                    "name": "Botanical Posies Maxi Skirt",
+                    "link": "http://en.jd.com/product/Yumi-Botanical-Posies-Maxi-Skirt_679416.html",
+                    "nameRussian": "Maxi платье с ботаническими цветами",
+                    "img": "tmp/goods1-4.jpg",
+                    "price": "83.00",
+                    "oldPrice": "108.55",
+                    "discount": "24%"
+                },
+                {
+                    "name": "Tropical Floral Print Maxi Dress",
+                    "link": "http://en.jd.com/product/Yumi-Tropical-Floral-Maxi_679408.html",
+                    "nameRussian": "Maxi платье с тропическими принтами",
+                    "img": "tmp/goods1-5.jpg",
+                    "price": "73.00",
+                    "oldPrice": "108.55",
+                    "discount": "33%"
+                },
+                {
+                    "name": "Lace Belted Dress",
+                    "link": "http://en.jd.com/product/YUMI-BUTTERFLY-AND-MAP-PRINT-DRESS_673809.html",
+                    "nameRussian": " Платье с растительными принтами",
+                    "img": "tmp/goods1-6.jpg",
+                    "price": "80.16",
+                    "oldPrice": "71.00",
+                    "discount": "11%"
+                }
+            ]
+        },
+        {
+            'id': 2,//楼层序号
+            'nameRussian': '手表',//楼层标题
+            'link1': '',//楼层标题更多链接
+            'img': '',//楼层氛围图
+            'link2': '',//楼层氛围图链接
+            'tpl': 1,
+            'data': [
+                {
+                    "name": "Sport Heart Rate Monitor Digital Watch",
+                    "link": "http://en.jd.com/product/SKMEI-Pulse-Heart-Rate-Counter-Calories-Monitor-Men-Women-Digital-Sports-Watch-Sphygmograph-Pulsometer-Pulse-Wave-Wristwatch_669243.html",
+                    "nameRussian": "Спортивные цифровые часы с монитором сердечной частоты",
+                    "img": "tmp/goods2-1.jpg",
+                    "price": "9.9",
+                    "oldPrice": "25.00",
+                    "discount": "60%"
+                },
+                {
+                    "name": "Military Electronic Men Quartz Watch",
+                    "link": "http://en.jd.com/product/SKEMI-New-Fashion-Watches-Men-Solar-Sports-Watch-2-Time-Zone-Quartz-Digital-Led-Casual-Wristwatches_669139.html",
+                    "nameRussian": "Армейские электронные мужские кварц часы",
+                    "img": "tmp/goods2-2.jpg",
+                    "price": "9.9",
+                    "oldPrice": "22.00",
+                    "discount": "55%"
+                },
+                {
+                    "name": "Solar Sport 2 Time Zone Digital LED Watch",
+                    "link": "http://en.jd.com/product/SKEMI-New-Fashion-Watches-Men-Solar-Sports-Watch-2-Time-Zone-Quartz-Digital-Led-Casual-Wristwatches_669139.html",
+                    "nameRussian": "Солнечные цифровые часы со светодиодами и 2мя часовыми зонами",
+                    "img": "tmp/goods2-3.jpg",
+                    "price": "9.9",
+                    "oldPrice": "31.00",
+                    "discount": "68%"
+                },
+                {
+                    "name": "Analog Digital 3ATM Full Steel Quartz Watches",
+                    "link": "http://en.jd.com/product/SKMEI-Luxurious-Watches-Men-Fashion-Analog-Digital-Wristwatch-3ATM-Stainless-Military-Sports-Watch_670642.html",
+                    "nameRussian": "Армейские электронные мужские кварц часы",
+                    "img": "tmp/goods2-4.jpg",
+                    "price": "9.9",
+                    "oldPrice": "30.00",
+                    "discount": "67%"
+                },
+                {
+                    "name": "Full Steel 30M Waterproof Quartz watch",
+                    "link": "http://en.jd.com/product/SKMEI-luxury-brand-quartz-digital-men-full-steel-and-leather-wristwatches-dive-30m-business-casual-men-watch_670672.html",
+                    "nameRussian": "Стальные 30M водонепроницаемые кварц часы",
+                    "img": "tmp/goods2-5.jpg",
+                    "price": "9.9",
+                    "oldPrice": "33.00",
+                    "discount": "70%"
+                },
+                {
+                    "name": "Waterproof Big Dial Men Quartz watch",
+                    "link": "http://en.jd.com/product/SKMEI-Fashion-Black-Stainless-Full-Steel-Strap-Relogio-Male-Clock-Men-Wristwatch-Waterproof-Quartz-Sport-Watch_669107.html",
+                    "nameRussian": "Водонепроницаемые мужские кварц часы",
+                    "img": "tmp/goods2-6.jpg",
+                    "price": "9.9",
+                    "oldPrice": "20.00",
+                    "discount": "51%"
+                }]
+        },
+        {
+            'id': 3,//楼层序号
+            'nameRussian': '泳衣',//楼层标题
+            'link1': '',//楼层标题更多链接
+            'img': '',//楼层氛围图
+            'link2': '',//楼层氛围图链接
+            'tpl': 1,
+            'data': [
+                {
+                    "name": "Bustier Crop Bikini Top",
+                    "link": "http://en.jd.com/product/CANIS-Sexy-Women-s-Strappy-Cagged-Corset-Bralette-Bustier-Bikini_668294.html",
+                    "nameRussian": "Бикини с декоративными полосками",
+                    "img": "tmp/goods3-1.jpg",
+                    "price": "3.86",
+                    "oldPrice": "8.00",
+                    "discount": "52%"
+                },
+                {
+                    "name": "One Piece Padded Swimsuit",
+                    "link": "http://en.jd.com/product/CANIS-Women-s-Cutest-Push-Up-Padded-Printed-Bikini-Swimwear-Swimsuit_668749.html",
+                    "nameRussian": "Закрытый купальник",
+                    "img": "tmp/goods3-2.jpg",
+                    "price": "9.87",
+                    "oldPrice": "18.00",
+                    "discount": "45%"
+                },
+                {
+                    "name": "Bandage Push up Floral Swimwear",
+                    "link": "http://en.jd.com/product/CANIS-Women-s-Hot-Floral-Push-up-Bandeau-Bikini-Set-Swimwear-Swimsuit_668565.html",
+                    "nameRussian": 'Бикини пуш-ап" ( push-up)"',
+                    "img": "tmp/goods3-3.jpg",
+                    "price": "8.07",
+                    "oldPrice": "18.00",
+                    "discount": "55%"
+                },
+                {
+                    "name": "Push Up Padded Floral Beachwear",
+                    "link": "http://en.jd.com/product/CANIS-Sexy-Women-s-Flower-Pattern-Bikini-Set-Swimwear_668133.html",
+                    "nameRussian": '"Бикини ""пуш-ап"" ( push-up)"',
+                    "img": "tmp/goods3-4.jpg",
+                    "price": "10.96",
+                    "oldPrice": "18.00",
+                    "discount": "39%"
+                },
+                {
+                    "name": "High Neck Crop Top Bandage Bikini",
+                    "link": "http://en.jd.com/product/CANIS-2015-New-Sexy-Women-s-Braided-Bikini-Set_667570.html",
+                    "nameRussian": "Купальник бандо с декоративным верхом",
+                    "img": "tmp/goods3-5.jpg",
+                    "price": "9.38",
+                    "oldPrice": "18.00",
+                    "discount": "48%"
+                },
+                {
+                    "name": "Push-Up Padded Beachwear",
+                    "link": "http://en.jd.com/product/CANIS-Sexy-Women-s-Ocean-Style-Push-Up-Padded-Bikini-Swimwear-Set_668561.html",
+                    "nameRussian": 'Бикини "пуш-ап" ( push-up)',
+                    "img": "tmp/goods3-6.jpg",
+                    "price": "8.10",
+                    "oldPrice": "15.00",
+                    "discount": "46%"
+                }
+            ]
+        },
+        {
+            'id': 4,//楼层序号
+            'nameRussian': 'IT',//楼层标题
+            'link1': '',//楼层标题更多链接
+            'img': '',//楼层氛围图
+            'link2': '',//楼层氛围图链接
+            'tpl': 1,
+            'data': [
+                {
+                    "name": "Tronsmart T1000 Plus Miracast Adapter ",
+                    "link": "http://en.jd.com/product/Tronsmart-T1000-Plus-Miracast-Adapter-compatible-with-EZCast-DLNA-Miracast-and-AirPlay-802-11ac_667474.html",
+                    "nameRussian": "Переходник T1000 Plus Miracast",
+                    "img": "tmp/goods4-1.jpg",
+                    "price": "25.99",
+                    "oldPrice": "38.99",
+                    "discount": "33%"
+                },
+                {
+                    "name": "Draco H3 Android Dongle TV Stick",
+                    "link": "http://en.jd.com/product/Tronsmart-Draco-H3-Android-TV-Dongle-TV-Stick-Allwinner-H3-Quad-Core-1G-8G-HDMI-Bluetooth-4-0-4K-H-265-OTA-Android-4-4_667493.html",
+                    "nameRussian": " ТВ пульт Draco H3 Android",
+                    "img": "tmp/goods4-2.jpg",
+                    "price": "35.99",
+                    "oldPrice": "50.99",
+                    "discount": "29%"
+                },
+                {
+                    "name": "TS-CC2PC Qualcomm Certified Quick Charge 2.0 Two Port Car Charger ",
+                    "link": "http://en.jd.com/product/Tronsmart-TS-CC2PC-Qualcomm-Certified-Quick-Charge-2-0-Two-Port-Car-Charger-for-Samsung-Galaxy-S6-S6-Edge-HTC-M9-N_667753.html",
+                    "nameRussian": "Автомобильное зарядное устройство TS-CC2PC Qualcomm 2.0 два входа, сертифицирован, быстрозаряжаемый",
+                    "img": "tmp/goods4-3.jpg",
+                    "price": "11.99",
+                    "oldPrice": "18.99",
+                    "discount": "37%"
+                },
+                {
+                    "name": "Russian Version Tronsmart TSM-01 Air Mouse + Keyboard Remote control",
+                    "link": "http://en.jd.com/product/Tronsmart-TSM-01-Russian-Version-Air-Mouse-Keyboard-Remote-control-for-TV-Box-PC-Motion-Sensing-Games_667886.html",
+                    "nameRussian": "Беспроводная мышь Tronsmart TSM-01 + Клавиатура Русская версия",
+                    "img": "tmp/goods4-4.jpg",
+                    "price": "13.59",
+                    "oldPrice": "18.99",
+                    "discount": "28%"
+                },
+                {
+                    "name": "40W 8A 5-Port USB Desktop Charger",
+                    "link": "http://360buy.jd.com/product/Tronsmart-40W-8A-5-Port-Portable-Smart-IC-USB-Desktop-Charger-Full-Speed-Charge-For-iPhone-Smart-phone-Tablet_667496.html",
+                    "nameRussian": "5ти разьемное USB Зарядное устройство 40W 8A настольное",
+                    "img": "tmp/goods4-5.jpg",
+                    "price": "18.99",
+                    "oldPrice": "27.99",
+                    "discount": "32%"
+                },
+                {
+                    "name": " TS-WC1Q QC2.0 Rapid USB Wall Charger - EU Plug ",
+                    "link": "http://en.jd.com/product/Tronsmart-TS-WC1Q-QC2-0-1P-USB-Rapid-Wall-Charger-Stand-up-Fast-Wall-Charger-18W-EU-Plug_667749.html",
+                    "nameRussian": "Переносное USB зарядное устройство TS-WC1Q QC2.0, Евро розетка",
+                    "img": "tmp/goods4-6.jpg",
+                    "price": "13.99",
+                    "oldPrice": "15.99",
+                    "discount": "13%"
+                }
+            ]
+        },
+        {
+            'id': 5,//楼层序号
+            'nameRussian': '背包',//楼层标题
+            'link1': '',//楼层标题更多链接
+            'img': '',//楼层氛围图
+            'link2': '',//楼层氛围图链接
+            'tpl': 1,
+            'data': [
+                {
+                    "name": "40L lightweight waterproof hiking backpack",
+                    "link": "http://en.jd.com/product/Hongzhui-waterproof-mountain-climbing-package-with-40L-super-light_677445.html",
+                    "nameRussian": "Облегченный пешеходный водонепроницаемый рюкзак, объем 40л",
+                    "img": "tmp/goods5-1.jpg",
+                    "price": "21.38",
+                    "oldPrice": "65.00",
+                    "discount": "49%"
+                },
+                {
+                    "name": "50L waterproof hiking pack",
+                    "link": "http://en.jd.com/product/Hongzhui-with-50L-large-capacity-waterproof-outdoor-climbing-backpack_679035.html",
+                    "nameRussian": "Водонепроницаемый пешеходный рюкзак, объем 50л",
+                    "img": "tmp/goods5-2.jpg",
+                    "price": "25.17",
+                    "oldPrice": "65.00",
+                    "discount": "63%"
+                },
+                {
+                    "name": "15.6'Multi Function computer/laptop Backpack",
+                    "link": "http://en.jd.com/product/Hongzhui-Backpack-shoulder-travel-bag-business-casual-computer-backpack-school-students-Backpack-shoulder-Packback_675296.html",
+                    "nameRussian": "Многофункциональный рюкзак для компьютера 15.6 дюймов",
+                    "img": "tmp/goods5-3.jpg",
+                    "price": "22.40",
+                    "oldPrice": "127.80",
+                    "discount": "21%"
+                },
+                {
+                    "name": "Yellow 14' Laptop Backpack",
+                    "link": "http://en.jd.com/product/Hongzhui-Yellow-14-Men-Women-Fashion-Laptop-Backpack_677405.html",
+                    "nameRussian": "Желтый рюкзак для компьютера 14 дюймов",
+                    "img": "tmp/goods5-4.jpg",
+                    "price": "17.01",
+                    "oldPrice": "55.00",
+                    "discount": "45%"
+                },
+                {
+                    "name": "Multi-Function computer bag",
+                    "link": "http://en.jd.com/product/Hongzhui-Multi-Function-Leisure-business-computer-bag_679114.html",
+                    "nameRussian": "Многофункциональная сумка для компьютера",
+                    "img": "tmp/goods5-5.jpg",
+                    "price": "20.46",
+                    "oldPrice": "55.00",
+                    "discount": "59%"
+                },
+                {
+                    "name": "Lightweight, large capacity waterproof backpack",
+                    "link": "http://en.jd.com/product/Hongzhui-large-capacity-Waterproof-backpack-with-Light-weight-Bag_679109.html",
+                    "nameRussian": "Облегченный вместительный водонепроницаемый рюкзак",
+                    "img": "tmp/goods5-6.jpg",
+                    "price": "23.07",
+                    "oldPrice": "65.00",
+                    "discount": "55%"
+                }
+            ]
+        },
+        {
+            'id': 6,//楼层序号
+            'nameRussian': '手电',//楼层标题
+            'link1': '',//楼层标题更多链接
+            'img': '',//楼层氛围图
+            'link2': '',//楼层氛围图链接
+            'tpl': 1,
+            'data': [
+                {
+                    "name": "Tronsmart T1000 Plus Miracast Adapter",
+                    "link": "http://en.jd.com/product/Tronsmart-T1000-Plus-Miracast-Adapter-compatible-with-EZCast-DLNA-Miracast-and-AirPlay-802-11ac_667474.html",
+                    "nameRussian": "LED оперативный фонарь, мощность 1000 люмен, 6 режимов со стробом, узловой включатель",
+                    "img": "tmp/goods6-1.jpg",
+                    "price": "25.99",
+                    "oldPrice": "38.99",
+                    "discount": "33%"
+                },
+                {
+                    "name": "Draco H3 Android Dongle TV Stick",
+                    "link": "http://en.jd.com/product/Tronsmart-Draco-H3-Android-TV-Dongle-TV-Stick-Allwinner-H3-Quad-Core-1G-8G-HDMI-Bluetooth-4-0-4K-H-265-OTA-Android-4-4_667493.html",
+                    "nameRussian": "Фонарь AAA Keychain , 110 Люмен, 6 режимов, Водонепроницаемый, всего 3.2 дюйма 15г",
+                    "img": "tmp/goods6-2.jpg",
+                    "price": "35.99",
+                    "oldPrice": "50.99",
+                    "discount": "29%"
+                },
+                {
+                    "name": "TS-CC2PC Qualcomm Certified Quick Charge 2.0 Two Port Car Charger",
+                    "link": "http://en.jd.com/product/Tronsmart-TS-CC2PC-Qualcomm-Certified-Quick-Charge-2-0-Two-Port-Car-Charger-for-Samsung-Galaxy-S6-S6-Edge-HTC-M9-N_667753.html",
+                    "nameRussian": "Мини цветной фонарик Keychain 110 люмен, 5 цветов, водонепроницаемый, всего 2.8 дюймов, 13 г",
+                    "img": "tmp/goods6-3.jpg",
+                    "price": "11.99",
+                    "oldPrice": "18.99",
+                    "discount": "37%"
+                },
+                {
+                    "name": "Russian Version Tronsmart TSM-01 Air Mouse + Keyboard Remote control",
+                    "link": "http://en.jd.com/product/Tronsmart-TSM-01-Russian-Version-Air-Mouse-Keyboard-Remote-control-for-TV-Box-PC-Motion-Sensing-Games_667886.html",
+                    "nameRussian": "LED фонарь 2800 люмен со строб функцией, 3*Cree LED",
+                    "img": "tmp/goods6-4.jpg",
+                    "price": "13.59",
+                    "oldPrice": "18.99",
+                    "discount": "28%"
+                },
+                {
+                    "name": "40W 8A 5-Port USB Desktop Charger",
+                    "link": "http://360buy.jd.com/product/Tronsmart-40W-8A-5-Port-Portable-Smart-IC-USB-Desktop-Charger-Full-Speed-Charge-For-iPhone-Smart-phone-Tablet_667496.html",
+                    "nameRussian": "Фонарь LED Перезаряжаемый, 900 люмен с USB зарядным кабелем, несессер, спусковой шнур",
+                    "img": "tmp/goods6-5.jpg",
+                    "price": "18.99",
+                    "oldPrice": "27.99",
+                    "discount": "32%"
+                },
+                {
+                    "name": " TS-WC1Q QC2.0 Rapid USB Wall Charger - EU Plug",
+                    "link": "http://en.jd.com/product/Tronsmart-TS-WC1Q-QC2-0-1P-USB-Rapid-Wall-Charger-Stand-up-Fast-Wall-Charger-18W-EU-Plug_667749.html",
+                    "nameRussian": "Яркий светодиодный фонарик на голову, 7 режимов, 610 люмен, водонепроницаемый",
+                    "img": "tmp/goods6-6.jpg",
+                    "price": "13.99",
+                    "oldPrice": "15.99",
+                    "discount": "13%"
+                }
+            ]
+        }
+    ];
+</script>
+<!-- E 数据 -->
+<script>
+    var tmpId = ['goodsWrap1','goodsWrap2','goodsWrap3','goodsWrap4','goodsWrap5','goodsWrap6'];
+    $(tmpId).each(function(_index,_k){
+
+        var tt = $('#'+_k);
+        if(tt!='undefined'){
+            mcHtml = template.render('goodTpl', {'data' : goodsData[_index],'pId': _index+1 ,'id' : _index+1});
+            $('#' + _k).html(mcHtml);
+        }
+
+    });
+
+    /*var goodsHtml = template.render('goodTpl', {'data' : goodsInfo[0]});
+     $('#goodWrap1').html(goodsHtml);
+     $('#goodWrap2').html(template.render('goodTpl', {'data' : goodsInfo[1]}));*/
+</script>
+<!-- added by lillian-->
+<script>
+    $(function(){
+
+        var hdTitle = [
+            'В 1994 году Uttam and Clare Nepal начали продавать трикотажные изделия из Непала - родины Uttam в Камден маркете в Лондоне. В то модное время, этническая и ручная работа их коллекции сделала их очень популярными до конца 90х и брэнд быстро развивался. Компания заслужила себе репутацию благодаря живым краскам, принтам и акценту на мелкие детали, что быстро сделало ее узнаваемым во всем Мире как брэнд женской, детской одежды и аксессуаров. ',
+            'В инновационно-трендовое время, SKMEI непрерывно развивает новую технологию и переносит все ее достижения на дизайн классических уникальных часов. Наша цель это создание яркого образа красивых часов в сочетание с лучшим опытом и инновационными технологическими характеристиками. SKMEI включает  4 вида часов: модные часы, гелевые часы, стальные часы и алмазные часы. ',
+            ' Коллекция одежды в основном состоит из платьев, леггинсов, купальных костюмов и детской одежды. Бикини представляют основную линию одежды. Мы предлагаем вам модные бикини с необычным дизайном и хорошим качеством, делающим вас еще более привлекательной и красивой.',
+            'Tronsmart брэнд замотивирован так, чтобы двигаться за пределы своих возможностей в каждом аспекте. На каждом этапе нашей компании, мы работаем для достижения нашей цели "Создание в Мире  развитого интеллектуально-технического стиля жизни". Мы делаем это для репутации, для развития энтузиазма в нас, а также мы заботимся о вашем опыте и навыках, приобретенных вместе с нами. ',
+            'Hongzhui брэнд был основан с целью "создания собственной китайской марки багажных сумок". Символ брэнда был взят из известной цитаты Гуан Я "Неуменьшенная сила навсегда". Лого символизирует совершенство, а название брэнда делает его узнаваемым из-за специальной арт формы, чтобы лого выглядело как натуральный шелк. Красный это цвет удачи в Китае, символизирующий торжество, сердечность и благородство Китая. ',
+            'LUMINTOP брэнд за последние 6 лет придерживается идеи внедрения технических новшеств и производства персональных и доступных по цене фонарей. Начиная с оперативных и уличных фонарей, подводных фонарей и  ламп, LUMINTOP обеспечит вас всем необходимым.  LUMINTOP надежный! Развлекательный! Качественные, практичные и износостойкие фонари. К нам поступает много заказов со всего мира, включая Американский торговый центр товаров для открытого воздуха ; Российский фонд боеприпасов; Немецкое подразделение полиции ; Армию жителей Панамы и противопожарное подразделение Сингапура. '
+        ]
+        var lastTop = $(document).scrollTop();
+        var floatTop = $('.float-top').height();
+        var floatShowHeight = $('.wrap-bd').offset().top;
+        var floatDom = $('.float-top');
+        var floatShowFlag = false;
+        var floatHideFlag = false;
+        var saleContent = $('.wrap-flr');
+        var saleCtTop = [];
+        var saleCtHeight = [];
+        $(saleContent).each(function(i,k){
+            if(i == 1){
+                saleCtTop.push($(k).offset().top)
+            }
+            else{
+                saleCtTop.push($(k).offset().top-floatTop)
+            }
+            saleCtHeight.push($(k).height());
+        })
+
+        if($(window).width()>1200){
+            //$('.sale-right-a').css({"right": ($(window).width() - 1200) / 2 - 65});
+            $('#top').css({"right": ($(window).width() - 1200) / 2 - 70});
+        }
+        else{
+            //$('.sale-right-a').css({"right": 5});
+            $('#top').css({"right": 0});
+        }
+        $('.flr-hd h2').each(function(i,k){
+            $(k).text(hdTitle[i]);
+        })
+        var tTop = $(document).scrollTop();
+        for(var i = 0;i<saleContent.length;i++){
+            if(tTop> saleCtTop[i] && tTop < saleCtTop[i] + saleCtHeight[i]) {
+                $('.float-top a').eq(i).addClass('current');
+            }
+        }
+        if ( tTop > floatShowHeight ){
+            if(!floatShowFlag) {
+                floatDom.fadeIn(300);
+                floatShowFlag = true;
+                setTimeout(function(){
+                    floatShowFlag = false;
+                },400)
+            }
+
+        }
+        else{
+            if(!floatHideFlag) {
+                floatDom.fadeOut(300);
+                floatHideFlag = true;
+                setTimeout(function(){
+                    floatHideFlag = false;
+                },400)
+            }
+        }
+        $('.float-top a').click(function(e){
+            var mapName = $(this).attr('href');
+            var tmpScrollTop = $(mapName).offset().top;
+            if(mapName == "#flr1") {
+            }
+            else{
+                tmpScrollTop = $(mapName).offset().top-floatTop;
+            }
+
+            $('html, body').animate({scrollTop : tmpScrollTop},500);
+            e.stopPropagation();
+            return false;
+
+        })
+        $('.wrap-hd-extra .map a').click(function(e){
+            var tIndex = $('.wrap-hd-extra .map a').index(this);
+            $('.float-top a').eq(tIndex).trigger('click');
+            e.stopPropagation();
+            return false;
+        })
+        /* showFloat($(document).scrollTop());*/
+        $(window).resize(function(e){
+            floatShowHeight = $('.wrap-bd').offset().top;
+            if($(window).width()>1200){
+                //$('.sale-right-a').css({"right": ($(window).width() - 1200) / 2 - 65});
+                $('#top').css({"right": ($(window).width() - 1200) / 2 - 70});
+            }
+            else{
+                //$('.sale-right-a').css({"right": 5});
+                $('#top').css({"right": 0});
+            }
+        })
+        $(window).scroll(function(e){
+            var nowTop = $(document).scrollTop();
+            //showFloat(nowTop);
+            if ( nowTop > floatShowHeight ){
+                if(!floatShowFlag) {
+                    floatDom.fadeIn(300);
+                    floatShowFlag = true;
+                    setTimeout(function(){
+                        floatShowFlag = false;
+                    },400)
+                }
+            }
+            else{
+                if(!floatHideFlag) {
+                    floatDom.fadeOut(300);
+                    floatHideFlag = true;
+                    setTimeout(function(){
+                        floatHideFlag = false;
+                    },400)
+                }
+            }
+            /* 当前态 */
+            for(var i = 0;i<saleContent.length;i++){
+                if(nowTop>= saleCtTop[i] && nowTop < saleCtTop[i] + saleCtHeight[i]) {
+                    $('.float-top a').removeClass('current').eq(i).addClass('current');
+                }
+            }
+            /* 下翻页面 */
+            if(nowTop > lastTop){
+
+            }
+            /* 上翻页面 */
+            else{
+            }
+            lastTop = nowTop;
+        })
+
+    })
+</script>
+</body>
+</html>
+
