@@ -115,3 +115,12 @@ body{min-width: 1300px;}
 .wrap-russian .flr4 .flr-hd h2{height: 92px;margin-top: 46px;*top:46px;}
 .wrap-russian .flr5 .flr-hd h2{height: 90px;margin-top: 44px;*top:44px;}
 .wrap-russian .flr6 .flr-hd h2{height: 125px;margin-top: 28px;*top:28px;}
+/* m-body */
+.m-body .float-top .item-1:hover,.m-body .float-top .item-3:hover,.m-body .float-top .item-5:hover{background-color: #323232}
+.m-body .float-top .item-2:hover,.m-body .float-top .item-4:hover,.m-body .float-top .item-6:hover{background-color: #242424}
+.m-body .float-top .item-1.current{background-color: #00cfb4}
+.m-body .float-top .item-2.current{background-color: #f67c2b}
+.m-body .float-top .item-3.current{background-color: #0091ed}
+.m-body .float-top .item-4.current{background-color: #e93349}
+.m-body .float-top .item-5.current{background-color: #73cf54}
+.m-body .float-top .item-6.current{background-color: #8323cc}

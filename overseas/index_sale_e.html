@@ -1029,7 +1029,7 @@
         var tTop = $(document).scrollTop();
         for(var i = 0;i<saleContent.length;i++){
             if(tTop> saleCtTop[i] && tTop < saleCtTop[i] + saleCtHeight[i]) {
-                $('.float-top a').eq(i).addClass('current');
+                $('.float-top a').removeClass('current').eq(i).addClass('current');
             }
         }
         if ( tTop > floatShowHeight ){
@@ -1053,11 +1053,11 @@
         }
         $('.float-top a').click(function(e){
             var mapName = $(this).attr('href');
-            var tmpScrollTop = $(mapName).offset().top;
+            var tmpScrollTop = $(mapName).offset().top +3;
             if(mapName == "#flr1") {
             }
             else{
-                tmpScrollTop = $(mapName).offset().top-floatTop;
+                tmpScrollTop = $(mapName).offset().top-floatTop +3;
             }
 
                 $('html, body').animate({scrollTop : tmpScrollTop},500);
