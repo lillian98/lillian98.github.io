@@ -1036,6 +1036,7 @@ a {
 }
 </style>
 <style>
+    delay_0_4s{-webkit-transition-duration:0.4s;-o-transition-duration:0.4s;transition-duration:0.4s;-webkit-animation-duration:0.4s;-o-animation-duration:0.4s;animation-duration:0.4s;}
     .delay_0_8s{
         -webkit-transition-duration:0.8s;-o-transition-duration:0.8s;transition-duration:0.8s;-webkit-animation-duration:0.8s;-o-animation-duration:0.8s;animation-duration:0.8s;
     }
@@ -1098,7 +1099,7 @@ a {
     height: 188px;
     left: 50%;
     top: 50%;
-    margin-top: -147px;
+    margin-top: -247px;
     margin-left: -157px;
 }
     .stage .logo-new .icon {
@@ -1237,7 +1238,7 @@ a {
         font-style: normal;
     }
 /* scene-1 */
-.scene-1 .person .icon-left-hand{
+/*.scene-1 .person .icon-left-hand{
     background-image: url(../images/b2c/p11_left_hand.png);
     width: 53px;
     height: 116px;
@@ -1252,6 +1253,47 @@ a {
         left: 32px;
         top: 200px;
         position: absolute;
+    }*/
+    .scene-1 .person{
+        width: 256px;
+        height: 537px;
+        top: 376px;
+        left: 256px;
+    }
+    .scene-1 .person .icon-head{
+        background-image: url("../images/b2c/p1_head.png");
+        width: 136px;
+        height: 162px;
+        top: 0;
+        left: 0;
+    }
+    .scene-1 .person .icon-body{
+        background-image: url("../images/b2c/p1_body.png");
+        width: 141px;
+        height: 210px;
+        top: 138px;
+        left: 51px;
+    }
+    .scene-1 .person .icon-left-hand{
+        background-image: url("../images/b2c/p1_left_hand.png");
+        width: 53px;
+        height: 116px;
+        top: 200px;
+        left: 161px;
+    }
+    .scene-1 .person .icon-right-hand{
+        background-image: url("../images/b2c/p1_right_hand.png");
+        width: 61px;
+        height: 140px;
+        top: 144px;
+        left: 11px;
+    }
+    .scene-1 .person .icon-foot{
+        background-image: url("../images/b2c/p1_foot.png");
+        width: 236px;
+        height: 213px;
+        top: 324px;
+        left: 20px;
     }
     .scene-1 .thinking{
         background-image: url(../images/b2c/p12_thinking_bg.png);
@@ -1360,84 +1402,79 @@ a {
         background-color: #eaeced;
     }
     /* scene-4 */
-    .scene-3 .left-hand{
+    .scene-2 .left-hand{
         background-image: url("../images/b2c/p4_left_hand.png");
         width: 398px;
         height: 426px;
         top: 825px;
         right: 0;
+        z-index: 22;
+        opacity: 0;
     }
-    .scene-3 .right-finger{
+    .scene-2 .right-finger{
         background-image: url("../images/b2c/p4_right_finger.png");
         width: 215px;
         height: 186px;
         left: 4px;
         bottom: 182px;
+        z-index: 22;
+        opacity: 0;
     }
-    .scene-3 .right-hand{
+    .scene-2 .right-hand{
         background-image: url("../images/b2c/p4_right_hand.png");
         width: 408px;
         height: 462px;
         left: 0;
         bottom: 0;
+        z-index: 22;
+        opacity: 0;
     }
-    .scene-3 .pad{
+    .scene-2 .pad-large{
         background-image: url("../images/b2c/p4_pad.png");
         width: 641px;
         height: 955px;
         left: 55px;
         top: 187px;
+        z-index: 22;
+        opacity: 0;
     }
-    .scene-3 .pad-logo{
-        background-image: url("../images/b2c/logo_1.png");
-        width: 165px;
-        height: 99px;
-        background-size: 100% 100%;
-        left: 293px;
-        top: 482px;
-    }
-    .scene-3 .userinfo{
-        background-image: url("../images/b2c/p4_userinfo.png");
-        width: 384px;
-        height: 144px;
-        left: 184px;
-        top: 630px
-    }
-    .scene-3 .login{
-        background-image: url("../images/b2c/p4_login.png");
-        width: 281px;
-        height: 59px;
-        left: 236px;
-        top: 810px;
-    }
+.scene-2 .blue-bg{
+    background-color: #0050b2;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    z-index: 21;
+    opacity: 0;
+}
     /* scene-5 */
-    .scene-4 .chair1 .icon,.scene-4 .chair3 .icon {
+    .scene-3 .chair1 .icon,.scene-3 .chair3 .icon {
         background-image: url(../images/b2c/chair_nobody.png);
     }
-    .scene-4 .chair1 {
+    .scene-3 .chair1 {
         width: 239px;
         height: 410px;
         left: 5px;
     }
-    .scene-4 .chair2 {
+    .scene-3 .chair2 {
         left: 256px;
         transition-duration:0s;
     }
-    .scene-4 .chair3 {
+    .scene-3 .chair3 {
         width: 239px;
         height: 410px;
         left: 494px;
     }
-    .scene-4  .person-lead {
+    .scene-3  .person-lead {
         /*top:374px;
         left: 260px;*/
     }
-    .scene-4  .person-lead .icon-body{
+    .scene-3  .person-lead .icon-body{
         background-image: url(../images/b2c/p5_person_body.png);
         width: 235px;
         height: 535px;
     }
-    .scene-4 .person-lead .icon-left-hand {
+    .scene-3 .person-lead .icon-left-hand {
         background-image: url(../images/b2c/p5_person_left_hand.png);
         width: 52px;
         height: 126px;
@@ -1445,7 +1482,7 @@ a {
         top: 201px;
         position: absolute;
     }
-    .scene-4 .person-lead .icon-right-hand {
+    .scene-3 .person-lead .icon-right-hand {
         background: url(../images/b2c/p5_person_right_hand.png);
         width: 92px;
         height: 126px;
@@ -1454,7 +1491,7 @@ a {
         top: 203px;
         position: absolute;
     }
-    .scene-4 .person-lead .icon-glass {
+    .scene-3 .person-lead .icon-glass {
         background-image: url(../images/b2c/p5_glass.png);
         width: 110px;
         height: 25px;
@@ -1463,7 +1500,7 @@ a {
         position: absolute;
         opacity: 0;
     }
-    .scene-4 .person-lead .icon-popcorn {
+    .scene-3 .person-lead .icon-popcorn {
         background-image: url(../images/b2c/p5_popcorn.png);
         width: 83px;
         height: 101px;
@@ -1472,7 +1509,7 @@ a {
         position: absolute;
         opacity: 0;
     }
-    .scene-4 .person-lead .icon-cola {
+    .scene-3 .person-lead .icon-cola {
         background-image: url(../images/b2c/p5_cola.png);
         width: 37px;
         height: 67px;
@@ -1480,23 +1517,23 @@ a {
         top: 250px;
         opacity: 0;
     }
-    .scene-4 .person-lead .icon-last-phone{
-        background-image: url(../images/b2c/p6_phone.png);
-        width: 62px;
-        height: 73px;
-        left: 95px;
-        top: 261px;
+    .scene-3 .person-lead .icon-last-phone{
+        background-image: url(../images/b2c/p12_phone.png);
+        width: 54px;
+        height: 29px;
+        left: 109px;
+        top: 293px;
     }
     /* scene-6 */
-    .scene-5 .person-lead {
+    .scene-4 .person-lead {
         z-index: 10;
     }
-    .scene-5 .person-lead .icon-body {
+    .scene-4 .person-lead .icon-body {
         background-image: url(../images/b2c/p5_person_body.png);
         width: 235px;
         height: 535px;
     }
-    .scene-5 .person-lead .icon-left-hand {
+    .scene-4 .person-lead .icon-left-hand {
         background-image: url(../images/b2c/p6_left_hand.png);
         width: 123px;
         height: 116px;
@@ -1504,7 +1541,7 @@ a {
         top: 103px;
         opacity: 0;;
     }
-    .scene-5 .person-lead .icon-right-hand {
+    .scene-4 .person-lead .icon-right-hand {
         background-image: url(../images/b2c/p6_right_hand.png);
         width: 126px;
         height: 123px;
@@ -1512,7 +1549,7 @@ a {
         top: 100px;
         opacity: 0;;
     }
-    .scene-5 .person-lead .icon-phone {
+    .scene-4 .person-lead .icon-phone {
         background-image: url(../images/b2c/p6_phone.png);
         width: 62px;
         height: 73px;
@@ -1520,21 +1557,21 @@ a {
         top: 50px;
         opacity: 0;;
     }
-    .scene-5 .stock-bg {
+    .scene-4 .stock-bg {
         background-image: url(../images/b2c/stock_bg.png);
         width: 713px;
         height: 375px;
         left: 19px;
         top: 185px;
     }
-    .scene-5 .stock-line {
+    .scene-4 .stock-line {
         background-image: url(../images/b2c/stock_line.png);
         width: 600px;
         height: 255px;
         left: 54px;
         top:269px;
     }
-    .scene-5 .money {
+    .scene-4 .money {
         background-image: url(../images/b2c/money.png);
         width: 310px;
         height: 146px;
@@ -1544,7 +1581,7 @@ a {
         background-repeat: no-repeat;
         background-size: cover;
     }
-    .scene-5 .person-lead .icon-left-hand-last{
+    .scene-4 .person-lead .icon-left-hand-last{
         background-image: url(../images/b2c/p5_person_left_hand.png);
         width: 52px;
         height: 126px;
@@ -1553,7 +1590,7 @@ a {
         position: absolute;
         z-index: 4;
     }
-    .scene-5 .person-lead .icon-right-hand-last{
+    .scene-4 .person-lead .icon-right-hand-last{
         background: url(../images/b2c/p5_person_right_hand.png);
         width: 92px;
         height: 126px;
@@ -1562,7 +1599,7 @@ a {
         position: absolute;
         z-index: 4
     }
-    .scene-5 .person-lead .icon-glass-last {
+    .scene-4 .person-lead .icon-glass-last {
         background-image: url(../images/b2c/p5_glass.png);
         width: 110px;
         height: 25px;
@@ -1572,7 +1609,7 @@ a {
         opacity: 1;
         z-index: 3;
     }
-    .scene-5 .person-lead .icon-popcorn-last {
+    .scene-4 .person-lead .icon-popcorn-last {
         background-image: url(../images/b2c/p5_popcorn.png);
         width: 83px;
         height: 101px;
@@ -1581,7 +1618,7 @@ a {
         opacity: 1;
         z-index: 3;
     }
-    .scene-5 .person-lead .icon-cola-last {
+    .scene-4 .person-lead .icon-cola-last {
         background-image: url(../images/b2c/p5_cola.png);
         width: 37px;
         height: 67px;
@@ -1591,12 +1628,12 @@ a {
         z-index: 3;
     }
     /* scene-7 */
-    .scene-6 .person-lead .icon-body {
+    .scene-5 .person-lead .icon-body {
         background-image: url(../images/b2c/p5_person_body.png);
         width: 235px;
         height: 535px;
     }
-    .scene-6 .person-lead .icon-left-hand {
+    .scene-5 .person-lead .icon-left-hand {
         background-image: url(../images/b2c/p7_left_hand.png);
         width: 81px;
         height: 149px;
@@ -1604,13 +1641,124 @@ a {
         top: 199px;
         opacity: 0;
     }
-    .scene-6 .person-lead .icon-right-hand {
+    .scene-5 .person-lead .icon-right-hand {
         background-image: url(../images/b2c/p7_right_hand.png);
         width: 84px;
         height: 150px;
         left: 17px;
         top: 200px;
         opacity: 0;
+    }
+    .scene-5 .icon-game-handler {
+        background-image: url(../images/b2c/p7_gamehander.png);
+        width: 70px;
+        height: 28px;
+        left: 87px;
+        top:324px;
+        opacity: 0;
+    }
+    .scene-5 .icon-game-line {
+        background-image: url(../images/b2c/p7_line.png);
+        width: 50px;
+        height: 212px;
+        left: 131px;
+        top:345px;
+        opacity: 0;
+        background-size: 100% 100%;
+    }
+    .scene-5 .clock {
+        background-image: url(../images/b2c/p7_clock.png);
+        width: 123px;
+        height: 122px;
+        left: 490px;
+        top:224px;
+    }
+    .scene-5 .door {
+        background-image: url(../images/b2c/p7_door.png);
+        width: 201px;
+        height: 498px;
+        left: 79px;
+        top:336px;
+    }
+    .scene-5 .food {
+        background-image: url(../images/b2c/p7_food.png);
+        width: 143px;
+        height: 185px;
+        left: 532px;
+        top:644px;
+    }
+    .scene-5 .wii {
+        background-image: url(../images/b2c/p7_WII.png);
+        width: 201px;
+        height: 80px;
+        left: 274px;
+        top:918px;
+        z-index: 20;
+    }
+    .scene-5 .person-lead .icon-left-hand-last {
+        background-image: url(../images/b2c/p6_left_hand.png);
+        width: 123px;
+        height: 116px;
+        left: 164px;
+        top: 103px;
+        opacity: 1;
+    }
+    .scene-5 .person-lead .icon-right-hand-last {
+        background-image: url(../images/b2c/p6_right_hand.png);
+        width: 126px;
+        height: 123px;
+        left: -58px;
+        top: 100px;
+        opacity: 1;
+    }
+    .scene-5 .icon-phone-last{
+        background-image: url(../images/b2c/p6_phone.png);
+        width: 62px;
+        height: 73px;
+        left: 232px;
+        top: 50px;
+        opacity: 1;
+        -webkit-transform-origin: right 0;
+    }
+    .scene-5 .tv{
+        background-image: url(../images/b2c/p7_tv.png);
+        width: 361px;
+        height: 212px;
+        left: 198px;
+        top: 709px;
+        z-index: 20;
+    }
+    .scene-5 .money {
+        background-image: url(../images/b2c/money.png);
+        width: 310px;
+        height: 146px;
+        left: 218px;
+        top: 826px;
+        z-index: 21;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    /* scene-8 */
+    .scene-6 .person-lead .icon-body {
+        background-image: url(../images/b2c/p5_person_body.png);
+        width: 235px;
+        height: 535px;
+    }
+    .scene-6 .person-lead .icon-left-hand-last {
+        background-image: url(../images/b2c/p7_left_hand.png);
+        width: 81px;
+        height: 149px;
+        left: 141px;
+        top: 199px;
+        opacity: 1;
+    }
+    .scene-6 .person-lead .icon-right-hand-last {
+        background-image: url(../images/b2c/p7_right_hand.png);
+        width: 84px;
+        height: 150px;
+        left: 17px;
+        top: 201px;
+        opacity: 1;
     }
     .scene-6 .icon-game-handler {
         background-image: url(../images/b2c/p7_gamehander.png);
@@ -1627,28 +1775,6 @@ a {
         left: 131px;
         top:345px;
         opacity: 0;
-        background-size: 100% 100%;
-    }
-    .scene-6 .clock {
-        background-image: url(../images/b2c/p7_clock.png);
-        width: 123px;
-        height: 122px;
-        left: 490px;
-        top:224px;
-    }
-    .scene-6 .door {
-        background-image: url(../images/b2c/p7_door.png);
-        width: 201px;
-        height: 498px;
-        left: 79px;
-        top:336px;
-    }
-    .scene-6 .food {
-        background-image: url(../images/b2c/p7_food.png);
-        width: 143px;
-        height: 185px;
-        left: 532px;
-        top:644px;
     }
     .scene-6 .wii {
         background-image: url(../images/b2c/p7_WII.png);
@@ -1658,96 +1784,7 @@ a {
         top:918px;
         z-index: 20;
     }
-    .scene-6 .person-lead .icon-left-hand-last {
-        background-image: url(../images/b2c/p6_left_hand.png);
-        width: 123px;
-        height: 116px;
-        left: 164px;
-        top: 103px;
-        opacity: 1;
-    }
-    .scene-6 .person-lead .icon-right-hand-last {
-        background-image: url(../images/b2c/p6_right_hand.png);
-        width: 126px;
-        height: 123px;
-        left: -58px;
-        top: 100px;
-        opacity: 1;
-    }
-    .scene-6 .icon-phone-last{
-        background-image: url(../images/b2c/p6_phone.png);
-        width: 62px;
-        height: 73px;
-        left: 232px;
-        top: 50px;
-        opacity: 1;
-        -webkit-transform-origin: right 0;
-    }
     .scene-6 .tv{
-        background-image: url(../images/b2c/p7_tv.png);
-        width: 361px;
-        height: 212px;
-        left: 198px;
-        top: 709px;
-        z-index: 20;
-    }
-    .scene-6 .money {
-        background-image: url(../images/b2c/money.png);
-        width: 310px;
-        height: 146px;
-        left: 218px;
-        top: 826px;
-        z-index: 21;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    /* scene-8 */
-    .scene-7 .person-lead .icon-body {
-        background-image: url(../images/b2c/p5_person_body.png);
-        width: 235px;
-        height: 535px;
-    }
-    .scene-7 .person-lead .icon-left-hand-last {
-        background-image: url(../images/b2c/p7_left_hand.png);
-        width: 81px;
-        height: 149px;
-        left: 141px;
-        top: 199px;
-        opacity: 1;
-    }
-    .scene-7 .person-lead .icon-right-hand-last {
-        background-image: url(../images/b2c/p7_right_hand.png);
-        width: 84px;
-        height: 150px;
-        left: 17px;
-        top: 201px;
-        opacity: 1;
-    }
-    .scene-7 .icon-game-handler {
-        background-image: url(../images/b2c/p7_gamehander.png);
-        width: 70px;
-        height: 28px;
-        left: 87px;
-        top:324px;
-        opacity: 0;
-    }
-    .scene-7 .icon-game-line {
-        background-image: url(../images/b2c/p7_line.png);
-        width: 50px;
-        height: 212px;
-        left: 131px;
-        top:345px;
-        opacity: 0;
-    }
-    .scene-7 .wii {
-        background-image: url(../images/b2c/p7_WII.png);
-        width: 201px;
-        height: 80px;
-        left: 274px;
-        top:918px;
-        z-index: 20;
-    }
-    .scene-7 .tv{
         background-image: url(../images/b2c/p7_tv.png);
         width: 361px;
         height: 212px;
@@ -1755,7 +1792,7 @@ a {
         top: 709px;
         z-index: 20;
     }
-    .scene-7 .person-lead .icon-left-hand {
+    .scene-6 .person-lead .icon-left-hand {
         background-image: url(../images/b2c/p8_left_hand.png);
         width: 126px;
         height: 54px;
@@ -1763,9 +1800,147 @@ a {
         top: 204px;
         opacity: 0;
     }
-    .scene-7 .person-lead .icon-right-hand {
+    .scene-6 .person-lead .icon-right-hand {
         background-image: url(../images/b2c/p8_right_hand.png);
         width: 83px;
+        height: 150px;
+        left: 17px;
+        top: 200px;
+        opacity: 0;
+    }
+    .scene-6 .person-lead .icon-shoe {
+        background-image: url(../images/b2c/p8_shoe.png);
+        width: 30px;
+        height: 55px;
+        left: 274px;
+        top: 175px;
+        opacity: 0;
+    }
+    .scene-6 .light {
+        background-image: url(../images/b2c/p8_light.png);
+        width: 465px;
+        height: 34px;
+        left: 146px;
+        top: 182px;
+    }
+    .scene-6 .ray {
+        background-image: url(../images/b2c/p8_ray.png);
+        width: 504px;
+        height: 64px;
+        left: 126px;
+        top: 215px;
+    }
+    .scene-6 .shoe-rack {
+        background-image: url(../images/b2c/p8_shoe_rack.png);
+        width: 583px;
+        height: 368px;
+        left: 83px;
+        top: 302px;
+        z-index: -1;
+    }
+    .scene-6 .shoe {
+        background-image: url(../images/b2c/p8_shoe.png);
+        width: 30px;
+        height: 55px;
+        left: 214px;
+        top: 845px;
+        z-index: 21;
+    }
+    .scene-6 .shoe-box {
+        background-image: url(../images/b2c/p8_shoebox1.png);
+        width: 96px;
+        height: 63px;
+        left: 180px;
+        top: 884px;
+        z-index: 20;
+    }
+    .scene-6 .shoe-box-1{
+        z-index: 21;
+    }
+    .scene-6 .shoe-box-2 {
+        background-image: url(../images/b2c/p8_shoebox2.png);
+        width: 96px;
+        height: 63px;
+        left: 180px;
+        top: 921px;
+    }
+    .scene-6 .mirror {
+        background-image: url(../images/b2c/p8_mirror.png);
+        width: 86px;
+        height: 145px;
+        left: 528px;
+        top: 855px;
+        z-index: 20;
+    }
+    /* scene-9 */
+    .scene-7 .person-lead .icon-body {
+        background-image: url(../images/b2c/p5_person_body.png);
+        width: 235px;
+        height: 535px;
+    }
+    .scene-7 .person-lead .icon-left-hand {
+        background-image: url(../images/b2c/p9_left_hand.png);
+        width: 72px;
+        height: 104px;
+        left: 141px;
+        top: 198px;
+        opacity:0;
+    }
+    .scene-7 .person-lead .icon-right-hand {
+        background-image: url(../images/b2c/p9_right_hand.png);
+        width: 129px;
+        height: 51px;
+        left: -56px;
+        top: 202px;
+        opacity:0;
+    }
+    .scene-7 .person-lead .icon-book {
+        background-image: url(../images/b2c/p9_book.png);
+        width: 75px;
+        height: 59px;
+        left: 84px;
+        top: 253px;
+        opacity:0;
+    }
+    .scene-7 .lamp {
+        background-image: url(../images/b2c/p9_lamp.png);
+        width: 90px;
+        height: 151px;
+        left: 111px;
+        top: 516px;
+    }
+    .scene-7 .lamp-light {
+        background-image: url(../images/b2c/p9_lamp_light.png);
+        width: 109px;
+        height: 51px;
+        left: 99px;
+        top: 585px;
+    }
+    .scene-7 .bedstand {
+        background-image: url(../images/b2c/p9_bedstand.png);
+        width: 199px;
+        height: 206px;
+        left: 59px;
+        top: 653px;
+    }
+    .scene-7 .bed {
+        background-image: url(../images/b2c/p9_bed.png);
+        width: 254px;
+        height: 355px;
+        left: 495px;
+        top: 505px;
+    }
+    .scene-7 .person-lead .icon-left-hand-middle {
+        background-image: url(../images/b2c/p7_left_hand.png);
+        width: 81px;
+        height: 149px;
+        left: 141px;
+        top: 199px;
+        opacity: 0;
+    }
+    .scene-7 .person-lead .icon-right-hand-middle {
+        background-image: url(../images/b2c/p7_right_hand.png);
+        width: 84px;
         height: 150px;
         left: 17px;
         top: 200px;
@@ -1777,147 +1952,9 @@ a {
         height: 55px;
         left: 274px;
         top: 175px;
-        opacity: 0;
-    }
-    .scene-7 .light {
-        background-image: url(../images/b2c/p8_light.png);
-        width: 465px;
-        height: 34px;
-        left: 146px;
-        top: 182px;
-    }
-    .scene-7 .ray {
-        background-image: url(../images/b2c/p8_ray.png);
-        width: 504px;
-        height: 64px;
-        left: 126px;
-        top: 215px;
-    }
-    .scene-7 .shoe-rack {
-        background-image: url(../images/b2c/p8_shoe_rack.png);
-        width: 583px;
-        height: 368px;
-        left: 83px;
-        top: 302px;
-        z-index: -1;
-    }
-    .scene-7 .shoe {
-        background-image: url(../images/b2c/p8_shoe.png);
-        width: 30px;
-        height: 55px;
-        left: 214px;
-        top: 845px;
-        z-index: 21;
-    }
-    .scene-7 .shoe-box {
-        background-image: url(../images/b2c/p8_shoebox1.png);
-        width: 96px;
-        height: 63px;
-        left: 180px;
-        top: 884px;
-        z-index: 20;
-    }
-    .scene-7 .shoe-box-1{
-        z-index: 21;
-    }
-    .scene-7 .shoe-box-2 {
-        background-image: url(../images/b2c/p8_shoebox2.png);
-        width: 96px;
-        height: 63px;
-        left: 180px;
-        top: 921px;
-    }
-    .scene-7 .mirror {
-        background-image: url(../images/b2c/p8_mirror.png);
-        width: 86px;
-        height: 145px;
-        left: 528px;
-        top: 855px;
-        z-index: 20;
-    }
-    /* scene-9 */
-    .scene-8 .person-lead .icon-body {
-        background-image: url(../images/b2c/p5_person_body.png);
-        width: 235px;
-        height: 535px;
-    }
-    .scene-8 .person-lead .icon-left-hand {
-        background-image: url(../images/b2c/p9_left_hand.png);
-        width: 72px;
-        height: 104px;
-        left: 141px;
-        top: 198px;
-        opacity:0;
-    }
-    .scene-8 .person-lead .icon-right-hand {
-        background-image: url(../images/b2c/p9_right_hand.png);
-        width: 129px;
-        height: 51px;
-        left: -56px;
-        top: 202px;
-        opacity:0;
-    }
-    .scene-8 .person-lead .icon-book {
-        background-image: url(../images/b2c/p9_book.png);
-        width: 75px;
-        height: 59px;
-        left: 84px;
-        top: 253px;
-        opacity:0;
-    }
-    .scene-8 .lamp {
-        background-image: url(../images/b2c/p9_lamp.png);
-        width: 90px;
-        height: 151px;
-        left: 111px;
-        top: 516px;
-    }
-    .scene-8 .lamp-light {
-        background-image: url(../images/b2c/p9_lamp_light.png);
-        width: 109px;
-        height: 51px;
-        left: 99px;
-        top: 585px;
-    }
-    .scene-8 .bedstand {
-        background-image: url(../images/b2c/p9_bedstand.png);
-        width: 199px;
-        height: 206px;
-        left: 59px;
-        top: 653px;
-    }
-    .scene-8 .bed {
-        background-image: url(../images/b2c/p9_bed.png);
-        width: 254px;
-        height: 355px;
-        left: 495px;
-        top: 505px;
-    }
-    .scene-8 .person-lead .icon-left-hand-middle {
-        background-image: url(../images/b2c/p7_left_hand.png);
-        width: 81px;
-        height: 149px;
-        left: 141px;
-        top: 199px;
-        opacity: 0;
-    }
-    .scene-8 .person-lead .icon-right-hand-middle {
-        background-image: url(../images/b2c/p7_right_hand.png);
-        width: 84px;
-        height: 150px;
-        left: 17px;
-        top: 200px;
-        opacity: 0;
-    }
-    .scene-8 .person-lead .icon-shoe {
-        background-image: url(../images/b2c/p8_shoe.png);
-        width: 30px;
-        height: 55px;
-        left: 274px;
-        top: 175px;
         opacity: 1;
     }
-    .scene-8 .person-lead .icon-left-hand-last {
+    .scene-7 .person-lead .icon-left-hand-last {
         background-image: url(../images/b2c/p8_left_hand.png);
         width: 126px;
         height: 54px;
@@ -1925,7 +1962,7 @@ a {
         top: 204px;
         opacity: 1;
     }
-    .scene-8 .person-lead .icon-right-hand-last {
+    .scene-7 .person-lead .icon-right-hand-last {
         background-image: url(../images/b2c/p8_right_hand.png);
         width: 83px;
         height: 150px;
@@ -1934,12 +1971,12 @@ a {
         opacity: 1;
     }
     /* scene-10 */
-    .scene-9 .person-lead .icon-body {
+    .scene-8 .person-lead .icon-body {
         background-image: url(../images/b2c/p5_person_body.png);
         width: 235px;
         height: 535px;
     }
-    .scene-9 .person-lead .icon-left-hand {
+    .scene-8 .person-lead .icon-left-hand {
         background-image: url(../images/b2c/p10_left_hand.png);
         width: 73px;
         height: 104px;
@@ -1947,7 +1984,7 @@ a {
         top: 198px;
         opacity: 0;
     }
-    .scene-9 .person-lead .icon-right-hand {
+    .scene-8 .person-lead .icon-right-hand {
         background-image: url(../images/b2c/p10_right_hand.png);
         width: 82px;
         height: 71px;
@@ -1955,7 +1992,7 @@ a {
         top: 199px;
         opacity: 0;
     }
-    .scene-9 .person-lead .icon-glass {
+    .scene-8 .person-lead .icon-glass {
         background-image: url(../images/b2c/p10_glass.png);
         left: 60px;
         top: 58px;
@@ -1963,7 +2000,7 @@ a {
         height: 36px;
         opacity: 0;
     }
-    .scene-9 .person-lead .icon-cola {
+    .scene-8 .person-lead .icon-cola {
         background-image: url(../images/b2c/p10_wine.png);
         width: 30px;
         height: 58px;
@@ -1971,28 +2008,28 @@ a {
         top: 160px;
         opacity: 0;
     }
-    .scene-9 .umbrella {
+    .scene-8 .umbrella {
         background-image: url(../images/b2c/p10_umb.png);
         width: 502px;
         height: 531px;
         left: 0;
         top: 280px;
     }
-    .scene-9 .tea-table {
+    .scene-8 .tea-table {
         background-image: url(../images/b2c/p10_tea_table.png);
         width: 239px;
         height: 202px;
         left: 27px;
         top: 641px;
     }
-    .scene-9 .coconut {
+    .scene-8 .coconut {
         background-image: url(../images/b2c/p10_coconut.png);
         width: 260px;
         height: 623px;
         left: 491px;
         top: 196px
     }
-    .scene-9 .person-lead .icon-left-hand-last {
+    .scene-8 .person-lead .icon-left-hand-last {
         background-image: url(../images/b2c/p9_left_hand.png);
         width: 72px;
         height: 104px;
@@ -2000,7 +2037,7 @@ a {
         top: 198px;
         opacity:1;
     }
-    .scene-9 .person-lead .icon-right-hand-last {
+    .scene-8 .person-lead .icon-right-hand-last {
         background-image: url(../images/b2c/p9_right_hand.png);
         width: 129px;
         height: 51px;
@@ -2008,7 +2045,7 @@ a {
         top: 202px;
         opacity:1;
     }
-    .scene-9 .person-lead .icon-book {
+    .scene-8 .person-lead .icon-book {
         background-image: url(../images/b2c/p9_book.png);
         width: 75px;
         height: 59px;
@@ -2017,12 +2054,12 @@ a {
         opacity:1;
     }
     /* scene-11 */
-    .scene-10  .person-lead .icon-body{
+    .scene-9  .person-lead .icon-body{
         background-image: url(../images/b2c/p5_person_body.png);
         width: 235px;
         height: 535px;
     }
-    .scene-10 .person-lead .icon-left-hand {
+    .scene-9 .person-lead .icon-left-hand {
         background-image: url(../images/b2c/p11_left_hand.png);
         width: 53px;
         height: 116px;
@@ -2031,7 +2068,7 @@ a {
         position: absolute;
         opacity: 0;
     }
-    .scene-10 .person-lead .icon-right-hand {
+    .scene-9 .person-lead .icon-right-hand {
         background: url(../images/b2c/p11_right_hand.png);
         width: 39px;
         height: 166px;
@@ -2040,7 +2077,7 @@ a {
         position: absolute;
         opacity: 0;
     }
-    .scene-10 .person-lead .icon-phone {
+    .scene-9 .person-lead .icon-phone {
         background-image: url(../images/b2c/p6_phone.png);
         width: 62px;
         height: 73px;
@@ -2050,11 +2087,11 @@ a {
         opacity: 0;
         -webkit-transform: rotateZ(-45deg);
     }
-    .scene-10 .chair-2 {
+    .scene-9 .chair-2 {
         left: 495px;
         top: 451px;
     }
-    .scene-10 .person-lady {
+    .scene-9 .person-lady {
         background-image: url(../images/b2c/p11_lady.png);
         width: 206px;
         height: 535px;
@@ -2063,7 +2100,7 @@ a {
         z-index: 15;
     }
 
-    .scene-10 .person-lead .icon-left-hand-last{
+    .scene-9 .person-lead .icon-left-hand-last{
         background-image: url(../images/b2c/p10_left_hand.png);
         width: 73px;
         height: 104px;
@@ -2071,7 +2108,7 @@ a {
         top: 198px;
         opacity: 1;
     }
-    .scene-10 .person-lead .icon-left-hand-pre{
+    .scene-9 .person-lead .icon-left-hand-pre{
         background-image: url(../images/b2c/p11_left_hand_last.png);
         width: 38px;
         height: 166px;
@@ -2080,7 +2117,7 @@ a {
         position: absolute;
         opacity: 0;
     }
-    .scene-10 .person-lead .icon-right-hand-last{
+    .scene-9 .person-lead .icon-right-hand-last{
         background-image: url(../images/b2c/p10_right_hand.png);
         width: 82px;
         height: 71px;
@@ -2088,7 +2125,7 @@ a {
         top: 199px;
         opacity: 1;
     }
-    .scene-10 .person-lead .icon-left-hand-middle{
+    .scene-9 .person-lead .icon-left-hand-middle{
         background-image: url(../images/b2c/p6_left_hand.png);
         width: 123px;
         height: 116px;
@@ -2097,7 +2134,7 @@ a {
         position: absolute;
         opacity: 0;
     }
-    .scene-10 .person-lead .icon-right-hand-middle{
+    .scene-9 .person-lead .icon-right-hand-middle{
         background-image: url(../images/b2c/p9_right_hand.png);
         width: 129px;
         height: 51px;
@@ -2106,7 +2143,7 @@ a {
         position: absolute;
         opacity: 0;
     }
-    .scene-10 .person-lead .icon-glass {
+    .scene-9 .person-lead .icon-glass {
         background-image: url(../images/b2c/p10_glass.png);
         left: 60px;
         top: 58px;
@@ -2114,7 +2151,7 @@ a {
         height: 36px;
         opacity: 1;
     }
-    .scene-10 .person-lead .icon-cola {
+    .scene-9 .person-lead .icon-cola {
         background-image: url(../images/b2c/p10_wine.png);
         width: 30px;
         height: 58px;
@@ -2125,22 +2162,22 @@ a {
         transform-origin: center center;
     }
     /* scene-12 */
-    .scene-11.start-animate .window{
+    .scene-10.start-animate .window{
         opacity: 1;
     }
-    .scene-11 .audio{
+    .scene-10 .audio{
         background-image: url(../images/b2c/p12_audio_bg.png);
         width: 492px;
         height: 168px;
         top: 94px;
         left: 106px;
     }
-    .scene-11 .audio-text{
+    .scene-10 .audio-text{
         width: 450px;
         height: 56px;
         left: 140px;
     }
-    .scene-11 .audio-text .icon-mask{
+    .scene-10 .audio-text .icon-mask{
         width: 100%;
         height: 100%;
         position: absolute;
@@ -2148,34 +2185,34 @@ a {
         left: 0;
         background-color: #eaeced;
     }
-    .scene-11 .audio-text-1{
+    .scene-10 .audio-text-1{
         background-image: url(../images/b2c/p12_audio_text_1.png);
         top: 122px;
     }
-    .scene-11 .audio-text-2{
+    .scene-10 .audio-text-2{
         background-image: url(../images/b2c/p12_audio_text_2.png);
         top: 178px;
     }
-    .scene-11 .thinking{
+    .scene-10 .thinking{
         background-image: url(../images/b2c/p12_thinking_bg.png);
         width: 154px;
         height: 110px;
         left: 464px;
         top: 291px;
     }
-    .scene-11 .thinking-text{
+    .scene-10 .thinking-text{
         background-image: url(../images/b2c/p12_think_text.png);
         width: 113px;
         height: 33px;
         left: 487px;
         top: 318px;
     }
-    .scene-11  .person-lead .icon-body{
+    .scene-10  .person-lead .icon-body{
         background-image: url(../images/b2c/p5_person_body.png);
         width: 235px;
         height: 535px;
     }
-    .scene-11 .person-lead .icon-left-hand {
+    .scene-10 .person-lead .icon-left-hand {
         background-image: url(../images/b2c/p12_left_hand.png);
         width: 67px;
         height: 102px;
@@ -2184,7 +2221,7 @@ a {
         position: absolute;
         opacity: 0;
     }
-    .scene-11 .person-lead .icon-right-hand {
+    .scene-10 .person-lead .icon-right-hand {
         background-image: url(../images/b2c/p12_right_hand.png);
         width: 86px;
         height: 118px;
@@ -2193,7 +2230,7 @@ a {
         position: absolute;
         opacity: 0;
     }
-    .scene-11 .person-lead .icon-phone {
+    .scene-10 .person-lead .icon-phone {
         background-image: url(../images/b2c/p12_phone.png);
         width: 54px;
         height: 29px;
@@ -2202,7 +2239,7 @@ a {
         position: absolute;
         opacity: 0;
     }
-    .scene-11 .person-lead .icon-left-hand-last {
+    .scene-10 .person-lead .icon-left-hand-last {
         background-image: url(../images/b2c/p11_left_hand.png);
         width: 53px;
         height: 116px;
@@ -2211,7 +2248,7 @@ a {
         position: absolute;
         opacity: 1;
     }
-    .scene-11 .person-lead .icon-right-hand-last {
+    .scene-10 .person-lead .icon-right-hand-last {
         background: url(../images/b2c/p11_right_hand.png);
         width: 39px;
         height: 166px;
@@ -2220,7 +2257,7 @@ a {
         position: absolute;
         opacity: 1;
     }
-    .scene-11 .person-lead .icon-phone-last {
+    .scene-10 .person-lead .icon-phone-last {
         background-image: url(../images/b2c/p6_phone.png);
         width: 62px;
         height: 73px;
@@ -2231,35 +2268,43 @@ a {
         -webkit-transform: rotateZ(-45deg);
     }
     /* scene-12 */
-    .scene-12 .slogan{
+    .scene-11 .slogan{
         background-image: url(../images/b2c/slogan.png);
         width: 439px;
         height: 77px;
         left: 50%;
         top: 50%;
-        margin-top: 133px;
+        margin-top: 33px;
         margin-left: -220px;
     }
+    .scene-11 .blue-bg{
+        background-color: #0050b2;
+        width: 100%;
+        height: 100%;
+        top:0;
+        left: 0;
+        opacity: 0;
+    }
     /* text setting */
-    .scene-10 .text{
+    .scene-9 .text{
         background-position: 0 -532px;
     }
-    .scene-9 .text{
+    .scene-8 .text{
         background-position: 0 -456px;
     }
-    .scene-8 .text{
+    .scene-7 .text{
         background-image: url("../images/b2c/");
     }
-    .scene-7 .text{
+    .scene-6 .text{
         background-position: 0 -304px;
     }
-    .scene-6 .text{
+    .scene-5 .text{
         background-position: 0 -228px;
     }
-    .scene-5 .text{
+    .scene-4 .text{
         background-position: 0 -152px;
     }
-    .scene-4 .text{
+    .scene-3 .text{
         background-position: 0 -76px;
     }
     .scene-1 .text{
@@ -2344,7 +2389,7 @@ a {
         animation-name:bottomtext;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: .3s;
-        -webkit-animation-delay: 2.5s;
+        -webkit-animation-delay: 3s;
     }
     @-webkit-keyframes logoZoomTranslate{
         0%{
@@ -2704,15 +2749,32 @@ a {
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
-        -webkit-animation-delay: 1.1s;
+        -webkit-animation-delay: 1.4s;
     }
     .ani-1 .scene-2.start-animate .thinking-text .icon-mask{
         -webkit-animation-name: widthL2R;
         animation-name:widthL2R;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 1.8s;
-        -webkit-animation-delay: .3s;
+        -webkit-animation-delay: 1.4s;
         -webkit-animation-fill-mode: forwards;
+    }
+    .ani-1 .scene-2.start-animate .blue-bg{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 2.5s;
+    }
+    .ani-1 .scene-2.start-animate .right-hand,.ani-1 .scene-2.start-animate .pad-large,.ani-1 .scene-2.start-animate .right-finger{
+        -webkit-animation-delay: 2.8s;
+    }
+    .ani-1 .scene-2.start-animate .left-hand{
+        -webkit-animation-name: leftHandDown2Top;
+        animation-name:leftHandDown2Top;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.4s;
+        -webkit-animation-delay: 4.3s;
     }
     @-webkit-keyframes s2PadTop2Down{
         0%{
@@ -2737,17 +2799,11 @@ a {
         }
     }
     /* ani-3 */
-    .ani-2 .scene-3.start-animate .left-hand{
-        -webkit-animation-name: leftHandDown2Top;
-        animation-name:leftHandDown2Top;
-        -webkit-animation-timing-function: ease-out;
-        -webkit-animation-duration: 0.3s;
-        -webkit-animation-delay: 0.9s;
-    }
+
     @-webkit-keyframes leftHandDown2Top{
         0%{
             opacity: 1;
-            -webkit-transform: translate(0,700px);
+            -webkit-transform: translate(0,510px);
         }
         100%{
             opacity: 1;
@@ -2756,7 +2812,35 @@ a {
     }
     /* ani-4 */
     /* scene-4 out */
-    /*.ani-3 .scene-3.last-animate*/
+    .page .screen-2-level-1.start-animate .window,.page .screen-2-level-1.start-animate .pad,.page .screen-2-level-1.start-animate .thinking,.page .screen-2-level-1.start-animate .thinking-text,.page .screen-2-level-1.start-animate .person,.page .screen-2-level-1.start-animate .chair{
+        -webkit-animation-name: opacity0s;
+        animation-name:opacity0s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0s;
+        -webkit-animation-fill-mode: forwards;
+    }
+    .scene-2.last-animate .window,.scene-2.last-animate .pad, .scene-2.last-animate .thinking,.scene-2.last-animate .thinking-text,.scene-2.last-animate .chair{
+        /*-webkit-animation-name: opacity0s;
+        animation-name:opacity0s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: 0s;*/
+        opacity: 0;
+        transition-duration: 0s;
+    }
+    .ani-2 .scene-2.last-animate .pad-large, .ani-2 .scene-2.last-animate .right-hand,.ani-2 .scene-2.last-animate .right-finger, .ani-2 .scene-2.last-animate .left-hand,.ani-2 .scene-2.last-animate .blue-bg{
+        -webkit-animation-name: opacity0s;
+        animation-name:opacity0s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.2s;
+        -webkit-animation-delay: 0s;
+    }
+    @-webkit-keyframes opacity0s{
+        100%{
+            opacity: 0;
+        }
+    }
     @-webkit-keyframes opacity0ZoomAni{
         0%{
             -webkit-transform: translate(0,0) scale(1);
@@ -2768,32 +2852,32 @@ a {
         }
      }
     /* scene-5 in */
-    .ani-3 .scene-4.start-animate .chair2,.ani-3 .scene-4.start-animate .person-lead{
+    .ani-2 .scene-3.start-animate .chair2,.ani-2 .scene-3.start-animate .person-lead{
         opacity: 1;
         transition-duration: 0s;
     }
-    .ani-3 .scene-4.start-animate .chair1{
+    .ani-2 .scene-3.start-animate .chair1{
         -webkit-animation-name: chairYL2R;
         animation-name:chairYL2R;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 0.5s;
     }
-    .ani-3 .scene-4.start-animate .chair3{
+    .ani-2 .scene-3.start-animate .chair3{
         -webkit-animation-name: chairYR2L;
         animation-name:chairYR2L;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 0.5s;
     }
-    .ani-3 .scene-4.start-animate .person-lead .icon-right-hand{
+    .ani-2 .scene-3.start-animate .person-lead .icon-right-hand{
         -webkit-animation-name: handOut;
         animation-name:handOut;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.6s;
         -webkit-animation-delay: 1s;
     }
-    .ani-3 .scene-4.start-animate .person-lead .icon-last-phone{
+    .ani-2 .scene-3.start-animate .person-lead .icon-last-phone{
         -webkit-animation-name: handOutDisappear;
         animation-name:handOutDisappear;
         -webkit-animation-timing-function: linear;
@@ -2801,28 +2885,28 @@ a {
         -webkit-animation-delay: 1s;
         -webkit-animation-fill-mode: forwards;
     }
-    .ani-3 .scene-4.start-animate .person-lead .icon-glass{
+    .ani-2 .scene-3.start-animate .person-lead .icon-glass{
         -webkit-animation-name: top2Cur;
         animation-name:top2Cur;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.3s;
     }
-    .ani-3 .scene-4.start-animate .person-lead .icon-popcorn{
+    .ani-2 .scene-3.start-animate .person-lead .icon-popcorn{
         -webkit-animation-name: top2Cur;
         animation-name:top2Cur;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 1.8s;
     }
-    .ani-3 .scene-4.start-animate .person-lead .icon-cola{
+    .ani-2 .scene-3.start-animate .person-lead .icon-cola{
         -webkit-animation-name: top2Cur;
         animation-name:top2Cur;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.2s;
         -webkit-animation-delay: 2s;
     }
-    .ani-3 .scene-4.start-animate .text{
+    .ani-2 .scene-3.start-animate .text{
         -webkit-animation-name: textZoomIn;
         animation-name:textZoomIn;
         -webkit-animation-timing-function: linear;
@@ -2852,50 +2936,50 @@ a {
         100%{-webkit-transform: translate(0,0);opacity: 1}
     }
 /* scene-5 out */
-    .ani-4 .scene-4.last-animate .chair2{transition-duration: 0s;}
-    .ani-4 .scene-4.last-animate .chair1{
+    .ani-3 .scene-3.last-animate .chair2{transition-duration: 0s;}
+    .ani-3 .scene-3.last-animate .chair1{
         -webkit-animation-name: chairYL2RAni;
         animation-name:chairYL2RAni;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 0s;
     }
-    .ani-4 .scene-4.last-animate .chair3{
+    .ani-3 .scene-3.last-animate .chair3{
         -webkit-animation-name: chairYR2LAni;
         animation-name:chairYR2LAni;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 0s;
     }
-    .ani-4 .scene-4.last-animate .text{
+    .ani-3 .scene-3.last-animate .text{
         -webkit-animation-name: textZoomOut;
         animation-name:textZoomOut;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 0s;
     }
-    .ani-4 .scene-5.start-animate .icon-popcorn-last{
+    .ani-3 .scene-4.start-animate .icon-popcorn-last{
         -webkit-animation-name: popcornRotateOut;
         animation-name:popcornRotateOut;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 1.2s;
     }
-    .ani-4 .scene-5.start-animate .icon-cola-last{
+    .ani-3 .scene-4.start-animate .icon-cola-last{
         -webkit-animation-name: colaRotateOut;
         animation-name:colaRotateOut;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 1.2s;
     }
-    .ani-4 .scene-5.start-animate .icon-glass-last{
+    .ani-3 .scene-4.start-animate .icon-glass-last{
         -webkit-animation-name: glassRotateOut;
         animation-name:glassRotateOut;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 1.4s;
     }
-    .ani-4 .scene-5.start-animate .icon-left-hand-last,.ani-4 .scene-5.start-animate .icon-right-hand-last{
+    .ani-3 .scene-4.start-animate .icon-left-hand-last,.ani-3 .scene-4.start-animate .icon-right-hand-last{
         -webkit-animation-name: opacity0;
         animation-name:opacity0;
         -webkit-animation-timing-function: linear;
@@ -2957,12 +3041,12 @@ a {
         100%{-webkit-transform: translate(-350px,-550px) rotate(0deg);opacity: 0}
     }
 /* scene-6 in */
-    .ani-4 .scene-5.start-animate .chair,.ani-4 .scene-5.start-animate .person-lead{
+    .ani-3 .scene-4.start-animate .chair,.ani-3 .scene-4.start-animate .person-lead{
         opacity: 1;
         transition-duration: 0s;
         z-index: 3;
     }
-    .ani-4 .scene-5.start-animate .person-lead .icon-left-hand,.ani-4 .scene-5.start-animate .person-lead .icon-right-hand{
+    .ani-3 .scene-4.start-animate .person-lead .icon-left-hand,.ani-3 .scene-4.start-animate .person-lead .icon-right-hand{
         opacity: 0;
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
@@ -2970,14 +3054,14 @@ a {
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.2s;
     }
-    .ani-4 .scene-5.start-animate .person-lead .icon-phone{
+    .ani-3 .scene-4.start-animate .person-lead .icon-phone{
         -webkit-animation-name: top2Cur;
         animation-name:top2Cur;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.2s;
         -webkit-animation-delay: 1.8s;
     }
-    .ani-4 .scene-5.start-animate .stock-bg{
+    .ani-3 .scene-4.start-animate .stock-bg{
         -webkit-animation-name: stockRotateIn;
         animation-name:stockRotateIn;
         -webkit-animation-timing-function: linear;
@@ -2985,21 +3069,21 @@ a {
         -webkit-animation-delay: 0.6s;
     }
 
-    .ani-4 .scene-5.start-animate .money{
+    .ani-3 .scene-4.start-animate .money{
         -webkit-animation-name: moneyIn;/*挤压过程，有个扁的形态*/
         animation-name:moneyIn;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.4s;
         -webkit-animation-delay: 0.8s;
     }
-    .ani-4 .scene-5.start-animate .stock-line{
+    .ani-3 .scene-4.start-animate .stock-line{
         -webkit-animation-name: lineIn;/*宽度变化，1/3时扔可乐和爆米花，2/3时扔眼镜，出现文字*/
         animation-name:lineIn;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.6s;
         -webkit-animation-delay: 1s;
     }
-    .ani-4 .scene-5.start-animate .text{
+    .ani-3 .scene-4.start-animate .text{
         -webkit-animation-name: textZoomIn;
         animation-name:textZoomIn;
         -webkit-animation-timing-function: ease-in;
@@ -3021,21 +3105,21 @@ a {
         100%{width:600px;opacity:1}
     }
 /* scene-6 out */
-    .ani-5 .scene-5 .stock-bg{
+    .ani-4 .scene-4 .stock-bg{
         -webkit-animation-name: stockRotateOut;
         animation-name:stockRotateOut;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 0s;
     }
-    .ani-5 .scene-5 .stock-line{
+    .ani-4 .scene-4 .stock-line{
         -webkit-animation-name: stockRotateOut;
         animation-name:stockRotateOut;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 0s;
     }
-    .ani-5 .scene-5.last-animate .money{
+    .ani-4 .scene-4.last-animate .money{
         -webkit-animation-name: moneyRotateOut;
         animation-name:moneyRotateOut;
         -webkit-animation-timing-function: ease-out;
@@ -3043,7 +3127,7 @@ a {
         -webkit-animation-delay: 0s;
         z-index: 21;
     }
-    .ani-5 .scene-5.last-animate .text{
+    .ani-4 .scene-4.last-animate .text{
         -webkit-animation-name: textZoomOut;
         animation-name:textZoomOut;
         -webkit-animation-timing-function: ease-out;
@@ -3071,53 +3155,53 @@ a {
         }
     }
 /* scene-7 in */
-    .ani-5 .scene-6.start-animate .chair,.ani-5 .scene-6.start-animate .person-lead{
+    .ani-4 .scene-5.start-animate .chair,.ani-4 .scene-5.start-animate .person-lead{
         opacity: 1;
         transition-duration: 0s;
     }
-    .ani-5 .scene-6.start-animate .clock,.ani-5 .scene-6.start-animate .door,.ani-5 .scene-6.start-animate .food{
+    .ani-4 .scene-5.start-animate .clock,.ani-4 .scene-5.start-animate .door,.ani-4 .scene-5.start-animate .food{
         -webkit-animation-name: rotateIn;
         animation-name:rotateIn;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 0.3s;
     }
-    .ani-5 .scene-6.start-animate .icon-game-line{
+    .ani-4 .scene-5.start-animate .icon-game-line{
         -webkit-animation-name: lineTopDown;
         animation-name:lineTopDown;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 1s;
         -webkit-animation-delay: 0.8s;
     }
-    .ani-5 .scene-6.start-animate .wii{
+    .ani-4 .scene-5.start-animate .wii{
         -webkit-animation-name: boxTopDown;
         animation-name:boxTopDown;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 1s;
         -webkit-animation-delay: 0.8s;
     }
-    .ani-5 .scene-6.start-animate .tv{
+    .ani-4 .scene-5.start-animate .tv{
         -webkit-animation-name: tvTopDown;
         animation-name:tvTopDown;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 1.3s;
     }
-    .ani-5 .scene-6.start-animate .icon-game-handler{
+    .ani-4 .scene-5.start-animate .icon-game-handler{
         -webkit-animation-name: handlerTopDown;
         animation-name:handlerTopDown;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 1.3s;
     }
-    .ani-5 .scene-6.start-animate .icon-left-hand-last,.ani-5 .scene-6.start-animate .icon-right-hand-last{
+    .ani-4 .scene-5.start-animate .icon-left-hand-last,.ani-4 .scene-5.start-animate .icon-right-hand-last{
         -webkit-animation-name: opacity0;
         animation-name:opacity0;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.8s;
     }
-    .ani-5 .scene-6.start-animate .icon-phone-last{
+    .ani-4 .scene-5.start-animate .icon-phone-last{
         -webkit-animation-name: phoneRotateOut;
         animation-name:phoneRotateOut;
         -webkit-animation-timing-function: linear;
@@ -3126,14 +3210,14 @@ a {
         -webkit-transform-origin: center center;
         transform-origin: center center;
     }
-    .ani-5 .scene-6.start-animate .text{
+    .ani-4 .scene-5.start-animate .text{
         -webkit-animation-name: textZoomIn;
         animation-name:textZoomIn;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 1.8s;
     }
-    .ani-5 .scene-6.start-animate .person-lead .icon-left-hand,.ani-5 .scene-6.start-animate .person-lead .icon-right-hand{
+    .ani-4 .scene-5.start-animate .person-lead .icon-left-hand,.ani-4 .scene-5.start-animate .person-lead .icon-right-hand{
         opacity: 0;
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
@@ -3260,14 +3344,14 @@ a {
         }
     }
     /* scene-7 out */
-    .ani-6 .scene-6 .door,.ani-6 .scene-6 .clock,.ani-6 .scene-6 .food,.ani-6 .scene-6 .icon-game-handler,.ani-6 .scene-6 .icon-game-line{
+    .ani-5 .scene-5 .door,.ani-5 .scene-5 .clock,.ani-5 .scene-5 .food,.ani-5 .scene-5 .icon-game-handler,.ani-5 .scene-5 .icon-game-line{
         -webkit-animation-name: stockRotateOut;
         animation-name:stockRotateOut;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 0s;
     }
-    .ani-6 .scene-7.start-animate .tv,.ani-6 .scene-7.start-animate .wii{
+    .ani-5 .scene-6.start-animate .tv,.ani-5 .scene-6.start-animate .wii{
         -webkit-animation-name: stockRotateOut;
         animation-name:stockRotateOut;
         -webkit-animation-timing-function: ease-out;
@@ -3275,20 +3359,20 @@ a {
         -webkit-animation-delay: 0s;
         opacity: 1;
     }
-    .ani-6 .scene-7.start-animate .icon-game-handler{
+    .ani-5 .scene-6.start-animate .icon-game-handler{
 
     }
-    .ani-6 .scene-7.start-animate .icon-game-line{
+    .ani-5 .scene-6.start-animate .icon-game-line{
 
     }
-    .ani-6 .scene-7.start-animate .icon-left-hand-last{
+    .ani-5 .scene-6.start-animate .icon-left-hand-last{
         -webkit-animation-name: opacity0;
         animation-name:opacity0;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.7s;
     }
-    .ani-6 .scene-6.last-animate .text{
+    .ani-5 .scene-5.last-animate .text{
         -webkit-animation-name: textZoomOut;
         animation-name:textZoomOut;
         -webkit-animation-timing-function: ease-out;
@@ -3296,67 +3380,67 @@ a {
         -webkit-animation-delay: 0s;
     }
     /* scene-8 in */
-    .ani-6 .scene-7.start-animate .chair,.ani-6 .scene-7.start-animate .person-lead{
+    .ani-5 .scene-6.start-animate .chair,.ani-5 .scene-6.start-animate .person-lead{
         opacity: 1;
         transition-duration: 0s;
     }
-    .ani-6 .scene-7.start-animate .shoe-rack,.ani-6 .scene-7.start-animate .light{
+    .ani-5 .scene-6.start-animate .shoe-rack,.ani-5 .scene-6.start-animate .light{
         -webkit-animation-name: rotateIn;
         animation-name:rotateIn;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 0.3s;
     }
-    .ani-6 .scene-7.start-animate .ray{
+    .ani-5 .scene-6.start-animate .ray{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 0.9s;
     }
-    .ani-6 .scene-7.start-animate .shoe-box-1{
+    .ani-5 .scene-6.start-animate .shoe-box-1{
         -webkit-animation-name: shoeBoxTopDown;
         animation-name:shoeBoxTopDown;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 1.2s;
     }
-    .ani-6 .scene-7.start-animate .shoe-box-2{
+    .ani-5 .scene-6.start-animate .shoe-box-2{
         -webkit-animation-name: shoeBoxTopDown;
         animation-name:shoeBoxTopDown;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 1s;
     }
-    .ani-6 .scene-7.start-animate .mirror{
+    .ani-5 .scene-6.start-animate .mirror{
         -webkit-animation-name: shoeBoxTopDown;
         animation-name:shoeBoxTopDown;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 1.1s;
     }
-    .ani-6 .scene-7.start-animate .shoe{
+    .ani-5 .scene-6.start-animate .shoe{
         -webkit-animation-name: shoeBoxTopDown;
         animation-name:shoeBoxTopDown;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 1.4s;
     }
-    .ani-6 .scene-7.start-animate .icon-left-hand{
+    .ani-5 .scene-6.start-animate .icon-left-hand{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.7s;
     }
-    .ani-6 .scene-7.start-animate .icon-shoe{
+    .ani-5 .scene-6.start-animate .icon-shoe{
         -webkit-animation-name: shoeBoxTopDown;
         animation-name:shoeBoxTopDown;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 1.8s;
     }
-    .ani-6 .scene-7.start-animate .text{
+    .ani-5 .scene-6.start-animate .text{
         -webkit-animation-name: textZoomIn;
         animation-name:textZoomIn;
         -webkit-animation-timing-function: ease-in;
@@ -3374,14 +3458,14 @@ a {
         }
     }
     /* scene-8 out */
-    .ani-7 .scene-7.last-animate .text{
+    .ani-6 .scene-6.last-animate .text{
         -webkit-animation-name: textZoomOut;
         animation-name:textZoomOut;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 0s;
     }
-    .ani-7 .scene-7.last-animate .light,.ani-7 .scene-7.last-animate .ray,.ani-7 .scene-7.last-animate .shoe-rack,.ani-7 .scene-7.last-animate .shoe-box,.ani-7 .scene-7.last-animate .mirror,.ani-7 .scene-7.last-animate .shoe{
+    .ani-6 .scene-6.last-animate .light,.ani-6 .scene-6.last-animate .ray,.ani-6 .scene-6.last-animate .shoe-rack,.ani-6 .scene-6.last-animate .shoe-box,.ani-6 .scene-6.last-animate .mirror,.ani-6 .scene-6.last-animate .shoe{
         -webkit-animation-name: stockRotateOut;
         animation-name:stockRotateOut;
         -webkit-animation-timing-function: ease-out;
@@ -3391,18 +3475,18 @@ a {
         -webkit-animation-fill-mode: forwards;
     }
     /* scene-9 in */
-    .ani-7 .scene-8.start-animate .lamp,.ani-7 .scene-8.start-animate .bedstand{
+    .ani-6 .scene-7.start-animate .lamp,.ani-6 .scene-7.start-animate .bedstand{
         -webkit-animation-name: rotateIn;
         animation-name:rotateIn;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 0.5s;
     }
-    .ani-7 .scene-8.start-animate .chair,.ani-7 .scene-8.start-animate .person-lead{
+    .ani-6 .scene-7.start-animate .chair,.ani-6 .scene-7.start-animate .person-lead{
         opacity: 1;
         transition-duration: 0s;
     }
-    .ani-7 .scene-8.start-animate .icon-shoe{
+    .ani-6 .scene-7.start-animate .icon-shoe{
         -webkit-animation-name: phoneRotateOut;
         animation-name:phoneRotateOut;
         -webkit-animation-timing-function: linear;
@@ -3411,14 +3495,14 @@ a {
         -webkit-transform-origin: center center;
         transform-origin: center center;
     }
-    .ani-7 .scene-8.start-animate .icon-left-hand-last{
+    .ani-6 .scene-7.start-animate .icon-left-hand-last{
         -webkit-animation-name: opacity0;
         animation-name:opacity0;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 0.5s;
     }
-    .ani-7 .scene-8.start-animate .icon-left-hand-middle{
+    .ani-6 .scene-7.start-animate .icon-left-hand-middle{
         -webkit-animation-name: s8LeftHandMiddle;
         animation-name:s8LeftHandMiddle;
         -webkit-animation-timing-function: linear;
@@ -3426,56 +3510,56 @@ a {
         -webkit-animation-delay: 0.5s;
         -webkit-animation-fill-mode: both;
     }
-    .ani-7 .scene-8.start-animate .bed{
+    .ani-6 .scene-7.start-animate .bed{
         -webkit-animation-name: chairYR2L;
         animation-name:chairYR2L;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 0.9s;
     }
-    .ani-7 .scene-8.start-animate .icon-book{
+    .ani-6 .scene-7.start-animate .icon-book{
         -webkit-animation-name: shoeBoxTopDown;
         animation-name:shoeBoxTopDown;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 1.2s;
     }
-    /*.ani-7 .scene-8.start-animate .icon-left-hand-middle{
+    /*.ani-6 .scene-7.start-animate .icon-left-hand-middle{
         -webkit-animation-name: opacity0;
         animation-name:opacity0;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.4s;
     }*/
-    .ani-7 .scene-8.start-animate .icon-left-hand{
+    .ani-6 .scene-7.start-animate .icon-left-hand{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.4s;
     }
-    .ani-7 .scene-8.start-animate .icon-right-hand-middle,.ani-7 .scene-8.start-animate .icon-right-hand-last{
+    .ani-6 .scene-7.start-animate .icon-right-hand-middle,.ani-6 .scene-7.start-animate .icon-right-hand-last{
         -webkit-animation-name: opacity0;
         animation-name:opacity0;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.5s;
     }
-    .ani-7 .scene-8.start-animate .icon-right-hand{
+    .ani-6 .scene-7.start-animate .icon-right-hand{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.5s;
     }
-    .ani-7 .scene-8.start-animate .lamp-light{
+    .ani-6 .scene-7.start-animate .lamp-light{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.2s;
         -webkit-animation-delay: 1.6s;
     }
-    .ani-7 .scene-8.start-animate .text{
+    .ani-6 .scene-7.start-animate .text{
         -webkit-animation-name: textZoomIn;
         animation-name:textZoomIn;
         -webkit-animation-timing-function: ease-in;
@@ -3503,14 +3587,14 @@ a {
         }
     }
     /* scene-9 out */
-    .ani-8 .scene-8.last-animate .text{
+    .ani-7 .scene-7.last-animate .text{
         -webkit-animation-name: textZoomOut;
         animation-name:textZoomOut;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 0s;
     }
-    .ani-8 .scene-8.last-animate .bed,.ani-8 .scene-8.last-animate .bedstand,.ani-8 .scene-8.last-animate .lamp,.ani-8 .scene-8.last-animate .lamp-light{
+    .ani-7 .scene-7.last-animate .bed,.ani-7 .scene-7.last-animate .bedstand,.ani-7 .scene-7.last-animate .lamp,.ani-7 .scene-7.last-animate .lamp-light{
         -webkit-animation-name: stockRotateOut;
         animation-name:stockRotateOut;
         -webkit-animation-timing-function: ease-out;
@@ -3520,67 +3604,67 @@ a {
         -webkit-animation-fill-mode: forwards;
     }
     /* scene-10 In */
-    .ani-8 .scene-9.start-animate .chair,.ani-8 .scene-9.start-animate .person-lead{
+    .ani-7 .scene-8.start-animate .chair,.ani-7 .scene-8.start-animate .person-lead{
         opacity: 1;
         transition-duration: 0s;
     }
-    .ani-8 .scene-9.start-animate .tea-table{
+    .ani-7 .scene-8.start-animate .tea-table{
         -webkit-animation-name: rotateIn;
         animation-name:rotateIn;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 0.5s;
     }
-    .ani-8 .scene-9.start-animate .icon-book{
+    .ani-7 .scene-8.start-animate .icon-book{
         -webkit-animation-name: bookTopDownLess;
         animation-name:bookTopDownLess;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.2s;
         -webkit-animation-delay: 1s;
     }
-    .ani-8 .scene-9.start-animate .icon-cola{
+    .ani-7 .scene-8.start-animate .icon-cola{
         -webkit-animation-name: colaLeftTopDown;
         animation-name:colaLeftTopDown;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 1s;
         -webkit-animation-delay: 1.2s;
     }
-    .ani-8 .scene-9.start-animate .icon-glass{
+    .ani-7 .scene-8.start-animate .icon-glass{
         -webkit-animation-name: shoeBoxTopDown;
         animation-name:shoeBoxTopDown;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 1.3s;
     }
-    .ani-8 .scene-9.start-animate .icon-right-hand-last{
+    .ani-7 .scene-8.start-animate .icon-right-hand-last{
         -webkit-animation-name: opacity0;
         animation-name:opacity0;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.7s;
     }
-    .ani-8 .scene-9.start-animate .icon-right-hand{
+    .ani-7 .scene-8.start-animate .icon-right-hand{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.7s;
     }
-    .ani-8 .scene-9.start-animate .umbrella{
+    .ani-7 .scene-8.start-animate .umbrella{
         -webkit-animation-name: downToTopDuang;
         animation-name:downToTopDuang;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 1.8s;
     }
-    .ani-8 .scene-9.start-animate .coconut{
+    .ani-7 .scene-8.start-animate .coconut{
         -webkit-animation-name: chairYR2L;
         animation-name:chairYR2L;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 2s;
     }
-    .ani-8 .scene-9.start-animate .text{
+    .ani-7 .scene-8.start-animate .text{
         -webkit-animation-name: textZoomIn;
         animation-name:textZoomIn;
         -webkit-animation-timing-function: ease-in;
@@ -3609,7 +3693,7 @@ a {
             -webkit-transform: translate(-134px,13px);
             opacity: 1;
         }
-        70%{
+        60%{
             -webkit-transform: translate(0,0);
             opacity: 1;
         }
@@ -3636,14 +3720,14 @@ a {
         }
      }
     /* scene-10 out */
-    .ani-9 .scene-9.last-animate .text{
+    .ani-8 .scene-8.last-animate .text{
         -webkit-animation-name: textZoomOut;
         animation-name:textZoomOut;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 0s;
     }
-    .ani-9 .scene-9.last-animate .tea-table,.ani-9 .scene-9.last-animate .coconut,.ani-9 .scene-9.last-animate .umbrella{
+    .ani-8 .scene-8.last-animate .tea-table,.ani-8 .scene-8.last-animate .coconut,.ani-8 .scene-8.last-animate .umbrella{
         -webkit-animation-name: stockRotateOut;
         animation-name:stockRotateOut;
         -webkit-animation-timing-function: ease-out;
@@ -3653,96 +3737,96 @@ a {
         -webkit-animation-fill-mode: forwards;
     }
     /* scene-11 In */
-    .ani-9 .scene-10.start-animate .chair-1,.ani-9 .scene-10.start-animate .person-lead{
+    .ani-8 .scene-9.start-animate .chair-1,.ani-8 .scene-9.start-animate .person-lead{
         opacity: 1;
         transition-duration: 0s;
     }
-    .ani-9 .scene-10.start-animate .icon-right-hand-last{
+    .ani-8 .scene-9.start-animate .icon-right-hand-last{
         -webkit-animation-name: opacity0;
         animation-name:opacity0;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 0.3s;
     }
-    .ani-9 .scene-10.start-animate .icon-right-hand-middle{
+    .ani-8 .scene-9.start-animate .icon-right-hand-middle{
         -webkit-animation-name: s10RightHandMiddle;
         animation-name:s10RightHandMiddle;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 1s;
         -webkit-animation-delay: 0.3s;
     }
-    .ani-9 .scene-10.start-animate .icon-cola{
+    .ani-8 .scene-9.start-animate .icon-cola{
         -webkit-animation-name: colaRotate2Left;
         animation-name:colaRotate2Left;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 0.3s;
     }
-    .ani-9 .scene-10.start-animate .icon-right-hand{
+    .ani-8 .scene-9.start-animate .icon-right-hand{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 0.8s;
     }
-    .ani-9 .scene-10.start-animate .icon-left-hand-last{
+    .ani-8 .scene-9.start-animate .icon-left-hand-last{
         -webkit-animation-name: opacity0;
         animation-name:opacity0;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.1s;
     }
-    .ani-9 .scene-10.start-animate .icon-left-hand-pre{
+    .ani-8 .scene-9.start-animate .icon-left-hand-pre{
         -webkit-animation-name: s10LeftHandPre;
         animation-name:s10LeftHandPre;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 1s;
         -webkit-animation-delay: 1.1s;
     }
-    .ani-9 .scene-10.start-animate .icon-left-hand-middle{
+    .ani-8 .scene-9.start-animate .icon-left-hand-middle{
         -webkit-animation-name: s10LeftHandMiddle;
         animation-name:s10LeftHandMiddle;
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 1s;
         -webkit-animation-delay: 1.5s;
     }
-    .ani-9 .scene-10.start-animate .icon-glass{
+    .ani-8 .scene-9.start-animate .icon-glass{
         -webkit-animation-name: glassRotate2Right;
         animation-name:glassRotate2Right;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 1.2s;
     }
-    .ani-9 .scene-10.start-animate .chair-2,.ani-9 .scene-10.start-animate .person-lady{
+    .ani-8 .scene-9.start-animate .chair-2,.ani-8 .scene-9.start-animate .person-lady{
         -webkit-animation-name: chairYR2L;
         animation-name:chairYR2L;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.5s;
-        -webkit-animation-delay: 1.9s;
+        -webkit-animation-delay: 1.8s;
     }
-    .ani-9 .scene-10.start-animate .icon-left-hand{
+    .ani-8 .scene-9.start-animate .icon-left-hand{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.8s;
     }
-    .ani-9 .scene-10.start-animate .icon-phone{
+    .ani-8 .scene-9.start-animate .icon-phone{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 1.9s;
     }
-    .ani-9 .scene-10.start-animate .window{
+    .ani-8 .scene-9.start-animate .window{
         -webkit-animation-name: opacity0Zoom;
         animation-name:opacity0Zoom;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.5s;
-        -webkit-animation-delay: 2s;
+        -webkit-animation-delay: 1.5s;
         -webkit-animation-fill-mode: forwards;
     }
-    .ani-9 .scene-10.start-animate .text{
+    .ani-8 .scene-9.start-animate .text{
         -webkit-animation-name: textZoomIn;
         animation-name:textZoomIn;
         -webkit-animation-timing-function: ease-in;
@@ -3868,14 +3952,14 @@ a {
         }
     }
     /* scene-11 out */
-    .ani-10 .scene-10.last-animate .text{
+    .ani-9 .scene-9.last-animate .text{
         -webkit-animation-name: textZoomOut;
         animation-name:textZoomOut;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 0s;
     }
-    .ani-10 .scene-10.last-animate .person-lady, .ani-10 .scene-10.last-animate  .chair-2{
+    .ani-9 .scene-9.last-animate .person-lady, .ani-9 .scene-9.last-animate  .chair-2{
         -webkit-animation-name: stockRotateOut;
         animation-name:stockRotateOut;
         -webkit-animation-timing-function: ease-out;
@@ -3885,74 +3969,74 @@ a {
         -webkit-animation-fill-mode: forwards;
     }
     /* scene-12 in */
-    .ani-10 .scene-11.start-animate .chair,.ani-10 .scene-11.start-animate .person-lead{
+    .ani-9 .scene-10.start-animate .chair,.ani-9 .scene-10.start-animate .person-lead{
         opacity: 1;
         transition-duration: 0s;
     }
-/*    .ani-10 .scene-11.start-animate .icon-window3,.ani-10 .scene-11.start-animate .icon-window4{
+/*    .ani-9 .scene-10.start-animate .icon-window3,.ani-9 .scene-10.start-animate .icon-window4{
         -webkit-animation-name: chairYR2L;
         animation-name:chairYR2L;
         -webkit-animation-timing-function: ease-out;
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 0s;
     }*/
-    .ani-10 .scene-11.start-animate .icon-left-hand-last{
+    .ani-9 .scene-10.start-animate .icon-left-hand-last{
         -webkit-animation-name: opacity0;
         animation-name:opacity0;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 0.5s;
     }
-    .ani-10 .scene-11.start-animate .icon-left-hand{
+    .ani-9 .scene-10.start-animate .icon-left-hand{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 0.5s;
     }
-    .ani-10 .scene-11.start-animate .icon-right-hand-last{
+    .ani-9 .scene-10.start-animate .icon-right-hand-last{
         -webkit-animation-name: opacity0;
         animation-name:opacity0;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 0.6s;
     }
-    .ani-10 .scene-11.start-animate .icon-right-hand{
+    .ani-9 .scene-10.start-animate .icon-right-hand{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 0.6s;
     }
-    .ani-10 .scene-11.start-animate .icon-phone-last{
+    .ani-9 .scene-10.start-animate .icon-phone-last{
         -webkit-animation-name: phoneLastR2L;
         animation-name:phoneLastR2L;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 0.5s;
     }
-    .ani-10 .scene-11.start-animate .icon-phone{
+    .ani-9 .scene-10.start-animate .icon-phone{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 0.7s;
     }
-    .ani-10 .scene-11.start-animate .audio{
+    .ani-9 .scene-10.start-animate .audio{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 0.8s;
     }
-    .ani-10 .scene-11.start-animate .audio-text{
+    .ani-9 .scene-10.start-animate .audio-text{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.1s;
     }
-    .ani-10 .scene-11.start-animate .audio-text-1 .icon-mask{
+    .ani-9 .scene-10.start-animate .audio-text-1 .icon-mask{
         -webkit-animation-name: widthL2R;
         animation-name:widthL2R;
         -webkit-animation-timing-function: linear;
@@ -3960,7 +4044,7 @@ a {
         -webkit-animation-delay: 1.1s;
         -webkit-animation-fill-mode: forwards;
     }
-    .ani-10 .scene-11.start-animate .audio-text-2 .icon-mask{
+    .ani-9 .scene-10.start-animate .audio-text-2 .icon-mask{
         -webkit-animation-name: widthL2R;
         animation-name:widthL2R;
         -webkit-animation-timing-function: linear;
@@ -3968,21 +4052,21 @@ a {
         -webkit-animation-delay: 1.6s;
         -webkit-animation-fill-mode: forwards;
     }
-    .ani-10 .scene-11.start-animate .thinking{
+    .ani-9 .scene-10.start-animate .thinking{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 2.7s;
     }
-    .ani-10 .scene-11.start-animate .thinking-text{
+    .ani-9 .scene-10.start-animate .thinking-text{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 3s;
     }
-    .ani-10 .scene-11.start-animate .thinking-text .icon-mask{
+    .ani-9 .scene-10.start-animate .thinking-text .icon-mask{
         -webkit-animation-name: widthL2R;
         animation-name:widthL2R;
         -webkit-animation-timing-function: linear;
@@ -4015,8 +4099,28 @@ a {
         }
     }
     /* scene-12 out */
-
+.ani-10 .scene-11.start-animate .thinking,.ani-10 .scene-11.start-animate .thinking-text,.ani-10 .scene-11.start-animate .window,.ani-10 .scene-11.start-animate .person-lead,.ani-10 .scene-11.start-animate .chair{
+    -webkit-animation-name: opacity0s;
+    animation-name:opacity0s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-delay: 0s;
+}
     /* scene-13 in */
+    .ani-10 .scene-11.start-animate .blue-bg{
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.4s;
+        -webkit-animation-delay: 0s;
+    }
+    .ani-10 .scene-11.last-animate .blue-bg,.ani-10 .scene-11.last-animate .logo-new,.ani-10 .scene-11.last-animate .slogan{
+        -webkit-animation-name: opacity0;
+        animation-name:opacity0;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 0.6s;
+        -webkit-animation-delay: 0s;
+    }
     /* mc-wrap-page */
     .mc-wrap-page{position: absolute;bottom: 60px;z-index: 1000;width: 100%;height: 31px;overflow: hidden;text-align: center;transition:opacity .2s;}
     .mc-wrap-page span{display: inline-block;width: 14px;height: 14px;background-image: url(../images/arrow_icon2.png);background-position: 0 -62px;background-size: 76px auto;margin-right: 10px;opacity: 0.5;}
@@ -4085,9 +4189,11 @@ a {
             <!-- S person -->
             <div class="mc mc-image delay_0_0s mi-zoomIn person">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
-                    <div class="icon icon-body"></div>
+                    <div class="icon icon-head"></div>
                     <div class="icon icon-left-hand"></div>
                     <div class="icon icon-right-hand"></div>
+                    <div class="icon icon-foot"></div>
+                    <div class="icon icon-body"></div>
                 </div>
             </div>
             <!-- E person -->
@@ -4186,19 +4292,13 @@ a {
                 </div>
             </div>
             <!-- E thinking text -->
-        </div>
-    </div>
-    <!-- E scene2-->
-    <!-- S scene3 -->
-    <div class="J_opaPannel pannels scene-3" data-index="2">
-        <div class="opa-stage stage" data-index="2" data-id="opa_stage_3" style="">
-            <!-- S logo -->
-            <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
-                <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
+            <!-- S blue bg -->
+            <div class="mc mc-image blue-bg delay_1_4s duration_0_3s mi-zoomIn">
+                <div class="mc-wrap   noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E logo -->
+            <!-- E blue bg -->
             <!-- S right hand -->
             <div class="mc mc-image right-hand delay_0_0s duration_0_8s mi-zoomIn">
                 <div class="mc-wrap   noAnimate">
@@ -4207,7 +4307,7 @@ a {
             </div>
             <!-- E right hand -->
             <!-- S pad -->
-            <div class="mc mc-image pad delay_0_0s duration_0_8s mi-zoomIn">
+            <div class="mc mc-image pad-large delay_0_0s duration_0_8s mi-zoomIn">
                 <div class="mc-wrap   noAnimate">
                     <div class="icon"></div>
                 </div>
@@ -4229,10 +4329,11 @@ a {
             <!-- E left hand -->
         </div>
     </div>
-    <!-- E scene3 -->
+    <!-- E scene2-->
+    
     <!-- S scene4 -->
-    <div class="J_opaPannel pannels scene-4" data-index="3">
-        <div class="opa-stage stage" data-index="3" data-id="opa_stage_4" style="">
+    <div class="J_opaPannel pannels scene-3" data-index="2">
+        <div class="opa-stage stage" data-index="2" data-id="opa_stage_3" style="">
 
             <!-- S logo -->
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
@@ -4268,10 +4369,11 @@ a {
                     <div class="icon icon-body"></div>
                     <div class="icon icon-glass"></div>
                     <div class="icon icon-popcorn"></div>
+                    <div class="icon icon-cola"></div>
                     <div class="icon icon-last-phone"></div>
                     <div class="icon icon-left-hand"></div>
                     <div class="icon icon-right-hand"></div>
-                    <div class="icon icon-cola"></div>
+
                 </div>
             </div>
             <!-- E person -->
@@ -4286,8 +4388,8 @@ a {
     </div>
     <!-- E scene4 -->
     <!-- S scene5 -->
-    <div class="J_opaPannel pannels scene-5" data-index="4">
-        <div class="opa-stage stage" data-index="4" data-id="opa_stage_5" style="">
+    <div class="J_opaPannel pannels scene-4" data-index="3">
+        <div class="opa-stage stage" data-index="3" data-id="opa_stage_4" style="">
 
             <!-- S logo -->
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
@@ -4350,8 +4452,8 @@ a {
     </div>
     <!-- E scene5 -->
     <!-- S scene6 -->
-    <div class="J_opaPannel pannels scene-6" data-index="5">
-        <div class="opa-stage stage" data-index="5" data-id="opa_stage_6" style="">
+    <div class="J_opaPannel pannels scene-5" data-index="4">
+        <div class="opa-stage stage" data-index="4" data-id="opa_stage_5" style="">
             <!-- S bg -->
             <div class="mc mc-image bg">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -4435,8 +4537,8 @@ a {
     </div>
     <!-- E scene6 -->
     <!-- S scene7 -->
-    <div class="J_opaPannel pannels scene-7" data-index="6">
-        <div class="opa-stage stage" data-index="6" data-id="opa_stage_7" style="">
+    <div class="J_opaPannel pannels scene-6" data-index="5">
+        <div class="opa-stage stage" data-index="5" data-id="opa_stage_6" style="">
             <!-- S bg -->
             <div class="mc mc-image bg">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -4547,8 +4649,8 @@ a {
     </div>
     <!-- E scene7 -->
     <!-- S scene8 -->
-    <div class="J_opaPannel pannels scene-8" data-index="7">
-        <div class="opa-stage stage" data-index="7" data-id="opa_stage_8" style="">
+    <div class="J_opaPannel pannels scene-7" data-index="6">
+        <div class="opa-stage stage" data-index="6" data-id="opa_stage_7" style="">
             <!-- S bg -->
             <div class="mc mc-image bg">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -4624,8 +4726,8 @@ a {
     </div>
     <!-- E scene8-->
     <!-- S scene9 -->
-    <div class="J_opaPannel pannels scene-9" data-index="8">
-        <div class="opa-stage stage" data-index="8" data-id="opa_stage_9" style="">
+    <div class="J_opaPannel pannels scene-8" data-index="7">
+        <div class="opa-stage stage" data-index="7" data-id="opa_stage_8" style="">
             <!-- S bg -->
             <div class="mc mc-image bg">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -4694,8 +4796,8 @@ a {
     </div>
     <!-- E scene9 -->
     <!-- S scene10-->
-    <div class="J_opaPannel pannels scene-10" data-index="9">
-        <div class="opa-stage stage" data-index="9" data-id="opa_stage_10" style="">
+    <div class="J_opaPannel pannels scene-9" data-index="8">
+        <div class="opa-stage stage" data-index="8" data-id="opa_stage_9" style="">
             <!-- S bg -->
             <div class="mc mc-image bg">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
@@ -4769,7 +4871,7 @@ a {
     </div>
     <!-- E scene10-->
     <!-- S scene11 -->
-    <div class="J_opaPannel pannels scene-11" data-index="10">
+    <div class="J_opaPannel pannels scene-10" data-index="9">
         <div class="opa-stage stage" data-index="9" data-id="opa_stage_10" style="">
             <!-- S window -->
             <div class="mc mc-image window">
@@ -4844,17 +4946,93 @@ a {
     </div>
     <!-- E scene11-->
     <!-- S scene12 -->
-    <div class="J_opaPannel pannels scene-12" data-index="11" data-last="true">
-        <div class="opa-stage stage" data-index="11" data-id="opa_stage_10" style="">
+    <div class="J_opaPannel pannels scene-11" data-index="10" data-last="true">
+        <div class="opa-stage stage" data-index="10" data-id="opa_stage_11" style="">
+            <!-- S window -->
+            <div class="mc mc-image window">
+                <div class="mc-wrap">
+                    <div class="icon icon-window1"></div>
+                    <div class="icon icon-window2"></div>
+                    <div class="icon icon-window3"></div>
+                    <div class="icon icon-window4"></div>
+                </div>
+            </div>
+            <!-- E window -->
+            <!-- S chair -->
+            <div class="mc mc-image chair">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E chair -->
+            <!-- S person -->
+            <div class="mc mc-image  person-lead">
+                <div class="mc-wrap">
+                    <div class="icon icon-body"></div>
+                    <div class="icon icon-phone-last"></div>
+                    <div class="icon icon-left-hand-last"></div>
+                    <div class="icon icon-right-hand-last"></div>
+                    <div class="icon icon-phone"></div>
+                    <div class="icon icon-left-hand"></div>
+                    <div class="icon icon-right-hand"></div>
+                </div>
+            </div>
+            <!-- E person -->
+            <!-- S audio -->
+            <div class="mc mc-image audio">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E audio -->
+            <!-- S audio text -->
+            <div class="mc mc-image audio-text audio-text-1">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                    <div class="icon-mask"></div>
+                </div>
+            </div>
+            <!-- E audio text -->
+            <!-- S audio text -->
+            <div class="mc mc-image audio-text audio-text-2">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                    <div class="icon-mask"></div>
+                </div>
+            </div>
+            <!-- E audio text -->
+            <!-- S thinking -->
+            <div class="mc mc-image thinking">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                    <div class="icon-mask"></div>
+                </div>
+            </div>
+            <!-- E thinking -->
+            <!-- S thinking text -->
+            <div class="mc mc-image thinking-text">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                    <div class="icon-mask"></div>
+                </div>
+            </div>
+            <!-- E thinking text -->
+            <!-- S blue-bg -->
+            <div class="mc mc-image blue-bg">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E blue-bg -->
             <!-- S logo -->
-            <div class="mc mc-image logo-new mi-zoomIn duration_0_8s">
+            <div class="mc mc-image logo-new mi-zoomIn duration_0_8s delay_0_4s">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
             <!-- E logo -->
             <!-- S slogan -->
-            <div class="mc mc-image slogan mi-zoomIn duration_0_8s">
+            <div class="mc mc-image slogan mi-zoomIn duration_0_8s delay_0_4s">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
@@ -4866,7 +5044,6 @@ a {
 </div>
 <a href="javascript:void(0);" class="u-guideTop mi-fadeInRight" id="J_GuideTop"></a>
 <div class="mc-wrap-page">
-    <span class="icon"></span>
     <span class="icon"></span>
     <span class="icon"></span>
     <span class="icon"></span>

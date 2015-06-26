@@ -63,6 +63,7 @@
             }, end = {x: 0, y: 0}, dis = 0, touchStart = function (ev) {
                 //console.log('touchStart',_this.get("prevent"));
                 if (_this.get("prevent"))return !1;
+                if (_this.get("screen-2-prevent"))return !1;
                 var evo = ev.touches ? ev.touches[0] : ev;
                 ofs = _this.get("offset"), start = {x: evo.clientX, y: evo.clientY}, dis = 0;
                 var touchMove = function (ev) {
@@ -73,11 +74,12 @@
                     }, dis = end.x - start.x
                 }, touchEnd = function () {
                     //console.log('touchEnd',Math.abs(dis));
+                    if (_this.get("screen-2-prevent"))return !1;
                     if (Math.abs(dis) <= 20)return page.removeEventListener(EVENTS.touchmove, touchMove, !1), page.removeEventListener(EVENTS.touchup, touchEnd, !1), !1;
                     var current = page.querySelector(".current"), index = +current.getAttribute("data-index"), next = _this.getNext(index, dis > 0 ? "up" : "down");
                     if (Utils.addClass(dragger, "has-transition"), next)if (Math.abs(dis) > 50) {
-                        var nextTop = +next.getAttribute("data-index");
-                        /*dragger.style[_this.get("transform")] = "translate3d(" + -(nextTop / count * 100) + "%, 0, 0)", */Utils.addClass(current, "last-animate"), Utils.removeClass(current, "current"), Utils.addClass(next, "current"),Utils.addClass(_this.get("pageNode"),'ani-'+nextTop), Utils.removeClass(document.querySelector(".mc-wrap-page .page-current"), "page-current"), Utils.addClass(_this.get("page-wrap").querySelectorAll(".icon")[nextTop], "page-current"), _this.preload(+next.getAttribute("data-index")), setTimeout(function () {
+                        var nextTop = +next.getAttribute("data-index");var tNext = next;console.log('index',index)
+                        /*dragger.style[_this.get("transform")] = "translate3d(" + -(nextTop / count * 100) + "%, 0, 0)", */Utils.addClass(current, "last-animate"), (index == 1) && (setTimeout(function(){Utils.removeClass(current,'screen-2-level-1')},500)/*Utils.removeClass(current,'screen-2-level-1')*/), Utils.removeClass(current, "current"), Utils.addClass(next, "current"),Utils.addClass(_this.get("pageNode"),'ani-'+nextTop), Utils.removeClass(document.querySelector(".mc-wrap-page .page-current"), "page-current"), Utils.addClass(_this.get("page-wrap").querySelectorAll(".icon")[nextTop], "page-current"), _this.preload(+next.getAttribute("data-index")), (nextTop == 1) && (setTimeout(function(){Utils.addClass(tNext,'screen-2-level-1')},2700),_this.set("screen-2-prevent",!0),setTimeout(function(){_this.set("screen-2-prevent",!1)},3600)),setTimeout(function () {
                             _this.set("prevent", !1), _this.get("transEnd").call(_this),Utils.removeClass(page.querySelector(".last-animate"),"last-animate")
                         }, 300)
                     } else return false;/*dragger.style[_this.get("transform")] = "translate3d(" + -(index / count * 100) + "%, 0, 0)"*/;
