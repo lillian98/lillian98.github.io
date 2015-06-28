@@ -1157,8 +1157,8 @@ a {
         background-image: url(../images/b2c/chair.png);
     }
     .stage .person, .stage .person-lead{
-        width: 196px;
-        height: 468px;
+        width: 237px;
+        height: 537px;
         left: 263px;
         top: 376px;
         position: relative;
@@ -1320,7 +1320,9 @@ a {
         opacity: 1;
     }
     .scene-2 .pad{
-        background-image: url(../images/b2c/p12_phone.png);
+        background-image: url(../images/b2c/p9.png);
+        background-size: 800px 960px;
+        background-position: -640px 0;
         width: 54px;
         height: 29px;
         left: 358px;
@@ -1619,7 +1621,7 @@ a {
         left: 218px;
         top: 826px;
         z-index: 20;
-        background-size: cover;
+        background-size: 100% 100%;
     }
     .scene-4 .person-lead .icon-left-hand-last{
         background-image: url(../images/b2c/p2.png);
@@ -1678,6 +1680,7 @@ a {
         z-index: 3;
     }
     /* scene-7 */
+
     .scene-5 .person-lead .icon-body {
         background-image: url(../images/b2c/p5_person_body.png);
         width: 235px;
@@ -1713,14 +1716,32 @@ a {
         top:324px;
         opacity: 0;
     }
-    .scene-5 .icon-game-line {
+    .page .scene-5 .icon-game-line {
+        /*background-image: url(../images/b2c/p7_line.png);*/
+        width: 50px;
+        height: 212px;
+        left: 131px;
+        top:345px;
+        background-size: 100% 100%;
+        -webkit-transform-origin: bottom;
+        -webkit-animation-fill-mode: both;
+        top:-374px;
+        height: 920px;
+        position: absolute;
+    }
+    .page .scene-5 .icon-game-line-s {
         background-image: url(../images/b2c/p7_line.png);
         width: 50px;
         height: 212px;
         left: 131px;
         top:345px;
-        opacity: 0;
         background-size: 100% 100%;
+        -webkit-transform-origin: bottom;
+        -webkit-animation-fill-mode: both;
+        top:0;
+        height: 920px;
+        left: 0;
+        position: absolute;
     }
     .scene-5 .clock {
         background-image: url(../images/b2c/p5.png);
@@ -2494,6 +2515,41 @@ a {
         top:0;
         left: 0;
         opacity: 0;
+    }
+    .scene-11  .person-lead .icon-body{
+        background-image: url(../images/b2c/p5_person_body.png);
+        width: 235px;
+        height: 535px;
+    }
+    .scene-11 .person-lead .icon-left-hand {
+        background-image: url(../images/b2c/p9.png);
+        background-size: 800px 960px;
+        background-position: -320px -160px;
+        width: 67px;
+        height: 102px;
+        left: 123px;
+        top: 201px;
+        position: absolute;
+    }
+    .scene-11 .person-lead .icon-right-hand {
+        background-image: url(../images/b2c/p9.png);
+        background-size: 800px 960px;
+        background-position: -480px -160px;
+        width: 86px;
+        height: 118px;
+        left: 28px;
+        top: 199px;
+        position: absolute;
+    }
+    .scene-11 .person-lead .icon-phone {
+        background-image: url(../images/b2c/p9.png);
+        background-size: 800px 960px;
+        background-position: -640px 0;
+        width: 54px;
+        height: 29px;
+        left: 94px;
+        top: 291px;
+        position: absolute;
     }
     /* text setting */
     .scene-9 .text{
@@ -3330,8 +3386,8 @@ a {
     }
     @-webkit-keyframes moneyIn{
         0%{-webkit-transform: translate(0,-400px);opacity: 0}
-        80%{-webkit-transform: translate(-15px,15px);opacity: 0.8;width: 340px;height: 126px}
-        100%{-webkit-transform: translate(0px,0);opacity: 1;width: 310px;height: 146px;}
+        80%{-webkit-transform: translate(0,0) scale(1.1,0.9);opacity: 0.8;}
+        100%{-webkit-transform: translate(0,0) scale(1,1);opacity: 1;}
     }
     @-webkit-keyframes lineIn{
         0%{width:0;opacity: 1}
@@ -3400,6 +3456,13 @@ a {
         -webkit-animation-delay: 0.3s;
     }
     .ani-4 .scene-5.start-animate .icon-game-line{
+        -webkit-animation-name: overflowCtr;
+        animation-name:overflowCtr;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-delay: 0.8s;
+    }
+    .ani-4 .scene-5.start-animate .icon-game-line-s{
         -webkit-animation-name: lineTopDown;
         animation-name:lineTopDown;
         -webkit-animation-timing-function: linear;
@@ -3541,21 +3604,33 @@ a {
             background-size: 100% 100%;
             height: 920px;
             -webkit-transform: translate(0,-1640px);
+            -webkit-transform: translate(0,-920px);
             opacity: 1;
         }
         50%{
-            background-size: 100% 100%;
-            height: 920px;
-            -webkit-transform: translate(0,-728px);
-            opacity: 1;
-        }
+             background-size: 100% 100%;
+             height: 940px;
+             -webkit-transform: translate(0,-728px);
+            -webkit-transform: translate(0,0);
+             opacity: 1;
+         }
         100%{
             background-size: 100% 100%;
             height: 212px;
             -webkit-transform: translate(0,0);
+            -webkit-transform: translate(0,720px);
             opacity: 1;
         }
     }
+    .overflowCtr{top:-373px;height: 922px;}
+    @-webkit-keyframes  overflowCtr {
+        50%{
+            overflow-y:hidden;
+        }
+        100%{
+            overflow-y: hidden;
+        }
+     }
     @-webkit-keyframes tvTopDown{
         0%{
             -webkit-transform: translate(0,-821px);
@@ -3577,7 +3652,7 @@ a {
         }
     }
     /* scene-7 out */
-    .ani-5 .scene-5 .door,.ani-5 .scene-5 .clock,.ani-5 .scene-5 .food,.ani-5 .scene-5 .icon-game-handler,.ani-5 .scene-5 .icon-game-line{
+    .ani-5 .scene-5.last-animate .door,.ani-5 .scene-5.last-animate .clock,.ani-5 .scene-5.last-animate .food,.ani-5 .scene-5.last-animate .icon-game-handler,.ani-5 .scene-5.last-animate .icon-game-line{
         -webkit-animation-name: stockRotateOut;
         animation-name:stockRotateOut;
         -webkit-animation-timing-function: ease-out;
@@ -4349,8 +4424,9 @@ a {
     }
     /* scene-12 out */
 .ani-10 .scene-11.start-animate .thinking,.ani-10 .scene-11.start-animate .thinking-text,.ani-10 .scene-11.start-animate .window,.ani-10 .scene-11.start-animate .person-lead,.ani-10 .scene-11.start-animate .chair{
-    -webkit-animation-name: opacity0s;
-    animation-name:opacity0s;
+    opacity: 1;
+    -webkit-animation-name: opacity0;
+    animation-name:opacity0;
     -webkit-animation-timing-function: linear;
     -webkit-animation-duration: 0.4s;
     -webkit-animation-delay: 0s;
@@ -4361,7 +4437,7 @@ a {
         animation-name:opacity1;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.4s;
-        -webkit-animation-delay: 0s;
+        -webkit-animation-delay: 0.3s;
     }
     .ani-10 .scene-11.last-animate .logo-new,.ani-10 .scene-11.last-animate .slogan{
         -webkit-animation-name: opacity0;
@@ -4752,7 +4828,7 @@ a {
                     <div class="icon icon-phone-last"></div>
                     <div class="icon icon-left-hand-last"></div>
                     <div class="icon icon-right-hand-last"></div>
-                    <div class="icon icon-game-line"></div>
+                    <div class="icon icon-game-line"><div class="icon-game-line-s"></div></div>
                     <div class="icon icon-game-handler"></div>
                     <div class="icon icon-left-hand"></div>
                     <div class="icon icon-right-hand"></div>
@@ -5398,15 +5474,30 @@ a {
     };
     var tasks = [
         "../images/b2c/b_person_body.png",
-        "../images/b2c/b_person_left_foot.png",
-        "../images/b2c/b_person_left_hand.png",
-        "../images/b2c/b_person_right_foot.png",
-        "../images/b2c/b_person_right_hand.png",
-        "../images/b2c/bg2.png",
-        "../images/b2c/bg_circle1.png",
         "../images/b2c/chair.png",
         "../images/b2c/chair_nobody.png",
-        "../images/b2c/p5_person_body.png"
+        "../images/b2c/logo_1.png",
+        "../images/b2c/money.png",
+        "../images/b2c/p_text.png",
+        "../images/b2c/p1_1.png",
+        "../images/b2c/p1_person_body.png",
+        "../images/b2c/p2.png",
+        "../images/b2c/p4_left_hand.png",
+        "../images/b2c/p4_pad.png",
+        "../images/b2c/p4_right_finger.png",
+        "../images/b2c/p4_right_hand.png",
+        "../images/b2c/p4.png",
+        "../images/b2c/p5.png",
+        "../images/b2c/p5_person_body.png",
+        "../images/b2c/p6.png",
+        "../images/b2c/p7.png",
+        "../images/b2c/p7_line.png",
+        "../images/b2c/p8.png",
+        "../images/b2c/p9.png",
+        "../images/b2c/p23_person_body.png",
+        "../images/b2c/p11_lady.png",
+        "../images/b2c/slogan.png",
+        "../images/b2c/window.png"
     ];
     var progress = document.getElementById('process');
     function loading(load) {
