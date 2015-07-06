@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>JD.com Global: Online Shopping Mall for Electronics, Apparel, Jewelry & more</title>
+    <meta name="google-translate-customization" content="4a59cc671fcf82c6-dde0ca028c594a15-g7518baae2bd23516-e"></meta>
+    <meta name="keywords" content="JD, Global ,Online shopping, shop online, Wedding & Events,Bags & Accessories,Sports & Outdoors,Health & Beauty, Jewelry & Watches, Cell Phones & Accessories, Electronics, Apple Accessories, Computers & Accessories, Automotive, Shoes, Costumes & Cosplay,Hobbies & Toys,Movies & Music, Video Games">
+    <meta name="description" content="JD.com Global: Online Shopping Mall for Electronics, Apparel, Jewelry & more">
+    <link rel="shortcut icon" href="http://www.360buy.com/favicon.ico" />
+    <link href="http://st.en.jd.com/newapp/ept/static/ui/common/base.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="http://st.en.jd.com/newapp/ept/static/ui/website/css/common1.css" media="all"/>
+    <link media="all" href="http://st.en.jd.com/newapp/ept/static/ui/website/css/content.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://st.en.jd.com/newapp/ept/static/ui/website/css/index1.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="newbuyerzone/index.css" media="all"/>
+    <!--<link rel="stylesheet" type="text/css" href="http://st.en.jd.com/ru/newbuyerzone/index.css" media="all"/>-->
+    <script src="http://st.en.jd.com/newapp/jdf/lib/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="http://st.en.jd.com/newapp/jdf/1.0.0/unit/base/1.0.0/base.js"></script>
+    <script type="text/javascript" src="http://st.en.jd.com/newapp/jdf/1.0.0??ui/ui/1.0.0/ui.js,unit/event/1.0.0/event.js"></script>
+
+    <script type="text/javascript">
+        var jaq = jaq || [];
+        jaq.push(['account', 'UA-J2011-6']);
+        jaq.push(['domain', 'en.jd.com']);
+        jaq.push(['erp_account', '']);
+        (function () {
+            var ja = document.createElement('script');
+            ja.type = 'text/javascript';
+            ja.async = true;
+            ja.src = ('https:' == document.location.protocol ? 'https://cscssl' : 'http://csc') + '.jd.com/joya.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ja, s);
+        })();
+    </script>
+    <script type="text/javascript">
+        seajs.config({
+            base : "http://st.en.jd.com/newapp/ept/static/"
+        });
+    </script>
+    <script>
+        function errorImg(img) {
+            img.src = "/static/app/css/i/blank.gif";
+            img.onerror = null;
+            $(img).addClass("err-img");
+        }
+    </script>
+
+
+
+</head>
+<body data-width="1300">
+<script type="text/javascript">
+    (function() {
+        //判断访问终端
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                }
+            }()
+        }
+        function getPrefix(brow) {
+            var pre = "";
+            return pre = brow.webKit ? "-Webkit" : brow.gecko ? "-Moz" : brow.trident ? "-Ms" : brow.presto ? "-O" : ""
+        }
+        //browser.versions.trident返回真假，真则是IE内核，以此类推browser.versions.webKit是否为谷歌内核
+        if (browser.versions.mobile) {
+            document.body.className = document.body.className + ' m-body';
+            var tScale = 'scale('+document.body.clientWidth/document.body.getAttribute('data-width') +')';
+            document.body.style.zoom = document.body.clientWidth/document.body.getAttribute('data-width');/* body zoom*/
+        }
+        var browserIE=navigator.appName;
+        var b_version=navigator.appVersion;
+        var version=b_version.split(";");
+        var trim_Version=version[1].replace(/[ ]/g,"");
+        if((browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE6.0") || (browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE7.0") ||(browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE8.0")|| (browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE9.0")){
+            document.body.className = document.body.className + ' no-ani';
+        }
+    })()
+</script>
+<script type="text/javascript">
+    var google_tag_params = {
+        ecomm_prodid: '',
+        ecomm_pagetype:'home',
+        ecomm_totalvalue: ''
+    };
+</script>
+<!-- google  -->
+<script type="text/javascript">
+    if(window.google_tag_params){
+        dataLayer = [{
+            'google_tag_params': window.google_tag_params
+        }];
+    }
+</script>
+
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WFSLVN"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+<script type="text/javascript">
+    $(function(){
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WFSLVN');
+    });
+</script>
+<!-- facebook  -->
+<script>(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = '//connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+    }
+    _fbq.push(['addPixelId', '1118431521516650']);
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', 'PixelInitialized', {}]);
+</script>
+<noscript>
+    <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1118431521516650&amp;ev=PixelInitialized" />
+</noscript>
+
+<!-- 公共头-->
+<div class="header-top">
+    <div class="w">
+        <ul class="header-top-r">
+            <li class="fore1"><a href="http://en.jd.com/help/question-7.html">about JD</a></li><li class="spacer"></li>
+            <li class="fore2"><a href="http://en.jd.com/help/question-21.html">Help</a></li><li class="spacer"></li>
+            <li class="fore2"><a href="http://www.jd.com">JD.com Main Site (Chinese)</a></li><li class="spacer"></li>
+            <li id="lan-sel" class="fore3">
+                <div class="dt">Language<s></s></div>
+                <div class="lan-box">
+                    <div class="spacer"></div>
+                    <div class="mt">
+                        <span class="f-cb"></span>
+                        <span>Multi-Language Sites：</span>
+                        <ul>
+                            <li><a target="_blank" href="http://en.jd.com">Global Site (English)</a></li>
+                            <li><a target="_blank" href="http://en.jd.com/ru/index-ru.html">Сайт на русском</a></li>
+                            <li style="width:160px;"><a target="_blank" href="http://www.jd.com">中文主站(Chinese)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="header">
+    <div class="w">
+        <a class="logo" href="http://en.jd.com"></a>
+
+        <form class="search-form" action="">
+            <div class="search-operate-box f-fl">
+                <div class="search-cate-title"><span class="search-category-value" id="search-category-value" catid="">All Categories</span><s></s><div class="spacer"></div></div>
+                <div class="search-cate-list">
+                    <ul class="j-select-opts">
+                    </ul>
+
+                </div>
+            </div>
+            <div class="search-key-box f-fr">
+                <input type="text" id="searchKeyWord" name="SearchText" value="" autocomplete="off" maxlength="50" placeholder="Shopping For..." class="search-key">
+                <input type="button" id="doSearch" value="" class="search-button">
+            </div>
+            <div class="search-key-list" style="display: none;">
+                <strong></strong>
+                <ul id="search-result-list">
+                </ul>
+
+            </div>
+        </form>
+
+        <ul class="tools-box">
+            <li><a class="cart" href="http://c.en.jd.com/cart/cart.html"><s></s><span>Cart</span></a></li>
+            <li><a class="wish" href="http://s.en.jd.com/usercenter/wishlist/list.html"><s></s><span>Wish</span></a></li>
+            <li class="item-sign">
+                <div class="sign"><s></s><span>Sign in</span></div>
+                <!-- 登录后 -->
+                <div style="display: none" class="sign-box s-1">
+                    <div class="spacer"></div>
+                    <div class="mt">
+                        <a target="_blank" href="#">Welcome, isaac</a>
+                    </div>
+                    <div class="mc">
+                        <p><a target="_blank" href="http://o.en.jd.com/order/orderList.html">My Order</a></p>
+                        <p><a target="_blank" href="http://s.en.jd.com/usercenter/wishlist/list.html">My Wish List</a></p>
+                        <p><a target="_blank" href="">Account Settings</a></p>
+                        <a class="btn-join" href="javascript:logout();">Sign out</a>
+                    </div>
+                </div>
+                <!-- 登录前 -->
+                <div class="sign-box s-2">
+                    <div class="spacer"></div>
+                    <div class="mt">
+                        <a class="btn-sign" href="javascript:login();">Sign in</a>
+                    </div>
+                    <div class="mc">
+                        <p>New Customer?</p>
+                        <a class="btn-join" href="javascript:register();">Join Free</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="nav">
+    <div class="w">
+        <div  class="categorys" >
+            <div class="categorys-hd"><a href="javascript:void(0);">CATEGORIES
+                <s></s>
+            </a></div>
+            <div class="categorys-bd" id="categorys" style="display: none;" >
+
+            </div>
+        </div>
+
+        <div class="navitems">
+        </div>
+    </div>
+</div>
+<!-- 公共头结束-->
+
+<!--内容区 -->
+<div class="wrapper">
+    <!-- S title -->
+    <div class="wrap-hd">
+        <!-- S title锚点 -->
+        <div class="wrap-hd-extra wrap-1200">
+            <div class="map">
+                <a href="#flr1" class="item-1"><span class="map-a-text">About JD Global<i class="map-icon"></i></span></a>
+                <a href="#flr2" class="item-2"><span class="map-a-text">New User Guide<i class="map-icon"></i></span></a>
+                <a href="#flr3" class="item-3"><span class="map-a-text">Buyer Protection<i class="map-icon"></i></span></a>
+            </div>
+        </div>
+        <!-- E title锚点 -->
+        <div class="wrap-hd-icon">
+            <i class="icon"></i>
+            <span class="wrap-hd-icon-text">New Buyer Zone</span>
+        </div>
+    </div>
+    <!-- E title -->
+    <!-- S wrap-bd -->
+    <div class="wrap-bd">
+        <!-- S about jd global -->
+        <div class="wrap-flr flr1">
+            <a href="javascript:void(0)" class="href-map" id="flr1"></a>
+            <!-- S flr1 summary -->
+            <div class="wrap-flr-summary">
+                <div class="wrap-text-ct wrap-1200">
+                    <h1 class="wrap-text-h1">ABOUT</h1>
+                    <h2 class="wrap-text-h2">JD GLOBAL</h2>
+                    <h3 class="wrap-text-h3"><span>Buy with confidence ---- Enjoy Shopping</span></h3>
+                    <p class="wrap-text-p">At JD, we are more than just an online shopping mall.We are an online shopping mall dedicated to providing authentic, high quality goods at low prices. At JD we are here to provide you with:</p>
+                </div>
+            </div>
+            <!-- E flr1 summary -->
+            <!-- S flr1 ct1 -->
+            <div class="wrap-flr-detail wrap-flr-detail-1">
+                <div class="wrap-1200">
+                    <div class="wrap-text-ct">
+                        <h2 class="wrap-text-h2">Authentic Products</h2>
+                        <p class="wrap-text-p">We make sure all products sold on JD.com are authentic to ensure the best quality for you.</p>
+                    </div>
+                    <div class="wrap-flr-detail-bg"></div>
+                </div>
+            </div>
+            <!-- E flr1 ct1 -->
+            <!-- S flr1 ct2 -->
+            <div class="wrap-flr-detail wrap-flr-detail-2">
+                <div class="wrap-1200">
+                    <div class="wrap-text-ct">
+                        <h2 class="wrap-text-h2">Cost-Effective Service</h2>
+                        <p class="wrap-text-p">With strong relationships with manufacturers and merchants in China, we are able to sell quality products for lower prices.</p>
+                    </div>
+                    <div class="wrap-flr-detail-bg"></div>
+                </div>
+            </div>
+            <!-- E flr1 ct2 -->
+            <!-- S flr1 ct3 -->
+            <div class="wrap-flr-detail wrap-flr-detail-3">
+                <div class="wrap-1200">
+                    <div class="wrap-text-ct">
+                        <h2 class="wrap-text-h2">Buyer Protection</h2>
+                        <p class="wrap-text-p">In case something is wrong with your order we’ve got you covered with our Buyer Protection, which ensures a full refund within 30 days if the product is not as described or is defective.</p>
+                    </div>
+                    <div class="wrap-flr-detail-bg"></div>
+                </div>
+            </div>
+            <!-- E flr1 ct3 -->
+            <!-- S flr1 ct4 -->
+            <div class="wrap-flr-detail wrap-flr-detail-4">
+                <div class="wrap-1200">
+                    <div class="wrap-text-ct">
+                        <h2 class="wrap-text-h2">Fast Shipping</h2>
+                        <ul class="wrap-text-ul">
+                            <li>Worldwide Delivery to over 200 countries</li>
+                            <li>Various Delivery Methods to choose from such as UPS, DHL, and Equick</li>
+                        </ul>
+                    </div>
+                    <div class="wrap-flr-detail-bg"></div>
+                </div>
+            </div>
+            <!-- E flr1 ct4 -->
+        </div>
+        <!-- E about jd global -->
+        <!-- S New User Guide -->
+        <div class="wrap-flr flr2">
+            <a href="javascript:void(0)" class="href-map" id="flr2"></a>
+            <!-- S flr2 summary -->
+            <div class="wrap-flr-summary">
+                <div class="wrap-hd-ct wrap-1200">
+                    <h1 class="wrap-text-h1">New User Guide</h1>
+                    <p class="wrap-text-p">Welcome to JD Global here is a quick guide to help you maximize your shopping experience</p>
+                </div>
+            </div>
+            <!-- E flr2 summary -->
+            <!-- S flr2 detail -->
+            <div class="wrap-flr-detail">
+                <!-- S wrap-flr-detail-ct-1 -->
+                <div class="wrap-flr-detail-ct wrap-detail-ct-1">
+                    <h2 class="wrap-text-h2"><i class="icon-no">1</i><span class="wrap-text-h2-span">Create an account</span></h2>
+                    <p class="wrap-text-p">Become a member of the JD Global Family and start shopping from our selection of authentic goods at hard to beat prices.</p>
+                </div>
+                <!-- E wrap-flr-detail-ct-1 -->
+                <!-- S wrap-flr-detail-ct-2 -->
+                <div class="wrap-flr-detail-ct wrap-detail-ct-2">
+                    <h2 class="wrap-text-h2"><i class="icon-no">2</i><span class="wrap-text-h2-span">Start Shopping</span></h2>
+                    <p class="wrap-text-p">Shop through our wide selection of Authentic Chinese Name Brand products and add to your cart as you go.</p>
+                </div>
+                <!-- E wrap-flr-detail-ct-2 -->
+                <!-- S wrap-flr-detail-ct-3 -->
+                <div class="wrap-flr-detail-ct wrap-detail-ct-3">
+                    <h2 class="wrap-text-h2"><i class="icon-no">3</i><span class="wrap-text-h2-span">Checkout</span></h2>
+                    <ul class="wrap-text-ul">
+                        <li>From the shopping cart page, proceed to checkout and fill in your shipping & billing info and you’re done. And don’t worry; your information is protected with SSL  encryption technology so you can pay with confidence.</li>
+                        <li>You also have the option to save your shipping address so you can save time during the checkout process in the future. </li>
+                    </ul>
+                </div>
+                <!-- E wrap-flr-detail-ct-3 -->
+                <!-- S wrap-flr-detail-ct-4 -->
+                <div class="wrap-flr-detail-ct wrap-detail-ct-4">
+                    <h2 class="wrap-text-h2"><i class="icon-no">4</i><span class="wrap-text-h2-span">Enjoy Fast Shipping!</span></h2>
+                    <ul class="wrap-text-ul">
+                        <li>Enjoy your order faster with Reliable Worldwide shipping to over 200 countries.</li>
+                        <li>Receive your order wherever you are with trusted delivery services like UPS, DHL, and Equick.</li>
+                    </ul>
+                </div>
+                <!-- E wrap-flr-detail-ct-4 -->
+            </div>
+            <!-- E flr2 detail -->
+        </div>
+        <!-- E New User Guide -->
+        <!-- S Buyer Protection -->
+        <div class="wrap-flr flr3">
+            <a href="javascript:void(0)" class="href-map" id="flr3"></a>
+            <div class="wrap-text-ct wrap-1200">
+                <h1 class="wrap-text-h1">Buyer Protection</h1>
+                <div class="wrap-flr3-section wrap-flr3-section-1">
+                    <h2 class="wrap-text-h2">Shop with Confidence</h2>
+                    <p class="wrap-text-p">With JD Global you are protected from defective products and shipping errors. </p>
+                    <p class="wrap-text-p">Should they occur we guarantee a full refund if:</p>
+                    <div class="wrap-flr3-two-cols cf">
+                        <div class="wrap-flr3-left">
+                            <i class="icon-no">1</i><span class="wrap-flr3-text">The item you ordered is not as described or defective</span>
+                        </div>
+                        <div class="wrap-flr3-left">
+                            <i class="icon-no">2</i><span class="wrap-flr3-text">You do not receive your order</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-flr3-section wrap-flr3-section-2">
+                    <h2 class="wrap-text-h2">How to request for a Return & Refund</h2>
+                    <div class="wrap-flr3-two-cols cf">
+                        <div class="wrap-flr3-left">
+                            <h3 class="wrap-text-h3">JD Collection Products</h3>
+                            <ul class="wrap-text-ul">
+                                <li>
+                                    <i class="icon-no">1</i><span class="wrap-flr3-text">Email to JD</span>
+                                    <p class="wrap-text-p">Email postsales@JD.com to send a Return & </p>
+                                    <p class="wrap-text-p">Refund Request.</p>
+                                </li>
+                                <li>
+                                    <i class="icon-no">2</i><span class="wrap-flr3-text">Write a Brief Reason</span>
+                                    <p class="wrap-text-p">In the email, please provide clear pictures of the item, the shipping label, and write a brief reason for returning the item.</p>
+                                </li>
+                                <li>
+                                    <i class="icon-no">3</i><span class="wrap-flr3-text">Await Response</span>
+                                    <p class="wrap-text-p">After you have done this, await further instructions from our customer service team. They will respond to you within 2 business days</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="wrap-flr3-left">
+                            <h3 class="wrap-text-h3">Third-Party Seller Products</h3>
+                            <ul class="wrap-text-ul">
+                                <li>
+                                    <i class="icon-no">1</i><span class="wrap-flr3-text">Contact the Seller</span>
+                                    <p class="wrap-text-p">If your order hasn't arrived or isn’t as described you can
+                                        contact the seller. To do this, go to “My Account” and
+                                        select “My Order”. Click “contact us” next to the item
+                                        you want to return to resolve this directly with the seller.</p>
+                                </li>
+                                <li>
+                                    <i class="icon-no">2</i><span class="wrap-flr3-text">Create a Refund Request</span>
+                                    <p class="wrap-text-p">
+                                        If you were unable to resolve the problem with the seller,
+                                        you can submit a refund request to JD’s Customer Service
+                                        Team by clicking the “Refund” button next to the item you
+                                        want to return in the “My Order” page.</p>
+                                </li>
+                                <li>
+                                    <i class="icon-no">3</i><span class="wrap-flr3-text">Open Dispute</span>
+                                    <p class="wrap-text-p">
+                                        If your Refund Request was denied, you can open a
+                                        dispute by selecting “Dispute” in the “My Order” page. </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-flr3-section wrap-flr3-section-3">
+                    <h2 class="wrap-text-h2">Tips</h2>
+                    <p class="wrap-text-p">We currently only accept PayPal as a method of payment. We are working towards accepting more payment methods in the future.</p>
+                    <p class="wrap-text-p">Please check with us soon for any further updates. We apologize for any inconvenience.</p>
+                    <p class="wrap-text-p">Your payment information is secured via SSL encryption technology and is sent directly to JD.com (not to the seller)</p>
+                </div>
+            </div>
+        </div>
+        <!-- E Buyer Protection -->
+    </div>
+    <!-- E wrap-bd -->
+    <!-- S wrap-ft -->
+    <div class="wrap-ft">
+        <div class="wrap-1200">
+            <div class="wrap-ad">
+                <a href="" class="href-ad" target="_blank"><img src="newbuyerzone/sprite/new_ad_1.jpg" alt=""/></a>
+                <a href="" class="href-ad" target="_blank"><img src="newbuyerzone/sprite/new_ad_2.jpg" alt=""/></a>
+            </div>
+        </div>
+    </div>
+    <!-- E wrap-ft -->
+</div>
+<!-- E wrapper -->
+<!-- S float-top -->
+<div class="float-top" style="">
+    <div class="wrap-1200">
+        <div class="float-hd-icon">
+            <i class="icon"></i>
+            <span class="float-hd-icon-text">New Buyer Zone</span>
+        </div>
+        <div class="map">
+            <a href="#flr1" class="item-1"><span class="map-a-text">About JD Global<i class="map-icon"></i></span></a>
+            <a href="#flr2" class="item-2"><span class="map-a-text">New User Guide<i class="map-icon"></i></span></a>
+            <a href="#flr3" class="item-3"><span class="map-a-text">Buyer Protection<i class="map-icon"></i></span></a>
+            <a href="" class="item-4" target="_blank">Start Shopping Now&nbsp;&gt;</a>
+
+        </div>
+    </div>
+</div>
+<!-- E float-top -->
+<!--内容区结束 -->
+
+<!--公共页尾-->
+<div class="hyperchannel">
+    <div class="w">
+        <div class="item fore1">
+            <s></s>
+            <h4>Buyer Protection</h4>
+            <p>We will refund if the item is not as
+                described or is of poor quality</p>
+        </div>
+        <div class="item  fore2">
+            <s></s>
+            <h4>Delivery Guarantee</h4>
+            <p>You will get a full refund if your
+                order does not receive</p>
+        </div>
+        <div class="item  fore3">
+            <s></s>
+            <h4>Safe Payment</h4>
+            <p>Pay with popular and
+                secure payment methods</p>
+        </div>
+        <div class="item  fore4">
+            <s></s>
+            <h4>Chinese Brands Selection</h4>
+            <p>100% Brand Suppliers</p>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="w">
+        <div class="links">
+            <dl>
+                <dt>About JD</dt>
+                <dd><a href="http://en.jd.com/help/question-7.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom1'>Corporate Profile</a></dd>
+                <dd><a href="http://en.jd.com/help/question-8.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom1'>Founder’s Profile</a></dd>
+                <dd><a href="http://en.jd.com/help/question-9.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom1'>Mission &amp; Values</a></dd>
+                <dd><a href="http://ir.jd.com/phoenix.zhtml?c=253315&p=irol-IRHome" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom1'>Investor Relations</a></dd>
+            </dl>
+            <dl>
+                <dt>Make Money with Us</dt>
+                <dd><a href="http://en.jd.com/help/question-49.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom2'>Sell on JD</a></dd>
+                <dd><a href="http://en.jd.com/help/question-50.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom2'>Become an Affiliate</a></dd>
+            </dl>
+            <dl>
+                <dt>Buyer Protection</dt>
+                <dd><a href="http://en.jd.com/help/question-16.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom3'>Safe Payment</a></dd>
+                <dd><a href="http://en.jd.com/help/question-18.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom3'>Refund &amp; Returns</a></dd>
+                <dd><a href="http://en.jd.com/help/question-19.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom3'>Privacy Policy</a></dd>
+            </dl>
+            <dl>
+                <dt>Let Us Help You</dt>
+                <dd><a href="http://en.jd.com/help/question-21.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom3'>Contact Us</a></dd>
+                <dd><a href="http://en.jd.com/help/question-23.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom4'>Terms &amp; Conditions</a></dd>
+            </dl>
+            <div class="fd">
+                <form action="">
+                    <txt style="position: absolute; z-index: 2; line-height: 43px; margin-left: 18px; margin-top: 0px; font-size: 12px; font-family: SimSun; color: rgb(204, 204, 204); display: inline;"></txt>
+                    <input id="subscribe-email" type="text" placeholder="Your Email to Get latest discounts" value="" class="ipt-text">
+                    <input id="subscribe-submit" type="button" value="Subscribe" class="ipt-submit">
+                </form>
+                <span id="sendresult" style="display:none" class="error f-fl mt5"></span>
+                <a class="link-facebook" href="https://www.facebook.com/pages/JDCOM/861644700572405"><s></s>Like Us on Facebook</a>
+            </div>
+        </div>
+        <div class="cpright">
+            <p>Copyright &copy; 2006-2015 360buy Ltd. All Rights Reserved</p>
+        </div>
+    </div>
+</div>
+<span id="top"></span>
+
+<script type="text/javascript" src="http://st.en.jd.com/newapp/ept/static/js/??lib/components/lang.js,lib/utils/json2.js,lib/utils/cookie.js,lib/utils/droplist.js,page/common/common.js,lib/utils/trimPath.js,lib/utils/validate.js,page/common/lib-v1.js"></script>
+<script type="text/javascript" src="http://st.en.jd.com/newapp/jdf/1.0.0/ui/??switchable/1.0.0/switchable.js,lazyload/1.0.0/lazyload.js"></script>
+<script type="text/javascript" >
+    seajs.use(['js/page/index/init'],function(a,b){});
+</script>
+<!--公共尾结束 -->
+<!-- S custom script -->
+<script type="text/javascript">
+    $(function(){
+        var headerHeight = $('.header').outerHeight()?parseInt($('.header').outerHeight()) : 110;
+        var floatTop = $('.float-top').height();
+        var floatShowFlag = false;
+        var floatHideFlag = false;
+        var floatShowHeight = $('.wrap-bd').offset().top+$('.wrap-hd-icon').height();
+        var saleCtTop = [];
+        var saleCtHeight = [];
+        var saleContent = $('.wrap-flr');
+        var floatDom = $('.float-top');
+        $(saleContent).each(function (i, k) {
+            saleCtHeight.push($(k).height())
+            saleCtTop.push($(k).offset().top - floatTop + 3)
+        })
+        /* init */
+        var tTop = $(window).scrollTop();
+        /* 当前态 */
+        $('.wrap-hd-extra a').eq(0).addClass("current");
+        $('.float-top a').eq(0).addClass("current");
+        for(var i = 0;i<saleContent.length;i++){
+            if(tTop>= saleCtTop[i] && tTop < saleCtTop[i] + saleCtHeight[i]) {
+                $('.wrap-hd-extra a').removeClass('current').eq(i).addClass('current');
+                $('.float-top a').removeClass('current').eq(i).addClass('current');
+            }
+        }
+        /* map click */
+        $('.float-top a').click(function(e){
+            var mapName = $(this).attr('href');
+            var tmpScrollTop = $(mapName).offset().top-floatTop +3;
+            $('html, body').animate({scrollTop : tmpScrollTop},500);
+            e.stopPropagation();
+            return false;
+        })
+        $('.wrap-hd-extra .map a').click(function(e){
+            var tIndex = $('.wrap-hd-extra .map a').index(this);
+            $('.float-top a').eq(tIndex).trigger('click');
+            e.stopPropagation();
+            return false;
+        })
+
+        $(window).scroll(function(e) {
+            var screenHeight = $(window).height();
+            var nowTop = $(window).scrollTop();
+            floatShowHeight = floatShowHeight = $('.wrap-bd').offset().top+$('.wrap-hd-icon').height();;
+            saleCtTop = [];
+            $(saleContent).each(function (i, k) {
+                saleCtTop.push($(k).offset().top - floatTop + 3)
+            })
+            /* float-top是否显示 */
+            if ( nowTop >= floatShowHeight ){
+                if(!floatShowFlag) {
+                    floatDom.fadeIn(300);
+                    floatShowFlag = true;
+                    setTimeout(function(){
+                        floatShowFlag = false;
+                    },400)
+                }
+            }
+            else{
+                if(!floatHideFlag) {
+                    floatDom.fadeOut(300);
+                    floatHideFlag = true;
+                    setTimeout(function(){
+                        floatHideFlag = false;
+                    },400)
+                }
+            }
+            /* header-fix占位符处理 */
+            if (nowTop > screenHeight) {
+                $('.wrapper').css('padding-top', headerHeight);
+            }
+            else {
+                $('.wrapper').css('padding-top', 0);
+            }
+            /* 当前态 */
+            for(var i = 0;i<saleContent.length;i++){
+                if(nowTop>= saleCtTop[i] && nowTop < saleCtTop[i] + saleCtHeight[i]) {
+                    $('.float-top a').removeClass('current').eq(i).addClass('current');
+                }
+            }
+
+        })
+    })
+</script>
+<!-- E custom script -->
+</body>
+</html>

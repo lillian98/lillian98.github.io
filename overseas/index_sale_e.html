@@ -55,7 +55,9 @@
         }
     })()
 </script>
-
+<style>
+    .header-fix{z-index: 0;}
+</style>
 <!-- header-top start -->
 <div class="header-top" style="width:1300px">
     <div class="w">
@@ -372,6 +374,7 @@
     </div>
 </div>
 <!-- E 吸顶导航 -->
+
 <!-- S 海外购底部 -->
 <div class="hyperchannel">
     <div class="w">
@@ -538,7 +541,14 @@
         },function(){
             $(this).removeClass("hover");
         });
-
+        var wh = $(window).height();
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > wh) {
+                $(".header").addClass("header-fix");
+            } else {
+                $(".header").removeClass("header-fix");
+            }
+        });
         //back to top
         var oTop = $("#top");
         $(window).scroll(function(){
@@ -661,7 +671,7 @@
                     "link": "http://en.jd.com/product/SKMEI-Pulse-Heart-Rate-Counter-Calories-Monitor-Men-Women-Digital-Sports-Watch-Sphygmograph-Pulsometer-Pulse-Wave-Wristwatch_674841.html",
                     "nameRussian": "Цифровые часы с монитором сердечной частоты",
                     "img": "tmp/goods2-1.jpg",
-                    "price": "9.9",
+                    "price": "12.99",
                     "oldPrice": "25.00",
                     "discount": "60%"
                 },
@@ -688,7 +698,7 @@
                     "link": "http://en.jd.com/product/SKMEI-Luxurious-Watches-Men-Fashion-Analog-Digital-Wristwatch-3ATM-Stainless-Military-Sports-Watch_670642.html",
                     "nameRussian": "Цифровые мужские кварц часы.",
                     "img": "tmp/goods2-4.jpg",
-                    "price": "9.9",
+                    "price": "13.99",
                     "oldPrice": "30.00",
                     "discount": "67%"
                 },
@@ -706,7 +716,7 @@
                     "link": "http://en.jd.com/product/SKMEI-Fashion-Black-Stainless-Full-Steel-Strap-Relogio-Male-Clock-Men-Wristwatch-Waterproof-Quartz-Sport-Watch_669107.html",
                     "nameRussian": "Солнечные цифровые часы со светодиодами.",
                     "img": "tmp/goods2-6.jpg",
-                    "price": "9.9",
+                    "price": "13.99",
                     "oldPrice": "20.00",
                     "discount": "51%"
                 }]
@@ -1001,26 +1011,22 @@
         "LUMINTOP has committed to innovate and manufacture personalized and cost-effective flashlights for the past 6 years. From tactical and outdoor flashlights, to dive lights, and headlamps, LUMINTOP has got you covered."];
         var lastTop = $(document).scrollTop();
         var floatTop = $('.float-top').height();
-        var floatShowHeight = $('.wrap-bd').offset().top;
+        var floatShowHeight = $('.wrap-bd').offset().top-floatTop;
         var floatDom = $('.float-top');
         var floatShowFlag = false;
         var floatHideFlag = false;
         var saleContent = $('.wrap-flr');
         var saleCtTop = [];
         var saleCtHeight = [];
+        var headerHeight = $('.header').outerHeight()?parseInt($('.header').outerHeight()) : 110;
         $(saleContent).each(function(i,k){
-            if(i == 1){
-                saleCtTop.push($(k).offset().top)
-            }
-            else{
-                saleCtTop.push($(k).offset().top-floatTop)
-            }
+            saleCtTop.push($(k).offset().top-floatTop+3);
             saleCtHeight.push($(k).height());
         })
 
-        if($(window).width()>1200){
-            //$('.sale-right-a').css({"right": ($(window).width() - 1200) / 2 - 65});
-            $('#top').css({"right": ($(window).width() - 1200) / 2 - 70});
+        if($(window).width()>1300){
+            //$('.sale-right-a').css({"right": ($(window).width() - 1300) / 2 - 65});
+            $('#top').css({"right": ($(window).width() - 1300) / 2 - 70});
         }
         else{
             //$('.sale-right-a').css({"right": 5});
@@ -1035,7 +1041,7 @@
                 $('.float-top a').removeClass('current').eq(i).addClass('current');
             }
         }
-        if ( tTop > floatShowHeight ){
+        if ( tTop >= floatShowHeight ){
             if(!floatShowFlag) {
                 floatDom.fadeIn(300);
                 floatShowFlag = true;
@@ -1043,7 +1049,6 @@
                     floatShowFlag = false;
                 },400)
             }
-
         }
         else{
             if(!floatHideFlag) {
@@ -1056,17 +1061,10 @@
         }
         $('.float-top a').click(function(e){
             var mapName = $(this).attr('href');
-            var tmpScrollTop = $(mapName).offset().top +3;
-            if(mapName == "#flr1") {
-            }
-            else{
-                tmpScrollTop = $(mapName).offset().top-floatTop +3;
-            }
-
-                $('html, body').animate({scrollTop : tmpScrollTop},500);
+            var tmpScrollTop = $(mapName).offset().top-floatTop +3;
+            $('html, body').animate({scrollTop : tmpScrollTop},500);
             e.stopPropagation();
             return false;
-
         })
         $('.wrap-hd-extra .map a').click(function(e){
             var tIndex = $('.wrap-hd-extra .map a').index(this);
@@ -1077,9 +1075,9 @@
         /* showFloat($(document).scrollTop());*/
         $(window).resize(function(e){
             floatShowHeight = $('.wrap-bd').offset().top;
-            if($(window).width()>1200){
-                //$('.sale-right-a').css({"right": ($(window).width() - 1200) / 2 - 65});
-                $('#top').css({"right": ($(window).width() - 1200) / 2 - 70});
+            if($(window).width()>1300){
+                //$('.sale-right-a').css({"right": ($(window).width() - 1300) / 2 - 65});
+                $('#top').css({"right": ($(window).width() - 1300) / 2 - 70});
             }
             else{
                 //$('.sale-right-a').css({"right": 5});
@@ -1088,8 +1086,20 @@
         })
         $(window).scroll(function(e){
             var nowTop = $(document).scrollTop();
+            var screenHeight = $(window).height();
+            floatShowHeight = $('.wrap-bd').offset().top-floatTop;
+            saleCtTop = [];
+            $(saleContent).each(function(i,k){
+                    saleCtTop.push($(k).offset().top-floatTop+3)
+            })
+            if (nowTop > screenHeight){
+                $('.wrapper').css('padding-top',headerHeight);
+            }
+            else{
+                $('.wrapper').css('padding-top',0);
+            }
             //showFloat(nowTop);
-            if ( nowTop > floatShowHeight ){
+            if ( nowTop >= floatShowHeight ){
                 if(!floatShowFlag) {
                     floatDom.fadeIn(300);
                     floatShowFlag = true;
