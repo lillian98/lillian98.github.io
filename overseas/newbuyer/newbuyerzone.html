@@ -566,16 +566,22 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
         var saleCtHeight = [];
         var saleContent = $('.wrap-flr');
         var floatDom = $('.float-top');
+        var screenHeight = $(window).height();
         $(saleContent).each(function (i, k) {
-            saleCtHeight.push($(k).height())
-            saleCtTop.push($(k).offset().top - floatTop + 3)
+            saleCtHeight.push($(k).height());
+            if(i == 0){
+                saleCtTop.push($(k).offset().top)
+            }
+            else{
+                saleCtTop.push($(k).offset().top - floatTop)
+            }
         })
         /* init */
         var tTop = $(window).scrollTop();
         /* 当前态 */
         if(tTop == 0){
-            $('.wrap-hd-extra a').eq(0).addClass("current");
-            $('.float-top a').eq(0).addClass("current");
+            $('.wrap-hd-extra a').removeClass('current').eq(0).addClass("current");
+            $('.float-top a').removeClass('current').eq(0).addClass("current");
         }
         else{
             for(var i = 0;i<saleContent.length;i++){
@@ -588,7 +594,11 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
         /* map click */
         $('.float-top a').click(function(e){
             var mapName = $(this).attr('href');
-            var tmpScrollTop = $(mapName).offset().top-floatTop +3;
+            var tmpScrollTop = $(mapName).offset().top-floatTop +5;
+            if($('.float-top a').index($(this)) == 0){
+                tmpScrollTop = $(mapName).offset().top-floatTop;
+            }
+            //console.log('1',tmpScrollTop)
             $('html, body').animate({scrollTop : tmpScrollTop},500);
             e.stopPropagation();
             return false;
@@ -601,15 +611,11 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
         })
 
         $(window).scroll(function(e) {
-            var screenHeight = $(window).height();
+            screenHeight = $(window).height();
             var nowTop = $(window).scrollTop();
-            floatShowHeight = floatShowHeight = $('.wrap-bd').offset().top+$('.wrap-hd-icon').height();;
-            saleCtTop = [];
-            $(saleContent).each(function (i, k) {
-                saleCtTop.push($(k).offset().top - floatTop + 3)
-            })
+            floatShowHeight = $('.wrap-bd').offset().top+$('.wrap-hd-icon').height();
             /* float-top是否显示 */
-            if ( nowTop >= floatShowHeight ){
+            if ( nowTop > floatShowHeight ){
                 if(!floatShowFlag) {
                     floatDom.fadeIn(300);
                     floatShowFlag = true;
@@ -629,14 +635,30 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
             }
             /* header-fix占位符处理 */
             if (nowTop > screenHeight) {
+                $('.header').addClass('header-fix');
                 $('.wrapper').css('padding-top', headerHeight);
             }
             else {
+                $('.header').removeClass('header-fix');
                 $('.wrapper').css('padding-top', 0);
             }
+            /* 重置各楼层高度 */
+            saleCtTop = [];
+            $(saleContent).each(function (i, k) {
+                if(i == 0){
+                    saleCtTop.push($(k).offset().top)
+                }
+                else{
+                    saleCtTop.push($(k).offset().top - floatTop)
+                }
+            })
             /* 当前态 */
             for(var i = 0;i<saleContent.length;i++){
-                if(nowTop>= saleCtTop[i] && nowTop < saleCtTop[i] + saleCtHeight[i]) {
+                if(nowTop < screenHeight){
+                    $('.float-top a').removeClass('current').eq(0).addClass('current');
+                    $('.wrap-hd-extra a').removeClass('current').eq(0).addClass('current');
+                }
+                else if(nowTop>= saleCtTop[i] && nowTop < saleCtTop[i] + saleCtHeight[i]) {
                     $('.float-top a').removeClass('current').eq(i).addClass('current');
                 }
             }
