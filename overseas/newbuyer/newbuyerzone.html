@@ -573,12 +573,16 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
         /* init */
         var tTop = $(window).scrollTop();
         /* 当前态 */
-        $('.wrap-hd-extra a').eq(0).addClass("current");
-        $('.float-top a').eq(0).addClass("current");
-        for(var i = 0;i<saleContent.length;i++){
-            if(tTop>= saleCtTop[i] && tTop < saleCtTop[i] + saleCtHeight[i]) {
-                $('.wrap-hd-extra a').removeClass('current').eq(i).addClass('current');
-                $('.float-top a').removeClass('current').eq(i).addClass('current');
+        if(tTop == 0){
+            $('.wrap-hd-extra a').eq(0).addClass("current");
+            $('.float-top a').eq(0).addClass("current");
+        }
+        else{
+            for(var i = 0;i<saleContent.length;i++){
+                if(tTop>= saleCtTop[i] && tTop < saleCtTop[i] + saleCtHeight[i]) {
+                    $('.wrap-hd-extra a').removeClass('current').eq(i).addClass('current');
+                    $('.float-top a').removeClass('current').eq(i).addClass('current');
+                }
             }
         }
         /* map click */
