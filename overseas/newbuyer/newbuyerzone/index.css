@@ -135,6 +135,7 @@ body{min-width: 1300px;background-color: #fff}
 .wrap-hd-icon{height: 75px;width: 272px;text-align: left}
 .wrap-hd .map{margin-left: 272px;}
 .wrap-hd,.float-top{border-bottom: 1px solid #d1b9a6;}
+.wrap-russian .float-top .map .item-2{margin-right: 18px;}
 .float-top .map-icon,.wrap-hd-extra .map-icon{border-bottom: 1px;}
 .float-top .float-hd-icon,.wrap-hd-icon{background-color: transparent;}
 .float-hd-icon-text,.wrap-hd-icon-text{color: #a7998f;  line-height: 75px;font-size: 20px;font-weight: lighter;vertical-align: middle}
