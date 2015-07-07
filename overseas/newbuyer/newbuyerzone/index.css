@@ -116,13 +116,13 @@ body{min-width: 1300px;background-color: #fff}
 .flr1 .wrap-flr-detail .wrap-text-p{color:#897f68}
 /* russian */
 .wrap-russian .wrap-hd .map a{width: auto;padding: 0 50px;}
-.wrap-russian .wrap-hd .item-1 .map-icon{left: 33px}
-.wrap-russian .wrap-hd .item-2 .map-icon{width: 380px;left: 43px;}
-.wrap-russian .wrap-hd .item-3 .map-icon{left: 44px;width: 200px;}
+.wrap-russian .wrap-hd .item-1 .map-icon{left: 33px;left: 29px;}
+.wrap-russian .wrap-hd .item-2 .map-icon{width: 380px;left: 43px;width: 286px;left: 28px;}
+.wrap-russian .wrap-hd .item-3 .map-icon{left: 44px;width: 200px;left: 38px;}
 .wrap-russian .float-top .map a{width: auto;padding: 0 19px;}
 .wrap-russian .float-top .map .item-2{margin-right: 20px;}
 .wrap-russian .float-top .map .item-1 .map-icon{width: 133px;left: 0;}
-.wrap-russian .float-top .map .item-2 .map-icon{width: 360px;left: 0;}
+.wrap-russian .float-top .map .item-2 .map-icon{width: 360px;left: 0;width: 263px;}
 .wrap-russian .float-top .map .item-3 .map-icon{left: 11px;width: 181px;}
 .wrap-russian .flr1 .wrap-flr-summary .wrap-text-p{width: 900px}
 .wrap-russian .flr1 .wrap-flr-detail-2 .wrap-text-p{width: 520px}
