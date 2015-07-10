@@ -309,7 +309,7 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
             </div>
             <!-- E header -->
             <!-- S floating-right-->
-            <div class="png-bg sale-right-a" id="floating-right">
+            <div class="png-bg sale-right-a has-coupon" id="floating-right">
                 <a href="http://en.jd.com/coupon/new.html" class="btn-1" target="_blank"></a>
                 <a href="https://www.facebook.com/pages/JDcom-Global/861644700572405?fref=ts" class="btn-2" target="_blank"></a>
                 <a href="http://ok.ru/group/52653393641653" class="btn-3" target="_blank"></a>
@@ -1228,7 +1228,7 @@ var goodsData =[
 </script>
 <script>
     $(function(){
-        if($(window).width()>1460){
+        if($(window).width()>1200){
             $('.sale-right-a').css({"right": ($(window).width() - 1200) / 2 - 130});
             //$('#top').css({"right": ($(window).width() - 1200) / 2 - 70});
         }
@@ -1237,7 +1237,7 @@ var goodsData =[
             //$('#top').css({"right": 0});
         }
         $(window).resize(function(e){
-            if($(window).width()>1460){
+            if($(window).width()>1200){
                 $('.sale-right-a').css({"right": ($(window).width() - 1200) / 2 - 130});
                // $('#top').css({"right": ($(window).width() - 1200) / 2 - 70});
             }

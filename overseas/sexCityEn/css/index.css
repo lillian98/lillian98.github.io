@@ -69,7 +69,9 @@ body{min-width: 1300px;font-family: arial;}
 #floating-right a.btn-4:hover{background-position:-218px -190px;}
 #floating-right .go-top{top:234px;left:0;width: 40px; height: 36px; background: url(http://st.en.jd.com/newapp/ept/static/ui/website/css/i/icon.png) -100px 0; vertical-align: middle; cursor: pointer;}
 #top{width:0;height:0;}
-
+#floating-right.has-coupon{background-position: 0 -181px;height: 107px;}
+#floating-right.has-coupon .btn-1{display: none;}
+#floating-right.has-coupon .go-top{top:56px;}
 /*floor*/
 .floor-wrap{width:100%;overflow: hidden;}
 .floor-wrap .top-title{position:absolute; font-size:14px; top:204px; left:131px;}
