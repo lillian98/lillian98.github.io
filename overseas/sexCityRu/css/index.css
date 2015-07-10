@@ -1,0 +1,266 @@
+.clearfloat { zoom: 1 }
+.clearfloat:after { display: block; clear: both; content: ""; visibility: hidden; height: 0 }
+.wrap-1200{position:relative; width:1200px;margin:0 auto;}
+body{min-width: 1300px;font-family: arial;}
+
+/*wrap-hd*/
+/*time-line*/
+.wrap-hd .time-line{width:100%;height:79px;background:#262626 url(../sprits/sexy-and-the-city-time-line-bg.jpg) no-repeat center 0;}
+.wrap-hd .time-line .mod-day{position:relative;float:left;height:66px;width:278px;/*width:278px;*/margin-right:12px;padding-top:13px; text-align: center;}
+.wrap-hd .time-line li{transition: background 0.5s; -moz-transition: background 0.5s;; -webkit-transition: background 0.5s;; -o-transition: background 0.5s;;}
+.wrap-hd .time-line .cur,.wrap-hd .time-line .over:hover{background-color: #FC23A3;}
+.wrap-hd .time-line .cur .name,.wrap-hd .time-line .over:hover .name{color:#FED0E7;}
+.wrap-hd .time-line .mod-day-1{/*width:258px;padding-left:20px;*/}
+.wrap-hd .time-line .mod-day-2{/*width:238px;padding-left:40px;*/margin-left:16px;}
+.wrap-hd .time-line .mod-day-3{/*width:273px;padding-left:5px;*/margin-left:15px;}
+.wrap-hd .time-line .mod-day-4{/*width:238px;padding-left:40px;*/margin-left:20px;margin-right:0;}
+.wrap-hd .time-line .come{display:none;font-size:25px;color:#fff;line-height:28px;}
+.wrap-hd .time-line .name-ru{color:#fff;font-size:22px;line-height:24px;}
+.wrap-hd .time-line .name{color:#fff;font-size:14px;line-height:16px;}
+.wrap-hd .time-line .date{margin-top:2px;color:#A8A8A8;font-size:12px;line-height:14px;}
+.wrap-hd .time-line .btn-go{display:block;position:absolute;top:0;left:0;width:100%;height:100%;background: url(about:blank);}
+.wrap-hd .time-line .cur .date,.wrap-hd .time-line .over:hover .date{color:#8D2560;}
+.wrap-hd .time-line .cur .btn-go{display:none;}
+.wrap-hd .time-line li.wait:hover{width:278px;height:66px;padding-left:0;padding-top:13px;text-align:center;background-color:#FC23A3;}
+.wrap-hd .time-line li.wait:hover .come{display:block;}
+.wrap-hd .time-line li.wait:hover .name-ru{font-size:14px;line-height:16px;color:#FED0E7;}
+.wrap-hd .time-line li.wait:hover .name{display:none;}
+.wrap-hd .time-line li.wait:hover .date{color:#8D2560;font-size:12px;margin-top:0;line-height:14px;}
+
+
+/*header*/
+.wrap-hd .mod-header{position:relative;width:100%;height:699px;overflow: hidden;background-color: #9FDBF4;}
+.wrap-hd .hd-bg-1{width:100%;height:350px;background: url(../sprits/sexy-and-the-city-ru-header-bg_1.jpg) no-repeat center 0;}
+.wrap-hd .hd-bg-2{width:100%;height:349px;background: url(../sprits/sexy-and-the-city-ru-header-bg_2.jpg) no-repeat center 0;}
+.wrap-hd .mod-header .wrap-1200{position:absolute;top:0;left:50%;margin-left:-600px;}
+.wrap-hd .mod-header h3,.wrap-hd .mod-header h6{display:none;}
+.wrap-hd .mod-header .tips{position:absolute;top:272px;left:-1px;font-size:17px;color:#fff;}
+.wrap-hd .mod-header .intro{position:absolute;top:315px;left:0;font-size:12px;width:672px;color:#C9E2EE;line-height: 14px;  /*letter-spacing: -0.3px;*/}
+.wrap-hd .mod-header .see-details{position:absolute;top:552px;left:0;width:272px;height:128px;background: url(about:blank);}
+.wrap-hd .mod-header .has-coupon{background: url(../sprits/sexy-and-the-city-has-coupon.png) 0 -128px;}
+.wrap-hd .mod-header .btn-coupon{position:absolute;top:552px;left:272px;width:128px;height:128px;background: url(about:blank);}
+.wrap-hd .mod-header .shop-now{background: url(../sprits/sexy-and-the-city-has-coupon.png) -272px -128px;}
+.wrap-hd .mod-header .mod-join{position:absolute;top:552px;left:418px;width:782px;height:126px; cursor: pointer;}
+.wrap-hd .mod-header .mod-join p{position:absolute;font-size:19px;color:#3d3127;}
+.wrap-hd .mod-header .mod-join .title{top:16px;left:25px;color:#A29B90;font-size:14px;}
+.wrap-hd .mod-header .mod-join .tips-1{top:38px;left:51px;}
+.wrap-hd .mod-header .mod-join .tips-2{top:61px;left:51px;}
+.wrap-hd .mod-header .mod-join .color{color:#fc23a3;}
+.wrap-hd .mod-header .btn-join{position:absolute;top:0;left:0;width:100%;height:100%;}
+.wrap-hd .mod-header .btn-ico{position:absolute;top:87px;left:26px;width:109px;height:24px;font-size:14px;line-height:24px;text-align:center;color:#fff;background-color:#FC23A3;cursor:pointer;}
+.wrap-hd .mod-header .btn-join:hover .btn-ico,.wrap-hd .mod-header .mod-join:hover .btn-ico{background-color:#FF52B8;}
+
+/*coupon rules*/
+.alert-area{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType = 0, StartColorStr = "#Bf000000", EndColorStr = "#Bf000000");z-index:10000;}
+:root .alert-area{filter:none;}
+.alert-area .mod-486{position:absolute;top:50%;left:50%;/*width:486px;height:273px;*/width:432px;height:219px;padding:27px;margin-top:-137px;margin-left:-243px;color:#fff;background: url(../sprits/sexy-and-the-city-coupon-rules-bg.jpg);}
+.alert-area .mod-486 h6{display:block;margin-bottom:24px;font-size:22px;font-weight:bold;line-height: 24px;}
+.alert-area .mod-486 p{font-size:14px;line-height: 19px;}
+.alert-area .btn-close{position:absolute;display:block;right:0;top:0;width:36px;height:36px;background: url(about:blank);}
+
+
+/*floating-right*/
+#floating-right{display:none;position:fixed;bottom:137px;width:119px;height:231px;background:url(../sprits/sexy-and-the-city-ru-floating-right.png) no-repeat 0 0;z-index: 1001;}
+#floating-right a.btn-2:hover,#floating-right a.btn-3:hover,#floating-right a.btn-4:hover{background:url(../sprits/sexy-and-the-city-En-floating_right.png) no-repeat -2px -2px;}
+#floating-right a{position:absolute;display:block;width:31px;height:31px;}
+#floating-right a.btn-1{width:115px;height:174px;top:0;left:0;border:2px solid #FC23A3;}
+#floating-right a.btn-1:hover{border-color: #fff;}
+#floating-right a.btn-2{top:191px;left:10px;}
+#floating-right a.btn-2:hover{background-position:-150px -190px;}
+#floating-right a.btn-3{top:191px;left:44px;}
+#floating-right a.btn-3:hover{background-position:-184px -190px;}
+#floating-right a.btn-4{top:191px;left:78px;}
+#floating-right a.btn-4:hover{background-position:-218px -190px;}
+#floating-right .go-top{top:234px;left:0;width: 40px; height: 36px; background: url(http://st.en.jd.com/newapp/ept/static/ui/website/css/i/icon.png) -100px 0; vertical-align: middle; cursor: pointer;}
+#top{width:0;height:0;}
+
+/*floor*/
+.floor-wrap{width:100%;overflow: hidden;}
+.floor-wrap .top-title{position:absolute;  top:214px; left:66px; font-size:12px;}
+.floor-wrap .top-title .benefit{width:398px;height:21px; margin-bottom:5px; line-height:21px;  text-align:center;color:#fff; background-color: #000;}
+.floor-wrap .top-title .enter{color:#000;}
+.floor-wrap .top-title .enter:hover{text-decoration: underline;}
+.floor-wrap .top-title .arrow-right{display:inline-block;width:0;height:0;font-size:0;line-height:0;overflow:hidden;border-width:5px;border-color:transparent transparent transparent #000;border-style:solid dashed solid solid ;}
+.floor-wrap .item{position:absolute;}
+.floor-wrap .item .name{position: absolute;line-height: 16px; color:#000;}
+.floor-wrap .item .price-info{position: absolute; bottom: 0; width:100%; color:#000;}
+.floor-wrap .item .sales{display:inline-block;width:60px;height:20px;margin-right:7px;line-height:20px;text-align:center;background-color:#000;color:#fff;font-size:12px;}
+.floor-wrap .item .price-cur{font-size: 16px; vertical-align: middle; margin-right:7px;}
+.floor-wrap .item:hover .price-cur{color:#e4012c;}
+.floor-wrap .item .price-ori{font-size: 14px; vertical-align: middle; color:#cdcdcd;}
+.floor-wrap .item .font-bold{margin-right:3px;font-size:14px;font-weight: bold;font-style:italic;}
+.floor-wrap .item .font-normal{font-size:12px;}
+.floor-wrap .item .goods-link{position:absolute;top:0;left:0; width:100%; height:100%; font-size:0; text-indent:100%; white-space:nowrap; overflow:hidden; background: url(about:blank);}
+.floor-wrap .mod-mix{margin-bottom:18px;}
+.floor-wrap .mod-mix .bg-img{position:absolute;width:100%;height:100%;top:0;left:0;}
+.floor-wrap .mod-mix .deco-top{position:absolute;left:0;width:100%;}
+.floor-wrap .mod-mix .deco-left{position:absolute;bottom:0;left:-360px;width:360px;}
+.floor-wrap .mod-mix .deco-right{position:absolute;bottom:0;left:1200px;width:254px;}
+.floor-wrap .mod-mix .deco-bottom{position:absolute;bottom:0;left:0;width:100%;}
+.floor-wrap .btn-more{position:absolute;right:0;bottom:-49px;width:115px;height:33px;line-height: 33px;text-align: center;font-size:14px;background-color: #fff;}
+.floor-wrap .btn-more:hover{color:#fc23a3;}
+.floor-wrap-1 .btn-more{color:#5196b3;}
+.floor-wrap-2 .btn-more{color:#cf72a3;}
+.floor-wrap-3 .btn-more{color:#56caad;}
+.floor-wrap-4 .btn-more{color:#6a96cc;}
+
+/*floor-1*/
+.floor-wrap-1{width:100%;padding-top:108px;background-color: #9FDBF5;}
+.floor-wrap-1 .mod-mix{position:relative;width:100%;height:756px;}
+.floor-wrap-1 .mod-mix .deco-top{height:108px;top:-108px;background: url(../sprits/sexy-and-the-city-floor-1-deco-top.jpg) no-repeat 0 0;}
+.floor-wrap-1 .mod-mix .deco-left{height:864px;background: url(../sprits/sexy-and-the-city-floor-1-deco-left.jpg) no-repeat 0 0;}
+.floor-wrap-1 .mod-mix .deco-right{height:864px;background: url(../sprits/sexy-and-the-city-floor-1-deco-right.jpg) no-repeat 0 0;}
+/*floor-1 goods-1*/
+.floor-wrap-1 .item-1{width: 340px; height: 396px; top: 294px; left: 132px;}
+.floor-wrap-1 .item-1 .name{  left: 184px; bottom: 45px; width:100%;}
+.floor-wrap-1 .item-1 .price-info{  left: 184px;}
+/*floor-1 goods-2*/
+.floor-wrap-1 .item-2{width: 219px; height: 360px; top: 48px; left: 920px;}
+.floor-wrap-1 .item-2 .name{  left: 20px; bottom: 45px; width:300px;}
+.floor-wrap-1 .item-2 .price-info{  left: 21px;}
+/*floor-1 goods-3*/
+.floor-wrap-1 .item-3{width: 184px; height: 264px; top: 299px; left: 460px;}
+.floor-wrap-1 .item-3 .name{  left: 18px; bottom: 45px; width:155px;}
+.floor-wrap-1 .item-3 .price-info{  left: 18px;}
+/*floor-1 goods-4*/
+.floor-wrap-1 .item-4{width: 199px; height: 293px; top: 41px; left: 681px;}
+.floor-wrap-1 .item-4 .name{  left: 25px; bottom: 45px; width:100%;}
+.floor-wrap-1 .item-4 .price-info{  left: 25px;}
+/*floor-1 goods-5*/
+.floor-wrap-1 .item-5{width: 200px; height: 288px; top: 393px; left: 681px;}
+.floor-wrap-1 .item-5 .name{  left: 25px; bottom: 45px; width:155px;}
+.floor-wrap-1 .item-5 .price-info{  left: 25px;}
+/*floor-1 goods-6*/
+.floor-wrap-1 .item-6{width: 194px; height: 200px; top: 466px; left: 950px;}
+.floor-wrap-1 .item-6 .name{  left: 18px; bottom: 45px; width:100%;}
+.floor-wrap-1 .item-6 .price-info{  left: 19px;}
+
+/*floor-2*/
+.floor-wrap-2{width:100%;padding-top:144px;background-color: #FFD2E9;}
+.floor-wrap-2 .top-title{left: 743px; top:240px;}
+.floor-wrap-2 .top-title .enter{margin-left: -5px;}
+.floor-wrap-2 .mod-mix{position:relative;width:100%;height:756px;}
+.floor-wrap-2 .mod-mix .deco-top{height:144px;top:-144px;background: url(../sprits/sexy-and-the-city-floor-2-deco-top.jpg) no-repeat 0 0;}
+.floor-wrap-2 .mod-mix .deco-left{bottom:-30px;height:930px; background: url(../sprits/sexy-and-the-city-floor-2-deco-left.jpg) no-repeat 0 0;}
+.floor-wrap-2 .mod-mix .deco-right{height:900px; background: url(../sprits/sexy-and-the-city-floor-2-deco-right.jpg) no-repeat 0 0;}
+.floor-wrap-2 .mod-mix .deco-bottom{bottom:-30px;height:30px; background: url(../sprits/sexy-and-the-city-floor-2-deco-bottom.jpg) no-repeat 0 0;}
+/*floor-2 goods-1*/
+.floor-wrap-2 .item-1{ width: 280px; height: 443px; top: 28px; left: 78px;}
+.floor-wrap-2 .item-1 .name{  left: 26px; bottom: 38px; width:280px;}
+.floor-wrap-2 .item-1 .price-info{  left: 27px;}
+/*floor-2 goods-2*/
+.floor-wrap-2 .item-2{ width: 185px; height: 290px; top: 367px; left: 453px;}
+.floor-wrap-2 .item-2 .name{  left: 8px; bottom: 38px; width:185px;}
+.floor-wrap-2 .item-2 .price-info{  left: 9px;}
+/*floor-2 goods-3*/
+.floor-wrap-2 .item-3{ width: 240px; height: 378px; top: 329px; left: 931px;}
+.floor-wrap-2 .item-3 .name{  left: 14px; bottom: 38px; width:100%;}
+.floor-wrap-2 .item-3 .price-info{  left: 16px;}
+.floor-wrap-2 .item-3 .price-info .price-ori{  color: #72A4A9}
+/*floor-2 goods-4*/
+.floor-wrap-2 .item-4{ width: 245px; height: 242px; top: 76px; left: 410px;}
+.floor-wrap-2 .item-4 .name{  left: 16px; bottom: 38px; width:100%;}
+.floor-wrap-2 .item-4 .price-info{  left: 18px;}
+/*floor-2 goods-5*/
+.floor-wrap-2 .item-5{ width: 198px; height: 290px; top: 359px; left: 691px;}
+.floor-wrap-2 .item-5 .name{  left: 21px; bottom: 38px; width:198px;}
+.floor-wrap-2 .item-5 .price-info{  left: 21px;}
+/*floor-2 goods-6*/
+.floor-wrap-2 .item-6{ width: 234px; height: 170px; top: 538px; left: 154px;}
+.floor-wrap-2 .item-6 .name{  left: 10px; bottom: 38px; width:214px;}
+.floor-wrap-2 .item-6 .price-info{  left: 10px;}
+.floor-wrap-2 .item-6 .price-info .price-ori{  color: #72A4A9;}
+
+/*floor-3*/
+.floor-wrap-3{width:100%;padding-top:101px;background-color: #9FF4DF;}
+.floor-wrap-3 .mod-mix{position:relative;width:100%;height:756px;}
+.floor-wrap-3 .mod-mix .deco-top{width:100%;height:101px;position:absolute;top:-101px;left:0;background: url(../sprits/sexy-and-the-city-03-deco-top.jpg) no-repeat 0 0;}
+.floor-wrap-3 .mod-mix .deco-left{width:238px;height:416px;position:absolute;bottom:0;left:-238px;background: url(../sprits/sexy-and-the-city-03-deco-left.jpg) no-repeat 0 0;}
+.floor-wrap-3 .mod-mix .deco-right{width:123px;height:297px;position:absolute;top:-101px;right:-123px;background: url(../sprits/sexy-and-the-city-03-deco-right.jpg) no-repeat 0 0;}
+.floor-wrap-3 .mod-mix .top-title{top: 220px; left: 62px;}
+/*floor-3 goods-1*/
+.floor-wrap-3 .item-1{ width: 321px; height: 541px; top: 136px; left: 450px;}
+.floor-wrap-3 .item-1 .name{  left: 85px; bottom: 34px; width:155px;}
+.floor-wrap-3 .item-1 .price-info{  left: 85px;}
+/*floor-3 goods-2*/
+.floor-wrap-3 .item-2{ width: 230px; height: 254px; top: 444px; left: 920px;}
+.floor-wrap-3 .item-2 .name{  left: 25px; bottom: 34px; width:210px;}
+.floor-wrap-3 .item-2 .price-info{  left: 25px;}
+/*floor-3 goods-3*/
+.floor-wrap-3 .item-3{ width: 170px; height: 270px; top: 379px; left: 255px;}
+.floor-wrap-3 .item-3 .name{  left: 13px; bottom: 34px; width:132px;}
+.floor-wrap-3 .item-3 .price-info{  left: 13px;}
+/*floor-3 goods-4*/
+.floor-wrap-3 .item-4{ width: 236px; height: 320px; top: 49px; left: 942px;}
+.floor-wrap-3 .item-4 .name{  left: 19px; bottom: 34px; width:100%;}
+.floor-wrap-3 .item-4 .price-info{  left: 19px;}
+/*floor-3 goods-5*/
+.floor-wrap-3 .item-5{ width: 200px; height: 248px; top: 268px; left: 46px;}
+.floor-wrap-3 .item-5 .name{  left: 19px; bottom: 34px; width:100%;}
+.floor-wrap-3 .item-5 .price-info{  left: 19px;}
+/*floor-3 goods-6*/
+.floor-wrap-3 .item-6{ width: 174px; height: 214px; top: 232px; left: 761px;}
+.floor-wrap-3 .item-6 .name{  left: 19px; bottom: 34px; width:100%;}
+.floor-wrap-3 .item-6 .price-info{  left: 19px;}
+
+/*floor-4*/
+.floor-wrap-4{width:100%;padding-top:144px;background-color: #CEE4FF;}
+.floor-wrap-4 .top-title{left: 693px; top:222px;}
+.floor-wrap-4 .mod-mix{position:relative;width:100%;height:760px;}
+.floor-wrap-4 .mod-mix .deco-top{height:144px;top:-144px;background: url(../sprits/sexy-and-the-city-floor-4-deco-top.jpg) no-repeat 0 0;}
+.floor-wrap-4 .mod-mix .deco-left{bottom:-10px;height:914px; background: url(../sprits/sexy-and-the-city-floor-4-deco-left.jpg) no-repeat 0 0;}
+.floor-wrap-4 .mod-mix .deco-right{bottom:4px;height:900px; background: url(../sprits/sexy-and-the-city-floor-4-deco-right.jpg) no-repeat 0 0;}
+/*floor-4 goods-1*/
+.floor-wrap-4 .item-1{ width: 272px; height: 418px; top: 63px; left: 83px;}
+.floor-wrap-4 .item-1 .name{  left: 22px; bottom: 38px; width:270px;}
+.floor-wrap-4 .item-1 .price-info{  left: 22px;}
+/*floor-4 goods-2*/
+.floor-wrap-4 .item-2{ width: 290px; height: 298px; top: 43px; left: 429px;}
+.floor-wrap-4 .item-2 .name{  left: 11px; bottom: 38px; width:190px;}
+.floor-wrap-4 .item-2 .price-info{  left: 11px;}
+/*floor-4 goods-3*/
+.floor-wrap-4 .item-3{ width: 224px; height: 384px; top: 327px; left: 917px;}
+.floor-wrap-4 .item-3 .name{  left: 3px; bottom: 38px; width:300px;}
+.floor-wrap-4 .item-3 .price-info{  left: 3px;}
+/*floor-4 goods-4*/
+.floor-wrap-4 .item-4{ width: 164px; height: 255px; top: 378px; left: 468px;}
+.floor-wrap-4 .item-4 .name{  left: 3px; bottom: 38px; width:154px;}
+.floor-wrap-4 .item-4 .price-info{ width:200px; left: 3px;}
+/*floor-4 goods-5*/
+.floor-wrap-4 .item-5{ width: 208px; height: 164px; top: 541px; left: 227px;}
+.floor-wrap-4 .item-5 .name{  left: 5px; bottom: 38px; width:154px;}
+.floor-wrap-4 .item-5 .price-info{  left: 5px;}
+/*floor-4 goods-6*/
+.floor-wrap-4 .item-6{ width: 194px; height: 365px; top: 305px; left: 697px;}
+.floor-wrap-4 .item-6 .name{  left: 7px; bottom: 38px; width:194px;}
+.floor-wrap-4 .item-6 .price-info{  left: 7px;}
+
+/* goods-list */
+.goods-list{margin-bottom: 118px;}
+.goods-list ul{margin-right: -16px;*zoom:1;}
+.goods-list li{width: 288px;height: 395px;overflow: hidden;margin: 16px 16px 0 0;background-color: #fff;_display:inline;float: left;position: relative}
+.goods-img{width: 288px;height: 295px;overflow: hidden;}
+.goods-info{width: 260px;height: 66px;margin: 0 auto;padding:17px 14px;position: relative}
+.goods-list li:hover img{transition:all .5s;-webkit-transition:all .5s;-moz-transition:all .5s;-o-transition:all .5s;}
+.href-goods-name{display: block;width: 100%;height: 36px;overflow: hidden;color: #8f8f8f;;font-size: 14px;}
+.goods-price{line-height: 22px;}
+.goods-price em{font-size: 18px;color: #e4012c;font-weight: bold;display: inline-block;margin-right: 8px;vertical-align: top;}
+.goods-price span{color: #a3a3a3;font-size: 14px;text-decoration: line-through;}
+.goods-promote{position: absolute; right: 15px; color: #e4012c; font-size: 14px; top: 55px;}
+.goods-list li:hover img{transform: scale(1.02);-webkit-transform: scale(1.02);-moz-transform: scale(1.02);-o-transform: scale(1.02)}
+/*layer-border*/
+.layer-border{position: absolute;top:0;left: 0;width: 284px;height: 391px;border: 2px solid #e4012c;opacity: 0;transition:opacity .3s;filter:alpha(opacity=0)}
+.layer-border .href-goods-border{position: absolute;width: 100%;height: 100%;top:0;left: 0;background: url(about:blank)}
+.goods-list li:hover .layer-border{opacity: 1;;filter:alpha(opacity=100);}
+
+
+
+/*
+ for foot bug
+*/
+
+.fd txt,.fd text{height: 42px;overflow: hidden;margin-left: 0;left: 18px;}
+.footer .fd{position: relative}
+.header-fix{z-index: 1}
+.footer .fd .ipt-text{height: 14px;}
+.hyperchannel{margin-top:0;}
