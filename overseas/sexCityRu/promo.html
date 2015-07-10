@@ -288,7 +288,7 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
                         <span>Любишь яркие цвета, легкие ткани и необычный дизайн? С нами ты легко найдешь то, что тебе нужно. Сексуальный купальник подчеркнет твою женственность, а яркие аксессуары завершат твой бесподобный пляжный образ!</span>
                     </p>
                     <a href="javascript:void(0);" target="_blank" class="see-details"></a>
-                    <a href="http://en.jd.com/coupon/new.html" target="_blank" class="btn-coupon"></a>
+                    <a href="#nolink" target="_blank" class="btn-coupon"></a>
                     <div class="alert-area">
                         <div class="mod-486">
                             <h6>Правила:</h6>
@@ -1271,10 +1271,19 @@ var goodsData =[
 
     /*领券规则*/
     $(function(){
+        $(".btn-coupon").click(function(e){
+            $(this).addClass('shop-now').siblings('.see-details').addClass('has-coupon');
+            if($(this).attr('href') == '#nolink'){
+                $(this).attr('href','http://en.jd.com/ru/coupon/new.html');
+                $(this).attr('target','_blank');
+                e.stopPropagation();
+                return false;
+            }
+        })
         $('.alert-area .btn-close').click(function(){$('.alert-area').hide();return false;});//关闭浮层
         $('.see-details').click(function(){
             $('.alert-area').show();
-            $(this).addClass('has-coupon').siblings('.btn-coupon').addClass('shop-now');
+            //$(this).addClass('has-coupon').siblings('.btn-coupon').addClass('shop-now');
             return false;
         });
         $('.alert-area').click(function(){
