@@ -48,6 +48,45 @@
 </head>
 <body>
 <script type="text/javascript">
+    (function() {
+        //判断访问终端
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                }
+            }()
+        }
+        function getPrefix(brow) {
+            var pre = "";
+            return pre = brow.webKit ? "-Webkit" : brow.gecko ? "-Moz" : brow.trident ? "-Ms" : brow.presto ? "-O" : ""
+        }
+        //browser.versions.trident返回真假，真则是IE内核，以此类推browser.versions.webKit是否为谷歌内核
+        if (browser.versions.mobile) {
+            document.body.className = document.body.className + ' m-body';
+            var tScale = 'scale('+document.body.clientWidth/document.body.getAttribute('data-width') +')';
+            document.body.style.zoom = document.body.clientWidth/document.body.getAttribute('data-width');/* body zoom*/
+        }
+        var browserIE=navigator.appName;
+        var b_version=navigator.appVersion;
+        var version=b_version.split(";");
+        var trim_Version=version[1].replace(/[ ]/g,"");
+        if((browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE6.0") || (browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE7.0") ||(browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE8.0")|| (browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE9.0")){
+            document.body.className = document.body.className + ' no-ani';
+        }
+    })()
+</script>
+<script type="text/javascript">
     var google_tag_params = {
         ecomm_prodid: '',
         ecomm_pagetype:'home',
@@ -212,6 +251,7 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
     /* wrap-hd */
     .wrap-hd{background-image: url(img/hardware_hd.jpg);height: 920px;margin-bottom: -207px;background-position: center 0;}
     /* wrap-bd */
+    .wrap-bd{position: relative}
         /* wrap-tab */
         .wrap-tab{background-color: #fff;font-size: 0;*letter-spacing:-1px;height: 67px;border-bottom: 1px solid #df0414;margin-bottom: 26px;}
         .tab-item{display: inline-block;width: 240px;height: 67px;line-height: 67px;color: #666666;text-align: center;font-size: 18px;transition: background .5s;}
@@ -728,25 +768,94 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
 
 <script>
     $(function () {
+        var winHeight = $(window).height();
+        var headerHeight = $('.header').outerHeight();
+        var headerSelfHeight = $('.header-fix').outerHeight();
+        var liHeight = $('.goods-li').outerHeight();
         init();
-        function init(){
+        function init() {
             $('.wrap-tab .item-1').addClass('current');
             $('.goods-list').show();
         }
-        $('.wrap-tab a').click(function(e){
+        $('.wrap-tab a').click(function (e) {
             var tIndex = $('.wrap-tab a').index($(this));
-            console.log(tIndex);
-            if(tIndex == 0){
+            if (tIndex == 0) {
                 $('.goods-list').show();
             }
-            else if(tIndex < $('.wrap-tab a').length){
-                $('.goods-list').hide().eq(tIndex-1).show();
+            else if (tIndex < $('.wrap-tab a').length) {
+                $('.goods-list').hide().eq(tIndex - 1).show();
             }
-            $(window).scrollTop($('.wrap-tab').offset().top-$('.header').outerHeight());
+            tabRidLazy(tIndex);
+            /*var scrollTop = $('.wrap-tab').offset().top;*/
+            if ($('.wrap-tab').offset().top > winHeight) {
+                $('.header').addClass('header-fix');
+                headerSelfHeight = $('.header-fix').outerHeight()
+                $('.wrapper').css('padding-top', headerHeight);
+                var scrollTop = $('.wrap-tab').offset().top - headerSelfHeight;
+            }
+            else {
+                $('.header').removeClass('header-fix');
+                $('.wrapper').css('padding-top', 0);
+                var scrollTop = $('.wrap-tab').offset().top;
+            }
+            $(window).scrollTop(scrollTop);
             $('.tab-item').removeClass('current').eq(tIndex).addClass('current');
             e.stopPropagation();
             return false;
         })
+        /* tabRidLazy */
+        function tabRidLazy(_index) {
+            var listIndex = 0;
+            if (_index > 0) {
+                listIndex = _index - 1;
+            }
+            var nowList = $('.goods-list').eq(listIndex);
+            var nowLi = $(nowList).find('.goods-li');
+            var canSeeRow = Math.ceil(winHeight / liHeight);
+            for (var i = 0; i < canSeeRow * 2; i++) {
+                if (i < nowLi.length) {
+                    $(nowLi.eq(i).find('img')).each(function (j, k) {
+                        if (typeof($(k).attr('src')) != 'undefined') {
+                        }
+                        else {
+                            $(k).attr('src', $(k).attr('data-lazy-img'));
+                            $(k).attr('data-lazy-img', 'done');
+                        }
+                    })
+                }
+            }
+        }
+
+        /* tabRidLazy */
+        /* resize */
+        $(window).resize(function (e) {
+            // winHeight = $(window).height();
+            headerHeight = $('.header').outerHeight();
+            if ($(window).scrollTop() > winHeight) {
+                $('.header').addClass('header-fix');
+                $('.wrapper').css('padding-top', headerHeight);
+            }
+            else {
+                $('.header').removeClass('header-fix');
+                $('.wrapper').css('padding-top', 0);
+            }
+        }).trigger('scroll')
+        /* resize */
+        /* scroll */
+        $(window).scroll(function (e) {
+            if ($(window).scrollTop() > winHeight) {
+                $('.header').addClass('header-fix');
+                headerSelfHeight = $('.header-fix').outerHeight();
+                $('.wrapper').css('padding-top', headerHeight);
+            }
+            else {
+                $('.header').removeClass('header-fix');
+                $('.wrapper').css('padding-top', 0);
+            }
+            e.stopPropagation();
+            return false;
+        })
+        /* scroll */
     })
 </script>
 <!--公共尾结束 -->
