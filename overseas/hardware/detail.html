@@ -419,6 +419,7 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
         function init() {
             $('.wrap-tab .item-1').addClass('current');
             $('.goods-list').show();
+            tabRidLazy(0);
         }
         $('.wrap-tab a').click(function (e) {
             var tIndex = $('.wrap-tab a').index($(this));
