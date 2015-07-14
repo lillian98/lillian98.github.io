@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Он-лайн Магазин электроники, одежды, аксессуаров и другое</title>
+    <meta name="google-translate-customization" content="4a59cc671fcf82c6-dde0ca028c594a15-g7518baae2bd23516-e"/>
+    <meta name="keywords" content="jd, online shopping, shop online, Wedding & Events,Bags & Accessories,Sports & Outdoors,Health & Beauty, Jewelry & Watches, Cell Phones & Accessories, Electronics, Apple Accessories, Computers & Accessories, Automotive, Shoes, Costumes & Cosplay,Hobbies & Toys,Movies & Music, Video Games">
+    <meta name="description" content="Discover over 300,000 products and find the latest promotional offers! FREE SHIPPING across a range of products - High quality, low prices everyday!">
+    <link rel="shortcut icon" href="http://www.360buy.com/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="http://st.en.jd.com/ru/css/index-ru.css" media="all"/>
+    <link href="http://st.en.jd.com/newapp/ept/static/ui/common/base.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="http://st.en.jd.com/newapp/ept/static/ui/website/css/common1.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="index.css" media="all"/>
+    <link media="all" href="http://st.en.jd.com/newapp/ept/static/ui/website/css/content.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://st.en.jd.com/newapp/ept/static/ui/website/css/index1.css" media="all"/>
+    <script src="http://st.en.jd.com/newapp/jdf/lib/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="http://st.en.jd.com/newapp/jdf/1.0.0/unit/base/1.0.0/base.js"></script>
+    <script type="text/javascript" src="http://st.en.jd.com/newapp/jdf/1.0.0??ui/ui/1.0.0/ui.js,unit/event/1.0.0/event.js"></script>
+
+    <script type="text/javascript">
+        var jaq = jaq || [];
+        jaq.push(['account', 'UA-J2011-6']);
+        jaq.push(['domain', 'en.jd.com']);
+        jaq.push(['erp_account', '']);
+        (function () {
+            var ja = document.createElement('script');
+            ja.type = 'text/javascript';
+            ja.async = true;
+            ja.src = ('https:' == document.location.protocol ? 'https://cscssl' : 'http://csc') + '.jd.com/joya.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ja, s);
+        })();
+    </script>
+    <script type="text/javascript">
+        seajs.config({
+            base : "http://st.en.jd.com/newapp/ept/static/"
+        });
+    </script>
+    <script>
+        function errorImg(img) {
+            img.src = "/static/app/css/i/blank.gif";
+            img.onerror = null;
+            $(img).addClass("err-img");
+        }
+    </script>
+
+</head>
+
+<body data-width="1300" class="wrap-russian">
+
+<!--代林波提供 -->
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WFSLVN"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WFSLVN');</script>
+<!-- End Google Tag Manager -->
+
+<script type="text/javascript">
+    (function() {
+        //判断访问终端
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                }
+            }()
+        }
+        function getPrefix(brow) {
+            var pre = "";
+            return pre = brow.webKit ? "-Webkit" : brow.gecko ? "-Moz" : brow.trident ? "-Ms" : brow.presto ? "-O" : ""
+        }
+        //browser.versions.trident返回真假，真则是IE内核，以此类推browser.versions.webKit是否为谷歌内核
+        if (browser.versions.mobile) {
+            document.body.className = document.body.className + ' m-body';
+            var tScale = 'scale('+document.body.clientWidth/document.body.getAttribute('data-width') +')';
+            document.body.style.zoom = document.body.clientWidth/document.body.getAttribute('data-width');/* body zoom*/
+        }
+        var browserIE=navigator.appName;
+        var b_version=navigator.appVersion;
+        var version=b_version.split(";");
+        var trim_Version=version[1].replace(/[ ]/g,"");
+        if((browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE6.0") || (browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE7.0") ||(browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE8.0")|| (browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE9.0")){
+            document.body.className = document.body.className + ' no-ani';
+        }
+    })()
+</script>
+
+<input type="hidden" value="ru" id="lang"/>
+<!--公共头开始-->
+<div class="header-top">
+    <div class="w">
+        <ul class="header-top-r">
+            <li class="fore1"><a href="http://en.jd.com/help/question-59.html">Как купить на JD.COM</a></li>
+            <li class="spacer"></li>
+            <li class="fore1"><a href="http://en.jd.com/help/question-7.html">о JD</a></li>
+            <li class="spacer"></li>
+            <li class="fore2"><a href="http://en.jd.com/help/question-21.html">Помощь</a></li>
+            <li class="spacer"></li>
+            <li class="fore2"><a href="http://www.jd.com">Основной сайт JD.com</a></li> <li class="spacer"></li>
+            <li id="lan-sel" class="fore3">
+                <div class="dt">Язык<s></s></div>
+                <div class="lan-box">
+                    <div class="spacer"></div>
+                    <div class="mt">
+                        <span class="f-cb"></span>
+                        <span>Многоязычный сайт：</span>
+                        <ul>
+                            <li><a target="_blank" href="http://en.jd.com">Global Site (English)</a></li>
+                            <li><a target="_blank" href="http://en.jd.com/ru">Сайт на русском</a></li>
+                            <li style="width:160px;"><a target="_blank" href="http://www.jd.com">Основной сайт JD.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="header">
+    <div class="w" style="width:1310px;">
+        <a class="logo-ru" href="http://en.jd.com" style="margin-right:10px;"></a>
+
+        <form class="search-form">
+            <div class="search-operate-box f-fl">
+                <div class="search-cate-title"><span class="search-category-value" id="search-category-value"  catid=""> Все категории </span><s></s><div class="spacer"></div></div>
+                <div class="search-cate-list">
+                    <ul class="j-select-opts">
+                    </ul>
+
+                </div>
+            </div>
+            <div class="search-key-box f-fr">
+                <input type="text" id="searchKeyWord" name="SearchText" value="" autocomplete="off" maxlength="50" placeholder="Покупки для..." class="search-key">
+                <input type="button" id="doSearch" value="" class="search-button">
+            </div>
+            <div class="search-key-list" style="display: none;">
+                <strong></strong>
+                <ul id="search-result-list">
+                </ul>
+
+            </div>
+        </form>
+
+        <ul class="tools-box">
+            <li><a class="cart" href="http://c.en.jd.com/cart/cart.html"><s></s><span>Корзина</span></a></li>
+            <li><a class="wish" href="http://s.en.jd.com/usercenter/wishlist/list.html"><s></s><span>Список желаний</span></a></li>
+            <li class="item-sign">
+                <div class="sign"><s></s><span>Войти</span></div>
+                <!-- 登录后 -->
+                <div style="display: none" class="sign-box s-1">
+                    <div class="spacer"></div>
+                    <div class="mt">
+
+                        <a href="javascript:void(0);">Добро пожаловать </a>
+                    </div>
+                    <div class="mc">
+                        <p><a target="_blank" href="http://o.en.jd.com/order/orderList.html">Мой Заказ</a></p>
+                        <p><a target="_blank" href="http://s.en.jd.com/usercenter/wishlist/list.html">Мои желания</a></p>
+                        <p><a target="_blank" href="">Настройки аккаунта</a></p>
+                        <a class="btn-join" href="javascript:logout();">Выйти</a>
+                    </div>
+                </div>
+                <!-- 登录前 -->
+                <div class="sign-box s-2">
+                    <div class="spacer"></div>
+                    <div class="mt">
+                        <a class="btn-sign" href="javascript:login();">Войти</a>
+
+                    </div>
+                    <div class="mc">
+                        <p><a href="javascript:void(0);">Новый покупатель?</a></p>
+                        <a class="btn-join" href="javascript:register();">Регистрация бесплатно</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="nav">
+    <div class="w">
+        <div  class="categorys">
+            <div class="categorys-hd"><a href="javascript:void(0);">Категории</a></div>
+            <div class="categorys-bd" id="categorys" style="display: none;">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--公共头结束 -->
+
+<!--内容区 -->
+<div class="wrapper">
+    <!-- S 头部 -->
+    <div class="wrap-hd">
+
+    </div>
+    <!-- E 头部 -->
+    <!-- S 内容 -->
+    <div class="wrap-bd">
+        <a href="#nolink" class="href-map" id="wrapBd"></a>
+        <div class="wrap-1200">
+            <!-- S nav -->
+            <div class="wrap-tab">
+                <a href="#wrapBd" class="tab-item item-1">Все товары</a>
+                <a href="#wrapBd" class="tab-item item-2" data-tab="Смартфон">Смартфон</a>
+                <a href="#wrapBd" class="tab-item item-3" data-tab="Носимые устройства">Носимые устройства</a>
+                <a href="#wrapBd" class="tab-item item-4" data-tab="Умный дом">Умный дом</a>
+                <a href="#wrapBd" class="tab-item item-5" data-tab="Умные аксессуары">Умные аксессуары</a>
+            </div>
+            <!-- E nav -->
+            <!-- S tab内容 -->
+            <div class="wrap-tab-ct">
+                <div class="goods-list" id="goods1">
+                    <ul class="cf" marketStart="" marketLength="" marketUrl="http://cdn.javiermu.com/myappname/static/tools/xml/tjw/tjw2015/tjw1559f74a49d0a1.js" marketTpl='<li class="goods-li"><div class="layer layer-border"><a href="{#recommendUrl#}" target="_blank" class="href-layer"></a></div><div class="goods-img"><a href="{#recommendUrl#}" target="_blank"><img data-lazy-img="{#image#}" alt="" class="goods-img-1" width="438" height="438"/><img data-lazy-img="{#defined1#}" alt="" class="goods-img-2" width="146" height="146"/><span class="img-border img-border-1"></span><img data-lazy-img="{#defined2#}" alt="" class="goods-img-3"  width="146" height="146"/><span class="img-border img-border-2"></span><img data-lazy-img="{#defined2#}" alt="" class="goods-img-4"  width="146" height="146"/><span class="img-border img-border-3"></span></a></div><div class="goods-detail"><div class="goods-name"><a href="{#recommendUrl#}" target="_blank">{#recommendAd#}</a></div><div class="goods-info"><ol><li>{#defined7#}</li><li>{#defined8#}</li><li>{#defined9#}</li></ol></div><div class="goods-price"><span class="price-now">US${#jdPrice#}</span><span class="price-old">US${#normalPrice#}</span></div><div class="goods-buy"><a href="{#recommendUrl#}" target="_blank"><i class="icon"></i><span class="span-buy-text">Add To Cart</span></a></div></div></li>' marketOnLoad="xmlLoad(1)"></ul>
+                    <!-- <ul class="cf">
+                         <li class="goods-li">
+                             <div class="goods-img">
+                                 <a href="#" target="_blank">
+                                     <img data-lazy-img="http://img13.360buyimg.com/cms/jfs/t1459/303/632167291/61928/9f867333/559f7798Ne664d053.jpg" alt="" class="goods-img-1"/>
+                                     <img data-lazy-img="http://img14.360buyimg.com/cms/jfs/t1105/79/1387908369/6265/20e59279/559f77caNaaddc7ff.jpg" alt="" class="goods-img-2"/>
+                                     <span class="img-border img-border-1"></span>
+                                     <img data-lazy-img="http://img13.360buyimg.com/cms/jfs/t946/301/1411377189/4852/8c632cfb/559f7799Na6ecac95.jpg" alt="" class="goods-img-3"/>
+                                     <span class="img-border img-border-2"></span>
+                                     <img data-lazy-img="http://img11.360buyimg.com/cms/jfs/t1645/81/432923794/5816/d2878310/559f7799Nc32609c0.jpg" alt="" class="goods-img-4"/>
+                                     <span class="img-border img-border-3"></span>
+                                 </a>
+                             </div>
+                             <div class="goods-detail">
+                                 <div class="goods-name">
+                                     <a href="#" target="_blank">111Excelvan L12S OLED Smart Bluetooth Sport Bracelet</a>
+                                 </div>
+                                 <div class="goods-info">
+                                     <ol>
+                                         <li>Free Shippingto  Describ</li>
+                                         <li>Russia via JDYW-NLSP Delivery : 25 days (ships out wit</li>
+                                         <li>Item is not as Described or If item is not as Described or is of </li>
+                                     </ol>
+                                 </div>
+                                 <div class="goods-price">
+                                     <span class="price-now">US$27.59</span>
+                                     <span class="price-old">US$45.99</span>
+                                 </div>
+                                 <div class="goods-buy"><a href="#" target="_blank"><i class="icon"></i><span class="span-buy-text">Add To Cart</span></a></div>
+                             </div>
+                         </li>
+
+                     </ul>-->
+                </div>
+                <div class="goods-list" id="goods2">
+                    <ul class="cf" marketStart="" marketLength="" marketUrl="http://cdn.javiermu.com/myappname/static/tools/xml/tjw/tjw2015/tjw1559f74c6965f5.js" marketTpl='<li class="goods-li"><div class="layer layer-border"><a href="{#recommendUrl#}" target="_blank" class="href-layer"></a></div><div class="goods-img"><a href="{#recommendUrl#}" target="_blank"><img data-lazy-img="{#image#}" alt="" class="goods-img-1" width="438" height="438"/><img data-lazy-img="{#defined1#}" alt="" class="goods-img-2" width="146" height="146"/><span class="img-border img-border-1"></span><img data-lazy-img="{#defined2#}" alt="" class="goods-img-3"  width="146" height="146"/><span class="img-border img-border-2"></span><img data-lazy-img="{#defined2#}" alt="" class="goods-img-4"  width="146" height="146"/><span class="img-border img-border-3"></span></a></div><div class="goods-detail"><div class="goods-name"><a href="{#recommendUrl#}" target="_blank">{#recommendAd#}</a></div><div class="goods-info"><ol><li>{#defined7#}</li><li>{#defined8#}</li><li>{#defined9#}</li></ol></div><div class="goods-price"><span class="price-now">US${#jdPrice#}</span><span class="price-old">US${#normalPrice#}</span></div><div class="goods-buy"><a href="{#recommendUrl#}" target="_blank"><i class="icon"></i><span class="span-buy-text">Add To Cart</span></a></div></div></li>' marketOnLoad="xmlLoad(1)"></ul>
+                </div>
+                <div class="goods-list" id="goods3">
+                    <ul class="cf" marketStart="" marketLength="" marketUrl="http://lillian98.github.io/overseas/hardware/js/tjw1559f74dde5b3f.js" marketTpl='<li class="goods-li"><div class="layer layer-border"><a href="{#recommendUrl#}" target="_blank" class="href-layer"></a></div><div class="goods-img"><a href="{#recommendUrl#}" target="_blank"><img data-lazy-img="{#image#}" alt="" class="goods-img-1" width="438" height="438"/><img data-lazy-img="{#defined1#}" alt="" class="goods-img-2" width="146" height="146"/><span class="img-border img-border-1"></span><img data-lazy-img="{#defined2#}" alt="" class="goods-img-3"  width="146" height="146"/><span class="img-border img-border-2"></span><img data-lazy-img="{#defined2#}" alt="" class="goods-img-4"  width="146" height="146"/><span class="img-border img-border-3"></span></a></div><div class="goods-detail"><div class="goods-name"><a href="{#recommendUrl#}" target="_blank">{#recommendAd#}</a></div><div class="goods-info"><ol><li>{#defined7#}</li><li>{#defined8#}</li><li>{#defined9#}</li></ol></div><div class="goods-price"><span class="price-now">US${#jdPrice#}</span><span class="price-old">US${#normalPrice#}</span></div><div class="goods-buy"><a href="{#recommendUrl#}" target="_blank"><i class="icon"></i><span class="span-buy-text">Add To Cart</span></a></div></div></li>' marketOnLoad="xmlLoad(1)"></ul>
+                </div>
+                <div class="goods-list" id="goods4">
+                    <ul class="cf" marketStart="" marketLength="" marketUrl="http://cdn.javiermu.com/myappname/static/tools/xml/tjw/tjw2015/tjw1559f74fd7b4aa.js" marketTpl='<li class="goods-li"><div class="layer layer-border"><a href="{#recommendUrl#}" target="_blank" class="href-layer"></a></div><div class="goods-img"><a href="{#recommendUrl#}" target="_blank"><img data-lazy-img="{#image#}" alt="" class="goods-img-1" width="438" height="438"/><img data-lazy-img="{#defined1#}" alt="" class="goods-img-2" width="146" height="146"/><span class="img-border img-border-1"></span><img data-lazy-img="{#defined2#}" alt="" class="goods-img-3"  width="146" height="146"/><span class="img-border img-border-2"></span><img data-lazy-img="{#defined2#}" alt="" class="goods-img-4"  width="146" height="146"/><span class="img-border img-border-3"></span></a></div><div class="goods-detail"><div class="goods-name"><a href="{#recommendUrl#}" target="_blank">{#recommendAd#}</a></div><div class="goods-info"><ol><li>{#defined7#}</li><li>{#defined8#}</li><li>{#defined9#}</li></ol></div><div class="goods-price"><span class="price-now">US${#jdPrice#}</span><span class="price-old">US${#normalPrice#}</span></div><div class="goods-buy"><a href="{#recommendUrl#}" target="_blank"><i class="icon"></i><span class="span-buy-text">Add To Cart</span></a></div></div></li>' marketOnLoad="xmlLoad(1)"></ul>
+                </div>
+
+            </div>
+        </div>
+        <!-- E tab内容 -->
+    </div>
+    <!-- E 内容 -->
+</div>
+<!--内容区结束 -->
+
+
+<!--京东保障 -->
+<div class="hyperchannel">
+    <div class="w">
+        <div class="item fore1">
+            <a target="_blank" href="#">
+                <s></s>
+                <h4>Защита покупателя</h4>
+            </a>
+            <p>Мы вернем вам деньги, если товар не соответствует описанию или имеет низкое качество</p>
+        </div>
+        <div class="item  fore2">
+            <a target="_blank" href="#">
+                <s></s>
+                <h4>Гарантия Доставка</h4>
+            </a>
+            <p>Вы получите полный возврат средств, если вы не получите ваш заказ</p>
+        </div>
+        <div class="item  fore3">
+            <a target="_blank" href="#">
+                <s></s>
+                <h4>Безопасная оплата</h4>
+            </a>
+            <p>Оплачивайте популярными и безопасными методами</p>
+        </div>
+        <div class="item  fore4">
+            <a target="_blank" href="#">
+                <s></s>
+                <h4>Китайские Бренды Выбор</h4>
+            </a>
+            <p>100% Brand Поставщики</p>
+        </div>
+    </div>
+</div>
+<!--京东保障结束 -->
+<!--页脚 -->
+<div class="footer">
+    <div class="w">
+        <div class="links">
+            <dl style="margin-right: 15px;">
+                <dt>О JD</dt>
+                <dd><a target="_blank" href="http://en.jd.com/help/question-7.html">Профиль компании</a></dd>
+                <dd><a target="_blank" href="http://en.jd.com/help/question-8.html">Профиль Основателя</a></dd>
+                <dd><a target="_blank" href="http://en.jd.com/help/question-9.html">Миссия и стоимость</a></dd>
+                <dd><a target="_blank" href="http://ir.jd.com/phoenix.zhtml?c=253315&p=irol-IRHome">Отношения с инвесторами</a></dd>
+            </dl>
+            <dl style="margin-right: 15px;">
+                <dt>Зарабатывайте вместе с нами</dt>
+                <dd><a href="http://en.jd.com/help/question-49.html">Продавайте на JD</a></dd>
+                <dd><a href="http://en.jd.com/help/question-50.html">Стать партнерами</a></dd>
+            </dl>
+            <dl style="margin-right: 15px;">
+                <dt>Защита Покупателя</dt>
+                <dd><a href="http://en.jd.com/help/question-16.html">Безопасная оплата</a></dd>
+                <dd><a href="http://en.jd.com/help/question-18.html">Возврат и обмен товара</a></dd>
+                <dd><a href="http://en.jd.com/help/question-19.html">Политика Конфиденциальности</a></dd>
+            </dl>
+            <dl style="margin-right: 15px;">
+                <dt>Позвольте нам помочь вам</dt>
+                <dd><a href="http://en.jd.com/help/question-21.html">Связаться С Нами</a></dd>
+                <dd><a href="http://en.jd.com/help/question-23.html">Правила и условия</a></dd>
+            </dl>
+            <div class="fd">
+                <txt style="position: absolute; z-index: 2; line-height: 43px; margin-left: 18px; margin-top: 0px; font-size: 12px; font-family: SimSun; color: rgb(204, 204, 204); display: inline;"></txt>
+                <input id="ru-subscribe-email" type="text" placeholder="входной  почтовый ящик" value="" class="ipt-text">
+                <input id="ru-subscribe-submit" type="button" value="Подпишись" class="ipt-submit">
+                <span id="sendresult" style="display:none" class="error f-fl mt5"></span>
+                <a class="link-vk" href="http://vk.com/jd"><s></s> поделиться в контакте</a>
+            </div>
+        </div>
+        <div class="cpright">
+            <p>Copyright &copy; 2006-2015 360buy Ltd. Все права защищены</p>
+        </div>
+    </div>
+</div>
+<span id="top" style="right: 281.5px; display: block;"></span>
+<!--页脚结束 -->
+<script type="text/javascript" src="http://st.en.jd.com/newapp/ept/static/js/??lib/components/lang.js,lib/utils/json2.js,lib/utils/cookie.js,lib/utils/droplist.js,page/common/common.js,lib/utils/trimPath.js,lib/utils/validate.js,page/common/lib-v1.js"></script>
+<script type="text/javascript" src="http://st.en.jd.com/newapp/jdf/1.0.0/ui/??switchable/1.0.0/switchable.js,lazyload/1.0.0/lazyload.js"></script>
+<script type="text/javascript" >
+    seajs.use(['js/page/index/init'],function(a,b){});
+</script>
+
+<script type="text/javascript" src="http://cdn.javiermu.com/myappname/res/js/market/market-1.0.0.min.js"></script>
+<script>
+    var xmlObj = {
+        total: $('.goods-list').length,
+        loadedNo:0
+    }
+    /* xmlLoad */
+    function xmlLoad(_flag){
+        if(_flag == 1){
+            xmlObj.loadedNo ++;
+        }
+        if(xmlObj.loadedNo == xmlObj.total){
+            seajs.use(['http://st.en.jd.com/newapp/jdf/1.0.0/ui/??lazyload/1.0.0/lazyload.js'],function(){
+                $('body').lazyload();
+            });
+            /* for phone */
+            var nowList = $('.goods-list').eq(0);
+            var nowLi = $('.goods-list').find('.goods-li');
+            var liHeight = nowLi.eq(0).height();
+            var canSeeRow = Math.ceil($(window).height() / liHeight) * 2 > nowLi.length ? nowLi.length : Math.ceil($(window).height() / liHeight) * 2;
+            for (var i = 0; i < canSeeRow; i++) {
+                $(nowLi.eq(i).find('img')).each(function (j, k) {
+                    if (typeof($(k).attr('src')) != 'undefined') {
+                    }
+                    else {
+                        $(k).attr('src', $(k).attr('data-lazy-img'));
+                        $(k).attr('data-lazy-img', 'done');
+                    }
+                })
+            }
+        }
+    }
+</script>
+<script>
+    $(function () {
+        var winHeight = $(window).height();
+        var headerHeight = $('.header').outerHeight();
+        var headerSelfHeight = $('.header-fix').outerHeight();
+        var liHeight = $('.goods-li').outerHeight();
+
+        init();
+        function init() {
+            $('.wrap-tab .item-1').addClass('current');
+            $('.goods-list').show();
+            tabRidLazy(0);
+        }
+        $('.wrap-tab a').click(function (e) {
+            var tIndex = $('.wrap-tab a').index($(this));
+            if (tIndex == 0) {
+                $('.goods-list').show();
+            }
+            else if (tIndex < $('.wrap-tab a').length) {
+                $('.goods-list').hide().eq(tIndex - 1).show();
+            }
+            tabRidLazy(tIndex);
+            /*var scrollTop = $('.wrap-tab').offset().top;*/
+            if ($('.wrap-tab').offset().top > winHeight) {
+                $('.header').addClass('header-fix');
+                headerSelfHeight = $('.header-fix').outerHeight()
+                $('.wrapper').css('padding-top', headerHeight);
+                var scrollTop = $('.wrap-tab').offset().top - headerSelfHeight;
+            }
+            else {
+                $('.header').removeClass('header-fix');
+                $('.wrapper').css('padding-top', 0);
+                var scrollTop = $('.wrap-tab').offset().top;
+            }
+            $(window).scrollTop(scrollTop);
+            $('.tab-item').removeClass('current').eq(tIndex).addClass('current');
+            e.stopPropagation();
+            return false;
+        })
+        /* tabRidLazy */
+        function tabRidLazy(_index) {
+            var listIndex = 0;
+            if (_index > 0) {
+                listIndex = _index - 1;
+            }
+            var nowList = $('.goods-list').eq(listIndex);
+            var nowLi = $(nowList).find('.goods-li');
+            var canSeeRow = (Math.ceil(winHeight / liHeight) * 2 > nowLi.length) ? nowLi.length : Math.ceil(winHeight / liHeight) * 2;
+            for (var i = 0; i < canSeeRow; i++) {
+                $(nowLi.eq(i).find('img')).each(function (j, k) {
+                    if (typeof($(k).attr('src')) != 'undefined') {
+                    }
+                    else {
+                        $(k).attr('src', $(k).attr('data-lazy-img'));
+                        $(k).attr('data-lazy-img', 'done');
+                    }
+                })
+            }
+        }
+        /* tabRidLazy */
+        /* resize */
+        $(window).resize(function (e) {
+            // winHeight = $(window).height();
+            headerHeight = $('.header').outerHeight();
+            if ($(window).scrollTop() > winHeight) {
+                $('.header').addClass('header-fix');
+                $('.wrapper').css('padding-top', headerHeight);
+            }
+            else {
+                $('.header').removeClass('header-fix');
+                $('.wrapper').css('padding-top', 0);
+            }
+        }).trigger('scroll')
+        /* resize */
+        /* scroll */
+        $(window).scroll(function (e) {
+            if ($(window).scrollTop() > winHeight) {
+                $('.header').addClass('header-fix');
+                headerSelfHeight = $('.header-fix').outerHeight();
+                $('.wrapper').css('padding-top', headerHeight);
+            }
+            else {
+                $('.header').removeClass('header-fix');
+                $('.wrapper').css('padding-top', 0);
+            }
+        })
+        /* scroll */
+    })
+</script>
+<!-- E custom script -->
+</body>
+</html>
+
