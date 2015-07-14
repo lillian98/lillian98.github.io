@@ -392,23 +392,25 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
 <script type="text/javascript" src="http://cdn.javiermu.com/myappname/res/js/market/market-1.0.0.min.js"></script>
 <script>
     var xmlObj = {
-        total: $('.goods-list').length,
+        total: $('.goods-list').length-1,
         loadedNo:0
     }
+    /* xmlLoad */
     /* xmlLoad */
     function xmlLoad(_flag){
         if(_flag == 1){
             xmlObj.loadedNo ++;
         }
         if(xmlObj.loadedNo == xmlObj.total){
+
             seajs.use(['http://st.en.jd.com/newapp/jdf/1.0.0/ui/??lazyload/1.0.0/lazyload.js'],function(){
                 $('body').lazyload();
             });
             /* for phone */
             var nowList = $('.goods-list').eq(0);
-            var nowLi = $(nowList).find('.goods-li');
-            var liHeight = $nowLi.height();
-            var canSeeRow = (Math.ceil($(window).height() / liHeight) * 2 > nowLi.length) ? nowLi.length : Math.ceil($(window).height() / liHeight) * 2;
+            var nowLi = $('.goods-list').find('.goods-li');
+            var liHeight = nowLi.eq(0).height();
+            var canSeeRow = Math.ceil($(window).height() / liHeight) * 2 > nowLi.length ? nowLi.length : Math.ceil($(window).height() / liHeight) * 2;
             for (var i = 0; i < canSeeRow; i++) {
                 $(nowLi.eq(i).find('img')).each(function (j, k) {
                     if (typeof($(k).attr('src')) != 'undefined') {
