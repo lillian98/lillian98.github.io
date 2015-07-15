@@ -33,7 +33,7 @@ body{min-width: 1300px;background-color: #f0f0f0}
 .goods-name a{color: #333333}
 .goods-info{margin-bottom: 17px;}
 .goods-info ol{/*padding-left: 15px;*/}
-.goods-info li{/*list-style: disc;*/font-size: 12px;font-family: Arial;color: #9c9c9c;line-height: 20px;height: 20px;}
+.goods-info li{/*list-style: disc;*/font-size: 12px;font-family: Arial;color: #9c9c9c;line-height: 20px;height: 20px;overflow: hidden}
 .price-now{color: #c81010;font-size: 34px;font-weight: bold;line-height: 45px;margin-right: 10px;}
 .price-old{color: #9c9c9c;font-size: 14px;text-decoration: line-through}
 .goods-buy{position: absolute;right: 30px;top:125px;width: 150px;height: 36px;background-color: #333333;text-align: center;line-height: 36px;transition: all .5s;}
