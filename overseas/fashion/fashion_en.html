@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>JD.com Global: Online Shopping Mall for Electronics, Apparel, Jewelry & more</title>
+    <meta name="google-translate-customization" content="4a59cc671fcf82c6-dde0ca028c594a15-g7518baae2bd23516-e"></meta>
+    <meta name="keywords" content="JD, Global ,Online shopping, shop online, Wedding & Events,Bags & Accessories,Sports & Outdoors,Health & Beauty, Jewelry & Watches, Cell Phones & Accessories, Electronics, Apple Accessories, Computers & Accessories, Automotive, Shoes, Costumes & Cosplay,Hobbies & Toys,Movies & Music, Video Games">
+    <meta name="description" content="JD.com Global: Online Shopping Mall for Electronics, Apparel, Jewelry & more">
+    <link rel="shortcut icon" href="http://www.360buy.com/favicon.ico" />
+    <link href="http://st.en.jd.com/newapp/ept/static/ui/common/base.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="http://st.en.jd.com/newapp/ept/static/ui/website/css/common1.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="fashion/index.css" media="all"/>
+    <link media="all" href="http://st.en.jd.com/newapp/ept/static/ui/website/css/content.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://st.en.jd.com/newapp/ept/static/ui/website/css/index1.css" media="all"/>
+    <script src="http://st.en.jd.com/newapp/jdf/lib/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="http://st.en.jd.com/newapp/jdf/1.0.0/unit/base/1.0.0/base.js"></script>
+    <script type="text/javascript" src="http://st.en.jd.com/newapp/jdf/1.0.0??ui/ui/1.0.0/ui.js,unit/event/1.0.0/event.js"></script>
+    <script type="text/javascript">
+        var jaq = jaq || [];
+        jaq.push(['account', 'UA-J2011-6']);
+        jaq.push(['domain', 'en.jd.com']);
+        jaq.push(['erp_account', '']);
+        (function () {
+            var ja = document.createElement('script');
+            ja.type = 'text/javascript';
+            ja.async = true;
+            ja.src = ('https:' == document.location.protocol ? 'https://cscssl' : 'http://csc') + '.jd.com/joya.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ja, s);
+        })();
+    </script>
+    <script type="text/javascript">
+        seajs.config({
+            base : "http://st.en.jd.com/newapp/ept/static/"
+        });
+    </script>
+    <script>
+        function errorImg(img) {
+            img.src = "/static/app/css/i/blank.gif";
+            img.onerror = null;
+            $(img).addClass("err-img");
+        }
+    </script>
+</head>
+<body>
+<script type="text/javascript">
+    (function() {
+        //判断访问终端
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {
+                    trident: u.indexOf('Trident') > -1, //IE内核
+                    presto: u.indexOf('Presto') > -1, //opera内核
+                    webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                    iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                    iPad: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否iPad
+                    webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+                }
+            }()
+        }
+        function getPrefix(brow) {
+            var pre = "";
+            return pre = brow.webKit ? "-Webkit" : brow.gecko ? "-Moz" : brow.trident ? "-Ms" : brow.presto ? "-O" : ""
+        }
+        //browser.versions.trident返回真假，真则是IE内核，以此类推browser.versions.webKit是否为谷歌内核
+        if (browser.versions.mobile) {
+            document.body.className = document.body.className + ' m-body';
+            var tScale = 'scale('+document.body.clientWidth/document.body.getAttribute('data-width') +')';
+            document.body.style.zoom = document.body.clientWidth/document.body.getAttribute('data-width');/* body zoom*/
+        }
+        var browserIE=navigator.appName;
+        var b_version=navigator.appVersion;
+        var version=b_version.split(";");
+        var trim_Version=version[1].replace(/[ ]/g,"");
+        if((browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE6.0") || (browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE7.0") ||(browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE8.0")|| (browserIE=="Microsoft Internet Explorer" && trim_Version=="MSIE9.0")){
+            document.body.className = document.body.className + ' no-ani';
+        }
+    })()
+</script>
+<script type="text/javascript">
+    var google_tag_params = {
+        ecomm_prodid: '',
+        ecomm_pagetype:'home',
+        ecomm_totalvalue: ''
+    };
+</script>
+<!-- google  -->
+<script type="text/javascript">
+    if(window.google_tag_params){
+        dataLayer = [{
+            'google_tag_params': window.google_tag_params
+        }];
+    }
+</script>
+
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WFSLVN"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+<script type="text/javascript">
+    $(function(){
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WFSLVN');
+    });
+</script>
+<!-- facebook  -->
+<script>(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = '//connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+    }
+    _fbq.push(['addPixelId', '1118431521516650']);
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', 'PixelInitialized', {}]);
+</script>
+<noscript>
+    <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1118431521516650&amp;ev=PixelInitialized" />
+</noscript>
+
+<!-- 公共头-->
+<div class="header-top">
+    <div class="w">
+        <ul class="header-top-r">
+            <li class="fore1"><a href="http://en.jd.com/help/question-7.html">about JD</a></li><li class="spacer"></li>
+            <li class="fore2"><a href="http://en.jd.com/help/question-21.html">Help</a></li><li class="spacer"></li>
+            <li class="fore2"><a href="http://www.jd.com">JD.com Main Site (Chinese)</a></li><li class="spacer"></li>
+            <li id="lan-sel" class="fore3">
+                <div class="dt">Language<s></s></div>
+                <div class="lan-box">
+                    <div class="spacer"></div>
+                    <div class="mt">
+                        <span class="f-cb"></span>
+                        <span>Multi-Language Sites：</span>
+                        <ul>
+                            <li><a target="_blank" href="http://en.jd.com">Global Site (English)</a></li>
+                            <li><a target="_blank" href="http://en.jd.com/ru/index-ru.html">Сайт на русском</a></li>
+                            <li style="width:160px;"><a target="_blank" href="http://www.jd.com">中文主站(Chinese)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="header">
+    <div class="w">
+        <a class="logo" href="http://en.jd.com"></a>
+
+        <form class="search-form" action="">
+            <div class="search-operate-box f-fl">
+                <div class="search-cate-title"><span class="search-category-value" id="search-category-value" catid="">All Categories</span><s></s><div class="spacer"></div></div>
+                <div class="search-cate-list">
+                    <ul class="j-select-opts">
+                    </ul>
+
+                </div>
+            </div>
+            <div class="search-key-box f-fr">
+                <input type="text" id="searchKeyWord" name="SearchText" value="" autocomplete="off" maxlength="50" placeholder="Shopping For..." class="search-key">
+                <input type="button" id="doSearch" value="" class="search-button">
+            </div>
+            <div class="search-key-list" style="display: none;">
+                <strong></strong>
+                <ul id="search-result-list">
+                </ul>
+
+            </div>
+        </form>
+
+        <ul class="tools-box">
+            <li><a class="cart" href="http://c.en.jd.com/cart/cart.html"><s></s><span>Cart</span></a></li>
+            <li><a class="wish" href="http://s.en.jd.com/usercenter/wishlist/list.html"><s></s><span>Wish</span></a></li>
+            <li class="item-sign">
+                <div class="sign"><s></s><span>Sign in</span></div>
+                <!-- 登录后 -->
+                <div style="display: none" class="sign-box s-1">
+                    <div class="spacer"></div>
+                    <div class="mt">
+                        <a target="_blank" href="#">Welcome, isaac</a>
+                    </div>
+                    <div class="mc">
+                        <p><a target="_blank" href="http://o.en.jd.com/order/orderList.html">My Order</a></p>
+                        <p><a target="_blank" href="http://s.en.jd.com/usercenter/wishlist/list.html">My Wish List</a></p>
+                        <p><a target="_blank" href="">Account Settings</a></p>
+                        <a class="btn-join" href="javascript:logout();">Sign out</a>
+                    </div>
+                </div>
+                <!-- 登录前 -->
+                <div class="sign-box s-2">
+                    <div class="spacer"></div>
+                    <div class="mt">
+                        <a class="btn-sign" href="javascript:login();">Sign in</a>
+                    </div>
+                    <div class="mc">
+                        <p>New Customer?</p>
+                        <a class="btn-join" href="javascript:register();">Join Free</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="nav">
+    <div class="w">
+        <div  class="categorys" >
+            <div class="categorys-hd"><a href="javascript:void(0);">CATEGORIES
+                <s></s>
+            </a></div>
+            <div class="categorys-bd" id="categorys" style="display: none;" >
+
+            </div>
+        </div>
+
+        <div class="navitems">
+        </div>
+    </div>
+</div>
+<!-- 公共头结束-->
+
+<!--内容区 -->
+<div class="wrapper">
+    <!-- S 头部 -->
+    <div class="wrap-hd">
+
+    </div>
+    <!-- E 头部 -->
+    <!-- S 内容 -->
+    <div class="wrap-bd">
+        <a href="#nolink" class="href-map" id="wrapBd"></a>
+        <!-- S flr1 -->
+        <div class="wrap-flr flr1">
+            <a href="#nolink" class="href-map" id="flr1"></a>
+            <div class="wrap-1200">
+                <div class="flr-hd">
+                    Newly Discovered
+                </div>
+                <div class="flr-bd">
+                    <ul class="goods-list cf" marketStart="" marketLength="" marketUrl="http://lillian98.github.io/overseas/fashion/js/tjw155af8812ed885.js?t=201507231105" marketTpl='<li><a href="{#recommendUrl#}" target="_blank"><img data-lazy-img="{#image#}" alt="{#recommendName#}" class="goods-img"/><img data-lazy-img="{#defined1#}" alt="{#recommendName#}" class="goods-img-h"/></a></li>' marketOnLoad="xmlLoad(1)"></ul>
+                </div>
+            </div>
+        </div>
+        <!-- E flr1 -->
+        <!-- S flr2 -->
+<div class="wrap-flr flr2">
+    <a href="#nolink" class="href-map" id="flr2"></a>
+    <div class="wrap-1200">
+        <div class="flr-hd">
+            trends & shows
+        </div>
+        <div class="flr-bd">
+<!-- S 手风琴 -->
+            <div class="wrap-sfq">
+                <ul class="goods-list cf" marketStart="" marketLength="" marketUrl="http://lillian98.github.io/overseas/fashion/js/tjw155af88d724a6a.js?t=201507231105" marketTpl='<li><a href="{#recommendUrl#}" target="_blank" style="background-image:url({#image#})"><span class="pos-abs flr-2-text-1">{#defined1#}</span><span class="pos-abs flr-2-text-2">{#defined2#}</span><span class="layer"></span></a></li>' marketOnLoad="xmlLoad(1)"></ul>
+
+            </div>
+<!-- E 手风琴 -->
+        </div>
+    </div>
+</div>
+        <!-- E flr2 -->
+        <!-- S flr3 -->
+        <div class="wrap-flr flr3">
+            <a href="#nolink" class="href-map" id="flr3"></a>
+            <div class="wrap-1200">
+                <div class="flr-hd">
+                    Mix & Match
+                </div>
+                <div class="flr-bd">
+                    <div class="wrap-slider">
+                        <div class="wrap-slider-div">
+                            <ul class="cf">
+                                <li class="wrap-slider-li">
+                                    <div class="goods-list" marketStart="" marketLength="" marketUrl="http://lillian98.github.io/overseas/fashion/js/tjw155af8adcd67e9.js?t=201507231105" marketTpl='<div class="item-{#order#} goods-item"><div class="goods-img"><a href="{#recommendUrl#}" target="_blank"><img data-lazy-img="{#image#}" alt="{#recommendName#}"/></a></div><div class="goods-detail"><div class="goods-name"><a href="{#recommendUrl#}" target="_blank">{#recommendName#}</a></div> <div class="goods-price"><span>${#jdPrice#}</span><a href="#" class="href-buy">Go&nbsp;&gt;</a></div></div></div>' marketOnLoad="xmlLoad(1)"></div>
+
+                                </li>
+                                <li class="wrap-slider-li">
+                                    <div class="goods-list" marketStart="" marketLength="" marketUrl="http://lillian98.github.io/overseas/fashion/js/tjw155af8a1487bc8.js?t=201507231105" marketTpl='<div class="item-{#order#} goods-item"><div class="goods-img"><a href="{#recommendUrl#}" target="_blank"><img data-lazy-img="{#image#}" alt="{#recommendName#}"/></a></div><div class="goods-detail"><div class="goods-name"><a href="{#recommendUrl#}" target="_blank">{#recommendName#}</a></div> <div class="goods-price"><span>${#jdPrice#}</span><a href="#" class="href-buy">Go&nbsp;&gt;</a></div></div></div>' marketOnLoad="xmlLoad(1)"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="wrap-slider-page pos-abs"></div>
+                        <a href="#nolink" class="href-page href-page-down"><i class="icon"></i></a>
+                        <a href="#nolink" class="href-page href-page-up"><i class="icon"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- E flr3 -->
+        <!-- S flr4 -->
+        <div class="wrap-flr flr4">
+            <a href="#nolink" class="href-map" id="flr4"></a>
+            <div class="wrap-1200">
+                <div class="flr-hd">
+                    Keywords
+                </div>
+                <div class="flr-bd">
+                    <ul class="goods-list cf" marketStart="" marketLength="" marketUrl="http://lillian98.github.io/overseas/fashion/js/tjw155af8be59a7eb.js?t=201507231105" marketTpl='<li><a href="{#recommendUrl#}" target="_blank"><img data-lazy-img="{#image#}" alt="{#recommendName#}" class="flr4-img"/><span class="layer"></span><img data-lazy-img="{#defined1#}" alt="{#recommendName#}" class="img-hover"/><span class="img-text">{#recommendName#}</span></a></li>' marketOnLoad="xmlLoad(1)"></ul>
+
+                </div>
+            </div>
+        </div>
+        <!-- E flr4 -->
+        <!-- S flr5 -->
+        <div class="wrap-flr flr5">
+            <a href="#nolink" class="href-map" id="flr5"></a>
+            <div class="wrap-1200">
+                <div class="flr-hd">
+                    Features
+                </div>
+                <div class="flr-bd">
+                    <ul class="goods-list cf" marketStart="" marketLength="" marketUrl="http://lillian98.github.io/overseas/fashion/js/tjw155af8c7dc8cc6.js?t=201507231105" marketTpl='<li><div class="goods-img"><a href="{#recommendUrl#}" target="_blank"><img data-lazy-img="{#image#}" alt="{#recommendName#}"/></a></div><div class="goods-detail"><div class="goods-name"><a href="{#recommendUrl#}" target="_blank">{#recommendName#}</a></div><i class="goods-name-line"></i><div class="goods-info">{#defined1#}</div></div></li>' marketOnLoad="xmlLoad(1)"></ul>
+                </div>
+            </div>
+        </div>
+        <!-- E flr5 -->
+        <!-- S flr6 -->
+        <div class="wrap-flr flr6">
+            <a href="#nolink" class="href-map" id="flr6"></a>
+            <div class="wrap-1200">
+                <div class="flr-hd">
+                    Hot  Category
+                </div>
+                <div class="flr-bd">
+                    <ul class="goods-list cf" marketStart="" marketLength="" marketUrl="http://lillian98.github.io/overseas/fashion/js/tjw155af8d5c6ab46.js?t=201507231105" marketTpl='<li><div class="goods-img"><a href="{#recommendUrl#}" target="_blank"><img data-lazy-img="{#image#}" alt="{#recommendName#}"/></a></div><div class="category"><a href="{#recommendUrl#}" target="_blank">{#recommendName#}</a></div></li>' marketOnLoad="xmlLoad(1)"></ul>
+
+                </div>
+            </div>
+        </div>
+        <!-- E flr6 -->
+    </div>
+    <!-- E 内容 -->
+</div>
+<!--内容区结束 -->
+
+<!--公共页尾-->
+<div class="hyperchannel">
+    <div class="w">
+        <div class="item fore1">
+            <s></s>
+            <h4>Buyer Protection</h4>
+            <p>We will refund if the item is not as
+                described or is of poor quality</p>
+        </div>
+        <div class="item  fore2">
+            <s></s>
+            <h4>Delivery Guarantee</h4>
+            <p>You will get a full refund if your
+                order does not receive</p>
+        </div>
+        <div class="item  fore3">
+            <s></s>
+            <h4>Safe Payment</h4>
+            <p>Pay with popular and
+                secure payment methods</p>
+        </div>
+        <div class="item  fore4">
+            <s></s>
+            <h4>Chinese Brands Selection</h4>
+            <p>100% Brand Suppliers</p>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="w">
+        <div class="links">
+            <dl>
+                <dt>About JD</dt>
+                <dd><a href="http://en.jd.com/help/question-7.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom1'>Corporate Profile</a></dd>
+                <dd><a href="http://en.jd.com/help/question-8.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom1'>Founder’s Profile</a></dd>
+                <dd><a href="http://en.jd.com/help/question-9.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom1'>Mission &amp; Values</a></dd>
+                <dd><a href="http://ir.jd.com/phoenix.zhtml?c=253315&p=irol-IRHome" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom1'>Investor Relations</a></dd>
+            </dl>
+            <dl>
+                <dt>Make Money with Us</dt>
+                <dd><a href="http://en.jd.com/help/question-49.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom2'>Sell on JD</a></dd>
+                <dd><a href="http://en.jd.com/help/question-50.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom2'>Become an Affiliate</a></dd>
+            </dl>
+            <dl>
+                <dt>Buyer Protection</dt>
+                <dd><a href="http://en.jd.com/help/question-16.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom3'>Safe Payment</a></dd>
+                <dd><a href="http://en.jd.com/help/question-18.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom3'>Refund &amp; Returns</a></dd>
+                <dd><a href="http://en.jd.com/help/question-19.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom3'>Privacy Policy</a></dd>
+            </dl>
+            <dl>
+                <dt>Let Us Help You</dt>
+                <dd><a href="http://en.jd.com/help/question-21.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom3'>Contact Us</a></dd>
+                <dd><a href="http://en.jd.com/help/question-23.html" target="_blank" rel="nofollow" clstag='homepage|keycount|ept|bottom4'>Terms &amp; Conditions</a></dd>
+            </dl>
+            <div class="fd">
+                <form action="">
+                    <txt style="position: absolute; z-index: 2; line-height: 43px; margin-left: 18px; margin-top: 0px; font-size: 12px; font-family: SimSun; color: rgb(204, 204, 204); display: inline;"></txt>
+                    <input id="subscribe-email" type="text" placeholder="Your Email to Get latest discounts" value="" class="ipt-text">
+                    <input id="subscribe-submit" type="button" value="Subscribe" class="ipt-submit">
+                </form>
+                <span id="sendresult" style="display:none" class="error f-fl mt5"></span>
+                <a class="link-facebook" href="https://www.facebook.com/pages/JDCOM/861644700572405"><s></s>Like Us on Facebook</a>
+            </div>
+        </div>
+        <div class="cpright">
+            <p>Copyright &copy; 2006-2015 360buy Ltd. All Rights Reserved</p>
+        </div>
+    </div>
+</div>
+<span id="top"></span>
+
+<script type="text/javascript" src="http://st.en.jd.com/newapp/ept/static/js/??lib/components/lang.js,lib/utils/json2.js,lib/utils/cookie.js,lib/utils/droplist.js,page/common/common.js,lib/utils/trimPath.js,lib/utils/validate.js,page/common/lib-v1.js"></script>
+<script type="text/javascript" src="http://st.en.jd.com/newapp/jdf/1.0.0/ui/??switchable/1.0.0/switchable.js,lazyload/1.0.0/lazyload.js"></script>
+<script type="text/javascript" >
+    seajs.use(['js/page/index/init'],function(a,b){});
+</script>
+
+<script type="text/javascript" src="http://cdn.javiermu.com/myappname/res/js/market/market-1.0.0.min.js"></script>
+<script>
+    var xmlObj = {
+        total: $('.goods-list').length,
+        loadedNo:0,
+        loadFlag:!1
+    }
+    /* xmlLoad */
+    function xmlLoad(_flag){
+        if(_flag == 1){
+            xmlObj.loadedNo ++;
+        }
+        if(xmlObj.loadedNo == xmlObj.total){
+            xmlObj.loadFlag = 1;
+            seajs.use(['http://st.en.jd.com/newapp/jdf/1.0.0/ui/??lazyload/1.0.0/lazyload.js'],function(){
+                $('body').lazyload();
+            });
+            /* for phone */
+            var nowList = $('.goods-list').eq(0);
+            var nowLi = $('.goods-list').find('.goods-li');
+            var liHeight = nowLi.eq(0).height();
+            var canSeeRow = Math.ceil($(window).height() / liHeight) * 2 > nowLi.length ? nowLi.length : Math.ceil($(window).height() / liHeight) * 2;
+            for (var i = 0; i < canSeeRow; i++) {
+                $(nowLi.eq(i).find('img')).each(function (j, k) {
+                    if (typeof($(k).attr('src')) != 'undefined') {
+                    }
+                    else {
+                        $(k).attr('src', $(k).attr('data-lazy-img'));
+                        $(k).attr('data-lazy-img', 'done');
+                    }
+                })
+            }
+        }
+    }
+</script>
+<script>
+    $(function () {
+        var winHeight = $(window).height();
+        var liHeight = $('.goods-li').outerHeight();
+        var isLowIe9 = false;
+        var sfq = {
+                    curIndex:0,
+                    lastIndex:0,
+                    canHover:1,
+                    animateTimeOut:0
+                };
+        var slider = {
+            dom:$('.wrap-slider'),
+            ctldom:$('.wrap-slider-div'),
+            li:$('.wrap-slider li'),
+            liwidth:$('.wrap-slider').width(),
+            childLength:$('.wrap-slider li').length,
+            childLengthAct:$('.wrap-slider li').length + 2,
+            nextPage:$('.href-page-down'),
+            lastPage:$('.href-page-up'),
+            curIndex:1,
+            lastIndex:1,
+            pageIndex:0,
+            curMarginLeft:0,
+            clickFlag:1,
+            animateTime:500
+        }
+        $.extend(slider, (function () {
+            return{
+                getNext:function(_flag){
+                    (_flag == 1) && (slider.curIndex = slider.curIndex<=slider.childLength? slider.curIndex+1: 2);
+                    (_flag == -1) && (slider.curIndex = slider.curIndex-1 > 0 ? slider.curIndex-1:0);
+                    if(slider.curIndex == slider.childLengthAct -1){
+                        slider.pageIndex = 0;
+                    }
+                    else if(slider.curIndex == 0){
+                        slider.pageIndex = slider.childLength -1;
+                    }
+                    else{
+                        slider.pageIndex = slider.curIndex-1;
+                    }
+                },
+                animateLeft:function(){
+                    var curMarginLeft = -slider.liwidth*(slider.curIndex);
+                    slider.ctldom.animate({'marginLeft':curMarginLeft},slider.animateTime,'linear');
+                    slider.li.eq(slider.lastIndex-1).animate({'opacity':0},slider.animateTime);
+                    slider.li.eq(slider.curIndex-1).animate({'opacity':1},slider.animateTime);
+                    if(slider.curIndex == slider.childLengthAct-1){
+                        setTimeout(function(){
+                            slider.li.eq(0).css({'opacity':1});
+                            slider.ctldom.css({'marginLeft':-slider.liwidth});
+                            slider.li.eq(slider.curIndex-1).css({'opacity':0});
+                            slider.curIndex = 1;
+                        },slider.animateTime+20);
+                    }
+                    else if(slider.curIndex == 0 ){
+                        setTimeout(function(){
+                            slider.li.eq(slider.childLength).css({'opacity':1});
+                            slider.ctldom.css({'marginLeft':-slider.liwidth*slider.childLength});
+                            slider.li.eq(slider.curIndex).css({'opacity':0});
+                            slider.curIndex = slider.childLength;
+                        },slider.animateTime+20);
+                    }
+                    slider.changePageIcon();
+                },
+                changePageIcon:function(){
+                    $('.wrap-slider-page .icon').removeClass('current');
+                    $('.wrap-slider-page .icon').eq(slider.pageIndex).addClass('current');
+                },
+                init:function(){
+                    var tDom = $('.wrap-slider-div li').eq(0).html();
+                    $('.wrap-slider-div ul').append('<li class="wrap-slider-li">'+tDom+'</li>');
+                    $('.wrap-slider-div ul').prepend('<li class="wrap-slider-li">'+$('.wrap-slider-div li').eq(slider.childLength-1).html()+'</li>');
+                    /*$('.wrap-slider-div ul').appendTo($('.wrap-slider-div li').eq(0).html());*/
+                    slider.ctldom.css('marginLeft',-slider.liwidth);
+                    var pageDom = '<a class="icon current" href="javascript:void(0)"></a>';
+                    for(var i = 1;i<slider.childLength;i++){
+                            pageDom = pageDom + '<a class="icon" href="javascript:void(0)"></a>';
+                    }
+                    $('.wrap-slider-page').html(pageDom);
+                    slider.nextPage.click(function(){
+                        if(slider.clickFlag == 0){
+                        }
+                        else {
+                            slider.clickFlag = 0;
+                            slider.lastIndex = slider.curIndex;
+                            slider.getNext(1);
+                            slider.animateLeft();
+                            setTimeout(function () {
+                                slider.clickFlag = 1;
+                            },slider.animateTime+30)
+                        }
+                    })
+                    slider.lastPage.click(function(){
+                        if(slider.clickFlag == 0){
+                        }
+                        else{
+                            slider.clickFlag = 0;
+                            slider.lastIndex = slider.curIndex;
+                            slider.getNext(-1);
+                            slider.animateLeft();
+                            setTimeout(function () {
+                                slider.clickFlag = 1;
+                            },slider.animateTime+30)
+                        }
+
+                    })
+                }
+            }
+        })())
+        if($('body').attr('class')){
+        ($('body').attr('class').indexOf('no-ani') > -1) && (isLowIe9 = true);
+        }
+        init();
+        function init() {
+            var loadInterval = setInterval(function (e) {
+                if(xmlObj.loadFlag){
+                    slider.init();
+                    $('.wrap-sfq li').eq(0).addClass('current')
+                    sfq.lastIndex = 0;
+                    sfq.curIndex = 0;
+                    tabRidLazy(0);
+                    /* wrap-sfq */
+                    $('.wrap-sfq li').hover(function(){
+                        if(isLowIe9){
+                            var that = this;
+                            if(sfq.animateTimeOut != 0){
+                                clearTimeout(sfq.animateTimeOut);
+                            }
+                            sfq.animateTimeOut = setTimeout(function(){
+                                if(sfq.canHover == 1){
+                                    var curDom = $('.wrap-sfq li').eq(sfq.curIndex);
+                                    curDom.animate({'width':260},100,'linear',function(){
+                                        curDom.removeClass('current');
+                                    })
+                                    curDom.find('.layer').animate({'opacity':.3},100);
+                                    $(that).find('.layer').animate({'opacity':0},100);
+                                    $(that).stop().animate({'width':420},100,'linear',function(){
+                                        $(that).addClass('current');
+                                        sfq.lastIndex = sfq.curIndex;
+                                        sfq.curIndex = $('.wrap-sfq li').index($(that));
+                                        setTimeout(function () {
+                                            sfq.canHover = 1;
+                                        },10)
+                                    })
+                                    sfq.canHover = 0;
+                                }
+                            },150);
+                        }
+                        else{
+                            $('.wrap-sfq li').eq(sfq.curIndex).removeClass('current');
+                            sfq.lastIndex = sfq.curIndex;
+                            $(this).addClass('current');
+                            sfq.curIndex = $('.wrap-sfq li').index($(this));
+                        }
+                    },function(){
+                        if(isLowIe9 && sfq.canHover == 1){
+                            $('.wrap-sfq li').removeClass('current')
+                            $('.wrap-sfq li').eq(sfq.curIndex).addClass('current');
+                        }
+                    })
+                    /* wrap-sfq */
+                    clearInterval(loadInterval)
+                }
+            },300)
+
+        }
+
+        /* tabRidLazy */
+        function tabRidLazy(_index) {
+            var listIndex = 0;
+            if (_index > 0) {
+                listIndex = _index - 1;
+            }
+            var nowList = $('.goods-list').eq(listIndex);
+            var nowLi = $(nowList).find('.goods-li');
+            var canSeeRow = (Math.ceil(winHeight / liHeight) * 2 > nowLi.length) ? nowLi.length : Math.ceil(winHeight / liHeight) * 2;
+            for (var i = 0; i < canSeeRow; i++) {
+                $(nowLi.eq(i).find('img')).each(function (j, k) {
+                    if (typeof($(k).attr('src')) != 'undefined') {
+                    }
+                    else {
+                        $(k).attr('src', $(k).attr('data-lazy-img'));
+                        $(k).attr('data-lazy-img', 'done');
+                    }
+                })
+            }
+        }
+        /* tabRidLazy */
+        /* resize */
+        $(window).resize(function (e) {
+            winHeight = $(window).height();
+
+        }).trigger('scroll')
+        /* resize */
+        /* scroll */
+        $(window).scroll(function (e) {
+
+        })
+        /* scroll */
+
+
+    })
+</script>
+<!--公共尾结束 -->
+</body>
+</html>
