@@ -518,7 +518,7 @@
                         pageDom = pageDom + '<a class="icon" href="javascript:void(0)"></a>';
                     }
                     $('.wrap-slider-page').html(pageDom);
-                    slider.nextPage.click(function(){
+                    slider.nextPage.click(function(e){
                         if(slider.clickFlag == 0){
                         }
                         else {
@@ -530,8 +530,10 @@
                                 slider.clickFlag = 1;
                             },slider.animateTime+30)
                         }
+                        e.stopPropagation();
+                        return false;
                     })
-                    slider.lastPage.click(function(){
+                    slider.lastPage.click(function(e){
                         if(slider.clickFlag == 0){
                         }
                         else{
@@ -543,7 +545,8 @@
                                 slider.clickFlag = 1;
                             },slider.animateTime+30)
                         }
-
+                        e.stopPropagation();
+                        return false;
                     })
                 }
             }
