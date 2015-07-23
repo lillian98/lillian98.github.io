@@ -158,62 +158,64 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
         </ul>
     </div>
 </div>
-<div class="header">
-    <div class="w">
-        <a class="logo" href="http://en.jd.com"></a>
+<div class="header-c">
+    <div class="header">
+        <div class="w">
+            <a class="logo" href="http://en.jd.com"></a>
 
-        <form class="search-form" action="">
-            <div class="search-operate-box f-fl">
-                <div class="search-cate-title"><span class="search-category-value" id="search-category-value" catid="">All Categories</span><s></s><div class="spacer"></div></div>
-                <div class="search-cate-list">
-                    <ul class="j-select-opts">
+            <form class="search-form" action="">
+                <div class="search-operate-box f-fl">
+                    <div class="search-cate-title"><span class="search-category-value" id="search-category-value" catid="">All Categories</span><s></s><div class="spacer"></div></div>
+                    <div class="search-cate-list">
+                        <ul class="j-select-opts">
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="search-key-box f-fr">
+                    <input type="text" id="searchKeyWord" name="SearchText" value="" autocomplete="off" maxlength="50" placeholder="Shopping For..." class="search-key">
+                    <input type="button" id="doSearch" value="" class="search-button">
+                </div>
+                <div class="search-key-list" style="display: none;">
+                    <strong></strong>
+                    <ul id="search-result-list">
                     </ul>
 
                 </div>
-            </div>
-            <div class="search-key-box f-fr">
-                <input type="text" id="searchKeyWord" name="SearchText" value="" autocomplete="off" maxlength="50" placeholder="Shopping For..." class="search-key">
-                <input type="button" id="doSearch" value="" class="search-button">
-            </div>
-            <div class="search-key-list" style="display: none;">
-                <strong></strong>
-                <ul id="search-result-list">
-                </ul>
+            </form>
 
-            </div>
-        </form>
-
-        <ul class="tools-box">
-            <li><a class="cart" href="http://c.en.jd.com/cart/cart.html"><s></s><span>Cart</span></a></li>
-            <li><a class="wish" href="http://s.en.jd.com/usercenter/wishlist/list.html"><s></s><span>Wish</span></a></li>
-            <li class="item-sign">
-                <div class="sign"><s></s><span>Sign in</span></div>
-                <!-- 登录后 -->
-                <div style="display: none" class="sign-box s-1">
-                    <div class="spacer"></div>
-                    <div class="mt">
-                        <a target="_blank" href="#">Welcome, isaac</a>
+            <ul class="tools-box">
+                <li><a class="cart" href="http://c.en.jd.com/cart/cart.html"><s></s><span>Cart</span></a></li>
+                <li><a class="wish" href="http://s.en.jd.com/usercenter/wishlist/list.html"><s></s><span>Wish</span></a></li>
+                <li class="item-sign">
+                    <div class="sign"><s></s><span>Sign in</span></div>
+                    <!-- 登录后 -->
+                    <div style="display: none" class="sign-box s-1">
+                        <div class="spacer"></div>
+                        <div class="mt">
+                            <a target="_blank" href="#">Welcome, isaac</a>
+                        </div>
+                        <div class="mc">
+                            <p><a target="_blank" href="http://o.en.jd.com/order/orderList.html">My Order</a></p>
+                            <p><a target="_blank" href="http://s.en.jd.com/usercenter/wishlist/list.html">My Wish List</a></p>
+                            <p><a target="_blank" href="">Account Settings</a></p>
+                            <a class="btn-join" href="javascript:logout();">Sign out</a>
+                        </div>
                     </div>
-                    <div class="mc">
-                        <p><a target="_blank" href="http://o.en.jd.com/order/orderList.html">My Order</a></p>
-                        <p><a target="_blank" href="http://s.en.jd.com/usercenter/wishlist/list.html">My Wish List</a></p>
-                        <p><a target="_blank" href="">Account Settings</a></p>
-                        <a class="btn-join" href="javascript:logout();">Sign out</a>
+                    <!-- 登录前 -->
+                    <div class="sign-box s-2">
+                        <div class="spacer"></div>
+                        <div class="mt">
+                            <a class="btn-sign" href="javascript:login();">Sign in</a>
+                        </div>
+                        <div class="mc">
+                            <p>New Customer?</p>
+                            <a class="btn-join" href="javascript:register();">Join Free</a>
+                        </div>
                     </div>
-                </div>
-                <!-- 登录前 -->
-                <div class="sign-box s-2">
-                    <div class="spacer"></div>
-                    <div class="mt">
-                        <a class="btn-sign" href="javascript:login();">Sign in</a>
-                    </div>
-                    <div class="mc">
-                        <p>New Customer?</p>
-                        <a class="btn-join" href="javascript:register();">Join Free</a>
-                    </div>
-                </div>
-            </li>
-        </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 <div class="nav">
