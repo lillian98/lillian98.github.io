@@ -1,0 +1,1227 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gbk" />
+<title>css slider</title>
+<link rel="stylesheet" href="http://static.paipaiimg.com/c/=/qqbuy/css/common/common.min.css,/qqbuy/css/common/module.min.css?t=1383030031">
+<script type="text/javascript" src='http://static.paipaiimg.com/js/jquery-1.8.3.min.js?t=20130307'></script>
+<style type="text/css">
+    #food_float{display:none;}
+    .wrapper{position:relative;padding-bottom:20px;_zoom:1;}
+    .wrapper .pro{position:relative;*zoom:1;}
+    .wrap-985{position:relative;width:985px;/*overflow:hidden;*/left:50%;margin-left:-492px;}
+    .hd-wrapper{position:relative;width:100%;height:300px;}
+    .wrap-menu{*letter-spacing:-1px;}
+    .wrap-menu a{display:inline-block;color:#FFF;text-decoration:none;}
+    .no-text{ line-height:999em;overflow:hidden;}
+    .long-text{overflow: hidden;text-overflow: ellipsis;white-space:nowrap;}
+    .cf{*zoom:1;}
+    .cf:after{clear:both;content:".";display:block;height:0;visibility:hidden}
+    .tri{ border-color:#fff transparent transparent; top:15px; left:5px; border-style:solid dashed dashed; border-width:4px; font-size:0; height:0; line-height:0; position:absolute; width:0;}
+    .a-img{display:block;position:relative;}
+    .a-img img{display:block;}
+    .good-wrap li,.shops-wrap li{float:left;_display:inline;_overflow:hidden;}
+    .good-wrap ul{position:relative;*zoom:1;}
+    .goods-wrap li{float:left;_display:inline;_overflow:hidden;}
+    .goods-wrap ul{position:relative;*zoom:1;}
+    .pos-abs{position:absolute;}
+    .pos-rlt{position:relative;}
+    .mask,.layer{position:absolute;top:0;left:-999em;width:100%;height:100%;cursor:pointer;display:block;z-index:3;}
+    .border-layer,.mask-layer{top:0;left:-9999px;}
+    .a-img:hover{_background:none;}
+    .a-img:hover .mask-layer,.a-img:hover .border-layer{left:0;}
+    .goods-img{position:relative;}
+    .goods-img a,.goods-img img{display:block;width:100%;height:100%;}
+    .ico{display:inline-block;width:4px;height:5px;vertical-align:middle;overflow:hidden;}
+    .list-img{font-size:0;}
+    .list-img a{display:inline-block;position:relative;}
+    .list-img a:hover .mask-layer,.list-img a:hover .border-layer,.list-img a:hover .mask{left:0;}
+    .goods-buy a{display:block;width:100%;height:100%;overflow:hidden;line-height:999em;}
+        /* common */
+    .goods-wrap .goods-buy{background:url(http://pics3.paipaiimg.com/update/20130911/index_lady_mod_icon.jpg) 0 -64px;}
+        /* list-gg */
+    .list-gg{position:relative;*zoom:1;*letter-spacing:-1px;font-size:0;}
+    .list-gg a{display:inline-block;}
+    .gg-242 a{width:242px;height:80px;margin:5px 5px 0 0;}
+    .gg-242{margin-right:-5px;}
+    .gg-490 a{width:490px;height:80px;margin:5px 5px 0 0;}
+    .gg-490{margin-right:-5px;}
+    .gg-985 a{width:985px;margin:5px 0 0;}
+        /* list-page */
+    .pro .paginator{float:none;}
+    .pro .list-page{text-align:center}
+    .pro .paginator a,.pro .paginator span{display:inline-block;float:none;}
+    .pro .paginator a{border:0 none;padding:0;}
+    .pro .paginator a:hover{border:0 none;}
+    .page-num{font:14px/21px Arial;}
+        /* operate-fixed */
+    .operate-fixed{position:fixed;top:0;width:985px;left:50%;margin-left:-492px;height:128px;z-index:100;_position:absolute;_zoom:1;}
+    .operate-place{width:985px;height:0;}
+
+    .href-map{position:absolute;top:0;left:0;width:1px;height:1px;display:block;overflow:hidden;}
+</style>
+<style type="text/css">
+body{background-color:#282828}
+.wrapper{width:985px;margin:0 auto;}
+.scrollable p {
+    padding: 30px;
+    text-align: justify;
+    line-height: 140%;
+    font-size: 120%;
+}
+.scrollable h2{position: relative;color: #71AD37;}
+.scrollable h2:hover{color: #71AD37;}
+.scrollable h2:after{text-align: justify;
+    display: inline-block;
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #a5ff0e;
+    min-height: 100%;
+    width: 0;
+    max-width: 100%;
+    background: #3a3a3a;
+    transition: 1s ease;}
+.scrollable h2:hover:after {
+    width: 100%;
+}
+
+.back-top{ position:fixed;bottom:15px;right:15px;display:inline-block;padding:10px;text-decoration:none;color:#fff;background:rgba(74, 168, 0, 0.6); transition: .5s ease;font:bold 14px 微软雅黑;}
+.back-top:hover{color: #a5ff0e;text-decoration:none;}
+.back-top:after{text-align: justify;
+    content: attr(data-text);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #a5ff0e;
+    min-height: 100%;
+    width: 0;
+    max-width: 100%;
+    transition: 1s ease;}
+.back-top:hover:after {
+    width: 100%;
+}
+/* css process */
+.full-wrap>input{display:none;}
+.module-filter{width:10%;min-width:200px;background-color:#fff;position:fixed;left:0;top:0;height:100%;font-family:微软雅黑;padding:10px;}
+.wrap-module .pro{display:none;}
+.module-filter h2{display:block;color:#333;}
+.module-filter label{cursor:pointer;}
+.module-filter label:hover,.module-filter label input:checked{color:#5b9;}
+input[id=width_242]:checked~.wrapper .wrap-module .pro[data-width='242']{display:block;}
+input[id=width_242]:checked~.module-filter label[for='width_242'],
+input[id=width_191]:checked~.module-filter label[for='width_191'],
+input[id=width_490]:checked~.module-filter label[for='width_490'],
+input[id=width_161]:checked~.module-filter label[for='width_161'],
+input[id=width_160]:checked~.module-filter label[for='width_160'],
+input[id=width_194]:checked~.module-filter label[for='width_194'],
+input[id=width_489]:checked~.module-filter label[for='width_489'],
+input[id=width_200]:checked~.module-filter label[for='width_200'],
+input[id=width_121]:checked~.module-filter label[for='width_121'],
+input[id=effective_border]:checked~.module-filter label[for='effective_border'],
+input[id=effective_mask]:checked~.module-filter label[for='effective_mask'],
+input[id=effective_picchange]:checked~.module-filter label[for='effective_picchange'],
+input[id=category_goods]:checked~.module-filter label[for='category_goods'],
+input[id=category_shops]:checked~.module-filter label[for='category_shops'],
+input[id=category_rank]:checked~.module-filter label[for='category_rank']
+{color:#5b9;font-weight: bold;}
+input[id=width_191]:checked~.wrapper .wrap-module .pro[data-width='191']{display:block;}
+input[id=width_490]:checked~.wrapper .wrap-module .pro[data-width='490']{display:block;}
+input[id=width_161]:checked~.wrapper .wrap-module .pro[data-width='161']{display:block;}
+input[id=width_160]:checked~.wrapper .wrap-module .pro[data-width='160']{display:block;}
+input[id=width_194]:checked~.wrapper .wrap-module .pro[data-width='194']{display:block;}
+input[id=width_489]:checked~.wrapper .wrap-module .pro[data-width='489']{display:block;}
+input[id=width_200]:checked~.wrapper .wrap-module .pro[data-width='200']{display:block;}
+input[id=width_121]:checked~.wrapper .wrap-module .pro[data-width='121']{display:block;}
+input[id=effective_border]:checked~.wrapper .wrap-module .pro[data-effective='border']{display:block;}
+input[id=effective_mask]:checked~.wrapper .wrap-module .pro[data-effective='mask']{display:block;}
+input[id=effective_picchange]:checked~.wrapper .wrap-module .pro[data-effective='picchange']{display:block;}
+input[id=category_goods]:checked~.wrapper .wrap-module .pro[data-category='goods']{display:block;}
+input[id=category_shops]:checked~.wrapper .wrap-module .pro[data-category='shops']{display:block;}
+input[id=category_rank]:checked~.wrapper .wrap-module .pro[data-category='rank']{display:block;}
+/*input[id=width_242]:checked ~.wrapper .wrap-module .pro[data-width='242'][data-effective='mask']{display:block;}*/
+.module-filter,.wrapper{float: left;}
+    .wrapper{left: 250px;padding-top: 20px;}
+.module-filter h2{font-weight: bold;font-size: 16px;}
+    .filter-div{margin-bottom: 20px;}
+    .filter-wrap{padding: 5px;}
+.module-filter label{margin-right: 5px;}
+    .wrapper h1{color:#5b9;font-weight: bold;font-size: 16px;}
+    .wrap-module .pro{margin-bottom: 20px;}
+</style>
+	<style type="text/css" id="filterCss"></style>
+</head>
+<body>
+<div class="full-wrap">
+<input type="radio" name="width" id="width_242" checked/>
+<input type="radio" name="width" id="width_191"  />
+<input type="radio" name="width" id="width_490"  />
+<input type="radio" name="width" id="width_161"  />
+<input type="radio" name="width" id="width_160"  />
+<input type="radio" name="width" id="width_194"  />
+<input type="radio" name="width" id="width_489"  />
+<input type="radio" name="width" id="width_200"  />
+<input type="radio" name="width" id="width_121"  />
+<input type="radio" name="effective" id="effective_border"  />
+<input type="radio" name="effective" id="effective_mask"  />
+<input type="radio" name="effective" id="effective_picchange"  />
+<input type="radio" name="category" id="category_goods"  />
+<input type="radio" name="category" id="category_shops"  />
+<input type="radio" name="category" id="category_rank"  />
+<div class="wrapper ">
+
+	<!-- S 店铺模板 -->
+<div class="module-shop wrap-module">
+<!-- S 店铺1：2张图片变换 -->
+<style type="text/css">
+	.pro-shop-1{margin-right:-5px;position:relative;*zoom:1;}
+	.pro-shop-1 li{width:242px;height:300px;margin:5px 5px 0 0;}
+	.pro-shop-1 li img{position:absolute;top:0;left:0;transition:opacity 1s;}
+	.pro-shop-1 .img-link{opacity:1;filter:alpha(opacity=100)}
+	.pro-shop-1 .img-hover{opacity:0;filter:alpha(opacity=0)}
+	.pro-shop-1 a:hover .img-link{opacity:0;filter:alpha(opacity=0)}
+	.pro-shop-1 a:hover .img-hover{opacity:1;filter:alpha(opacity=100)}
+</style>
+<div class="pro pro-shop" data-width='242' data-category="shops" data-effective='pic change'>
+			<a class="href-map" href="##" title="" id=""></a>
+			<div class="mod-hd">
+				<h1 class="">店铺模版1：2张图片变换242</h1>
+			</div>
+			<div class="mod-bd">
+				<div class="shops-wrap pro-shop-1">
+					<ul class="cf" id="starShops">
+						<li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=NDOsWyzY2U0QQwWoK6N_DKdhJ_jNsno8fcD4un4hBf9z7p3AORWClNww0x7nJjPQdG0nfHyY7vaNDlgDRvluppk3JlkuRKhXghEJnxYMsrmxS54ZHe2xs2AL4Mr_vo3eyqy6fsJqhJFWWZeZ1vRsHH3A-Lp-IQX_fkhKVC9J2zcnMh0WVecuny-pA5-uNZBGmKFkxgC5FDB6PNxXDHsIOjprszl8Y-Be7bLJcHKmk2I3AS60CQMMdCX1FQLdARbhrdb3k54whB1eF0HBhsxo-Kx7xYGoBGgBaTraMEqYfqzGKZes0x7bw4qxlVMfMGugWxz9kyxzkTORrRqZlprZnF49pLzpcTOivZ4WmZ78KNrqjCPg0U_nFqWB4Ou6CommMfae48Qj_jqElGx5JnmbBQ0hA6f-rHRxZ4XzwgtyGelAdBvKxJBcL_kLIokDR2liZnZeGz-rWEXynI1P4imI42TgHODWfiO7W61FO4ZiTedgEeJEM8iCsQQUjbCv6RXfgXyW8J_8VxnxIBti6Cq_-VGPVVstn4G6ZjE6VF0KW3mQ-cXY_ZAVxjmehPbNjVOC14S8m7HLeU_G025WOWaASiK150qcffMBe8CWhRSzlil9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp8zTf4Hd8zo_XnBhbRC93Z1GyY9MQBZjVgHqLM_QOS2JIQUzgg0XEj2BnhSWjdvNso%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F855003769%2F516%2Findex.shtml%3FPTAG%3D34103.1.1" title="绿盒子官方旗舰店" class="a-img" target="_blank">   <img src="http://img7.paipaiimg.com/ffa27638/acpc-525A78A7-0000000100000000675D00000001EEBC.1.jpg" alt="绿盒子官方旗舰店" class="img-link">   <img src="http://pics2.paipaiimg.com/update/20131013/index_190338140.jpg" alt="绿盒子官方旗舰店" class="img-hover"> </a> </li>
+						<li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=NDOsWyzY2U0QQwWoK6N_DKdhJ_jNsno8fcD4un4hBf9z7p3AORWClNww0x7nJjPQdG0nfHyY7vaNDlgDRvluppk3JlkuRKhXghEJnxYMsrmxS54ZHe2xs2AL4Mr_vo3eyqy6fsJqhJFWWZeZ1vRsHH3A-Lp-IQX_fkhKVC9J2zcnMh0WVecuny-pA5-uNZBGmKFkxgC5FDB6PNxXDHsIOjprszl8Y-Be7bLJcHKmk2I3AS60CQMMdCX1FQLdARbhrdb3k54whB1eF0HBhsxo-Kx7xYGoBGgBaTraMEqYfqzGKZes0x7bw4qxlVMfMGugWxz9kyxzkTORrRqZlprZnF49pLzpcTOivZ4WmZ78KNrqjCPg0U_nFqWB4Ou6CommMfae48Qj_jqElGx5JnmbBQ0hA6f-rHRxZ4XzwgtyGelAdBvKxJBcL_kLIokDR2liZnZeGz-rWEXynI1P4imI42TgHODWfiO7W61FO4ZiTedgEeJEM8iCsQQUjbCv6RXfgXyW8J_8VxnxIBti6Cq_-VGPVVstn4G6ZjE6VF0KW3mQ-cXY_ZAVxjmehPbNjVOC14S8m7HLeU_G025WOWaASiK150qcffMBe8CWhRSzlil9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp8zTf4Hd8zo_XnBhbRC93Z1GyY9MQBZjVgHqLM_QOS2JIQUzgg0XEj2BnhSWjdvNso%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F855003769%2F516%2Findex.shtml%3FPTAG%3D34103.1.1" title="绿盒子官方旗舰店" class="a-img" target="_blank">   <img src="http://img7.paipaiimg.com/ffa27638/acpc-525A78A7-0000000100000000675D00000001EEBC.1.jpg" alt="绿盒子官方旗舰店" class="img-link">   <img src="http://pics2.paipaiimg.com/update/20131013/index_190338140.jpg" alt="绿盒子官方旗舰店" class="img-hover"> </a> </li><li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=NDOsWyzY2U0QQwWoK6N_DKdhJ_jNsno8fcD4un4hBf9z7p3AORWClNww0x7nJjPQdG0nfHyY7vaNDlgDRvluppk3JlkuRKhXghEJnxYMsrmxS54ZHe2xs2AL4Mr_vo3eyqy6fsJqhJFWWZeZ1vRsHH3A-Lp-IQX_fkhKVC9J2zcnMh0WVecuny-pA5-uNZBGmKFkxgC5FDB6PNxXDHsIOjprszl8Y-Be7bLJcHKmk2I3AS60CQMMdCX1FQLdARbhrdb3k54whB1eF0HBhsxo-Kx7xYGoBGgBaTraMEqYfqzGKZes0x7bw4qxlVMfMGugWxz9kyxzkTORrRqZlprZnF49pLzpcTOivZ4WmZ78KNrqjCPg0U_nFqWB4Ou6CommMfae48Qj_jqElGx5JnmbBQ0hA6f-rHRxZ4XzwgtyGelAdBvKxJBcL_kLIokDR2liZnZeGz-rWEXynI1P4imI42TgHODWfiO7W61FO4ZiTedgEeJEM8iCsQQUjbCv6RXfgXyW8J_8VxnxIBti6Cq_-VGPVVstn4G6ZjE6VF0KW3mQ-cXY_ZAVxjmehPbNjVOC14S8m7HLeU_G025WOWaASiK150qcffMBe8CWhRSzlil9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp8zTf4Hd8zo_XnBhbRC93Z1GyY9MQBZjVgHqLM_QOS2JIQUzgg0XEj2BnhSWjdvNso%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F855003769%2F516%2Findex.shtml%3FPTAG%3D34103.1.1" title="绿盒子官方旗舰店" class="a-img" target="_blank">   <img src="http://img7.paipaiimg.com/ffa27638/acpc-525A78A7-0000000100000000675D00000001EEBC.1.jpg" alt="绿盒子官方旗舰店" class="img-link">   <img src="http://pics2.paipaiimg.com/update/20131013/index_190338140.jpg" alt="绿盒子官方旗舰店" class="img-hover"> </a> </li><li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=NDOsWyzY2U0QQwWoK6N_DKdhJ_jNsno8fcD4un4hBf9z7p3AORWClNww0x7nJjPQdG0nfHyY7vaNDlgDRvluppk3JlkuRKhXghEJnxYMsrmxS54ZHe2xs2AL4Mr_vo3eyqy6fsJqhJFWWZeZ1vRsHH3A-Lp-IQX_fkhKVC9J2zcnMh0WVecuny-pA5-uNZBGmKFkxgC5FDB6PNxXDHsIOjprszl8Y-Be7bLJcHKmk2I3AS60CQMMdCX1FQLdARbhrdb3k54whB1eF0HBhsxo-Kx7xYGoBGgBaTraMEqYfqzGKZes0x7bw4qxlVMfMGugWxz9kyxzkTORrRqZlprZnF49pLzpcTOivZ4WmZ78KNrqjCPg0U_nFqWB4Ou6CommMfae48Qj_jqElGx5JnmbBQ0hA6f-rHRxZ4XzwgtyGelAdBvKxJBcL_kLIokDR2liZnZeGz-rWEXynI1P4imI42TgHODWfiO7W61FO4ZiTedgEeJEM8iCsQQUjbCv6RXfgXyW8J_8VxnxIBti6Cq_-VGPVVstn4G6ZjE6VF0KW3mQ-cXY_ZAVxjmehPbNjVOC14S8m7HLeU_G025WOWaASiK150qcffMBe8CWhRSzlil9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp8zTf4Hd8zo_XnBhbRC93Z1GyY9MQBZjVgHqLM_QOS2JIQUzgg0XEj2BnhSWjdvNso%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F855003769%2F516%2Findex.shtml%3FPTAG%3D34103.1.1" title="绿盒子官方旗舰店" class="a-img" target="_blank">   <img src="http://img7.paipaiimg.com/ffa27638/acpc-525A78A7-0000000100000000675D00000001EEBC.1.jpg" alt="绿盒子官方旗舰店" class="img-link">   <img src="http://pics2.paipaiimg.com/update/20131013/index_190338140.jpg" alt="绿盒子官方旗舰店" class="img-hover"> </a> </li><li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=NDOsWyzY2U0QQwWoK6N_DKdhJ_jNsno8fcD4un4hBf9z7p3AORWClNww0x7nJjPQdG0nfHyY7vaNDlgDRvluppk3JlkuRKhXghEJnxYMsrmxS54ZHe2xs2AL4Mr_vo3eyqy6fsJqhJFWWZeZ1vRsHH3A-Lp-IQX_fkhKVC9J2zcnMh0WVecuny-pA5-uNZBGmKFkxgC5FDB6PNxXDHsIOjprszl8Y-Be7bLJcHKmk2I3AS60CQMMdCX1FQLdARbhrdb3k54whB1eF0HBhsxo-Kx7xYGoBGgBaTraMEqYfqzGKZes0x7bw4qxlVMfMGugWxz9kyxzkTORrRqZlprZnF49pLzpcTOivZ4WmZ78KNrqjCPg0U_nFqWB4Ou6CommMfae48Qj_jqElGx5JnmbBQ0hA6f-rHRxZ4XzwgtyGelAdBvKxJBcL_kLIokDR2liZnZeGz-rWEXynI1P4imI42TgHODWfiO7W61FO4ZiTedgEeJEM8iCsQQUjbCv6RXfgXyW8J_8VxnxIBti6Cq_-VGPVVstn4G6ZjE6VF0KW3mQ-cXY_ZAVxjmehPbNjVOC14S8m7HLeU_G025WOWaASiK150qcffMBe8CWhRSzlil9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp8zTf4Hd8zo_XnBhbRC93Z1GyY9MQBZjVgHqLM_QOS2JIQUzgg0XEj2BnhSWjdvNso%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F855003769%2F516%2Findex.shtml%3FPTAG%3D34103.1.1" title="绿盒子官方旗舰店" class="a-img" target="_blank">   <img src="http://img7.paipaiimg.com/ffa27638/acpc-525A78A7-0000000100000000675D00000001EEBC.1.jpg" alt="绿盒子官方旗舰店" class="img-link">   <img src="http://pics2.paipaiimg.com/update/20131013/index_190338140.jpg" alt="绿盒子官方旗舰店" class="img-hover"> </a> </li>
+						</ul>
+				</div>
+			</div>
+		</div>
+<!-- E 店铺1：2张图片变换 -->
+<!-- S 店铺2：边框 -->
+	<style type="text/css">
+		.pro-shop-2{width:792px;overflow:hidden;}
+		.pro-shop-2 ul{width:2000px;}
+		.pro-shop-2 li{float:left;width:193px;height:94px;overflow:hidden;_display:inline;margin:0 5px 0 0;position:relative;}
+		.pro-shop-2 .border-layer{width:185px;height:86px;border:4px solid #ff5da6;}
+		.pro-shop-2 li a:hover{border:0 none;}
+		.pro-shop-2 li a:hover .border-layer{left:0;}
+	</style>
+	<div class="pro pro-shop " data-width='193' data-category="shops" data-effective='border'>
+				<a class="href-map" href="##" title="" id=""></a>
+				<div class="mod-hd">
+					<h1 class="">店铺模版2：边框193</h1>
+				</div>
+		<div class="mod-bd">
+	<div class="shops-wrap pro-shop-2">
+							<ul class="cf" id="">
+							    <li style="display: block;">  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=9ebRnzCr8eqzpigjb19Jirp59S2g1_-BfcD4un4hBf8DbJtJZFwJrNww0x7nJjPQSUJc8lDADYDQf1s5eFUGPK--NgTxYxwc9yHoY85dr_SxS54ZHe2xs9ImtkjtcSMakDrPiUG6-RDhXICijANra33A-Lp-IQX_fkhKVC9J2zcnMh0WVecun-YJUY7Pa5eHhJG3o7d_yft6PNxXDHsIOjprszl8Y-Bepm40EvfkZ7cvDOE7UiDUIVgvOsfqYknlN7oHm_uAgOd3mCpEQNYZoGi48YhUj0p-tQZixYwbIDD550plo-w4Llsc_ZMsc5Ez0SZiZ8pm2xxGcexqS-0zmxHq9mTYdJF-JS6FJJ6loLs-9GvXN2T7brH_IsFklPuo6COpllm60pOjuU4uwrBOIk6w11Nsqg58h3mWDMtI3zRnMgwNWQnsY6v5ZGwYXgC_IxmpYSuw_vzw9WNEH1Ru2aPcsyGZtx7XnVOCjez5NSR54CBV_9TBzzSX9T142Lz2IxdYGDzlgRvq7y2Rn8oG6hWpxrtdlhmrybF8cGBW_BWc6ANdybejF3UPtyufPqfGv26E5u-aERcIPDiExF95txK-cBvdCG-vBweFG3cjQMC8QkJVwC-Fn4rf9RTZcE_ZdaXafZnObTbj2i52mbOiP33A-Lp-IQX_RIbM9fXBpY0nMh0WVecunzNN_gd3zOj99KwXGIx0nn0%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F855007797%2F516%2Findex.shtml%3FPTAG%3D34103.2.4" title="好奇乐" class="thumbnail" target="_blank"><img src="http://img1.paipaiimg.com/c701aa99/acpc-525BB899-000000010000000073B400000001F556.1.jpg" alt="好奇乐"><span class="border-layer layer"></span></a> </li>    <li style="display: block;">  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=9ebRnzCr8ep9CJo0EB309SwGR16yRLeEfcD4un4hBf81jQDzD6_yPdww0x7nJjPQpva4-baNL7_e07RFTnLv-N4kWbMeh3U1prarvWzE8rqxS54ZHe2xs0U6AaICLtqekDrPiUG6-RBn43sazwmGnH3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun3HMJ0cRYNMMgCun6k0WaaB6PNxXDHsIOjprszl8Y-Bepm40EvfkZ7cwvO722rZvJ_h44ZWaztZxbwVoKZeZq3rNcBg-LDzHq-zLBPX5OBqu7wt65zLkkzwOn9ULu6CetoFyywSrOs9zrI45xf5QDPXgcj2Oz7zqoFs1GQDeUkat_Ww1xQhc_FyGBxv26GTRMWiS9CmXCwGA1HzUYipV5ojvAH8w1WApYDhnJ-TlSZ448pK_3IM1Sp3-NgCAs7mzkSyEXoRRkPSHuIVblhAf3h9k4Bzg1n4ju1utRTuGYk3nJm67LD2pZBkKjqJrwCLS7pGNWY-28nABUKfyEJxvUv9BZDoOdYgfGuo1bbn4lK2PNC_xDlGVKPxBxT6RsjmM8BgK8nzppjLBCrbunmt5FppoFqkc2dr-No8Cpjrf8mPamjvuCzQZaGe0sVIDlaVgg9YbIvlst32zuBfXFda5-oojnDL8t57D8k0Lo78GVdo4b2itfM4nZAlZvGpNVKIJEQpwcY1gFjHs&amp;url=http%3A%2F%2Fshop.wanggou.com%2F855000148%2F512%2Findex.shtml%3FPTAG%3D34103.2.5" title="ABC" class="thumbnail" target="_blank"><img src="http://img2.paipaiimg.com/63fc7552/acpc-525BB85A-000000010000000073B500000001F551.1.jpg" alt="ABC"><span class="border-layer layer"></span></a> </li>    <li style="display: block;">  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=9ebRnzCr8er8J4HyZshicW4vV4lreH6JfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQEapH3733KwEXXBHaWrfc3x0QThwkI9vGrkIvrnp00Z-xS54ZHe2xszH8Rs2ld12GBTwpWnGkXNgRDA_uNNCgWn3A-Lp-IQX_fkhKVC9J2zcnMh0WVecunwLmQNwK4cDDS9RnwPx1ftB6PNxXDHsIOjprszl8Y-BeQtREMxaLfmwrunPuZGhDA1gvOsfqYknlSstSV-p-8ZJ3mCpEQNYZoGi48YhUj0p-tQZixYwbIDD550plo-w4Llsc_ZMsc5Ez0SZiZ8pm2xxGcexqS-0zmxHq9mTYdJF-w2yJVXq_BokZSmAioSUHW7H_IsFklPuo6COpllm60pPBLlfe_2YOxU6w11Nsqg58h3mWDMtI3zRnMgwNWQnsY6v5ZGwYXgC_IxmpYSuw_vzw9WNEH1Ru2aPcsyGZtx7XnVOCjez5NSR54CBV_9TBzzSX9T142Lz2N2fbJoMChFSbfUWlybWa9lJeJs7k85VKybF8cGBW_BWc6ANdybejF9y1BfiysdNbv26E5u-aERcIPDiExF95txK-cBvdCG-vBweFG3cjQMC8QkJVwC-Fn4rf9RTZcE_ZdaXafZnObTbj2i52mbOiP33A-Lp-IQX_RIbM9fXBpY0nMh0WVecunzNN_gd3zOj99KwXGIx0nn0%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F855002748%2F518%2Findex.shtml%3FPTAG%3D33847.1.1" title="可可鸭" class="thumbnail" target="_blank"><img src="http://img4.paipaiimg.com/bd4887b5/acpc-525940D4-0000000100000000676000000001EC80.1.jpg" alt="可可鸭"><span class="border-layer layer"></span></a> </li>    <li style="display: block;">  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=9ebRnzCr8eomPJ4rLf1TpoxgxPSTY8XUfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQphwjp9Y3HckuFcU2NlHVO1DWxlulNAowrkIvrnp00Z-xS54ZHe2xs8H0UXuGB6GEBTwpWnGkXNjbEAWA1XZOoH3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun92XjlDQFKL29A8BOowFrJU5ie11tAXK2f_v4f_frgzjxeGY0cAzFb4pypoHhjXM3zIvvxJUkG40x40ibSisEAZOsNdTbKoOfECF5w3t7Kbpq_lkbBheAL_FFwA7FHvTEKPcsyGZtx7XnVOCjez5NSQxGhPAPkqbsxsZHxmRZ7uZok9miCB2vPoukW-dKpa4rMcyJPrDGKJ-trDbHXDeeP-99Jdi94bA4ZaUnAJm52uXQHQbysSQXC_sJQD4tHuhPRsJj8BqMlNSPKqSRyEfMPMChabO099W6nd3GJT1FfiERdhZYfirC9x7zo8A9xtKudyDMqj_U2NToNBQwPqcnMiqraiKIPXewyhf6psh0bNxvvaDg0WI5ljldInLkMgdZ8vyxXgCnVFeAf0syWdhSSUCzeb0jkaLkaYGGh6pywwmQ9WKabXNTe4bJj0xAFmNWAeosz9A5LYkhBTOCDRcSPbg4jPPHyQtoFL4bbRAFcLIfWu9SDGxvawavK9k3bxsSJxxgykoXI05VX2tyw2pTT0%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F2287463812%2F511%2Findex.shtml%3FPTAG%3D34103.2.7" title="亲润" class="thumbnail" target="_blank"><img src="http://img4.paipaiimg.com/b524cd04/acpc-52594204-0000000100000000767800000001EC8D.1.jpg" alt="亲润"><span class="border-layer layer"></span></a> </li>  </ul>
+							<a class="page-pre pos-abs" href="###" id="shopLogoPrev" title="上一页"></a>
+							<a class="page-next pos-abs" href="###" id="shopLogoNext" title="下一页"></a>
+						</div>
+		</div>
+		</div>
+<!-- E 店铺2：边框 -->
+	<!-- S 店铺5：边框:242*322 -->
+		<style type="text/css">
+			.pro-shop-5 ul{margin-right:-7px;}
+			.pro-shop-5 .goods-img{width:242px;height:322px;}
+			.pro-shop-5 li{width:242px;height:322px;margin:9px 5px 0 0;position:relative;}
+			.pro-shop-5 .layer{width:236px;height:316px;border:3px solid #db4d01;}
+			.pro-shop-5 li:hover .layer{left:0;}
+		</style>
+		<div class="pro pro-shop " data-width='242' data-category="shops" data-effective='border'>
+					<a class="href-map" href="##" title="" id=""></a>
+					<div class="mod-hd">
+						<h1 class="">店铺5：边框:242*322</h1>
+					</div>
+			<div class="mod-bd">
+		<div class="shops-wrap pro-shop-5">
+								<ul class="cf" id="">
+									<li>
+										<div class="goods-img">
+											<a target="_blank" class="a-img" href="" title="全场3-5折 1元秒杀每天有">
+												<img alt="全场3-5折 1元秒杀每天有" title="全场3-5折 1元秒杀每天有" init_src="http://img1.paipaiimg.com/2ff3896e/acpc-524D09A1-0000000100000000682000000001B272.1.jpg" src="http://img1.paipaiimg.com/2ff3896e/acpc-524D09A1-0000000100000000682000000001B272.1.jpg" iguid="14">
+												<span class="layer mask-layer"></span></a>
+
+										</div>
+									</li><li>
+										<div class="goods-img">
+											<a target="_blank" class="a-img" href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=YhXmPlyQiHZEVicQPZEZ3sNge1Uf9xP7fcD4un4hBf8DbJtJZFwJrNww0x7nJjPQaJsAgAYZRp-tKjervxkOBIfoHWZzOWqSo2irECGuC-qxS54ZHe2xsw0zL42iClYCwEbtavaSes384gmaWCC3i33A-Lp-IQX_fkhKVC9J2zcnMh0WVecun09MHeFIKvbM-KNykIZ0W9B6PNxXDHsIOjprszl8Y-BeBqDEfxus8aqk30WbUb651lpmD_55BD701ovuiUBY_MtuXsAwDyras4a05fEMFksFLrvc45xU7eh9TpaQEGH0sCY51KjKm98ad3cYlPUV-ISCzLvmCNQpETMjpjH52a8bmuitJfQ6qAzzXybu9UW_4v1t2e6OG5aHYxC7SgHeYEPpdfdMULvhPmk7Q7pwZm1PL5pthgPM22FSfG8BrPXz4hPmjRemmSV9wNHMXrVYmITvnb5-iVrrqGTgHODWfiO7W61FO4ZiTeeECU8hMzAfCwQUjbCv6RXfgXyW8J_8VxnZQr398eMVeVGPVVstn4G6pb_OeHsxxtv0_Wb9fqPGZzmehPbNjVOC14S8m7HLeU_G025WOWaASiK150qcffMBe8CWhRSzlil9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfj2mFK8UVd8JBsmPTEAWY1YB6izP0DktiSycPpCpHuIPzM3oyCA3drR_TjzVJC2UF3TjQQCt5oT0g%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F855000423%2F524%2Findex.shtml%3FPTAG%3D34076.1.7" title="全场3-5折 1元秒杀每天有">
+												<img alt="全场3-5折 1元秒杀每天有" title="全场3-5折 1元秒杀每天有" init_src="http://img1.paipaiimg.com/2ff3896e/acpc-524D09A1-0000000100000000682000000001B272.1.jpg" src="http://img1.paipaiimg.com/2ff3896e/acpc-524D09A1-0000000100000000682000000001B272.1.jpg" iguid="14">
+												<span class="layer mask-layer"></span></a>
+
+										</div>
+									</li><li>
+										<div class="goods-img">
+											<a target="_blank" class="a-img" href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=YhXmPlyQiHZEVicQPZEZ3sNge1Uf9xP7fcD4un4hBf8DbJtJZFwJrNww0x7nJjPQaJsAgAYZRp-tKjervxkOBIfoHWZzOWqSo2irECGuC-qxS54ZHe2xsw0zL42iClYCwEbtavaSes384gmaWCC3i33A-Lp-IQX_fkhKVC9J2zcnMh0WVecun09MHeFIKvbM-KNykIZ0W9B6PNxXDHsIOjprszl8Y-BeBqDEfxus8aqk30WbUb651lpmD_55BD701ovuiUBY_MtuXsAwDyras4a05fEMFksFLrvc45xU7eh9TpaQEGH0sCY51KjKm98ad3cYlPUV-ISCzLvmCNQpETMjpjH52a8bmuitJfQ6qAzzXybu9UW_4v1t2e6OG5aHYxC7SgHeYEPpdfdMULvhPmk7Q7pwZm1PL5pthgPM22FSfG8BrPXz4hPmjRemmSV9wNHMXrVYmITvnb5-iVrrqGTgHODWfiO7W61FO4ZiTeeECU8hMzAfCwQUjbCv6RXfgXyW8J_8VxnZQr398eMVeVGPVVstn4G6pb_OeHsxxtv0_Wb9fqPGZzmehPbNjVOC14S8m7HLeU_G025WOWaASiK150qcffMBe8CWhRSzlil9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfj2mFK8UVd8JBsmPTEAWY1YB6izP0DktiSycPpCpHuIPzM3oyCA3drR_TjzVJC2UF3TjQQCt5oT0g%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F855000423%2F524%2Findex.shtml%3FPTAG%3D34076.1.7" title="全场3-5折 1元秒杀每天有">
+												<img alt="全场3-5折 1元秒杀每天有" title="全场3-5折 1元秒杀每天有" init_src="http://img1.paipaiimg.com/2ff3896e/acpc-524D09A1-0000000100000000682000000001B272.1.jpg" src="http://img1.paipaiimg.com/2ff3896e/acpc-524D09A1-0000000100000000682000000001B272.1.jpg" iguid="14">
+												<span class="layer mask-layer"></span></a>
+
+										</div>
+									</li><li>
+										<div class="goods-img">
+											<a target="_blank" class="a-img" href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=YhXmPlyQiHZEVicQPZEZ3sNge1Uf9xP7fcD4un4hBf8DbJtJZFwJrNww0x7nJjPQaJsAgAYZRp-tKjervxkOBIfoHWZzOWqSo2irECGuC-qxS54ZHe2xsw0zL42iClYCwEbtavaSes384gmaWCC3i33A-Lp-IQX_fkhKVC9J2zcnMh0WVecun09MHeFIKvbM-KNykIZ0W9B6PNxXDHsIOjprszl8Y-BeBqDEfxus8aqk30WbUb651lpmD_55BD701ovuiUBY_MtuXsAwDyras4a05fEMFksFLrvc45xU7eh9TpaQEGH0sCY51KjKm98ad3cYlPUV-ISCzLvmCNQpETMjpjH52a8bmuitJfQ6qAzzXybu9UW_4v1t2e6OG5aHYxC7SgHeYEPpdfdMULvhPmk7Q7pwZm1PL5pthgPM22FSfG8BrPXz4hPmjRemmSV9wNHMXrVYmITvnb5-iVrrqGTgHODWfiO7W61FO4ZiTeeECU8hMzAfCwQUjbCv6RXfgXyW8J_8VxnZQr398eMVeVGPVVstn4G6pb_OeHsxxtv0_Wb9fqPGZzmehPbNjVOC14S8m7HLeU_G025WOWaASiK150qcffMBe8CWhRSzlil9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfj2mFK8UVd8JBsmPTEAWY1YB6izP0DktiSycPpCpHuIPzM3oyCA3drR_TjzVJC2UF3TjQQCt5oT0g%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F855000423%2F524%2Findex.shtml%3FPTAG%3D34076.1.7" title="全场3-5折 1元秒杀每天有">
+												<img alt="全场3-5折 1元秒杀每天有" title="全场3-5折 1元秒杀每天有" init_src="http://img1.paipaiimg.com/2ff3896e/acpc-524D09A1-0000000100000000682000000001B272.1.jpg" src="http://img1.paipaiimg.com/2ff3896e/acpc-524D09A1-0000000100000000682000000001B272.1.jpg" iguid="14">
+												<span class="layer mask-layer"></span></a>
+
+										</div>
+									</li><li>
+										<div class="goods-img">
+											<a target="_blank" class="a-img" href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=YhXmPlyQiHZEVicQPZEZ3sNge1Uf9xP7fcD4un4hBf8DbJtJZFwJrNww0x7nJjPQaJsAgAYZRp-tKjervxkOBIfoHWZzOWqSo2irECGuC-qxS54ZHe2xsw0zL42iClYCwEbtavaSes384gmaWCC3i33A-Lp-IQX_fkhKVC9J2zcnMh0WVecun09MHeFIKvbM-KNykIZ0W9B6PNxXDHsIOjprszl8Y-BeBqDEfxus8aqk30WbUb651lpmD_55BD701ovuiUBY_MtuXsAwDyras4a05fEMFksFLrvc45xU7eh9TpaQEGH0sCY51KjKm98ad3cYlPUV-ISCzLvmCNQpETMjpjH52a8bmuitJfQ6qAzzXybu9UW_4v1t2e6OG5aHYxC7SgHeYEPpdfdMULvhPmk7Q7pwZm1PL5pthgPM22FSfG8BrPXz4hPmjRemmSV9wNHMXrVYmITvnb5-iVrrqGTgHODWfiO7W61FO4ZiTeeECU8hMzAfCwQUjbCv6RXfgXyW8J_8VxnZQr398eMVeVGPVVstn4G6pb_OeHsxxtv0_Wb9fqPGZzmehPbNjVOC14S8m7HLeU_G025WOWaASiK150qcffMBe8CWhRSzlil9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfj2mFK8UVd8JBsmPTEAWY1YB6izP0DktiSycPpCpHuIPzM3oyCA3drR_TjzVJC2UF3TjQQCt5oT0g%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F855000423%2F524%2Findex.shtml%3FPTAG%3D34076.1.7" title="全场3-5折 1元秒杀每天有">
+												<img alt="全场3-5折 1元秒杀每天有" title="全场3-5折 1元秒杀每天有" init_src="http://img1.paipaiimg.com/2ff3896e/acpc-524D09A1-0000000100000000682000000001B272.1.jpg" src="http://img1.paipaiimg.com/2ff3896e/acpc-524D09A1-0000000100000000682000000001B272.1.jpg" iguid="14">
+												<span class="layer mask-layer"></span></a>
+
+										</div>
+									</li><li>
+										<div class="goods-img">
+											<a target="_blank" class="a-img" href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=YhXmPlyQiHZEVicQPZEZ3sNge1Uf9xP7fcD4un4hBf8DbJtJZFwJrNww0x7nJjPQaJsAgAYZRp-tKjervxkOBIfoHWZzOWqSo2irECGuC-qxS54ZHe2xsw0zL42iClYCwEbtavaSes384gmaWCC3i33A-Lp-IQX_fkhKVC9J2zcnMh0WVecun09MHeFIKvbM-KNykIZ0W9B6PNxXDHsIOjprszl8Y-BeBqDEfxus8aqk30WbUb651lpmD_55BD701ovuiUBY_MtuXsAwDyras4a05fEMFksFLrvc45xU7eh9TpaQEGH0sCY51KjKm98ad3cYlPUV-ISCzLvmCNQpETMjpjH52a8bmuitJfQ6qAzzXybu9UW_4v1t2e6OG5aHYxC7SgHeYEPpdfdMULvhPmk7Q7pwZm1PL5pthgPM22FSfG8BrPXz4hPmjRemmSV9wNHMXrVYmITvnb5-iVrrqGTgHODWfiO7W61FO4ZiTeeECU8hMzAfCwQUjbCv6RXfgXyW8J_8VxnZQr398eMVeVGPVVstn4G6pb_OeHsxxtv0_Wb9fqPGZzmehPbNjVOC14S8m7HLeU_G025WOWaASiK150qcffMBe8CWhRSzlil9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfj2mFK8UVd8JBsmPTEAWY1YB6izP0DktiSycPpCpHuIPzM3oyCA3drR_TjzVJC2UF3TjQQCt5oT0g%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F855000423%2F524%2Findex.shtml%3FPTAG%3D34076.1.7" title="全场3-5折 1元秒杀每天有">
+												<img alt="全场3-5折 1元秒杀每天有" title="全场3-5折 1元秒杀每天有" init_src="http://img1.paipaiimg.com/2ff3896e/acpc-524D09A1-0000000100000000682000000001B272.1.jpg" src="http://img1.paipaiimg.com/2ff3896e/acpc-524D09A1-0000000100000000682000000001B272.1.jpg" iguid="14">
+												<span class="layer mask-layer"></span></a>
+
+										</div>
+									</li>
+								      </ul>
+							</div>
+			</div>
+			</div>
+	<!-- E 店铺5：边框:242*322 -->
+<!-- S 店铺7：边框490*130 -->
+<style type="text/css">
+	.pro-shop-7 {overflow: hidden;margin-right: -15px;*zoom: 1;font-size:0;}
+	.pro-shop-7 a{ width: 490px;height: 130px;margin: 0 5px 5px 0; position:relative;overflow:hidden;display:inline-block;}
+	.pro-shop-7 .border-layer{width:480px;height:120px;border:5px solid #dc212c;}
+	.pro-shop-7 a:hover{border:0 none;text-decoration:none;}
+	.pro-shop-7 a:hover .layer{ left:0; }
+	.pro-shop-7 .border-layer em{background-color: #dc212c;display: inline-block;padding: 0 3px 3px;color: #fdf0f1;font-family:"Microsoft YaHei","微软雅黑";font-size:12px;}
+</style>
+<div class="pro pro-shop " data-width='490' data-category="shops" data-effective='border'>
+	<a class="href-map" href="##" title="" id=""></a>
+	<div class="mod-hd">
+		<h1 class="">店铺5：边框:490*130</h1>
+	</div>
+	<div class="mod-bd">
+		<div class="shops-wrap pro-shop-7">
+			<a title="乔伊思" target="_blank" href="#nolink"> <img alt="乔伊思" title="乔伊思" src="http://img7.paipaiimg.com/5316a6cd/acpc-52677887-00000001000000008AF000000002517E.1.jpg">
+				<span class="layer border-layer"><em>热销59788件</em></span>
+			</a>
+			<a title="乔伊思" target="_blank" href="#nolink"> <img alt="乔伊思" title="乔伊思" src="http://img7.paipaiimg.com/5316a6cd/acpc-52677887-00000001000000008AF000000002517E.1.jpg">
+							<span class="layer border-layer"><em>热销59788件</em></span>
+						</a>
+			<a title="乔伊思" target="_blank" href="#nolink"> <img alt="乔伊思" title="乔伊思" src="http://img7.paipaiimg.com/5316a6cd/acpc-52677887-00000001000000008AF000000002517E.1.jpg">
+							<span class="layer border-layer"><em>热销59788件</em></span>
+						</a><a title="乔伊思" target="_blank" href="#nolink"> <img alt="乔伊思" title="乔伊思" src="http://img7.paipaiimg.com/5316a6cd/acpc-52677887-00000001000000008AF000000002517E.1.jpg">
+				<span class="layer border-layer"><em>热销59788件</em></span>
+			</a>
+			<a title="乔伊思" target="_blank" href="#nolink"> <img alt="乔伊思" title="乔伊思" src="http://img7.paipaiimg.com/5316a6cd/acpc-52677887-00000001000000008AF000000002517E.1.jpg">
+							<span class="layer border-layer"><em>热销59788件</em></span>
+						</a>
+			<a title="乔伊思" target="_blank" href="#nolink"> <img alt="乔伊思" title="乔伊思" src="http://img7.paipaiimg.com/5316a6cd/acpc-52677887-00000001000000008AF000000002517E.1.jpg">
+							<span class="layer border-layer"><em>热销59788件</em></span>
+						</a><a title="乔伊思" target="_blank" href="#nolink"> <img alt="乔伊思" title="乔伊思" src="http://img7.paipaiimg.com/5316a6cd/acpc-52677887-00000001000000008AF000000002517E.1.jpg">
+				<span class="layer border-layer"><em>热销59788件</em></span>
+			</a>
+			<a title="乔伊思" target="_blank" href="#nolink"> <img alt="乔伊思" title="乔伊思" src="http://img7.paipaiimg.com/5316a6cd/acpc-52677887-00000001000000008AF000000002517E.1.jpg">
+							<span class="layer border-layer"><em>热销59788件</em></span>
+						</a>
+			<a title="乔伊思" target="_blank" href="#nolink"> <img alt="乔伊思" title="乔伊思" src="http://img7.paipaiimg.com/5316a6cd/acpc-52677887-00000001000000008AF000000002517E.1.jpg">
+							<span class="layer border-layer"><em>热销59788件</em></span>
+						</a>
+		</div>
+	</div>
+</div>
+<!-- E 店铺7：边框490*130 -->
+	<!-- S 店铺3：蒙层193 -->
+		<style type="text/css">
+			.pro-shop-3 ul{margin-right:-5px;position:relative;*zoom:1;}
+			.pro-shop-3 li{width:193px;height:300px;margin:5px 5px 0 0;}
+			.pro-shop-3 .mask-layer {background: rgba(0,0,0,0.5);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF000000,endColorstr=#BF000000);width: 193px;height: 180px;padding-top: 120px;font-family: Microsoft Yahei,Simhei;color: #FFF;top: 0;text-align: center;font-size: 20px;font-weight: bold;text-decoration:none;}
+			:root .pro-shop-3 .mask-layer{filter:none;}
+			.pro-shop-3 .q-btn {display: inline-block;width: 90px;height: 26px;margin-top: 10px;background: url(http://pics3.paipaiimg.com/update/20130917/index_173910736.jpg) 0 0 no-repeat;}
+		</style>
+		<div class="pro pro-shop " data-width='193' data-category="shops" data-effective='mask'>
+					<a class="href-map" href="##" title="" id=""></a>
+					<div class="mod-hd">
+						<h1 class="">店铺模版3：蒙层193</h1>
+					</div>
+			<div class="mod-bd">
+				<div class="shops-wrap pro-shop-3">
+					<ul class="cf">
+						<li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=NPgAiu6OdAs8X5fBT3d7piQAkecHBmn7fcD4un4hBf8R4zZfPIkKc9ww0x7nJjPQa27mLBzCfUS5gErQCmYhyM7yiTdDcTOCZin9QSXXNF6xS54ZHe2xswfdeBqMf1fJT7ZJbEqXtbbCeprSlxP6dX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun-F1f_SqxhJvHh7mLUoESH65faiVxV0_qG03xnMvsm8sEhjvmnvErebGNtQAt3JbQDPu2R7Sl6Fou9MLwU7dhBmapOddp_J6Q6jOXjnqk_sVpfDMFqm4seb5VpxZO0h5x3yrlyqrdEwTYxr4s7aVCF7t3YKAH35lvTfW4jssrWiGiZoNE0R0f2pEPvdPqKhCANZliz5shviQruvrYjzKkXB1DoJJ6hGzLhqsBNAOg50od5gqREDWGaAi6wPHXdk1ECC49pn9Mpxr6BAyKTtf3niVyt0oeAaiH-lmtHrJH3LvWxz9kyxzkTPRJmJnymbbHPmAdVPRrzyNhEMUGzsDvMT7wwxk56Rxqv06ss_QHv-GXcK0t6n4SNbJsXxwYFb8FUOUYlSMJSVbdQ-3K58-p8a_boTm75oRFwg8OITEX3m3Er5wG90Ib68HB4UbdyNAwLxCQlXAL4Wfit_1FNlwT9l1pdp9mc5tNuPaLnaZs6I_fcD4un4hBf9Ehsz19cGljScyHRZV5y6fM03-B3fM6P30rBcYjHSefQ%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F69466818%2F519%2Findex.shtml%3FPTAG%3D34103.3.6" class="a-img" target="_blank"><img init_src="http://img3.paipaiimg.com/24c01453/acpc-52592DB3-0000000100000000764E00000001EB7F.1.jpg" alt="韩版新品套装9.9元" src="http://img3.paipaiimg.com/24c01453/acpc-52592DB3-0000000100000000764E00000001EB7F.1.jpg" iguid="0"><span class="mask-layer pos-abs"><span class="title">韩版新品套装9.9元</span><br><span class="q-btn"></span></span></a> </li>
+						<li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=NPgAiu6OdAs8X5fBT3d7piQAkecHBmn7fcD4un4hBf8R4zZfPIkKc9ww0x7nJjPQa27mLBzCfUS5gErQCmYhyM7yiTdDcTOCZin9QSXXNF6xS54ZHe2xswfdeBqMf1fJT7ZJbEqXtbbCeprSlxP6dX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun-F1f_SqxhJvHh7mLUoESH65faiVxV0_qG03xnMvsm8sEhjvmnvErebGNtQAt3JbQDPu2R7Sl6Fou9MLwU7dhBmapOddp_J6Q6jOXjnqk_sVpfDMFqm4seb5VpxZO0h5x3yrlyqrdEwTYxr4s7aVCF7t3YKAH35lvTfW4jssrWiGiZoNE0R0f2pEPvdPqKhCANZliz5shviQruvrYjzKkXB1DoJJ6hGzLhqsBNAOg50od5gqREDWGaAi6wPHXdk1ECC49pn9Mpxr6BAyKTtf3niVyt0oeAaiH-lmtHrJH3LvWxz9kyxzkTPRJmJnymbbHPmAdVPRrzyNhEMUGzsDvMT7wwxk56Rxqv06ss_QHv-GXcK0t6n4SNbJsXxwYFb8FUOUYlSMJSVbdQ-3K58-p8a_boTm75oRFwg8OITEX3m3Er5wG90Ib68HB4UbdyNAwLxCQlXAL4Wfit_1FNlwT9l1pdp9mc5tNuPaLnaZs6I_fcD4un4hBf9Ehsz19cGljScyHRZV5y6fM03-B3fM6P30rBcYjHSefQ%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F69466818%2F519%2Findex.shtml%3FPTAG%3D34103.3.6" class="a-img" target="_blank"><img init_src="http://img3.paipaiimg.com/24c01453/acpc-52592DB3-0000000100000000764E00000001EB7F.1.jpg" alt="韩版新品套装9.9元" src="http://img3.paipaiimg.com/24c01453/acpc-52592DB3-0000000100000000764E00000001EB7F.1.jpg" iguid="0"><span class="mask-layer pos-abs"><span class="title">韩版新品套装9.9元</span><br><span class="q-btn"></span></span></a> </li>
+						<li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=NPgAiu6OdAs8X5fBT3d7piQAkecHBmn7fcD4un4hBf8R4zZfPIkKc9ww0x7nJjPQa27mLBzCfUS5gErQCmYhyM7yiTdDcTOCZin9QSXXNF6xS54ZHe2xswfdeBqMf1fJT7ZJbEqXtbbCeprSlxP6dX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun-F1f_SqxhJvHh7mLUoESH65faiVxV0_qG03xnMvsm8sEhjvmnvErebGNtQAt3JbQDPu2R7Sl6Fou9MLwU7dhBmapOddp_J6Q6jOXjnqk_sVpfDMFqm4seb5VpxZO0h5x3yrlyqrdEwTYxr4s7aVCF7t3YKAH35lvTfW4jssrWiGiZoNE0R0f2pEPvdPqKhCANZliz5shviQruvrYjzKkXB1DoJJ6hGzLhqsBNAOg50od5gqREDWGaAi6wPHXdk1ECC49pn9Mpxr6BAyKTtf3niVyt0oeAaiH-lmtHrJH3LvWxz9kyxzkTPRJmJnymbbHPmAdVPRrzyNhEMUGzsDvMT7wwxk56Rxqv06ss_QHv-GXcK0t6n4SNbJsXxwYFb8FUOUYlSMJSVbdQ-3K58-p8a_boTm75oRFwg8OITEX3m3Er5wG90Ib68HB4UbdyNAwLxCQlXAL4Wfit_1FNlwT9l1pdp9mc5tNuPaLnaZs6I_fcD4un4hBf9Ehsz19cGljScyHRZV5y6fM03-B3fM6P30rBcYjHSefQ%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F69466818%2F519%2Findex.shtml%3FPTAG%3D34103.3.6" class="a-img" target="_blank"><img init_src="http://img3.paipaiimg.com/24c01453/acpc-52592DB3-0000000100000000764E00000001EB7F.1.jpg" alt="韩版新品套装9.9元" src="http://img3.paipaiimg.com/24c01453/acpc-52592DB3-0000000100000000764E00000001EB7F.1.jpg" iguid="0"><span class="mask-layer pos-abs"><span class="title">韩版新品套装9.9元</span><br><span class="q-btn"></span></span></a> </li>
+						<li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=NPgAiu6OdAs8X5fBT3d7piQAkecHBmn7fcD4un4hBf8R4zZfPIkKc9ww0x7nJjPQa27mLBzCfUS5gErQCmYhyM7yiTdDcTOCZin9QSXXNF6xS54ZHe2xswfdeBqMf1fJT7ZJbEqXtbbCeprSlxP6dX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun-F1f_SqxhJvHh7mLUoESH65faiVxV0_qG03xnMvsm8sEhjvmnvErebGNtQAt3JbQDPu2R7Sl6Fou9MLwU7dhBmapOddp_J6Q6jOXjnqk_sVpfDMFqm4seb5VpxZO0h5x3yrlyqrdEwTYxr4s7aVCF7t3YKAH35lvTfW4jssrWiGiZoNE0R0f2pEPvdPqKhCANZliz5shviQruvrYjzKkXB1DoJJ6hGzLhqsBNAOg50od5gqREDWGaAi6wPHXdk1ECC49pn9Mpxr6BAyKTtf3niVyt0oeAaiH-lmtHrJH3LvWxz9kyxzkTPRJmJnymbbHPmAdVPRrzyNhEMUGzsDvMT7wwxk56Rxqv06ss_QHv-GXcK0t6n4SNbJsXxwYFb8FUOUYlSMJSVbdQ-3K58-p8a_boTm75oRFwg8OITEX3m3Er5wG90Ib68HB4UbdyNAwLxCQlXAL4Wfit_1FNlwT9l1pdp9mc5tNuPaLnaZs6I_fcD4un4hBf9Ehsz19cGljScyHRZV5y6fM03-B3fM6P30rBcYjHSefQ%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F69466818%2F519%2Findex.shtml%3FPTAG%3D34103.3.6" class="a-img" target="_blank"><img init_src="http://img3.paipaiimg.com/24c01453/acpc-52592DB3-0000000100000000764E00000001EB7F.1.jpg" alt="韩版新品套装9.9元" src="http://img3.paipaiimg.com/24c01453/acpc-52592DB3-0000000100000000764E00000001EB7F.1.jpg" iguid="0"><span class="mask-layer pos-abs"><span class="title">韩版新品套装9.9元</span><br><span class="q-btn"></span></span></a> </li>
+						<li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=NPgAiu6OdAs8X5fBT3d7piQAkecHBmn7fcD4un4hBf8R4zZfPIkKc9ww0x7nJjPQa27mLBzCfUS5gErQCmYhyM7yiTdDcTOCZin9QSXXNF6xS54ZHe2xswfdeBqMf1fJT7ZJbEqXtbbCeprSlxP6dX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun-F1f_SqxhJvHh7mLUoESH65faiVxV0_qG03xnMvsm8sEhjvmnvErebGNtQAt3JbQDPu2R7Sl6Fou9MLwU7dhBmapOddp_J6Q6jOXjnqk_sVpfDMFqm4seb5VpxZO0h5x3yrlyqrdEwTYxr4s7aVCF7t3YKAH35lvTfW4jssrWiGiZoNE0R0f2pEPvdPqKhCANZliz5shviQruvrYjzKkXB1DoJJ6hGzLhqsBNAOg50od5gqREDWGaAi6wPHXdk1ECC49pn9Mpxr6BAyKTtf3niVyt0oeAaiH-lmtHrJH3LvWxz9kyxzkTPRJmJnymbbHPmAdVPRrzyNhEMUGzsDvMT7wwxk56Rxqv06ss_QHv-GXcK0t6n4SNbJsXxwYFb8FUOUYlSMJSVbdQ-3K58-p8a_boTm75oRFwg8OITEX3m3Er5wG90Ib68HB4UbdyNAwLxCQlXAL4Wfit_1FNlwT9l1pdp9mc5tNuPaLnaZs6I_fcD4un4hBf9Ehsz19cGljScyHRZV5y6fM03-B3fM6P30rBcYjHSefQ%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F69466818%2F519%2Findex.shtml%3FPTAG%3D34103.3.6" class="a-img" target="_blank"><img init_src="http://img3.paipaiimg.com/24c01453/acpc-52592DB3-0000000100000000764E00000001EB7F.1.jpg" alt="韩版新品套装9.9元" src="http://img3.paipaiimg.com/24c01453/acpc-52592DB3-0000000100000000764E00000001EB7F.1.jpg" iguid="0"><span class="mask-layer pos-abs"><span class="title">韩版新品套装9.9元</span><br><span class="q-btn"></span></span></a> </li>
+						<li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=NPgAiu6OdAs8X5fBT3d7piQAkecHBmn7fcD4un4hBf8R4zZfPIkKc9ww0x7nJjPQa27mLBzCfUS5gErQCmYhyM7yiTdDcTOCZin9QSXXNF6xS54ZHe2xswfdeBqMf1fJT7ZJbEqXtbbCeprSlxP6dX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun-F1f_SqxhJvHh7mLUoESH65faiVxV0_qG03xnMvsm8sEhjvmnvErebGNtQAt3JbQDPu2R7Sl6Fou9MLwU7dhBmapOddp_J6Q6jOXjnqk_sVpfDMFqm4seb5VpxZO0h5x3yrlyqrdEwTYxr4s7aVCF7t3YKAH35lvTfW4jssrWiGiZoNE0R0f2pEPvdPqKhCANZliz5shviQruvrYjzKkXB1DoJJ6hGzLhqsBNAOg50od5gqREDWGaAi6wPHXdk1ECC49pn9Mpxr6BAyKTtf3niVyt0oeAaiH-lmtHrJH3LvWxz9kyxzkTPRJmJnymbbHPmAdVPRrzyNhEMUGzsDvMT7wwxk56Rxqv06ss_QHv-GXcK0t6n4SNbJsXxwYFb8FUOUYlSMJSVbdQ-3K58-p8a_boTm75oRFwg8OITEX3m3Er5wG90Ib68HB4UbdyNAwLxCQlXAL4Wfit_1FNlwT9l1pdp9mc5tNuPaLnaZs6I_fcD4un4hBf9Ehsz19cGljScyHRZV5y6fM03-B3fM6P30rBcYjHSefQ%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F69466818%2F519%2Findex.shtml%3FPTAG%3D34103.3.6" class="a-img" target="_blank"><img init_src="http://img3.paipaiimg.com/24c01453/acpc-52592DB3-0000000100000000764E00000001EB7F.1.jpg" alt="韩版新品套装9.9元" src="http://img3.paipaiimg.com/24c01453/acpc-52592DB3-0000000100000000764E00000001EB7F.1.jpg" iguid="0"><span class="mask-layer pos-abs"><span class="title">韩版新品套装9.9元</span><br><span class="q-btn"></span></span></a> </li>
+					</ul>
+				</div>
+			</div>
+			</div>
+				<!-- E 店铺3：蒙层 -->
+	<!-- S 店铺4：蒙层242 -->
+			<style type="text/css">
+				.pro-shop-4 ul{margin-right:-5px;position:relative;*zoom:1;}
+				.pro-shop-4 li{width:242px;height:200px;margin:5px 5px 0 0;}
+				.pro-shop-4 .mask-layer {background: rgba(0,0,0,0.5);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF000000,endColorstr=#BF000000);width: 242px;height: 125px;padding-top: 75px;font-family: Microsoft Yahei,Simhei;color: #FFF;top: 0;text-align: center;font-size: 20px;font-weight: bold;text-decoration:none;}
+				:root .pro-shop-4 .mask-layer{filter:none;}
+				.pro-shop-4 .q-btn {display: inline-block;width: 90px;height: 26px;margin-top: 10px;background: url(http://pics3.paipaiimg.com/update/20130917/index_173910736.jpg) 0 0 no-repeat;}
+			</style>
+			<div class="pro pro-shop" data-width='242' data-category="shops" data-effective='mask'>
+						<a class="href-map" href="##" title="" id=""></a>
+						<div class="mod-hd">
+							<h1 class="">店铺模版4：蒙层242</h1>
+						</div>
+				<div class="mod-bd">
+					<div class="shops-wrap pro-shop-4">
+						<ul class="cf">
+							<li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=MgGk4kOpKhU5kPlzUSZyeBqq8jBFFQ_SfcD4un4hBf8DbJtJZFwJrNww0x7nJjPQDsjf9oFpXj5MmhU_ChrNoIt01z2an4r-o2irECGuC-qxS54ZHe2xs9CKBzDiBTCtAPTfzVMjZ2PkTCHF_2dUfX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun2kBalT9DY2a-W47cqKcSsg5ie11tAXK2f_v4f_frgzjj8FZzNSm79MyhRBrOuw6dfCfmXMqdQB1yqNcH34GqLIZMhGluXYyIJCiMz4ALERDZU_9h9_tg8bDq7NCIGCZJ5tsJ7f8qJJrG51-0AE4MZZ3dxiU9RX4hC10HWHO3flD44nV5Mx0zLwSbxGXi06pBNkSEgiU8I7RcAG3oo9wdTjCq0AMnzIhlDWZBfQoQae9o5ho0bzBiFs4Zyfk5UmeOBJ_NZzIf2QiD2z83_76X3qTNgKA__CSJTfOTXosdz6JZOAc4NZ-I7tbrUU7hmJN55csaJISfmhiBBSNsK_pFd-BfJbwn_xXGaKiI04aa2AUUY9VWy2fgbr0JeF8_Sa0SxZ3fEsfigJFOZ6E9s2NU4LXhLybsct5T8bTblY5ZoBKIrXnSpx98wF7wJaFFLOWKX3A-Lp-IQX_RIbM9fXBpY0nMh0WVecunzNN_gd3zOj9Ipcq38-vt-C8QkJVwC-Fn4rf9RTZcE_ZdaXafZnObTZXCsCrmVqWCg%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F2654793469%2F515%2Findex.shtml%3FPTAG%3D34103.4.1" class="a-img" target="_blank"><img init_src="http://img1.paipaiimg.com/d1f6f0e7/acpc-52612A11-00000001000000006791000000021D20.1.jpg" alt="羊羔绒雪地靴1元秒杀" src="http://img1.paipaiimg.com/d1f6f0e7/acpc-52612A11-00000001000000006791000000021D20.1.jpg" iguid="15"><span class="mask-layer pos-abs"><span class="title">羊羔绒雪地靴1元秒杀</span><br><span class="q-btn"></span></span></a> </li><li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=MgGk4kOpKhU5kPlzUSZyeBqq8jBFFQ_SfcD4un4hBf8DbJtJZFwJrNww0x7nJjPQDsjf9oFpXj5MmhU_ChrNoIt01z2an4r-o2irECGuC-qxS54ZHe2xs9CKBzDiBTCtAPTfzVMjZ2PkTCHF_2dUfX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun2kBalT9DY2a-W47cqKcSsg5ie11tAXK2f_v4f_frgzjj8FZzNSm79MyhRBrOuw6dfCfmXMqdQB1yqNcH34GqLIZMhGluXYyIJCiMz4ALERDZU_9h9_tg8bDq7NCIGCZJ5tsJ7f8qJJrG51-0AE4MZZ3dxiU9RX4hC10HWHO3flD44nV5Mx0zLwSbxGXi06pBNkSEgiU8I7RcAG3oo9wdTjCq0AMnzIhlDWZBfQoQae9o5ho0bzBiFs4Zyfk5UmeOBJ_NZzIf2QiD2z83_76X3qTNgKA__CSJTfOTXosdz6JZOAc4NZ-I7tbrUU7hmJN55csaJISfmhiBBSNsK_pFd-BfJbwn_xXGaKiI04aa2AUUY9VWy2fgbr0JeF8_Sa0SxZ3fEsfigJFOZ6E9s2NU4LXhLybsct5T8bTblY5ZoBKIrXnSpx98wF7wJaFFLOWKX3A-Lp-IQX_RIbM9fXBpY0nMh0WVecunzNN_gd3zOj9Ipcq38-vt-C8QkJVwC-Fn4rf9RTZcE_ZdaXafZnObTZXCsCrmVqWCg%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F2654793469%2F515%2Findex.shtml%3FPTAG%3D34103.4.1" class="a-img" target="_blank"><img init_src="http://img1.paipaiimg.com/d1f6f0e7/acpc-52612A11-00000001000000006791000000021D20.1.jpg" alt="羊羔绒雪地靴1元秒杀" src="http://img1.paipaiimg.com/d1f6f0e7/acpc-52612A11-00000001000000006791000000021D20.1.jpg" iguid="15"><span class="mask-layer pos-abs"><span class="title">羊羔绒雪地靴1元秒杀</span><br><span class="q-btn"></span></span></a> </li><li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=MgGk4kOpKhU5kPlzUSZyeBqq8jBFFQ_SfcD4un4hBf8DbJtJZFwJrNww0x7nJjPQDsjf9oFpXj5MmhU_ChrNoIt01z2an4r-o2irECGuC-qxS54ZHe2xs9CKBzDiBTCtAPTfzVMjZ2PkTCHF_2dUfX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun2kBalT9DY2a-W47cqKcSsg5ie11tAXK2f_v4f_frgzjj8FZzNSm79MyhRBrOuw6dfCfmXMqdQB1yqNcH34GqLIZMhGluXYyIJCiMz4ALERDZU_9h9_tg8bDq7NCIGCZJ5tsJ7f8qJJrG51-0AE4MZZ3dxiU9RX4hC10HWHO3flD44nV5Mx0zLwSbxGXi06pBNkSEgiU8I7RcAG3oo9wdTjCq0AMnzIhlDWZBfQoQae9o5ho0bzBiFs4Zyfk5UmeOBJ_NZzIf2QiD2z83_76X3qTNgKA__CSJTfOTXosdz6JZOAc4NZ-I7tbrUU7hmJN55csaJISfmhiBBSNsK_pFd-BfJbwn_xXGaKiI04aa2AUUY9VWy2fgbr0JeF8_Sa0SxZ3fEsfigJFOZ6E9s2NU4LXhLybsct5T8bTblY5ZoBKIrXnSpx98wF7wJaFFLOWKX3A-Lp-IQX_RIbM9fXBpY0nMh0WVecunzNN_gd3zOj9Ipcq38-vt-C8QkJVwC-Fn4rf9RTZcE_ZdaXafZnObTZXCsCrmVqWCg%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F2654793469%2F515%2Findex.shtml%3FPTAG%3D34103.4.1" class="a-img" target="_blank"><img init_src="http://img1.paipaiimg.com/d1f6f0e7/acpc-52612A11-00000001000000006791000000021D20.1.jpg" alt="羊羔绒雪地靴1元秒杀" src="http://img1.paipaiimg.com/d1f6f0e7/acpc-52612A11-00000001000000006791000000021D20.1.jpg" iguid="15"><span class="mask-layer pos-abs"><span class="title">羊羔绒雪地靴1元秒杀</span><br><span class="q-btn"></span></span></a> </li><li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=MgGk4kOpKhU5kPlzUSZyeBqq8jBFFQ_SfcD4un4hBf8DbJtJZFwJrNww0x7nJjPQDsjf9oFpXj5MmhU_ChrNoIt01z2an4r-o2irECGuC-qxS54ZHe2xs9CKBzDiBTCtAPTfzVMjZ2PkTCHF_2dUfX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun2kBalT9DY2a-W47cqKcSsg5ie11tAXK2f_v4f_frgzjj8FZzNSm79MyhRBrOuw6dfCfmXMqdQB1yqNcH34GqLIZMhGluXYyIJCiMz4ALERDZU_9h9_tg8bDq7NCIGCZJ5tsJ7f8qJJrG51-0AE4MZZ3dxiU9RX4hC10HWHO3flD44nV5Mx0zLwSbxGXi06pBNkSEgiU8I7RcAG3oo9wdTjCq0AMnzIhlDWZBfQoQae9o5ho0bzBiFs4Zyfk5UmeOBJ_NZzIf2QiD2z83_76X3qTNgKA__CSJTfOTXosdz6JZOAc4NZ-I7tbrUU7hmJN55csaJISfmhiBBSNsK_pFd-BfJbwn_xXGaKiI04aa2AUUY9VWy2fgbr0JeF8_Sa0SxZ3fEsfigJFOZ6E9s2NU4LXhLybsct5T8bTblY5ZoBKIrXnSpx98wF7wJaFFLOWKX3A-Lp-IQX_RIbM9fXBpY0nMh0WVecunzNN_gd3zOj9Ipcq38-vt-C8QkJVwC-Fn4rf9RTZcE_ZdaXafZnObTZXCsCrmVqWCg%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F2654793469%2F515%2Findex.shtml%3FPTAG%3D34103.4.1" class="a-img" target="_blank"><img init_src="http://img1.paipaiimg.com/d1f6f0e7/acpc-52612A11-00000001000000006791000000021D20.1.jpg" alt="羊羔绒雪地靴1元秒杀" src="http://img1.paipaiimg.com/d1f6f0e7/acpc-52612A11-00000001000000006791000000021D20.1.jpg" iguid="15"><span class="mask-layer pos-abs"><span class="title">羊羔绒雪地靴1元秒杀</span><br><span class="q-btn"></span></span></a> </li><li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=MgGk4kOpKhU5kPlzUSZyeBqq8jBFFQ_SfcD4un4hBf8DbJtJZFwJrNww0x7nJjPQDsjf9oFpXj5MmhU_ChrNoIt01z2an4r-o2irECGuC-qxS54ZHe2xs9CKBzDiBTCtAPTfzVMjZ2PkTCHF_2dUfX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun2kBalT9DY2a-W47cqKcSsg5ie11tAXK2f_v4f_frgzjj8FZzNSm79MyhRBrOuw6dfCfmXMqdQB1yqNcH34GqLIZMhGluXYyIJCiMz4ALERDZU_9h9_tg8bDq7NCIGCZJ5tsJ7f8qJJrG51-0AE4MZZ3dxiU9RX4hC10HWHO3flD44nV5Mx0zLwSbxGXi06pBNkSEgiU8I7RcAG3oo9wdTjCq0AMnzIhlDWZBfQoQae9o5ho0bzBiFs4Zyfk5UmeOBJ_NZzIf2QiD2z83_76X3qTNgKA__CSJTfOTXosdz6JZOAc4NZ-I7tbrUU7hmJN55csaJISfmhiBBSNsK_pFd-BfJbwn_xXGaKiI04aa2AUUY9VWy2fgbr0JeF8_Sa0SxZ3fEsfigJFOZ6E9s2NU4LXhLybsct5T8bTblY5ZoBKIrXnSpx98wF7wJaFFLOWKX3A-Lp-IQX_RIbM9fXBpY0nMh0WVecunzNN_gd3zOj9Ipcq38-vt-C8QkJVwC-Fn4rf9RTZcE_ZdaXafZnObTZXCsCrmVqWCg%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F2654793469%2F515%2Findex.shtml%3FPTAG%3D34103.4.1" class="a-img" target="_blank"><img init_src="http://img1.paipaiimg.com/d1f6f0e7/acpc-52612A11-00000001000000006791000000021D20.1.jpg" alt="羊羔绒雪地靴1元秒杀" src="http://img1.paipaiimg.com/d1f6f0e7/acpc-52612A11-00000001000000006791000000021D20.1.jpg" iguid="15"><span class="mask-layer pos-abs"><span class="title">羊羔绒雪地靴1元秒杀</span><br><span class="q-btn"></span></span></a> </li><li>  <a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=MgGk4kOpKhU5kPlzUSZyeBqq8jBFFQ_SfcD4un4hBf8DbJtJZFwJrNww0x7nJjPQDsjf9oFpXj5MmhU_ChrNoIt01z2an4r-o2irECGuC-qxS54ZHe2xs9CKBzDiBTCtAPTfzVMjZ2PkTCHF_2dUfX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun2kBalT9DY2a-W47cqKcSsg5ie11tAXK2f_v4f_frgzjj8FZzNSm79MyhRBrOuw6dfCfmXMqdQB1yqNcH34GqLIZMhGluXYyIJCiMz4ALERDZU_9h9_tg8bDq7NCIGCZJ5tsJ7f8qJJrG51-0AE4MZZ3dxiU9RX4hC10HWHO3flD44nV5Mx0zLwSbxGXi06pBNkSEgiU8I7RcAG3oo9wdTjCq0AMnzIhlDWZBfQoQae9o5ho0bzBiFs4Zyfk5UmeOBJ_NZzIf2QiD2z83_76X3qTNgKA__CSJTfOTXosdz6JZOAc4NZ-I7tbrUU7hmJN55csaJISfmhiBBSNsK_pFd-BfJbwn_xXGaKiI04aa2AUUY9VWy2fgbr0JeF8_Sa0SxZ3fEsfigJFOZ6E9s2NU4LXhLybsct5T8bTblY5ZoBKIrXnSpx98wF7wJaFFLOWKX3A-Lp-IQX_RIbM9fXBpY0nMh0WVecunzNN_gd3zOj9Ipcq38-vt-C8QkJVwC-Fn4rf9RTZcE_ZdaXafZnObTZXCsCrmVqWCg%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F2654793469%2F515%2Findex.shtml%3FPTAG%3D34103.4.1" class="a-img" target="_blank"><img init_src="http://img1.paipaiimg.com/d1f6f0e7/acpc-52612A11-00000001000000006791000000021D20.1.jpg" alt="羊羔绒雪地靴1元秒杀" src="http://img1.paipaiimg.com/d1f6f0e7/acpc-52612A11-00000001000000006791000000021D20.1.jpg" iguid="15"><span class="mask-layer pos-abs"><span class="title">羊羔绒雪地靴1元秒杀</span><br><span class="q-btn"></span></span></a> </li>
+						</ul>
+					</div>
+				</div>
+				</div>
+					<!-- E 店铺4：蒙层242 -->
+	<!-- S 店铺6：蒙层191 -->
+				<style type="text/css">
+					.pro-shop-6 ul{margin-right:-5px;position:relative;*zoom:1;}
+					.pro-shop-6 .goods-img{width:191px;height:262px;}
+					.pro-shop-6 li{width:191px;height:262px;margin:5px 5px 0 0;position:relative;}
+					.pro-shop-6 li:hover .layer,.sec-bd .shops-wrap li.on .layer{left:0;}
+					.pro-shop-6 .layer a{display:block;color:#FFF;font:22px 微软雅黑;padding:90px 18px 0 18px;width:155px;height:172px;background:rgba(0,0,0,.5);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType = 0, StartColorStr = "#9f000000", EndColorStr = "#9f000000");text-decoration:none;text-align:center}
+					:root .pro-shop-6 .layer a{filter:none;}
+					.pro-shop-6 .layer a em{color:#ffa400;}
+					.pro-shop-6 a strong.layer-discount{color:#ffce08;}
+					.pro-shop-6 .layer a strong{color:#ffce08;font:bold 31px 微软雅黑;}
+					.pro-shop-6 .layer a span{display:block;}
+				</style>
+				<div class="pro pro-shop" data-width='191' data-category="shops" data-effective='mask'>
+							<a class="href-map" href="##" title="" id=""></a>
+							<div class="mod-hd">
+								<h1 class="">店铺6：蒙层191</h1>
+							</div>
+					<div class="mod-bd">
+						<div class="shops-wrap pro-shop-6">
+							<ul class="cf">
+								<li>
+									<div class="goods-img">
+										<a target="_blank" class="a-img" href="" title="全场新式奶茶">
+											<img alt="全场新式奶茶" title="全场新式奶茶" init_src="http://img4.paipaiimg.com/7d89dee8/acpc-524D1BAC-0000000100000000683C00000001B2CC.1.jpg" src="http://img4.paipaiimg.com/7d89dee8/acpc-524D1BAC-0000000100000000683C00000001B2CC.1.jpg" iguid="100">
+										</a>
+									</div>
+									<div class="layer mask-layer">
+										<a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=GrIRZnQl1XljqaED2auaGJZsQS1o4SmcfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQlpkx39y50EDKrAht3B_WEAZJwodG_4P1aVGz26M4xe-xS54ZHe2xs3C03hB73TIEwEbtavaSes2kxBZZdUQwMX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun70GNXlfUPAhDCR33hbYD1N6PNxXDHsIOjprszl8Y-BecWCOMkVC_vpvdmz_rqPX0i-J21-pPkf8E0kvHUZmcRzsmE0SZsqgm6QEe9sgd1rMGk2vVcSkxgZAi1niNYV8CamTPAnrYifZW61FO4ZiTedtHOIPgZ_6wscBEffU54xFIF-LVnIvn6n7C1ib3AK37dwpOS-VR4gljM-1xgrU4e2MkQv7oeifzdP9YkR5vOLHg35unW_usJZjPMxeMArCT3y22buumZe21V1UY2u4S-_wx5tZFFhwwftDU5ZTSnucRvjwTeJssU7qZ-_fhh_XdwhTVlhfxd01stWLhSQS_CxO-GmXG_V8R9LmsTUNSjiQaYlTerfkVokePGw5quAXNKHwxCa7CsI6sH27fcq63kAxt2b2AldbMoj9-gnHK8PkM9o4sI-6PuZNC6O_BlXaOG9orXzOJ2QJULTQ2wS-5wNQhQQu54RrWWR-rt5N3MUtlXmzVdo4J8B9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfi5gi4X2M135A%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F505719999%2F511%2Findex.shtml%3FPTAG%3D34076.8.16" target="_blank"><span>全场新式奶茶</span><strong class=""><b class="layer-discount">5</b>折抢购</strong></a>
+									</div>
+								</li><li>
+									<div class="goods-img">
+										<a target="_blank" class="a-img" href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=GrIRZnQl1XljqaED2auaGJZsQS1o4SmcfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQlpkx39y50EDKrAht3B_WEAZJwodG_4P1aVGz26M4xe-xS54ZHe2xs3C03hB73TIEwEbtavaSes2kxBZZdUQwMX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun70GNXlfUPAhDCR33hbYD1N6PNxXDHsIOjprszl8Y-BecWCOMkVC_vpvdmz_rqPX0i-J21-pPkf8E0kvHUZmcRzsmE0SZsqgm6QEe9sgd1rMGk2vVcSkxgZAi1niNYV8CamTPAnrYifZW61FO4ZiTedtHOIPgZ_6wscBEffU54xFIF-LVnIvn6n7C1ib3AK37dwpOS-VR4gljM-1xgrU4e2MkQv7oeifzdP9YkR5vOLHg35unW_usJZjPMxeMArCT3y22buumZe21V1UY2u4S-_wx5tZFFhwwftDU5ZTSnucRvjwTeJssU7qZ-_fhh_XdwhTVlhfxd01stWLhSQS_CxO-GmXG_V8R9LmsTUNSjiQaYlTerfkVokePGw5quAXNKHwxCa7CsI6sH27fcq63kAxt2b2AldbMoj9-gnHK8PkM9o4sI-6PuZNC6O_BlXaOG9orXzOJ2QJULTQ2wS-5wNQhQQu54RrWWR-rt5N3MUtlXmzVdo4J8B9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfi5gi4X2M135A%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F505719999%2F511%2Findex.shtml%3FPTAG%3D34076.8.16" title="全场新式奶茶">
+											<img alt="全场新式奶茶" title="全场新式奶茶" init_src="http://img4.paipaiimg.com/7d89dee8/acpc-524D1BAC-0000000100000000683C00000001B2CC.1.jpg" src="http://img4.paipaiimg.com/7d89dee8/acpc-524D1BAC-0000000100000000683C00000001B2CC.1.jpg" iguid="100">
+										</a>
+									</div>
+									<div class="layer mask-layer">
+										<a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=GrIRZnQl1XljqaED2auaGJZsQS1o4SmcfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQlpkx39y50EDKrAht3B_WEAZJwodG_4P1aVGz26M4xe-xS54ZHe2xs3C03hB73TIEwEbtavaSes2kxBZZdUQwMX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun70GNXlfUPAhDCR33hbYD1N6PNxXDHsIOjprszl8Y-BecWCOMkVC_vpvdmz_rqPX0i-J21-pPkf8E0kvHUZmcRzsmE0SZsqgm6QEe9sgd1rMGk2vVcSkxgZAi1niNYV8CamTPAnrYifZW61FO4ZiTedtHOIPgZ_6wscBEffU54xFIF-LVnIvn6n7C1ib3AK37dwpOS-VR4gljM-1xgrU4e2MkQv7oeifzdP9YkR5vOLHg35unW_usJZjPMxeMArCT3y22buumZe21V1UY2u4S-_wx5tZFFhwwftDU5ZTSnucRvjwTeJssU7qZ-_fhh_XdwhTVlhfxd01stWLhSQS_CxO-GmXG_V8R9LmsTUNSjiQaYlTerfkVokePGw5quAXNKHwxCa7CsI6sH27fcq63kAxt2b2AldbMoj9-gnHK8PkM9o4sI-6PuZNC6O_BlXaOG9orXzOJ2QJULTQ2wS-5wNQhQQu54RrWWR-rt5N3MUtlXmzVdo4J8B9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfi5gi4X2M135A%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F505719999%2F511%2Findex.shtml%3FPTAG%3D34076.8.16" target="_blank"><span>全场新式奶茶</span><strong class=""><b class="layer-discount">5</b>折抢购</strong></a>
+									</div>
+								</li><li>
+									<div class="goods-img">
+										<a target="_blank" class="a-img" href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=GrIRZnQl1XljqaED2auaGJZsQS1o4SmcfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQlpkx39y50EDKrAht3B_WEAZJwodG_4P1aVGz26M4xe-xS54ZHe2xs3C03hB73TIEwEbtavaSes2kxBZZdUQwMX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun70GNXlfUPAhDCR33hbYD1N6PNxXDHsIOjprszl8Y-BecWCOMkVC_vpvdmz_rqPX0i-J21-pPkf8E0kvHUZmcRzsmE0SZsqgm6QEe9sgd1rMGk2vVcSkxgZAi1niNYV8CamTPAnrYifZW61FO4ZiTedtHOIPgZ_6wscBEffU54xFIF-LVnIvn6n7C1ib3AK37dwpOS-VR4gljM-1xgrU4e2MkQv7oeifzdP9YkR5vOLHg35unW_usJZjPMxeMArCT3y22buumZe21V1UY2u4S-_wx5tZFFhwwftDU5ZTSnucRvjwTeJssU7qZ-_fhh_XdwhTVlhfxd01stWLhSQS_CxO-GmXG_V8R9LmsTUNSjiQaYlTerfkVokePGw5quAXNKHwxCa7CsI6sH27fcq63kAxt2b2AldbMoj9-gnHK8PkM9o4sI-6PuZNC6O_BlXaOG9orXzOJ2QJULTQ2wS-5wNQhQQu54RrWWR-rt5N3MUtlXmzVdo4J8B9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfi5gi4X2M135A%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F505719999%2F511%2Findex.shtml%3FPTAG%3D34076.8.16" title="全场新式奶茶">
+											<img alt="全场新式奶茶" title="全场新式奶茶" init_src="http://img4.paipaiimg.com/7d89dee8/acpc-524D1BAC-0000000100000000683C00000001B2CC.1.jpg" src="http://img4.paipaiimg.com/7d89dee8/acpc-524D1BAC-0000000100000000683C00000001B2CC.1.jpg" iguid="100">
+										</a>
+									</div>
+									<div class="layer mask-layer">
+										<a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=GrIRZnQl1XljqaED2auaGJZsQS1o4SmcfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQlpkx39y50EDKrAht3B_WEAZJwodG_4P1aVGz26M4xe-xS54ZHe2xs3C03hB73TIEwEbtavaSes2kxBZZdUQwMX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun70GNXlfUPAhDCR33hbYD1N6PNxXDHsIOjprszl8Y-BecWCOMkVC_vpvdmz_rqPX0i-J21-pPkf8E0kvHUZmcRzsmE0SZsqgm6QEe9sgd1rMGk2vVcSkxgZAi1niNYV8CamTPAnrYifZW61FO4ZiTedtHOIPgZ_6wscBEffU54xFIF-LVnIvn6n7C1ib3AK37dwpOS-VR4gljM-1xgrU4e2MkQv7oeifzdP9YkR5vOLHg35unW_usJZjPMxeMArCT3y22buumZe21V1UY2u4S-_wx5tZFFhwwftDU5ZTSnucRvjwTeJssU7qZ-_fhh_XdwhTVlhfxd01stWLhSQS_CxO-GmXG_V8R9LmsTUNSjiQaYlTerfkVokePGw5quAXNKHwxCa7CsI6sH27fcq63kAxt2b2AldbMoj9-gnHK8PkM9o4sI-6PuZNC6O_BlXaOG9orXzOJ2QJULTQ2wS-5wNQhQQu54RrWWR-rt5N3MUtlXmzVdo4J8B9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfi5gi4X2M135A%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F505719999%2F511%2Findex.shtml%3FPTAG%3D34076.8.16" target="_blank"><span>全场新式奶茶</span><strong class=""><b class="layer-discount">5</b>折抢购</strong></a>
+									</div>
+								</li><li>
+									<div class="goods-img">
+										<a target="_blank" class="a-img" href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=GrIRZnQl1XljqaED2auaGJZsQS1o4SmcfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQlpkx39y50EDKrAht3B_WEAZJwodG_4P1aVGz26M4xe-xS54ZHe2xs3C03hB73TIEwEbtavaSes2kxBZZdUQwMX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun70GNXlfUPAhDCR33hbYD1N6PNxXDHsIOjprszl8Y-BecWCOMkVC_vpvdmz_rqPX0i-J21-pPkf8E0kvHUZmcRzsmE0SZsqgm6QEe9sgd1rMGk2vVcSkxgZAi1niNYV8CamTPAnrYifZW61FO4ZiTedtHOIPgZ_6wscBEffU54xFIF-LVnIvn6n7C1ib3AK37dwpOS-VR4gljM-1xgrU4e2MkQv7oeifzdP9YkR5vOLHg35unW_usJZjPMxeMArCT3y22buumZe21V1UY2u4S-_wx5tZFFhwwftDU5ZTSnucRvjwTeJssU7qZ-_fhh_XdwhTVlhfxd01stWLhSQS_CxO-GmXG_V8R9LmsTUNSjiQaYlTerfkVokePGw5quAXNKHwxCa7CsI6sH27fcq63kAxt2b2AldbMoj9-gnHK8PkM9o4sI-6PuZNC6O_BlXaOG9orXzOJ2QJULTQ2wS-5wNQhQQu54RrWWR-rt5N3MUtlXmzVdo4J8B9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfi5gi4X2M135A%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F505719999%2F511%2Findex.shtml%3FPTAG%3D34076.8.16" title="全场新式奶茶">
+											<img alt="全场新式奶茶" title="全场新式奶茶" init_src="http://img4.paipaiimg.com/7d89dee8/acpc-524D1BAC-0000000100000000683C00000001B2CC.1.jpg" src="http://img4.paipaiimg.com/7d89dee8/acpc-524D1BAC-0000000100000000683C00000001B2CC.1.jpg" iguid="100">
+										</a>
+									</div>
+									<div class="layer mask-layer">
+										<a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=GrIRZnQl1XljqaED2auaGJZsQS1o4SmcfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQlpkx39y50EDKrAht3B_WEAZJwodG_4P1aVGz26M4xe-xS54ZHe2xs3C03hB73TIEwEbtavaSes2kxBZZdUQwMX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun70GNXlfUPAhDCR33hbYD1N6PNxXDHsIOjprszl8Y-BecWCOMkVC_vpvdmz_rqPX0i-J21-pPkf8E0kvHUZmcRzsmE0SZsqgm6QEe9sgd1rMGk2vVcSkxgZAi1niNYV8CamTPAnrYifZW61FO4ZiTedtHOIPgZ_6wscBEffU54xFIF-LVnIvn6n7C1ib3AK37dwpOS-VR4gljM-1xgrU4e2MkQv7oeifzdP9YkR5vOLHg35unW_usJZjPMxeMArCT3y22buumZe21V1UY2u4S-_wx5tZFFhwwftDU5ZTSnucRvjwTeJssU7qZ-_fhh_XdwhTVlhfxd01stWLhSQS_CxO-GmXG_V8R9LmsTUNSjiQaYlTerfkVokePGw5quAXNKHwxCa7CsI6sH27fcq63kAxt2b2AldbMoj9-gnHK8PkM9o4sI-6PuZNC6O_BlXaOG9orXzOJ2QJULTQ2wS-5wNQhQQu54RrWWR-rt5N3MUtlXmzVdo4J8B9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfi5gi4X2M135A%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F505719999%2F511%2Findex.shtml%3FPTAG%3D34076.8.16" target="_blank"><span>全场新式奶茶</span><strong class=""><b class="layer-discount">5</b>折抢购</strong></a>
+									</div>
+								</li><li>
+									<div class="goods-img">
+										<a target="_blank" class="a-img" href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=GrIRZnQl1XljqaED2auaGJZsQS1o4SmcfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQlpkx39y50EDKrAht3B_WEAZJwodG_4P1aVGz26M4xe-xS54ZHe2xs3C03hB73TIEwEbtavaSes2kxBZZdUQwMX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun70GNXlfUPAhDCR33hbYD1N6PNxXDHsIOjprszl8Y-BecWCOMkVC_vpvdmz_rqPX0i-J21-pPkf8E0kvHUZmcRzsmE0SZsqgm6QEe9sgd1rMGk2vVcSkxgZAi1niNYV8CamTPAnrYifZW61FO4ZiTedtHOIPgZ_6wscBEffU54xFIF-LVnIvn6n7C1ib3AK37dwpOS-VR4gljM-1xgrU4e2MkQv7oeifzdP9YkR5vOLHg35unW_usJZjPMxeMArCT3y22buumZe21V1UY2u4S-_wx5tZFFhwwftDU5ZTSnucRvjwTeJssU7qZ-_fhh_XdwhTVlhfxd01stWLhSQS_CxO-GmXG_V8R9LmsTUNSjiQaYlTerfkVokePGw5quAXNKHwxCa7CsI6sH27fcq63kAxt2b2AldbMoj9-gnHK8PkM9o4sI-6PuZNC6O_BlXaOG9orXzOJ2QJULTQ2wS-5wNQhQQu54RrWWR-rt5N3MUtlXmzVdo4J8B9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfi5gi4X2M135A%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F505719999%2F511%2Findex.shtml%3FPTAG%3D34076.8.16" title="全场新式奶茶">
+											<img alt="全场新式奶茶" title="全场新式奶茶" init_src="http://img4.paipaiimg.com/7d89dee8/acpc-524D1BAC-0000000100000000683C00000001B2CC.1.jpg" src="http://img4.paipaiimg.com/7d89dee8/acpc-524D1BAC-0000000100000000683C00000001B2CC.1.jpg" iguid="100">
+										</a>
+									</div>
+									<div class="layer mask-layer">
+										<a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=GrIRZnQl1XljqaED2auaGJZsQS1o4SmcfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQlpkx39y50EDKrAht3B_WEAZJwodG_4P1aVGz26M4xe-xS54ZHe2xs3C03hB73TIEwEbtavaSes2kxBZZdUQwMX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun70GNXlfUPAhDCR33hbYD1N6PNxXDHsIOjprszl8Y-BecWCOMkVC_vpvdmz_rqPX0i-J21-pPkf8E0kvHUZmcRzsmE0SZsqgm6QEe9sgd1rMGk2vVcSkxgZAi1niNYV8CamTPAnrYifZW61FO4ZiTedtHOIPgZ_6wscBEffU54xFIF-LVnIvn6n7C1ib3AK37dwpOS-VR4gljM-1xgrU4e2MkQv7oeifzdP9YkR5vOLHg35unW_usJZjPMxeMArCT3y22buumZe21V1UY2u4S-_wx5tZFFhwwftDU5ZTSnucRvjwTeJssU7qZ-_fhh_XdwhTVlhfxd01stWLhSQS_CxO-GmXG_V8R9LmsTUNSjiQaYlTerfkVokePGw5quAXNKHwxCa7CsI6sH27fcq63kAxt2b2AldbMoj9-gnHK8PkM9o4sI-6PuZNC6O_BlXaOG9orXzOJ2QJULTQ2wS-5wNQhQQu54RrWWR-rt5N3MUtlXmzVdo4J8B9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfi5gi4X2M135A%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F505719999%2F511%2Findex.shtml%3FPTAG%3D34076.8.16" target="_blank"><span>全场新式奶茶</span><strong class=""><b class="layer-discount">5</b>折抢购</strong></a>
+									</div>
+								</li><li>
+									<div class="goods-img">
+										<a target="_blank" class="a-img" href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=GrIRZnQl1XljqaED2auaGJZsQS1o4SmcfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQlpkx39y50EDKrAht3B_WEAZJwodG_4P1aVGz26M4xe-xS54ZHe2xs3C03hB73TIEwEbtavaSes2kxBZZdUQwMX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun70GNXlfUPAhDCR33hbYD1N6PNxXDHsIOjprszl8Y-BecWCOMkVC_vpvdmz_rqPX0i-J21-pPkf8E0kvHUZmcRzsmE0SZsqgm6QEe9sgd1rMGk2vVcSkxgZAi1niNYV8CamTPAnrYifZW61FO4ZiTedtHOIPgZ_6wscBEffU54xFIF-LVnIvn6n7C1ib3AK37dwpOS-VR4gljM-1xgrU4e2MkQv7oeifzdP9YkR5vOLHg35unW_usJZjPMxeMArCT3y22buumZe21V1UY2u4S-_wx5tZFFhwwftDU5ZTSnucRvjwTeJssU7qZ-_fhh_XdwhTVlhfxd01stWLhSQS_CxO-GmXG_V8R9LmsTUNSjiQaYlTerfkVokePGw5quAXNKHwxCa7CsI6sH27fcq63kAxt2b2AldbMoj9-gnHK8PkM9o4sI-6PuZNC6O_BlXaOG9orXzOJ2QJULTQ2wS-5wNQhQQu54RrWWR-rt5N3MUtlXmzVdo4J8B9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfi5gi4X2M135A%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F505719999%2F511%2Findex.shtml%3FPTAG%3D34076.8.16" title="全场新式奶茶">
+											<img alt="全场新式奶茶" title="全场新式奶茶" init_src="http://img4.paipaiimg.com/7d89dee8/acpc-524D1BAC-0000000100000000683C00000001B2CC.1.jpg" src="http://img4.paipaiimg.com/7d89dee8/acpc-524D1BAC-0000000100000000683C00000001B2CC.1.jpg" iguid="100">
+										</a>
+									</div>
+									<div class="layer mask-layer">
+										<a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=GrIRZnQl1XljqaED2auaGJZsQS1o4SmcfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQlpkx39y50EDKrAht3B_WEAZJwodG_4P1aVGz26M4xe-xS54ZHe2xs3C03hB73TIEwEbtavaSes2kxBZZdUQwMX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun70GNXlfUPAhDCR33hbYD1N6PNxXDHsIOjprszl8Y-BecWCOMkVC_vpvdmz_rqPX0i-J21-pPkf8E0kvHUZmcRzsmE0SZsqgm6QEe9sgd1rMGk2vVcSkxgZAi1niNYV8CamTPAnrYifZW61FO4ZiTedtHOIPgZ_6wscBEffU54xFIF-LVnIvn6n7C1ib3AK37dwpOS-VR4gljM-1xgrU4e2MkQv7oeifzdP9YkR5vOLHg35unW_usJZjPMxeMArCT3y22buumZe21V1UY2u4S-_wx5tZFFhwwftDU5ZTSnucRvjwTeJssU7qZ-_fhh_XdwhTVlhfxd01stWLhSQS_CxO-GmXG_V8R9LmsTUNSjiQaYlTerfkVokePGw5quAXNKHwxCa7CsI6sH27fcq63kAxt2b2AldbMoj9-gnHK8PkM9o4sI-6PuZNC6O_BlXaOG9orXzOJ2QJULTQ2wS-5wNQhQQu54RrWWR-rt5N3MUtlXmzVdo4J8B9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfi5gi4X2M135A%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F505719999%2F511%2Findex.shtml%3FPTAG%3D34076.8.16" target="_blank"><span>全场新式奶茶</span><strong class=""><b class="layer-discount">5</b>折抢购</strong></a>
+									</div>
+								</li><li>
+									<div class="goods-img">
+										<a target="_blank" class="a-img" href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=GrIRZnQl1XljqaED2auaGJZsQS1o4SmcfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQlpkx39y50EDKrAht3B_WEAZJwodG_4P1aVGz26M4xe-xS54ZHe2xs3C03hB73TIEwEbtavaSes2kxBZZdUQwMX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun70GNXlfUPAhDCR33hbYD1N6PNxXDHsIOjprszl8Y-BecWCOMkVC_vpvdmz_rqPX0i-J21-pPkf8E0kvHUZmcRzsmE0SZsqgm6QEe9sgd1rMGk2vVcSkxgZAi1niNYV8CamTPAnrYifZW61FO4ZiTedtHOIPgZ_6wscBEffU54xFIF-LVnIvn6n7C1ib3AK37dwpOS-VR4gljM-1xgrU4e2MkQv7oeifzdP9YkR5vOLHg35unW_usJZjPMxeMArCT3y22buumZe21V1UY2u4S-_wx5tZFFhwwftDU5ZTSnucRvjwTeJssU7qZ-_fhh_XdwhTVlhfxd01stWLhSQS_CxO-GmXG_V8R9LmsTUNSjiQaYlTerfkVokePGw5quAXNKHwxCa7CsI6sH27fcq63kAxt2b2AldbMoj9-gnHK8PkM9o4sI-6PuZNC6O_BlXaOG9orXzOJ2QJULTQ2wS-5wNQhQQu54RrWWR-rt5N3MUtlXmzVdo4J8B9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfi5gi4X2M135A%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F505719999%2F511%2Findex.shtml%3FPTAG%3D34076.8.16" title="全场新式奶茶">
+											<img alt="全场新式奶茶" title="全场新式奶茶" init_src="http://img4.paipaiimg.com/7d89dee8/acpc-524D1BAC-0000000100000000683C00000001B2CC.1.jpg" src="http://img4.paipaiimg.com/7d89dee8/acpc-524D1BAC-0000000100000000683C00000001B2CC.1.jpg" iguid="100">
+										</a>
+									</div>
+									<div class="layer mask-layer">
+										<a href="http://express.paipai.com/tws/focus/focus_click_direction?viewid=GrIRZnQl1XljqaED2auaGJZsQS1o4SmcfcD4un4hBf8S2xbUY0E6_Nww0x7nJjPQlpkx39y50EDKrAht3B_WEAZJwodG_4P1aVGz26M4xe-xS54ZHe2xs3C03hB73TIEwEbtavaSes2kxBZZdUQwMX3A-Lp-IQX_fkhKVC9J2zcnMh0WVecun70GNXlfUPAhDCR33hbYD1N6PNxXDHsIOjprszl8Y-BecWCOMkVC_vpvdmz_rqPX0i-J21-pPkf8E0kvHUZmcRzsmE0SZsqgm6QEe9sgd1rMGk2vVcSkxgZAi1niNYV8CamTPAnrYifZW61FO4ZiTedtHOIPgZ_6wscBEffU54xFIF-LVnIvn6n7C1ib3AK37dwpOS-VR4gljM-1xgrU4e2MkQv7oeifzdP9YkR5vOLHg35unW_usJZjPMxeMArCT3y22buumZe21V1UY2u4S-_wx5tZFFhwwftDU5ZTSnucRvjwTeJssU7qZ-_fhh_XdwhTVlhfxd01stWLhSQS_CxO-GmXG_V8R9LmsTUNSjiQaYlTerfkVokePGw5quAXNKHwxCa7CsI6sH27fcq63kAxt2b2AldbMoj9-gnHK8PkM9o4sI-6PuZNC6O_BlXaOG9orXzOJ2QJULTQ2wS-5wNQhQQu54RrWWR-rt5N3MUtlXmzVdo4J8B9wPi6fiEF_0SGzPX1waWNJzIdFlXnLp-GopJhJfddVf_v4f_frgzj72PhQpX5gfi5gi4X2M135A%3D%3D&amp;url=http%3A%2F%2Fshop.wanggou.com%2F505719999%2F511%2Findex.shtml%3FPTAG%3D34076.8.16" target="_blank"><span>全场新式奶茶</span><strong class=""><b class="layer-discount">5</b>折抢购</strong></a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					</div>
+						<!-- E 店铺6：蒙层191 -->
+<!-- S 店铺8：蒙层161*288 -->
+				<style type="text/css">
+					.pro-shop-8{margin-right:-13px;position:relative;*zoom:1;font-size:0;}
+					.pro-shop-8 a{width:161px;height:288px;margin:5px 5px 0 0;position:relative;display:inline-block;overflow:hidden;}
+					.pro-shop-8 .layer{width:161px;height:288px;background:rgba(0,0,0,.5);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType = 0, StartColorStr = "#9f000000", EndColorStr = "#9f000000");left:-999px;}
+					:root .pro-shop-8 .layer a{filter:none;}
+					.pro-shop-8 a:hover .layer{left:0;}
+				</style>
+				<div class="pro pro-shop" data-width='161' data-category="shops" data-effective='mask'>
+							<a class="href-map" href="##" title="" id=""></a>
+							<div class="mod-hd">
+								<h1 class="">店铺8：蒙层161*288</h1>
+							</div>
+					<div class="mod-bd" style="width:985px;overflow:hidden;position:relative;*zoom:1;">
+						<div class="shops-wrap pro-shop-8">
+							<a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img1.paipaiimg.com/01af3462/acpc-526277A1-00000001000000008463000000022AE6.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img1.paipaiimg.com/01af3462/acpc-526277A1-00000001000000008463000000022AE6.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img1.paipaiimg.com/01af3462/acpc-526277A1-00000001000000008463000000022AE6.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img1.paipaiimg.com/01af3462/acpc-526277A1-00000001000000008463000000022AE6.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img1.paipaiimg.com/01af3462/acpc-526277A1-00000001000000008463000000022AE6.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img1.paipaiimg.com/01af3462/acpc-526277A1-00000001000000008463000000022AE6.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img1.paipaiimg.com/01af3462/acpc-526277A1-00000001000000008463000000022AE6.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a>
+						</div>
+					</div>
+					</div>
+						<!-- E 店铺8：蒙层161*288 -->
+<!-- S 店铺9：蒙层242*160 -->
+				<style type="text/css">
+					.pro-shop-9{margin-right:-13px;position:relative;*zoom:1;font-size:0;}
+					.pro-shop-9 a{width:242px;height:160px;margin:5px 5px 0 0;position:relative;display:inline-block;overflow:hidden;}
+					.pro-shop-9 .layer{width:242px;height:160px;background:rgba(0,0,0,.5);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType = 0, StartColorStr = "#9f000000", EndColorStr = "#9f000000");left:-999px;}
+					:root .pro-shop-9 .layer a{filter:none;}
+					.pro-shop-9 a:hover .layer{left:0;}
+				</style>
+				<div class="pro pro-shop" data-width='242' data-category="shops" data-effective='mask'>
+							<a class="href-map" href="##" title="" id=""></a>
+							<div class="mod-hd">
+								<h1 class="">店铺9：蒙层242*160</h1>
+							</div>
+					<div class="mod-bd" style="width:985px;overflow:hidden;position:relative;*zoom:1;">
+						<div class="shops-wrap pro-shop-9">
+							<a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img5.paipaiimg.com/37e30486/acpc-525BB8B5-000000010000000078BF00000001F55A.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img5.paipaiimg.com/37e30486/acpc-525BB8B5-000000010000000078BF00000001F55A.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img5.paipaiimg.com/37e30486/acpc-525BB8B5-000000010000000078BF00000001F55A.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img5.paipaiimg.com/37e30486/acpc-525BB8B5-000000010000000078BF00000001F55A.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img5.paipaiimg.com/37e30486/acpc-525BB8B5-000000010000000078BF00000001F55A.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img5.paipaiimg.com/37e30486/acpc-525BB8B5-000000010000000078BF00000001F55A.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img5.paipaiimg.com/37e30486/acpc-525BB8B5-000000010000000078BF00000001F55A.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img5.paipaiimg.com/37e30486/acpc-525BB8B5-000000010000000078BF00000001F55A.1.jpg" iguid="107">
+								<span class="layer"></span>
+							</a>
+						</div>
+					</div>
+					</div>
+						<!-- E 店铺9：蒙层242*160 -->
+<!-- S 店铺11：蒙层242*350 -->
+				<style type="text/css">
+
+					.pro-shop-11{margin-right:-18px;*padding-bottom:5px;}
+			    .pro-shop-11 li{float:left;_display:inline;margin:0 6px 5px 0;}
+			    .pro-shop-11 .mask-layer{background: rgba(0,0,0,0.5);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF000000,endColorstr=#BF000000);width:242px;height:230px;padding-top:120px;font-family:Microsoft Yahei,Simhei;color:#FFF;top:0;text-align:center;font-size:20px;font-weight:bold;text-align:center;}
+			    .pro-shop-11 .q-btn{display:inline-block;width:90px;height:26px;margin-top:10px;background:url(http://pics3.paipaiimg.com/update/20130917/index_173910736.jpg) 0 0 no-repeat;}
+
+				</style>
+				<div class="pro pro-shop" data-width='242' data-category="shops" data-effective='mask'>
+							<a class="href-map" href="##" title="" id=""></a>
+							<div class="mod-hd">
+								<h1 class="">店铺11：蒙层242*350</h1>
+							</div>
+					<div class="mod-bd">
+						<div class="shops-wrap pro-shop-11">
+							<ul class="cf">
+								<li>
+									<a href="#" target="_blank" class="a-img">
+										<img src="http://img5.paipaiimg.com/12ccb341/acpc-5267CAFD-00000001000000008B7C00000002547C.1.jpg" alt="店内名品秒杀">
+										<span class="mask-layer pos-abs">
+											<span class="title">折后满300送150<br>满500送300<br>店内名品秒杀</span><br>
+											<span class="q-btn"></span>
+										</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank" class="a-img">
+										<img src="http://img5.paipaiimg.com/12ccb341/acpc-5267CAFD-00000001000000008B7C00000002547C.1.jpg" alt="店内名品秒杀">
+										<span class="mask-layer pos-abs">
+											<span class="title">折后满300送150<br>满500送300<br>店内名品秒杀</span><br>
+											<span class="q-btn"></span>
+										</span>
+									</a>
+								</li><li>
+									<a href="#" target="_blank" class="a-img">
+										<img src="http://img5.paipaiimg.com/12ccb341/acpc-5267CAFD-00000001000000008B7C00000002547C.1.jpg" alt="店内名品秒杀">
+										<span class="mask-layer pos-abs">
+											<span class="title">折后满300送150<br>满500送300<br>店内名品秒杀</span><br>
+											<span class="q-btn"></span>
+										</span>
+									</a>
+								</li><li>
+									<a href="#" target="_blank" class="a-img">
+										<img src="http://img5.paipaiimg.com/12ccb341/acpc-5267CAFD-00000001000000008B7C00000002547C.1.jpg" alt="店内名品秒杀">
+										<span class="mask-layer pos-abs">
+											<span class="title">折后满300送150<br>满500送300<br>店内名品秒杀</span><br>
+											<span class="q-btn"></span>
+										</span>
+									</a>
+								</li><li>
+									<a href="#" target="_blank" class="a-img">
+										<img src="http://img5.paipaiimg.com/12ccb341/acpc-5267CAFD-00000001000000008B7C00000002547C.1.jpg" alt="店内名品秒杀">
+										<span class="mask-layer pos-abs">
+											<span class="title">折后满300送150<br>满500送300<br>店内名品秒杀</span><br>
+											<span class="q-btn"></span>
+										</span>
+									</a>
+								</li><li>
+									<a href="#" target="_blank" class="a-img">
+										<img src="http://img5.paipaiimg.com/12ccb341/acpc-5267CAFD-00000001000000008B7C00000002547C.1.jpg" alt="店内名品秒杀">
+										<span class="mask-layer pos-abs">
+											<span class="title">折后满300送150<br>满500送300<br>店内名品秒杀</span><br>
+											<span class="q-btn"></span>
+										</span>
+									</a>
+								</li><li>
+									<a href="#" target="_blank" class="a-img">
+										<img src="http://img5.paipaiimg.com/12ccb341/acpc-5267CAFD-00000001000000008B7C00000002547C.1.jpg" alt="店内名品秒杀">
+										<span class="mask-layer pos-abs">
+											<span class="title">折后满300送150<br>满500送300<br>店内名品秒杀</span><br>
+											<span class="q-btn"></span>
+										</span>
+									</a>
+								</li><li>
+									<a href="#" target="_blank" class="a-img">
+										<img src="http://img5.paipaiimg.com/12ccb341/acpc-5267CAFD-00000001000000008B7C00000002547C.1.jpg" alt="店内名品秒杀">
+										<span class="mask-layer pos-abs">
+											<span class="title">折后满300送150<br>满500送300<br>店内名品秒杀</span><br>
+											<span class="q-btn"></span>
+										</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					</div>
+						<!-- E 店铺11：蒙层242*350 -->
+<!-- S 店铺10：图片偏移160*260 -->
+				<style type="text/css">
+					.pro-shop-10{margin-right:-13px;position:relative;*zoom:1;font-size:0;}
+					.pro-shop-10 a{width:160px;height:260px;margin:5px 5px 0 0;position:relative;display:inline-block;overflow:hidden;}
+					.pro-shop-10 a img {position:absolute; left:0; top:0;transition: top 0.6s ease;}
+
+				</style>
+				<div class="pro pro-shop" data-width='160' data-category="shops" data-effective='pic position'>
+							<a class="href-map" href="##" title="" id=""></a>
+							<div class="mod-hd">
+								<h1 class="">店铺10：图片偏移160*260</h1>
+							</div>
+					<div class="mod-bd">
+						<div class="shops-wrap pro-shop-10">
+							<a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img4.paipaiimg.com/boss-32F64506-525CE64C32F64506525CE64C00005BAE.1.jpg" iguid="107">
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img4.paipaiimg.com/boss-32F64506-525CE64C32F64506525CE64C00005BAE.1.jpg" iguid="107">
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img4.paipaiimg.com/boss-32F64506-525CE64C32F64506525CE64C00005BAE.1.jpg" iguid="107">
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img4.paipaiimg.com/boss-32F64506-525CE64C32F64506525CE64C00005BAE.1.jpg" iguid="107">
+							</a><a title="皮衣皮草" target="_blank" href="#">
+								<img alt="皮衣皮草" title="皮衣皮草" src="http://img4.paipaiimg.com/boss-32F64506-525CE64C32F64506525CE64C00005BAE.1.jpg" iguid="107">
+							</a>
+						</div>
+					</div>
+					</div>
+<script type="text/javascript">
+	var animate_value = $.browser.msie ? 'slow' : 'fast';
+	        $(".pro-shop-10 a").each(function(){
+	            var that = $(this);
+	            var hoverTimer;
+	            that.hover(function(){
+	                hoverTimer = setTimeout(function(){
+	                    that.find('img').animate({'top':'-260px'},animate_value);
+	                }, 50);
+	            },function(){
+	                clearTimeout(hoverTimer);
+	                that.find('img').animate({'top':'0'},animate_value);
+	            })
+	        })
+
+</script>
+<!-- E 店铺10：图片偏移160*260 -->
+	</div>
+	<!-- E 店铺模板 -->
+<!-- S 单品模板 -->
+	<div class="module-good wrap-module">
+		<!-- S 单品1：边框194*306 -->
+		<style type="text/css">
+			.pro-good-1 ul{position:relative;margin-right:-4px;}
+			.pro-good-1 li{width:184px;height:291px;padding:7px 2px 2px;background-color:#FFF;overflow:hidden;margin:4px 3px 0 0;border:3px solid #fff;transition:border .5s;}
+			.pro-good-1 li:hover{border-color:#3AC1DA;}
+			.goods-img{width:185px;height:185px;margin-bottom:8px;}
+			.pro-good-1 .goods-detail{position:relative;}
+			.pro-good-1 .goods-name{margin-bottom:2px;}
+			.pro-good-1 .goods-name a{color:#333;width:185px;display:block;*height:18px;}
+			.pro-good-1 .goods-price{color:#cf0000;font:19px 微软雅黑;margin-bottom:9px;}
+			.pro-good-1 .goods-price em{font-family:Arial;}
+			.pro-good-1 .goods-price-market{color:#959595;font:11px Arial;-webkit-transform:scale(0.91);}
+			.pro-good-1 .goods-no{left:119px;top:63px;}
+			.pro-good-1 .goods-no em{color:#c5191c;}
+			.pro-good-1 .goods-buy {background: url(http://pics3.paipaiimg.com/update/20130911/index_lady_mod_icon.jpg) 0 -64px;width: 114px;height: 31px;}
+		</style>
+		<div class="pro pro-good " data-width='194' data-category="goods" data-effective='border'>
+							<a class="href-map" href="##" title="" id=""></a>
+							<div class="mod-hd">
+								<h1 class="">单品1：边框194*306</h1>
+							</div>
+							<div class="mod-bd">
+								<div class="goods-wrap pro-good-1">
+									<ul class="cf" id="">
+										<li>  <div class="goods-img">   <a href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" title="南极人 黄金甲保暖套装" class="a-img" target="_blank"> <img init_src="http://img4.paipaiimg.com/boss-5242AC14-B781BF595242AC1404010000334CB06F.1.gif" alt="南极人 黄金甲保暖套装" src="http://img4.paipaiimg.com/boss-5242AC14-B781BF595242AC1404010000334CB06F.1.gif" iguid="0"></a>  </div>  <div class="goods-detail">   <div class="goods-name">    <a title="南极人 黄金甲保暖套装" target="_blank" href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" class="long-text">南极人 黄金甲保暖套装</a>   </div>   <div class="goods-price">    疯抢价:<em class="goods-price-current">&yen;49.00</em> <span class="goods-price-market">&yen;188</span>   </div>   <div class="goods-buy">    <a title="立即抢购" target="_blank" href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" class="no-text">立即抢购</a>   </div>   <div class="goods-no pos-abs">    热销<em>6</em>件   </div>  </div>  <div class="layer border-layer"></div> </li>
+										<li>  <div class="goods-img">   <a href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" title="南极人 黄金甲保暖套装" class="a-img" target="_blank"> <img init_src="http://img4.paipaiimg.com/boss-5242AC14-B781BF595242AC1404010000334CB06F.1.gif" alt="南极人 黄金甲保暖套装" src="http://img4.paipaiimg.com/boss-5242AC14-B781BF595242AC1404010000334CB06F.1.gif" iguid="0"></a>  </div>  <div class="goods-detail">   <div class="goods-name">    <a title="南极人 黄金甲保暖套装" target="_blank" href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" class="long-text">南极人 黄金甲保暖套装</a>   </div>   <div class="goods-price">    疯抢价:<em class="goods-price-current">&yen;49.00</em> <span class="goods-price-market">&yen;188</span>   </div>   <div class="goods-buy">    <a title="立即抢购" target="_blank" href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" class="no-text">立即抢购</a>   </div>   <div class="goods-no pos-abs">    热销<em>6</em>件   </div>  </div>  <div class="layer border-layer"></div> </li>
+										<li>  <div class="goods-img">   <a href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" title="南极人 黄金甲保暖套装" class="a-img" target="_blank"> <img init_src="http://img4.paipaiimg.com/boss-5242AC14-B781BF595242AC1404010000334CB06F.1.gif" alt="南极人 黄金甲保暖套装" src="http://img4.paipaiimg.com/boss-5242AC14-B781BF595242AC1404010000334CB06F.1.gif" iguid="0"></a>  </div>  <div class="goods-detail">   <div class="goods-name">    <a title="南极人 黄金甲保暖套装" target="_blank" href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" class="long-text">南极人 黄金甲保暖套装</a>   </div>   <div class="goods-price">    疯抢价:<em class="goods-price-current">&yen;49.00</em> <span class="goods-price-market">&yen;188</span>   </div>   <div class="goods-buy">    <a title="立即抢购" target="_blank" href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" class="no-text">立即抢购</a>   </div>   <div class="goods-no pos-abs">    热销<em>6</em>件   </div>  </div>  <div class="layer border-layer"></div> </li><li>  <div class="goods-img">   <a href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" title="南极人 黄金甲保暖套装" class="a-img" target="_blank"> <img init_src="http://img4.paipaiimg.com/boss-5242AC14-B781BF595242AC1404010000334CB06F.1.gif" alt="南极人 黄金甲保暖套装" src="http://img4.paipaiimg.com/boss-5242AC14-B781BF595242AC1404010000334CB06F.1.gif" iguid="0"></a>  </div>  <div class="goods-detail">   <div class="goods-name">    <a title="南极人 黄金甲保暖套装" target="_blank" href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" class="long-text">南极人 黄金甲保暖套装</a>   </div>   <div class="goods-price">    疯抢价:<em class="goods-price-current">&yen;49.00</em> <span class="goods-price-market">&yen;188</span>   </div>   <div class="goods-buy">    <a title="立即抢购" target="_blank" href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" class="no-text">立即抢购</a>   </div>   <div class="goods-no pos-abs">    热销<em>6</em>件   </div>  </div>  <div class="layer border-layer"></div> </li><li>  <div class="goods-img">   <a href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" title="南极人 黄金甲保暖套装" class="a-img" target="_blank"> <img init_src="http://img4.paipaiimg.com/boss-5242AC14-B781BF595242AC1404010000334CB06F.1.gif" alt="南极人 黄金甲保暖套装" src="http://img4.paipaiimg.com/boss-5242AC14-B781BF595242AC1404010000334CB06F.1.gif" iguid="0"></a>  </div>  <div class="goods-detail">   <div class="goods-name">    <a title="南极人 黄金甲保暖套装" target="_blank" href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" class="long-text">南极人 黄金甲保暖套装</a>   </div>   <div class="goods-price">    疯抢价:<em class="goods-price-current">&yen;49.00</em> <span class="goods-price-market">&yen;188</span>   </div>   <div class="goods-buy">    <a title="立即抢购" target="_blank" href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" class="no-text">立即抢购</a>   </div>   <div class="goods-no pos-abs">    热销<em>6</em>件   </div>  </div>  <div class="layer border-layer"></div> </li><li>  <div class="goods-img">   <a href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" title="南极人 黄金甲保暖套装" class="a-img" target="_blank"> <img init_src="http://img4.paipaiimg.com/boss-5242AC14-B781BF595242AC1404010000334CB06F.1.gif" alt="南极人 黄金甲保暖套装" src="http://img4.paipaiimg.com/boss-5242AC14-B781BF595242AC1404010000334CB06F.1.gif" iguid="0"></a>  </div>  <div class="goods-detail">   <div class="goods-name">    <a title="南极人 黄金甲保暖套装" target="_blank" href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" class="long-text">南极人 黄金甲保暖套装</a>   </div>   <div class="goods-price">    疯抢价:<em class="goods-price-current">&yen;49.00</em> <span class="goods-price-market">&yen;188</span>   </div>   <div class="goods-buy">    <a title="立即抢购" target="_blank" href="http://item.wanggou.com/B781BF590000000004010000334CB06F?PTAG=34104.1.1" class="no-text">立即抢购</a>   </div>   <div class="goods-no pos-abs">    热销<em>6</em>件   </div>  </div>  <div class="layer border-layer"></div> </li>
+									</ul>
+								</div>
+							</div>
+						</div>
+		<!-- E 单品1：边框194*306 -->
+		<!-- S 单品2：边框191*262 -->
+				<style type="text/css">
+					.pro-good-2 ul{position:relative;margin-right:-4px;}
+					.pro-good-2 li{width:160px;height:247px;overflow:hidden;padding:15px 16px 0 15px;background-color:#FFF;margin:3px 3px 0 0;position:relative;}
+					.pro-good-2 .goods-img{margin-bottom:10px;width:160px;height:160px;z-index:2;}
+					.pro-good-2 .goods-name{height:18px;margin-bottom:5px;}
+					.pro-good-2 .goods-name a{color:#2e2e2e;width:160px;}
+					.pro-good-2 .goods-detail{position:relative;z-index:6;}
+					.pro-good-2 .goods-price{color:#ff4200;font:16px 微软雅黑;}
+					.pro-good-2 .goods-price-current{font:bold 18px Arial;}
+					.pro-good-2 .goods-price-market{color:#959595;}
+					.pro-good-2 .goods-price-market span{text-decoration:line-through;}
+					.pro-good-2 .goods-buy{position:absolute;left:127px;top:27px;z-index:5;}
+					.pro-good-2 .goods-buy a{background:url(http://pics1.paipaiimg.com/update/20130923/index_btn_buy.png);width:35px;height:33px;overflow:hidden;display:block;}
+					.pro-good-2 .border-layer{width:183px;height:254px;border:4px solid #CF0000;position:absolute;z-index:0;}
+					.pro-good-2 li.on .border-layer,.pro-good-2 li:hover .border-layer{left:0;}
+
+				</style>
+				<div class="pro pro-good " data-width='191' data-category="goods" data-effective='border'>
+									<a class="href-map" href="##" title="" id=""></a>
+									<div class="mod-hd">
+										<h1 class="">单品2：边框194*306</h1>
+									</div>
+									<div class="mod-bd">
+										<div class="goods-wrap pro-good-2">
+											<ul class="cf" id="">
+												<li class=""><div class="goods-img"><a href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1" title="口水娃青豆4口味组合" class="a-img" target="_blank"> <img init_src="http://img4.paipaiimg.com/98a1f738/item-52381C9C-3D53F63200000000040100000E544A7E.0.200x200.jpg" alt="口水娃青豆4口味组合" src="http://img4.paipaiimg.com/98a1f738/item-52381C9C-3D53F63200000000040100000E544A7E.0.200x200.jpg" iguid="0"></a></div><div class="goods-detail"><div class="goods-name"><a title="口水娃青豆4口味组合" target="_blank" href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1">口水娃青豆4口味组合</a></div><div class="goods-price">疯抢价：<em class="goods-price-current">?9.8</em>	</div><span class="goods-price-market">市场价：<span>?19.80</span></span><div class="goods-buy"><a title="立即抢购" target="_blank" href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1" class="no-text">立即抢购</a></div></div><div class="layer border-layer"></div></li><li class=""><div class="goods-img"><a href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1" title="口水娃青豆4口味组合" class="a-img" target="_blank"> <img init_src="http://img4.paipaiimg.com/98a1f738/item-52381C9C-3D53F63200000000040100000E544A7E.0.200x200.jpg" alt="口水娃青豆4口味组合" src="http://img4.paipaiimg.com/98a1f738/item-52381C9C-3D53F63200000000040100000E544A7E.0.200x200.jpg" iguid="0"></a></div><div class="goods-detail"><div class="goods-name"><a title="口水娃青豆4口味组合" target="_blank" href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1">口水娃青豆4口味组合</a></div><div class="goods-price">疯抢价：<em class="goods-price-current">?9.8</em>	</div><span class="goods-price-market">市场价：<span>?19.80</span></span><div class="goods-buy"><a title="立即抢购" target="_blank" href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1" class="no-text">立即抢购</a></div></div><div class="layer border-layer"></div></li><li class=""><div class="goods-img"><a href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1" title="口水娃青豆4口味组合" class="a-img" target="_blank"> <img init_src="http://img4.paipaiimg.com/98a1f738/item-52381C9C-3D53F63200000000040100000E544A7E.0.200x200.jpg" alt="口水娃青豆4口味组合" src="http://img4.paipaiimg.com/98a1f738/item-52381C9C-3D53F63200000000040100000E544A7E.0.200x200.jpg" iguid="0"></a></div><div class="goods-detail"><div class="goods-name"><a title="口水娃青豆4口味组合" target="_blank" href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1">口水娃青豆4口味组合</a></div><div class="goods-price">疯抢价：<em class="goods-price-current">?9.8</em>	</div><span class="goods-price-market">市场价：<span>?19.80</span></span><div class="goods-buy"><a title="立即抢购" target="_blank" href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1" class="no-text">立即抢购</a></div></div><div class="layer border-layer"></div></li><li class=""><div class="goods-img"><a href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1" title="口水娃青豆4口味组合" class="a-img" target="_blank"> <img init_src="http://img4.paipaiimg.com/98a1f738/item-52381C9C-3D53F63200000000040100000E544A7E.0.200x200.jpg" alt="口水娃青豆4口味组合" src="http://img4.paipaiimg.com/98a1f738/item-52381C9C-3D53F63200000000040100000E544A7E.0.200x200.jpg" iguid="0"></a></div><div class="goods-detail"><div class="goods-name"><a title="口水娃青豆4口味组合" target="_blank" href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1">口水娃青豆4口味组合</a></div><div class="goods-price">疯抢价：<em class="goods-price-current">?9.8</em>	</div><span class="goods-price-market">市场价：<span>?19.80</span></span><div class="goods-buy"><a title="立即抢购" target="_blank" href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1" class="no-text">立即抢购</a></div></div><div class="layer border-layer"></div></li><li class=""><div class="goods-img"><a href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1" title="口水娃青豆4口味组合" class="a-img" target="_blank"> <img init_src="http://img4.paipaiimg.com/98a1f738/item-52381C9C-3D53F63200000000040100000E544A7E.0.200x200.jpg" alt="口水娃青豆4口味组合" src="http://img4.paipaiimg.com/98a1f738/item-52381C9C-3D53F63200000000040100000E544A7E.0.200x200.jpg" iguid="0"></a></div><div class="goods-detail"><div class="goods-name"><a title="口水娃青豆4口味组合" target="_blank" href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1">口水娃青豆4口味组合</a></div><div class="goods-price">疯抢价：<em class="goods-price-current">?9.8</em>	</div><span class="goods-price-market">市场价：<span>?19.80</span></span><div class="goods-buy"><a title="立即抢购" target="_blank" href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1" class="no-text">立即抢购</a></div></div><div class="layer border-layer"></div></li><li class=""><div class="goods-img"><a href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1" title="口水娃青豆4口味组合" class="a-img" target="_blank"> <img init_src="http://img4.paipaiimg.com/98a1f738/item-52381C9C-3D53F63200000000040100000E544A7E.0.200x200.jpg" alt="口水娃青豆4口味组合" src="http://img4.paipaiimg.com/98a1f738/item-52381C9C-3D53F63200000000040100000E544A7E.0.200x200.jpg" iguid="0"></a></div><div class="goods-detail"><div class="goods-name"><a title="口水娃青豆4口味组合" target="_blank" href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1">口水娃青豆4口味组合</a></div><div class="goods-price">疯抢价：<em class="goods-price-current">?9.8</em>	</div><span class="goods-price-market">市场价：<span>?19.80</span></span><div class="goods-buy"><a title="立即抢购" target="_blank" href="http://item.wanggou.com/3D53F63200000000040100000E544A7E?PTAG=34076.18.1" class="no-text">立即抢购</a></div></div><div class="layer border-layer"></div></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+				<!-- E 单品2：边框191*262 -->
+		<!-- S 单品3：热卖排行榜 -->
+		<style type="text/css">
+			.pro-good-3 ul{margin-right:-5px;*zoom:1;}
+			    .pro-good-3 li{width:228px;padding:7px 7px 0;height:234px;background-color:#FFF;margin:0 5px 5px 0;overflow:hidden;}
+			    .pro-good-3 .item-1,.pro-good-3 .item-2{width:475px;height:294px;}
+			    .pro-good-3 .hot-rank-sale{background: rgba(0,0,0,0.7);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#8F000000,endColorstr=#8F000000);display:inline-block;padding:0 5px;height:22px;font:12px/22px Simsun;color:#FFF;top:0;right:0;}
+			    .pro-good-3 .hot-rank-no{color:#FFF;top:0;left:0;display:inline-block;background-color:#EE4444;padding:0 7px;font:bold 18px/23px Arial;}
+			        /*.pro-good-3 .good-wrap .item-1 .hot-rank-no,.pro-good-3 .good-wrap .item-2 .hot-rank-no{height:45px;padding:0 10px;font:bold 36px/45px Arial;}*/
+			    .pro-good-3 .a-img{width:228px;height:170px;}
+			    .pro-good-3 .a-img:hover{text-decoration:none;}
+			    .pro-good-3 .item-1 .a-img,.pro-good-3 .item-2 .a-img{width:475px;height:220px;}
+			    .pro-good-3 .goods-name a{color:#666;width:228px;display:inline-block;line-height:28px;text-decoration:none;}
+			    .pro-good-3 .item-1 .goods-name a,.pro-good-3 .item-2 .goods-name a{width:475px;}
+			    .pro-good-3 .goods-price{margin-left:-7px;padding:6px 7px;background-color:#eee;width:100%}
+			    .pro-good-3 .item-1 .goods-price,.pro-good-3 .item-2 .goods-price{padding:7px;}
+			    .pro-good-3 .goods-price-new{color:#EE4444;display:inline-block;*margin-bottom:3px;}
+			    .pro-good-3 .goods-price-new em{font:bold 22px/20px Microsoft Yahei,SimHei;}
+			    .pro-good-3 .item-1 .goods-price-new em,.pro-good-3 .item-2 .goods-price-new em{font:bold 36px/30px Arial;}
+			    .pro-good-3 .goods-price-market{color:#666;font:12px/14px Microsoft Yahei,SimHei;display:inline-block;}
+			    .pro-good-3 .item-1 .goods-price-market,.pro-good-3 .item-2 .goods-price-market{color:#333;font:14px Microsoft Yahei,SimHei;display:block;}
+			    .pro-good-3 .goods-price-market span{font-family:Arial;text-decoration:line-through;}
+			    .pro-good-3 .goods-price-market s{display:none;text-decoration:none;}
+			    .pro-good-3 .item-1 .goods-price-market s,
+			    .pro-good-3 .item-2 .goods-price-market s{display:inline;}
+			    .pro-good-3 .item-1 .goods-price-new,.pro-good-3 .item-1 .goods-price-market,
+			    .pro-good-3 .item-2 .goods-price-new,.pro-good-3 .item-2 .goods-price-market{display:inline-block;*margin-bottom:0;}
+			    .pro-good-3 li.on{background-color:#b10014;}
+			    .pro-good-3 li.on .goods-name a{color:#FFF;}
+			    .pro-good-3 li:hover{background-color:#EE4444;}
+			    .pro-good-3 li:hover .goods-name a{color:#FFF;}
+			    .pro-good-3 .goods-name{height:28px\9;}
+		</style>
+		<div class="pro pro-good" id="" data-width='489' data-category="rank" data-effective='border'>
+		    <a class="href-map" href="##"></a>
+		    <div class="mod-hd">
+		        <h1 class="">单品3：热卖排行榜</h1>
+		    </div>
+		    <div class="mod-bd">
+		        <div class="good-wrap pro-good-3">
+		            <ul class="cf">
+			        <li class="item-1">
+		            <div class="wrap-img"> <a title="【LIHOMME】2013秋冬时尚 韩版特殊工艺编织男士毛衣【套餐更优惠】" target="_blank" href="http://item.wanggou.com/E559F6320000000000653B5B07E24BD1?ptag=34094.9.1" class="a-img">
+		            <img init_src="http://pics3.paipaiimg.com/update/20131023/ppms_lihomme-1.jpg" alt="【LIHOMME】2013秋冬时尚 韩版特殊工艺编织男士毛衣【套餐更优惠】" title="【LIHOMME】2013秋冬时尚 韩版特殊工艺编织男士毛衣【套餐更优惠】" src="http://pics3.paipaiimg.com/update/20131023/ppms_lihomme-1.jpg" iguid="106"> <span class="hot-rank-sale pos-abs">热销<em>28117</em>件</span>
+		            <span class="hot-rank-no pos-abs">NO.1</span> </a> </div> <div class="goods-name">
+		            <a title="【LIHOMME】2013秋冬时尚 韩版特殊工艺编织男士毛衣【套餐更优惠】" target="_blank" href="http://item.wanggou.com/E559F6320000000000653B5B07E24BD1?ptag=34094.9.1" class="long-text">【LIHOMME】2013秋冬时尚 韩版特殊工艺编织男士毛衣【套餐更优惠】</a> </div> <div class="goods-price">
+		            <span class="goods-price-new">爆款价：?<em>65.00</em></span>?<span class="goods-price-market"><s>市场价：</s><span>?399.00</span>
+		            </span> </div> </li><li class="item-2">
+		            <div class="wrap-img"> <a title="【欧印依夫】秋冬款男士羽绒服男 长袖韩版格子加厚 衬衫领羽绒" target="_blank" href="http://item.wanggou.com/47898D1D00000000040100001514948F?ptag=34094.9.11" class="a-img">
+		            <img init_src="http://pics2.paipaiimg.com/update/20131021/ppms_143035665.jpg" alt="【欧印依夫】秋冬款男士羽绒服男 长袖韩版格子加厚 衬衫领羽绒" title="【欧印依夫】秋冬款男士羽绒服男 长袖韩版格子加厚 衬衫领羽绒" src="http://pics2.paipaiimg.com/update/20131021/ppms_143035665.jpg" iguid="107"> <span class="hot-rank-sale pos-abs">热销<em>10395</em>件</span>
+		            <span class="hot-rank-no pos-abs">NO.2</span> </a> </div> <div class="goods-name">
+		            <a title="【欧印依夫】秋冬款男士羽绒服男 长袖韩版格子加厚 衬衫领羽绒" target="_blank" href="http://item.wanggou.com/47898D1D00000000040100001514948F?ptag=34094.9.11" class="long-text">【欧印依夫】秋冬款男士羽绒服男 长袖韩版格子加厚 衬衫领羽绒</a> </div> <div class="goods-price">
+		            <span class="goods-price-new">爆款价：?<em>159.00</em></span>?<span class="goods-price-market"><s>市场价：</s><span>?699.00</span>
+		            </span> </div> </li><li class="item-3">
+		            <div class="wrap-img"> <a title="【斯波帝卡】爆款亏本清仓 美国杜邦授权轻薄保暖连帽棉衣男士棉服薄" target="_blank" href="http://item.wanggou.com/50D29E0D000000000401000031620742?ptag=34094.9.15" class="a-img">
+		            <img init_src="http://pics2.paipaiimg.com/update/20131021/ppms_154023219.jpg" alt="【斯波帝卡】爆款亏本清仓 美国杜邦授权轻薄保暖连帽棉衣男士棉服薄" title="【斯波帝卡】爆款亏本清仓 美国杜邦授权轻薄保暖连帽棉衣男士棉服薄" src="http://pics2.paipaiimg.com/update/20131021/ppms_154023219.jpg" iguid="108"> <span class="hot-rank-sale pos-abs">热销<em>859</em>件</span>
+		            <span class="hot-rank-no pos-abs">NO.3</span> </a> </div> <div class="goods-name">
+		            <a title="【斯波帝卡】爆款亏本清仓 美国杜邦授权轻薄保暖连帽棉衣男士棉服薄" target="_blank" href="http://item.wanggou.com/50D29E0D000000000401000031620742?ptag=34094.9.15" class="long-text">【斯波帝卡】爆款亏本清仓 美国杜邦授权轻薄保暖连帽棉衣男士棉服薄</a> </div> <div class="goods-price">
+		            <span class="goods-price-new">爆款价：?<em>59.00</em></span>?<span class="goods-price-market"><s>市场价：</s><span>?388.00</span>
+		            </span> </div> </li><li class="item-4">
+		            <div class="wrap-img"> <a title="【韦克瑞希】2013秋装新款男士夹克 男装休闲短款立领修身薄外套" target="_blank" href="http://item.wanggou.com/1434C86F00000000040100002330CAF2?ptag=34094.9.6" class="a-img">
+		            <img init_src="http://pics2.paipaiimg.com/update/20131019/ppms_228x170.jpg" alt="【韦克瑞希】2013秋装新款男士夹克 男装休闲短款立领修身薄外套" title="【韦克瑞希】2013秋装新款男士夹克 男装休闲短款立领修身薄外套" src="http://pics2.paipaiimg.com/update/20131019/ppms_228x170.jpg" iguid="109"> <span class="hot-rank-sale pos-abs">热销<em>6939</em>件</span>
+		            <span class="hot-rank-no pos-abs">NO.4</span> </a> </div> <div class="goods-name">
+		            <a title="【韦克瑞希】2013秋装新款男士夹克 男装休闲短款立领修身薄外套" target="_blank" href="http://item.wanggou.com/1434C86F00000000040100002330CAF2?ptag=34094.9.6" class="long-text">【韦克瑞希】2013秋装新款男士夹克 男装休闲短款立领修身薄外套</a> </div> <div class="goods-price">
+		            <span class="goods-price-new">爆款价：?<em>78.00</em></span>?<span class="goods-price-market"><s>市场价：</s><span>?598.00</span>
+		            </span> </div> </li><li class="item-5">
+		            <div class="wrap-img"> <a title="【欧比森】2013冬款时尚休闲格子衬衫 加绒加厚男士长袖衬衣 多款选" target="_blank" href="http://item.wanggou.com/9B56F63200000000040100002D6E705D?ptag=34094.9.13" class="a-img">
+		            <img init_src="http://pics3.paipaiimg.com/update/20131021/ppms_2323_228-170.jpg" alt="【欧比森】2013冬款时尚休闲格子衬衫 加绒加厚男士长袖衬衣 多款选" title="【欧比森】2013冬款时尚休闲格子衬衫 加绒加厚男士长袖衬衣 多款选" src="http://pics3.paipaiimg.com/update/20131021/ppms_2323_228-170.jpg" iguid="110"> <span class="hot-rank-sale pos-abs">热销<em>1391</em>件</span>
+		            <span class="hot-rank-no pos-abs">NO.5</span> </a> </div> <div class="goods-name">
+		            <a title="【欧比森】2013冬款时尚休闲格子衬衫 加绒加厚男士长袖衬衣 多款选" target="_blank" href="http://item.wanggou.com/9B56F63200000000040100002D6E705D?ptag=34094.9.13" class="long-text">【欧比森】2013冬款时尚休闲格子衬衫 加绒加厚男士长袖衬衣 多款选</a> </div> <div class="goods-price">
+		            <span class="goods-price-new">爆款价：?<em>79.00</em></span>?<span class="goods-price-market"><s>市场价：</s><span>?398.00</span>
+		            </span> </div> </li><li class="item-6">
+		            <div class="wrap-img"> <a title="【牛言非羽】2013秋冬新款男士直筒修身牛仔裤  万人体验" target="_blank" href="http://item.wanggou.com/4C266D43000000000401000030733A25?ptag=34094.9.8" class="a-img">
+		            <img init_src="http://pics3.paipaiimg.com/update/20131023/ppms_200338878.jpg" alt="【牛言非羽】2013秋冬新款男士直筒修身牛仔裤  万人体验" title="【牛言非羽】2013秋冬新款男士直筒修身牛仔裤  万人体验" src="http://pics3.paipaiimg.com/update/20131023/ppms_200338878.jpg" iguid="111"> <span class="hot-rank-sale pos-abs">热销<em>2044</em>件</span>
+		            <span class="hot-rank-no pos-abs">NO.6</span> </a> </div> <div class="goods-name">
+		            <a title="【牛言非羽】2013秋冬新款男士直筒修身牛仔裤  万人体验" target="_blank" href="http://item.wanggou.com/4C266D43000000000401000030733A25?ptag=34094.9.8" class="long-text">【牛言非羽】2013秋冬新款男士直筒修身牛仔裤  万人体验</a> </div> <div class="goods-price">
+		            <span class="goods-price-new">爆款价：?<em>59.00</em></span>?<span class="goods-price-market"><s>市场价：</s><span>?298.00</span>
+		            </span> </div> </li><li class="item-7">
+		            <div class="wrap-img"> <a title="【柏天奴】2013秋冬新品时尚开衫卫衣 超值套装" target="_blank" href="http://item.wanggou.com/3104926D000000000401000032E49769?ptag=34094.9.23" class="a-img">
+		            <img init_src="http://pics0.paipaiimg.com/update/20131023/ppms_w02-51.jpg" alt="【柏天奴】2013秋冬新品时尚开衫卫衣 超值套装" title="【柏天奴】2013秋冬新品时尚开衫卫衣 超值套装" src="http://pics0.paipaiimg.com/update/20131023/ppms_w02-51.jpg" iguid="112"> <span class="hot-rank-sale pos-abs">热销<em>478</em>件</span>
+		            <span class="hot-rank-no pos-abs">NO.7</span> </a> </div> <div class="goods-name">
+		            <a title="【柏天奴】2013秋冬新品时尚开衫卫衣 超值套装" target="_blank" href="http://item.wanggou.com/3104926D000000000401000032E49769?ptag=34094.9.23" class="long-text">【柏天奴】2013秋冬新品时尚开衫卫衣 超值套装</a> </div> <div class="goods-price">
+		            <span class="goods-price-new">爆款价：?<em>79.00</em></span>?<span class="goods-price-market"><s>市场价：</s><span>?369.00</span>
+		            </span> </div> </li><li class="item-8">
+		            <div class="wrap-img"> <a title="【迪尔马奇】秋装新款时尚拼接男士休闲立领型夹克男外套 韩版" target="_blank" href="http://item.wanggou.com/E84DF6320000000004010000017E2B5C?ptag=34094.9.2" class="a-img">
+		            <img init_src="http://pics2.paipaiimg.com/update/20131021/ppms_143115123.jpg" alt="【迪尔马奇】秋装新款时尚拼接男士休闲立领型夹克男外套 韩版" title="【迪尔马奇】秋装新款时尚拼接男士休闲立领型夹克男外套 韩版" src="http://pics2.paipaiimg.com/update/20131021/ppms_143115123.jpg" iguid="113"> <span class="hot-rank-sale pos-abs">热销<em>20259</em>件</span>
+		            <span class="hot-rank-no pos-abs">NO.8</span> </a> </div> <div class="goods-name">
+		            <a title="【迪尔马奇】秋装新款时尚拼接男士休闲立领型夹克男外套 韩版" target="_blank" href="http://item.wanggou.com/E84DF6320000000004010000017E2B5C?ptag=34094.9.2" class="long-text">【迪尔马奇】秋装新款时尚拼接男士休闲立领型夹克男外套 韩版</a> </div> <div class="goods-price">
+		            <span class="goods-price-new">爆款价：?<em>82.00</em></span>?<span class="goods-price-market"><s>市场价：</s><span>?425.00</span>
+		            </span> </div> </li><li class="item-9">
+		            <div class="wrap-img"> <a title="【诺奇】全网最低价 多色连帽保暖羽绒服 男士休闲羽绒外套" target="_blank" href="http://item.wanggou.com/6765F632000000000401000032084C36?ptag=34094.9.20" class="a-img">
+		            <img init_src="http://pics0.paipaiimg.com/update/20131022/ppms_228-170.jpg" alt="【诺奇】全网最低价 多色连帽保暖羽绒服 男士休闲羽绒外套" title="【诺奇】全网最低价 多色连帽保暖羽绒服 男士休闲羽绒外套" src="http://pics0.paipaiimg.com/update/20131022/ppms_228-170.jpg" iguid="114"> <span class="hot-rank-sale pos-abs">热销<em>740</em>件</span>
+		            <span class="hot-rank-no pos-abs">NO.9</span> </a> </div> <div class="goods-name">
+		            <a title="【诺奇】全网最低价 多色连帽保暖羽绒服 男士休闲羽绒外套" target="_blank" href="http://item.wanggou.com/6765F632000000000401000032084C36?ptag=34094.9.20" class="long-text">【诺奇】全网最低价 多色连帽保暖羽绒服 男士休闲羽绒外套</a> </div> <div class="goods-price">
+		            <span class="goods-price-new">爆款价：?<em>89.00</em></span>?<span class="goods-price-market"><s>市场价：</s><span>?698.00</span>
+		            </span> </div> </li><li class="item-10">
+		            <div class="wrap-img"> <a title="【千纸鹤】2013新款商务男裤 纯棉百搭男士休闲裤 直筒长裤980" target="_blank" href="http://item.wanggou.com/DA51F632000000000401000017C5149C?ptag=34094.9.21" class="a-img">
+		            <img init_src="http://pics1.paipaiimg.com/update/20131023/ppms_980-228x170.jpg" alt="【千纸鹤】2013新款商务男裤 纯棉百搭男士休闲裤 直筒长裤980" title="【千纸鹤】2013新款商务男裤 纯棉百搭男士休闲裤 直筒长裤980" src="http://pics1.paipaiimg.com/update/20131023/ppms_980-228x170.jpg" iguid="115"> <span class="hot-rank-sale pos-abs">热销<em>21709</em>件</span>
+		            <span class="hot-rank-no pos-abs">NO.10</span> </a> </div> <div class="goods-name">
+		            <a title="【千纸鹤】2013新款商务男裤 纯棉百搭男士休闲裤 直筒长裤980" target="_blank" href="http://item.wanggou.com/DA51F632000000000401000017C5149C?ptag=34094.9.21" class="long-text">【千纸鹤】2013新款商务男裤 纯棉百搭男士休闲裤 直筒长裤980</a> </div> <div class="goods-price">
+		            <span class="goods-price-new">爆款价：?<em>79.00</em></span>?<span class="goods-price-market"><s>市场价：</s><span>?538.00</span>
+		            </span> </div> </li></ul>
+
+		        </div>
+		    </div>
+		</div>
+		<!-- E 单品2：热卖排行榜 -->
+	</div>
+	<!-- E 单品模板 -->
+
+	<!-- S 品牌 -->
+	<div class="module-logo wrap-module">
+	<!-- S 品牌1：男装marquee -->
+	<style type="text/css">
+		#marquee{position:absolute;top:0;left:188px;width:728px;height:50px;overflow:hidden;background:#fff;}
+		    .list-logo-1{ position:absolute;height:50px;}
+		    .list-logo-1 li{float:left;_display:inline;/*margin:0 1px 0 0;*/}
+		    .list-logo-1 .a-img{width:91px;height:40px;padding-top:10px;overflow:hidden;}
+		.item-pre,.item-next{position:absolute;top:0;display:block;width:22px;height:50px;cursor:pointer;background:url(about:blank);}
+		.item-pre{left:166px;}
+		.item-next{left:915px;}
+
+	</style>
+	<div class="pro pro-m-logo" data-width='489' data-category="brands" data-effective='marquee'>
+		<a class="href-map" href="##" title="" id=""></a>
+		<div class="mod-hd">
+			<h1 class="">品牌1：男装marquee</h1>
+		</div>
+		<div class="mod-bd" style="width:100%;height:50px;overflow:hidden;position:relative;">
+			<img src="http://pics3.paipaiimg.com/update/20131009/index_142519504.png" alt="" class="ad-img">
+			<a href="#nolink" class="item-pre" ptag="34094.1.2" id="brand-prev"></a>
+			<a href="#nolink" class="item-next" ptag="34094.1.2" id="brand-next"></a>
+			<div  id="marquee">
+				<ul class="list-logo-1 cf logo-wrap" id="marqUl">
+					                <li><a href="http://shop.wanggou.com/2305650188?ptag=34094.14.1" target="_blank" title="Levis官方旗舰店" class="a-img"><img src="http://pics3.paipaiimg.com/update/20131010/ppms_155839669.jpg" alt="Levis官方旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855010344?ptag=34094.14.1" target="_blank" title="柒牌男装官方旗舰店" class="a-img"><img src="http://pics1.paipaiimg.com/update/20131010/ppms_163940520.png" alt="柒牌男装官方旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855000102?ptag=34094.14.1" target="_blank" title="GXG官方旗舰店" class="a-img"><img src="http://pics1.paipaiimg.com/update/20131010/ppms_160350277.jpg" alt="GXG官方旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/798589688?ptag=34094.14.1" target="_blank" title="波司登官方旗舰店" class="a-img"><img src="http://pics2.paipaiimg.com/update/20131019/ppms_b1.jpg" alt="波司登官方旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/838689999?ptag=34094.14.1" target="_blank" title="报喜鸟服饰专营店 " class="a-img"><img src="http://pics3.paipaiimg.com/update/20131010/ppms_16055054.jpg" alt="报喜鸟服饰专营店 "><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855000340?ptag=34094.14.1" target="_blank" title="卡宾旗舰店" class="a-img"><img src="http://pics0.paipaiimg.com/update/20131010/ppms_16222558.jpg" alt="卡宾旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/2813731008?ptag=34094.14.1" target="_blank" title="北极绒专卖店" class="a-img"><img src="http://pics1.paipaiimg.com/update/20131019/ppms_220936807.jpg" alt="北极绒专卖店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/2280454610?ptag=34094.14.1" target="_blank" title="鄂尔多斯官方旗舰店" class="a-img"><img src="http://pics2.paipaiimg.com/update/20131010/ppms_161055479.jpg" alt="鄂尔多斯官方旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/1626827046?ptag=34094.14.1" target="_blank" title="富贵鸟官方旗舰店" class="a-img"><img src="http://pics0.paipaiimg.com/update/20131010/ppms_161646523.jpg" alt="富贵鸟官方旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855000388/528/index.shtml?ptag=34094.14.1" target="_blank" title="绫致时装官方旗舰店 " class="a-img"><img src="http://pics3.paipaiimg.com/update/20131010/ppms_162500410.jpg" alt="绫致时装官方旗舰店 "><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/1512149218?ptag=34094.14.1" target="_blank" title="恒源祥海港专卖店" class="a-img"><img src="http://pics2.paipaiimg.com/update/20131010/ppms_161812558.jpg" alt="恒源祥海港专卖店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855001942?ptag=34094.14.1" target="_blank" title="古老鲨鱼官方旗舰店" class="a-img"><img src="http://pics3.paipaiimg.com/update/20131010/ppms_162045492.jpg" alt="古老鲨鱼官方旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855003422?ptag=34094.14.1" target="_blank" title=" 马克华菲官方旗舰店 " class="a-img"><img src="http://pics1.paipaiimg.com/update/20131010/ppms_163052161.jpg" alt=" 马克华菲官方旗舰店 "><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/1718888809?ptag=34094.14.1" target="_blank" title="劲霸男装旗舰店" class="a-img"><img src="http://pics2.paipaiimg.com/update/20131010/ppms_162141434.jpg" alt="劲霸男装旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855004921?ptag=34094.14.1" target="_blank" title="利郎官方旗舰店  " class="a-img"><img src="http://pics1.paipaiimg.com/update/20131010/ppms_162402768.jpg" alt="利郎官方旗舰店  "><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855000388?ptag=34094.14.1" target="_blank" title="绫致时装官方旗舰店 " class="a-img"><img src="http://pics2.paipaiimg.com/update/20131010/ppms_162717554.jpg" alt="绫致时装官方旗舰店 "><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/2967771837/?ptag=34094.14.1" target="_blank" title="虎都美宁服饰专营店" class="a-img"><img src="http://pics2.paipaiimg.com/update/20131019/ppms_211944842.jpg" alt="虎都美宁服饰专营店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/2675829375?ptag=34094.14.1" target="_blank" title="骆驼男装官方旗舰店" class="a-img"><img src="http://pics2.paipaiimg.com/update/20131010/ppms_163433122.jpg" alt="骆驼男装官方旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/191862371?ptag=34094.14.1" target="_blank" title="罗蒙官方旗舰店" class="a-img"><img src="http://pics1.paipaiimg.com/update/20131010/ppms_163616421.jpg" alt="罗蒙官方旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855000036?ptag=34094.14.1" target="_blank" title="美特斯邦威官方旗舰店 " class="a-img"><img src="http://pics3.paipaiimg.com/update/20131010/ppms_163728585.jpg" alt="美特斯邦威官方旗舰店 "><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855000306?ptag=34094.14.1" target="_blank" title="七匹狼共赢专卖店" class="a-img"><img src="http://pics2.paipaiimg.com/update/20131010/ppms_163905475.jpg" alt="七匹狼共赢专卖店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/1559738268?ptag=34094.14.1" target="_blank" title="森Semir服饰官方旗舰店 " class="a-img"><img src="http://pics0.paipaiimg.com/update/20131010/ppms_164042961.jpg" alt="森Semir服饰官方旗舰店 "><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855001635?ptag=34094.14.1" target="_blank" title="太子龙官方旗舰店" class="a-img"><img src="http://pics3.paipaiimg.com/update/20131010/ppms_164216123.jpg" alt="太子龙官方旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/2406860287?ptag=34094.14.1" target="_blank" title="雅鹿服饰专营店" class="a-img"><img src="http://pics1.paipaiimg.com/update/20131010/ppms_164440655.jpg" alt="雅鹿服饰专营店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855000063?ptag=34094.14.1" target="_blank" title="与狼共舞联合创景专卖店" class="a-img"><img src="http://pics3.paipaiimg.com/update/20131010/ppms_164610772.jpg" alt="与狼共舞联合创景专卖店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855000326?ptag=34094.14.1" target="_blank" title="真维斯官方旗舰店" class="a-img"><img src="http://pics1.paipaiimg.com/update/20131010/ppms_164814845.jpg" alt="真维斯官方旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855000298?ptag=34094.14.1" target="_blank" title="佐丹奴旗舰店" class="a-img"><img src="http://pics2.paipaiimg.com/update/20131010/ppms_164921458.jpg" alt="佐丹奴旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855000192?ptag=34094.14.1" target="_blank" title="唐狮官方旗舰店" class="a-img"><img src="http://pics0.paipaiimg.com/update/20131012/ppms_111157825.jpg" alt="唐狮官方旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855008227?PTAG=34094.14.1" target="_blank" title="太平鸟官方旗舰店" class="a-img"><img src="http://pics1.paipaiimg.com/update/20131019/index_3456.jpg" alt="太平鸟官方旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/1159918130?PTAG=34094.14.1" target="_blank" title="nautica诺帝卡官方旗舰店" class="a-img"><img src="http://pics0.paipaiimg.com/update/20131019/ppms_nautica1.jpg" alt="nautica诺帝卡官方旗舰店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/1653868010?PTAG=34094.14.1" target="_blank" title="梦特娇专卖店" class="a-img"><img src="http://pics0.paipaiimg.com/update/20131019/ppms_m1.jpg" alt="梦特娇专卖店"><span class="layer border-layer"></span></a></li><li><a href="http://shop.wanggou.com/855004045?PTAG=34094.14.1" target="_blank" title="dickies官方旗舰店" class="a-img"><img src="http://pics3.paipaiimg.com/update/20131019/ppms_235735832.jpg" alt="dickies官方旗舰店"><span class="layer border-layer"></span></a></li>
+					            </ul>
+	        </div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var ul = $("#marqUl li").length;
+	    $('#marqUl').css({'width':ul*91*2});/*style.width = ul*91*2+'px';*/
+	   marquee("#marquee","left",20,"#brand-prev","#brand-next");
+		function marquee(dom, direction, speed,left,right) {
+		        var _dom, _domCh, range, _speed, _direction;
+		        var run = function() {
+		            //计算一次滚动总时间
+		            var time = ((_domCh.css(_direction) == "auto") ? range : range + parseInt(_domCh.css(_direction))) * speed;
+		            var data = {};
+		            data[_direction] = -range;
+		            //开始滚动
+		            _domCh.animate(data, time, "linear", function() {
+		                _domCh.css(_direction, 0);
+		                run();
+		});
+		}
+		        var init = function() {
+		            //获取滚动的dom
+		            _dom = $(dom);
+		            _direction = direction;
+		            _domCh = _dom.children();
+		            //拷贝一次子节点，为了滚动时头尾相接
+		            _domCh.append(_domCh.children().clone());
+		            //滚动的可视范围
+		            range = ((_direction == "top" || _direction == "bottom") ? _domCh.height() : _domCh.width()) / 2;
+		            speed = speed ? speed : 50;
+		            //鼠标一上去就停止滚动
+		            _domCh.hover(function() {
+		                _domCh.stop();
+		}, run);
+		            $(left).click(function(){
+		                if(_direction != "left"){
+		                _domCh.stop();
+		                var size = _domCh.css(_direction);
+		                _domCh.css(_direction, "auto");
+		                _direction = "left";
+		                _domCh.css(_direction,size);
+		                run();
+		}
+		});
+		            $(right).click(function(){
+		                if(_direction != "right"){
+		                _domCh.stop();
+		                var size = _domCh.css(_direction);
+		                _domCh.css(_direction, "auto");
+		                _direction = "right";
+		                _domCh.css(_direction,0);
+		                run();
+		}
+		});
+		            run();
+		}();
+		}
+	</script>
+
+	<!-- E 品牌1：男装marquee -->
+	</div>
+	<!-- E 品牌 -->
+
+	<!-- S 秒杀 -->
+	<div class="wrap-module module-miao">
+	<style type="text/css">
+	.pro-special .mod-hd{margin-bottom:15px;}
+		.pro-special h1 {
+		background-position: 0 -198px;height: 33px;
+			display: block;
+			width: 217px;
+			background-image: url(http://pics1.paipaiimg.com/update/20130916/index_baby_h1.png);
+			_background-image: url(http://pics1.paipaiimg.com/update/20130916/index_baby_h1_8.png);
+			padding:0;
+		}
+	/* pro-special */
+	.pro-special .time-wrap ul{margin-right:-5px;position:relative;*zoom:1;}
+	.pro-special .goods-wrap li{width:247px;height:425px;margin:0;}
+	.pro-special .time-wrap li{width:195px;background-color:#ff628e;color:#fff;height:33px;float:left;_display:inline;margin-right:4px;text-align:center;margin-top:10px;font:20px/33px 微软雅黑;}
+	.pro-special .time-wrap li a{color:#fff;text-decoration:none;}
+
+	.pro-special .time-wrap li.li-ed{background-color:#b7b2a7;}
+	.pro-special .time-wrap .ico{left:23px;top:15px;width:34px;height:36px;overflow:hidden;display:block;background-position:-42px 0;background-image:url(http://pics2.paipaiimg.com/update/20130916/index_baby_page.png)}
+	.pro-special .time-wrap li.current{margin-top:0;line-height:43px;height:43px;background-color:#ff7eac;width:189px;}
+
+	.time-line {background-color: #ff7eac;height: 65px;padding-left: 2px;}
+	/*.time-line ul{position: relative;z-index: 5;margin-left:170px;margin-top:-72px;}*/
+	.time-line ul{position: relative;padding-left:89px;border-bottom:2px solid #FFF;}
+	/*初始不显示 小导航 正常width:90px*/
+
+	.time-line li {margin-right:32px;float: left;height: 47px;text-align: center;width: 170px;color:#FFF;position:relative;font:bold 14px 微软雅黑;}
+	.time-line li a{color:#FFF;margin-top:23px;display:block;text-decoration:none;}
+	.time-line li.current{font-size:24px;}
+	.time-line li.current a{margin-top:10px;}
+	.time-line li .icon{bottom:-13px;width:40px;height:20px;background-image:url(http://pics0.paipaiimg.com/update/20130917/index_timeline_bg.jpg);left:65px;overflow:hidden;}
+	.time-line li.current .icon{background-image:url(http://pics2.paipaiimg.com/update/20130917/index_timeline_bg_h.jpg)}
+
+
+	.pro-special .goods-wrap{background-color:#ff699f;padding:5px 0 5px 5px;margin-bottom:20px}
+	.pro-special .goods-wrap li{width:200px;height:330px;padding:20px 20px 0;background-color:#FFF;margin:0 5px 0 0;position:relative;}
+	.pro-special .goods-img{width:200px;height:200px;margin-bottom:15px}
+	.pro-special .goods-name a{color:#4c3530;font:12px/1.5 宋体;display:block;_width:200px;}
+	.pro-special .goods-name,.pro-special .goods-price,.pro-special .goods-no{margin-bottom:5px;}
+	.pro-special .goods-price em{color:#cc0000;font:20px Arial;vertical-align:bottom;margin-right:5px;}
+	.pro-special .goods-price-market{color:#7f5046;text-decoration:line-through;font:12px Arial;vertical-align:bottom;}
+	.pro-special .goods-no{font:12px/1.5 宋体;color:#4c3530;}
+	.pro-special .goods-no .color-red{color:#cc0000;margin:0 3px}
+	.pro-special .goods-buy{background:url(http://pics3.paipaiimg.com/update/20130911/index_lady_mod_icon.jpg) 0 -64px;width:114px;height:31PX;}
+	.pro-special .goods-buy a{display:block;width:100%;height:100%; overflow:hidden;line-height:999em;}
+	.pro-special .goods-wrap .li-ed .goods-buy{background-position:0 -32px;}
+	.pro-special .goods-wrap .li-to .goods-buy{background-position:0 0;}
+	.pro-special .goods-wrap .layer{position:absolute; width:215px; height:250px; color:#fff; font-family:微软雅黑; padding:100px 0 0 25px; left:0; top:0; cursor:pointer;display:none;}
+	.pro-special .goods-wrap .layer a{display:block; position:absolute; left:0; top:0; width:240px; height:350px; background:#000; opacity:0.6; filter:alpha(opacity=60);}
+	.pro-special .goods-wrap .layer span {font-size:30px; display:block; color:#fff; position:relative;}
+	.pro-special .goods-wrap .layer em {font-size:14px; position:relative;padding-left:14px;}
+	.pro-special .goods-wrap .li-ed .layer{display:block;}
+	.pro-special .list-gg{position:relative;height:280px;padding-left:250px;margin-right:-10px;font-size:0;}
+	.pro-special .list-gg a{display:inline-block;width:238px;height:135px;margin:0 10px 10px 0;}
+	.pro-special .list-gg .item-1{position:absolute;left:0;top:0;width:238px;height:280px;}
+	</style>
+	<!-- S 今日特惠 -->
+	<div class="pro pro-special" data-width='200' data-category="miao" data-effective='mask'>
+		<a class="href-map" href="##" title="" id="proSpecial"></a>
+		<div class="mod-hd">
+			<h1 class="no-text">今日特惠</h1>
+		</div>
+	     <script>
+	         var _miaosha_config={
+				   remindExt:{
+						 btime:"童装秋冬新品1元包邮，抓绒套装、针织开衫、秋冬T恤……全部1元，土豪小伙伴们，快快买起吧！",
+						 bianliangurl:"http://1020.wanggou.com/pre_baby.shtml?ptag=12366.5.13"
+				   },
+				   data:[{date:"2013/10/20",url:"http://static.paipaiimg.com/sinclude/xml/tjw/tjw2013/tjw9/tjw279825473297.js"},
+						{date:"2013/10/21",url:"http://static.paipaiimg.com/sinclude/xml/tjw/tjw2013/tjw9/tjw279810603298.js"},
+						{date:"2013/10/22",url:"http://static.paipaiimg.com/sinclude/xml/tjw/tjw2013/tjw9/tjw279632873299.js"},
+						{date:"2013/10/23",url:"http://static.paipaiimg.com/sinclude/xml/tjw/tjw2013/tjw9/tjw279891323300.js"},
+						{date:"2013/10/24",url:"http://static.paipaiimg.com/sinclude/xml/tjw/tjw2013/tjw9/tjw279626093301.js"}],
+				   hours:[10,12,15,20]
+				};
+	        </script>
+		<!--include virtual="/sinclude/qqbuy/promote/miaosha.shtml"-->
+		<div class="mod-bd">
+			<div class="time-wrap">
+				<ul class="cf" id="dayTab"><li class="li-ed current" index="0"><a href="#nolink">10月20日</a></li><li class="li-ed" index="1"><a href="#nolink">10月21日</a></li><li class="li-ed" index="2"><a href="#nolink">10月22日</a></li><li class="li-ed" index="3"><a href="#nolink">10月23日</a></li><li class="li-ing" index="4"><a href="#nolink">10月24日</a></li></ul>
+			</div>
+			<div class="time-line">
+				<ul class="cf" id="hourTab"><li class="" index="0"><a href="#nolink">10:00</a><i class="icon pos-abs"></i></li><li class="" index="1"><a href="#nolink">12:00</a><i class="icon pos-abs"></i></li><li class="" index="2"><a href="#nolink">15:00</a><i class="icon pos-abs"></i></li><li class="current" index="3"><a href="#nolink">20:00</a><i class="icon pos-abs"></i></li></ul>
+			</div>
+			<div class="goods-wrap">
+				<ul class="cf" id="miaoshaItems">  <li class="li-ed">  <div class="goods-img">   <a title="【1元限量秒杀】男童潮款 长袖舒适印花T恤" target="_blank" href="http://item.wanggou.com/911B195F0000000004010000334D812A?PTAG=34103.8.1"><img src="http://img1.paipaiimg.com/00000000/item-524163DF-911B195F0000000004010000334D812A.0.200x200.jpg" alt="【1元限量秒杀】男童潮款 长袖舒适印花T恤"></a>  </div>  <div class="goods-detail">   <div class="goods-name">    <a href="http://item.wanggou.com/911B195F0000000004010000334D812A?PTAG=34103.8.1" class="long-text" target="_blank">【1元限量秒杀】男童潮款 长袖舒适印花T恤</a>   </div>   <div class="goods-price">    <em>?1.00</em><span class="goods-price-market">?138.00</span>   </div>   <div class="goods-no">    仅剩<span class="color-red" id="remain911B195F0000000004010000334D812A">0</span>件&nbsp;限量<span class="color-red">0</span>件   </div>   <div class="goods-buy">    <a href="http://item.wanggou.com/911B195F0000000004010000334D812A" commid="911B195F0000000004010000334D812A" title="我要抢" target="_blank" id="link911B195F0000000004010000334D812A">我要抢</a>   </div>  </div>  <div class="layer"><a href="http://shop.wanggou.com/1595480977?PTAG=34103.8.1" target="_blank"></a><span>抢不到没关系!</span><em>看更多超低价商品&gt;&gt; </em><a href="http://shop.wanggou.com/1595480977?PTAG=34103.8.1" target="_blank" style="background:url(about:blank);width:100%;height:100%;overflow:hidden;z-index:3;"></a></div> </li>  <li class="li-ed">  <div class="goods-img">   <a title="秒杀蒙奇奇娃娃小龙猫毛绒公仔" target="_blank" href="http://item.wanggou.com/D355F6320000000004010000334BFAB6?PTAG=34103.8.1"><img src="http://img3.paipaiimg.com/00000000/item-52413A80-D355F6320000000004010000334BFAB6.0.200x200.jpg" alt="秒杀蒙奇奇娃娃小龙猫毛绒公仔"></a>  </div>  <div class="goods-detail">   <div class="goods-name">    <a href="http://item.wanggou.com/D355F6320000000004010000334BFAB6?PTAG=34103.8.1" class="long-text" target="_blank">秒杀蒙奇奇娃娃小龙猫毛绒公仔</a>   </div>   <div class="goods-price">    <em>?1.00</em><span class="goods-price-market">?88.00</span>   </div>   <div class="goods-no">    仅剩<span class="color-red" id="remainD355F6320000000004010000334BFAB6">0</span>件&nbsp;限量<span class="color-red">0</span>件   </div>   <div class="goods-buy">    <a href="http://item.wanggou.com/D355F6320000000004010000334BFAB6" commid="D355F6320000000004010000334BFAB6" title="我要抢" target="_blank" id="linkD355F6320000000004010000334BFAB6">我要抢</a>   </div>  </div>  <div class="layer"><a href="http://shop.wanggou.com/855004627?PTAG=34103.8.1" target="_blank"></a><span>抢不到没关系!</span><em>看更多超低价商品&gt;&gt; </em><a href="http://shop.wanggou.com/855004627?PTAG=34103.8.1" target="_blank" style="background:url(about:blank);width:100%;height:100%;overflow:hidden;z-index:3;"></a></div> </li>  <li class="li-ed">  <div class="goods-img">   <a title="孩堡童鞋春秋款宝宝低帮帆布鞋 女童鞋 韩版帆布鞋3118" target="_blank" href="http://item.wanggou.com/0C5F3F1C000000000401000029F02F3B?PTAG=34103.8.1"><img src="http://img4.paipaiimg.com/00000000/item-518C5379-0C5F3F1C000000000401000029F02F3B.0.200x200.jpg" alt="孩堡童鞋春秋款宝宝低帮帆布鞋 女童鞋 韩版帆布鞋3118"></a>  </div>  <div class="goods-detail">   <div class="goods-name">    <a href="http://item.wanggou.com/0C5F3F1C000000000401000029F02F3B?PTAG=34103.8.1" class="long-text" target="_blank">孩堡童鞋春秋款宝宝低帮帆布鞋 女童鞋 韩版帆布鞋3118</a>   </div>   <div class="goods-price">    <em>?1.00</em><span class="goods-price-market">?128.00</span>   </div>   <div class="goods-no">    仅剩<span class="color-red" id="remain0C5F3F1C000000000401000029F02F3B">0</span>件&nbsp;限量<span class="color-red">0</span>件   </div>   <div class="goods-buy">    <a href="http://item.wanggou.com/0C5F3F1C000000000401000029F02F3B" commid="0C5F3F1C000000000401000029F02F3B" title="我要抢" target="_blank" id="link0C5F3F1C000000000401000029F02F3B">我要抢</a>   </div>  </div>  <div class="layer"><a href="http://shop.wanggou.com/473915148?PTAG=34103.8.1" target="_blank"></a><span>抢不到没关系!</span><em>看更多超低价商品&gt;&gt; </em><a href="http://shop.wanggou.com/473915148?PTAG=34103.8.1" target="_blank" style="background:url(about:blank);width:100%;height:100%;overflow:hidden;z-index:3;"></a></div> </li>  <li class="li-ed">  <div class="goods-img">   <a title="秒杀 贝儿欣 宝宝婴儿340ml儿童吸管训练杯水杯带手柄 不含BPA" target="_blank" href="http://item.wanggou.com/1066F63200000000040100003363737C?PTAG=34103.8.1"><img src="http://img0.paipaiimg.com/00000000/item-52440028-1066F63200000000040100003363737C.0.200x200.jpg" alt="秒杀 贝儿欣 宝宝婴儿340ml儿童吸管训练杯水杯带手柄 不含BPA"></a>  </div>  <div class="goods-detail">   <div class="goods-name">    <a href="http://item.wanggou.com/1066F63200000000040100003363737C?PTAG=34103.8.1" class="long-text" target="_blank">秒杀 贝儿欣 宝宝婴儿340ml儿童吸管训练杯水杯带手柄 不含BPA</a>   </div>   <div class="goods-price">    <em>?1.00</em><span class="goods-price-market">?44.00</span>   </div>   <div class="goods-no">    仅剩<span class="color-red" id="remain1066F63200000000040100003363737C">0</span>件&nbsp;限量<span class="color-red">0</span>件   </div>   <div class="goods-buy">    <a href="http://item.wanggou.com/1066F63200000000040100003363737C" commid="1066F63200000000040100003363737C" title="我要抢" target="_blank" id="link1066F63200000000040100003363737C">我要抢</a>   </div>  </div>  <div class="layer"><a href="http://shop.wanggou.com/855008784?PTAG=34103.8.1" target="_blank"></a><span>抢不到没关系!</span><em>看更多超低价商品&gt;&gt; </em><a href="http://shop.wanggou.com/855008784?PTAG=34103.8.1" target="_blank" style="background:url(about:blank);width:100%;height:100%;overflow:hidden;z-index:3;"></a></div> </li>  </ul>
+			</div>
+		</div>
+	</div>
+	<!-- E 今日特惠 -->
+	</div>
+	<!-- E 秒杀 -->
+	<!-- 广告 开始 -->
+		<div class="wrap-module module-gg">
+
+
+		<!-- S 广告：121*121 -->
+		<style type="text/css">
+			.gg-121{margin-right:-2px;}
+	.gg-121 a{width:121px;height:121px;margin:0 2px 2px 0;position:relative;overflow:hidden;}
+			.gg-121 .layer{width:121px;height:121px;background: rgba(0,0,0,.5);filter: progid:DXImageTransform.Microsoft.Gradient(GradientType = 0, StartColorStr = "#9f000000", EndColorStr = "#9f000000");left:-999px;}
+			.gg-121 a:hover{border:0 none;}
+			.gg-121 a:hover .layer{left:0;}
+		</style>
+		<div class="pro pro-gg pro-good-2" data-width='121' data-category="gg" data-effective='mask'>
+			<a class="href-map" href="##" title="" id=""></a>
+			<div class="mod-hd">
+				<h1 class="">广告：121*121</h1>
+			</div>
+			<div class="mod-bd">
+				<div class="list-gg gg-121">
+					<a target="_blank" class="a-img" href="#" title="百年堂">
+						<img alt="百年堂" title="百年堂" src="http://img2.paipaiimg.com/6cc444c8/acpc-524D3372-0000000100000000688600000001B348.1.jpg"><span class="layer"></span>
+					</a>
+					<a target="_blank" class="a-img" href="#" title="百年堂">
+										<img alt="百年堂" title="百年堂" src="http://img2.paipaiimg.com/6cc444c8/acpc-524D3372-0000000100000000688600000001B348.1.jpg"><span class="layer"></span>
+									</a>
+					<a target="_blank" class="a-img" href="#" title="百年堂">
+										<img alt="百年堂" title="百年堂" src="http://img2.paipaiimg.com/6cc444c8/acpc-524D3372-0000000100000000688600000001B348.1.jpg"><span class="layer"></span>
+									</a><a target="_blank" class="a-img" href="#" title="百年堂">
+						<img alt="百年堂" title="百年堂" src="http://img2.paipaiimg.com/6cc444c8/acpc-524D3372-0000000100000000688600000001B348.1.jpg"><span class="layer"></span>
+					</a>
+					<a target="_blank" class="a-img" href="#" title="百年堂">
+										<img alt="百年堂" title="百年堂" src="http://img2.paipaiimg.com/6cc444c8/acpc-524D3372-0000000100000000688600000001B348.1.jpg"><span class="layer"></span>
+									</a>
+					<a target="_blank" class="a-img" href="#" title="百年堂">
+										<img alt="百年堂" title="百年堂" src="http://img2.paipaiimg.com/6cc444c8/acpc-524D3372-0000000100000000688600000001B348.1.jpg"><span class="layer"></span>
+									</a><a target="_blank" class="a-img" href="#" title="百年堂">
+						<img alt="百年堂" title="百年堂" src="http://img2.paipaiimg.com/6cc444c8/acpc-524D3372-0000000100000000688600000001B348.1.jpg"><span class="layer"></span>
+					</a>
+					<a target="_blank" class="a-img" href="#" title="百年堂">
+										<img alt="百年堂" title="百年堂" src="http://img2.paipaiimg.com/6cc444c8/acpc-524D3372-0000000100000000688600000001B348.1.jpg"><span class="layer"></span>
+									</a>
+					<a target="_blank" class="a-img" href="#" title="百年堂">
+										<img alt="百年堂" title="百年堂" src="http://img2.paipaiimg.com/6cc444c8/acpc-524D3372-0000000100000000688600000001B348.1.jpg"><span class="layer"></span>
+									</a><a target="_blank" class="a-img" href="#" title="百年堂">
+						<img alt="百年堂" title="百年堂" src="http://img2.paipaiimg.com/6cc444c8/acpc-524D3372-0000000100000000688600000001B348.1.jpg"><span class="layer"></span>
+					</a>
+					<a target="_blank" class="a-img" href="#" title="百年堂">
+										<img alt="百年堂" title="百年堂" src="http://img2.paipaiimg.com/6cc444c8/acpc-524D3372-0000000100000000688600000001B348.1.jpg"><span class="layer"></span>
+									</a>
+					<a target="_blank" class="a-img" href="#" title="百年堂">
+										<img alt="百年堂" title="百年堂" src="http://img2.paipaiimg.com/6cc444c8/acpc-524D3372-0000000100000000688600000001B348.1.jpg"><span class="layer"></span>
+									</a>
+				</div>
+				</div>
+			</div>
+		<!-- E 广告：121*121 -->
+		</div>
+		<!-- 广告 结束 -->
+</div>
+
+
+
+<a class="back-top" href="#" title="回顶部" data-text='回顶部'>回顶部</a>
+<div class="module-filter">
+	<div class="filter-width filter-div">
+		<h2>宽度</h2>
+		<div class="filter-wrap">
+			<label for="width_242">242</label>
+			<label for="width_191">191</label>
+			<label for="width_490">490</label>
+			<label for="width_161">161</label>
+			<label for="width_160">160</label>
+			<label for="width_194">194</label>
+			<label for="width_489">489</label>
+			<label for="width_200">200</label>
+			<label for="width_121">121</label>
+			<a href="#nolink" title="删除此过滤器" class="filter-del pos-abs filter-del-width">×</a>
+		</div>
+
+	</div>
+    <div class="filter-effective filter-div">
+		<h2>hover效果</h2>
+		<div class="filter-wrap">
+		<label for="effective_border">border</label>
+		<label for="effective_mask">mask</label>
+		<label for="effective_picchange">pic change</label>
+			<a href="#nolink" title="删除此过滤器" class="filter-del pos-abs filter-del-effective">×</a>
+			</div>
+	</div>
+	<div class="filter-category filter-div">
+		<h2>类别</h2>
+		<div class="filter-wrap">
+		<label for="category_goods">goods</label>
+		<label for="category_shops">shops</label>
+		<label for="category_rank">rank</label>
+			<a href="#nolink" title="删除此过滤器" class="filter-del pos-abs filter-del-category">×</a>
+			</div>
+	</div>
+</div>
+</div>
+<script type="text/javascript">
+	var inputArray = ['width','effective','category'];
+	var checkedNo = 1;
+	var checkedArray = [$('input[data-width="242"]')];
+	var checkedAttr = new Array();
+	var checkedAttrVal = new Array();
+$('.filter-del').click(function(){
+console.log($('.filter-del').index($(this)));
+	var t = $('.filter-del').index($(this));
+	$("input[name='"+inputArray[t]+"']").prop("checked", false);
+	$('#filterCss').html('');
+})
+
+	$('.full-wrap input').change(function(){
+
+		$('#filterCss').html('');
+		checkedArray = $('input[type="radio"]:checked');
+		checkedAttr = [];
+		checkedAttrVal = [];
+		checkedNo = checkedArray.length;
+		var tCss= 'input:checked~.wrapper .wrap-module .pro';
+		var tCss1 = '';
+			console.log('111',checkedArray,checkedNo);
+		if(checkedNo>1){
+			checkedArray.each(function(index,t){
+				console.log(t.id);
+				checkedAttr.push(t.id.split('_')[0]);
+				checkedAttrVal.push(t.id.split('_')[1]);
+				/*input[id=width_242]:checked~.wrapper .wrap-module .pro[data-width='242']*/
+				tCss1 +='input[id='+ t.id +']:checked~.wrapper .wrap-module .pro[data-'+t.id.split('_')[0]+'="'+t.id.split('_')[1]+'"]{display:none;}';
+				tCss += '[data-'+t.id.split('_')[0]+'="'+t.id.split('_')[1]+'"]';
+			})
+			console.log(tCss1+tCss);
+			/*
+			* .wrap-module .pro[data-width='242'][data-effective='mask']
+			* */
+
+ 			/*$(".pro").hide();*/
+			$('#filterCss').html(tCss1+'\n\r'+tCss+'{display:block}');
+			/*$(".wrap-module .pro[data-'"+)*/
+		}
+		console.log(checkedAttr,checkedAttrVal);
+	})
+
+    $('.filter-del').click(function(){
+        $('#filterCss').html('');
+        		checkedArray = $('input[type="radio"]:checked');
+        		checkedAttr = [];
+        		checkedAttrVal = [];
+        		checkedNo = checkedArray.length;
+        		var tCss= 'input:checked~.wrapper .wrap-module .pro';
+        		var tCss1 = '';
+        			console.log('111',checkedArray,checkedNo);
+        		if(checkedNo>1){
+        			checkedArray.each(function(index,t){
+        				console.log(t.id);
+        				checkedAttr.push(t.id.split('_')[0]);
+        				checkedAttrVal.push(t.id.split('_')[1]);
+        				tCss += '[data-'+t.id.split('_')[0]+'="'+t.id.split('_')[1]+'"]';
+        			})
+
+        			/*
+        			* .wrap-module .pro[data-width='242'][data-effective='mask']
+        			* */
+
+         			/*$(".pro").hide();*/
+        			$('#filterCss').html(tCss+'{display:block}');
+        			/*$(".wrap-module .pro[data-'"+)*/
+        		}
+        		console.log(checkedAttr,checkedAttrVal);
+    })
+</script>
+</body>
+</html>
