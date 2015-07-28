@@ -1427,7 +1427,7 @@ a {
         background-image: url("../images/b2c/p4_left_hand.png");
         width: 398px;
         height: 426px;
-        top: 825px;
+        top: 893px;
         right: 0;
         z-index: 22;
         opacity: 0;
@@ -1832,7 +1832,8 @@ a {
         z-index: 21;
     }
     /* scene-8 */
-    .scene-6 .person-lead .icon-body {
+    /* 空中电商 */
+/*    .scene-6 .person-lead .icon-body {
         background-image: url(../images/b2c/p5_person_body.png);
         width: 235px;
         height: 535px;
@@ -1994,9 +1995,10 @@ a {
         left: 528px;
         top: 855px;
         z-index: 20;
-    }
+    }*/
     /* scene-9 */
-    .scene-7 .person-lead .icon-body {
+    /* 星级酒店 */
+/*    .scene-7 .person-lead .icon-body {
         background-image: url(../images/b2c/p5_person_body.png);
         width: 235px;
         height: 535px;
@@ -2116,7 +2118,7 @@ a {
         left: 17px;
         top: 200px;
         opacity: 1;
-    }
+    }*/
     /* scene-10 */
     .scene-8 .person-lead .icon-body {
         background-image: url(../images/b2c/p5_person_body.png);
@@ -2219,7 +2221,68 @@ a {
         left: 84px;
         top: 253px;
         opacity:1;
+        display: none;/*@20150728*/
     }
+    /* @20150728: */
+    .scene-8 .person-lead .icon-left-hand-last {
+        background-image: url(../images/b2c/p5.png);
+        background-size: 800px 960px;
+        background-position: -160px 0;
+        width: 81px;
+        height: 149px;
+        left: 141px;
+        top: 199px;
+        opacity: 1;
+    }
+    .scene-8 .person-lead .icon-right-hand-last {
+        background-image: url(../images/b2c/p5.png);
+        background-size: 800px 960px;
+        background-position: 0 0;
+        width: 84px;
+        height: 150px;
+        left: 17px;
+        top: 201px;
+        opacity: 1;
+    }
+    .scene-8 .icon-game-handler {
+        background-image: url(../images/b2c/p5.png);
+        background-size: 800px 960px;
+        background-position: -320px 0;
+        width: 70px;
+        height: 28px;
+        left: 87px;
+        top:324px;
+        opacity: 0;
+    }
+    .scene-8 .icon-game-line {
+        background-image: url(../images/b2c/p7_line.png);
+        width: 50px;
+        height: 212px;
+        left: 131px;
+        top:345px;
+        opacity: 0;
+    }
+    .scene-8 .wii {
+        background-image: url(../images/b2c/p5.png);
+        background-size: 800px 960px;
+        background-position: -160px -160px;
+        width: 201px;
+        height: 80px;
+        left: 274px;
+        top:918px;
+        z-index: 20;
+    }
+    .scene-8 .tv{
+        background-image: url(../images/b2c/p5.png);
+        background-size: 800px 960px;
+        background-position: 0 -320px;
+        width: 361px;
+        height: 212px;
+        left: 213px;
+        top: 709px;
+        z-index: 20;
+    }
+    /* E 20150728 */
     /* scene-11 */
     .scene-9  .person-lead .icon-body{
         background-image: url(../images/b2c/p5_person_body.png);
@@ -2558,12 +2621,12 @@ a {
     .scene-8 .text{
         background-position: 0 -456px;
     }
-    .scene-7 .text{
+/*    .scene-7 .text{
         background-position: 0 -380px;
     }
     .scene-6 .text{
         background-position: 0 -304px;
-    }
+    }*//*6：空中电商，7：星级酒店*/
     .scene-5 .text{
         background-position: 0 -228px;
     }
@@ -3659,7 +3722,37 @@ a {
         -webkit-animation-duration: 0.5s;
         -webkit-animation-delay: 0s;
     }
-    .ani-5 .scene-6.start-animate .tv,.ani-5 .scene-6.start-animate .wii{
+    .ani-5 .scene-5.last-animate .text{
+        -webkit-animation-name: textZoomOut;
+        animation-name:textZoomOut;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0s;
+    }
+    /* @20150728:因为少了2帧临时处理*/
+    .ani-7 .scene-5.last-animate .door,.ani-7 .scene-5.last-animate .clock,.ani-7 .scene-5.last-animate .food,.ani-7 .scene-5.last-animate .icon-game-handler,.ani-7 .scene-5.last-animate .icon-game-line{
+        -webkit-animation-name: stockRotateOut;
+        animation-name:stockRotateOut;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 0s;
+    }
+    .ani-7 .scene-5.last-animate .text{
+        -webkit-animation-name: textZoomOut;
+        animation-name:textZoomOut;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.3s;
+        -webkit-animation-delay: 0s;
+    }
+    .ani-7 .scene-8.start-animate .tv,.ani-7 .scene-8.start-animate .wii{
+        -webkit-animation-name: stockRotateOut;
+        animation-name:stockRotateOut;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 0s;
+        opacity: 1;
+    }
+/*    .ani-5 .scene-6.start-animate .tv,.ani-5 .scene-6.start-animate .wii{
         -webkit-animation-name: stockRotateOut;
         animation-name:stockRotateOut;
         -webkit-animation-timing-function: ease-out;
@@ -3670,25 +3763,15 @@ a {
     .ani-5 .scene-6.start-animate .icon-game-handler{
 
     }
-    .ani-5 .scene-6.start-animate .icon-game-line{
-
-    }
     .ani-5 .scene-6.start-animate .icon-left-hand-last{
         -webkit-animation-name: opacity0;
         animation-name:opacity0;
         -webkit-animation-timing-function: linear;
         -webkit-animation-duration: 0.1s;
         -webkit-animation-delay: 1.7s;
-    }
-    .ani-5 .scene-5.last-animate .text{
-        -webkit-animation-name: textZoomOut;
-        animation-name:textZoomOut;
-        -webkit-animation-timing-function: ease-out;
-        -webkit-animation-duration: 0.3s;
-        -webkit-animation-delay: 0s;
-    }
+    }*//*@20150728：去掉空中电商相关*/
     /* scene-8 in */
-    .ani-5 .scene-6.start-animate .chair,.ani-5 .scene-6.start-animate .person-lead{
+   /* .ani-5 .scene-6.start-animate .chair,.ani-5 .scene-6.start-animate .person-lead{
         opacity: 1;
         transition-duration: 0s;
     }
@@ -3754,7 +3837,7 @@ a {
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 2s;
-    }
+    }*//*@20150728：去掉空中电商相关*/
     @-webkit-keyframes shoeBoxTopDown{
         0%{
             -webkit-transform: translate(0,-984px);
@@ -3766,7 +3849,7 @@ a {
         }
     }
     /* scene-8 out */
-    .ani-6 .scene-6.last-animate .text{
+    /*.ani-6 .scene-6.last-animate .text{
         -webkit-animation-name: textZoomOut;
         animation-name:textZoomOut;
         -webkit-animation-timing-function: ease-out;
@@ -3781,9 +3864,9 @@ a {
         -webkit-animation-delay: 0s;
         opacity: 1;
         -webkit-animation-fill-mode: forwards;
-    }
+    }*//*@20150728：去掉空中电商相关*/
     /* scene-9 in */
-    .ani-6 .scene-7.start-animate .lamp,.ani-6 .scene-7.start-animate .bedstand{
+/*    .ani-6 .scene-7.start-animate .lamp,.ani-6 .scene-7.start-animate .bedstand{
         -webkit-animation-name: rotateIn;
         animation-name:rotateIn;
         -webkit-animation-timing-function: ease-in;
@@ -3832,13 +3915,6 @@ a {
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 1.2s;
     }
-    /*.ani-6 .scene-7.start-animate .icon-left-hand-middle{
-        -webkit-animation-name: opacity0;
-        animation-name:opacity0;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-duration: 0.1s;
-        -webkit-animation-delay: 1.4s;
-    }*/
     .ani-6 .scene-7.start-animate .icon-left-hand{
         -webkit-animation-name: opacity1;
         animation-name:opacity1;
@@ -3873,7 +3949,7 @@ a {
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 0.3s;
         -webkit-animation-delay: 1.8s;
-    }
+    }*//*@20150728不要星级酒店动画*/
     @-webkit-keyframes s8LeftHandMiddle{
         0%{
             opacity: 0;
@@ -3895,7 +3971,7 @@ a {
         }
     }
     /* scene-9 out */
-    .ani-7 .scene-7.last-animate .text{
+    /*.ani-7 .scene-7.last-animate .text{
         -webkit-animation-name: textZoomOut;
         animation-name:textZoomOut;
         -webkit-animation-timing-function: ease-out;
@@ -3910,7 +3986,7 @@ a {
         -webkit-animation-delay: 0s;
         opacity: 1;
         -webkit-animation-fill-mode: forwards;
-    }
+    }*//*@20150728不要星级酒店动画：消失动画*/
     /* scene-10 In */
     .ani-7 .scene-8.start-animate .chair,.ani-7 .scene-8.start-animate .person-lead{
         opacity: 1;
@@ -3936,6 +4012,11 @@ a {
         -webkit-animation-timing-function: ease-in;
         -webkit-animation-duration: 1s;
         -webkit-animation-delay: 1.2s;
+        /* @20150728 */
+        -webkit-animation-name: opacity1;
+        animation-name:opacity1;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-delay: 1.7s;
     }
     .ani-7 .scene-8.start-animate .icon-glass{
         -webkit-animation-name: shoeBoxTopDown;
@@ -4875,31 +4956,31 @@ a {
         </div>
     </div>
     <!-- E scene6 -->
-    <!-- S scene7 -->
-    <div class="J_opaPannel pannels scene-6" data-index="5">
+    <!-- S scene7：空中电商 -->
+   <!-- <div class="J_opaPannel pannels scene-6" data-index="5">
         <div class="opa-stage stage" data-index="5" data-id="opa_stage_6" style="">
-            <!-- S bg -->
+            &lt;!&ndash; S bg &ndash;&gt;
             <div class="mc mc-image bg">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E bg -->
-            <!-- S logo -->
+            &lt;!&ndash; E bg &ndash;&gt;
+            &lt;!&ndash; S logo &ndash;&gt;
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E logo -->
-            <!-- S chair -->
+            &lt;!&ndash; E logo &ndash;&gt;
+            &lt;!&ndash; S chair &ndash;&gt;
             <div class="mc mc-image chair">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E chair -->
-            <!-- S person -->
+            &lt;!&ndash; E chair &ndash;&gt;
+            &lt;!&ndash; S person &ndash;&gt;
             <div class="mc mc-image person-lead">
                 <div class="mc-wrap">
                     <div class="icon icon-body"></div>
@@ -4912,106 +4993,106 @@ a {
                     <div class="icon icon-shoe"></div>
                 </div>
             </div>
-            <!-- E person -->
-            <!-- S tv -->
+            &lt;!&ndash; E person &ndash;&gt;
+            &lt;!&ndash; S tv &ndash;&gt;
             <div class="mc mc-image tv">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E tv -->
-            <!-- S wii -->
+            &lt;!&ndash; E tv &ndash;&gt;
+            &lt;!&ndash; S wii &ndash;&gt;
             <div class="mc mc-image wii">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E wii -->
-            <!-- S light -->
+            &lt;!&ndash; E wii &ndash;&gt;
+            &lt;!&ndash; S light &ndash;&gt;
             <div class="mc mc-image light">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E light -->
-            <!-- S ray -->
+            &lt;!&ndash; E light &ndash;&gt;
+            &lt;!&ndash; S ray &ndash;&gt;
             <div class="mc mc-image ray">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E ray -->
-            <!-- S shoe-rack -->
+            &lt;!&ndash; E ray &ndash;&gt;
+            &lt;!&ndash; S shoe-rack &ndash;&gt;
             <div class="mc mc-image shoe-rack">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E shoe-rack -->
-            <!-- S shoe-box -->
+            &lt;!&ndash; E shoe-rack &ndash;&gt;
+            &lt;!&ndash; S shoe-box &ndash;&gt;
             <div class="mc mc-image shoe-box shoe-box-1">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E shoe-box -->
-            <!-- S shoe-box -->
+            &lt;!&ndash; E shoe-box &ndash;&gt;
+            &lt;!&ndash; S shoe-box &ndash;&gt;
             <div class="mc mc-image shoe-box shoe-box-2">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E shoe-box -->
-            <!-- S shoe -->
+            &lt;!&ndash; E shoe-box &ndash;&gt;
+            &lt;!&ndash; S shoe &ndash;&gt;
             <div class="mc mc-image shoe">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E shoe -->
-            <!-- S mirror -->
+            &lt;!&ndash; E shoe &ndash;&gt;
+            &lt;!&ndash; S mirror &ndash;&gt;
             <div class="mc mc-image mirror">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E mirror -->
+            &lt;!&ndash; E mirror &ndash;&gt;
 
-            <!-- S text -->
+            &lt;!&ndash; S text &ndash;&gt;
             <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="">空中电商购起来</div>
                 </div>
             </div>
-            <!-- E text -->
+            &lt;!&ndash; E text &ndash;&gt;
         </div>
-    </div>
+    </div>-->
     <!-- E scene7 -->
-    <!-- S scene8 -->
-    <div class="J_opaPannel pannels scene-7" data-index="6">
+    <!-- S scene8：星级酒店 -->
+    <!--<div class="J_opaPannel pannels scene-7" data-index="6">
         <div class="opa-stage stage" data-index="6" data-id="opa_stage_7" style="">
-            <!-- S bg -->
+            &lt;!&ndash; S bg &ndash;&gt;
             <div class="mc mc-image bg">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E bg -->
-            <!-- S logo -->
+            &lt;!&ndash; E bg &ndash;&gt;
+            &lt;!&ndash; S logo &ndash;&gt;
             <div class="mc mc-image delay_0_0s duration_0_8s mi-zoomIn logo">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E logo -->
-            <!-- S chair -->
+            &lt;!&ndash; E logo &ndash;&gt;
+            &lt;!&ndash; S chair &ndash;&gt;
             <div class="mc mc-image chair">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E chair -->
-            <!-- S person -->
+            &lt;!&ndash; E chair &ndash;&gt;
+            &lt;!&ndash; S person &ndash;&gt;
             <div class="mc mc-image person-lead">
                 <div class="mc-wrap">
                     <div class="icon icon-body"></div>
@@ -5025,44 +5106,44 @@ a {
                     <div class="icon icon-book"></div>
                 </div>
             </div>
-            <!-- E person -->
-            <!-- S bed -->
+            &lt;!&ndash; E person &ndash;&gt;
+            &lt;!&ndash; S bed &ndash;&gt;
             <div class="mc mc-image bed">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E bed -->
-            <!-- S bedstand -->
+            &lt;!&ndash; E bed &ndash;&gt;
+            &lt;!&ndash; S bedstand &ndash;&gt;
             <div class="mc mc-image bedstand">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E bedstand -->
-            <!-- S lamp -->
+            &lt;!&ndash; E bedstand &ndash;&gt;
+            &lt;!&ndash; S lamp &ndash;&gt;
             <div class="mc mc-image lamp">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E lamp -->
-            <!-- S lamp-light -->
+            &lt;!&ndash; E lamp &ndash;&gt;
+            &lt;!&ndash; S lamp-light &ndash;&gt;
             <div class="mc mc-image lamp-light">
                 <div class="mc-wrap">
                     <div class="icon"></div>
                 </div>
             </div>
-            <!-- E lamp-light -->
-            <!-- S text -->
+            &lt;!&ndash; E lamp-light &ndash;&gt;
+            &lt;!&ndash; S text &ndash;&gt;
             <div class="mc mc-text delay_0_0s duration_0_8s mi-zoomIn text">
                 <div class="mc-wrap delay_1_8s duration_0_8s noAnimate">
                     <div class="">星级酒店提前订</div>
                 </div>
             </div>
-            <!-- E text -->
+            &lt;!&ndash; E text &ndash;&gt;
         </div>
-    </div>
+    </div>-->
     <!-- E scene8-->
     <!-- S scene9 -->
     <div class="J_opaPannel pannels scene-8" data-index="7">
@@ -5092,6 +5173,10 @@ a {
             <div class="mc mc-image person-lead">
                 <div class="mc-wrap">
                     <div class="icon icon-body"></div>
+                    <!-- @20150728：-->
+                    <div class="icon icon-game-line"></div>
+                    <div class="icon icon-game-handler"></div>
+                    <!-- E 20150728 -->
                     <div class="icon icon-left-hand-last"></div>
                     <div class="icon icon-book"></div>
                     <div class="icon icon-left-hand"></div>
@@ -5102,6 +5187,18 @@ a {
                 </div>
             </div>
             <!-- E person -->
+            <!-- @20150728： -->
+            <div class="mc mc-image tv">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <div class="mc mc-image wii">
+                <div class="mc-wrap">
+                    <div class="icon"></div>
+                </div>
+            </div>
+            <!-- E 20150728 -->
             <!-- S tea-table -->
             <div class="mc mc-image tea-table">
                 <div class="mc-wrap">
@@ -5415,8 +5512,8 @@ a {
     <span class="icon"></span>
     <span class="icon"></span>
     <span class="icon"></span>
-    <span class="icon"></span>
-    <span class="icon"></span>
+<!--    <span class="icon"></span>
+    <span class="icon"></span>-->
 </div>
 <script src="../js/app.utils.min.js"></script>
 <script src="../js/onepage.js"></script>
