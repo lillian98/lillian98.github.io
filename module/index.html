@@ -108,7 +108,7 @@ body{background-color:#282828}
 }
 /* css process */
 .full-wrap>input{display:none;}
-.module-filter{width:10%;min-width:200px;background-color:#fff;position:fixed;left:0;top:0;height:100%;font-family:微软雅黑;padding:10px;}
+.module-filter{width:10%;min-width:200px;background-color:#fff;position:fixed;left:0;top:0;height:100%;font-family:微软雅黑;padding-top: 10px;}
 .wrap-module .pro{display:none;}
 .module-filter h2{display:block;color:#333;}
 .module-filter label{cursor:pointer;}
@@ -146,9 +146,9 @@ input[id=category_shops]:checked~.wrapper .wrap-module .pro[data-category='shops
 input[id=category_rank]:checked~.wrapper .wrap-module .pro[data-category='rank']{display:block;}
 /*input[id=width_242]:checked ~.wrapper .wrap-module .pro[data-width='242'][data-effective='mask']{display:block;}*/
 .module-filter,.wrapper{float: left;}
-    .wrapper{left: 250px;padding-top: 20px;}
+    .wrapper{left: 10%;padding-top: 20px;padding-left: 20px;}
 .module-filter h2{font-weight: bold;font-size: 16px;}
-    .filter-div{margin-bottom: 20px;}
+    .filter-div{margin:0 10px 20px;}
     .filter-wrap{padding: 5px;}
 .module-filter label{margin-right: 5px;}
     .wrapper h1{color:#5b9;font-weight: bold;font-size: 16px;}
@@ -177,6 +177,161 @@ input[id=category_rank]:checked~.wrapper .wrap-module .pro[data-category='rank']
 
 	<!-- S 店铺模板 -->
 <div class="module-shop wrap-module">
+	<!-- S 店铺11：斜三角合并＋蒙层260＊340 -->
+	<style type="text/css">
+		.pro-shop-11 {
+			font-style: normal;
+			font-variant: normal;
+			font-weight: 300;
+			font-stretch: normal;
+			font-size: 14px;
+			line-height: 18px;
+			font-family: akzidenz-grotesk-next, Arial, Verdana, sans-serif;
+		}
+		.pro-shop-11 li{position: relative;width: 260px;height: 340px;overflow: hidden;float: left;transform-style: flat;backface-visibility: hidden;}
+		.pro-shop-11 li span{transition:all .5s;}
+		.pro-shop-11 .layer-mid{position: absolute;top:0;left: 0;width: 100%;height: 100%;transform-style: flat;backface-visibility: hidden;}
+		.pro-shop-11 .layer-bot{background-color: rgb(64, 70, 74);}
+		.pro-shop-11 .layer-bot img{opacity: 0.5;width: 260px;height: 340px;transition: all .5s}
+		.pro-shop-11 .layer-mid-text{position: absolute;
+			width: 200px;
+			bottom: 20px;
+			left: 30px;
+			color: rgb(255, 255, 255);
+			border-top-width: 1px;
+			border-top-style: solid;
+			border-top-color: rgba(233, 233, 233, 0.8);
+			padding: 8px 0px 0px;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: normal;
+			font-stretch: normal;
+			font-size: 14px;
+			line-height: 18px;
+			font-family: akzidenz-grotesk-next, Arial, Verdana, sans-serif;
+			z-index: 1;
+			pointer-events: none;}
+		.pro-shop-11 .layer-mid-text em{font-weight: 500;}
+		.pro-shop-11 .layer-mid-mask{position: relative;
+			transform-style: flat;
+			backface-visibility: hidden;
+			transform: translate3d(0px, 0px, 0px);
+			pointer-events: none;
+			width: 260px;
+			height: 340px;
+			transform-origin: 0% 170% 0px;
+			overflow: hidden;
+		}
+		.pro-shop-11 .mod-tri-right{
+			position: absolute;
+			transform-style: flat;
+			backface-visibility: hidden;
+			transform: translate3d(370px, -120px, 0px) rotate(-30deg);
+			pointer-events: none;
+			width: 260px;
+			height: 550px;
+			overflow: hidden;
+			background-color: rgb(37, 124, 52);
+		}
+		.pro-shop-11 .mod-tri-left{
+			position: absolute;
+			transform-style: flat;
+			backface-visibility: hidden;
+			transform: translate3d(-360px, 0px, 0px) rotate(-30deg);
+			pointer-events: none;
+			width: 260px;
+			height: 450px;
+			background-color: rgb(49, 163, 68);
+		}
+		.pro-shop-11 .layer-mid-mask-text{
+			position: absolute;
+			transform-style: flat;
+			backface-visibility: hidden;
+			transform: translate3d(30px, 30px, 0px);
+			pointer-events: none;
+			width: 200px;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: 500;
+			font-stretch: normal;
+			font-size: 20px;
+			line-height: 23px;
+			font-family: akzidenz-grotesk-next, Arial, Verdana, sans-serif;
+			color: rgb(255, 255, 255);
+			opacity: 0;
+		}
+		/* hover */
+		.pro-shop-11 li:hover .layer-bot img{position: absolute;top:0;left: 0;width: 100%;height: 100%;transform-style: flat;backface-visibility: hidden;transform: translate3d(0px,0px,0px) scale(1.05,1.05);opacity: .25;}
+		.pro-shop-11 li:hover .mod-tri-right{
+			position: absolute;
+			transform-style: flat;
+			backface-visibility: hidden;
+			transform: translate3d(170px, -120px, 0px) rotate(-30deg);
+			pointer-events: none;
+			width: 260px;
+			height: 550px;
+			overflow: hidden;
+			background-color: rgb(49, 163, 68);
+		}
+		.pro-shop-11 li:hover .mod-tri-left{
+			position: absolute;
+			transform-style: flat;
+			backface-visibility: hidden;
+			transform: translate3d(-85px, 0px, 0px) rotate(-30deg);
+			pointer-events: none;
+			width: 260px;
+			height: 450px;
+			overflow: hidden;
+			background-color: rgb(49, 163, 68);
+		}
+		.pro-shop-11 li:hover .layer-mid-mask-text{
+			opacity: 1;
+		}
+	</style>
+	<div class="pro pro-shop" data-width='260' data-category="shops" data-effective='pic mask'>
+		<a class="href-map" href="##" title="" id=""></a>
+		<div class="mod-hd">
+			<h1 class="">店铺10：斜三角合并＋蒙层260＊340</h1>
+		</div>
+		<div class="mod-bd">
+			<div class="shops-wrap pro-shop-11">
+				<ul class="cf">
+					<li>
+						<a href="#" target="_blank">
+							<span class="layer-bot"><img src="http://www.alectia.com/wp-content/uploads/2015/07/scandic-hotels-260x340-sh.jpg" alt=""/></span>
+							<span class="layer-mid">
+								<span class="layer-mid-text"><em>P</em><span>roject</span></span>
+								<span class="layer-mid-mask">
+									<span class="mod-tri mod-tri-right"></span>
+									<span class="mod-tri mod-tri-left"></span>
+									<span class="layer-mid-mask-text">
+										Scandic Hotels move into Copenhagen’s Meat Packing District
+									</span>
+								</span>
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var animate_value = $.browser.msie ? 'slow' : 'fast';
+		$(".pro-shop-10 a").each(function(){
+			var that = $(this);
+			var hoverTimer;
+			that.hover(function(){
+				hoverTimer = setTimeout(function(){
+					that.find('img').animate({'top':'-260px'},animate_value);
+				}, 50);
+			},function(){
+				clearTimeout(hoverTimer);
+				that.find('img').animate({'top':'0'},animate_value);
+			})
+		})
+
+	</script>
+	<!-- E 店铺11：斜三角合并＋蒙层260＊340 -->
 <!-- S 店铺1：2张图片变换 -->
 <style type="text/css">
 	.pro-shop-1{margin-right:-5px;position:relative;*zoom:1;}
@@ -691,7 +846,8 @@ input[id=category_rank]:checked~.wrapper .wrap-module .pro[data-category='rank']
 	        })
 
 </script>
-<!-- E 店铺10：图片偏移160*260 -->
+<!-- E 店铺11：图片偏移160*260 -->
+
 	</div>
 	<!-- E 店铺模板 -->
 <!-- S 单品模板 -->
