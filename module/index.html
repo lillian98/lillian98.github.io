@@ -1024,6 +1024,214 @@ input[id=category_rank]:checked~.wrapper .wrap-module .pro[data-category='rank']
 		    </div>
 		</div>
 		<!-- E 单品2：热卖排行榜 -->
+		<!-- S 单品4：边框323*407 -->
+		<style type="text/css">
+			.pro-good-4 ul{position:relative;margin-right:-4px;}
+			.pro-good-4 li{width:323px;height:407px;overflow:hidden;margin:3px 3px 0 0;position:relative;}
+			.pro-good-4 .sizer{position: relative;width: 100%;display: block}
+			.pro-good-4 li .item{    -webkit-transition-duration: .75s,0s,0s;
+				-webkit-transition-property: all,width,height;
+				-webkit-transition-delay: 0s;
+				-webkit-transition-timing-function: 'ease-in-out';
+				transition-duration: .75s,0s,0s;
+				transition-property: all,width,height;
+				transition-delay: 0s;
+				transition-timing-function: 'ease-in-out';
+				-webkit-transform: scale(1.05);
+				transform: scale(1.05);
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				z-index: 1;
+				-webkit-transition-delay: .1s;
+				transition-delay: .1s;
+				-webkit-transform: scale(1);
+				transform: scale(1);
+				opacity: 1;
+				filter: alpha(opacity=100);}
+			.pro-good-4 .desc{    -webkit-transition-duration: .45s;
+				-webkit-transition-property: opacity;
+				-webkit-transition-delay: 0s;
+				-webkit-transition-timing-function: 'ease-in-out';
+				transition-duration: .45s;
+				transition-property: opacity;
+				transition-delay: 0s;
+				transition-timing-function: 'ease-in-out';
+				position: absolute;
+				left: 0;
+				top: 0;
+				background: #f6f6f6;
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+				opacity: 0;
+				filter: alpha(opacity=0);}
+			.pro-good-4 .desc p{font-size: 20px;
+				line-height: 34px;
+				padding: 0 35px;}
+			.pro-good-4 .layer-mask{
+				-webkit-transition-duration: .45s;
+				-webkit-transition-property: opacity;
+				-webkit-transition-delay: 0s;
+				-webkit-transition-timing-function: 'ease-in-out';
+				transition-duration: .45s;
+				transition-property: opacity;
+				transition-delay: 0s;
+				transition-timing-function: 'ease-in-out';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 5;
+				opacity: 0;
+				filter: alpha(opacity=0);
+				transform-origin: 50% 50% 0px;
+			}
+			.pro-good-4 .layer-mask line{
+				-webkit-transition: all .45s ease-out;
+				transition: all .45s ease-out;
+				stroke-dasharray: 323;
+				fill: none;
+				stroke: #f6615b;
+				stroke-width: 6;
+				background-color: #f6615b;
+				position: absolute;
+			}
+			.pro-good-4 .layer-mask line.top{
+				stroke-dasharray: 323px;
+				transform: translateX(323px);
+				top:0;
+				left: 0;
+
+
+			}
+			.pro-good-4 .layer-mask line.left{
+				stroke-dasharray: 407px;
+				transform: translateY(-407px);
+				top:0;
+				left: 0;
+
+
+			}
+			.pro-good-4 .layer-mask line.right{
+				stroke-dasharray: 407px;
+				transform: translateY(407px);
+				right: 0;
+				top: 0;
+			}
+			.pro-good-4 .layer-mask line.bottom{
+				stroke-dasharray: 323px;
+				transform: translateX(-323px);
+				bottom: 0;
+				left: 0;
+			}
+			.pro-good-4 .svg{
+				-webkit-transition-duration: .45s;
+				-webkit-transition-property: opacity;
+				-webkit-transition-delay: 0s;
+				-webkit-transition-timing-function: 'ease-in-out';
+				transition-duration: .45s;
+				transition-property: opacity;
+				transition-delay: 0s;
+				transition-timing-function: 'ease-in-out';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 10;
+				opacity: 0;
+				filter: alpha(opacity=0);
+			}
+			.pro-good-4 .svg>div{
+				position: absolute;
+				background: #f6615b;
+			}
+			.pro-good-4 .svg>div.top{
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 3px;
+			}
+			.pro-good-4 .svg>div.left{
+				left: 0;
+				top: 0;
+				width: 3px;
+				height: 100%;
+			}
+			.pro-good-4 .svg>div.right{
+				right: 0;
+				top: 0;
+				width: 3px;
+				height: 100%;
+			}
+			.pro-good-4 .svg>div.bottom{
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 3px;
+			}
+			.pro-good-4 li:hover .layer-mask line.top{
+				transform: translateX(0px);
+				width: 100%;
+				height: 3px;
+			}
+			.pro-good-4 li:hover .layer-mask line.left{
+				transform: translateY(0px);
+				height: 100%;
+				width: 3px;
+			}
+			.pro-good-4 li:hover .layer-mask line.right{
+				transform: translateY(0px);
+				height: 100%;
+				width: 3px;
+			}
+			.pro-good-4 li:hover .layer-mask line.bottom{
+				transform: translateX(0px);
+				width: 100%;
+				height: 3px;
+			}
+			.pro-good-4 li:hover .desc,.pro-good-4 li:hover .layer-mask{
+				opacity: 1;
+				filter: alpha(opacity=100);
+			}
+		</style>
+		<div class="pro pro-good " data-width='323' data-category="goods" data-effective='border'>
+			<a class="href-map" href="##" title="" id=""></a>
+			<div class="mod-hd">
+				<h1 class="">单品4：边框323*407</h1>
+			</div>
+			<div class="mod-bd">
+				<div class="goods-wrap pro-good-4">
+					<ul class="cf">
+						<li class="item">
+							<div>
+								<img src="http://agencysurvivalkit.com/images/layout/block5_sizer.gif" alt="" class="sizer">
+								<img src="http://agencysurvivalkit.com/images/kits/overtime/items/08_EN.jpg" alt="" class="item">
+								<div class="desc" style="">
+									<p class="valign" style="padding-top: 169.666px;">A book by Paul Wilson with tricks to keep calm. </p>
+								</div>
+								<div width="200" height="200" id="svg_overtime_8" style="" class="layer-mask">
+									<line class="top" x1="0" y1="0" x2="969" y2="0" id="svg_overtime_8_top" style=""></line>
+									<line class="left" x1="0" y1="407" x2="0" y2="-814" id="svg_overtime_8_left" style=""></line>
+									<line class="bottom" x1="323" y1="407" x2="-646" y2="407" id="svg_overtime_8_bottom" style=""></line>
+									<line class="right" x1="323" y1="0" x2="323" y2="1221" id="svg_overtime_8_right" style=""></line>
+								</div>
+								<div class="svg" style="">
+									<div class="top"></div>
+									<div class="left"></div>
+									<div class="bottom"></div>
+									<div class="right"></div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- E 单品4：边框323*407 -->
 	</div>
 	<!-- E 单品模板 -->
 
