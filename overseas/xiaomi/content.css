@@ -10,9 +10,9 @@
 .mi-banner .m-item{background: url(image/banner-benefit.png) no-repeat 0 0;width: 180px;height: 54px;position: absolute;top: 17px;}
 .mi-banner .w1000{height: 90px;}
 .mi-banner .item-1{background-position: 0 0;-webkit-animation: slideInR-1 0.3s 1s ease-out both;animation: slideInR-1 0.3s 1s ease-out both;left:52px\9;}
-.mi-banner .item-2{background-position: -258px 0;-webkit-animation: slideInR-2 0.3s 1.3s ease-out both;animation: slideInR-1 0.3s 1.3s ease-out both;left:311px\9;}
-.mi-banner .item-3{background-position: -502px 0;-webkit-animation: slideInR-3 0.3s 1.6s ease-out both;animation: slideInR-1 0.3s 1.6s ease-out both;left:558px\9;}
-.mi-banner .item-4{background-position: -730px 0;-webkit-animation: slideInR-4 0.3s 1.9s ease-out both;animation: slideInR-1 0.3s 1.9s ease-out both;left:782px\9;}
+.mi-banner .item-2{background-position: -258px 0;-webkit-animation: slideInR-2 0.3s 1.3s ease-out both;animation: slideInR-2 0.3s 1.3s ease-out both;left:311px\9;}
+.mi-banner .item-3{background-position: -502px 0;-webkit-animation: slideInR-3 0.3s 1.6s ease-out both;animation: slideInR-3 0.3s 1.6s ease-out both;left:558px\9;}
+.mi-banner .item-4{background-position: -730px 0;-webkit-animation: slideInR-4 0.3s 1.9s ease-out both;animation: slideInR-4 0.3s 1.9s ease-out both;left:782px\9;}
 
 .mi-floor .bh{text-indent: -9999em;background: url(image/floor-title.png) no-repeat center 0;width: 590px;margin-left: -295px;left: 50%;position: relative;margin-bottom: 25px;margin-top: 80px;}
 .floor-1 .bh{height: 100px;background-position: 0 0;}
