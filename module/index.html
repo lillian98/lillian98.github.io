@@ -1079,53 +1079,27 @@ input[id=category_rank]:checked~.wrapper .wrap-module .pro[data-category='rank']
 				transition-property: opacity;
 				transition-delay: 0s;
 				transition-timing-function: 'ease-in-out';
+				-webkit-transition: all .6s ease-out;
+				transition: all .6s ease-out;
 				position: absolute;
 				top: 0;
 				left: 0;
 				width: 100%;
 				height: 100%;
 				z-index: 5;
-				opacity: 0;
+				opacity: 1;
 				filter: alpha(opacity=0);
 				transform-origin: 50% 50% 0px;
 			}
 			.pro-good-4 .layer-mask line{
-				-webkit-transition: all .45s ease-out;
-				transition: all .45s ease-out;
+				-webkit-transition: all .3s ease-out;
+				transition: all .3s ease-out;
 				stroke-dasharray: 323;
 				fill: none;
 				stroke: #f6615b;
 				stroke-width: 6;
 				background-color: #f6615b;
 				position: absolute;
-			}
-			.pro-good-4 .layer-mask line.top{
-				stroke-dasharray: 323px;
-				transform: translateX(323px);
-				top:0;
-				left: 0;
-
-
-			}
-			.pro-good-4 .layer-mask line.left{
-				stroke-dasharray: 407px;
-				transform: translateY(-407px);
-				top:0;
-				left: 0;
-
-
-			}
-			.pro-good-4 .layer-mask line.right{
-				stroke-dasharray: 407px;
-				transform: translateY(407px);
-				right: 0;
-				top: 0;
-			}
-			.pro-good-4 .layer-mask line.bottom{
-				stroke-dasharray: 323px;
-				transform: translateX(-323px);
-				bottom: 0;
-				left: 0;
 			}
 			.pro-good-4 .svg{
 				-webkit-transition-duration: .45s;
@@ -1141,7 +1115,7 @@ input[id=category_rank]:checked~.wrapper .wrap-module .pro[data-category='rank']
 				left: 0;
 				width: 100%;
 				height: 100%;
-				z-index: 10;
+				z-index: 4;
 				opacity: 0;
 				filter: alpha(opacity=0);
 			}
@@ -1172,6 +1146,34 @@ input[id=category_rank]:checked~.wrapper .wrap-module .pro[data-category='rank']
 				bottom: 0;
 				width: 100%;
 				height: 3px;
+			}
+			.pro-good-4 .layer-mask line.top{
+				transform: translateX(323px);
+				top:0;
+				left: 0;
+				width: 0;
+				height: 0;
+			}
+			.pro-good-4 .layer-mask line.left{
+				transform: translateY(-407px);
+				top:0;
+				left: 0;
+				width: 0;
+				height: 0;
+			}
+			.pro-good-4 .layer-mask line.right{
+				transform: translateY(407px);
+				right: 0;
+				top: 0;
+				width: 0;
+				height: 0;
+			}
+			.pro-good-4 .layer-mask line.bottom{
+				transform: translateX(-323px);
+				bottom: 0;
+				left: 0;
+				width: 0;
+				height: 0;
 			}
 			.pro-good-4 li:hover .layer-mask line.top{
 				transform: translateX(0px);
