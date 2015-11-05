@@ -37,6 +37,7 @@ function errorImg(img) {
 </script>
 
 
+
 </head>
 <body>
 <div class="header-top">
@@ -153,6 +154,14 @@ function errorImg(img) {
     </div>
 </div>
 <!--S content-->
+<!--S logo-->
+<div class="logo-banner">
+    <div class="wrap-1200">
+        <!--<img src="http://img13.360buyimg.com/cms/jfs/t1432/155/1355870599/14216/cb7a7b5e/55c5ad60N6cfbe25e.jpg" alt=""/>-->
+        <img src="http://img12.360buyimg.com/cms/jfs/t2272/352/418184566/16499/83045d90/5608e827N1f517515.jpg" alt=""/>
+    </div>
+</div>
+<!--E logo-->
 <div class="mi-header">
     <h1 class="m-title title-1"><img src="image/h-title-1.png" alt=""></h1>
     <div class="w1000"><div class="m-logo">День холостяков</div></div>
@@ -168,50 +177,30 @@ function errorImg(img) {
 <div class="mi-floor floor-1">
     <h2 class="bh">Специальные скидки к 11.11 Срок акции: 11.09 - 11.13 Оригинальное качество Xiaomi в Коллекции JD</h2>
     <div class="bd w1000">
-        <ul class="modG-1">
-            <li>
-                <a class="img" href="#" target="_blank"><img src="image/goods-1-1.jpg"><span class="benefit">Мега-распродажа  <i>$0.05</i></span></a>
+        <ul class="modG-1" marketStart="" marketLength="3" marketUrl="http://acen.jd.com/tjw/get/tjw2015/tjw15639f13414f2b.js"  marketTpl='<li>
+                <a class="img" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"/><span class="benefit">Мега-распродажа  <i>$0.05</i></span></a>
                 <div class="info">
-                    <a class="title" href="#" target="_blank">Оригинальный Xiaomi Mi-маршрутизатор Ан- глийской версии ,Wi-Fi маршру...</a>
+                    <a class="title" href="{#recommendUrl#}" target="_blank" clstag="{#recommendReason#}">{#recommendAd#}</a>
                     <div class="price">
-                        <span class="new-p">$0.05</span> <span class="old-p">$100.00</span>
+                        <span class="new-p">${#jdPrice#}</span> <span class="old-p">${#normalPrice#}</span>
                     </div>
                     <div class="coupon"><span>Промо-код $0.05：</span><span class="c-code">JD555</span><a href="javascript:void(0);"></a><img src="image/c-rule.png"></div>
                 </div>
-            </li>
-            <li>
-                <a class="img" href="#" target="_blank"><img src="image/goods-1-1.jpg"><span class="benefit">Мега-распродажа  <i>$0.05</i></span></a>
-                <div class="info">
-                    <a class="title" href="#" target="_blank">Оригинальный Xiaomi Mi-маршрутизатор Ан- глийской версии ,Wi-Fi маршру...</a>
-                    <div class="price">
-                        <span class="new-p">$0.05</span> <span class="old-p">$100.00</span>
-                    </div>
-                    <div class="coupon"><span>Промо-код $0.05：</span><span class="c-code">JD555</span><a href="javascript:void(0);"></a><img src="image/c-rule.png"></div>
-                </div>
-            </li>
-            <li>
-                <a class="img" href="#" target="_blank"><img src="image/goods-1-1.jpg"><span class="benefit">Мега-распродажа  <i>$0.05</i></span></a>
-                <div class="info">
-                    <a class="title" href="#" target="_blank">Оригинальный Xiaomi Mi-маршрутизатор Ан- глийской версии ,Wi-Fi маршру...</a>
-                    <div class="price">
-                        <span class="new-p">$0.05</span> <span class="old-p">$100.00</span>
-                    </div>
-                    <div class="coupon"><span>Промо-код $0.05：</span><span class="c-code">JD555</span><a href="javascript:void(0);"></a><img src="image/c-rule.png"></div>
-                </div>
-            </li>
+            </li>' marketOnLoad="xmlLoad(1)">
         </ul>
-        <div class="modG-2">
-            <div class="img"><img src="image/goods-2-1.jpg"></div>
+        <div class="modG-2" marketStart="3" marketLength="1" marketUrl="http://acen.jd.com/tjw/get/tjw2015/tjw15639f13414f2b.js"  marketTpl='
+            <div class="img"><img src="{#image#}"><i></i></div>
             <div class="info">
                 <div class="title">Mi 4 32GB</div>
-                <a class="desc" href="#" target="_blank">Оригинал Xiaomi Mi4 M4 Mi4i 16 ГБ 3 г gps-wcdma 5.0 " 1920 * 1080 P Snapdragon801 четырехъ- ядерных процессоров 3 ГБ RAM 13MP Android 4.4 MIUI 6 Goldway...</a>
-                <div class="review">Предложение ограничено 500 шт.</div>
+                <a class="desc" href="{#recommendUrl#}" target="_blank" clstag="{#recommendReason#}">{#recommendAd#}</a>
+                <div class="review">Предложение ограничено 1500 шт.</div>
                 <div class="price">
-                    <span class="new-p">$139.09</span> <span class="old-p">$100.00</span>
+                    <span class="new-p">${#jdPrice#}</span> <span class="old-p">${#normalPrice#}</span>
                 </div>
                 <div class="coupon"><span>Промо-код $0.05：</span><span class="c-code">JD555</span><a href="javascript:void(0);"></a><img src="image/c-rule-1.png"></div>
             </div>
-            <div class="flag">50%<span>OFF</span></div>
+            <div class="flag">{#appPrice#}<span>OFF</span></div>
+            ' marketOnLoad="xmlLoad(1)">
         </div>
         <div class="coupons">
             <div class="cp c-1"><a href="javascript:void(0);"></a></div>
@@ -223,148 +212,73 @@ function errorImg(img) {
 <div class="mi-floor floor-2">
     <h2 class="bh">Смартфоны Оригинальное качество Xiaomi в Коллекции JD</h2>
     <div class="bd w1000">
-        <ul class="modG-3">
+        <ul class="modG-3" marketStart="4" marketLength="2" marketUrl="http://acen.jd.com/tjw/get/tjw2015/tjw15639f13414f2b.js"  marketTpl='
             <li>
-                <div class="img"><img src="image/goods-2-1.jpg"></div>
+                <a class="img" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"></a>
                 <div class="info">
                     <div class="title">Mi 4 16GB</div>
-                    <div class="desc">Оригинальный Xiaomi редми примечание 2 FDD 4 г LTE м- обильный телефон мтк гелио X10 Octa основной ...</div>
+                    <a class="desc" href="{#recommendUrl#}" target="_blank" clstag="{#recommendReason#}">{#recommendAd#}</a>
                     <div class="review">Новинка</div>
                     <div class="price">
-                        <span class="new-p">$139.09</span> <span class="old-p">$100.00</span>
+                        <span class="new-p">${#jdPrice#}</span> <span class="old-p">${#normalPrice#}</span>
                     </div>
                 </div>
-                <div class="flag">50%<span>OFF</span></div>
-            </li>
-            <li>
-                <div class="img"><img src="image/goods-2-1.jpg"></div>
-                <div class="info">
-                    <div class="title">Mi 4 16GB</div>
-                    <div class="desc">Оригинальный Xiaomi редми примечание 2 FDD 4 г LTE м- обильный телефон мтк гелио X10 Octa основной ...</div>
-                    <div class="review">Новинка</div>
-                    <div class="price">
-                        <span class="new-p">$139.09</span> <span class="old-p">$100.00</span>
-                    </div>
-                </div>
-                <div class="flag">50%<span>OFF</span></div>
-            </li>
+                <div class="flag">{#appPrice#}<span>OFF</span></div>
+            </li>' marketOnLoad="xmlLoad(1)">
         </ul>
     </div>
 </div>
 <div class="mi-floor floor-3">
     <h2 class="bh">Wi-Fi Оригинальное качество Xiaomi в Коллекции JD</h2>
     <div class="bd w1000">
-        <ul class="modG-1">
+        <ul class="modG-1 clearfloat" marketStart="6" marketLength="3" marketUrl="http://acen.jd.com/tjw/get/tjw2015/tjw15639f13414f2b.js"  marketTpl='
             <li>
-                <a class="img" href="#" target="_blank"><img src="image/goods-1-1.jpg"></a>
+                <a class="img" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"></a>
                 <div class="info">
-                    <a class="title" href="#" target="_blank">Оригинальный Xiaomi Mi-маршрутизатор Ан- глийской версии ,Wi-Fi маршру...</a>
+                    <a class="title" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}">{#recommendAd#}</a>
                     <div class="price">
-                        <span class="new-p">$0.05</span> <span class="old-p">$100.00</span>
+                        <span class="new-p">${#jdPrice#}</span> <span class="old-p">${#normalPrice#}</span>
                     </div>
                 </div>
-                <div class="flag">50%<span>OFF</span></div>
-            </li>
-            <li>
-                <a class="img" href="#" target="_blank"><img src="image/goods-1-1.jpg"></a>
-                <div class="info">
-                    <a class="title" href="#" target="_blank">Оригинальный Xiaomi Mi-маршрутизатор Ан- глийской версии ,Wi-Fi маршру...</a>
-                    <div class="price">
-                        <span class="new-p">$0.05</span> <span class="old-p">$100.00</span>
-                    </div>
-                </div>
-                <div class="flag">50%<span>OFF</span></div>
-            </li>
-            <li>
-                <a class="img" href="#" target="_blank"><img src="image/goods-1-1.jpg"></a>
-                <div class="info">
-                    <a class="title" href="#" target="_blank">Оригинальный Xiaomi Mi-маршрутизатор Ан- глийской версии ,Wi-Fi маршру...</a>
-                    <div class="price">
-                        <span class="new-p">$0.05</span> <span class="old-p">$100.00</span>
-                    </div>
-                </div>
-                <div class="flag">50%<span>OFF</span></div>
-            </li>
+                <div class="flag">{#appPrice#}<span>OFF</span></div>
+            </li>' marketOnLoad="xmlLoad(1)">
         </ul>
     </div>
 </div>
 <div class="mi-floor floor-4">
     <h2 class="bh">Аксессуары Оригинальное качество Xiaomi в Коллекции JD</h2>
     <div class="bd w1000">
-        <ul class="modG-1">
+        <ul class="modG-1 clearfloat" marketStart="9" marketLength="5" marketUrl="http://acen.jd.com/tjw/get/tjw2015/tjw15639f13414f2b.js"  marketTpl='
             <li>
-                <a class="img" href="#" target="_blank"><img src="image/goods-1-1.jpg"></a>
+                <a class="img" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"></a>
                 <div class="info">
-                    <a class="title" href="#" target="_blank">Оригинальный Xiaomi Mi-маршрутизатор Ан- глийской версии ,Wi-Fi маршру...</a>
+                    <a class="title" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}">{#recommendAd#}</a>
                     <div class="price">
-                        <span class="new-p">$0.05</span> <span class="old-p">$100.00</span>
+                        <span class="new-p">${#jdPrice#}</span> <span class="old-p">${#normalPrice#}</span>
                     </div>
                 </div>
-                <div class="flag">50%<span>OFF</span></div>
-            </li>
-            <li>
-                <a class="img" href="#" target="_blank"><img src="image/goods-1-1.jpg"></a>
-                <div class="info">
-                    <a class="title" href="#" target="_blank">Оригинальный Xiaomi Mi-маршрутизатор Ан- глийской версии ,Wi-Fi маршру...</a>
-                    <div class="price">
-                        <span class="new-p">$0.05</span> <span class="old-p">$100.00</span>
-                    </div>
-                </div>
-                <div class="flag">50%<span>OFF</span></div>
-            </li>
-            <li>
-                <a class="img" href="#" target="_blank"><img src="image/goods-1-1.jpg"></a>
-                <div class="info">
-                    <a class="title" href="#" target="_blank">Оригинальный Xiaomi Mi-маршрутизатор Ан- глийской версии ,Wi-Fi маршру...</a>
-                    <div class="price">
-                        <span class="new-p">$0.05</span> <span class="old-p">$100.00</span>
-                    </div>
-                </div>
-                <div class="flag">50%<span>OFF</span></div>
-            </li>
-            <li>
-                <a class="img" href="#" target="_blank"><img src="image/goods-1-1.jpg"></a>
-                <div class="info">
-                    <a class="title" href="#" target="_blank">Оригинальный Xiaomi Mi-маршрутизатор Ан- глийской версии ,Wi-Fi маршру...</a>
-                    <div class="price">
-                        <span class="new-p">$0.05</span> <span class="old-p">$100.00</span>
-                    </div>
-                </div>
-                <div class="flag">50%<span>OFF</span></div>
-            </li>
-            <li>
-                <a class="img" href="#" target="_blank"><img src="image/goods-1-1.jpg"></a>
-                <div class="info">
-                    <a class="title" href="#" target="_blank">Оригинальный Xiaomi Mi-маршрутизатор Ан- глийской версии ,Wi-Fi маршру...</a>
-                    <div class="price">
-                        <span class="new-p">$0.05</span> <span class="old-p">$100.00</span>
-                    </div>
-                </div>
-                <div class="flag">50%<span>OFF</span></div>
-            </li>
-            <li>
-                <a class="img" href="#" target="_blank"><img src="image/goods-1-1.jpg"></a>
-                <div class="info">
-                    <a class="title" href="#" target="_blank">Оригинальный Xiaomi Mi-маршрутизатор Ан- глийской версии ,Wi-Fi маршру...</a>
-                    <div class="price">
-                        <span class="new-p">$0.05</span> <span class="old-p">$100.00</span>
-                    </div>
-                </div>
-                <div class="flag">50%<span>OFF</span></div>
-            </li>
+                <div class="flag">{#appPrice#}<span>OFF</span></div>
+            </li>' marketOnLoad="xmlLoad(1)">
         </ul>
+        <div class="yao">
+                <img src="image/good.jpg">
+        </div>
     </div>
 </div>
 <div class="mi-floor floor-5">
     <h2 class="bh"></h2>
-    <div class="bd w1000">
-        <a class="ad-1" href="#" target="_blank"><img src="image/ad-1.jpg"></a>
-        <a class="ad-2" href="#" target="_blank"><img src="image/ad-2.jpg"></a>
+    <div class="bd w1000" marketStart="14" marketLength="2" marketUrl="http://acen.jd.com/tjw/get/tjw2015/tjw15639f13414f2b.js"  marketTpl='
+        <a class="ad-{#{#index#}+1#}" href="{#recommendUrl#}" target="_blank"  title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"></a>' marketOnLoad="xmlLoad(1)">
     </div>
 </div>
-
+<div class="wrap-ft">
+    <div class="wrap-1200">
+        <div class="mod-tips"></div>
+        <a href="http://en.jd.com/ru/collection/about.html" class="learn-more" target="_blank">узнай больше></a>
+    </div>
+</div>
 <!--E content-->
-<script type="text/javascript">
+<script type="text/javascript">  
 	function login4FacebookUnion(){
 	    var url = 'http://unionen.jd.com/new/facebook/login.html?ReturnUrl='+ escape(location.href).replace(/\//g,"%2F");
 		window.location.href = url;
@@ -475,17 +389,17 @@ function errorImg(img) {
         orderid: '',
         adsCookieName: '',
         __cookie_jda: '__tra',
-        __cookie_jdb: '__trb',
-        __cookie_jdc: '__trc',
-        __cookie_jdu: '__tru',
+        __cookie_jdb: '__trb', 
+        __cookie_jdc: '__trc', 
+        __cookie_jdu: '__tru', 
         __cookie_jdv: '__trv'
-    };
+    }; 
     (function() {
-        var ja = document.createElement('script');
-        ja.type = 'text/javascript';
+        var ja = document.createElement('script'); 
+        ja.type = 'text/javascript'; 
         ja.async = true;
         ja.src=('https:'==document.location.protocol?'https://miscssl':'http://misc')+ '.360buyimg.com/jdf/1.0.0/unit/ja/1.0.0/ja.js';
-        var s = document.getElementsByTagName('script')[0];
+        var s = document.getElementsByTagName('script')[0]; 
         s.parentNode.insertBefore(ja,s);
     })();
 </script>
@@ -540,8 +454,24 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
 <noscript>
     <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1118431521516650&amp;ev=PixelInitialized" />
 </noscript>
+
+<script type="text/javascript" src="http://st.en.jd.com/ru/0625/js/market-1.0.0.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
+    var xmlObj = {
+        total: $('.mi-floor').length,
+        loadedNo:0
+    }
+    /* xmlLoad */
+    function xmlLoad(_flag){
+        if(_flag == 1){
+            xmlObj.loadedNo ++;
+        }
+        if(xmlObj.loadedNo == xmlObj.total){
+            Hello();
+        }
+    }
+
+function Hello(){
     $('.floor-1 li,.modG-2,.modG-3 li,.floor-3 li,.floor-4 li').mouseenter(function(){
         $(this).find('.benefit').stop().animate({bottom:'0',opacity:'1'});
         $(this).addClass("item-active");
@@ -580,7 +510,7 @@ $(document).ready(function(){
     $('.c-code').mouseleave(function(){
         $(this).css('background-color','#ffffff');
     })
-})
+}
 </script>
 </body>
 </html>
