@@ -189,7 +189,7 @@ function errorImg(img) {
             </li>' marketOnLoad="xmlLoad(1)">
         </ul>
         <div class="modG-2" marketStart="3" marketLength="1" marketUrl="http://acen.jd.com/tjw/get/tjw2015/tjw15639f13414f2b.js"  marketTpl='
-            <div class="img"><img src="{#image#}"><i></i></div>
+            <div class="img"><img src="{#image#}"><em>0</em></div>
             <div class="info">
                 <div class="title">Mi 4 32GB</div>
                 <a class="desc" href="{#recommendUrl#}" target="_blank" clstag="{#recommendReason#}">{#recommendAd#}</a>
@@ -268,7 +268,7 @@ function errorImg(img) {
 <div class="mi-floor floor-5">
     <h2 class="bh"></h2>
     <div class="bd w1000" marketStart="14" marketLength="2" marketUrl="http://acen.jd.com/tjw/get/tjw2015/tjw15639f13414f2b.js"  marketTpl='
-        <a class="ad-{#{#index#}+1#}" href="{#recommendUrl#}" target="_blank"  title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"></a>' marketOnLoad="xmlLoad(1)">
+        <a class="ads-{#{#index#}+1#}" href="{#recommendUrl#}" target="_blank"  title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"></a>' marketOnLoad="xmlLoad(1)">
     </div>
 </div>
 <div class="wrap-ft">
@@ -499,10 +499,10 @@ function Hello(){
         $(this).parent('.cp').html('<span><i>COUPON CODE</i> JD234</span>');
     })
     $('.coupon a').mouseenter(function(){
-        $(this).next('img').animate({opacity:'1'});
+        $(this).next('img').show(100);
     })
     $('.coupon a').mouseleave(function(){
-        $(this).next('img').animate({opacity:'0'});
+        $(this).next('img').hide(100);
     })
     $('.c-code').mouseenter(function(){
         $(this).css('background-color','#F5F5F5');
@@ -511,6 +511,14 @@ function Hello(){
         $(this).css('background-color','#ffffff');
     })
 }
+$(document).ready(function(){
+    $('.coupon a').mouseenter(function(){
+        $(this).next('img').show(100);
+    })
+    $('.coupon a').mouseleave(function(){
+        $(this).next('img').hide(100);
+    })
+});
 </script>
 </body>
 </html>
