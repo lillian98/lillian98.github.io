@@ -6,7 +6,7 @@ body{min-width:1300px;}
 
 .logo-banner{width:100%;height:80px;background-color:#F6F6F6;}
 .wrap-1200{position:relative; width:1200px; height:100%;margin:0 auto;}
-.mi-floor a:hover{text-decoration: underline;}
+.mi-floor a:hover{text-decoration: underline;color: #f90;}
 
 .mi-header{background: url(image/mi-head-img.jpg) no-repeat center center;width: 100%;height: 540px;position: relative;}
 .mi-header .m-title{position: absolute;left: 50%;}
@@ -32,6 +32,9 @@ body{min-width:1300px;}
 .modG-1{width: 1012px;height: 482px;}
 .modG-1 li{float: left;width: 325px;height: 470px;margin-right: 12px;margin-bottom: 12px;-webkit-transition: all 0.2s linear;transition: all 0.2s linear;}
 .modG-1 .img{display: block;width: 325px;height: 325px;position: relative;}
+.modG-1 .img em{display: none;text-indent: -9999em;}
+.modG-1 .img .em{width: 144px;height: 114px;right: 22px;bottom: 69px;
+position: absolute;background: url(image/shouqing.png) no-repeat 0 0;display: block;}
 .modG-1 .benefit{background-color: #DF0616;color: #ffffff;font-size: 16px;position: absolute;bottom: -37px;width: 325px;height: 37px;line-height: 37px;text-align: center;overflow: hidden;opacity: 0;z-index: 2;left: 0;filter: alpha(opacity=0)\9;}
 .modG-1 .benefit i{font-size: 24px;}
 .modG-1 .info{background-color: #ffffff;position: relative;z-index: 5;height: 125px;padding: 10px 10px 10px 15px;}
@@ -48,7 +51,9 @@ body{min-width:1300px;}
 
 .modG-2{width: 1000px;height: 325px;background-color: #ffffff;position: relative;-webkit-transition: all 0.2s linear;transition: all 0.2s linear;}
 .modG-2 .img{width: 325px;height: 325px;float: left;position: relative;}
-.modG-2 .img em{display: block;text-indent: -9999em;}
+.modG-2 .img em{display: none;text-indent: -9999em;}
+.modG-2 .img .em{width: 144px;height: 114px;right: 22px;bottom: 69px;
+position: absolute;background: url(image/shouqing.png) no-repeat 0 0;display: block;}
 .modG-2 .info{padding: 15px;width: 645px;height: 295px;float: left;}
 .modG-2 .title{font-size: 28px;height: 30px;margin-top: 35px;}
 .modG-2 .desc{font-size: 14px;}
@@ -72,9 +77,10 @@ body{min-width:1300px;}
 .coupons .c-rule{width: 250px;height: 100px;}
 
 .modG-3{width: 1012px;height: 335px;}
-.modG-3 li{width: 494px;height: 330px;background-color: #ffffff;position: relative;margin-right: 12px;float: left;-webkit-transition: all 0.2s linear;transition: all 0.2s linear;}
-.modG-3 .img{width: 270px;height: 330px;float: left;display: block;}
-.modG-3 .info{padding: 10px;width: 204px;height: 310px;float: left;}
+.modG-3 li{width: 494px;height: 330px;background-color: #ffffff;position: relative;margin-right: 12px;float: left;-webkit-transition: all 0.2s linear;transition: all 0.2s linear;overflow: hidden;}
+.modG-3 .img{width: 270px;height: 330px;float: left;display: block;position: relative;left: -50px;}
+.modG-3 .img em{display: none;text-indent: -9999em;}
+.modG-3 .info{padding: 10px;width: 204px;height: 310px;float: left;position: relative;}
 .modG-3 .title{font-size: 28px;height: 30px;margin-top: 35px;}
 .modG-3 .desc{font-size: 14px;display: block;height: 70px;overflow: hidden;}
 .modG-3 .review{background-color: #DF0616;font-size: 14px;color: #ffffff;width: 62px;height: 22px;line-height: 22px;padding-left: 8px;margin-top: 10px;}
@@ -92,6 +98,18 @@ body{min-width:1300px;}
 .wrap-ft{width:100%;margin-top:80px;background-color: #F6F6F6;}
 .wrap-ft .mod-tips{height:139px;background:url(http://img11.360buyimg.com/cms/jfs/t1390/305/1355716670/16489/55f7c322/55c5ad59N3d78a2c9.jpg) no-repeat 0 0;}
 .wrap-ft .learn-more{display:none;width:100%;height:76px;line-height: 76px;font-size: 14px;text-decoration: underline;text-align: center;display:block;}
+
+/*右侧导航*/
+#float-right{display:none; position:fixed; top:60px;left: 50%;width: 124px; margin-left:530px;z-index: 11;}
+#float-right ul{ height:auto; overflow:hidden;}
+#float-right ul li{width:124px; background-color:#FF6700;margin-top: 2px;}
+#float-right .nav-link{display: block;width:124px;height:35px; line-height:35px;text-align:center;text-decoration: none; font-family:'Arial';color: #fff; font-size:14px;transition-duration:0.8s; -webkit-transition-duration:0.8s;}
+#float-right ul li.first a {height: 50px; padding-top: 10px;}
+#float-right .nav-link:hover{background-color: #333333;}
+#float-right .current-item .nav-link{background:#333333;}
+
+.fxandtop{width:124px; height:40px; background:url(image/f-toTop.jpg) no-repeat;margin-top: 2px;}
+.fxandtop a{display:block; height:40px; float:left;width:41px;}
 
 @-webkit-keyframes slideInT-1{
   0%{opacity:0;top: -10px;}

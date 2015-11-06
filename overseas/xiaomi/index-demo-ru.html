@@ -174,11 +174,11 @@ function errorImg(img) {
         <div class="m-item item-4"></div>
     </div>
 </div>
-<div class="mi-floor floor-1">
+<div class="mi-floor floor-1 linklist">
     <h2 class="bh">Специальные скидки к 11.11 Срок акции: 11.09 - 11.13 Оригинальное качество Xiaomi в Коллекции JD</h2>
     <div class="bd w1000">
         <ul class="modG-1" marketStart="" marketLength="3" marketUrl="http://acen.jd.com/tjw/get/tjw2015/tjw15639f13414f2b.js"  marketTpl='<li>
-                <a class="img" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"/><span class="benefit">Мега-распродажа  <i>$0.05</i></span></a>
+                <a class="img" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"/><span class="benefit">Мега-распродажа  <i>$0.05</i></span><em>{#defined1#}</em></a>
                 <div class="info">
                     <a class="title" href="{#recommendUrl#}" target="_blank" clstag="{#recommendReason#}">{#recommendAd#}</a>
                     <div class="price">
@@ -189,7 +189,7 @@ function errorImg(img) {
             </li>' marketOnLoad="xmlLoad(1)">
         </ul>
         <div class="modG-2" marketStart="3" marketLength="1" marketUrl="http://acen.jd.com/tjw/get/tjw2015/tjw15639f13414f2b.js"  marketTpl='
-            <div class="img"><img src="{#image#}"><em>0</em></div>
+            <div class="img"><img src="{#image#}"><em>{#defined1#}</em></div>
             <div class="info">
                 <div class="title">Mi 4 32GB</div>
                 <a class="desc" href="{#recommendUrl#}" target="_blank" clstag="{#recommendReason#}">{#recommendAd#}</a>
@@ -209,12 +209,12 @@ function errorImg(img) {
         </div>
     </div>
 </div>
-<div class="mi-floor floor-2">
+<div class="mi-floor floor-2 linklist">
     <h2 class="bh">Смартфоны Оригинальное качество Xiaomi в Коллекции JD</h2>
     <div class="bd w1000">
         <ul class="modG-3" marketStart="4" marketLength="2" marketUrl="http://acen.jd.com/tjw/get/tjw2015/tjw15639f13414f2b.js"  marketTpl='
             <li>
-                <a class="img" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"></a>
+                <a class="img" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"><em>{#defined1#}</em></a>
                 <div class="info">
                     <div class="title">Mi 4 16GB</div>
                     <a class="desc" href="{#recommendUrl#}" target="_blank" clstag="{#recommendReason#}">{#recommendAd#}</a>
@@ -228,12 +228,12 @@ function errorImg(img) {
         </ul>
     </div>
 </div>
-<div class="mi-floor floor-3">
+<div class="mi-floor floor-3 linklist">
     <h2 class="bh">Wi-Fi Оригинальное качество Xiaomi в Коллекции JD</h2>
     <div class="bd w1000">
         <ul class="modG-1 clearfloat" marketStart="6" marketLength="3" marketUrl="http://acen.jd.com/tjw/get/tjw2015/tjw15639f13414f2b.js"  marketTpl='
             <li>
-                <a class="img" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"></a>
+                <a class="img" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"><em>{#defined1#}</em></a>
                 <div class="info">
                     <a class="title" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}">{#recommendAd#}</a>
                     <div class="price">
@@ -245,12 +245,12 @@ function errorImg(img) {
         </ul>
     </div>
 </div>
-<div class="mi-floor floor-4">
+<div class="mi-floor floor-4 linklist">
     <h2 class="bh">Аксессуары Оригинальное качество Xiaomi в Коллекции JD</h2>
     <div class="bd w1000">
         <ul class="modG-1 clearfloat" marketStart="9" marketLength="5" marketUrl="http://acen.jd.com/tjw/get/tjw2015/tjw15639f13414f2b.js"  marketTpl='
             <li>
-                <a class="img" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"></a>
+                <a class="img" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}"><img src="{#image#}" alt="{#recommendAd#}"><em>{#defined1#}</em></a>
                 <div class="info">
                     <a class="title" href="{#recommendUrl#}" target="_blank" title="{#recommendAd#}" clstag="{#recommendReason#}">{#recommendAd#}</a>
                     <div class="price">
@@ -276,6 +276,29 @@ function errorImg(img) {
         <div class="mod-tips"></div>
         <a href="http://en.jd.com/ru/collection/about.html" class="learn-more" target="_blank">узнай больше></a>
     </div>
+</div>
+<div id="float-right">
+    <div class="f-logo"><img src="image/f-logo.jpg"></div> 
+    <ul>   
+        <li class="item first"> 
+            <a class="nav-link" href="javascript:void(0);" style="line-height:20px;">Специальные<br/>скидки к 11.11</a> 
+        </li>   
+        <li class="item"> 
+            <a class="nav-link" href="javascript:void(0);">Смартфоны</a> 
+        </li>   
+        <li class="item"> 
+            <a class="nav-link" href="javascript:void(0);">Wi-Fi</a> 
+        </li>   
+        <li class="item"> 
+            <a class="nav-link" href="javascript:void(0);">Аксессуары</a> 
+        </li>
+    </ul>
+    <div class="#"></div>
+    <div class="fxandtop clearfloat">
+        <a href="http://vk.com/jd" class="w-link"></a>
+        <a href="https://www.facebook.com/JDRussia?fref=nf" class="f-link"></a>
+        <a href="#topbg" class="to-top-btn"></a>
+    </div> 
 </div>
 <!--E content-->
 <script type="text/javascript">  
@@ -428,9 +451,11 @@ function errorImg(img) {
     if(navigator.userAgent.search(/Trident/i) < 0) {
     $(function(){
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l=',l:'';j.async=true;j.src=
-        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-WFSLVN');
     });
     }
@@ -458,7 +483,7 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
 <script type="text/javascript" src="http://st.en.jd.com/ru/0625/js/market-1.0.0.min.js"></script>
 <script type="text/javascript">
     var xmlObj = {
-        total: $('.mi-floor').length,
+        total: $('[marketurl]').length,
         loadedNo:0
     }
     /* xmlLoad */
@@ -498,7 +523,7 @@ function Hello(){
     $('.c-2 a').click(function(){
         $(this).parent('.cp').html('<span><i>COUPON CODE</i> JD234</span>');
     })
-    $('.coupon a').mouseenter(function(){
+    $('.coupon a').click(function(){
         $(this).next('img').show(100);
     })
     $('.coupon a').mouseleave(function(){
@@ -510,15 +535,42 @@ function Hello(){
     $('.c-code').mouseleave(function(){
         $(this).css('background-color','#ffffff');
     })
+    
+    $.each($('em'),function(i,k){
+        if($(k).text()==1){
+            $(this).addClass('em');
+        }
+    })
+
+    var _float_wrap = $('#float-right');
+        _float_wrap.css({position:'fix'+'ed'})
+        var _item = $('.item',_float_wrap);
+        var _floor = $('.linklist');
+        $(window, document).bind('scroll', function(e){
+
+            var current_top = document.body.scrollTop || document.documentElement.scrollTop;
+            if(_floor.eq(0).offset().top-150 <= current_top){
+                _float_wrap.fadeIn(300);
+            }
+            else{
+                _float_wrap.fadeOut(300);
+            }
+            $.each(_floor,function(i){
+                var _this = $(this);
+                var floor_top =_this.offset().top-70;
+                if(floor_top <= current_top){
+                    _item.eq(i).addClass('current-item').siblings().removeClass('current-item');
+                }
+            });
+        }).trigger('scroll');
+        _item.each(function(i){
+            $(this).click(function(){
+                $('html, body').stop().animate({
+                    scrollTop: _floor.eq(i).offset().top-70
+                });
+            });
+        });
 }
-$(document).ready(function(){
-    $('.coupon a').mouseenter(function(){
-        $(this).next('img').show(100);
-    })
-    $('.coupon a').mouseleave(function(){
-        $(this).next('img').hide(100);
-    })
-});
 </script>
 </body>
 </html>
