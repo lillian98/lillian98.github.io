@@ -1,0 +1,31 @@
+*{margin: 0;padding: 0;}
+body{background: #121212;zoom:0.5359375;-moz-transform:scale(0.5359375);-moz-transform-origin:top left;-webkit-text-size-adjust:auto !important;font-family: Arial;font-size: 12px;}
+ul{list-style: none;}
+a{text-decoration: none;color: #242424;}
+.clearfloat:after { content: "."; display: block; clear: both; visibility: hidden; height: 0; }
+.clearfloat { overflow: hidden; _zoom: 1; }
+
+.f-wrap{width: 640px;}
+.timer{background: url(images/pic2.jpg) no-repeat;height: 247px;color: #fff;font-size: 12px;}
+.timer span{font-size:28px;padding:0 5px;}
+.timer .tWrap{padding:180px 0 0 170px;width: 306px;text-align: center; }
+.ticketWrap{height: 140px;}
+.ticketBar{background: url(images/pic3.jpg) no-repeat;width: 600px;height: 140px;margin:10px auto;}
+.active .ticketBar{position: fixed;top: 0;left: 50%;margin:0 0 0 -300px;z-index: 2;}
+.ticketBar .iCode{display: block;padding:50px 0 0 407px; font-size: 36px;text-transform: uppercase;font-weight: bold;}
+
+.list1 {padding: 10px 0 0 20px;}
+.list1 .goods-unit{width: 295px;background-color:#fff;min-height: 468px;float: left;margin-bottom: 10px;position: relative;}
+.list1 .goods-unit:nth-child(2n){margin-left:10px; }
+.list1 .j-pic{height: 295px;background: url(http://img11.360buyimg.com/cms/jfs/t853/64/222820902/5860/54fc0ad5/550bc4d5N2164a1f4.gif) no-repeat center;}
+.list1 .details{padding: 14px;}
+.list1 .title{color: #6e6e6e;font-size: 20px;line-height: 28px;height: 28px;overflow: hidden;}
+.list1 .promoTag{height: 22px;line-height: 22px;overflow: hidden;}
+.list1 .tag{color:#e09a14; font-size: 16px;}
+.list1 .j-jd-price{font-size: 28px;font-weight: bold;color: #544c49;}
+.list1 .price{padding-top: 10px;}
+.list1 .j-sku-price{color: #999;font-size: 16px;margin-left: 10px;}
+.list1 .btn-buy{background-color: #0f0f0f;text-align: center;color: #fff;font-size: 18px;height: 44px;line-height: 44px;margin-top: 5px;}
+.list1 .discount{background: #edca0b;font-size: 18px;text-align: center;line-height: 56px;height: 56px;width: 56px;border-radius: 500px;display: block;position: absolute;right: 5px;top: 5px;}
+.bottom-entrance-list {padding-top: 20px;}
+.bottom-entrance-list li{margin-bottom: 10px;text-align: center;}
