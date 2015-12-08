@@ -328,16 +328,26 @@
                     $('.wrap-menu-list li').eq(i).addClass('active').siblings().removeClass('active');
                 }
             });
-            $('.wrap-menu-list li').each(function(i){
-                $(this).click(function(e){
-                    /*window.scrollTo(0,$('.goodsList-block').eq(i).offset().top-60);
-                     e.stopPropagation();
-                     return false;*/
-                });
-            });
+
             if(navigator.userAgent.toLowerCase().indexOf('windows phone')>=0){
                 $('body').height((tmpHeight+494+55+39+27*4)*$(window).width()/640).css({'overflow-y':'hidden'});
                 $('.wrapper').css({'height':(tmpHeight+494+55+39+27*4),'overflow':'hidden'});
+                $('.wrap-menu-list li').each(function(i){
+                    $(this).click(function(e){
+                        window.scrollTo(0,$('.goodsList-block').eq(i).offset().top-60);
+                        e.stopPropagation();
+                        return false;
+                    });
+                });
+            }
+            else{
+                $('.wrap-menu-list li').each(function(i){
+                    $(this).click(function(e){
+                        /*window.scrollTo(0,$('.goodsList-block').eq(i).offset().top-60);
+                         e.stopPropagation();
+                         return false;*/
+                    });
+                });
             }
         }
 
