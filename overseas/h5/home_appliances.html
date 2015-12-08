@@ -316,39 +316,31 @@
         function detecCoupon(){
             var scrollTop = $(window).scrollTop()*deviceRate,
                     goodsOffsetTop = ($('.wrap-menu').offset().top+55)*deviceRate;
-            if(scrollTop >= goodsOffsetTop-10){
-                $('.wrap-menu-list').addClass('menu-list-fix');
-            }else{
-                $('.wrap-menu-list').removeClass('menu-list-fix');
-            }
-            $.each($('.goodsList-block'),function(i){
-                var _this = $(this);
-                var floor_top =_this.offset().top;
-                if(floor_top-65 <= scrollTop){
-                    $('.wrap-menu-list li').eq(i).addClass('active').siblings().removeClass('active');
-                }
-            });
-
             if(navigator.userAgent.toLowerCase().indexOf('windows phone')>=0){
                 $('body').height((tmpHeight+494+55+39+27*4)*$(window).width()/640).css({'overflow-y':'hidden'});
                 $('.wrapper').css({'height':(tmpHeight+494+55+39+27*4),'overflow':'hidden'});
                 $('.wrap-menu-list li').each(function(i){
                     $(this).click(function(e){
-                        window.scrollTo(0,$('.goodsList-block').eq(i).offset().top-60);
+                        window.scrollTo(0,$('.goodsList-block').eq(i).offset().top);
                         e.stopPropagation();
                         return false;
                     });
                 });
             }
             else{
-                $('.wrap-menu-list li').each(function(i){
-                    $(this).click(function(e){
-                        /*window.scrollTo(0,$('.goodsList-block').eq(i).offset().top-60);
-                         e.stopPropagation();
-                         return false;*/
-                    });
-                });
+                if(scrollTop >= goodsOffsetTop-10){
+                    $('.wrap-menu-list').addClass('menu-list-fix');
+                }else{
+                    $('.wrap-menu-list').removeClass('menu-list-fix');
+                }
             }
+            $.each($('.goodsList-block'),function(i){
+                var _this = $(this);
+                var floor_top =_this.offset().top;
+                if(floor_top-5 <= scrollTop){
+                    $('.wrap-menu-list li').eq(i).addClass('active').siblings().removeClass('active');
+                }
+            });
         }
 
         detecCoupon();
