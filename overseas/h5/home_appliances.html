@@ -15,7 +15,7 @@
         _resize = function(){
             _w = _doc.documentElement.clientWidth||_doc.body.clientWidth;
             _zoom = _w/640;
-            _style.innerHTML = 'body{zoom:'+_zoom+';-moz-transform:scale('+_zoom+');-moz-transform-origin:top left;-webkit-text-size-adjust:auto !important;}'
+            _style.innerHTML = '.wrapper{zoom:'+_zoom+';-moz-transform:scale('+_zoom+');-moz-transform-origin:top left;-webkit-text-size-adjust:auto !important;}'
         };
         _resize();
         window.addEventListener('resize',_resize,false);
@@ -25,7 +25,8 @@
             -webkit-text-size-adjust: none;
             -webkit-user-select: none;
             -webkit-touch-callout: none;
-            font-family: Arial, Helvetica
+            font-family: Arial, Helvetica;
+            overflow-x: hidden;
         }
 
         body {
@@ -285,11 +286,14 @@
 
     /* 数据源加载完毕执行的code */
     function marketRendered(){
+        var tmpHeight = 0;
         //楼层高度
         $('.goodsList-block').each(function(i,k){
             var row = Math.ceil($(k).find('li').length/2);
             $(k).css('height',row*466+52);
+            tmpHeight+=row*466+52;
         })
+        $('.wrapper').css({'height':tmpHeight+494+55+39,'overflow':'hidden'});
         //链接地址拼接
         function isInApp(){
             var link = location.href;
