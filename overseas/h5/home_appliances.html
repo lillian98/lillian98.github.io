@@ -141,8 +141,9 @@
         .wrap-menu-3{letter-spacing: -1px;}
         .wrap-menu-2,.wrap-menu-4{padding-top: 4px;}
         .wrap-menu-list .active{background-color: #ffa401;}
+        .goodsList-block{margin-bottom: 27px;}
         .floor-title{text-align: center;font-size: 22px;font-weight: bold;color: #fff;background-color: #ffa401;width: 600px;height: 42px;line-height: 42px;margin: 0 auto 10px;}
-        .goods-list{padding: 10px 0 0 10px;width: 590px;margin: 0 auto 27px;background-color: #ffa401;}
+        .goods-list{padding: 10px 0 0 10px;width: 590px;margin: 0 auto 0;background-color: #ffa401;}
         .goods-list li{float: left;width: 284px;margin: 0 10px 10px 0;height: 456px;background-color: #fff;}
         .goods-list .j-pic{width: 284px;height: 284px;position: relative;}
         .goods-list .discount{position: absolute;width: 55px;height: 55px;border-radius: 55px;background-color: #ff0000;left: 209px;top: 11px;line-height: 55px;text-align: center;color: #fff;}
@@ -278,6 +279,11 @@
 
     /* 数据源加载完毕执行的code */
     function marketRendered(){
+        //楼层高度
+        $('.goodsList-block').each(function(i,k){
+            var row = Math.ceil($(k).find('li').length/2);
+            $(k).css('height',row*466+52);
+        })
         //链接地址拼接
         function isInApp(){
             var link = location.href;
@@ -326,13 +332,13 @@
             $.each($('.goodsList-block'),function(i){
                 var _this = $(this);
                 var floor_top =_this.offset().top;
-                if(floor_top <= scrollTop){
+                if(floor_top-65 <= scrollTop){
                     $('.wrap-menu-list li').eq(i).addClass('active').siblings().removeClass('active');
                 }
             });
             $('.wrap-menu-list li').each(function(i){
                 $(this).click(function(e){
-                    window.scrollTo(0,$('.goodsList-block').eq(i).offset().top);
+                    window.scrollTo(0,$('.goodsList-block').eq(i).offset().top-60);
                     e.stopPropagation();
                     return false;
                 });
