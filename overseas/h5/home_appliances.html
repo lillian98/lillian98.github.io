@@ -289,6 +289,7 @@
     /* 数据源加载完毕执行的code */
     function marketRendered(){
         var tmpHeight = 0;
+        alert($('body').height());
         //楼层高度
         $('.goodsList-block').each(function(i,k){
             var row = Math.ceil($(k).find('li').length/2);
@@ -296,7 +297,8 @@
             tmpHeight+=row*466+52;
         })
         $('.wrapper').css({'height':(tmpHeight+494+55+39+27*4),'overflow':'hidden'});
-        $('body').height((tmpHeight+494+55+39+27*4)*$(window).width()/640).css('overflow-y','hidden');
+        $('body').height((tmpHeight+494+55+39+27*4)*$(window).width()/640).css('overflow-y','hidden')
+        alert($('body').height());
         //链接地址拼接
         function isInApp(){
             var link = location.href;
