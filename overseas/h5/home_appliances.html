@@ -134,7 +134,7 @@
             box-align: center
         }
         body{background-color: #f13325;}
-        .wrapper{font-family: Arial;}
+        .wrapper{font-family: Arial;width: 640px;position: relative;}
         .wrap-menu{width: 600px;height: 55px;background-color: #f25b00;margin: 0 auto 39px;overflow: hidden;font-size: 0;}
         .wrap-menu-list{display: -webkit-table;display: -moz-table;display: table;height: 100%;}
         .wrap-menu-list li{display: -webkit-table-cell;display: -moz-table-cell;display: table-cell;vertical-align: middle;position: relative;width: 150px;text-align: center;height: 100%}
@@ -295,7 +295,7 @@
             $(k).css('height',row*466+52);
             tmpHeight+=row*466+52;
         })
-        $('.wrapper').css({'height':tmpHeight+494+55+39,'overflow':'hidden'});
+        $('.wrapper').css({'height':tmpHeight+494+55+39+27*3,'overflow':'hidden'});
         //链接地址拼接
         function isInApp(){
             var link = location.href;
