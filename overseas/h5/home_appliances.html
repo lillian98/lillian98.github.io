@@ -295,7 +295,7 @@
             $(k).css('height',row*466+52);
             tmpHeight+=row*466+52;
         })
-        $('.wrapper').css({'height':tmpHeight+494+55+39+27*3,'overflow':'hidden'});
+        $('.wrapper').css({'height':(tmpHeight+494+55+39+27*3)*$(window).width()/640,'overflow':'hidden'});
         //链接地址拼接
         function isInApp(){
             var link = location.href;
