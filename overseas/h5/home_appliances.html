@@ -336,6 +336,14 @@
                 }else{
                     $('.wrap-menu-list').removeClass('menu-list-fix');
                 }
+                $('.wrap-menu-list li').each(function(i){
+                    $(this).click(function(e){
+                        var tId = '#flr'+i;
+                        document.getElementById(tId).scrollIntoView();
+                        e.stopPropagation();
+                        return false;
+                    });
+                });
             }
             $.each($('.goodsList-block'),function(i){
                 var _this = $(this);
