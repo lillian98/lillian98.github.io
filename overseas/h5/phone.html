@@ -357,8 +357,9 @@
                 }
                 $('.wrap-menu-list li').each(function(i){
                     $(this).click(function(e){
+                        i++;
                         var tId = '#flr'+i;
-                        document.getElementById(tId).scrollIntoView();
+                        $(tId)[0].scrollIntoView();
                         e.stopPropagation();
                         return false;
                     });
