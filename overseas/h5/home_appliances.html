@@ -295,7 +295,7 @@
             })
         }else{
             $.each($('[hasclstag]'), function (index,item){
-                $(item).attr('clstag', 'pageclick|keycount|nov_m_blackf_201511244|'+(index+1));
+                $(item).attr('clstag', 'pageclick|keycount|2016new_year_ru_m_home_appliances_201512029|'+(index+1));
             })
         };
         //arrival判断
@@ -350,13 +350,7 @@
         $(window).scroll(function(){
             detecCoupon();
         }).trigger('scroll')
-        /**
-         **e 样式显示相关代码
-         */
-            //JA埋点规则
-        $.each($('[hasclstag]'), function (index,item){
-            $(item).attr('clstag', 'pageclick|keycount|2016new_year_ru_app_2015120212|'+(index+1));
-        })
+
     }
 </script>
 
