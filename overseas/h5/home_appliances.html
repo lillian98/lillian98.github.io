@@ -220,7 +220,10 @@
         </ul>
     </section>
     <!--e 常规商品楼层-->
-
+<!-- S back to main -->
+    <a href="http://m.jd.ru/act/new_year.html" class="actbanner"><img
+            src="http://img11.360buyimg.com/cms/jfs/t2365/118/1528016625/21329/a3d5fd90/566799b9N13565acb.jpg" alt="" width="640" height="230"/></a>
+<!-- E back to main -->
 </div>
 <!--s 常规商品楼层模板-->
 <script type="text/html" id="list1Tpl">
@@ -317,8 +320,8 @@
             var scrollTop = $(window).scrollTop()*deviceRate,
                     goodsOffsetTop = ($('.wrap-menu').offset().top+55)*deviceRate;
             if(navigator.userAgent.toLowerCase().indexOf('windows phone')>=0){
-                $('body').height((tmpHeight+494+55+39+27*4)*$(window).width()/640).css({'overflow-y':'hidden'});
-                $('.wrapper').css({'height':(tmpHeight+494+55+39+27*4),'overflow':'hidden'});
+                $('body').height((tmpHeight+494+55+39+27*4+230)*$(window).width()/640).css({'overflow-y':'hidden'});
+                $('.wrapper').css({'height':(tmpHeight+494+55+39+27*4+230),'overflow':'hidden'});
                 $('.wrap-menu-list li').each(function(i){
                     $(this).click(function(e){
                         window.scrollTo(0,$('.goodsList-block').eq(i).offset().top);
