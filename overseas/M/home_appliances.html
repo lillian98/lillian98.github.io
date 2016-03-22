@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<meta name="viewport" content="maximum-scale=1.0,user-scalable=0"/>
+	<title>БЫТОВАЯ ТЕХНИКА</title>
+	<link rel="stylesheet" type="text/css" href="css/appliance.css">
+	<style type="text/css">
+		html{-webkit-text-size-adjust:none;-webkit-user-select:none;-webkit-touch-callout:none;font-family:Arial,Helvetica}body{font-size:16px;-webkit-tap-highlight-color:transparent}body,p,pre,h1,h2,h3,h4,h5,h6,dl,dd,ul,ol,form,input,textarea,th,td,select{margin:0;padding:0;font-weight:normal;text-indent:0}a,button,input,textarea,select{background:none;-webkit-tap-highlight-color:rgba(255,0,0,0);outline:none;-webkit-appearance:none}em{font-style:normal}li{list-style:none}a{text-decoration:none}img{border:none;vertical-align:top}table{border-collapse:collapse}textarea{resize:none;overflow:auto}.clearfix,.nav .nav-wrap .nav-list,.goods-list{zoom:1}.clearfix:after,.nav .nav-wrap .nav-list:after,.goods-list:after{content:'';display:block;clear:both}.boxSiz{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}.toWrap{word-break:break-all;word-wrap:break-word;white-space:pre-wrap}.noWrap{white-space:nowrap}.noWrapEllipsis{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.text-justify{text-align:justify;text-justify:inter-ideograph}.flex-center{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-o-box;display:box;-webkit-box-pack:center;-moz-box-pack:center;-ms-flex-pack:center;-o-box-pack:center;box-pack:center;-webkit-box-align:center;-moz-box-align:center;-ms-flex-align:center;-o-box-align:center;box-align:center}html{font-size:16px}body{width:40rem;font-family:Arial,Helvetica !important;overflow-x:hidden;background-color:#e5e5e5}
+	</style>
+	<script>
+		//重置html字体大小
+		var _resize = function(){
+			var html = document.documentElement,
+					w = html.clientWidth/640, w =16*w;
+			html.setAttribute('style', 'font-size:' + w + 'px');
+		}
+		_resize();
+		window.addEventListener('resize', _resize);
+	</script>
+</head>
+
+<body>
+
+<!--slider-->
+<div class="swiper-container">
+	<div class="swiper-wrapper" markettplid="slider" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0ed7ebba24.js" marketonload="xmlLoad(1);">
+	</div>
+	<div class="swiper-pagination"></div>
+</div>
+<!-- it-coupon s -->
+<div class="floor it-coupon">
+	<div class="coupon-bar" marketstart="0" marketlength="" markettplid="listCoupon" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0ee4be0c97.js" marketonload="xmlLoad(1);">
+	</div>
+</div>
+<!-- it-coupon e -->
+
+
+
+<!-- it-today-deals s -->
+<div class="floor it-today-deals">
+	<div class="floor-title"><span class="tit-text  dib">СУПЕР-ПРЕДЛОЖЕНИЯ</span><span class="tit-extra">Обновления,каждый <em>понедельник в 10:00</em></span></div>
+	<div class="tabBar type-2">
+		<div class="nav-wrap">
+			<div class="tab-tit scroll">
+				<ul>
+					<li class="tab-t tab-t1 dib current"><a href="javascript:;">ЭТА НЕДЕЛЯ</a></li>
+					<li class="tab-t tab-t2 dib"><a href="javascript:;">СЛЕДУЮЩАЯ НЕДЕЛЯ</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="tab-con">
+			<div class="tab-c current">
+				<div class="timeBar">
+					<div class="f-time" marketstart="0" marketlength="" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0eecb496e3.js" marketonload="xmlLoad(1);" markettpl='<span class="dataTime" date="{%=recommendName%}"> </span>'></div>
+					Осталось:<span class="t-time hh dib">00</span>ч.<span class="t-time mm dib">00</span>м.<span class="t-time ss dib">00</span>с.
+				</div>
+				<ul class="ms-list goods-list" marketstart="0" marketlength="" markettplid="listMs" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0ef4fda6e4.js" marketonload="xmlLoad(1);"></ul>
+			</div>
+			<div class="tab-c ">
+				<div class="timeBar">
+					Время продажи: 9 Марта
+				</div>
+				<ul class="ms-list goods-list" marketstart="0" marketlength="" markettplid="listMsTomrrow" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0f2ce4c82b.js" marketonload="xmlLoad(1);"></ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- it-today-deals e -->
+<!-- S new -->
+<div class="wrap-flr">
+	<div class="floor-title"><span class="tit-text  dib">НОВЫЕ ПОСТУПЛЕНИЯ</span></div>
+	<div class="hideArea hide">
+		<ul class="goods-list" marketstart="0" marketlength="" markettplid="listNew" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0f34d99392.js" marketonload="xmlLoad(1);"></ul>
+	</div>
+</div>
+<!-- E new -->
+
+<!-- S kitchen -->
+<div class="wrap-flr">
+	<div class="floor-title"><span class="tit-text  dib"> Креативные идеи для дома</span></div>
+	<div class="hideArea hide">
+		<ul class="goods-list" marketstart="0" marketlength="" markettplid="listNew" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0f3616c289.js" marketonload="xmlLoad(1);"></ul>
+	</div>
+</div>
+<!-- E kitchen -->
+
+<nav class="nav">
+	<div class="nav-wrap scroll tab-tit">
+		<ul class="nav-list">
+			<li class="tab-t active">
+				<span>ТЕЛЕВИЗОРЫ</span>
+			</li>
+			<li class="tab-t">
+				<span>БЫТОВЫЕ УСТРОЙСТВА</span>
+			</li>
+			<li class="tab-t">
+				<span>КУХНЯ</span>
+			</li>
+			<li class="tab-t">
+				<span>КРАСОТА И ЗДОРОВЬЕ</span>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="floor-wrap">
+	<div class="floor-block">
+		<div class="floor-title"><span class="tit-text  dib">ТЕЛЕВИЗОРЫ</span></div>
+		<div class="hideArea hide">
+			<ul class="goods-list" marketstart="0" marketlength="" markettplid="listTpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0f54d17d70.js" marketonload="xmlLoad(1);"></ul>
+		</div>
+	</div>
+
+	<div class="floor-block">
+		<div class="floor-title"><span class="tit-text  dib">БЫТОВЫЕ УСТРОЙСТВА</span></div>
+		<div class="hideArea hide">
+			<ul class="goods-list" marketstart="0" marketlength="" markettplid="listTpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0f56c02a66.js" marketonload="xmlLoad(1);"></ul>
+			<div class="keywords">
+				<p class="kw-tit">Горячие запросы</p>
+				<ul class="keyword-list clearfloat" marketstart="0" marketlength="" markettplid="listKeywords" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0f643e6d72.js" marketonload="xmlLoad(1);"></ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="floor-block">
+		<div class="floor-title floor-title2"><span class="tit-text  dib">КУХНЯ</span></div>
+		<div class="hideArea hide">
+			<ul class="goods-list" marketstart="0" marketlength="" markettplid="listTpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0f58c746cd.js" marketonload="xmlLoad(1);"></ul>
+			<div class="keywords">
+				<p class="kw-tit">Горячие запросы</p>
+				<ul class="keyword-list clearfloat" marketstart="0" marketlength="" markettplid="listKeywords" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0f65c59338.js" marketonload="xmlLoad(1);"></ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="floor-block">
+		<div class="floor-title floor-title3"><span class="tit-text  dib">КРАСОТА И ЗДОРОВЬЕ</span></div>
+		<div class="hideArea hide">
+			<ul class="goods-list" marketstart="0" marketlength="" markettplid="listTpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0f5c3b9ef7.js" marketonload="xmlLoad(1);"></ul>
+			<div class="keywords">
+				<p class="kw-tit">Горячие запросы</p>
+				<ul class="keyword-list clearfloat" marketstart="0" marketlength="" markettplid="listKeywords" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0f67476e12.js" marketonload="xmlLoad(1);"></ul>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+
+
+
+<!-- it-more-brands e -->
+<div class="floor it-more-brands">
+	<ul class="list-moreBrand clearfloat" marketstart="0" marketlength="" markettplid="listBrand2" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0f7f7f256b.js" marketonload="xmlLoad(1);" ></ul>
+</div>
+<!-- it-more-brands e -->
+
+<div class="it-bottom-bar">
+	<ul class="list-moreLink clearfloat"  marketstart="0" marketlength="" markettplid="moreLink" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw156f0f82d0099d.js" marketonload="xmlLoad(1);"></ul>
+</div>
+
+<script type="text/html" id="moreLink">
+	<li class="item{%=id%}"><a href="{%=recommendUrl%}" class="mLink{%=id%}" target="_blank" clstag="{%=defined5%}"><span class="link-text dib">{%=recommendName%}</span><span class="icon-arrow dib fIcon"></span></a></li>
+</script>
+
+<script type="text/html" id="slider">
+	<div class="swiper-slide"><a href="{%=recommendUrl%}" clstag="{%=defined5%}"><img src="{%=image%}" alt=""></a></div>
+</script>
+<!--start of tpl-->
+<script type="text/html" id="listKeywords">
+	<li>
+		<a href="{%=recommendUrl%}" target="_blank" title=""  clstag="{%=defined5%}"><span class="words-wrap">{%=recommendName%}</span></a>
+	</li>
+</script>
+<!--end of tpl-->
+<!--start of tpl-->
+<script type="text/html" id="listBrand">
+	{% if(id==1){ %}
+	<li class="jItem-{%=id%}">
+		<a href="{%=recommendUrl%}" target="_blank" title=""  clstag="{%=defined5%}"><img src="{%=image%}" alt=""></a>
+	</li>
+	{% }else{ %}
+	<li class="jItem-{%=id%}">
+		<a href="{%=recommendUrl%}" target="_blank" title=""  clstag="{%=defined5%}"><img src="{%=image%}" alt=""></a>
+	</li>
+	{% } %}
+</script>
+<!--end of tpl-->
+<!--start of tpl-->
+<script type="text/html" id="listBrand2">
+	<li class="jItem-{%=id%}">
+		<a href="{%=recommendUrl%}" target="_blank" title=""  clstag="{%=defined5%}"><img src="{%=image%}" alt=""></a>
+	</li>
+</script>
+<!--end of tpl-->
+<!--start of tpl-->
+<script type="text/html" id="listCoupon">
+	<img src="{%=image%}" />
+</script>
+<!--end of tpl-->
+<!-- S tpl:listNew -->
+<script type="text/html" id="listNew">
+	<li>
+		<a href="http://m.jd.ru/ware/detail/{%=id%}" clstag="{%=defined5%}">
+			<div class="j-pic">
+				<image src="{%=image%}"></image>
+				<span class="j-pic-extra">НОВЫЕ</span>
+			</div>
+			<div class="detail">
+				<p class="title">{%=recommendName%}</p>
+				<div class="price">
+					<p class="j-jd-price dib">${%=jdPrice%}</p>
+				</div>
+				{% if(defined1!==""){ %}
+				<div class="detail-tag dib">
+					<span class="tag-collection">Коллекция JD</span>
+				</div>
+				{% } %}
+			</div>
+		</a>
+	</li>
+</script>
+<!-- E tpl:listNew -->
+<!--start of tpl-->
+<script type="text/html" id="listTpl">
+	<li>
+		<a href="http://m.jd.ru/ware/detail/{%=id%}" clstag="{%=defined5%}">
+			<div class="j-pic">
+				<img src="{%=image%}">
+			</div>
+			<div class="detail">
+				<p class="title">{%=recommendName%}</p>
+
+				<div class="price">
+					<p class="j-jd-price dib">${%=jdPrice%}</p>
+					<p class="j-sku-price dib"><del>${%=normalPrice%}</del></p>
+				</div>
+				{% if(defined1!==""){ %}
+				<div class="detail-tag dib">
+					<span class="tag-collection">Коллекция JD</span>
+				</div>
+				{% } %}
+				{% if(appPrice!==""){ %}
+				<div class="tag-discount dib"><span>{%=appPrice%}</span>СКИДКА</div>
+				{% } %}
+			</div>
+		</a>
+	</li>
+</script>
+<!--end of tpl-->
+<!--start of listMs-->
+<script type="text/html" id="listMs">
+	<li {% if(shopName=="end"){ %} class='jEnd' {% } %}>
+		{% if(shopName=="" || shopName!="end"){ %}
+		<a href="http://m.jd.ru/ware/detail/{%=id%}" clstag="{%=defined5%}">
+			{% } %}
+			<div class="j-pic">
+				<img src="{%=image%}">
+				<span class="soldOut"></span>
+			</div>
+			<div class="detail">
+				<p class="title">{%=recommendName%}</p>
+
+				<div class="price">
+					<p class="j-jd-price dib">${%=jdPrice%}</p>
+					<p class="j-sku-price dib"><del>${%=normalPrice%}</del></p>
+				</div>
+				{% if(defined1!==""){ %}
+				<div class="detail-tag dib">
+					<span class="tag-collection">Коллекция JD</span>
+				</div>
+				{% } %}
+				{% if(appPrice!==""){ %}
+				<div class="tag-discount dib"><span>{%=appPrice%}</span>СКИДКА</div>
+				{% } %}
+			</div>
+			{% if(shopName=="" || shopName!="end"){ %}
+		</a>
+		{% } %}
+	</li>
+</script>
+<!--end of listMs-->
+<!--start of listMsTomrrow-->
+<script type="text/html" id="listMsTomrrow">
+	<li>
+		<div class="j-pic">
+			<img src="{%=image%}">
+			<span class="tm-mask">ОЖИДАЙТЕ</span>
+		</div>
+		<div class="detail">
+			<p class="title">{%=recommendName%}</p>
+			<div class="price">
+				<p class="j-jd-price dib">${%=jdPrice%}</p>
+				<p class="j-sku-price dib"><del>${%=normalPrice%}</del></p>
+			</div>
+			{% if(defined1!==""){ %}
+			<div class="detail-tag dib">
+				<span class="tag-collection">Коллекция JD</span>
+			</div>
+			{% } %}
+			{% if(appPrice!==""){ %}
+			<div class="tag-discount dib"><span>{%=appPrice%}</span>СКИДКА</div>
+			{% } %}
+		</div>
+	</li>
+</script>
+<!--end of listMsTomrrow-->
+<!--start of tpl-->
+<script type="text/html" id="listTab">
+	<li>
+		<a href="http://m.jd.ru/ware/detail/{%=id%}" clstag="{%=defined5%}">
+			<div class="j-pic">
+				<img src="{%=image%}">
+			</div>
+			<div class="detail">
+				<p class="title">{%=recommendName%}</p>
+				<p class="discount-text">{%=recommendReason%}</p>
+				<div class="price">
+					<p class="j-jd-price dib">${%=jdPrice%}</p>
+					<p class="j-sku-price dib"><del>${%=normalPrice%}</del></p>
+				</div>
+				{% if(defined1!==""){ %}
+				<div class="detail-tag dib">
+					<span class="tag-collection">Коллекция JD</span>
+				</div>
+				{% } %}
+				{% if(appPrice!==""){ %}
+				<div class="tag-discount dib"><span>{%=appPrice%}</span>СКИДКА</div>
+				{% } %}
+			</div>
+		</a>
+	</li>
+</script>
+<!--end of tpl-->
+
+<script src="http://acen.jd.com/h5/topActivity/media/js/lib/zepto-1.1.6.min.js"></script>
+<script src="http://acsten.jd.com/static/market-2.0.min.js"></script>
+<script src="http://acen.jd.com/h5/topActivity/media/js/lib/scrollTo.min.js"></script>
+<script type="text/javascript" src="js/appliance.js"></script>
+
+
+<!--start of JA埋点-->
+<script type="text/javascript">
+	var jap = {
+		siteId : 'JA2015_161293',
+		topic: 'traffic-hw',
+		account : '',
+		skuid: '',
+		shopid: '',
+		orderid: '',
+		adsCookieName: '',
+		__cookie_jda: '__tra',
+		__cookie_jdb: '__trb',
+		__cookie_jdc: '__trc',
+		__cookie_jdu: '__tru',
+		__cookie_jdv: '__trv'
+	};
+	(function() { var ja = document.createElement('script'); ja.type = 'text/javascript'; ja.async = true;
+		ja.src=('https:'==document.location.protocol?'https://miscssl':'http://misc')+ '.360buyimg.com/jdf/1.0.0/unit/ja/1.0.0/ja.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ja,s);
+	})();
+</script>
+<!--end of JA埋点-->
+
+<!--start of GTM 埋点 -->
+<script type="text/javascript">
+	if(window.google_tag_params){
+		dataLayer = [{
+			'google_tag_params': window.google_tag_params
+		}];
+	}
+</script>
+<noscript>
+	<iframe src="//www.googletagmanager.com/ns.html?id=GTM-WFSLVN" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>
+	$(function(){
+		/*GTM埋点*/
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WFSLVN');
+	});
+</script>
+<!--end of GTM 埋点-->
+</body>
+</html>
