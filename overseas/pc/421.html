@@ -46,9 +46,12 @@
         }
         .wrapper .icon-hd,.wrapper .icon-more{display: inline-block;background-image: url(//img12.360buyimg.com/cms/jfs/t2899/142/294894290/96858/4249a4e/570d48b5Nfdd9c676.png);width: 1200px;height: 130px;overflow: hidden;background-repeat: no-repeat;line-height: 999em;}
         .pos-abs{position: absolute;}
-        .wrap-goods li,.wrap-shops li{float: left;position: relative;background-color: #fff;}
+        .wrap-goods li,.wrap-shops li{float: left;position: relative;background-color: #fff;overflow: hidden}
+        .wrap-goods li:hover .href-img,.wrap-shops li:hover .href-img,.href-more:hover .icon-more{-webkit-transform: scale(1.01);-o-transform: scale(1.01);transform: scale(1.01);}
+
+        .href-more .icon-more{-webkit-transition: all .5s;-o-transition: all .5s;transition: all .5s;}
         .wrap-goods,.wrap-shops{position: relative;margin-right: -10px;}
-        .wrapper .href-img{display: block;}
+        .wrapper .href-img{display: block;-webkit-transition: all .5s;-o-transition: all .5s;transition: all .5s;}
         .href-img img{display: block;width: 100%;height: 100%}
         .goods-detail{position: relative;width: 100%;}
         .jd-own{background-color: #333333;display: inline-block;padding: 0 5px;border-radius: 3px;}
@@ -77,6 +80,7 @@
         .miaosha-tab li a{color: #301d1d;}
         .miaosha-tab .miaosha-tab-today{width: 700px;}
         .miaosha-detail{font-size: 0}
+        .miaosha-ct-list ul{display: none;}
         .miaosha-detail-text{font-size: 18px;font-weight: normal;margin-right: 22px;}
         .miaosha-tab .miaosha-status{margin-top: 7px;line-height: 36px;}
         .miaosha-tab .miaosha-detail{line-height: 28px;}
@@ -92,7 +96,7 @@
         .flr-bd{background-color: #30c7a6;padding-top: 9px;}
         .wrap-goods-single li{width: 258px;height: 375px;margin:0 10px 10px 0;padding: 6px 15px;}
         .wrap-goods-single .href-img{margin-bottom: 1px;}
-        .flr-ft{margin-top: 10px;}
+        .flr-ft{margin-top: 10px;width: 100%;height: auto;overflow: hidden;}
         /* wrap-shops */
         .wrap-flr-shop .flr-bd{background-color: transparent;}
         .wrap-shops li{width: 292px;height: 368px;margin:0 10px 10px 0;}
@@ -404,7 +408,9 @@
             <div class="miaosha-tab-ct" id="miaoshaFlr">
                 <div class="miaosha-ct">
                     <div class="miaosha-ct-list">
-                        <ul class="cf wrap-goods"  markettplid="list1Tpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570f9918477b2.js" id="" marketonload="goodsLoad(1);"></ul>
+                        <!-- 今日秒杀列表：不显示请用行内样式控制 -->
+                        <ul class="cf wrap-goods"  markettplid="list1Tpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570f9918477b2.js" id="" marketonload="goodsLoad(1);" style="display: block"></ul>
+                        <!-- 下期秒杀列表：不显示请用行内样式控制 -->
                         <ul class="cf wrap-goods"  markettplid="miaoNextTpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570f9e01a83ca.js" id="" marketonload="goodsLoad(1);"></ul>
                     </div>
                 </div>
@@ -413,7 +419,7 @@
         <!-- E miaosha -->
         <!-- S 下单赢手机 -->
         <div class="wrap-flr flr-winphone float-flr" id="flr2">
-            <a href="#" target="_blank"><img src="//img11.360buyimg.com/cms/jfs/t2692/13/317297842/35704/19e5b2b8/570d1dbdN53aa590f.png" alt=""/></a>
+            <a href="http://vk.com/jd" target="_blank"><img src="//img11.360buyimg.com/cms/jfs/t2692/13/317297842/35704/19e5b2b8/570d1dbdN53aa590f.png" alt=""/></a>
         </div>
         <!-- E 下单赢手机 -->
         <div class="goods-nav">
@@ -446,7 +452,7 @@
                     <ul class="cf wrap-goods wrap-goods-single"  markettplid="listHot" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570f9fd530ee2.js" id="" marketonload="goodsLoad(1);"></ul>
                 </div>
                 <div class="flr-ft">
-                    <a href="#" target="_blank" class="href-more"><span class="icon-more"></span></a>
+                    <a href="//www.jd.ru/channel/smartphone.html" target="_blank" class="href-more"><span class="icon-more"></span></a>
                 </div>
             </div>
             <!-- E goods1 -->
@@ -461,7 +467,7 @@
                     <ul class="cf wrap-goods wrap-goods-single"  markettplid="listHot" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570f9febc6780.js" id="" marketonload="goodsLoad(1);"></ul>
                 </div>
                 <div class="flr-ft">
-                    <a href="#" target="_blank" class="href-more"><span class="icon-more"></span></a>
+                    <a href="//www.jd.ru/channel/digital.html" target="_blank" class="href-more"><span class="icon-more"></span></a>
                 </div>
             </div>
             <!-- E goods2 -->
@@ -476,7 +482,7 @@
                     <ul class="cf wrap-goods wrap-goods-single"  markettplid="listHot" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570fa002d5265.js" id="" marketonload="goodsLoad(1);"></ul>
                 </div>
                 <div class="flr-ft">
-                    <a href="#" target="_blank" class="href-more"><span class="icon-more"></span></a>
+                    <a href="//www.jd.ru/act/april_carnival_commodity.html" target="_blank" class="href-more"><span class="icon-more"></span></a>
                 </div>
             </div>
             <!-- E goods3 -->
@@ -491,7 +497,7 @@
                     <ul class="cf wrap-goods wrap-goods-single"  markettplid="listHot" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570fa017ca21e.js" id="" marketonload="goodsLoad(1);"></ul>
                 </div>
                 <div class="flr-ft">
-                    <a href="#" target="_blank" class="href-more"><span class="icon-more"></span></a>
+                    <a href="//www.jd.ru/channel/appliances.html" target="_blank" class="href-more"><span class="icon-more"></span></a>
                 </div>
             </div>
             <!-- E goods4 -->
@@ -933,6 +939,14 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
             blank: 140
         }
         navEle.init(nav3);
+        $('.miaosha-tab a').click(function(){
+            var _this = this;
+            var tIndex = $('.miaosha-tab a').index($(_this));
+            $('.miaosha-ct-list ul').hide();
+            $('.miaosha-ct-list ul').eq(tIndex).show();
+            $('.miaosha-tab li').removeClass('cur');
+            $('.miaosha-tab li').eq(tIndex).addClass('cur');
+        })
     }
     /* wish */
     function wishPro(){
