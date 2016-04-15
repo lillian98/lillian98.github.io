@@ -409,9 +409,9 @@
                 <div class="miaosha-ct">
                     <div class="miaosha-ct-list">
                         <!-- 今日秒杀列表：不显示请用行内样式控制 -->
-                        <ul class="cf wrap-goods"  markettplid="list1Tpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570f9918477b2.js" id="" marketonload="goodsLoad(1);" style="display: block"></ul>
+                        <ul class="cf wrap-goods" marketstart="0" marketlength="4"  markettplid="list1Tpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570f9918477b2.js" id="" marketonload="goodsLoad(1);" style="display: block"></ul>
                         <!-- 下期秒杀列表：不显示请用行内样式控制 -->
-                        <ul class="cf wrap-goods"  markettplid="miaoNextTpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570f9e01a83ca.js" id="" marketonload="goodsLoad(1);"></ul>
+                        <ul class="cf wrap-goods" marketstart="0" marketlength="4" markettplid="miaoNextTpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570f9e01a83ca.js" id="" marketonload="goodsLoad(1);"></ul>
                     </div>
                 </div>
             </div>
@@ -939,7 +939,7 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
             blank: 140
         }
         navEle.init(nav3);
-        $('.miaosha-tab a').click(function(){
+        $('.miaosha-tab a').hover(function(){
             var _this = this;
             var tIndex = $('.miaosha-tab a').index($(_this));
             $('.miaosha-ct-list ul').hide();
