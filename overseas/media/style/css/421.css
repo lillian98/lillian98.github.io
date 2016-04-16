@@ -204,7 +204,7 @@ body {
 .goods-list-2 {
   margin-bottom: 1.375rem; }
 
-.floor-title {
+.floor-title, .floor-title img {
   width: 100%; }
 
 .goodsList-block .floor-bd {

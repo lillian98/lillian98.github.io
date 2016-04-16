@@ -145,7 +145,7 @@ body{background-color: $backgroundColor;}
 /* E wrap-menu */
 /* S goodsList-block */
 .goods-list-2{margin-bottom: 55/$fontRem+rem;}
-.floor-title{width: 100%;}
+.floor-title,.floor-title img{width: 100%;}
 .goodsList-block .floor-bd{width: 614/$fontRem+rem;margin: 0 auto 0;background-color: $flrBgColor;position: relative;background-color: #30c7a6;overflow: hidden}
 .goodsList-block .goods-list{margin-bottom: -10/$fontRem+rem;}
 .goods-list{margin-right: -10/$fontRem+rem;}
