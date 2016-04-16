@@ -477,14 +477,14 @@ body {
   border-bottom: 0.05rem solid #f1cc0c;
   position: relative;
   font-size: 0;
-  color: #301d1d; }
+  color: #301d1d;
+  background-color: #f7a404; }
 
 .miaosha-tab ul {
   height: 100%; }
 
 .miaosha-tab li {
   width: 50%;
-  background-color: #f7a404;
   height: 100%;
   display: inline-block;
   font-size: 0.8rem;

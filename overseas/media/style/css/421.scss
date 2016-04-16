@@ -235,9 +235,9 @@ $miaoshaColor: #301d1d;
 $miaoshaCountDownBg: #f1cc0c;
 $miaoshaLiBg:#fff;
 $miaoshaPriceColor: #c51c2a;
-.miaosha-tab{width: 640/$fontRem+rem;height:67/$fontRem+rem;border-bottom: 2/$fontRem+rem solid $miaoshaTabCurBg;position: relative;font-size: 0;color: $miaoshaColor;}
+.miaosha-tab{width: 640/$fontRem+rem;height:67/$fontRem+rem;border-bottom: 2/$fontRem+rem solid $miaoshaTabCurBg;position: relative;font-size: 0;color: $miaoshaColor;background-color: $miaoshaTabBg;}
 .miaosha-tab ul{height: 100%}
-.miaosha-tab li{width: 50%;background-color: $miaoshaTabBg;height: 100%;display: inline-block;font-size: 32/$fontRem+rem;text-align: center;}
+.miaosha-tab li{width: 50%;height: 100%;display: inline-block;font-size: 32/$fontRem+rem;text-align: center;}
 .miaosha-tab li.cur{background-color: $miaoshaTabCurBg}
 .miaosha-ct{display: none;}
 .miaosha-tab a{color: $miaoshaColor;line-height: 67/$fontRem+rem;}
