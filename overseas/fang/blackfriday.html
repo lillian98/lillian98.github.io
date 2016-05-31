@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<title>Черная пятница</title>
+	<link rel="stylesheet" href="main.css">
+	<script>
+		var _w,_zoom,_hd,_resize,_doc=document,_style=_doc.getElementById('_zoom');
+		_style||(_hd=_doc.getElementsByTagName('head')[0],_style=_doc.createElement('style'),_hd.appendChild(_style));
+		_resize = function(){
+			_w = _doc.documentElement.clientWidth||_doc.body.clientWidth;
+			_zoom = _w/640;
+			_style.innerHTML = 'body{zoom:'+_zoom+';-moz-transform:scale('+_zoom+');-moz-transform-origin:top left;-webkit-text-size-adjust:auto !important;}'
+		};
+		_resize();
+		window.addEventListener('resize',_resize,false);
+	</script>
+	
+	
+</head>
+		
+<body>
+	<div class="f-wrap">
+		<!-- header s -->
+		<div class="header">
+			<img src="images/pic1.jpg" alt="" width="100%"/>
+			<div class="timer" dataEndTime="2015/11/30 00:00:00">
+				<div class="tWrap"><span class="iDay">00</span>дн.<span class="iHour">00</span>ч.<span class="iMinute">00</span>мин.<span class="iSeconds">00</span>сек.</div>
+			</div>
+		</div>
+		<!-- header e -->
+		<!-- main s -->
+		<div class="main">
+			<div class="ticketWrap"><div class="ticketBar"><span class="iCode">JD789</span></div></div>
+
+			<ul id="list1" class="list1 clearfloat" marketstart="0" marketlength="" markettplid="list1Tpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw15653e04e2509f.js" marketonload="$.each($('#list1 .tag'), function (index, item){if($(item).text()==''){$(item).hide();}});$('#list1').attr('data-height',$('#list1').height());$('#list1 li').click(function(){$(this).addClass('active');setTimeout(function(){$('#list1 li').removeClass('active')},300)})">
+			</ul>
+
+			<!--s list1-->
+			<script type="text/html" id="list1Tpl">
+			  	<li class="goods-unit" clstag="pageclick|keycount|nov_app_xiaomi_201511175|{#defined10#}">
+					<span class="discount">{#appPrice#}</span>
+					<a href="#" onClick="window.activity.gotoProductDetail('detail', '{#id#}')">
+						<div class="j-pic">
+							<img src="{#image#}" width="295" height="295">
+						</div>
+
+						<div class="details">
+							<p class="title">{#recommendName#}</p>
+							<p class="promoTag">
+								<span class="tag tag1">{#defined1#}</span>
+								<span class="tag tag2">{#defined2#}</span>
+							</p>
+							<p class="price">
+								<span class="j-jd-price">{#jdPrice#}</span>
+								<span class="j-sku-price"><del>{#normalPrice#}</del></span>
+							</p>
+							<div class="btn-buy">Купить сейчас</div>
+						</div>
+					</a>
+				</li>
+			</script>
+			<!--end of list1-->
+
+			<!-- bottom-entrance-list s -->
+			<ul class="bottom-entrance-list">
+				<li><a class="entrance0" href="#"><img src="images/pic4.jpg" width="600" alt=""></a></li>
+				<li><a class="entrance1" href="#"><img src="images/pic5.jpg" width="600" alt=""></a></li>
+				<li><a class="entrance2" href="#"><img src="images/pic6.jpg" width="600" alt=""></a></li>
+			</ul>
+			<!-- bottom-entrance-list e -->
+		</div>
+		<!-- main e -->
+	</div>
+
+	<script src="http://acen.jd.com/h5/topActivity/media/js/lib/zepto-1.1.6.min.js"></script>
+	<script  src="http://acen.jd.com/h5/topActivity/media/js/lib/market-1.0.0.min.js"></script>
+	<script src="blackfriday.js"></script>
+</body></html>
+
+

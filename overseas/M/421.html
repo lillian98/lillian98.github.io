@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script>
+        /**
+         * MobileWeb 通用功能助手，包含常用的 UA 判断、页面适配、search 参数转 键值对。
+         * 该 JS 应在 head 中尽可能早的引入，减少重绘。
+         *
+         * fixScreen 方法根据两种情况适配，该方法自动执行。
+         *      1. 定宽： 对应 meta 标签写法 -- <meta name="viewport" content="target-densitydpi=device-dpi,width=750">
+         *          该方法会提取 width 值，主动添加 scale 相关属性值。
+         *          注意： 如果 meta 标签中指定了 initial-scale， 该方法将不做处理（即不执行）。
+         *      2. REM: 不用写 meta 标签，该方法根据 dpr 自动生成，并在 html 标签中加上 data-dpr 和 font-size 两个属性值。
+         *          该方法约束：IOS 系统最大 dpr = 3，其它系统 dpr = 1，页面每 dpr 最大宽度（即页面宽度/dpr） = 750，REM 换算比值为 16。
+         *          对应 css 开发，任何弹性尺寸均使用 rem 单位，rem 默认宽度为 视觉稿宽度 / 16;
+         *              scss 中 $ppr(pixel per rem) 变量写法 -- $ppr: 750px/16/1rem;
+         *                      元素尺寸写法 -- html { font-size: $ppr*1rem; } body { width: 750px/$ppr; }。
+
+         */
+        window.mobileUtil = (function(win, doc) {
+            var UA = navigator.userAgent,
+                    isAndroid = /android|adr/gi.test(UA),
+                    isIos = /iphone|ipod|ipad/gi.test(UA) && !isAndroid, // 据说某些国产机的UA会同时包含 android iphone 字符
+                    isMobile = isAndroid || isIos;  // 粗略的判断
+
+            return {
+                isAndroid: isAndroid,
+                isIos: isIos,
+                isMobile: isMobile,
+
+                isNewsApp: /NewsApp\/[\d\.]+/gi.test(UA),
+                isWeixin: /MicroMessenger/gi.test(UA),
+                isQQ: /QQ\/\d/gi.test(UA),
+                isYixin: /YiXin/gi.test(UA),
+                isWeibo: /Weibo/gi.test(UA),
+                isTXWeibo: /T(?:X|encent)MicroBlog/gi.test(UA),
+
+                tapEvent: isMobile ? 'tap' : 'click',
+
+                /**
+                 * 缩放页面
+                 */
+                fixScreen: function() {
+                    var metaEl = doc.querySelector('meta[name="viewport"]'),
+                            metaCtt = metaEl ? metaEl.content : '',
+                            matchScale = metaCtt.match(/initial\-scale=([\d\.]+)/),
+                            matchWidth = metaCtt.match(/width=([^,\s]+)/);
+
+                    if ( !metaEl ) { // REM
+                        var docEl = doc.documentElement,
+                                maxwidth = docEl.dataset.mw || 750, // 每 dpr 最大页面宽度
+                                dpr = isIos ? Math.min(win.devicePixelRatio, 3) : 1,
+                                scale = 1 / dpr,
+                                tid;
+
+                        docEl.removeAttribute('data-mw');
+                        docEl.dataset.dpr = dpr;
+                        metaEl = doc.createElement('meta');
+                        metaEl.name = 'viewport';
+                        metaEl.content = fillScale(scale);
+                        docEl.firstElementChild.appendChild(metaEl);
+
+                        var refreshRem = function() {
+                            var width = docEl.getBoundingClientRect().width;
+                            if (width / dpr > maxwidth) {
+                                width = maxwidth * dpr;
+                            }
+                            var rem = width / 16;
+                            docEl.style.fontSize = rem + 'px';
+                            if(window.location.href.indexOf('/visualediting/visualEditing.html?veBean.pageInstanceId')>-1){
+                                docEl.style.fontSize = '20px';
+                            }
+                        };
+
+                        win.addEventListener('resize', function() {
+                            clearTimeout(tid);
+                            tid = setTimeout(refreshRem, 300);
+                        }, false);
+                        win.addEventListener('pageshow', function(e) {
+                            if (e.persisted) {
+                                clearTimeout(tid);
+                                tid = setTimeout(refreshRem, 300);
+                            }
+                        }, false);
+
+                        refreshRem();
+                    } else if ( isMobile && !matchScale && ( matchWidth && matchWidth[1] != 'device-width' ) ) { // 定宽
+                        var	width = parseInt(matchWidth[1]),
+                                iw = win.innerWidth || width,
+                                ow = win.outerWidth || iw,
+                                sw = win.screen.width || iw,
+                                saw = win.screen.availWidth || iw,
+                                ih = win.innerHeight || width,
+                                oh = win.outerHeight || ih,
+                                ish = win.screen.height || ih,
+                                sah = win.screen.availHeight || ih,
+                                w = Math.min(iw,ow,sw,saw,ih,oh,ish,sah),
+                                scale = w / width;
+
+                        if ( scale < 1 ) {
+                            metaEl.content = metaCtt + ',' + fillScale(scale);
+                        }
+                    }
+
+                    function fillScale(scale) {
+                        return 'initial-scale=' + scale + ',maximum-scale=' + scale + ',minimum-scale=' + scale;
+                    }
+                },
+
+                /**
+                 * 转href参数成键值对
+                 * @param href {string} 指定的href，默认为当前页href
+                 * @returns {object} 键值对
+                 */
+                getSearch: function(href) {
+                    href = href || win.location.search;
+                    var data = {},reg = new RegExp( "([^?=&]+)(=([^&]*))?", "g" );
+                    href && href.replace(reg,function( $0, $1, $2, $3 ){
+                        data[ $1 ] = $3;
+                    });
+                    return data;
+                }
+            };
+        })(window, document);
+
+        // 默认直接适配页面
+        mobileUtil.fixScreen();
+    </script>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>Черная пятница</title>
+    <link rel="stylesheet" href="../media/style/css/421.css"/>
+</head>
+
+<body>
+<div class="wrapper">
+    <header class="banner">
+        <img src="//img10.360buyimg.com/cms/jfs/t2293/243/2551004951/62823/71dfd59e/57109e91Nb0089fed.jpg" width="100%">
+    </header>
+    <!--s 秒杀楼层-->
+    <section class="wrap-flr" id="flr1">
+        <div class="floor-title">
+            <h2 class="flr-hd-1 flr-hd"><img src="http://img12.360buyimg.com/cms/jfs/t2200/199/2649588048/2963/6098ac0f/5710b0d7Neb268059.png" alt=""/></h2>
+        </div>
+        <div class="floor-bd">
+            <div class="miaosha-tab">
+                <ul class="clearfix">
+                    <li class="cur miaosha-tab-today">
+                        <a href="#nolink" hasclstag="true">
+                            <div class="miaosha-status">
+                                Сегодня
+                            </div>
+                        </a>
+                    </li>
+                    <li class="miaosha-tab-tomorrow">
+                        <a href="#nolink" hasclstag="true">
+                            <div class="miaosha-status">Завтра</div>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="miaosha-tab-ct" id="miaoshaFlr">
+                <div class="miaosha-ct" style="display: block">
+                    <div class="miaosha-detail miaosha-countdown">
+                        <span class="miaosha-detail-text">До старта:</span>
+                        <!-- 秒杀开始后，上述文案需要修改为：До конца: -->
+                        <span class="miaosha-detail-no">56</span>
+                        <span class="miaosha-detail-unit">д.</span>
+                        <span class="miaosha-detail-no">56</span>
+                        <span class="miaosha-detail-unit">ч.</span>
+                        <span class="miaosha-detail-no">56</span>
+                        <span class="miaosha-detail-unit">м.</span>
+                        <span class="miaosha-detail-no">56</span>
+                        <span class="miaosha-detail-unit">с.</span>
+                    </div>
+                    <div class="miaosha-ct-list goods-list">
+                        <!-- 今日秒杀列表：不显示请用行内样式控制 -->
+                        <ul class="clearfix wrap-goods" marketstart="0" marketlength="4"  markettplid="list1Tpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570f9918477b2.js" id="" marketonload="xmlLoad(1);" style="display: block"></ul>
+                    </div>
+                </div>
+                <div class="miaosha-ct">
+                    <div class="miaosha-detail miaosha-countdown">
+                        <span class="miaosha-detail-text">Старт завтра в 10:00</span>
+                    </div>
+                    <div class="miaosha-ct-list goods-list">
+                        <!-- 下期秒杀列表：不显示请用行内样式控制 -->
+                        <ul class="clearfix wrap-goods miaosha-next" marketstart="0" marketlength="4" markettplid="miaoNextTpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570f9e01a83ca.js" id="" marketonload="xmlLoad(1);"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </ul>
+    </section>
+    <!--e 秒杀楼层-->
+    <section class="winphone wrap-flr">
+        <a href="//m.vk.com/jd" hasclstag="true"><img src="http://img12.360buyimg.com/cms/jfs/t2335/6/2685491951/22733/49cfebba/5710dea7N53c1f821.png" alt="" width="100%"/></a>
+    </section>
+    <!-- S 导航 -->
+    <nav class="wrap-menu">
+        <ul class="wrap-menu-list">
+            <li class="wrap-menu-1 active"><a>Смартфоны<span class="icon"></span></a></li>
+            <li class="wrap-menu-2"><a>Цифровая техника<span class="icon"></span></a></li>
+            <li class="wrap-menu-3"><a>Повседневные товары<span class="icon"></span></a></li>
+            <li class="wrap-menu-4"><a>Бытовая    техника<span class="icon"></span></a></li>
+        </ul>
+    </nav>
+    <!-- E 导航 -->
+    <!-- S 商品楼层总集 -->
+    <div class="goods-wrapper">
+        <!--s 常规商品楼层-->
+        <section class="goodsList-block menu-goods-block wrap-flr" id="flr2">
+            <div class="floor-title">
+                <h2 class="flr-hd-2 flr-hd"><img src="//img13.360buyimg.com/cms/jfs/t2875/164/382721381/3093/d48d590d/5710b0d7Nf3b6be24.png" alt=""/></h2>
+            </div>
+            <div class="floor-bd">
+                <ul class="goods-list clearfix"  markettplid="listHot" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570f9fd530ee2.js" id="" marketonload="xmlLoad(1);"></ul>
+            </div>
+            <div class="floor-ft">
+                <a href="//m.jd.ru/channel/smartphone.html" hasclstag="true"><image init_src="//img11.360buyimg.com/cms/jfs/t2242/348/2683669451/12469/7d9e3c7e/5710b0d9N2cb2e108.png"></image></a>
+            </div>
+        </section>
+        <!--e 常规商品楼层-->
+
+        <!--s 常规商品楼层-->
+        <section class="goodsList-block menu-goods-block wrap-flr" id="flr3">
+            <div class="floor-title">
+                <h2 class="flr-hd-3 flr-hd"><img src="//img11.360buyimg.com/cms/jfs/t2785/165/393060968/3458/f219c651/5710b0d8N27cf542f.png" alt=""/></h2>
+            </div>
+            <div class="floor-bd">
+                <ul class="goods-list clearfix"  markettplid="listHot" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570f9febc6780.js" id="" marketonload="xmlLoad(1);"></ul>
+            </div>
+            <div class="floor-ft">
+                <a href="//m.jd.ru/channel/ru/it_digitals.html" hasclstag="true"><image init_src="//img12.360buyimg.com/cms/jfs/t2248/11/2630015311/16476/4cd51ab7/5710b0d9N39fd3086.png"></image></a>
+            </div>
+        </section>
+        <!--e 常规商品楼层-->
+        <!--s 常规商品楼层-->
+        <section class="goodsList-block menu-goods-block wrap-flr" id="flr4">
+            <div class="floor-title">
+                <h2 class="flr-hd-4 flr-hd"><img src="http://img11.360buyimg.com/cms/jfs/t2584/300/405149655/3263/f810b3b8/5710b0d8Nd442e272.png" alt=""/></h2>
+            </div>
+            <div class="floor-bd">
+                <ul class="goods-list clearfix"  markettplid="listHot" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570fa002d5265.js" id="" marketonload="xmlLoad(1);"></ul>
+            </div>
+            <div class="floor-ft">
+                <a href="//esale.jd.ru/m/act/sSc1APimpnL0lhrX.html" hasclstag="true"><image init_src="//img13.360buyimg.com/cms/jfs/t2338/209/2639781208/18872/2207fa82/5710b0d9N0864e134.png"></image></a>
+            </div>
+        </section>
+        <!--e 常规商品楼层-->
+        <!--s 常规商品楼层-->
+        <section class="goodsList-block menu-goods-block wrap-flr" id="flr5">
+            <div class="floor-title">
+                <h2 class="flr-hd-5 flr-hd"><img src="http://img10.360buyimg.com/cms/jfs/t2785/166/363589317/3272/235aaff4/5710b0d8Nb0d7088a.png" alt=""/></h2>
+            </div>
+            <div class="floor-bd">
+                <ul class="goods-list clearfix"  markettplid="listHot" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570fa017ca21e.js" id="" marketonload="xmlLoad(1);"></ul>
+            </div>
+            <div class="floor-ft">
+                <a href="//m.jd.ru/channel/ru/home_appliances.htm" hasclstag="true"><image init_src="//img12.360buyimg.com/cms/jfs/t2818/134/375246043/16923/576ab0eb/5710b0d9N0bbe4a01.png"></image></a>
+            </div>
+        </section>
+        <!--e 常规商品楼层-->
+    </div>
+    <!-- E 商品楼层总集 -->
+
+    <!--s 常规商品楼层-->
+    <section class="goodsList-block shops-block wrap-flr" id="flr6">
+        <div class="floor-title">
+            <h2 class="flr-hd-6 flr-hd"><img src="http://img14.360buyimg.com/cms/jfs/t2833/326/406872613/3108/e9b37f2f/5710b0d8N7e3e03c1.png" alt=""/></h2>
+        </div>
+        <ul id="list6" class="shops-list clearfix" markettplid="listShop" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570cd96db05df.js" marketonload="xmlLoad(1);">
+        </ul>
+    </section>
+    <!--e 常规商品楼层-->
+    <!--s 常规商品楼层-->
+    <section class="goodsList-block shops-block wrap-flr" id="flr7">
+        <div class="floor-title">
+            <h2 class="flr-hd-7 flr-hd"><img src="http://img14.360buyimg.com/cms/jfs/t1855/160/2645613697/4058/f6fec50e/5710b0d8N3a285284.png" alt=""/></h2>
+        </div>
+        <ul id="list7" class="shops-list clearfix" markettplid="listShop" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570cdb07c6af0.js" marketonload="xmlLoad(1);">
+        </ul>
+    </section>
+    <!--e 常规商品楼层-->
+    <!--s 常规商品楼层-->
+    <section class="goodsList-block shops-block wrap-flr" id="flr8">
+        <div class="floor-title">
+            <h2 class="flr-hd-8 flr-hd"><img src="http://img11.360buyimg.com/cms/jfs/t2674/300/399447864/3275/4eb40f75/5710b0d8Nc919f3f0.png" alt=""/></h2>
+        </div>
+        <ul id="list8" class="shops-list clearfix" markettplid="listShop" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570cdb19500c0.js" marketonload="xmlLoad(1);">
+        </ul>
+    </section>
+    <!--e 常规商品楼层-->
+    <!--s 常规商品楼层-->
+    <section class="goodsList-block shops-block wrap-flr" id="flr9">
+        <div class="floor-title">
+            <h2 class="flr-hd-9 flr-hd"><img src="http://img14.360buyimg.com/cms/jfs/t2599/185/394598153/4360/d5273d3c/5710b0d8N0bd30f85.png" alt=""/></h2>
+        </div>
+        <ul id="list9" class="shops-list clearfix" markettplid="listShop" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw1570cdb2557b36.js" marketonload="xmlLoad(1);">
+        </ul>
+    </section>
+    <!--e 常规商品楼层-->
+    <!-- S category -->
+    <section class="wrap-flr category" id="flr10">
+        <ul class="clearfix">
+            <li class="item-1"><a href="//m.jd.ru/search/result/list?catId=3_875062991" hasclstag="true"><span class="round"></span><span class="icon-back icon-back-1"></span><em>СМАРТФОНЫ</em> </a></li>
+            <li class="item-2"><a href="//m.jd.ru//search/result/list?title=%25D0%259F%25D0%25BB%25D0%25B0%25D0%25BD%25D1%2588%25D0%25B5%25D1%2582%25D1%258B&catId=3_875063006" hasclstag="true"><span class="round"></span><span class="icon-back icon-back-2"></span><em>ПЛАНШЕТЫ</em> </a></li>
+            <li class="item-3"><a href="//m.jd.ru/search/result/list?keyword=%D0%91%D1%8B%D1%82%D0%BE%D0%B2%D0%B0%D1%8F+%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0" hasclstag="true"><span class="round"></span><span class="icon-back icon-back-3"></span><em>ТЕХНИКА ДЛЯ КУХНИ</em> </a></li>
+            <li class="item-4"><a href="//m.jd.ru/search/result/list?keyword=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5+%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BA%D0%B8+%D0%B4%D0%BB%D1%8F+%D1%81%D1%82%D1%80%D0%B8%D0%B6%D0%BA%D0%B8+%D0%B2%D0%BE%D0%BB%D0%BE%D1%81" hasclstag="true"><span class="round"></span><span class="icon-back icon-back-4"></span><em>УХОД ЗА ЗДОРОВЬЕМ</em> </a></li>
+            <li class="item-5"><a href="//m.jd.ru/search/result/list?catId=3_875063067" hasclstag="true"><span class="round"></span><span class="icon-back icon-back-5"></span><em>АУДИО И ВИДЕО</em> </a></li>
+            <li class="item-6"><a href="//m.jd.ru/search/result/list?keyword=%D0%96%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B5+%D1%82%D0%BE%D0%BF%D1%8B" hasclstag="true"><span class="round"></span><span class="icon-back icon-back-6"></span><em>ЖЕНСКАЯ ОДЕЖДА</em> </a></li>
+
+        </ul>
+    </section>
+    <!-- E category -->
+
+</div>
+
+
+
+
+<!--end of GTM 埋点  *还有一小段在xiaomi.js中*-->
+<script type="text/javascript">
+    if(window.google_tag_params){
+        dataLayer = [{
+            'google_tag_params': window.google_tag_params
+        }];
+    }
+</script>
+<!-- Google Tag Manager -->
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WFSLVN"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!--end of GTM 埋点-->
+
+<script src="//acen.jd.com/h5/topActivity/media/js/lib/zepto-1.1.6.min.js"></script>
+
+<script type="text/html" id="list1Tpl">
+    {% var t = ((normalPrice - jdPrice)/normalPrice) * 100; %}
+    <li>
+        <a href="http://m.jd.ru/{%= id %}.html" hasclstag="true" class="li-href" spuid="{%= id %}">
+            <div class="j-pic">
+                <img src="{%=image%}">
+            </div>
+            <div class="detail">
+                <p class="title">{%=recommendName%}</p>
+
+                <div class="price">
+                    <span class="j-jd-price dib">${%=jdPrice%}</span>
+                    <span class="j-sku-price dib"><del>${%=normalPrice%}</del></span>
+                </div>
+                <div class="goods-other">
+                    {% if(defined1 != 0){ %}
+                    <span class="jd-own">Коллекция JD </span>
+                    {% } %}
+                    {% if (t>0) { %}
+                    <span class="goods-discount"><em class="goods-discount-no">{%= getParseInt(t) %}</em>% СКИДКА</span>
+                    {% } %}
+                </div>
+                <div class="goods-btn">
+                    <span class="goods-href-btn">Купить &gt;</span>
+                </div>
+            </div>
+        </a>
+        <div class="goods-btn goods-btn-wish pos-abs" spuid="{%= id %}">
+            <a href="#nolink" class="goods-href-wish" hasclstag="true"><i class="icon icon-wish"></i><span class="goods-href-desc">В "мои желания"</span></a>
+            <span class="goods-href-wished"><i class="icon icon-wish"></i><span class="goods-href-desc">В "мои желания"</span></span>
+        </div>
+        <p class="wish-tips">Товар был успешно добавлен в корзину!</p>
+    </li>
+</script>
+<script type="text/html" id="miaoNextTpl">
+    {% var t = ((normalPrice - jdPrice)/normalPrice) * 100; %}
+    <li>
+        <a href="http://m.jd.ru/{%= id %}.html" hasclstag="true" class="li-href" spuid="{%= id %}">
+            <div class="j-pic">
+                <img src="{%=image%}">
+            </div>
+            <div class="detail">
+                <p class="title">{%=recommendName%}</p>
+
+                <div class="price">
+                    <span class="j-jd-price dib">${%=jdPrice%}</span>
+                    <span class="j-sku-price dib"><del>${%=normalPrice%}</del></span>
+                </div>
+                <div class="goods-other">
+                    {% if(defined1 != 0){ %}
+                    <span class="jd-own">Коллекция JD </span>
+                    {% } %}
+                    {% if (t>0) { %}
+                    <span class="goods-discount"><em class="goods-discount-no">{%= getParseInt(t) %}</em>% СКИДКА</span>
+                    {% } %}
+                </div>
+                <div class="goods-btn">
+                    <span class="goods-href-btn">Купить &gt;</span>
+                </div>
+            </div>
+        </a>
+        <div class="goods-btn goods-btn-wish pos-abs" spuid="{%= id %}">
+            <a href="#nolink" class="goods-href-wish" hasclstag="true"><i class="icon icon-wish"></i><span class="goods-href-desc">В "мои желания"</span></a>
+            <span class="goods-href-wished"><i class="icon icon-wish"></i><span class="goods-href-desc">В "мои желания"</span></span>
+        </div>
+        <p class="wish-tips">Товар был успешно добавлен в корзину!</p>
+    </li>
+</script>
+<script type="text/html" id="listShop">
+    <li>
+        <a href="{%=recommendAd%}" class="href-img" hasclstag="true"><image init_src="{%=image%}"></image></a>
+    </li>
+</script>
+
+<script type="text/html" id="listHot">
+    {% var t = ((normalPrice - jdPrice)/normalPrice) * 100; %}
+    <li>
+        <a href="http://m.jd.ru/{%= id %}.html" hasclstag="true" class="li-href" spuid="{%= id %}">
+            <div class="j-pic">
+                <img src="{%=image%}">
+            </div>
+            <div class="details">
+                <p class="title">{%=recommendName%}</p>
+
+                <div class="price">
+                    <span class="j-jd-price dib">${%=jdPrice%}</span>
+                    <span class="j-sku-price dib"><del>${%=normalPrice%}</del></span>
+                </div>
+                <div class="goods-other">
+                    {% if(defined1 != 0){ %}
+                    <span class="jd-own">Коллекция JD </span>
+                    {% } %}
+                    {% if (t>0) { %}
+                    <span class="goods-discount"><em class="goods-discount-no">{%= getParseInt(t) %}</em>% СКИДКА</span>
+                    {% } %}
+                </div>
+            </div>
+        </a>
+    </li>
+</script>
+
+<script src="//acsten.jd.com/static/market-2.0.min.js"></script>
+<script>
+    market.template.helper('getParseInt', function (content) {
+        // 处理字符串...
+        return parseInt(content);
+    });
+</script>
+<script>
+    $(function(){
+        var userPin_email, userPin, login_app;
+//    get user info
+        if(window.activity && window.activity.getLoginUserPin){
+            userPin_email = window.activity.getLoginUserPin();
+            if(!userPin_email == ''){
+                userPin = userPin_email.split('_')[0];
+            }
+            login_app = userPin ? false : true;
+        }
+        //激活ios active状态
+        document.addEventListener("touchstart", function() {},false);
+        /* xmlLoad */
+        window.xmlObj = {
+            total: $('[marketurl]').length,
+            loadedNo:0
+        }
+        window.xmlLoad = function(_flag){
+            if(_flag == 1){
+                xmlObj.loadedNo ++;
+            }
+            if(xmlObj.loadedNo == xmlObj.total){
+                marketRendered(userPin,login_app);
+            }
+        }
+    })
+
+
+    /* 数据源加载完毕执行的code */
+    function marketRendered(userId,login_app){
+        //链接地址拼接埋点
+        $.each($('[hasclstag]'), function (index,item){
+            var spuId = $(item).attr('spuid');
+            $(item).attr({
+                "clstag": "pageclick|keycount|2016Feb_ru_m_fashion_201601272|"+(index+1)
+            })
+        })
+        activityDateJudge(new Date().getDate());
+//心愿单
+        //批量获取加入心愿单人数
+        var wishArray = [],
+                spuids = '',
+                wishList = $('.goods-btn-wish');
+        $.each(Zepto(wishList), function (index, item){
+            wishArray.push($(item).attr('spuid'));
+        });
+        spuids = wishArray.toString().replace(/\,/g, '|');
+        if (userId || login_app ) {
+            //app端处理
+            //批量判断是否存在于加入心愿单中
+            $.ajax({
+                url: '//m.jd.ru/wish/batchQueryExist.do?pin=' + userId + '&wareIds=' + spuids,
+                dataType: 'jsonp',
+                success: function(e){
+                    if(e.success && e.data){
+                        $.each(Zepto(wishList), function (index, item){
+                            var spuid = $(item).attr('spuid');
+                            if(e.data[spuid] == true){
+                                $(item).addClass("goods-btn-wish-used");
+                            }
+                        })
+
+                    }
+                }
+            })
+            //点击加入心愿单
+            $(Zepto(wishList)).click(function(e){
+                e.stopPropagation();
+                if (login_app) {
+                    $(".cover").addClass("active");
+                    setTimeout(function(){
+                        $(".cover").removeClass("active");
+                    },1500);
+                }else{
+                    if ($(this).hasClass("goods-btn-wish-used")) {
+                        var _this = $(this);
+                        _this.next(".wish-tips").addClass("active");
+                        setTimeout(function(){
+                            _this.next(".wish-tips").removeClass("active");
+                        },2500);
+                    }else{
+                        var _this = $(this);
+                        //加入心愿单
+                        var spuid = $(this).attr("spuid");
+                        $.ajax({
+                            url: '//m.jd.ru/wish/add.do?pin=' + userId + '&wareId=' + spuid,
+                            dataType: 'jsonp',
+                            success: function(e){
+                                if(e.success && e.code == 1){
+                                    _this.addClass("goods-btn-wish-used");
+                                }else{
+                                    if(e.code == 403){
+                                        window.location.href = e.redirectLoginUrl;
+                                    }
+                                }
+                            }
+                        })
+
+                        return false;
+                    }
+                }
+            })
+        }else{
+            //m端处理
+            //批量判断是否存在于加入心愿单中
+            $.ajax({
+                url: '//m.jd.ru/wish/batchQueryExist.do?wareIds=' + spuids,
+                dataType: 'jsonp',
+                success: function(e){
+                    if(e.success && e.data){
+                        $.each(Zepto(wishList), function (index, item){
+                            var spuid = $(item).attr('spuid');
+                            if(e.data[spuid] == true){
+                                $(item).addClass("goods-btn-wish-used");
+                            }
+                        })
+                    }
+                }
+            })
+            //点击加入心愿单
+            $(Zepto(wishList)).click(function(e){
+                e.stopPropagation();
+                if ($(this).hasClass("goods-btn-wish-used")) {
+                    var _this = $(this);
+                    _this.next(".wish-tips").addClass("active");
+                    setTimeout(function(){
+                        _this.next(".wish-tips").removeClass("active");
+                    },2500);
+                }else{
+                    var _this = $(this);
+                    var spuid = $(this).attr("spuid");
+                    $.ajax({
+                        url: '//m.jd.ru/wish/add.do?wareId=' + spuid,
+                        dataType: 'jsonp',
+                        success: function(e){
+                            if(e.success && e.code == 1){
+                                _this.addClass("goods-btn-wish-used");
+                            }else{
+                                if(e.code == 403){
+                                    window.location.href = e.redirectLoginUrl;
+                                }
+                            }
+                        }
+                    })
+                }
+                return false;
+            })
+        }
+        var nav3 = {
+            element: $('.wrap-menu'),
+            tabTit: '.wrap-menu-list',
+            content: $('.goods-wrapper'),
+            tItem: '.wrap-menu-list li',
+            type: 'floor',
+            floorTit: $('.goods-wrapper .wrap-flr'),
+            btnMore: $(''),
+            blank: 70
+        }
+        navEle.init(nav3);
+    }
+    //判断当前活动处于哪个阶段：3.18预热，3.21正式
+    function activityDateJudge(_date){
+        if(_date > 13 && _date <21){
+            $('.wrapper').addClass('wrap-pre');
+        }
+        else if(_date >20){
+            $('.wrapper').addClass('wrap-main');
+        }
+    }
+    /* 秒杀tab切换 */
+    $('.miaosha-tab a').click(function(){
+        var _this = this;
+        var tIndex = $('.miaosha-tab a').index($(_this));
+        $('.miaosha-ct').hide();
+        $('.miaosha-ct').eq(tIndex).show();
+        $('.miaosha-tab li').removeClass('cur');
+        $('.miaosha-tab li').eq(tIndex).addClass('cur');
+    })
+    /**
+     ** S 导航
+     **/
+    var navEle = {
+        init: function (ele) {
+            navEle.navfixed(ele);
+            navEle.initPosition(ele);
+        },
+        navfixed: function (ele) {
+            var winEle = $(window),
+                    __start = ele.element.offset().top,
+                    __end = __start + ele.content.height() + $(ele.tabTit).height();
+            __st = winEle.scrollTop();
+
+            winEle.bind('scroll', function () {
+                __start = ele.element.offset().top;
+                __end = __start + ele.content.height() + $(ele.tabTit).height();
+
+                __st = winEle.scrollTop();
+                if (__st >= __start && __st <= __end) {
+                    ele.element.find(ele.tabTit).addClass('fixed');
+                }
+                if (__st > __end || __st < __start) {
+                    ele.element.find(ele.tabTit).removeClass('fixed');
+                }
+
+                navEle.setStatus(ele);
+            })
+            if (ele.type == "tab") {
+                ele.element.find(ele.tItem).click(function () {
+                    winEle.scrollTop(__start - ele.blank);
+                    var _ii = $(this).index();
+                    $(this).addClass('current').siblings().removeClass('current');
+                    ele.element.find(ele.cItem).eq(_ii).addClass('current').siblings().removeClass('current');
+                })
+            } else if (ele.type == "floor") {
+                ele.element.find(ele.tItem).click(function () {
+                    var __ii = $(this).index(),
+                            __jump = ele.floorTit.eq(__ii).offset().top - ele.blank + 5;
+                    winEle.scrollTop(__jump);
+                    $(this).addClass('active').siblings().removeClass('active');
+                    navEle.setScrollPosition(ele, __ii);
+                });
+
+                ele.btnMore.click(function () {
+                    var _txt = $(this).find('.sm-txt'),
+                            _floor = $(this).closest('.floor-block').find('.hideArea');
+                    if ($(this).hasClass('active')) {
+                        $(this).removeClass('active');
+                        _floor.addClass('hide');
+                        _txt.html('подробнее');
+                    } else {
+                        $(this).addClass('active');
+                        _floor.removeClass('hide');
+                        _txt.html('свернуть');
+                    }
+                })
+            }
+        },
+        initPosition: function (ele) {
+            var winEle = $(window),
+                    __start = ele.element.find(ele.tabTit).offset().top,
+                    __end = __start + ele.content.height() + $(ele.tabTit).height();
+            __st = winEle.scrollTop();
+
+            if (__st >= __start && __st <= __end) {
+                ele.element.find(ele.tabTit).addClass('fixed');
+            }
+        },
+        setStatus: function (ele) {
+            var navPosition = new Array(),
+                    floorBlock = ele.floorTit;
+
+            floorBlock.each(function (__n) {
+                var floor_offset = $(this).offset().top - ele.blank;
+                navPosition.push(floor_offset);
+            })
+
+            for (__ii in navPosition) {
+                if (__st > navPosition[__ii]) {
+                    ele.element.find(ele.tItem).eq(__ii).addClass('active').siblings().removeClass('active');
+                    navEle.setScrollPosition(ele, __ii);
+                }
+            }
+        },
+        setScrollPosition: function (ele, __ii) {
+            var winEle = $(window),
+                    __w = ele.element.find(ele.tItem).width(),
+                    __len = ele.element.find(ele.tItem).length,
+                    __ww = winEle.width(),
+                    __totalWidth = __w * __len;
+            __scrollLeft = ele.element.find('ul').scrollLeft();
+
+            if (__ii == 1) {
+                ele.element.find('ul').scrollLeft(0);
+            } else {
+                ele.element.find('ul').scrollLeft(__w * (__ii - 1));
+            }
+        }
+    };
+</script>
+
+
+<!--start of JA埋点-->
+<script type="text/javascript">
+    var jap = {
+        siteId : 'JA2015_161293',
+        topic: 'traffic-hw',
+        account : '',
+        skuid: '',
+        shopid: '',
+        orderid: '',
+        adsCookieName: '',
+        __cookie_jda: '__tra',
+        __cookie_jdb: '__trb',
+        __cookie_jdc: '__trc',
+        __cookie_jdu: '__tru',
+        __cookie_jdv: '__trv'
+    };
+    (function() { var ja = document.createElement('script'); ja.type = 'text/javascript'; ja.async = true;
+        ja.src=('https:'==document.location.protocol?'https://miscssl':'//misc')+ '.360buyimg.com/jdf/1.0.0/unit/ja/1.0.0/ja.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ja,s);
+    })();
+</script>
+<!--end of JA埋点-->
+
+<!--start of GTM 埋点 -->
+<script type="text/javascript">
+    if(window.google_tag_params){
+        dataLayer = [{
+            'google_tag_params': window.google_tag_params
+        }];
+    }
+</script>
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WFSLVN"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>
+    $(function(){
+        /*GTM埋点*/
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WFSLVN');
+    });
+</script>
+<!--end of GTM 埋点-->
+</body>
+</html>

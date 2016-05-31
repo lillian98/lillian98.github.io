@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>Черная пятница</title>
+    <script>
+        /* zoom缩放 */
+        var _w,_zoom,_hd,_resize,_doc=document,_style=_doc.getElementById('_zoom');
+        _style||(_hd=_doc.getElementsByTagName('head')[0],_style=_doc.createElement('style'),_hd.appendChild(_style));
+        _resize = function(){
+            _w = _doc.documentElement.clientWidth||_doc.body.clientWidth;
+            _zoom = _w/640;
+            _style.innerHTML = '.wrapper{zoom:'+_zoom+';-moz-transform:scale('+_zoom+');-moz-transform-origin:top left;-webkit-text-size-adjust:auto !important;}'
+        };
+        _resize();
+        window.addEventListener('resize',_resize,false);
+    </script>
+    <style>
+        html {
+            -webkit-text-size-adjust: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            font-family: Arial, Helvetica;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            font-size: 16px;
+            -webkit-tap-highlight-color: transparent;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body, p, pre, h1, h2, h3, h4, h5, h6, dl, dd, ul, ol, form, input, textarea, th, td, select {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+            text-indent: 0
+        }
+
+        a, button, input, textarea, select {
+            background: none;
+            -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+            outline: none;
+            -webkit-appearance: none
+        }
+
+        em {
+            font-style: normal
+        }
+
+        li {
+            list-style: none
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        img {
+            border: none;
+            vertical-align: top
+        }
+
+        table {
+            border-collapse: collapse
+        }
+
+        textarea {
+            resize: none;
+            overflow: auto
+        }
+
+        .clearfix, .wish-list, .order-list .goods-unit a, .goods-list {
+            zoom: 1
+        }
+
+        .clearfix:after, .wish-list:after, .order-list .goods-unit a:after, .goods-list:after {
+            content: '';
+            display: block;
+            clear: both
+        }
+
+        .boxSiz {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        .toWrap {
+            word-break: break-all;
+            word-wrap: break-word;
+            white-space: pre-wrap
+        }
+
+        .noWrap {
+            white-space: nowrap
+        }
+
+        .noWrapEllipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .text-justify {
+            text-align: justify;
+            text-justify: inter-ideograph
+        }
+
+        .flex-center {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -o-box;
+            display: box;
+            -webkit-box-pack: center;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
+            -o-box-pack: center;
+            box-pack: center;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
+            -o-box-align: center;
+            box-align: center
+        }
+        body{background-color: #f13325;}
+        .wrapper{font-family: Arial;width: 640px;position: relative;}
+        .wrap-menu{width: 600px;height: 55px;background-color: #f25b00;margin: 0 auto 39px;overflow: hidden;font-size: 0;}
+        .wrap-menu-list{display: -webkit-table;display: -moz-table;display: table;height: 100%;}
+        .wrap-menu-list li{display: -webkit-table-cell;display: -moz-table-cell;display: table-cell;vertical-align: middle;position: relative;width: 150px;text-align: center;height: 100%}
+        .wrap-menu a{display: block;font-size: 18px;font-weight: bold;text-decoration: none;color: #fff;width: 100%;height: 100%}
+        .wrap-menu .icon{position: absolute;right: 0px;top:17px;height: 22px;width: 1px;background-color: #ffa401;}
+        .wrap-menu-1,.wrap-menu-2,.wrap-menu-3{padding-top: 17px;}
+        .wrap-menu-3{letter-spacing: -1px;}
+        .wrap-menu-4{padding-top: 4px;}
+        .wrap-menu-list .active{background-color: #ffa401;}
+        .goodsList-block{margin-bottom: 27px;}
+        .floor-title{text-align: center;font-size: 22px;font-weight: bold;color: #fff;background-color: #ffa401;width: 600px;height: 42px;line-height: 42px;margin: 0 auto 10px;}
+        .goods-list{padding: 10px 0 0 10px;width: 590px;margin: 0 auto 0;background-color: #ffa401;}
+        .goods-list li{float: left;width: 284px;margin: 0 10px 10px 0;height: 456px;background-color: #fff;}
+        .goods-list .j-pic{width: 284px;height: 284px;position: relative;}
+        .goods-list .discount{position: absolute;width: 55px;height: 55px;border-radius: 55px;background-color: #ff0000;left: 209px;top: 11px;line-height: 55px;text-align: center;color: #fff;}
+        .goods-list .details{background-color: #f3f3f3;padding: 14px 9px 0 9px;height: 158px;}
+        .goods-list .title{line-height: 24px;font-size: 20px;color: #484848;margin-bottom: 5px;height: 24px;overflow: hidden;text-overflow: ellipsis;}
+        .goods-list .arrival{color: #ea494f;line-height: 24px;font-size: 18px;font-weight: bold;margin-bottom: 7px;height: 24px;display: block;margin-left: -10px;}
+        .goods-list .price{line-height: 28px;margin-bottom: 13px;}
+        .goods-list .j-jd-price{color: #0f0f0f;font-size: 28px;font-weight: bold;display: inline-block;vertical-align: middle;max-width: 50%;overflow: hidden;}
+        .goods-list .j-sku-price{color: #999999;font-size: 16px;display: inline-block;vertical-align: middle;max-width: 50%;overflow: hidden;}
+        .goods-list .btn-buy{background-color: #ffa401;color: #fff;font-size: 18px;font-weight: bold;width: 260px;height: 44px;line-height: 44px;text-align: center;}
+        /* fixed */
+        .menu-list-fix{position: fixed;top:0;width: 600px;height: 55px;background-color: #f25b00;margin: 0 auto;z-index: 22;}
+        /* winphone */
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            .menu-list-fix{
+                position: relative;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrapper">
+    <header class="banner">
+        <img src="http://img13.360buyimg.com/cms/jfs/t2428/339/1627204254/52067/d3a92038/5667acf3N93344f76.jpg" width="640" height="464">
+    </header>
+    <!-- S 导航 -->
+    <nav class="wrap-menu">
+        <ul class="wrap-menu-list">
+            <li class="wrap-menu-1 active"><a href="#flr1">Смартфоны<span class="icon"></span></a></li>
+            <li class="wrap-menu-2"><a href="#flr2">Планшеты<span class="icon"></span></a></li>
+            <li class="wrap-menu-3"><a href="#flr3">Аксессуары<span class="icon"></span></a></li>
+            <li class="wrap-menu-4"><a href="#flr4">Цифровая техника</a></li>
+        </ul>
+    </nav>
+    <!-- E 导航 -->
+
+    <!--s 常规商品楼层-->
+    <section class="goodsList-block" id="flr1">
+        <div class="floor-title">
+            <h2 class="flr-hd-1 flr-hd">Смартфоны</h2>
+        </div>
+        <ul id="list1" class="goods-list" marketstart="0" markettplid="list1Tpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw15666a336b1401.js" marketonload="xmlLoad(1);">
+        </ul>
+    </section>
+    <!--e 常规商品楼层-->
+    <!--s 常规商品楼层-->
+    <section class="goodsList-block" id="flr2">
+        <div class="floor-title">
+            <h2 class="flr-hd-2 flr-hd">Планшеты</h2>
+        </div>
+        <ul id="list2" class="goods-list" marketstart="0" markettplid="list1Tpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw15666a35533e21.js" marketonload="xmlLoad(1);">
+        </ul>
+    </section>
+    <!--e 常规商品楼层-->
+    <!--s 常规商品楼层-->
+    <section class="goodsList-block" id="flr3">
+        <div class="floor-title">
+            <h2 class="flr-hd-3 flr-hd">Аксессуары</h2>
+        </div>
+        <ul id="list3" class="goods-list" marketstart="0" markettplid="list1Tpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw15666a38c42766.js" marketonload="xmlLoad(1);">
+        </ul>
+    </section>
+    <!--e 常规商品楼层-->
+    <!--s 常规商品楼层-->
+    <section class="goodsList-block" id="flr4">
+        <div class="floor-title">
+            <h2 class="flr-hd-4 flr-hd">Цифровая техника</h2>
+        </div>
+        <ul id="list4" class="goods-list" marketstart="0" markettplid="list1Tpl" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw15666a3a746a3d.js" marketonload="xmlLoad(1);">
+        </ul>
+    </section>
+    <!--e 常规商品楼层-->
+    <!-- S back to main -->
+    <a href="http://m.jd.ru/act/new_year.html" class="actbanner" hasclstag="true"><img
+            src="http://img11.360buyimg.com/cms/jfs/t2365/118/1528016625/21329/a3d5fd90/566799b9N13565acb.jpg" alt="" width="640" height="230"/></a>
+    <!-- E back to main -->
+</div>
+<!--s 常规商品楼层模板-->
+<script type="text/html" id="list1Tpl">
+    <li>
+        <a class="goods-link" href="http://m.jd.ru/ware/detail/{#id#}" hasclstag="true" spuid="{#id#}">
+            <div class="j-pic">
+                <img src="{#image#}" width="284" height="284">
+                <span class="discount"><span class="num">{#appPrice#}</span></span>
+            </div>
+            <div class="details">
+                <p class="title">{#recommendName#}</p>
+                <span class="arrival">【{#defined1#}】</span>
+                <p class="price">
+                    <span class="j-jd-price">${#jdPrice#}</span>
+                    <span class="j-sku-price"><del>${#normalPrice#}</del></span>
+                </p>
+                <p class="btn-buy">Купить сейчас</p>
+            </div>
+        </a>
+    </li>
+</script>
+<!--end of 常规商品楼层模板-->
+
+
+
+<!--end of GTM 埋点  *还有一小段在xiaomi.js中*-->
+<script type="text/javascript">
+    if(window.google_tag_params){
+        dataLayer = [{
+            'google_tag_params': window.google_tag_params
+        }];
+    }
+</script>
+<!-- Google Tag Manager -->
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WFSLVN"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!--end of GTM 埋点-->
+
+<script src="http://acen.jd.com/h5/topActivity/media/js/lib/zepto-1.1.6.min.js"></script>
+<script src="http://acsten.jd.com/static/market-1.0.0.min.js"></script>
+<!--<script src="../media/js/new_year.js"></script>-->
+<script>
+    $(function(){
+        //激活ios active状态
+        document.addEventListener("touchstart", function() {},false);
+
+
+        /* xmlLoad */
+        window.xmlObj = {
+            total: $('[marketurl]').length,
+            loadedNo:0
+        }
+        window.xmlLoad = function(_flag){
+            if(_flag == 1){
+                xmlObj.loadedNo ++;
+            }
+            if(xmlObj.loadedNo == xmlObj.total){
+                marketRendered();
+            }
+        }
+    })
+
+
+    /* 数据源加载完毕执行的code */
+    function marketRendered(){
+        var tmpHeight = 0;
+        //楼层高度
+        $('.goodsList-block').each(function(i,k){
+            var row = Math.ceil($(k).find('li').length/2);
+            $(k).css('height',row*466+52);
+            tmpHeight+=row*466+52;
+        })
+        //链接地址拼接
+        function isInApp(){
+            var link = location.href;
+            return link.indexOf('acen')>=0;
+        }
+        if(isInApp()){
+            $.each($('[hasclstag]'), function (index,item){
+                var spuId = $(item).attr('spuid');
+                $(item).attr({
+                    "href": "#",
+                    "oncick": "window.activity.gotoProductDetail('detail', '" + spuId +"')",
+                    "clstag": "pageclick|keycount|2016new_year_ru_app_phone_2015120213|"+(index+1)
+                })
+            })
+        }else{
+            $.each($('[hasclstag]'), function (index,item){
+                $(item).attr('clstag', 'pageclick|keycount|2016new_year_ru_m_phone_201512028|'+(index+1));
+            })
+        };
+        //arrival判断
+        $.each($('.arrival,.jd-collection,.interest-point'), function (index,item){
+            if($.trim($(item).text())=='【】' || $.trim($(item).text())=='【 】'){
+                $(item).css('opacity', '0');
+            }
+        })
+        //tab当前态
+        $.each($('.tab-list li'), function (index,item){
+            $(item).click(function(){
+                $(item).addClass('active')
+                        .siblings().removeClass('active');
+                $('.tab-ctn').scrollLeft(0);
+            })
+        })
+        //优惠券吸顶
+        /*tab吸顶*/
+        var deviceRate = $(window).width()/640;
+        deviceRate = 1;
+        function detecCoupon(){
+            var scrollTop = $(window).scrollTop()*deviceRate,
+                    goodsOffsetTop = ($('.wrap-menu').offset().top+55)*deviceRate;
+            if(navigator.userAgent.toLowerCase().indexOf('windows phone')>=0){
+                $('body').height((tmpHeight+464+55+39+27*4+230)*$(window).width()/640).css({'overflow-y':'hidden'});
+                $('.wrapper').css({'height':(tmpHeight+464+55+39+27*4+230),'overflow':'hidden'});
+                $('.wrap-menu-list li').each(function(i){
+                    $(this).click(function(e){
+                        window.scrollTo(0,$('.goodsList-block').eq(i).offset().top);
+                        e.stopPropagation();
+                        return false;
+                    });
+                });
+            }
+            else{
+                if(scrollTop >= goodsOffsetTop-10){
+                    $('.wrap-menu-list').addClass('menu-list-fix');
+                }else{
+                    $('.wrap-menu-list').removeClass('menu-list-fix');
+                }
+                $('.wrap-menu-list li').each(function(i){
+                    $(this).click(function(e){
+                        i++;
+                        var tId = '#flr'+i;
+                        $(tId)[0].scrollIntoView();
+                        e.stopPropagation();
+                        return false;
+                    });
+                });
+            }
+            $.each($('.goodsList-block'),function(i){
+                var _this = $(this);
+                var floor_top =_this.offset().top;
+                if(floor_top-5 <= scrollTop){
+                    $('.wrap-menu-list li').eq(i).addClass('active').siblings().removeClass('active');
+                }
+            });
+        }
+
+        detecCoupon();
+        $(window).scroll(function(){
+            detecCoupon();
+        }).trigger('scroll')
+    }
+</script>
+
+
+<!--start of JA埋点-->
+<script type="text/javascript">
+    var jap = {
+        siteId : 'JA2015_161293',
+        topic: 'traffic-hw',
+        account : '',
+        skuid: '',
+        shopid: '',
+        orderid: '',
+        adsCookieName: '',
+        __cookie_jda: '__tra',
+        __cookie_jdb: '__trb',
+        __cookie_jdc: '__trc',
+        __cookie_jdu: '__tru',
+        __cookie_jdv: '__trv'
+    };
+    (function() { var ja = document.createElement('script'); ja.type = 'text/javascript'; ja.async = true;
+        ja.src=('https:'==document.location.protocol?'https://miscssl':'http://misc')+ '.360buyimg.com/jdf/1.0.0/unit/ja/1.0.0/ja.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ja,s);
+    })();
+</script>
+<!--end of JA埋点-->
+
+<!--start of GTM 埋点 -->
+<script type="text/javascript">
+    if(window.google_tag_params){
+        dataLayer = [{
+            'google_tag_params': window.google_tag_params
+        }];
+    }
+</script>
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WFSLVN"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>
+    $(function(){
+        /*GTM埋点*/
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WFSLVN');
+    });
+</script>
+<!--end of GTM 埋点-->
+</body>
+</html>
