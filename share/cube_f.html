@@ -1,0 +1,99 @@
+<!doctype>
+        <html>
+<head>
+
+</head>
+<body>
+<style type="text/css">
+        /*--- Container for cube animation ---*/
+    #viewContainer
+    {
+        margin-top: 100px;
+        -webkit-perspective: 1000px;
+        -webkit-perspective-origin: 600px 600px;
+    }
+    #viewContainer1
+    {
+        margin-top: 100px;
+        -webkit-perspective: 1000px;
+        -webkit-perspective-origin: 500px 500px;
+    }
+        /*--- Cube Style ---*/
+    .cube
+    {
+        position: relative;
+        width:150px;
+        height: 150px;
+
+        /* 3D Transforms attributes */
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform-origin: 50% 50%;
+    }
+
+        /* Each cube's face share same attributes */
+    .cube div
+    {
+        position: absolute;
+        width:150px;
+        height: 150px;
+        opacity:.7;
+        -webkit-transform-origin: 50% 50%;
+    }
+
+        /*--- Cube faces color ---*/
+    .facefront
+    {
+        background-color: red;
+        -webkit-transform: translateZ(75px);
+    }
+    .faceback
+    {
+        background-color: blue;
+        -webkit-transform: rotateY(180deg) rotateZ(180deg) translateZ(75px);
+    }
+    .facetop
+    {
+        background-color: green;
+        -webkit-transform: rotateX(90deg) translateZ(75px);
+    }
+    .facebottom
+    {
+        background-color: purple;
+        -webkit-transform: rotateX(-90deg) translateZ(75px);
+    }
+    .faceleft
+    {
+        background-color: black;
+        -webkit-transform: rotateY(90deg) translateZ(75px);
+    }
+    .faceright
+    {
+        background-color: yellow;
+        -webkit-transform: rotateY(-90deg) translateZ(75px);
+    }
+</style>
+<div id="viewContainer">
+    <div class="cube" >
+        <div class="facefront"></div>
+        <div class="faceback">back</div>
+        <div class="faceleft"></div>
+        <div class="faceright"></div>
+        <div class="facetop"></div>
+        <div class="facebottom"></div>
+    </div>
+</div>
+<div id="viewContainer1">
+    <div class="cube" >
+        <div class="facefront"></div>
+        <div class="faceback">back</div>
+        <div class="faceleft"></div>
+        <div class="faceright"></div>
+        <div class="facetop"></div>
+        <div class="facebottom"></div>
+    </div>
+</div>
+<div class="learn-note" style="position: relative;margin-top: 130px">
+    translateZ的值是根据什么来计算的，div的高宽？---tranlateZ是立方体上下高度（正常比例立方体其值为边长/2）
+</div>
+</body>
+        </html>

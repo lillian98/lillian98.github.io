@@ -1,0 +1,231 @@
+<!doctype>
+<html>
+<head>
+    <style type="text/css">
+        #stage div {
+            float: left;
+            margin: 5px;
+            width: 60px;
+            height: 50px;
+            background: #efefef;
+            line-height: 50px;
+            text-align: center;
+            font-size: 28px;
+            -webkit-transition: 0.2s all ease-out;
+            -moz-transition: 0.2s all ease-out;
+            -o-transition: 0.2s all ease-out;
+            -ms-transition: 0.2s all ease-out;
+        }
+        #stage div:hover {
+            background: red;
+            cursor: pointer;
+        }
+        #stage div:nth-child(10n+1) { clear: left; }
+
+        #div1:hover ~ div:nth-child(1n) { background: yellow; }
+        #div2:hover ~ div:nth-child(2n) { background: yellow; }
+        #div3:hover ~ div:nth-child(3n) { background: yellow; }
+        #div4:hover ~ div:nth-child(4n) { background: yellow; }
+        #div5:hover ~ div:nth-child(5n) { background: yellow; }
+        #div6:hover ~ div:nth-child(6n) { background: yellow; }
+        #div7:hover ~ div:nth-child(7n) { background: yellow; }
+        #div8:hover ~ div:nth-child(8n) { background: yellow; }
+        #div9:hover ~ div:nth-child(9n) { background: yellow; }
+        #div10:hover ~ div:nth-child(10n) { background: yellow; }
+        #div11:hover ~ div:nth-child(11n) { background: yellow; }
+        #div12:hover ~ div:nth-child(12n) { background: yellow; }
+        #div13:hover ~ div:nth-child(13n) { background: yellow; }
+        #div14:hover ~ div:nth-child(14n) { background: yellow; }
+        #div15:hover ~ div:nth-child(15n) { background: yellow; }
+        #div16:hover ~ div:nth-child(16n) { background: yellow; }
+        #div17:hover ~ div:nth-child(17n) { background: yellow; }
+        #div18:hover ~ div:nth-child(18n) { background: yellow; }
+        #div19:hover ~ div:nth-child(19n) { background: yellow; }
+        #div20:hover ~ div:nth-child(20n) { background: yellow; }
+        #div21:hover ~ div:nth-child(21n) { background: yellow; }
+        #div22:hover ~ div:nth-child(22n) { background: yellow; }
+        #div23:hover ~ div:nth-child(23n) { background: yellow; }
+        #div24:hover ~ div:nth-child(24n) { background: yellow; }
+        #div25:hover ~ div:nth-child(25n) { background: yellow; }
+        #div26:hover ~ div:nth-child(26n) { background: yellow; }
+        #div27:hover ~ div:nth-child(27n) { background: yellow; }
+        #div28:hover ~ div:nth-child(28n) { background: yellow; }
+        #div29:hover ~ div:nth-child(29n) { background: yellow; }
+        #div30:hover ~ div:nth-child(30n) { background: yellow; }
+        #div31:hover ~ div:nth-child(31n) { background: yellow; }
+        #div32:hover ~ div:nth-child(32n) { background: yellow; }
+        #div33:hover ~ div:nth-child(33n) { background: yellow; }
+        #div34:hover ~ div:nth-child(34n) { background: yellow; }
+        #div35:hover ~ div:nth-child(35n) { background: yellow; }
+        #div36:hover ~ div:nth-child(36n) { background: yellow; }
+        #div37:hover ~ div:nth-child(37n) { background: yellow; }
+        #div38:hover ~ div:nth-child(38n) { background: yellow; }
+        #div39:hover ~ div:nth-child(39n) { background: yellow; }
+        #div40:hover ~ div:nth-child(40n) { background: yellow; }
+        #div41:hover ~ div:nth-child(41n) { background: yellow; }
+        #div42:hover ~ div:nth-child(42n) { background: yellow; }
+        #div43:hover ~ div:nth-child(43n) { background: yellow; }
+        #div44:hover ~ div:nth-child(44n) { background: yellow; }
+        #div45:hover ~ div:nth-child(45n) { background: yellow; }
+        #div46:hover ~ div:nth-child(46n) { background: yellow; }
+        #div47:hover ~ div:nth-child(47n) { background: yellow; }
+        #div48:hover ~ div:nth-child(48n) { background: yellow; }
+        #div49:hover ~ div:nth-child(49n) { background: yellow; }
+        #div50:hover ~ div:nth-child(50n) { background: yellow; }
+        #div51:hover ~ div:nth-child(51n) { background: yellow; }
+        #div52:hover ~ div:nth-child(52n) { background: yellow; }
+        #div53:hover ~ div:nth-child(53n) { background: yellow; }
+        #div54:hover ~ div:nth-child(54n) { background: yellow; }
+        #div55:hover ~ div:nth-child(55n) { background: yellow; }
+        #div56:hover ~ div:nth-child(56n) { background: yellow; }
+        #div57:hover ~ div:nth-child(57n) { background: yellow; }
+        #div58:hover ~ div:nth-child(58n) { background: yellow; }
+        #div59:hover ~ div:nth-child(59n) { background: yellow; }
+        #div60:hover ~ div:nth-child(60n) { background: yellow; }
+        #div61:hover ~ div:nth-child(61n) { background: yellow; }
+        #div62:hover ~ div:nth-child(62n) { background: yellow; }
+        #div63:hover ~ div:nth-child(63n) { background: yellow; }
+        #div64:hover ~ div:nth-child(64n) { background: yellow; }
+        #div65:hover ~ div:nth-child(65n) { background: yellow; }
+        #div66:hover ~ div:nth-child(66n) { background: yellow; }
+        #div67:hover ~ div:nth-child(67n) { background: yellow; }
+        #div68:hover ~ div:nth-child(68n) { background: yellow; }
+        #div69:hover ~ div:nth-child(69n) { background: yellow; }
+        #div70:hover ~ div:nth-child(70n) { background: yellow; }
+        #div71:hover ~ div:nth-child(71n) { background: yellow; }
+        #div72:hover ~ div:nth-child(72n) { background: yellow; }
+        #div73:hover ~ div:nth-child(73n) { background: yellow; }
+        #div74:hover ~ div:nth-child(74n) { background: yellow; }
+        #div75:hover ~ div:nth-child(75n) { background: yellow; }
+        #div76:hover ~ div:nth-child(76n) { background: yellow; }
+        #div77:hover ~ div:nth-child(77n) { background: yellow; }
+        #div78:hover ~ div:nth-child(78n) { background: yellow; }
+        #div79:hover ~ div:nth-child(79n) { background: yellow; }
+        #div80:hover ~ div:nth-child(80n) { background: yellow; }
+        #div81:hover ~ div:nth-child(81n) { background: yellow; }
+        #div82:hover ~ div:nth-child(82n) { background: yellow; }
+        #div83:hover ~ div:nth-child(83n) { background: yellow; }
+        #div84:hover ~ div:nth-child(84n) { background: yellow; }
+        #div85:hover ~ div:nth-child(85n) { background: yellow; }
+        #div86:hover ~ div:nth-child(86n) { background: yellow; }
+        #div87:hover ~ div:nth-child(87n) { background: yellow; }
+        #div88:hover ~ div:nth-child(88n) { background: yellow; }
+        #div89:hover ~ div:nth-child(89n) { background: yellow; }
+        #div90:hover ~ div:nth-child(90n) { background: yellow; }
+        #div91:hover ~ div:nth-child(91n) { background: yellow; }
+        #div92:hover ~ div:nth-child(92n) { background: yellow; }
+        #div93:hover ~ div:nth-child(93n) { background: yellow; }
+        #div94:hover ~ div:nth-child(94n) { background: yellow; }
+        #div95:hover ~ div:nth-child(95n) { background: yellow; }
+        #div96:hover ~ div:nth-child(96n) { background: yellow; }
+        #div97:hover ~ div:nth-child(97n) { background: yellow; }
+        #div98:hover ~ div:nth-child(98n) { background: yellow; }
+        #div99:hover ~ div:nth-child(99n) { background: yellow; }
+        #div100:hover ~ div:nth-child(100n) { background: yellow; }
+    </style>
+</head>
+<body>
+<div id="stage">
+    <div id="div1">1n</div>
+    <div id="div2">2n</div>
+    <div id="div3">3n</div>
+    <div id="div4">4</div>
+    <div id="div5">5</div>
+    <div id="div6">6</div>
+    <div id="div7">7</div>
+    <div id="div8">8</div>
+    <div id="div9">9</div>
+    <div id="div10">10</div>
+    <div id="div11">11</div>
+    <div id="div12">12</div>
+    <div id="div13">13</div>
+    <div id="div14">14</div>
+    <div id="div15">15</div>
+    <div id="div16">16</div>
+    <div id="div17">17</div>
+    <div id="div18">18</div>
+    <div id="div19">19</div>
+    <div id="div20">20</div>
+    <div id="div21">21</div>
+    <div id="div22">22</div>
+    <div id="div23">23</div>
+    <div id="div24">24</div>
+    <div id="div25">25</div>
+    <div id="div26">26</div>
+    <div id="div27">27</div>
+    <div id="div28">28</div>
+    <div id="div29">29</div>
+    <div id="div30">30</div>
+    <div id="div31">31</div>
+    <div id="div32">32</div>
+    <div id="div33">33</div>
+    <div id="div34">34</div>
+    <div id="div35">35</div>
+    <div id="div36">36</div>
+    <div id="div37">37</div>
+    <div id="div38">38</div>
+    <div id="div39">39</div>
+    <div id="div40">40</div>
+    <div id="div41">41</div>
+    <div id="div42">42</div>
+    <div id="div43">43</div>
+    <div id="div44">44</div>
+    <div id="div45">45</div>
+    <div id="div46">46</div>
+    <div id="div47">47</div>
+    <div id="div48">48</div>
+    <div id="div49">49</div>
+    <div id="div50">50</div>
+    <div id="div51">51</div>
+    <div id="div52">52</div>
+    <div id="div53">53</div>
+    <div id="div54">54</div>
+    <div id="div55">55</div>
+    <div id="div56">56</div>
+    <div id="div57">57</div>
+    <div id="div58">58</div>
+    <div id="div59">59</div>
+    <div id="div60">60</div>
+    <div id="div61">61</div>
+    <div id="div62">62</div>
+    <div id="div63">63</div>
+    <div id="div64">64</div>
+    <div id="div65">65</div>
+    <div id="div66">66</div>
+    <div id="div67">67</div>
+    <div id="div68">68</div>
+    <div id="div69">69</div>
+    <div id="div70">70</div>
+    <div id="div71">71</div>
+    <div id="div72">72</div>
+    <div id="div73">73</div>
+    <div id="div74">74</div>
+    <div id="div75">75</div>
+    <div id="div76">76</div>
+    <div id="div77">77</div>
+    <div id="div78">78</div>
+    <div id="div79">79</div>
+    <div id="div80">80</div>
+    <div id="div81">81</div>
+    <div id="div82">82</div>
+    <div id="div83">83</div>
+    <div id="div84">84</div>
+    <div id="div85">85</div>
+    <div id="div86">86</div>
+    <div id="div87">87</div>
+    <div id="div88">88</div>
+    <div id="div89">89</div>
+    <div id="div90">90</div>
+    <div id="div91">91</div>
+    <div id="div92">92</div>
+    <div id="div93">93</div>
+    <div id="div94">94</div>
+    <div id="div95">95</div>
+    <div id="div96">96</div>
+    <div id="div97">97</div>
+    <div id="div98">98</div>
+    <div id="div99">99</div>
+    <div id="div100">100</div>
+</div>
+</body>
+</html>

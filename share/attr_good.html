@@ -1,0 +1,364 @@
+<!doctype>
+<html>
+<head>
+    <style type="text/css">
+        *{padding: 0;margin: 0}
+        body, button, input, select, textarea {
+            font: 12px/1.5 'Lucida Grande',Arial,'\5b8b\4f53';
+        }
+        a {
+            color: #666;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        a,a:hover{text-decoration: none;}
+        .cf{*zoom:1}
+        .cf:after {
+            clear: both;
+            content: ".";
+            display: block;
+            height: 0;
+            visibility: hidden;
+        }
+        .pos-abs {
+            position: absolute;
+        }
+        .long-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        body{background-color: #d6222b;line-height: 1.5}
+        .wrap-floor{width: 985px;margin: 0 auto;}
+        .no-text {
+            line-height: 999em;
+            overflow: hidden;
+        }
+        .mod-hd {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .mod-hd h1 {
+            background-image: url(http://pics3.paipaiimg.com/update/20130710/index_dress_title.png);
+            height: 30px;
+            background-repeat: no-repeat;
+            background-color: #d6222b;
+            background-position: 0 -60px;
+        }
+        .good-wrap ul {
+            position: relative;
+            margin-right: -5px;
+        }
+        .mod-single .good-wrap li {
+            width: 160px;
+            padding: 16px;
+            height: 244px;
+            position: relative;
+            background-color: #FFF;
+            margin: 0 5px 5px 0;
+            float: left;
+
+        }
+        .mod-single .good-wrap .wrap-img {
+            width: 160px;
+            height: 200px;
+            margin-bottom: 9px;
+        }
+        .mod-single .goods-name a {
+            width: 160px;
+            display: inline-block;
+        }
+        .mod-single .goods-price {
+            position: relative;
+        }
+        .mod-single .goods-price-new {
+            color: #e73f3e;
+            font: 16px 微软雅黑;
+        }
+        .mod-single .goods-price-new em {
+            font-size: 20px;
+        }
+        .mod-single .goods-price-market {
+            color: #939292;
+            font: 12px 微软雅黑;
+            text-decoration: line-through;
+            position: absolute;
+            right: 0;
+            top: 6px;
+            _right: 16px;
+        }
+        .mod-single .goods-price-market {
+            color: #939292;
+            font: 12px 微软雅黑;
+        }
+        .mod-single .good-wrap .mask-layer {
+            background: rgba(0,0,0,0.75);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF000000,endColorstr=#BF000000);
+            width: 192px;
+            height: 276px;
+            color: #FFF;
+            font: bold 16px/29px 微软雅黑;
+        }
+        .mod-single .good-wrap .mask-layer a {
+            color: #FFF;
+            text-align: center;
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+        .mod-single .good-wrap .mask-layer span {
+            display: inline-block;
+            width: 86px;
+            height: 29px;
+            background-color: #e52339;
+            margin: 103px auto 0;
+            display: none;
+        }
+        .border-layer, .mask-layer {
+            top: 0;
+            left: -9999px;
+        }
+        mod-single li.on .mask-layer, .mod-single li:hover .mask-layer {
+            left: 0;
+        }
+        .mod-single li[title='trousers']:hover~li[title='trousers'] .mask-layer{
+            left: 0;
+        }
+        .mod-single li[title='leisure']:hover~li[title='leisure'] .mask-layer{
+            left: 0;
+        }
+        .mod-single li[title='longdress']:hover~li[title='longdress'] .mask-layer{
+            left: 0;
+        }
+        .mod-single li[title='qitrousers']:hover~li[title='qitrousers'] .mask-layer{
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="mod-single">
+<div class="good-wrap">
+    <ul class="cf">
+        <li title="trousers">
+            <div class="wrap-img">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffLn3ez_9K_go40oKeH0JzRt0ND6hH98QkmVVXuKdG1hVat1XIuskpl33877_UITjVjmlxouwiQRpk1PzQuGbjy7oMq72M0hGzGSpXrqWpqF60-yqszm40pQgFBNB2dV9W6qYRmJVhJY994-TxWBwzgxjfY1d0hlAx7O6ei1xMOAHi6Idsy2STebUC0eaGxXVTjNcqJlXeyc3f-U8FyhYNtuLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8torYKJzULCeNKCnh9Cc0bdDQ-oR_fEJJlVV7inRtYVXgnw4HrMuVuupkBUw5sZevrl-wTZTqAl7xRKMGGpHkNSLmw-pMtPK4Q7GTInkhzjqd9MnmWnjpLZG8OM_mi8t8x7UzUmSsVbIKx9MQ5gZy1vLQvt-Qf5gCDztvRk21wa75UiZ8LGZAuY8Rj-gcT8c2ksQh3RQ_ECiwWVAOjt5PLdbnpfR_IMbzXpiGhlUOH99ziDnPd0nRl0rUc6EjLLXTsQ2pxqekrILjAiG7uu5o6SqudZ76SlqgYp-3bV_oxtgpgG3pYVuSjuPKYXFzm4h_ODyvTtgpFn6uX7BNlOoCXvFEowYakeQ1IubD6ky08rjE2TfAZXwPbhAb5l-xT5cr&amp;PTAG=33163.2.3" title="团购2013夏季韩版女装蕾丝翻边破洞七分  九分牛仔小脚铅笔裤" target="_blank" style="display: block;width:160px;height:200px;background:url(http://img2.paipaiimg.com/4c6bdecd/item-515C3DF2-718284AA0000000004010000254F4CDF.0.200x200.jpg) no-repeat center center;" class="img-goods"><span class="ico pos-abs">213</span></a>
+            </div>
+            <div class="goods-name">
+                <a class="long-text" href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffLn3ez_9K_go40oKeH0JzRt0ND6hH98QkmVVXuKdG1hVat1XIuskpl33877_UITjVjmlxouwiQRpk1PzQuGbjy7oMq72M0hGzGSpXrqWpqF60-yqszm40pQgFBNB2dV9W6qYRmJVhJY994-TxWBwzgxjfY1d0hlAx7O6ei1xMOAHi6Idsy2STebUC0eaGxXVTjNcqJlXeyc3f-U8FyhYNtuLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8torYKJzULCeNKCnh9Cc0bdDQ-oR_fEJJlVV7inRtYVXgnw4HrMuVuupkBUw5sZevrl-wTZTqAl7xRKMGGpHkNSLmw-pMtPK4Q7GTInkhzjqd9MnmWnjpLZG8OM_mi8t8x7UzUmSsVbIKx9MQ5gZy1vLQvt-Qf5gCDztvRk21wa75UiZ8LGZAuY8Rj-gcT8c2ksQh3RQ_ECiwWVAOjt5PLdbnpfR_IMbzXpiGhlUOH99ziDnPd0nRl0rUc6EjLLXTsQ2pxqekrILjAiG7uu5o6SqudZ76SlqgYp-3bV_oxtgpgG3pYVuSjuPKYXFzm4h_ODyvTtgpFn6uX7BNlOoCXvFEowYakeQ1IubD6ky08rjE2TfAZXwPbhAb5l-xT5cr&amp;PTAG=33163.2.3" target="_blank" title="团购2013夏季韩版女装蕾丝翻边破洞七分  九分牛仔小脚铅笔裤">团购2013夏季韩版女装蕾丝翻边破洞七分  九分牛仔小脚铅笔裤</a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥55</em></span> <span class="goods-price-market"><span>¥268</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffLn3ez_9K_go40oKeH0JzRt0ND6hH98QkmVVXuKdG1hVat1XIuskpl33877_UITjVjmlxouwiQRpk1PzQuGbjy7oMq72M0hGzGSpXrqWpqF60-yqszm40pQgFBNB2dV9W6qYRmJVhJY994-TxWBwzgxjfY1d0hlAx7O6ei1xMOAHi6Idsy2STebUC0eaGxXVTjNcqJlXeyc3f-U8FyhYNtuLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8torYKJzULCeNKCnh9Cc0bdDQ-oR_fEJJlVV7inRtYVXgnw4HrMuVuupkBUw5sZevrl-wTZTqAl7xRKMGGpHkNSLmw-pMtPK4Q7GTInkhzjqd9MnmWnjpLZG8OM_mi8t8x7UzUmSsVbIKx9MQ5gZy1vLQvt-Qf5gCDztvRk21wa75UiZ8LGZAuY8Rj-gcT8c2ksQh3RQ_ECiwWVAOjt5PLdbnpfR_IMbzXpiGhlUOH99ziDnPd0nRl0rUc6EjLLXTsQ2pxqekrILjAiG7uu5o6SqudZ76SlqgYp-3bV_oxtgpgG3pYVuSjuPKYXFzm4h_ODyvTtgpFn6uX7BNlOoCXvFEowYakeQ1IubD6ky08rjE2TfAZXwPbhAb5l-xT5cr&amp;PTAG=33163.2.3" target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+        <li title="leisure">
+            <div class="wrap-img">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffLBq6W4jXARKDzLcvGCt_Ah0ND6hH98Qkkk60XfQ35iX_ZcUNXRa84-nkJxqYPjbN_mlxouwiQRpm_J3ThVKaefnYSmzlEM-WYnGAS2b3Irul6YhoZVDh_fc4g5z3dJ0ZdAykjq3KR_VDbVDIiCRxAP4wIhu7ruaOn2HIy8ipCocCiclSbCm9hA1FdEnrvoaQzpkLKPAlS78CcsFga8Q_pMPOIAUDTieVZBtKCNcZ3pXqt3Wd7mawDDAFJ2d699q6c2PpUyFgFRPCkgX-TQcV7Zr6sww_4HTHL5YAOsEmYVOFR4C-upPg4kFUC4Y6k3-MvZID3ZVuVj_49ewxbfnzuAGgX1A9-EOpVhs5gDasyEGq_LQh687k6QUAt2wfzqu0CmaXK5czbq_2Xf4vfnzOVkPJrUQi9N-HlE9VRrOpNAV_lgA6wSZhU44hczcDG47R4Ucg450wEwgwrONe2h2HVgz2Sckdynh3hFWSzXB93x_Du5lcn-3mcebqUDV9qWYV6oSMIhjU28jUT1VGs6k0BX-WADrBJmFTjiFzNwMbjtHhRyDjnTATCDNuB8fUafUJHaIo6S5wGUf7NYZYEnz5pDgmEMfROEhcjrjHhZpNJRmZxChO3Fn3mvgaHXbUmkIqDL8NxlFEe2BGt-ChrYm8jb&amp;PTAG=33875.1.83 " title="韩版专柜2013夏季新款速立得女装 修身短袖女t恤休闲套装 AC5454" target="_blank" style="display: block;width:160px;height:200px;background:url(http://img6.paipaiimg.com/123d4ba8/item-51C2CA1E-36A4ED0600000000040100002DEF584B.0.200x200.jpg) no-repeat center center;" class="img-goods"><span class="ico pos-abs">299</span></a>
+            </div>
+            <div class="goods-name">
+                <a class="long-text" href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffLBq6W4jXARKDzLcvGCt_Ah0ND6hH98Qkkk60XfQ35iX_ZcUNXRa84-nkJxqYPjbN_mlxouwiQRpm_J3ThVKaefnYSmzlEM-WYnGAS2b3Irul6YhoZVDh_fc4g5z3dJ0ZdAykjq3KR_VDbVDIiCRxAP4wIhu7ruaOn2HIy8ipCocCiclSbCm9hA1FdEnrvoaQzpkLKPAlS78CcsFga8Q_pMPOIAUDTieVZBtKCNcZ3pXqt3Wd7mawDDAFJ2d699q6c2PpUyFgFRPCkgX-TQcV7Zr6sww_4HTHL5YAOsEmYVOFR4C-upPg4kFUC4Y6k3-MvZID3ZVuVj_49ewxbfnzuAGgX1A9-EOpVhs5gDasyEGq_LQh687k6QUAt2wfzqu0CmaXK5czbq_2Xf4vfnzOVkPJrUQi9N-HlE9VRrOpNAV_lgA6wSZhU44hczcDG47R4Ucg450wEwgwrONe2h2HVgz2Sckdynh3hFWSzXB93x_Du5lcn-3mcebqUDV9qWYV6oSMIhjU28jUT1VGs6k0BX-WADrBJmFTjiFzNwMbjtHhRyDjnTATCDNuB8fUafUJHaIo6S5wGUf7NYZYEnz5pDgmEMfROEhcjrjHhZpNJRmZxChO3Fn3mvgaHXbUmkIqDL8NxlFEe2BGt-ChrYm8jb&amp;PTAG=33875.1.83 " target="_blank" title="韩版专柜2013夏季新款速立得女装 修身短袖女t恤休闲套装 AC5454">韩版专柜2013夏季新款速立得女装 修身短袖女t恤休闲套装 AC5454</a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥99</em></span> <span class="goods-price-market"><span>¥398</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffLBq6W4jXARKDzLcvGCt_Ah0ND6hH98Qkkk60XfQ35iX_ZcUNXRa84-nkJxqYPjbN_mlxouwiQRpm_J3ThVKaefnYSmzlEM-WYnGAS2b3Irul6YhoZVDh_fc4g5z3dJ0ZdAykjq3KR_VDbVDIiCRxAP4wIhu7ruaOn2HIy8ipCocCiclSbCm9hA1FdEnrvoaQzpkLKPAlS78CcsFga8Q_pMPOIAUDTieVZBtKCNcZ3pXqt3Wd7mawDDAFJ2d699q6c2PpUyFgFRPCkgX-TQcV7Zr6sww_4HTHL5YAOsEmYVOFR4C-upPg4kFUC4Y6k3-MvZID3ZVuVj_49ewxbfnzuAGgX1A9-EOpVhs5gDasyEGq_LQh687k6QUAt2wfzqu0CmaXK5czbq_2Xf4vfnzOVkPJrUQi9N-HlE9VRrOpNAV_lgA6wSZhU44hczcDG47R4Ucg450wEwgwrONe2h2HVgz2Sckdynh3hFWSzXB93x_Du5lcn-3mcebqUDV9qWYV6oSMIhjU28jUT1VGs6k0BX-WADrBJmFTjiFzNwMbjtHhRyDjnTATCDNuB8fUafUJHaIo6S5wGUf7NYZYEnz5pDgmEMfROEhcjrjHhZpNJRmZxChO3Fn3mvgaHXbUmkIqDL8NxlFEe2BGt-ChrYm8jb&amp;PTAG=33875.1.83 " target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+        <li title="longdress">
+            <div class="wrap-img">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffJmd0jQMHXiV-7M7wBMzeWx0ND6hH98QkmBURH8TQBHv6YeJL7UdlISG30r-6c0MsHmlxouwiQRpqWRX6lcc7oYlB9CT2ghCSjoPEtvd8X8M0-yqszm40pQgFBNB2dV9W4t7jN7jUGjqY3dOlwDWd_WjfY1d0hlAx6MlIXK2qwFwB_bD9Q-KhGwqy8oJZYjJnhYM-GWiqMQzSFMSQu___nFLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8iN5tQ1pVuT7uzO8ATM3lsdDQ-oR_fEJJgVER_E0AR7-eMM9YEzFX_3K59_s65OoHuN_xNti3vF1OFGJVQWUqz2NiuAPpxLaHErpaRzAMRYeOgkPRlNiId-KjNa60Axn8MUa874mhp9bF_FqACyA4fexopG8RU2hGyNxEiRI67d1n6cb2qu1dFUPgyJI7P8nIDFE4IunPdv9siN2p_MfIPUdl9yc-T2VkHH6H0NSqos0IwSZf9-sbPdlobTZgBqZsXlhgEJj6rSMPO29GTbXBrlaf73S7DtMDr7oCAfrm0Le3NEGUKnCPdrFcCVaj1QNYhMoALzKaEECNZZCMxVeu41KKcGVmp8RW8jR-rbMF_Y9xFrmv6GeS2-I12N0jlYa7&amp;PTAG=33875.1.80 " title="韩国夏季女装仙女飘逸雪纺半身长裙糖果色百褶半身裙女 5色送腰带" target="_blank" style="display: block;width:160px;height:200px;background:url(http://img5.paipaiimg.com/52037402/item-51A63395-C8D7314800000000040100002C60EF73.0.200x200.jpg) no-repeat center center;" class="img-goods"><span class="ico pos-abs">163</span></a>
+            </div>
+            <div class="goods-name">
+                <a class="long-text" href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffJmd0jQMHXiV-7M7wBMzeWx0ND6hH98QkmBURH8TQBHv6YeJL7UdlISG30r-6c0MsHmlxouwiQRpqWRX6lcc7oYlB9CT2ghCSjoPEtvd8X8M0-yqszm40pQgFBNB2dV9W4t7jN7jUGjqY3dOlwDWd_WjfY1d0hlAx6MlIXK2qwFwB_bD9Q-KhGwqy8oJZYjJnhYM-GWiqMQzSFMSQu___nFLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8iN5tQ1pVuT7uzO8ATM3lsdDQ-oR_fEJJgVER_E0AR7-eMM9YEzFX_3K59_s65OoHuN_xNti3vF1OFGJVQWUqz2NiuAPpxLaHErpaRzAMRYeOgkPRlNiId-KjNa60Axn8MUa874mhp9bF_FqACyA4fexopG8RU2hGyNxEiRI67d1n6cb2qu1dFUPgyJI7P8nIDFE4IunPdv9siN2p_MfIPUdl9yc-T2VkHH6H0NSqos0IwSZf9-sbPdlobTZgBqZsXlhgEJj6rSMPO29GTbXBrlaf73S7DtMDr7oCAfrm0Le3NEGUKnCPdrFcCVaj1QNYhMoALzKaEECNZZCMxVeu41KKcGVmp8RW8jR-rbMF_Y9xFrmv6GeS2-I12N0jlYa7&amp;PTAG=33875.1.80 " target="_blank" title="韩国夏季女装仙女飘逸雪纺半身长裙糖果色百褶半身裙女 5色送腰带">韩国夏季女装仙女飘逸雪纺半身长裙糖果色百褶半身裙女 5色送腰带</a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥56</em></span> <span class="goods-price-market"><span>¥219</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffJmd0jQMHXiV-7M7wBMzeWx0ND6hH98QkmBURH8TQBHv6YeJL7UdlISG30r-6c0MsHmlxouwiQRpqWRX6lcc7oYlB9CT2ghCSjoPEtvd8X8M0-yqszm40pQgFBNB2dV9W4t7jN7jUGjqY3dOlwDWd_WjfY1d0hlAx6MlIXK2qwFwB_bD9Q-KhGwqy8oJZYjJnhYM-GWiqMQzSFMSQu___nFLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8iN5tQ1pVuT7uzO8ATM3lsdDQ-oR_fEJJgVER_E0AR7-eMM9YEzFX_3K59_s65OoHuN_xNti3vF1OFGJVQWUqz2NiuAPpxLaHErpaRzAMRYeOgkPRlNiId-KjNa60Axn8MUa874mhp9bF_FqACyA4fexopG8RU2hGyNxEiRI67d1n6cb2qu1dFUPgyJI7P8nIDFE4IunPdv9siN2p_MfIPUdl9yc-T2VkHH6H0NSqos0IwSZf9-sbPdlobTZgBqZsXlhgEJj6rSMPO29GTbXBrlaf73S7DtMDr7oCAfrm0Le3NEGUKnCPdrFcCVaj1QNYhMoALzKaEECNZZCMxVeu41KKcGVmp8RW8jR-rbMF_Y9xFrmv6GeS2-I12N0jlYa7&amp;PTAG=33875.1.80 " target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+        <li title="qitrousers">
+            <div class="wrap-img">
+                <a href="" title="8837夏季韩版女装 大码修身七分裤休闲运动套装 清仓支持货到付款" target="_blank" style="display: block;width:160px;height:200px;background:url(http://img7.paipaiimg.com/47359917/item-517C914F-9B1DBBA7000000000401000028EB29D3.0.200x200.jpg) no-repeat center center;" class="img-goods"><span class="ico pos-abs">316</span></a>
+            </div>
+            <div class="goods-name">
+                <a class="long-text" href="" target="_blank" title="8837夏季韩版女装 大码修身七分裤休闲运动套装 清仓支持货到付款">8837夏季韩版女装 大码修身七分裤休闲运动套装 清仓支持货到付款</a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥72</em></span> <span class="goods-price-market"><span>¥388</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="" target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+
+        <li title="trousers">
+            <div class="wrap-img">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffJncoJNMH88ovlgA6wSZhU40ND6hH98Qkkle9ku1QRRucmJVFncfaKkqgFwSEfwfW3mlxouwiQRpk1PzQuGbjy7oMq72M0hGzGSpXrqWpqF60-yqszm40pQgFBNB2dV9W74aCaS_HHgv7A3HAaTTf8jjfY1d0hlAx5Fi7ZJvvBCB8kunjNYEka4UC0eaGxXVTjNcqJlXeyc3f-U8FyhYNtuLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8btzlovpcyB75YAOsEmYVONDQ-oR_fEJJJXvZLtUEUbnnXr1SArdWxoxN4VwzlXJJrl-wTZTqAl7xRKMGGpHkNSLmw-pMtPK4_m8r3Gdyk321L22Ha0GGnZG8OM_mi8t8x7UzUmSsVbIy4m-Br7of6Hd7t4eXErVeDztvRk21wa56Ag0RhtJCnPujQNK4QdgOksQh3RQ_ECiwWVAOjt5PLdbnpfR_IMbzXpiGhlUOH99ziDnPd0nRlwH0e_KZuo3bWHbbeTRHXb_jAiG7uu5o6T9rgVf7suGJ4rbX0iNgo3YpgG3pYVuSjuPKYXFzm4h_ODyvTtgpFn6uX7BNlOoCXvFEowYakeQ1IubD6ky08rjE2TfAZXwPbhAb5l-xT5cr&amp;PTAG=33163.2.3" title="包邮2013春季新款哈伦裤秋新款韩版潮休闲长裤　哈伦小脚裤 " target="_blank" style="display: block;width:160px;height:200px;background:url(http://img3.paipaiimg.com/e647a5e6/item-51432D13-041CA9A0000000000401000015AF8B2C.0.200x200.jpg) no-repeat center center;" class="img-goods"><span class="ico pos-abs">239</span></a>
+            </div>
+            <div class="goods-name">
+                <a class="long-text" href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffJncoJNMH88ovlgA6wSZhU40ND6hH98Qkkle9ku1QRRucmJVFncfaKkqgFwSEfwfW3mlxouwiQRpk1PzQuGbjy7oMq72M0hGzGSpXrqWpqF60-yqszm40pQgFBNB2dV9W74aCaS_HHgv7A3HAaTTf8jjfY1d0hlAx5Fi7ZJvvBCB8kunjNYEka4UC0eaGxXVTjNcqJlXeyc3f-U8FyhYNtuLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8btzlovpcyB75YAOsEmYVONDQ-oR_fEJJJXvZLtUEUbnnXr1SArdWxoxN4VwzlXJJrl-wTZTqAl7xRKMGGpHkNSLmw-pMtPK4_m8r3Gdyk321L22Ha0GGnZG8OM_mi8t8x7UzUmSsVbIy4m-Br7of6Hd7t4eXErVeDztvRk21wa56Ag0RhtJCnPujQNK4QdgOksQh3RQ_ECiwWVAOjt5PLdbnpfR_IMbzXpiGhlUOH99ziDnPd0nRlwH0e_KZuo3bWHbbeTRHXb_jAiG7uu5o6T9rgVf7suGJ4rbX0iNgo3YpgG3pYVuSjuPKYXFzm4h_ODyvTtgpFn6uX7BNlOoCXvFEowYakeQ1IubD6ky08rjE2TfAZXwPbhAb5l-xT5cr&amp;PTAG=33163.2.3" target="_blank" title="包邮2013春季新款哈伦裤秋新款韩版潮休闲长裤　哈伦小脚裤 ">包邮2013春季新款哈伦裤秋新款韩版潮休闲长裤　哈伦小脚裤 </a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥49</em></span> <span class="goods-price-market"><span>¥288</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffJncoJNMH88ovlgA6wSZhU40ND6hH98Qkkle9ku1QRRucmJVFncfaKkqgFwSEfwfW3mlxouwiQRpk1PzQuGbjy7oMq72M0hGzGSpXrqWpqF60-yqszm40pQgFBNB2dV9W74aCaS_HHgv7A3HAaTTf8jjfY1d0hlAx5Fi7ZJvvBCB8kunjNYEka4UC0eaGxXVTjNcqJlXeyc3f-U8FyhYNtuLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8btzlovpcyB75YAOsEmYVONDQ-oR_fEJJJXvZLtUEUbnnXr1SArdWxoxN4VwzlXJJrl-wTZTqAl7xRKMGGpHkNSLmw-pMtPK4_m8r3Gdyk321L22Ha0GGnZG8OM_mi8t8x7UzUmSsVbIy4m-Br7of6Hd7t4eXErVeDztvRk21wa56Ag0RhtJCnPujQNK4QdgOksQh3RQ_ECiwWVAOjt5PLdbnpfR_IMbzXpiGhlUOH99ziDnPd0nRlwH0e_KZuo3bWHbbeTRHXb_jAiG7uu5o6T9rgVf7suGJ4rbX0iNgo3YpgG3pYVuSjuPKYXFzm4h_ODyvTtgpFn6uX7BNlOoCXvFEowYakeQ1IubD6ky08rjE2TfAZXwPbhAb5l-xT5cr&amp;PTAG=33163.2.3" target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+        <li title="qitrousers">
+            <div class="wrap-img">
+                <a href="" target="_blank" title="2013春夏女裤新款 韩版女七分裤小脚裤铅笔裤 女 修身">2013春夏女裤新款 韩版女七分裤小脚裤铅笔裤 女 修身</a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥78</em></span> <span class="goods-price-market"><span>¥228</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="" target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+    <!--长裙-->
+        <li title="longdress">
+            <div class="wrap-img">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffJglVNIKSIYD44gUeNv7Lyj0ND6hH98QkncMtBU8kbWGNqnW5d5Pg61IlFSIpQqsAvmlxouwiQRpqWRX6lcc7oYlB9CT2ghCSjoPEtvd8X8M0-yqszm40pQgFBNB2dV9W5OJ9ZzNfrXNWdeFyTuwe_BjfY1d0hlAx5tMICpgJAL_wyUEXrAwaToqy8oJZYjJnhYM-GWiqMQzSFMSQu___nFLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp82ITmT3Th1CGOIFHjb-y8o9DQ-oR_fEJJ3DLQVPJG1hgvCScvx6KgEuWYH4J0ZRqWuN_xNti3vF1OFGJVQWUqz2NiuAPpxLaHELXQQrNi5AWOgkPRlNiId-KjNa60Axn8MUa874mhp9bKLfjaMXekDKiGCRPyejALyNxEiRI67d0KqTdX_y_sfr4lnnWpKsvUDFE4IunPdv9siN2p_MfIPUdl9yc-T2VkHH6H0NSqos0IwSZf9-sbPfrsXSdMoQs0cnk3Qk8pwLsPO29GTbXBrgk2_cFnyMuMrJ4_kBPPQnq3NEGUKnCPdrFcCVaj1QNYhMoALzKaEECNZZCMxVeu41KKcGVmp8RW8jR-rbMF_Y9xFrmv6GeS2-PLCTv8Znn5&amp;PTAG=33875.1.80 " title="蝶域女装 2013夏季女装新款韩版修身雪纺连衣裙 裙子波西米亚长裙" target="_blank" style="display: block;width:160px;height:200px;background:url(http://img0.paipaiimg.com/014bdcc5/item-51E8E568-2B2C272C0000000004010000299B90A5.0.200x200.jpg) no-repeat center center;" class="img-goods"><span class="ico pos-abs">172</span></a>
+            </div>
+            <div class="goods-name">
+                <a class="long-text" href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffJglVNIKSIYD44gUeNv7Lyj0ND6hH98QkncMtBU8kbWGNqnW5d5Pg61IlFSIpQqsAvmlxouwiQRpqWRX6lcc7oYlB9CT2ghCSjoPEtvd8X8M0-yqszm40pQgFBNB2dV9W5OJ9ZzNfrXNWdeFyTuwe_BjfY1d0hlAx5tMICpgJAL_wyUEXrAwaToqy8oJZYjJnhYM-GWiqMQzSFMSQu___nFLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp82ITmT3Th1CGOIFHjb-y8o9DQ-oR_fEJJ3DLQVPJG1hgvCScvx6KgEuWYH4J0ZRqWuN_xNti3vF1OFGJVQWUqz2NiuAPpxLaHELXQQrNi5AWOgkPRlNiId-KjNa60Axn8MUa874mhp9bKLfjaMXekDKiGCRPyejALyNxEiRI67d0KqTdX_y_sfr4lnnWpKsvUDFE4IunPdv9siN2p_MfIPUdl9yc-T2VkHH6H0NSqos0IwSZf9-sbPfrsXSdMoQs0cnk3Qk8pwLsPO29GTbXBrgk2_cFnyMuMrJ4_kBPPQnq3NEGUKnCPdrFcCVaj1QNYhMoALzKaEECNZZCMxVeu41KKcGVmp8RW8jR-rbMF_Y9xFrmv6GeS2-PLCTv8Znn5&amp;PTAG=33875.1.80 " target="_blank" title="蝶域女装 2013夏季女装新款韩版修身雪纺连衣裙 裙子波西米亚长裙">蝶域女装 2013夏季女装新款韩版修身雪纺连衣裙 裙子波西米亚长裙</a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥88</em></span> <span class="goods-price-market"><span>¥260</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffJglVNIKSIYD44gUeNv7Lyj0ND6hH98QkncMtBU8kbWGNqnW5d5Pg61IlFSIpQqsAvmlxouwiQRpqWRX6lcc7oYlB9CT2ghCSjoPEtvd8X8M0-yqszm40pQgFBNB2dV9W5OJ9ZzNfrXNWdeFyTuwe_BjfY1d0hlAx5tMICpgJAL_wyUEXrAwaToqy8oJZYjJnhYM-GWiqMQzSFMSQu___nFLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp82ITmT3Th1CGOIFHjb-y8o9DQ-oR_fEJJ3DLQVPJG1hgvCScvx6KgEuWYH4J0ZRqWuN_xNti3vF1OFGJVQWUqz2NiuAPpxLaHELXQQrNi5AWOgkPRlNiId-KjNa60Axn8MUa874mhp9bKLfjaMXekDKiGCRPyejALyNxEiRI67d0KqTdX_y_sfr4lnnWpKsvUDFE4IunPdv9siN2p_MfIPUdl9yc-T2VkHH6H0NSqos0IwSZf9-sbPfrsXSdMoQs0cnk3Qk8pwLsPO29GTbXBrgk2_cFnyMuMrJ4_kBPPQnq3NEGUKnCPdrFcCVaj1QNYhMoALzKaEECNZZCMxVeu41KKcGVmp8RW8jR-rbMF_Y9xFrmv6GeS2-PLCTv8Znn5&amp;PTAG=33875.1.80 " target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+        <li title="leisure">
+            <div class="wrap-img">
+                <a href="" title="包邮 2013夏季新款韩版女装 时尚女士短袖7分裤休闲套装运动服" target="_blank" style="display: block;width:160px;height:200px;background:url(http://img4.paipaiimg.com/ba28790c/item-51C885A4-2FCF410A00000000040100002E203AF1.0.200x200.jpg) no-repeat center center;" class="img-goods"><span class="ico pos-abs">204</span></a>
+            </div>
+            <div class="goods-name">
+                <a class="long-text" href="" target="_blank" title="包邮 2013夏季新款韩版女装 时尚女士短袖7分裤休闲套装运动服">包邮 2013夏季新款韩版女装 时尚女士短袖7分裤休闲套装运动服</a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥94</em></span> <span class="goods-price-market"><span>¥298</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="" target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+
+        <li title="longdress">
+            <div class="wrap-img">
+                <a href="" title="2013夏装新款女装 蕾丝雪纺百褶长裙连衣裙 夏季韩版裙子 " target="_blank" style="display: block;width:160px;height:200px;background:url(http://img0.paipaiimg.com/76174f93/item-51971048-59C8C572000000000401000025D5826F.0.200x200.jpg) no-repeat center center;" class="img-goods"><span class="ico pos-abs">350</span></a>
+            </div>
+            <div class="goods-name">
+                <a class="long-text" href="" target="_blank" title="2013夏装新款女装 蕾丝雪纺百褶长裙连衣裙 夏季韩版裙子 ">2013夏装新款女装 蕾丝雪纺百褶长裙连衣裙 夏季韩版裙子 </a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥139</em></span> <span class="goods-price-market"><span>¥489</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="" target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+        <li title="trousers">
+            <div class="wrap-img">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffKeuPuwdeL2JkZEY2q2gtG80ND6hH98QknvggBSMzsbAD0RQIC1pWOqPNOodrAQMVzmlxouwiQRpk1PzQuGbjy7oMq72M0hGzGSpXrqWpqF60-yqszm40pQgFBNB2dV9W5iM7GzlUA8AIUXO6DvG8nojfY1d0hlAx48j2PC2u4vJwyhUNmJN33iUC0eaGxXVTjNcqJlXeyc3f-U8FyhYNtuLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8ndbHK5BKpyRGRGNqtoLRvNDQ-oR_fEJJ74IAUjM7GwCmKlXP-abfZkLqizNa8UScrl-wTZTqAl7xRKMGGpHkNSLmw-pMtPK4iogYztRJbPcB07yvbj3Aj5G8OM_mi8t8x7UzUmSsVbJp2shg4RBL1CkYCAWHU2aeDztvRk21wa62cZ9aKvNh3PEYST2jFl78ksQh3RQ_ECiwWVAOjt5PLdbnpfR_IMbzXpiGhlUOH99ziDnPd0nRlzPBsE7mEhvf5HV8_g9RbMHjAiG7uu5o6UjaJEihJlggXE-MJ0V8qVopgG3pYVuSjuPKYXFzm4h_ODyvTtgpFn6uX7BNlOoCXvFEowYakeQ1IubD6ky08rjE2TfAZXwPbhAb5l-xT5cr&amp;PTAG=33163.2.3" title="2013夏装新款韩版女装 热裤卷边宽松大码欧美高腰短裤 热裤" target="_blank" style="display: block;width:160px;height:200px;background:url(http://img0.paipaiimg.com/ce663a3f/item-517ACFB8-BA59F632000000000401000028CF6DEA.0.200x200.jpg) no-repeat center center;" class="img-goods"><span class="ico pos-abs">219</span></a>
+            </div>
+            <div class="goods-name">
+                <a class="long-text" href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffKeuPuwdeL2JkZEY2q2gtG80ND6hH98QknvggBSMzsbAD0RQIC1pWOqPNOodrAQMVzmlxouwiQRpk1PzQuGbjy7oMq72M0hGzGSpXrqWpqF60-yqszm40pQgFBNB2dV9W5iM7GzlUA8AIUXO6DvG8nojfY1d0hlAx48j2PC2u4vJwyhUNmJN33iUC0eaGxXVTjNcqJlXeyc3f-U8FyhYNtuLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8ndbHK5BKpyRGRGNqtoLRvNDQ-oR_fEJJ74IAUjM7GwCmKlXP-abfZkLqizNa8UScrl-wTZTqAl7xRKMGGpHkNSLmw-pMtPK4iogYztRJbPcB07yvbj3Aj5G8OM_mi8t8x7UzUmSsVbJp2shg4RBL1CkYCAWHU2aeDztvRk21wa62cZ9aKvNh3PEYST2jFl78ksQh3RQ_ECiwWVAOjt5PLdbnpfR_IMbzXpiGhlUOH99ziDnPd0nRlzPBsE7mEhvf5HV8_g9RbMHjAiG7uu5o6UjaJEihJlggXE-MJ0V8qVopgG3pYVuSjuPKYXFzm4h_ODyvTtgpFn6uX7BNlOoCXvFEowYakeQ1IubD6ky08rjE2TfAZXwPbhAb5l-xT5cr&amp;PTAG=33163.2.3" target="_blank" title="2013夏装新款韩版女装 热裤卷边宽松大码欧美高腰短裤 热裤">2013夏装新款韩版女装 热裤卷边宽松大码欧美高腰短裤 热裤</a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥40</em></span> <span class="goods-price-market"><span>¥259</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffKeuPuwdeL2JkZEY2q2gtG80ND6hH98QknvggBSMzsbAD0RQIC1pWOqPNOodrAQMVzmlxouwiQRpk1PzQuGbjy7oMq72M0hGzGSpXrqWpqF60-yqszm40pQgFBNB2dV9W5iM7GzlUA8AIUXO6DvG8nojfY1d0hlAx48j2PC2u4vJwyhUNmJN33iUC0eaGxXVTjNcqJlXeyc3f-U8FyhYNtuLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8ndbHK5BKpyRGRGNqtoLRvNDQ-oR_fEJJ74IAUjM7GwCmKlXP-abfZkLqizNa8UScrl-wTZTqAl7xRKMGGpHkNSLmw-pMtPK4iogYztRJbPcB07yvbj3Aj5G8OM_mi8t8x7UzUmSsVbJp2shg4RBL1CkYCAWHU2aeDztvRk21wa62cZ9aKvNh3PEYST2jFl78ksQh3RQ_ECiwWVAOjt5PLdbnpfR_IMbzXpiGhlUOH99ziDnPd0nRlzPBsE7mEhvf5HV8_g9RbMHjAiG7uu5o6UjaJEihJlggXE-MJ0V8qVopgG3pYVuSjuPKYXFzm4h_ODyvTtgpFn6uX7BNlOoCXvFEowYakeQ1IubD6ky08rjE2TfAZXwPbhAb5l-xT5cr&amp;PTAG=33163.2.3" target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+        <!--七分裤-->
+        <li title="qitrousers">
+            <div class="wrap-img">
+                <a href="" title="2013 夏装 时尚修身显瘦格纹翻边松紧腰七分裤" target="_blank" style="display: block;width:160px;height:200px;background:url(http://img5.paipaiimg.com/d010f514/item-51946D65-CD6BF63200000000040100002A918612.0.200x200.jpg) no-repeat center center;" class="img-goods"><span class="ico pos-abs">132</span></a>
+            </div>
+            <div class="goods-name">
+                <a class="long-text" href="" target="_blank" title="2013 夏装 时尚修身显瘦格纹翻边松紧腰七分裤">2013 夏装 时尚修身显瘦格纹翻边松紧腰七分裤</a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥36</em></span> <span class="goods-price-market"><span>¥168</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="" target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+        <li title="longdress">
+            <div class="wrap-img">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffJOei4HnLacy0tmTPHGKp9b0ND6hH98Qkk14sd71q0Oo92HjgUIgcdrFfyMo8OJ8hPmlxouwiQRpqWRX6lcc7oYlB9CT2ghCSjoPEtvd8X8M0-yqszm40pQgFBNB2dV9W5E48H25qNk2iHpd2G62idfjfY1d0hlAx68JRTi0rynIGuaXqPKidVfqy8oJZYjJnhYM-GWiqMQzSFMSQu___nFLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8ZFOYJT64Q61LZkzxxiqfW9DQ-oR_fEJJNeLHe9atDqPDYdNZTqhoYsS0ymvuZ_MquN_xNti3vF1OFGJVQWUqz2NiuAPpxLaHlZBRkpmKzivsav-WqCYY8OKjNa60Axn8MUa874mhp9Y_23hhuwz9G8Wd3yDurigWyNxEiRI67d2PGk2NSGNhFvNb1EkmvzO1DFE4IunPdv9siN2p_MfIPUdl9yc-T2VkHH6H0NSqos0IwSZf9-sbPV1Lmoov99aGwIzal0yA6N0PO29GTbXBrt5O9e-jJCEWTWdUvxolmZ23NEGUKnCPdrFcCVaj1QNYhMoALzKaEECNZZCMxVeu41KKcGVmp8RW8jR-rbMF_Y9xFrmv6GeS2-I12N0jlYa7&amp;PTAG=33875.1.80 " title="吉哆哆 夏装新款 2013韩版女装仙女连衣裙 蓬蓬网纱长裙 Q2004" target="_blank" style="display: block;width:160px;height:200px;background:url(http://img6.paipaiimg.com/2d460b34/item-51BBE946-98FCAF1500000000040100002B4C65EF.0.200x200.jpg) no-repeat center center;" class="img-goods"><span class="ico pos-abs">170</span></a>
+            </div>
+            <div class="goods-name">
+                <a class="long-text" href="" target="_blank" title="吉哆哆 夏装新款 2013韩版女装仙女连衣裙 蓬蓬网纱长裙 Q2004">吉哆哆 夏装新款 2013韩版女装仙女连衣裙 蓬蓬网纱长裙 Q2004</a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥29</em></span> <span class="goods-price-market"><span>¥199</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="" target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+
+
+        <li title="qitrousers">
+            <div class="wrap-img">
+                <a href="" title="2013夏装新款女装休闲显瘦哈伦裤七分裤松紧腰大码裤 8826 " target="_blank" style="display: block;width:160px;height:200px;background:url(http://img0.paipaiimg.com/957dcc01/item-514C3968-CD58C599000000000401000024186C97.0.200x200.jpg) no-repeat center center;" class="img-goods"><span class="ico pos-abs">156</span></a>
+            </div>
+            <div class="goods-name">
+                <a class="long-text" href="" target="_blank" title="2013夏装新款女装休闲显瘦哈伦裤七分裤松紧腰大码裤 8826 ">2013夏装新款女装休闲显瘦哈伦裤七分裤松紧腰大码裤 8826 </a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥42</em></span> <span class="goods-price-market"><span>¥198</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="" target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+
+        <!-- 休闲-->
+
+
+        <li title="leisure">
+            <div class="wrap-img">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffJJxsVdBTjlgkZEY2q2gtG80ND6hH98QkmRxrgNHIA0KXU9K4-SEOPRwaaqUa9KnUHmlxouwiQRpm_J3ThVKaefnYSmzlEM-WYnGAS2b3Irul6YhoZVDh_fc4g5z3dJ0ZcX0UNcQwJu6eR1fP4PUWzB4wIhu7ruaOnrvJGSalcNyX4R2ubvch5M1FdEnrvoaQzpkLKPAlS78CcsFga8Q_pMPOIAUDTieVZBtKCNcZ3pXqt3Wd7mawDDAFJ2d699q6c2PpUyFgFRPDknwKJU3K074n_bXb6Kl6_5YAOsEmYVOFR4C-upPg4k9y8G1V2ZSyC3UEFOgd49nY9ewxbfnzuAGgX1A9-EOpVhs5gDasyEGq_LQh687k6QsJ7m6nRlubqmaXK5czbq_2Xf4vfnzOVkPJrUQi9N-Hk1l5NqjIHPxPlgA6wSZhU44hczcDG47R7Ww60hFoZBjgrONe2h2HVgz2Sckdynh3hFWSzXB93x_Du5lcn-3mcebqUDV9qWYV6oSMIhjU28jTWXk2qMgc_E-WADrBJmFTjiFzNwMbjtHtbDrSEWhkGONuB8fUafUJHaIo6S5wGUf7NYZYEnz5pDgmEMfROEhcjrjHhZpNJRmZxChO3Fn3mvgaHXbUmkIqDL8NxlFEe2BGt-ChrYm8jb&amp;PTAG=33875.1.83 " title="2013女夏装新款 246002韩版休闲运动圆领三件套装短裤套装" target="_blank" style="display: block;width:160px;height:200px;background:url(http://img2.paipaiimg.com/00d0e24f/item-51CF96FA-AA64F63200000000040100002E9A0252.0.200x200.jpg) no-repeat center center;" class="img-goods"><span class="ico pos-abs">339</span></a>
+            </div>
+            <div class="goods-name">
+                <a class="long-text" href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffJJxsVdBTjlgkZEY2q2gtG80ND6hH98QkmRxrgNHIA0KXU9K4-SEOPRwaaqUa9KnUHmlxouwiQRpm_J3ThVKaefnYSmzlEM-WYnGAS2b3Irul6YhoZVDh_fc4g5z3dJ0ZcX0UNcQwJu6eR1fP4PUWzB4wIhu7ruaOnrvJGSalcNyX4R2ubvch5M1FdEnrvoaQzpkLKPAlS78CcsFga8Q_pMPOIAUDTieVZBtKCNcZ3pXqt3Wd7mawDDAFJ2d699q6c2PpUyFgFRPDknwKJU3K074n_bXb6Kl6_5YAOsEmYVOFR4C-upPg4k9y8G1V2ZSyC3UEFOgd49nY9ewxbfnzuAGgX1A9-EOpVhs5gDasyEGq_LQh687k6QsJ7m6nRlubqmaXK5czbq_2Xf4vfnzOVkPJrUQi9N-Hk1l5NqjIHPxPlgA6wSZhU44hczcDG47R7Ww60hFoZBjgrONe2h2HVgz2Sckdynh3hFWSzXB93x_Du5lcn-3mcebqUDV9qWYV6oSMIhjU28jTWXk2qMgc_E-WADrBJmFTjiFzNwMbjtHtbDrSEWhkGONuB8fUafUJHaIo6S5wGUf7NYZYEnz5pDgmEMfROEhcjrjHhZpNJRmZxChO3Fn3mvgaHXbUmkIqDL8NxlFEe2BGt-ChrYm8jb&amp;PTAG=33875.1.83 " target="_blank" title="2013女夏装新款 246002韩版休闲运动圆领三件套装短裤套装">2013女夏装新款 246002韩版休闲运动圆领三件套装短裤套装</a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥99</em></span> <span class="goods-price-market"><span>¥438</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffJJxsVdBTjlgkZEY2q2gtG80ND6hH98QkmRxrgNHIA0KXU9K4-SEOPRwaaqUa9KnUHmlxouwiQRpm_J3ThVKaefnYSmzlEM-WYnGAS2b3Irul6YhoZVDh_fc4g5z3dJ0ZcX0UNcQwJu6eR1fP4PUWzB4wIhu7ruaOnrvJGSalcNyX4R2ubvch5M1FdEnrvoaQzpkLKPAlS78CcsFga8Q_pMPOIAUDTieVZBtKCNcZ3pXqt3Wd7mawDDAFJ2d699q6c2PpUyFgFRPDknwKJU3K074n_bXb6Kl6_5YAOsEmYVOFR4C-upPg4k9y8G1V2ZSyC3UEFOgd49nY9ewxbfnzuAGgX1A9-EOpVhs5gDasyEGq_LQh687k6QsJ7m6nRlubqmaXK5czbq_2Xf4vfnzOVkPJrUQi9N-Hk1l5NqjIHPxPlgA6wSZhU44hczcDG47R7Ww60hFoZBjgrONe2h2HVgz2Sckdynh3hFWSzXB93x_Du5lcn-3mcebqUDV9qWYV6oSMIhjU28jTWXk2qMgc_E-WADrBJmFTjiFzNwMbjtHtbDrSEWhkGONuB8fUafUJHaIo6S5wGUf7NYZYEnz5pDgmEMfROEhcjrjHhZpNJRmZxChO3Fn3mvgaHXbUmkIqDL8NxlFEe2BGt-ChrYm8jb&amp;PTAG=33875.1.83 " target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+        <li title="trousers">
+            <div class="wrap-img">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffLIRdNW0iGI9hC0SArGv5IO0ND6hH98Qkl952yPUO_31hn1JOK6-KK0hooFZO6V3GvmlxouwiQRpk1PzQuGbjy7oMq72M0hGzGSpXrqWpqF60-yqszm40pQgFBNB2dV9W68hLfCJ_U_ePO1v5I32i24jfY1d0hlAx4mnoYoxXO2GAIvQSA8_MwFUC0eaGxXVTjNcqJlXeyc3f-U8FyhYNtuLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8zuV-0spKMdQQtEgKxr-SDtDQ-oR_fEJJfedsj1Dv99aOGVM5n-iGyo5L-J0UG2SZrl-wTZTqAl7xRKMGGpHkNSLmw-pMtPK469q8dxSLA8Kd9MnmWnjpLZG8OM_mi8t8x7UzUmSsVbLDMcFeGo-rlSchIrmRS_s0DztvRk21wa5SkmZH0sV0X8stt0EWrlXzksQh3RQ_ECiwWVAOjt5PLdbnpfR_IMbzXpiGhlUOH99ziDnPd0nRl-4DtH9AMPooM24_zooyWCbjAiG7uu5o6Qm6lyCa-8BhGCM78XF5KXYpgG3pYVuSjuPKYXFzm4h_ODyvTtgpFn6uX7BNlOoCXvFEowYakeQ1IubD6ky08rjE2TfAZXwPbhAb5l-xT5cr&amp;PTAG=33163.2.3" title="vikousi女裤子韩版潮百搭破洞大码牛仔短裤夏热裤BC995" target="_blank" style="display: block;width:160px;height:200px;background:url(http://img6.paipaiimg.com/590ccfb3/item-00053D3E-82A2F92F00000000040100000EF273C8.0.200x200.jpg) no-repeat center center;" class="img-goods"><span class="ico pos-abs">227</span></a>
+            </div>
+            <div class="goods-name">
+                <a class="long-text" href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffLIRdNW0iGI9hC0SArGv5IO0ND6hH98Qkl952yPUO_31hn1JOK6-KK0hooFZO6V3GvmlxouwiQRpk1PzQuGbjy7oMq72M0hGzGSpXrqWpqF60-yqszm40pQgFBNB2dV9W68hLfCJ_U_ePO1v5I32i24jfY1d0hlAx4mnoYoxXO2GAIvQSA8_MwFUC0eaGxXVTjNcqJlXeyc3f-U8FyhYNtuLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8zuV-0spKMdQQtEgKxr-SDtDQ-oR_fEJJfedsj1Dv99aOGVM5n-iGyo5L-J0UG2SZrl-wTZTqAl7xRKMGGpHkNSLmw-pMtPK469q8dxSLA8Kd9MnmWnjpLZG8OM_mi8t8x7UzUmSsVbLDMcFeGo-rlSchIrmRS_s0DztvRk21wa5SkmZH0sV0X8stt0EWrlXzksQh3RQ_ECiwWVAOjt5PLdbnpfR_IMbzXpiGhlUOH99ziDnPd0nRl-4DtH9AMPooM24_zooyWCbjAiG7uu5o6Qm6lyCa-8BhGCM78XF5KXYpgG3pYVuSjuPKYXFzm4h_ODyvTtgpFn6uX7BNlOoCXvFEowYakeQ1IubD6ky08rjE2TfAZXwPbhAb5l-xT5cr&amp;PTAG=33163.2.3" target="_blank" title="vikousi女裤子韩版潮百搭破洞大码牛仔短裤夏热裤BC995">vikousi女裤子韩版潮百搭破洞大码牛仔短裤夏热裤BC995</a>
+            </div>
+            <div class="goods-price">
+                <span class="goods-price-new">清仓价：<em>¥49</em></span> <span class="goods-price-market"><span>¥276</span></span>
+            </div>
+            <div class="mask-layer pos-abs">
+                <a href="http://focus.paipai.com/martpolicy/click?viewid=MkZ1F5EUffLIRdNW0iGI9hC0SArGv5IO0ND6hH98Qkl952yPUO_31hn1JOK6-KK0hooFZO6V3GvmlxouwiQRpk1PzQuGbjy7oMq72M0hGzGSpXrqWpqF60-yqszm40pQgFBNB2dV9W68hLfCJ_U_ePO1v5I32i24jfY1d0hlAx4mnoYoxXO2GAIvQSA8_MwFUC0eaGxXVTjNcqJlXeyc3f-U8FyhYNtuLPz0d8C2jho7uZXJ_t5nHm6lA1falmFelWWsgnfaVcULsber8iBMGO7ybsCaDCp8zuV-0spKMdQQtEgKxr-SDtDQ-oR_fEJJfedsj1Dv99aOGVM5n-iGyo5L-J0UG2SZrl-wTZTqAl7xRKMGGpHkNSLmw-pMtPK469q8dxSLA8Kd9MnmWnjpLZG8OM_mi8t8x7UzUmSsVbLDMcFeGo-rlSchIrmRS_s0DztvRk21wa5SkmZH0sV0X8stt0EWrlXzksQh3RQ_ECiwWVAOjt5PLdbnpfR_IMbzXpiGhlUOH99ziDnPd0nRl-4DtH9AMPooM24_zooyWCbjAiG7uu5o6Qm6lyCa-8BhGCM78XF5KXYpgG3pYVuSjuPKYXFzm4h_ODyvTtgpFn6uX7BNlOoCXvFEowYakeQ1IubD6ky08rjE2TfAZXwPbhAb5l-xT5cr&amp;PTAG=33163.2.3" target="_blank" title="立即抢购"><span class="btn-qiang">立即抢购</span></a>
+            </div>
+        </li>
+    </ul>
+</div>
+</div>
+</body>
+</html>

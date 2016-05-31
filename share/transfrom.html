@@ -1,0 +1,69 @@
+<!doctype>
+        <html>
+<head>
+    <style type="text/css">
+        .test-perspective div{float: right;margin-left: 100px;}
+        .test-plane-wrap{-webkit-persective:1028px;}
+        .test-plane-wrap img{display: block;}
+        .test-plane{
+            -webkit-animation-name:'wobble';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+            -webkit-animation-duration: 2s;/*动画持续时间*/
+            -webkit-animation-timing-function: ease-in-out; /*动画频率，和transition-timing-function是一样的*/
+            -webkit-animation-delay: 2s;/*动画延迟时间*/
+            -webkit-animation-iteration-count: 10;/*定义循环资料，infinite为无限次*/
+            -webkit-animation-direction: alternate;/*定义动画方式*/
+        }
+        @-webkit-keyframes 'wobble' {
+            0% {
+                -webkit-transform:rotateY(0deg);
+            }
+            40% {
+                -webkit-transform:rotateY(180deg);
+            }
+            60% {
+                -webkit-transform:rotateY(270deg);
+            }
+            100% {
+                -webkit-transform:rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="test-plane-wrap"><img src="http://pics1.paipaiimg.com/update/20130319/index_plane_8.png" alt="plane" class="test-plane"></div>
+<div style="width: 100px;height: 400px;position: relative;perspective:1028px;background-color: #F00;padding-top: 100px;float: left;margin-right: 10px;-webkit-perspective:1028px;">
+    <div style="width: 50px;height: 200px;margin:auto;background-color: #0F0;transform:rotateX(45deg);-webkit-transform:rotateX(45deg)">
+        slow
+    </div>
+</div>
+<div style="width: 100px;height: 400px;position: relative;perspective:1024em;background-color: #F00;padding-top: 100px;float: left;margin-right: 10px;-webkit-perspective:1028em;">
+<div style="width: 50px;height: 200px;margin:auto;background-color: #0F0;transform:rotateX(45deg);-webkit-transform:rotateX(45deg)">
+    slow
+</div>
+</div>
+<div style="width: 100px;height: 400px;position: relative;perspective:5000em;background-color: #F00;padding-top: 100px;float: left;margin-right: 10px;-webkit-perspective:5000em;">
+    <div style="width: 50px;height: 200px;margin:auto;background-color: #0F0;transform:rotateX(45deg);-webkit-transform:rotateX(45deg)">
+        slow
+    </div>
+</div>
+<div style="width: 100px;height: 400px;position: relative;perspective:5000px;background-color: #F00;padding-top: 100px;float: left;-webkit-perspective:5000px;">
+    <div style="width: 50px;height: 200px;margin:auto;background-color: #0F0;transform:rotateX(45deg);-webkit-transform:rotateX(45deg)">
+        slow
+    </div>
+</div>
+<div style="width: 1000px;height: 400px;position: relative;perspective:1028px;background-color: #F00;padding-top: 100px;float: left;margin-right: 10px;-webkit-perspective:1028px;clear: both;margin-top: 100px;" class="test-perspective">
+    <div style="width: 50px;height: 200px;background-color: #0F0;transform:rotateY(45deg);-webkit-transform:rotateY(45deg);">
+        slow1
+    </div>
+    <div style="width: 50px;height: 200px;background-color: #0F0;transform:rotateY(45deg);-webkit-transform:rotateY(45deg);">
+        slow2
+    </div>
+    <div style="width: 50px;height: 200px;background-color: #0F0;transform:rotateY(45deg);-webkit-transform:rotateY(45deg);">
+        slow3
+    </div>
+    <div style="width: 50px;height: 200px;background-color: #0F0;transform:rotateY(45deg);-webkit-transform:rotateY(45deg);">
+        slow4
+    </div>
+</div>
+</body>
+        </html>

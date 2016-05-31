@@ -1,0 +1,41 @@
+<!doctype>
+<html>
+<head>
+<style type="text/css">
+.tablist {position:relative;margin:50px auto;min-height:200px;}
+    /* this example style begin */
+.tab_content {
+    position: absolute;/*set content box as absolute*/
+    /* content style begin*/
+    width:600px;height:170px;padding:15px;border:1px solid #91a7b4;border-radius:3px;box-shadow:0 2px 3px rgba(0,0,0,0.1);font-size:1.2em;line-height:1.5em;color:#666;background:#fff;
+}
+#tab1:target, #tab2:target, #tab3:target {
+    z-index: 1;
+}
+
+
+    /* tabmenu style */
+.tabmenu {position:absolute;top:100%;margin:0;}
+.tabmenu li{display:inline-block;}
+.tabmenu li a {display:block;padding:5px 10px;margin:0 10px 0 0;border:1px solid #91a7b4;border-radius:0 0 5px 5px;background:#e3f1f8;color:#333;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="tablist">
+    <ul class="tabmenu">
+        <li><a href="#tab1">狼人杀定理1</a></li>
+        <li><a href="#tab2">狼人杀定理2</a></li>
+        <li><a href="#tab3">狼人杀定理3</a></li>
+    </ul>
+    <div id="tab1" class="tab_content">
+        扔的水包都是好人的，很大可能是狼人，故意错开狼友。
+        <!-- end tab1 content --></div>
+    <div id="tab2" class="tab_content"><p>
+        第一轮发言说了半天，最后加上我看不清楚，这轮我不投票<br>80%是狼人！
+        <!-- end tab2 content--></div>
+    <div id="tab3" class="tab_content"><p style="font-size:24px;">
+        跟风必有匪！
+        <!-- end tab3 content--></div>
+</div>
+</body>
+</html>

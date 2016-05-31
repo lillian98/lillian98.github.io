@@ -1,0 +1,743 @@
+<!doctype>
+<html>
+<head>
+    <meta charset="uft-8">
+    <link rel="stylesheet" href="index.css">
+</head>
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        body{padding: 20px 0}
+            /*common section style*/
+        section{margin-bottom: 20px;line-height: 2;border-radius: 10px 10px 0 0;background-color:#fff /*#fff3da*/;color: #333;display: none;padding:10px}
+        section li{margin-bottom: 5px;}
+        ol{list-style: decimal inside none}
+        .sec-detail{padding: 10px;background:#FFF}
+        .sec-detail em{font-weight: bold;color: #a31515;font-size: 18px;margin-right: 5px}
+        .sec-ex{color: #fff;border-radius: 3px;}
+        section h2{color:#FFF;font:bold 24px/1.5 微软雅黑;margin-bottom: 10px}
+        code{background-color:#1d1f21;display:block;padding:3px 20px;color:#FFF;margin:5px 0}
+        .sec-ex a{text-decoration: none;}
+            /* end common section style*/
+            /* S menu */
+        .mod-menu{width: 1250px;margin:100px auto;text-align: center;font-size: 0;}
+        .mod-menu a{display: inline-block;width: 315px;height: 180px;font:bold 20px/180px 黑体;color: #FFF;margin:10px 10px 0 0;text-decoration: none;}
+            /* E menu */
+            /* S fix-menu */
+        .fix-menu{position: fixed;bottom:0;left: 50%;margin:0 0 0 -625px;border-radius:10px;z-index: 3;}
+        .fix-menu a{height: 40px;font:bold 16px/40px 黑体;margin:0;}
+
+        @media screen and (max-width: 1280px) {
+            article{width: 985px;}
+            .fix-menu{width: 985px;margin-left: -492px;}
+            .mod-menu{width: 985px;}
+        }
+        @media screen and (min-width: 1280px) {
+            article{width: 1250px}
+            .fix-menu{width: 1250px;margin-left: -625px}
+        }
+
+            /* E fix-menu */
+            /* state */
+        .sec-state .a-active{padding: 10px 15px;background: #FFF;color: #cf0000;position: relative;display: block;border-radius: 5px;width: 20px;}
+        .a-active-energy{position: absolute;bottom: 0;width: 100%;height: 0;left: 0;background-color: #FFF;transition:height 1.5s;border-radius: 5px;}
+        .sec-state .a-active:active .a-active-energy{background-color: #cf0000;height: 100%;}
+        .sec-state .hover-text-shadow,.sec-state .hover-text-shadow:link,.sec-state .hover-text-shadow:hover,.sec-state .hover-text-shadow:visited{color: #A7C5C5;}
+        .push-button{position:relative;
+            width:200px;
+            color:#FFF;
+            display:block;
+            text-decoration:none;
+            margin:0 0 10px;
+            border-radius:5px;
+            border:solid 1px #D94E3B;
+            background:#cb3b27;
+            text-align:center;
+            padding:20px 30px;
+
+            -webkit-transition: all 0.1s;
+            -moz-transition: all 0.1s;
+            transition: all 0.1s;
+
+            -webkit-box-shadow: 0px 9px 0px #84261a;
+            -moz-box-shadow: 0px 9px 0px #84261a;
+            box-shadow: 0px 9px 0px #84261a;
+        }
+        .push-button:active{
+            -webkit-box-shadow: 0px 2px 0px #84261a;
+            -moz-box-shadow: 0px 2px 0px #84261a;
+            box-shadow: 0px 2px 0px #84261a;
+            position:relative;
+            top:7px;
+        }
+        .sec-state .sec-ex-h:hover{border-color: #aaffaa}
+        .sec-state .sec-ex-h:active{background-color: #FFF;border-color: #0000FF}
+        .sec-state input:disabled{background-color: #ffc;}
+        .sec-target .test2,.sec-target a{text-indent: 18px;display: block}
+        .input-check + label{background-color:#E7EFE0;display:inline-block;padding:2px 5px;}
+        .input-check:checked + label{color:#cf0000;background-color:#FFF;}
+        input:valid{background-color: #ddffdd;}
+        input:invalid {background-color: #ffdddd;}
+
+        input:required {border-color: #800000;border-width: 3px;}
+            /* [disabled]{color: #933;background: #ffc;}*/
+            /* state */
+        .test1:target{background: #ccc;}
+        #login {
+            width:400px;
+            padding:1em 2em 0 2em;
+            font-size:12px;
+        }
+        label {
+            line-height:26px;
+            display:block;
+            font-weight:bold;
+        }
+        #name, #password {
+            border:1px solid #ccc;
+            width:160px;
+            height:22px;
+            padding-left:20px;
+            margin:6px 0;
+            line-height:20px;
+        }
+        #name { background:url(images/name.gif) no-repeat 2px 2px; }
+        #password { background:url(images/password.gif) no-repeat 2px 2px; }
+        .button { margin:6px 0; }
+        #login input:disabled#name {
+            background:#ddd url(images/name1.gif) no-repeat 2px 2px;
+            border:1px solid #fff;
+        }
+        #login input:disabled#password {
+            background:#ddd url(images/password1.gif) no-repeat 2px 2px;
+            border:1px solid #fff;
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+            background: #888;
+            -webkit-transition: width 2s ease, height 2s ease;
+            -moz-transition: width 2s ease, height 2s ease;
+            -o-transition: width 2s ease, height 2s ease;
+            -ms-transition: width 2s ease, height 2s ease;
+            transition: width 2s ease, height 2s ease;
+        }
+
+        .box:active {
+            width: 500px;
+            height: 500px;
+        }
+        .state-hover img{border: 5px solid #FFF;border-radius: 5px;display: inline-block;margin: 20px;transition:all .5s ease;-webkit-transition:all .5s ease;-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.1)));
+        }
+        .state-hover img:hover{-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(255,255,255,0.4)));box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(255,255,255,0.4)));box-shadow: 0px 0px 20px rgba(0,0,0,0.8);
+        }
+        .sec-ex-hover a,.href-back{
+            transition:all .5s ease;
+        }
+        .href-back{display:none;}
+        .hover-text-shadow:hover,.href-back:hover{
+            text-shadow: 0 0 15px #FFFFFF;
+            -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+        }
+        .hover-transiton-right:hover{
+            color: #FFF;
+            padding-left: 25px;
+            background-color: #A7C5C5;
+        }
+        div:empty,
+        li:empty,
+        p:empty,
+        td:empty,
+        th:empty{padding:1em;background-color:#000 !important;color:#fff}
+
+        #secState:target, #secStructural:target, #secPro:target, #secOther:target, #secReference:target,#secelements:target{display: block}
+        :required{background-color:#ffdddd;}
+        input:out-of-range {
+            border: 1px solid #CB000F;
+            color: red
+        }
+
+        input:in-range {
+            color: #00882D;
+            font-weight: bold;
+        }
+/* E state */
+        /* S structual */
+        .img-relation{margin: 10px 0;display: block}
+        .sec-structural .tips{color: #fff;}
+            /* S nth-even */
+        .nth-even table{margin:10px auto}
+        .nth-even thead th{padding:10px 5px;color:#FFF;font:16px 微软雅黑;background-color:#333;border-right:1px dotted #666;border-top:3px solid #666;-moz-box-shadow:9px 1px 4px #000;-webkit-box-shadow:0px -1px 4px #000;box-shadow:0px -1px 4px #000;text-shadow:1px 1px 1px #000;}
+        .nth-even tbody tr:nth-child(1){background-color:#7FD2FF}
+        .nth-even tr:last-child{background-color:#eee}
+        .nth-even tbody th{padding:5px;background-color:#f9f9f9;}
+        .nth-even tbody tr:nth-child(even) td,.nth-even tbody tr:nth-child(even) th{background-color: #eee;}
+        .nth-even tbody td{padding:5px;background-color:#f9f9f9;border-right:1px dotted #999;text-shadow:-1px 1px 1px #fff;text-transform:uppercase;color:#333;}
+        .nth-even tbody tr:nth-child(-3n+1) td{
+            background-color: #FF0;
+        }
+            /* E nth-even */
+
+            /* S bg color */
+        .mod-menu a:nth-child(1){background-color:#3498DB;}
+        .mod-menu a:nth-child(2){background-color:#9B59B6;}
+        .mod-menu a:nth-child(3){background-color:#34495E;}
+        .mod-menu a:nth-child(4){background-color:#E67E22;}
+        .mod-menu a:nth-child(5){background-color:#E74C3C;}
+        .mod-menu a:nth-child(6){background-color:#78BA00;}
+        .fix-menu a:nth-child(1){width: 16%;}
+        .fix-menu a:nth-child(2){width: 16%;}
+        .fix-menu a:nth-child(3){width: 16%;}
+        .fix-menu a:nth-child(4){width: 16%;}
+        .fix-menu a:nth-child(5){width: 16%;}
+        .fix-menu a:nth-child(6){width: 20%;}
+        #secState {background-color:#3498DB}
+        #secStructural {background-color:#9B59B6}
+        #secPro {background-color:#34495E}
+        #secOther {background-color:#E67E22}
+        #secElements {background-color:#E74C3C}
+        #secReference{background-color:#78BA00}
+            /* E bg color */
+        /* S sec-elements */
+        .sec-elements p{line-height: 2;}
+        .mod-menu a::first-letter{font-size: 20px;}
+        .elements-first::first-letter{font:40px 黑体;float: left}
+        ::selection {
+            background-color: #000;
+            color: #f90;
+        }
+        .elements-first-line::first-line{font:bold 20px 黑体;text-align: center}
+        html{background-color:#ccc;}
+        :root{background-color:#eee;}
+    </style>
+</head>
+<body>
+<div class="mod-menu">
+    <a href="#secState">状态伪类</a>
+    <a href="#secStructural">结构伪类</a>
+    <a href="#secPro">属性选择器</a>
+    <a href="#secOther">其他选择器</a>
+    <a href="#secElements">伪元素</a>
+    <a href="#secReference">参考文献</a>
+</div>
+<article>
+<section class="sec-state" id="secState">
+    <h2>状态伪类,建议和transition结合</h2>
+    <ol class="sec-detail">
+        <li>
+            <p>动态伪类</p>
+            <p><em>:hover</em>用户把鼠标移动到元素上面时触发</p>
+            <code>
+                <div class="state-hover">
+                    <img src="http://img2.paipaiimg.com/9f10afd2/item-5136D2D4-EAFFF204000000000401000004849FEA.0.120x120.jpg" alt="">
+                    <img src="http://img2.paipaiimg.com/9f10afd2/item-5136D2D4-EAFFF204000000000401000004849FEA.0.120x120.jpg" alt="">
+                    <img src="http://img2.paipaiimg.com/9f10afd2/item-5136D2D4-EAFFF204000000000401000004849FEA.0.120x120.jpg" alt="">
+                    <img src="http://img2.paipaiimg.com/9f10afd2/item-5136D2D4-EAFFF204000000000401000004849FEA.0.120x120.jpg" alt="">
+                    <img src="http://img2.paipaiimg.com/9f10afd2/item-5136D2D4-EAFFF204000000000401000004849FEA.0.120x120.jpg" alt="">
+                </div>
+                .state-hover img:hover{-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(255,255,255,0.4)));box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(255,255,255,0.4)));box-shadow: 0px 0px 20px rgba(0,0,0,0.8);
+                }
+            </code>
+            <p><em>:active</em>用户点击元素那一下的效果（正发生在点的那一下，松开鼠标左键此动作也就完成了）</p>
+            <code><span class="a-active">按住我加能量<span class="a-active-energy"></span></span><br>
+                .sec-state .a-active:active .a-active-energy{background-color: #cf0000;height: 100%;}
+            </code>
+            <p><em>:focus</em>元素成为焦点（表单比较常用）</p>
+        </li>
+        <li>
+            <em>:target</em>当目标元素被定位为当前文档位置时生效的样式
+            <code>#secelements:target{display: block}//页面链接为url+#secelements时，显示为block</code>
+        </li>
+        <li>
+            <p><em>:checked</em>（ie6-ie8不支持），仅对radio、checkbox的input元素有效，建议使用时和其他标签结合设置样式</p>
+            <input type="checkbox" name="click me1" class="input-check" id="inputCheck1"><label for="inputCheck1">click me 1</label>
+            <input type="checkbox" name="click me2" class="input-check" id="inputCheck2"><label for="inputCheck2">click me 2</label>
+            <code>input-check:checked + label{background-color:#1f3c3f;}</code>
+        </li>
+        <li>
+            <p><em>:disabled,:enabled</em>（ie6-ie8不支持）</p>
+            <p>注意与html中disable属性区分,js中disable属性</p>
+            <code>
+                <input type="text" placeholder="我是Lillianwang" disabled="disabled" id="test">
+                .sec-state input:disabled{background-color: #ffc;}
+            </code>
+            <p>http://www.456bereastreet.com/lab/styling-form-controls-revisited/disabled/</p>
+        </li>
+        <p>下述伪类ie10+支持（对input支持较好），具体可见：https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid</p>
+        <p>和属性选择器或before、after伪类结合用提高用户体验.input new type:color、date、datetime、datetime-local、month、week、time、email、number、range、search、tel、url</p>
+        <li>
+            <p><em>:valid</em>应用于有效元素：</p>
+            <p><em>:invalid</em>应用于空的必填元素，以及未能与type或pattern属性所定义的需求相匹配的元素：</p>
+
+            <p><em>:required</em>应用于具有必填属性required的表单控件；</p>
+            <p><em>:optional</em>应用于没有必填属性required的所有表单控件</p>
+            <code>
+                <form>
+                    <label>Enter a URL:</label>
+                    <input type="url">
+                    <br>
+                    <br>
+                    <label>Enter an email address:</label>
+                    <input type="email" required="">
+                </form>
+                :required{background-color:#ffdddd;}<br>
+                input:valid{background-color: #ddffdd;}<br>
+                input:invalid {background-color: #ffdddd;}<br>
+                input:required {border-color: #800000;border-width: 3px;}
+            </code>
+        </li>
+        <li>
+            <p><em>:in-range</em>应用于具有范围限制的元素，其中该值位于限制内；比如具有min和max属性的number和range输入框；</p>
+            <p><em>:out-of-range</em>与:in-range选择相反，其中该值在限制范围外；</p>
+            <code>
+                <form>
+
+                    <p><label><input type="number" min="1" max="12"> number</label></p>
+
+                    <p><lable><input type="date" min="2000-01-01" max="2013-07-10">date</lable></p>
+                </form>
+                input:out-of-range {
+                border: 1px solid #CB000F;
+                color: red
+                }
+
+                input:in-range {
+                color: #00882D;
+                font-weight: bold;
+                }
+
+            </code>
+        </li>
+        <li>
+            <p><em>:read-only</em>应用于其内容无法供用户修改的元素；</p>
+            <p><em>:read-write</em>应用于其内容可供用户修改的元素，比如输入框；</p>
+            <p>目前浏览器支持不完善，暂不建议使用</p>
+        </li>
+
+    </ol>
+    <ol class="sec-ex">
+
+        <li class="sec-ex-hover">
+            <p>:hover</p>
+            <a class="hover-text-shadow" href="#nolink">Text Shadow</a>
+            <a class="hover-transiton-right" href="#nolink" style="display: block;width: 200px">Transiton Right</a>
+            <p><a href="http://designshack.net/?p=19746" target="_blank">图片hover效果集合1</a></p>
+            <p><a href="http://blog.templatemonster.com/2011/12/22/css3-hover-effect-tutorials/" target="_blank">图片hover效果集合2</a></p>
+
+            <p><a href="http://tympanus.net/Development/IconHoverEffects/" target="_blank">icon hover动画</a></p>
+        </li>
+        <li>
+            <p><em>:active</em></p>
+            <button class="push-button">Push Me</button>
+        </li>
+        <li>
+            <a href="sec_menu.html" target="_blank">target实现下拉菜单</a>
+        </li>
+    </ol>
+</section>
+<section class="sec-structural" id="secStructural">
+    <h2>结构伪类选择器Structural Pseudo-Classes（http://www.w3cplus.com/css3/pseudo-class-selector）</h2>
+    <ol class="sec-detail">
+        <li>
+            <em>first-child</em>(选择某个元素的第一个子元素)
+        </li>
+        <li>
+            <em>last-child</em>(选择某个元素的最后一个子元素)
+        </li>
+        <li>
+            <em>nth-child(odd)</em>奇数匹配，nth-child(even)偶数匹配
+        </li>
+        <li>
+            <em>nth-child(number)</em>匹配第number个
+        </li>
+        <li>
+            <em>nth-child(an)</em>匹配为a倍数的元素，nth-child(an+b)，exp：nth-child(-1n+8)匹配前8个
+        </li>
+        <li>
+            <em>nth-last-of-type(n)</em>倒数第n个元素（按父元素下来算，不分当前标签类）
+            <em>first-of-type</em>第一个
+        </li>
+        <li>
+            <em>only-of-type</em>匹配属于同类型中唯一兄弟元素的E
+        </li>
+        <li>
+            <p>支持列表：http://kimblim.dk/css-tests/selectors/</p>
+            <p>ie如何支持：http://www.qianduan.net/use-advanced-css3-selectors-in-ie.html</p>
+            <p>http://selectivizr.com/</p>
+        </li>
+    </ol>
+
+    <img src="relationalpseudos2.png" alt="" class="img-relation">
+    <p class="tips">对于nth如何计算，请点这里： <a href="http://css-tricks.com/how-nth-child-works/" target="_blank">http://css-tricks.com/how-nth-child-works/</a></p>
+    <ol class="sec-ex">
+        <li class="nth-even">
+            <table style="text-align:center">
+                <thead>
+                <tr>
+                    <th style="width:10%">姓名</th>
+                    <th style="width:15%">狼人胜</th>
+                    <th style="width:15%">平民胜</th>
+                    <th style="width:15%">狼人负</th>
+                    <th style="width:15%">平民负</th>
+                    <th style="width:15%">平局</th>
+                    <th style="width:15%">法官</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>lillianwang1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang4</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang5</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang5</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang5</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang5</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang5</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang5</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang5</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang5</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang5</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang5</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang5</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                <tr>
+                    <th>lillianwang5</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                </tr>
+                </tbody>
+
+            </table>
+        </li>
+
+        <li><a href="nth-child.shtml">商品列表例子</a></li>
+        <li><a href="nth-child-hover.html">与hover结合使用</a></li>
+        <li class="nth-child">http://css-tricks.com/examples/nth-child-tester/#</li>
+        <li>http://richardshepherd.com/smashing/pseudo/?style=0</li>
+    </ol>
+    <a href="#" class="href-back">返回</a>
+</section>
+<section class="set-Attribute" id="secPro">
+    <h2>属性选择器 attribute selector</h2>
+    <ul class="sec-detail">
+        <li>
+            <em>E[attr]</em>该选择器定位具有属性attr的任何元素E：
+        </li>
+        <li>
+            <em>E[attr=val]</em>该选择器定位具有属性attr且属性值为val的任何元素E：
+        </li>
+        <li>
+            <em>E[attr|=avl]</em>该选择器定位具有属性attr且属性值为val或以val-开始的任何元素E：
+        </li>
+        <li>
+            <em>E[attr~=val]</em>该选择器定位具有属性attr且属性值为完整单词 val 的任何元素E：
+        </li>
+        <li>
+            <em>E[attr^=val]</em>该选择器定位具有属性attr且属性值以val开头的任何元素E：
+        </li>
+        <li>
+            <em>E[attr$=val]</em>该选择器与E[attr^=val]正好相反，定位具有属性attr且属性值以val结尾的任何元素E：
+        </li>
+        <li>
+            <em>E[attr*=val]</em>该选择器与E[attr~=val]相似，但更进一步，定位具有属性attr且属性值任意位置包含val的元素E，val可以是一个完整的单词，也可以是一个单词中的一部分：
+        </li>
+    </ul>
+    <ul class="sec-ex">
+        <li><a href="http://css-tricks.com/examples/BetterEmailLinks/" target="_blank">配合after伪类实现效果</a>
+        </li>
+        <li>
+            <a href="attribute.html">不同下载文件格式样式</a>
+        </li>
+        <li>
+            <a href="attribute_tab.html">利用attribute实现tab不同颜色</a>
+        </li>
+    </ul>
+
+</section>
+<section class="set-child" id="secChild" style="display:none;">
+    <h2>关系选择器 attribute selector</h2>
+    <ul class="sec-detail">
+
+    </ul>
+    <ul class="sec-ex">
+        <li class="href"></li>
+    </ul>
+    <a href="#" class="href-back">返回</a>
+</section>
+<section class="sec-other" id="secOther">
+    <h2>其他选择器</h2>
+    <ol class="sec-detail">
+        <li>
+            <p><em>:empty</em>选择内容为空的某元素,用于调试可视化过滤空元素</p>
+            <code>
+                div:empty,
+                li:empty,
+                p:empty,
+                td:empty,
+                th:empty{padding:1em;background-color:#000 !important;color:#fff}
+            </code>
+        </li>
+        <li>
+            not(s)否定
+        </li>
+        <li>
+            <p><em>~</em>兄弟元素选择器</p>
+            <code>
+                #div9:hover ~ div:nth-child(9n) { background: yellow; }
+            </code>
+        </li>
+        <li>
+            <p><em>:root</em>根元素，始终指html元素；和html类似，但优先级高于html</p>
+            <code>
+                html{background-color:#ccc;}<br>
+                :root{background-color:#eee;}
+            </code>
+        </li>
+    </ol>
+    <ol class="sec-ex">
+        <li class="only"></li>
+        <li class="not"></li>
+        <li class="sub"></li>
+    </ol>
+    <a href="#" class="href-back">返回</a>
+</section>
+<section class="sec-elements" id="secElements">
+    <h2>伪元素</h2>
+    <ol class="sec-detail">
+        <li>
+            <p><em>::first-line</em>匹配文本首行；</p>
+            <code>
+                <div style="height: 120px;font:16px 微软雅黑;color: #FFF;margin: 5px auto" class="elements-first-line">
+                    <p>麦当劳海贼王</p>
+                    <p>麦当劳有海贼王的小手办，每周推出三款，有什么办法可以不吃套餐买到它呢？</p>
+                    <p>据说这样可行：在收银机旁蹲守，逮住买套餐的老板们问能不能自己加钱帮拿一个～～</p>
+                </div>
+            </code>
+        </li>
+        <li>
+            <p><em>::first-letter</em>匹配文本首字母；</p>
+            <code>
+                <div style="width: 200px;height: 120px;font:16px 微软雅黑;color: #FFF;margin: 5px auto" class="elements-first">
+                    麦当劳有海贼王的小手办，每周推出三款，有什么办法可以不吃套餐买到它呢？据说这样可行：在收银机旁蹲守，逮住买套餐的老板们问能不能自己加钱帮拿一个～～
+                </div>
+                .elements-first::first-letter{font:40px 黑体;float: left}
+            </code>
+        </li>
+        <li>
+            <em>::before</em> 与 <em>::after</em>使用 contnet 属性生成额外的内容并插入在标记中：
+        </li>
+        <li>
+            <p><em>::selection</em>匹配页面选种的元素。</p>
+            <code>
+                ::selection {
+                background-color: #000;
+                color: #f90;
+                }
+            </code>
+        </li>
+    </ol>
+    <ol class="sec-ex">
+
+        <li>
+            after、before伪类应用：
+<a href="http://tympanus.net/Development/PseudoElementsAnimationsTransitions/index2.html" target="_blank">伪元素动画</a>
+        </li>
+    </ol>
+    <a href="#" class="href-back">返回</a>
+</section>
+
+<section style="display: none;">
+    <h2>disable</h2>
+    <fieldset id="login">
+        <legend>用户登录</legend>
+        <form action="" method="POST" class="form">
+            <label for="name">姓名
+                <input name="name" type="text"  id="name" value="" disabled="disabled" />
+            </label>
+            <label for="password">密码
+                <input name="password" type="text" id="password" value="" disabled="disabled" />
+            </label>
+            <input type="image"  class="button" src="images/login1.gif" />
+        </form>
+    </fieldset>
+
+</section>
+<section class="sec-reference" id="secReference" style="">
+    <h2>参考资料</h2>
+    <p>选择器效率：</p>
+    <ul class="sec-detail">
+        <li>id (#myid)</li>
+        <li>class (.myclass)</li>
+        <li>tag (div, h1, p)</li>
+        <li>adjacent sibling (h1 + p)</li>
+        <li>child (ul > li) </li>
+        <li>descendent (li a)</li>
+        <li>universal (*)</li>
+        <li>attribute (a[rel="external"])</li>
+        <li>pseudo-class and pseudo element (a:hover, li:first)</li>
+      </li>
+    </ul>
+    <div class="sec-ex">
+        <p>http://www.swordair.com/blog/2013/04/998/</p>
+        <p>http://www.the-art-of-web.com/css/nth-child-selector/#.UeoQsiPN9qw</p>
+        <p>http://www.w3cplus.com/css3/attribute-selectors</p>
+        <p>http://xycss.com/</p>
+        <p>http://one-div.com/</p>
+        <p>伪元素：http://nicolasgallagher.com/an-introduction-to-css-pseudo-element-hacks/</p>
+        <p>hover：http://tympanus.net/codrops/2011/11/02/original-hover-effects-with-css3/<br>
+            http://blog.templatemonster.com/2011/12/22/css3-hover-effect-tutorials/<br>
+            http://tympanus.net/Tutorials/CircleNavigationEffect/<br>
+        </p>
+        <p>如何使用css伪类http://www.mangguo.org/how-to-use-css3-pseudo-classes/</p>
+        <p>http://coding.smashingmagazine.com/2011/03/30/how-to-use-css3-pseudo-classes/</p>
+        <p>http://css-tricks.com/child-and-sibling-selectors/</p>
+    </div>
+
+    <a href="#" class="href-back">返回</a>
+</section>
+</article>
+
+
+</body>
+<script type="text/javascript" src="http://static.paipaiimg.com/js/jquery.js?t=1.4.1"></script>
+<script type="text/javascript">
+    $(".mod-menu a").click(function(){
+        console.log("this",this);
+        $(this).parent().addClass("fix-menu");
+    })
+    $(".href-back").click(function(){
+        $(".mod-menu").removeClass("fix-menu");
+    })
+    /*document.getElementById("test").disabled=false;*/
+    $(document).ready(function(){
+        var t = document.location.href;
+        if(t.indexOf("#")>-1){
+            $(".mod-menu").addClass("fix-menu");
+        }
+    })
+</script>
+</html>

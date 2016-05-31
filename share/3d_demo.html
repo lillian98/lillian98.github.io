@@ -1,0 +1,229 @@
+<!doctype>
+        <html>
+<head>
+    <style type="text/css">
+        *{margin: 0;padding: 0}
+            /*--- Container for cube animation ---*/
+        #viewStage
+        {
+            width: 450px;
+            height: 300px;
+            -webkit-perspective: 450px;
+            -webkit-perspective-origin: 50% 50%;
+            -moz-perspective: 450px;
+            -moz-perspective-origin: 50% 50%;
+            /*margin: 5em auto;*/
+        }
+
+            /*--- Cube Style ---*/
+        .cube
+        {
+            position: relative;
+            float: left;
+            width: 150px;
+            height: 300px;
+
+            /* Cube Transforms attributes */
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform-origin: 50% 50%;
+        }
+
+            /*--- Cubes' Face Style ---*/
+            /* Face share attributes */
+        .cube div
+        {
+            background-color: #000;
+            background-size: 450px 300px;
+            position: absolute;
+            -webkit-transform-origin: 50% 50%;
+            -webkit-backface-visibility: visible;
+            -moz-transform-origin: 50% 50%;
+            -moz-backface-visibility: visible;
+        }
+
+            /* Face group fb - Front and Back */
+        .cube div.fb
+        {
+            width: 150px;
+            height: 300px;
+        }
+            /* Face group tb - Top and Bottom */
+        .cube div.tb
+        {
+            width: 150px;
+            height: 300px;
+        }
+            /* Face group lr - Left and Right */
+        .cube div.lr
+        {
+            width: 300px;
+            height: 300px;
+        }
+        /*.cube div.fb{*/
+            /*width:150px;*/
+            /*height:300px;*/
+        /*}*/
+        /*.cube div.tb{*/
+            /*width:150px;*/
+            /*height:300px;*/
+        /*}*/
+        /*.cube div.lr{*/
+            /*width:300px;*/
+            /*height:300px;*/
+        /*}*/
+
+            /*--- Cubes' faces ---*/
+        .facefront
+        {
+            background-image: url(http://www.inwebson.com/demo/css3-3d-transforms/image.jpg);
+            -webkit-transform: translateZ(150px);
+            -moz-transform: translateZ(150px);
+        }
+        .faceback
+        {
+            background-image: url(http://www.inwebson.com/demo/css3-3d-transforms/image3.jpg);
+            -webkit-transform: rotateY(180deg) rotateZ(180deg) translateZ(150px);
+            -moz-transform: rotateY(180deg) rotateZ(180deg) translateZ(150px);
+        }
+        .facetop
+        {
+            background-image: url(http://www.inwebson.com/demo/css3-3d-transforms/image2.jpg);
+            -webkit-transform: rotateX(90deg) translateZ(150px);
+            -moz-transform: rotateX(90deg) translateZ(150px);
+        }
+        .facebottom
+        {
+            background-image: url(http://www.inwebson.com/demo/css3-3d-transforms/image4.jpg);
+            -webkit-transform: rotateX(-90deg) translateZ(150px);
+            -moz-transform: rotateX(-90deg) translateZ(150px);
+        }
+        .faceleft
+        {
+            -webkit-transform: rotateY(90deg) translateZ(0px);
+            -moz-transform: rotateY(90deg) translateZ(0px);
+        }
+        .faceright
+        {
+            -webkit-transform: rotateY(-90deg) translateZ(150px);
+            -moz-transform: rotateY(-90deg) translateZ(150px);
+        }
+            /* Background position */
+        #cube1 div
+        {
+            background-position: 0 0;
+        }
+        #cube2 div
+        {
+            background-position: -150px 0;
+        }
+        #cube3 div
+        {
+            background-position: -300px 0;
+        }
+
+            /*--- Cube Style ---*/
+        .cube
+        {
+            position:relative;
+            float:left;
+            width:150px;
+            height:300px;
+
+            /* Cube Transforms attributes */
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform-origin: 50% 50%;
+            -moz-transform-style: preserve-3d;
+            -moz-transform-origin: 50% 50%;
+
+            /* Cube Animation attributes */
+            -webkit-animation-name: rotation;
+            -webkit-animation-timing-function: ease;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-duration: 15s;
+            -webkit-animation-timing-function: cubic-bezier(0.6, -1, 0.4, 1.5);
+            -moz-animation-name: rotation;
+            -moz-animation-timing-function: ease;
+            -moz-animation-iteration-count: infinite;
+            -moz-animation-duration: 15s;
+            -moz-animation-timing-function: cubic-bezier(0.6, -1, 0.4, 1.5);
+
+
+        }
+
+            /*-- Keyframes --*/
+        @-webkit-keyframes rotation
+        {
+        from, to {  }
+        10%, 25% { -webkit-transform: rotateX(-90deg);
+        }
+        35%, 50% { -webkit-transform: rotateX(-180deg);
+        }
+        60%, 75% { -webkit-transform: rotateX(-270deg);
+        }
+        85%, 100% { -webkit-transform: rotateX(-360deg);
+        }
+            }
+                /*-- Keyframes --*/
+        @-moz-keyframes rotation
+        {
+        from, to {  }
+        10%, 25% { -moz-transform: rotateY(-90deg);
+        }
+        35%, 50% { -moz-transform: rotateY(-180deg);
+        }
+        60%, 75% { -moz-transform: rotateY(-270deg);
+        }
+        85%, 100% { -moz-transform: rotateY(-360deg);
+        }
+            }
+
+            /* Cube delay and z-index fix */
+        #cube1{
+            z-index:1;
+            -webkit-animation-delay:1s;
+            -moz-animation-delay:1s;
+        }
+        #cube2{
+            z-index:2;
+            -webkit-animation-delay:1.2s;
+            -moz-animation-delay:1.2s;
+        }
+        #cube3{
+            z-index:1;
+            -webkit-animation-delay:1.4s;
+            -moz-animation-delay:1.4s;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="viewStage">
+    <div id="cube1" class="cube" >
+        <div class="facefront fb"></div>
+        <div class="faceback fb"></div>
+        <div class="faceleft lr"></div>
+        <div class="faceright lr"></div>
+        <div class="facetop tb"></div>
+        <div class="facebottom tb"></div>
+    </div>
+    <div id="cube2" class="cube" >
+        <div class="facefront fb"></div>
+        <div class="faceback fb"></div>
+        <div class="faceleft lr"></div>
+        <div class="faceright lr"></div>
+        <div class="facetop tb"></div>
+        <div class="facebottom tb"></div>
+    </div>
+    <div id="cube3" class="cube" >
+        <div class="facefront fb"></div>
+        <div class="faceback fb"></div>
+        <div class="faceleft lr"></div>
+        <div class="faceright lr"></div>
+        <div class="facetop tb"></div>
+        <div class="facebottom tb"></div>
+    </div>
+</div>
+</body>
+        </html>

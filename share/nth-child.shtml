@@ -1,0 +1,188 @@
+<!doctype>
+<html>
+<head>
+    <style type="text/css">
+        *{padding: 0;margin: 0}
+        a,a:hover{text-decoration: none;}
+        .cf{*zoom:1}
+        .cf:after {
+            clear: both;
+            content: ".";
+            display: block;
+            height: 0;
+            visibility: hidden;
+        }
+        body{background-color: #d6222b;line-height: 1.5}
+        .wrap-floor{width: 985px;margin: 0 auto;}
+        .no-text {
+            line-height: 999em;
+            overflow: hidden;
+        }
+        .mod-hd {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .mod-hd h1 {
+            background-image: url(http://pics3.paipaiimg.com/update/20130710/index_dress_title.png);
+            height: 30px;
+            background-repeat: no-repeat;
+            background-color: #d6222b;
+            background-position: 0 -60px;
+        }
+        .good-wrap ul {
+            position: relative;
+            margin-right: -5px;
+        }
+        .mod-hot-rank .good-wrap li {
+            width: 228px;
+            padding: 7px 7px 0;
+            height: 247px;
+            background-color: #FFF;
+            margin: 0 5px 5px 0;
+            overflow: hidden;
+            float: left;
+        }
+        .mod-hot-rank .good-wrap .a-img {
+            width: 228px;
+            height: 170px;
+            display: block;
+            position: relative;
+        }
+        .a-img img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .mod-hot-rank .good-wrap .hot-rank-sale {
+            background: rgba(0,0,0,0.4);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4F000000,endColorstr=#4F000000);
+            display: inline-block;
+            padding: 0 5px;
+            height: 22px;
+            font: 12px/22px 宋体;
+            color: #FFF;
+            top: 0;
+            right: 0;
+        }
+        .pos-abs {
+            position: absolute;
+        }
+        .mod-hot-rank .good-wrap .hot-rank-sale {
+            font: 12px/22px 宋体;
+            color: #FFF;
+        }
+        .mod-hot-rank .good-wrap .hot-rank-no {
+            color: #FFF;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            background-color: #e52339;
+            padding: 0 7px;
+            font: bold 18px/23px Arial;
+        }
+        .mod-hot-rank .good-wrap .item-1 .hot-rank-no, .mod-hot-rank .good-wrap .item-2 .hot-rank-no {
+            height: 45px;
+            padding: 0 10px;
+            font: bold 36px/45px Arial;
+        }
+        .mod-hot-rank .goods-name a {
+            color: #333;
+            width: 228px;
+            display: inline-block;
+            line-height: 28px;
+        }
+        .long-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .mod-hot-rank .goods-price {
+            margin-left: -7px;
+            padding: 6px 7px;
+            background-color: #fff5d3;
+            width: 100%;
+        }
+        .mod-hot-rank .goods-price-new {
+            color: #e52339;
+            display: inline-block;
+        }
+        .mod-hot-rank .goods-price-market {
+            color: #333;
+            font: 12px/14px 微软雅黑;
+        }
+        .mod-hot-rank .good-wrap li:hover {
+            background-color: #b10014;
+        }
+
+        .mod-hot-rank .item-1 .goods-price-new em, .mod-hot-rank .item-2 .goods-price-new em {
+            font: bold 36px/30px Arial;
+        }
+        .mod-hot-rank .goods-price-market {
+            color: #333;
+            font: 12px/14px 微软雅黑;
+            display: block;
+        }
+
+        .mod-hot-rank .good-wrap li:hover .goods-name a {
+            color: #FFF;
+        }
+        .mod-hot-rank li:nth-child(-n+2) .goods-price-market{
+            color: #333;
+            font: 14px 微软雅黑;
+            display: inline-block;
+        }
+
+        .mod-hot-rank li:nth-child(-n+2) .goods-price{
+            padding: 7px;
+        }
+
+        .mod-hot-rank li:nth-child(-n+2) .goods-name a{
+            width: 475px;
+        }
+
+        .mod-hot-rank .good-wrap li:nth-child(-n+2) {
+            width: 475px;
+            height: 294px;
+        }
+        .mod-hot-rank .good-wrap li:nth-child(-n+2) .a-img {
+            width: 475px;
+            height: 220px;
+        }
+        /*.mod-hot-rank .item-1 .goods-price-market, .mod-hot-rank .item-2 .goods-price-market {
+            color: #333;
+            font: 14px 微软雅黑;
+            display: inline-block;
+        }
+
+        .mod-hot-rank .item-1 .goods-price, .mod-hot-rank .item-2 .goods-price {
+            padding: 7px;
+        }
+
+        .mod-hot-rank .item-1 .goods-name a, .mod-hot-rank .item-2 .goods-name a {
+            width: 475px;
+        }
+
+        .mod-hot-rank .good-wrap .item-1, .mod-hot-rank .good-wrap .item-2 {
+            width: 475px;
+            height: 294px;
+        }
+        .mod-hot-rank .good-wrap .item-1 .a-img, .mod-hot-rank .good-wrap .item-2 .a-img {
+            width: 475px;
+            height: 220px;
+        }*/
+    </style>
+</head>
+<body>
+<div class="mod-hot-rank wrap-floor">
+    <a class="href-map" href="##" id="hotRank"></a>
+    <div class="mod-hd">
+        <h1 class="no-text">热卖排行</h1>
+    </div>
+    <div class="mod-bd">
+        <div class="good-wrap">
+            <ul class="cf" dataurl="http://www.paipai.com/sinclude/xml/tjw/tjw2013/tjw7/tjw119011412570.js" commlen="10" commtpl="&lt;li class=&quot;item-{#{#order#}+1#}&quot;&gt; &lt;div class=&quot;wrap-img&quot;&gt; &lt;a title=&quot;{#recmdRegName#}&quot; target=&quot;_blank&quot; href=&quot;{#recmdReason#}&quot; class=&quot;a-img&quot;&gt; &lt;img init_src=&quot;{#image#}&quot; alt=&quot;{#recmdRegName#}&quot; title=&quot;{#recmdRegName#}&quot;/&gt; &lt;span class=&quot;hot-rank-sale pos-abs&quot;&gt;热销&lt;em&gt;{#soldNum#}&lt;/em&gt;件&lt;/span&gt; &lt;span class=&quot;hot-rank-no pos-abs&quot;&gt;NO.{#{#order#}+1#}&lt;/span&gt; &lt;/a&gt; &lt;/div&gt; &lt;div class=&quot;goods-name&quot;&gt; &lt;a title=&quot;{#recmdRegName#}&quot; target=&quot;_blank&quot; href=&quot;{#recmdReason#}&quot; class=&quot;long-text&quot;&gt;{#recmdRegName#}&lt;/a&gt; &lt;/div&gt; &lt;div class=&quot;goods-price&quot;&gt; &lt;span class=&quot;goods-price-new&quot;&gt;爆款价：&lt;em&gt;¥{#newPrice#}&lt;/em&gt;&lt;/span&gt; &lt;span class=&quot;goods-price-market&quot;&gt;市场价：&lt;span&gt;¥{#oldPrice#}&lt;/span&gt;&lt;/span&gt; &lt;/div&gt; &lt;/li&gt;"><li class="item-1"> <div class="wrap-img"> <a title="爆款包邮 热销小爪牙2013夏装新款连衣裙水玉点点蕾丝雪纺裙2-832" target="_blank" href="http://item.wanggou.com/855FF632000000000401000000A28EB5?ptag=33875.1.96" class="a-img"> <img init_src="http://pics3.paipaiimg.com/update/20130718/ppms_201058234.jpg" alt="爆款包邮 热销小爪牙2013夏装新款连衣裙水玉点点蕾丝雪纺裙2-832" title="爆款包邮 热销小爪牙2013夏装新款连衣裙水玉点点蕾丝雪纺裙2-832" src="http://pics3.paipaiimg.com/update/20130718/ppms_201058234.jpg" iguid="0"> <span class="hot-rank-sale pos-abs">热销<em>23218</em>件</span> <span class="hot-rank-no pos-abs">NO.1</span> </a> </div> <div class="goods-name"> <a title="爆款包邮 热销小爪牙2013夏装新款连衣裙水玉点点蕾丝雪纺裙2-832" target="_blank" href="http://item.wanggou.com/855FF632000000000401000000A28EB5?ptag=33875.1.96" class="long-text">爆款包邮 热销小爪牙2013夏装新款连衣裙水玉点点蕾丝雪纺裙2-832</a> </div> <div class="goods-price"> <span class="goods-price-new">爆款价：<em>¥79.2</em></span> <span class="goods-price-market">市场价：<span>¥269.00</span></span> </div> </li><li class="item-2"> <div class="wrap-img"> <a title="2013夏装新品韩版时尚气质女装修身显瘦女士衬衫女短袖女衬衣女 " target="_blank" href="http://item.wanggou.com/5B61460B0000000004010000292AB132?ptag=33875.1.97" class="a-img"> <img init_src="http://pics2.paipaiimg.com/update/20130718/ppms_201127632.jpg" alt="2013夏装新品韩版时尚气质女装修身显瘦女士衬衫女短袖女衬衣女 " title="2013夏装新品韩版时尚气质女装修身显瘦女士衬衫女短袖女衬衣女 " src="http://pics2.paipaiimg.com/update/20130718/ppms_201127632.jpg" iguid="1"> <span class="hot-rank-sale pos-abs">热销<em>6641</em>件</span> <span class="hot-rank-no pos-abs">NO.2</span> </a> </div> <div class="goods-name"> <a title="2013夏装新品韩版时尚气质女装修身显瘦女士衬衫女短袖女衬衣女 " target="_blank" href="http://item.wanggou.com/5B61460B0000000004010000292AB132?ptag=33875.1.97" class="long-text">2013夏装新品韩版时尚气质女装修身显瘦女士衬衫女短袖女衬衣女 </a> </div> <div class="goods-price"> <span class="goods-price-new">爆款价：<em>¥35.00</em></span> <span class="goods-price-market">市场价：<span>¥298.00</span></span> </div> </li><li class="item-3"> <div class="wrap-img"> <a title="女装韩版全棉水墨花朵短袖T恤" target="_blank" href="http://item.wanggou.com/0F1E0D0A000000000401000015C555E9?ptag=33875.1.98" class="a-img"> <img init_src="http://pics2.paipaiimg.com/update/20130718/ppms_201029782.jpg" alt="女装韩版全棉水墨花朵短袖T恤" title="女装韩版全棉水墨花朵短袖T恤" src="http://pics2.paipaiimg.com/update/20130718/ppms_201029782.jpg" iguid="2"> <span class="hot-rank-sale pos-abs">热销<em>5372</em>件</span> <span class="hot-rank-no pos-abs">NO.3</span> </a> </div> <div class="goods-name"> <a title="女装韩版全棉水墨花朵短袖T恤" target="_blank" href="http://item.wanggou.com/0F1E0D0A000000000401000015C555E9?ptag=33875.1.98" class="long-text">女装韩版全棉水墨花朵短袖T恤</a> </div> <div class="goods-price"> <span class="goods-price-new">爆款价：<em>¥39.00</em></span> <span class="goods-price-market">市场价：<span>¥398.00</span></span> </div> </li><li class="item-4"> <div class="wrap-img"> <a title="欧美风范百褶工艺连衣裙T0025" target="_blank" href="http://item.wanggou.com/B7C17A8E00000000040100002D4ECAC2?ptag=33875.1.99" class="a-img"> <img init_src="http://pics3.paipaiimg.com/update/20130718/ppms_t0025-2.jpg" alt="欧美风范百褶工艺连衣裙T0025" title="欧美风范百褶工艺连衣裙T0025" src="http://pics3.paipaiimg.com/update/20130718/ppms_t0025-2.jpg" iguid="3"> <span class="hot-rank-sale pos-abs">热销<em>2857</em>件</span> <span class="hot-rank-no pos-abs">NO.4</span> </a> </div> <div class="goods-name"> <a title="欧美风范百褶工艺连衣裙T0025" target="_blank" href="http://item.wanggou.com/B7C17A8E00000000040100002D4ECAC2?ptag=33875.1.99" class="long-text">欧美风范百褶工艺连衣裙T0025</a> </div> <div class="goods-price"> <span class="goods-price-new">爆款价：<em>¥79.00</em></span> <span class="goods-price-market">市场价：<span>¥1053.00</span></span> </div> </li><li class="item-5"> <div class="wrap-img"> <a title="修身中长款潮女花色雪纺小衫" target="_blank" href="http://item.wanggou.com/90227B8D00000000040100002B6F105E?ptag=33875.1.101" class="a-img"> <img init_src="http://pics3.paipaiimg.com/update/20130718/ppms_201450577.jpg" alt="修身中长款潮女花色雪纺小衫" title="修身中长款潮女花色雪纺小衫" src="http://pics3.paipaiimg.com/update/20130718/ppms_201450577.jpg" iguid="4"> <span class="hot-rank-sale pos-abs">热销<em>1168</em>件</span> <span class="hot-rank-no pos-abs">NO.5</span> </a> </div> <div class="goods-name"> <a title="修身中长款潮女花色雪纺小衫" target="_blank" href="http://item.wanggou.com/90227B8D00000000040100002B6F105E?ptag=33875.1.101" class="long-text">修身中长款潮女花色雪纺小衫</a> </div> <div class="goods-price"> <span class="goods-price-new">爆款价：<em>¥49.00</em></span> <span class="goods-price-market">市场价：<span>¥298.00</span></span> </div> </li><li class="item-6"> <div class="wrap-img"> <a title="仙丫 2013夏装新款韩版女装OL气质修身裙子夏季雪纺连衣裙收腰瘦" target="_blank" href="http://item.wanggou.com/D65FF63200000000040100002C4C998D?ptag=33875.1.102" class="a-img"> <img init_src="http://pics2.paipaiimg.com/update/20130718/ppms_8355-1.jpg" alt="仙丫 2013夏装新款韩版女装OL气质修身裙子夏季雪纺连衣裙收腰瘦" title="仙丫 2013夏装新款韩版女装OL气质修身裙子夏季雪纺连衣裙收腰瘦" src="http://pics2.paipaiimg.com/update/20130718/ppms_8355-1.jpg" iguid="5"> <span class="hot-rank-sale pos-abs">热销<em>2237</em>件</span> <span class="hot-rank-no pos-abs">NO.6</span> </a> </div> <div class="goods-name"> <a title="仙丫 2013夏装新款韩版女装OL气质修身裙子夏季雪纺连衣裙收腰瘦" target="_blank" href="http://item.wanggou.com/D65FF63200000000040100002C4C998D?ptag=33875.1.102" class="long-text">仙丫 2013夏装新款韩版女装OL气质修身裙子夏季雪纺连衣裙收腰瘦</a> </div> <div class="goods-price"> <span class="goods-price-new">爆款价：<em>¥119.00</em></span> <span class="goods-price-market">市场价：<span>¥539.00</span></span> </div> </li><li class="item-7"> <div class="wrap-img"> <a title="2013夏季韩版时尚小西装外套短袖职业女装女士修身西服" target="_blank" href="http://item.wanggou.com/E96BF63200000000040100002E26266B?ptag=33875.1.103" class="a-img"> <img init_src="http://pics1.paipaiimg.com/update/20130718/ppms_228-170.jpg" alt="2013夏季韩版时尚小西装外套短袖职业女装女士修身西服" title="2013夏季韩版时尚小西装外套短袖职业女装女士修身西服" src="http://pics1.paipaiimg.com/update/20130718/ppms_228-170.jpg" iguid="6"> <span class="hot-rank-sale pos-abs">热销<em>1718</em>件</span> <span class="hot-rank-no pos-abs">NO.7</span> </a> </div> <div class="goods-name"> <a title="2013夏季韩版时尚小西装外套短袖职业女装女士修身西服" target="_blank" href="http://item.wanggou.com/E96BF63200000000040100002E26266B?ptag=33875.1.103" class="long-text">2013夏季韩版时尚小西装外套短袖职业女装女士修身西服</a> </div> <div class="goods-price"> <span class="goods-price-new">爆款价：<em>¥79.00</em></span> <span class="goods-price-market">市场价：<span>¥289.00</span></span> </div> </li><li class="item-8"> <div class="wrap-img"> <a title="限时抢购 2013夏装新款女装韩版人像假两件短袖修身连衣裙" target="_blank" href="http://item.wanggou.com/B159F6320000000004010000272B0A12?ptag=33875.1.104" class="a-img"> <img init_src="http://pics0.paipaiimg.com/update/20130718/ppms_228-170--9067.jpg" alt="限时抢购 2013夏装新款女装韩版人像假两件短袖修身连衣裙" title="限时抢购 2013夏装新款女装韩版人像假两件短袖修身连衣裙" src="http://pics0.paipaiimg.com/update/20130718/ppms_228-170--9067.jpg" iguid="7"> <span class="hot-rank-sale pos-abs">热销<em>4077</em>件</span> <span class="hot-rank-no pos-abs">NO.8</span> </a> </div> <div class="goods-name"> <a title="限时抢购 2013夏装新款女装韩版人像假两件短袖修身连衣裙" target="_blank" href="http://item.wanggou.com/B159F6320000000004010000272B0A12?ptag=33875.1.104" class="long-text">限时抢购 2013夏装新款女装韩版人像假两件短袖修身连衣裙</a> </div> <div class="goods-price"> <span class="goods-price-new">爆款价：<em>¥64.00</em></span> <span class="goods-price-market">市场价：<span>¥428.00</span></span> </div> </li><li class="item-9"> <div class="wrap-img"> <a title="yoomito2013新款夏装蝙蝠袖上衣防晒衣不规则美鞋雪纺罩衫雪纺衫" target="_blank" href="http://item.wanggou.com/2063F63200000000040100000DBF6440?ptag=33875.1.105" class="a-img"> <img init_src="http://pics3.paipaiimg.com/update/20130718/ppms_2_228-170.jpg" alt="yoomito2013新款夏装蝙蝠袖上衣防晒衣不规则美鞋雪纺罩衫雪纺衫" title="yoomito2013新款夏装蝙蝠袖上衣防晒衣不规则美鞋雪纺罩衫雪纺衫" src="http://pics3.paipaiimg.com/update/20130718/ppms_2_228-170.jpg" iguid="8"> <span class="hot-rank-sale pos-abs">热销<em>2625</em>件</span> <span class="hot-rank-no pos-abs">NO.9</span> </a> </div> <div class="goods-name"> <a title="yoomito2013新款夏装蝙蝠袖上衣防晒衣不规则美鞋雪纺罩衫雪纺衫" target="_blank" href="http://item.wanggou.com/2063F63200000000040100000DBF6440?ptag=33875.1.105" class="long-text">yoomito2013新款夏装蝙蝠袖上衣防晒衣不规则美鞋雪纺罩衫雪纺衫</a> </div> <div class="goods-price"> <span class="goods-price-new">爆款价：<em>¥49.68</em></span> <span class="goods-price-market">市场价：<span>¥158.00</span></span> </div> </li><li class="item-10"> <div class="wrap-img"> <a title="ARELATE法国高级专柜2013夏装新品淑女纯色清新斗篷两件套连衣裙" target="_blank" href="http://item.wanggou.com/2D24236D0000000004010000197DF67C?ptag=33875.1.106" class="a-img"> <img init_src="http://pics2.paipaiimg.com/update/20130718/ppms_r_228-170.jpg" alt="ARELATE法国高级专柜2013夏装新品淑女纯色清新斗篷两件套连衣裙" title="ARELATE法国高级专柜2013夏装新品淑女纯色清新斗篷两件套连衣裙" src="http://pics2.paipaiimg.com/update/20130718/ppms_r_228-170.jpg" iguid="9"> <span class="hot-rank-sale pos-abs">热销<em>10622</em>件</span> <span class="hot-rank-no pos-abs">NO.10</span> </a> </div> <div class="goods-name"> <a title="ARELATE法国高级专柜2013夏装新品淑女纯色清新斗篷两件套连衣裙" target="_blank" href="http://item.wanggou.com/2D24236D0000000004010000197DF67C?ptag=33875.1.106" class="long-text">ARELATE法国高级专柜2013夏装新品淑女纯色清新斗篷两件套连衣裙</a> </div> <div class="goods-price"> <span class="goods-price-new">爆款价：<em>¥125.00</em></span> <span class="goods-price-market">市场价：<span>¥1380.00</span></span> </div> </li></ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
