@@ -1,0 +1,126 @@
+#textContent{
+    clear: both;
+    position: relative;
+    overflow: hidden;
+}
+
+#textContent .left{
+    float: left;
+    width: 260px;
+    margin-bottom: -9999px;
+    padding-bottom: 9999px;
+}
+
+#textContent .right{
+    float: right;
+    width: 900px;
+    padding: 0 20px;
+    background: #fff;
+    margin-bottom: -9999px;
+    padding-bottom: 9999px;
+}
+
+#textContent .left-menu{
+    width: 219px;
+    padding:0 20px;
+    border-right: 1px solid #ece8e8;
+    font-family: Verdana, Geneva, sans-serif;
+    background: #fff;
+}
+#textContent .left-menu .mt{
+    border-bottom: 0 none;
+    padding:11px 0 7px;
+    color: #301d1d;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 34px;
+}
+
+#textContent .left-menu .mc{
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ece8e9;
+}
+
+#textContent .left-menu .mc:last-child{
+    border-bottom: 0 none;
+}
+
+#textContent .left-menu .mc dl{
+    padding-left: 0;
+    border-top: 0 none;
+}
+
+#textContent .left-menu .mc dl dt{
+    line-height: 18px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    border: 0 none;
+}
+
+.breadscrumb{
+    font-size: 0;
+    line-height: 16px;
+    padding: 20px 0 27px;
+}
+
+.breadscrumb span{
+    font-size: 12px;
+}
+
+.breadscrumb span.separator{
+    margin: 0 5px;
+}
+
+#textContent .right .cnt{
+    padding: 0 0 50px;
+}
+
+.right .cnt h3{
+    line-height: 48px;
+    color: #301d1d;
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 7px;
+    margin-bottom: 16px;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #ece8e8;
+}
+
+.right .cnt h4{
+    margin-top: 12px;
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.right .cnt p{
+    line-height: 22px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.right .cnt em{
+    font-weight: bold;
+}
+
+.right .cnt a{
+    color: #0058a3;
+}
+
+.right .cnt table{
+    margin-top: 15px;
+}
+
+.right .cnt thead tr{
+    line-height: 52px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.right .cnt tr{
+
+}
+
+.right .cnt tbody td{
+    padding: 20px 20px;
+}
