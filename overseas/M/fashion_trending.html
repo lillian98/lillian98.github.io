@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script>
+    /**
+     * MobileWeb 通用功能助手，包含常用的 UA 判断、页面适配、search 参数转 键值对。
+     * 该 JS 应在 head 中尽可能早的引入，减少重绘。
+     *
+     * fixScreen 方法根据两种情况适配，该方法自动执行。
+     *      1. 定宽： 对应 meta 标签写法 -- <meta name="viewport" content="target-densitydpi=device-dpi,width=750">
+     *          该方法会提取 width 值，主动添加 scale 相关属性值。
+     *          注意： 如果 meta 标签中指定了 initial-scale， 该方法将不做处理（即不执行）。
+     *      2. REM: 不用写 meta 标签，该方法根据 dpr 自动生成，并在 html 标签中加上 data-dpr 和 font-size 两个属性值。
+     *          该方法约束：IOS 系统最大 dpr = 3，其它系统 dpr = 1，页面每 dpr 最大宽度（即页面宽度/dpr） = 750，REM 换算比值为 16。
+     *          对应 css 开发，任何弹性尺寸均使用 rem 单位，rem 默认宽度为 视觉稿宽度 / 16;
+     *              scss 中 $ppr(pixel per rem) 变量写法 -- $ppr: 750px/16/1rem;
+     *                      元素尺寸写法 -- html { font-size: $ppr*1rem; } body { width: 750px/$ppr; }。
+
+     */
+    window.mobileUtil = (function(win, doc) {
+      var UA = navigator.userAgent,
+        isAndroid = /android|adr/gi.test(UA),
+        isIos = /iphone|ipod|ipad/gi.test(UA) && !isAndroid, // 据说某些国产机的UA会同时包含 android iphone 字符
+        isMobile = isAndroid || isIos;  // 粗略的判断
+
+      return {
+        isAndroid: isAndroid,
+        isIos: isIos,
+        isMobile: isMobile,
+
+        isNewsApp: /NewsApp\/[\d\.]+/gi.test(UA),
+        isWeixin: /MicroMessenger/gi.test(UA),
+        isQQ: /QQ\/\d/gi.test(UA),
+        isYixin: /YiXin/gi.test(UA),
+        isWeibo: /Weibo/gi.test(UA),
+        isTXWeibo: /T(?:X|encent)MicroBlog/gi.test(UA),
+
+        tapEvent: isMobile ? 'tap' : 'click',
+
+        /**
+         * 缩放页面
+         */
+        fixScreen: function() {
+          var metaEl = doc.querySelector('meta[name="viewport"]'),
+            metaCtt = metaEl ? metaEl.content : '',
+            matchScale = metaCtt.match(/initial\-scale=([\d\.]+)/),
+            matchWidth = metaCtt.match(/width=([^,\s]+)/);
+
+          if ( !metaEl ) { // REM
+            var docEl = doc.documentElement,
+              maxwidth = docEl.dataset.mw || 750, // 每 dpr 最大页面宽度
+              dpr = isIos ? Math.min(win.devicePixelRatio, 3) : 1,
+              scale = 1 / dpr,
+              tid;
+
+            docEl.removeAttribute('data-mw');
+            docEl.dataset.dpr = dpr;
+            metaEl = doc.createElement('meta');
+            metaEl.name = 'viewport';
+            metaEl.content = fillScale(scale);
+            docEl.firstElementChild.appendChild(metaEl);
+
+            var refreshRem = function() {
+              var width = docEl.getBoundingClientRect().width;
+              if (width / dpr > maxwidth) {
+                width = maxwidth * dpr;
+              }
+              var rem = width / 16;
+              docEl.style.fontSize = rem + 'px';
+              if(window.location.href.indexOf('/visualediting/visualEditing.html?veBean.pageInstanceId')>-1){
+                docEl.style.fontSize = '20px';
+              }
+            };
+
+            win.addEventListener('resize', function() {
+              clearTimeout(tid);
+              tid = setTimeout(refreshRem, 300);
+            }, false);
+            win.addEventListener('pageshow', function(e) {
+              if (e.persisted) {
+                clearTimeout(tid);
+                tid = setTimeout(refreshRem, 300);
+              }
+            }, false);
+
+            refreshRem();
+          } else if ( isMobile && !matchScale && ( matchWidth && matchWidth[1] != 'device-width' ) ) { // 定宽
+            var	width = parseInt(matchWidth[1]),
+              iw = win.innerWidth || width,
+              ow = win.outerWidth || iw,
+              sw = win.screen.width || iw,
+              saw = win.screen.availWidth || iw,
+              ih = win.innerHeight || width,
+              oh = win.outerHeight || ih,
+              ish = win.screen.height || ih,
+              sah = win.screen.availHeight || ih,
+              w = Math.min(iw,ow,sw,saw,ih,oh,ish,sah),
+              scale = w / width;
+
+            if ( scale < 1 ) {
+              metaEl.content = metaCtt + ',' + fillScale(scale);
+            }
+          }
+
+          function fillScale(scale) {
+            return 'initial-scale=' + scale + ',maximum-scale=' + scale + ',minimum-scale=' + scale;
+          }
+        },
+
+        /**
+         * 转href参数成键值对
+         * @param href {string} 指定的href，默认为当前页href
+         * @returns {object} 键值对
+         */
+        getSearch: function(href) {
+          href = href || win.location.search;
+          var data = {},reg = new RegExp( "([^?=&]+)(=([^&]*))?", "g" );
+          href && href.replace(reg,function( $0, $1, $2, $3 ){
+            data[ $1 ] = $3;
+          });
+          return data;
+        }
+      };
+    })(window, document);
+
+    // 默认直接适配页面
+    mobileUtil.fixScreen();
+  </script>
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="email=no" name="format-detection">
+  <title>Черная пятница</title>
+  <link rel="stylesheet" href="../media/style/css/fashion_trending.css"/>
+</head>
+
+<body>
+<div class="wrapper">
+  <header class="banner">
+    <img src="//img10.360buyimg.com/cms/jfs/t2059/209/1460834896/51306/c3c26b1c/56a8ab5cN7e61dd31.jpg" width="100%">
+  </header>
+
+  <!--s 常规商品楼层-->
+  <section class="goodsList-block goods-list-1" id="flr1">
+    <div class="floor-title">
+      <h2 class="flr-hd-1 flr-hd"><img
+        src="//img13.360buyimg.com/cms/jfs/t2335/293/1502158154/14926/6ba46b49/56a8ab5cNa15ee42f.png" alt="" width="100%"/></h2>
+    </div>
+    <ul id="list1" class="goods-list" marketstart="0" marketlength="8" markettplid="list1Tpl" marketurl="//acen.jd.com/tjw/get/tjw2015/tjw156a5dc4715202.js" marketonload="xmlLoad(1);">
+    </ul>
+  </section>
+  <!--e 常规商品楼层-->
+  <!--s 常规商品楼层-->
+  <section class="goodsList-block goods-list-2" id="flr2">
+    <div class="floor-title">
+      <h2 class="flr-hd-2 flr-hd"><img src="//img12.360buyimg.com/cms/jfs/t2380/104/2164800251/1986/8b35c414/56a8b74eNff0df5c5.png" alt="" width="100%"/></h2>
+    </div>
+    <ul id="list2" class="goods-list" marketstart="8" marketlength="8" markettplid="list1Tpl" marketurl="//acen.jd.com/tjw/get/tjw2015/tjw156a5dc4715202.js" marketonload="xmlLoad(1);">
+    </ul>
+  </section>
+  <!--e 常规商品楼层-->
+  <!-- S 导航 -->
+  <nav class="wrap-menu">
+    <ul class="wrap-menu-list">
+      <li class="wrap-menu-1 active"><a href="#flr3" onclick="javascript:document.getElementById('flr3').scrollIntoView();return false;">Мужская одежда<span class="icon"></span></a></li>
+      <li class="wrap-menu-2"><a href="#flr4" onclick="javascript:document.getElementById('flr4').scrollIntoView();return false;">Женская одежда<span class="icon"></span></a></li>
+      <li class="wrap-menu-3"><a href="#flr5" onclick="javascript:document.getElementById('flr5').scrollIntoView();return false;">Часы<span class="icon"></span></a></li>
+      <li class="wrap-menu-4"><a href="#flr6" onclick="javascript:document.getElementById('flr6').scrollIntoView();return false;">Украшения<span class="icon"></span></a></li>
+      <li class="wrap-menu-5"><a href="#flr7" onclick="javascript:document.getElementById('flr7').scrollIntoView();return false;">Аксессуары</a></li>
+    </ul>
+  </nav>
+  <!-- E 导航 -->
+  <!--s 常规商品楼层-->
+  <section class="goodsList-block menu-goods-block" id="flr3">
+    <div class="floor-title">
+      <h2 class="flr-hd-3 flr-hd">Мужская одежда</h2>
+    </div>
+    <ul id="list3" class="goods-list" marketstart="0" marketlength="10" markettplid="list1Tpl" marketurl="//acen.jd.com/tjw/get/tjw2015/tjw156a5dc7033dae.js" marketonload="xmlLoad(1);">
+    </ul>
+  </section>
+  <!--e 常规商品楼层-->
+  <!--s 常规商品楼层-->
+  <section class="goodsList-block menu-goods-block" id="flr4">
+    <div class="floor-title">
+      <h2 class="flr-hd-4 flr-hd">Женская одежда</h2>
+    </div>
+    <ul id="list4" class="goods-list" marketstart="10" marketlength="10" markettplid="list1Tpl" marketurl="//acen.jd.com/tjw/get/tjw2015/tjw156a5dc7033dae.js" marketonload="xmlLoad(1);">
+    </ul>
+  </section>
+  <!--e 常规商品楼层-->
+  <!--s 常规商品楼层-->
+  <section class="goodsList-block menu-goods-block" id="flr5">
+    <div class="floor-title">
+      <h2 class="flr-hd-5 flr-hd">Часы</h2>
+    </div>
+    <ul id="list5" class="goods-list" marketstart="20" marketlength="10" markettplid="list1Tpl" marketurl="//acen.jd.com/tjw/get/tjw2015/tjw156a5dc7033dae.js" marketonload="xmlLoad(1);">
+    </ul>
+  </section>
+  <!--e 常规商品楼层-->
+  <!--s 常规商品楼层-->
+  <section class="goodsList-block menu-goods-block" id="flr6">
+    <div class="floor-title">
+      <h2 class="flr-hd-6 flr-hd">Украшения</h2>
+    </div>
+    <ul id="list6" class="goods-list" marketstart="30" marketlength="10" markettplid="list1Tpl" marketurl="//acen.jd.com/tjw/get/tjw2015/tjw156a5dc7033dae.js" marketonload="xmlLoad(1);">
+    </ul>
+  </section>
+  <!--e 常规商品楼层-->
+  <!--s 常规商品楼层-->
+  <section class="goodsList-block menu-goods-block" id="flr7">
+    <div class="floor-title">
+      <h2 class="flr-hd-7 flr-hd">Аксессуары</h2>
+    </div>
+    <ul id="list7" class="goods-list" marketstart="40" marketlength="10" markettplid="list1Tpl" marketurl="//acen.jd.com/tjw/get/tjw2015/tjw156a5dc7033dae.js" marketonload="xmlLoad(1);">
+    </ul>
+  </section>
+  <!--e 常规商品楼层-->
+  <!-- S child1 -->
+  <a href="//m.jd.ru/search/result/list?keyword=feel" class="actbanner" hasclstag="true" style="display: none">
+    <img src="//img11.360buyimg.com/cms/jfs/t1900/46/2017671537/28850/e99d1d5/56977fcdN64e4af63.jpg" alt="" width="100%"/></a>
+  <!-- E child1 -->
+
+</div>
+<!--s 常规商品楼层模板-->
+<script type="text/html" id="list1Tpl">
+  <li>
+    <a class="goods-link" href="#" hasclstag="true" spuid="{#id#}" onclick="window.activity.gotoProductDetail('detail', '{#id#}')">
+      <div class="j-pic">
+        <img src="{#image#}" width="100%">
+        <span class="discount"><span class="num">-{#appPrice#}%</span></span>
+      </div>
+      <div class="details">
+        <p class="title">{#recommendName#}</p>
+        <span class="arrival">【{#recommendReason#}】</span>
+        <p class="price">
+          <span class="j-jd-price">${#jdPrice#}</span>
+          <span class="j-sku-price"><del>${#normalPrice#}</del></span>
+        </p>
+        <span class="j-heart-icon" spuid="{#id#}"></span>
+        <p class="tips">Товар был успешно добавлен в корзину!</p>
+        <p class="btn-buy">Купить сейчас</p>
+      </div>
+    </a>
+  </li>
+</script>
+<!--end of 常规商品楼层模板-->
+
+
+
+<!--end of GTM 埋点  *还有一小段在xiaomi.js中*-->
+<script type="text/javascript">
+  if(window.google_tag_params){
+    dataLayer = [{
+      'google_tag_params': window.google_tag_params
+    }];
+  }
+</script>
+<!-- Google Tag Manager -->
+<noscript>
+  <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WFSLVN"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!--end of GTM 埋点-->
+
+<script src="//acen.jd.com/h5/topActivity/media/js/lib/zepto-1.1.6.min.js"></script>
+<script src="//acsten.jd.com/static/market-1.0.0.min.js"></script>
+<!--<script src="../media/js/new_year.js"></script>-->
+<script>
+  $(function(){
+    var userPin_email, userPin, login_app;
+//    get user info
+    if(window.activity && window.activity.getLoginUserPin){
+      userPin_email = window.activity.getLoginUserPin();
+      if(!userPin_email == ''){
+        userPin = userPin_email.split('_')[0];
+      }
+      login_app = userPin ? false : true;
+    }
+    //激活ios active状态
+    document.addEventListener("touchstart", function() {},false);
+    /* xmlLoad */
+    window.xmlObj = {
+      total: $('[marketurl]').length,
+      loadedNo:0
+    }
+    window.xmlLoad = function(_flag){
+      if(_flag == 1){
+        xmlObj.loadedNo ++;
+      }
+      if(xmlObj.loadedNo == xmlObj.total){
+        marketRendered(userPin,login_app);
+      }
+    }
+  })
+
+
+  /* 数据源加载完毕执行的code */
+  function marketRendered(userId,login_app){
+    //链接地址拼接埋点
+    $.each($('[hasclstag]'), function (index,item){
+      var spuId = $(item).attr('spuid');
+      $(item).attr({
+        "clstag": "pageclick|keycount|2016Feb_ru_m_fashion_201601272|"+(index+1)
+      })
+    })
+    //arrival判断
+    $.each($('.arrival,.jd-collection,.interest-point'), function (index,item){
+      if($.trim($(item).text())=='【】' || $.trim($(item).text())=='【 】'){
+        $(item).css('opacity', '0');
+      }
+    })
+//心愿单
+    //批量获取加入心愿单人数
+    var wishArray = [],
+      spuids = '',
+      wishList = $('.j-heart-icon');
+    $.each(Zepto(wishList), function (index, item){
+      wishArray.push($(item).attr('spuid'));
+    });
+    spuids = wishArray.toString().replace(/\,/g, '|');
+    if (userId || login_app ) {
+      //app端处理
+      //批量判断是否存在于加入心愿单中
+      $.ajax({
+        url: '//m.jd.ru/wish/batchQueryExist.do?pin=' + userId + '&wareIds=' + spuids,
+        dataType: 'jsonp',
+        success: function(e){
+          if(e.success && e.data){
+            $.each(Zepto(wishList), function (index, item){
+              var spuid = $(item).attr('spuid');
+              if(e.data[spuid] == true){
+                $(item).addClass("active");
+              }
+            })
+
+          }
+        }
+      })
+      //点击加入心愿单
+      $(".j-heart-icon").click(function(e){
+        e.stopPropagation();
+        if (login_app) {
+          $(".cover").addClass("active");
+          setTimeout(function(){
+            $(".cover").removeClass("active");
+          },1500);
+        }else{
+          if ($(this).hasClass("active")) {
+            var _this = $(this);
+            _this.next(".tips").addClass("active");
+            setTimeout(function(){
+              _this.next(".tips").removeClass("active");
+            },2500);
+          }else{
+            var _this = $(this);
+            //加入心愿单
+            var spuid = $(this).attr("spuid");
+            $.ajax({
+              url: '//m.jd.ru/wish/add.do?pin=' + userId + '&wareId=' + spuid,
+              dataType: 'jsonp',
+              success: function(e){
+                if(e.success && e.code == 1){
+                  _this.addClass("active");
+                }else{
+                  if(e.code == 403){
+                    window.location.href = e.redirectLoginUrl;
+                  }
+                }
+              }
+            })
+
+            return false;
+          }
+        }
+      })
+    }else{
+      //m端处理
+      //批量判断是否存在于加入心愿单中
+      $.ajax({
+        url: '//m.jd.ru/wish/batchQueryExist.do?wareIds=' + spuids,
+        dataType: 'jsonp',
+        success: function(e){
+          if(e.success && e.data){
+            $.each(Zepto(wishList), function (index, item){
+              var spuid = $(item).attr('spuid');
+              if(e.data[spuid] == true){
+                $(item).addClass("active");
+              }
+            })
+          }
+        }
+      })
+      //点击加入心愿单
+      $(".j-heart-icon").click(function(e){
+        e.stopPropagation();
+        if ($(this).hasClass("active")) {
+          var _this = $(this);
+          _this.next(".tips").addClass("active");
+          setTimeout(function(){
+            _this.next(".tips").removeClass("active");
+          },2500);
+        }else{
+          var _this = $(this);
+          var spuid = $(this).attr("spuid");
+          $.ajax({
+            url: '//m.jd.ru/wish/add.do?wareId=' + spuid,
+            dataType: 'jsonp',
+            success: function(e){
+              if(e.success && e.code == 1){
+                _this.addClass("active");
+              }else{
+                if(e.code == 403){
+                  window.location.href = e.redirectLoginUrl;
+                }
+              }
+            }
+          })
+        }
+        return false;
+      })
+    }
+
+  }
+  /*tab吸顶*/
+  function detecCoupon(){
+    var scrollTop = $(window).scrollTop(),
+            menuHeight = $('.wrap-menu').height(),
+            goodsOffsetTop = ($('.wrap-menu').offset().top);
+    if(scrollTop >= goodsOffsetTop){
+      $('.wrap-menu-list').addClass('menu-list-fix');
+    }else{
+      $('.wrap-menu-list').removeClass('menu-list-fix');
+    }
+
+    $.each($('.menu-goods-block'),function(i){
+      var _this = $(this);
+      var floor_top =_this.offset().top;
+      if(floor_top<= scrollTop + menuHeight){
+        $('.wrap-menu-list li').eq(i).addClass('active').siblings().removeClass('active');
+      }
+    });
+  }
+
+  detecCoupon();
+  $(window).scroll(function(){
+    detecCoupon();
+  }).trigger('scroll')
+</script>
+
+
+<!--start of JA埋点-->
+<script type="text/javascript">
+  var jap = {
+    siteId : 'JA2015_161293',
+    topic: 'traffic-hw',
+    account : '',
+    skuid: '',
+    shopid: '',
+    orderid: '',
+    adsCookieName: '',
+    __cookie_jda: '__tra',
+    __cookie_jdb: '__trb',
+    __cookie_jdc: '__trc',
+    __cookie_jdu: '__tru',
+    __cookie_jdv: '__trv'
+  };
+  (function() { var ja = document.createElement('script'); ja.type = 'text/javascript'; ja.async = true;
+    ja.src=('https:'==document.location.protocol?'https://miscssl':'//misc')+ '.360buyimg.com/jdf/1.0.0/unit/ja/1.0.0/ja.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ja,s);
+  })();
+</script>
+<!--end of JA埋点-->
+
+<!--start of GTM 埋点 -->
+<script type="text/javascript">
+  if(window.google_tag_params){
+    dataLayer = [{
+      'google_tag_params': window.google_tag_params
+    }];
+  }
+</script>
+<noscript>
+  <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WFSLVN"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>
+  $(function(){
+    /*GTM埋点*/
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WFSLVN');
+  });
+</script>
+<!--end of GTM 埋点-->
+</body>
+</html>
