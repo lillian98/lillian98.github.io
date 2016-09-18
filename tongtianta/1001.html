@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <title>国庆游园会</title>
+    <link rel="stylesheet" href="//static.360buyimg.com/jdcsh/babel/dist/css/parser.css">
+</head>
+<body>
+<!-- tracking -->
+<div class="tracking hide">
+    <script type="text/javascript">
+        var jap = {
+            siteId:'MO-J2011-1', // 站点编号，替换jaq的account字段
+            autoLogPv:true        //  页面加载后自动上报pv
+        };
+    </script>
+    <script type="text/javascript" src="//wl.jd.com/unify.min.js"></script>
+</div>
+<!--S container -->
+<div id="J_bableOpt" class="bab_opt_con" data-activityId="3SuRYXJPCmnjBnib1FUVhUmvTG3" data-pageId="11491">
+    <!-- S import m_header -->
+    <div id="m_common_header" class="bab_opt_header hide"></div>
+    <!-- E import m_header -->
+
+    <div class="bab_opt_content">
+        <div class="bab_opt_loading jdui_load">
+            <span class="jdui_load_in"></span>
+        </div>
+        <div id="J_bableOptPage" class="bab_opt_page">
+            <div class="bab_opt_mod bab_opt_mod_1 customcode" data-floorNum="1" data-template="customcode">
+	<textarea class="template_code hide">
+		<div class="wrapper"></div>
+	</textarea>
+            </div>
+        </div>
+        <div class="bab_opt_footer hide"></div>
+    </div>
+</div>
+<!--E container -->
+<!-- S wrapper -->
+<div class="wrapper">
+    <!-- S banner -->
+    <div class="wrap-banner">
+
+    </div>
+    <!-- E banner -->
+    <!-- S floor -->
+<div class="wrap-floor" id="wrapFloor">
+
+</div>
+    <!-- E floor -->
+</div>
+<!-- E wrapper -->
+<script id="branchHallTpl" type="text/x-template">
+    <div class="z-two">
+
+        <% obj.list.forEach(function(item, index){ %>
+        <a href="http://item.m.jd.com/ware/view.action?wareId=<%= item.skuId %>" target="_blank">
+            <img src="<%= item.image %>" width="100%" height="auto" data-jumpUrl="<%= item.linkType %>,<%= item.link %>" data-event_param="<%= obj.groupName %>_<%= item.name %>_<%= item.link %>" />
+        </a>
+        <% }) %>
+    </div>
+</script>
+<script id="branchHallHdTpl" type="text/x-template">
+    <a href="<%= item.url %>" target="_blank">
+        <img src="<%= item.pictureUrl %>" width="100%" height="auto"
+             data-jumpUrl="<%= item.linkType %>,<%= item.link %>"
+             data-event_param="<%= obj.groupName %>_<%= item.name %>_<%= item.link %>"
+             style="position:relative;z-index=2;"/>
+    </a>
+</script>
+<script type="text/javascript" src="js/spin.min.js"></script>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/jworker.js"></script>
+<script type="text/javascript" src="js/request.js"></script>
+<script type="text/javascript">
+    $(function(){
+
+
+    //当前日期顺序对应品牌商品组id：
+    var brandsGoods = ['00133338','00133339','00133340','00133341'];//360、乐视、小米、魅族
+        var brandsAds = '00085912';
+    //var brandsDate = ['0927','0928','0929','0930'];
+    var brandsDate = ['0918','0919','0920','0921'];
+    var curIds = '';
+    var curDate = new Date();
+    var curDateMonth = curDate.getMonth()+1;
+    var curDateDay = curDate.getDate();
+    var curDateIndex = 0;//默认从品牌中第一个开始排序
+        var initNo = 0;
+    $(brandsDate).each(function(i,k){
+        if(curDateMonth == parseInt(k.substr(0,2)) && curDateDay == parseInt(k.substr(2,2))){
+            curDateIndex = i;
+            curIds += brandsGoods[i]
+        }
+    })
+    $(brandsGoods).each(function(i,k){
+        if(i != curDateIndex){
+            curIds += ','+k;
+        }
+    })
+    console.log('curIds',curIds);
+    console.log('curDateIndex',curDateIndex);
+
+        floorInit();
+        function floorInit(){
+            for( var i=0;i<brandsGoods.length;i++){
+                var oldHtml = $('.wrap-floor').html();
+                $('.wrap-floor').html(oldHtml + '<div id=wrapFloor' + i + '><div class="floor-hd"></div><div class="floor-bd"></div></div>');
+            }
+            renderRequst(0);//发送楼层标题请求
+            renderRequst(1);//发送楼层商品请求
+            //renderHeader();
+        }
+
+    function renderRequst(type){
+        //请求成功渲染模块
+        var success = function(data) {
+            console.log('success',data,type);
+            var option = {
+                events: {
+                    "tap .z-two": "gotoBranchHall",
+                },
+                init: function() {
+                    if(type == 1){
+                        //为图片位置赋默认高度
+                        var jPushList = this.$el.find("#wrapFloor").children("a"),
+                                ws = 351,
+                                hs = Math.floor(ws * 290 / 345);
+                        jPushList.css("height", hs + "px");
+                    }
+                },
+                gotoBranchHall: function(e) {
+                    //do something
+                    console.log(1);
+                }
+            }
+            if(type == 1){
+                render(option, "#wrapFloor"+initNo+" .floor-bd", $("#branchHallTpl").html(), data);
+                initNo++;
+            }
+            else if(type ==0){
+                console.log('1111111',data);
+                $(data.list).each(function(i,k){
+                    $("#wrapFloor"+i+" .floor-hd").html('<a href="' + k.link + '" target="_blank"><img src="' + k.pictureUrl + '" width="100%" height="auto" data-jumpUrl=" '+ k.linkType + ',' + k.link + '" data-event_param="' + k.groupName + k.name + k.link + '" style="position:relative;z-index=2;"/></a>');
+                })
+
+            }
+            else{
+                render(option, "body", $("#branchHallTpl").html(), data);
+            }
+
+        }
+        getRequestData(success,type);
+    }
+
+        function getRequestData(success,type) {
+            var handleData = function(data) {
+                if(type == 1){
+                    if (data.subCode == "0") {
+                        console.log('result',data);
+                        $(data.list).each(function(i,k){
+                            var result = {
+                                list: data.list[i].groupInfoList[0] ? data.list[i].groupInfoList[0].groupInfoList : [],
+                                groupName: data.list[i].groupInfoList[0] ? data.list[i].groupInfoList[0].groupName : ""
+                            };
+                            //console.log('before success',result.list);
+                            success(result);
+                        })
+
+                    } else {
+                        util.toast("网络跑累了，请稍候再来！");
+                    }
+                }
+                else if(type == 0){
+                    if (data.subCode == "0") {
+                        console.log('type =0,result',data);
+                        var result = {
+                            list: data.advertInfos[0] ? data.advertInfos[0].list : [],
+                            groupName: data.advertInfos[0] ? data.advertInfos[0].groupName : ""
+                        };
+                        success(result);
+
+                    } else {
+                        util.toast("网络跑累了，请稍候再来！");
+                    }
+                }
+            };
+
+            var optionUrl = [
+                    "http://ngw.m.jd.com/client.action?functionId=getBabelAdvertInfo&client=wh5&clientVersion=1.0.0",
+                    "http://ngw.m.jd.com/client.action?functionId=getBabelProductInfo&client=wh5&clientVersion=1.0.0"
+            ];
+            var curData = '';
+            if(type == 0){
+                curData = brandsAds;
+            }
+            else if(type == 1){
+                curData = curIds;
+            }
+            var option = {
+                url: optionUrl[type],
+                data: {
+                    ids: curData
+                },
+                success: handleData
+            };
+            request(option);
+        }
+
+    /*function renderHeader() {
+        //请求成功渲染模块
+        var success = function(data) {
+            var option = {
+                events: {
+                    "tap .z-two": "gotoBranchHall",
+                },
+                init: function() {
+                    //为精选会场图片位置赋默认高度
+                    var jPushList = this.$el.find("#wrapFloor").children("a"),
+                            ws = 351,
+                            hs = Math.floor(ws * 290 / 345);
+                    jPushList.css("height", hs + "px");
+                },
+                gotoBranchHall: function(e) {
+                    //do something
+                    console.log(1);
+                }
+            }
+            if(data.list.length>1){
+                $(data).each(function(i,k){
+                    render(option, "#wrapFloor"+i+" .floor-bd", $("#branchHallTpl").html(), k);
+                })
+            }
+            else{
+                render(option, "body", $("#branchHallTpl").html(), data);
+            }
+
+        }
+        getBranchHallData(success);
+    }
+
+    function getBranchHallData(success) {
+        var handleData = function(data) {
+            if (data.subCode == "0") {
+                console.log('result',data);
+                /!*var result = {
+                    list: data.list[0].groupInfoList[0] ? data.list[0].groupInfoList[0].groupInfoList : [],
+                    groupName: data.list[0].groupInfoList[0] ? data.list[0].groupInfoList[0].groupName : ""
+                };
+                success(result);*!/
+                $(data.list).each(function(i,k){
+                    var result = {
+                        list: data.list[i].groupInfoList[0] ? data.list[i].groupInfoList[0].groupInfoList : [],
+                        groupName: data.list[i].groupInfoList[0] ? data.list[i].groupInfoList[0].groupName : ""
+                    };
+                    success(result);
+                })
+
+            } else {
+                util.toast("网络跑累了，请稍候再来！");
+            }
+        };
+
+        var option = {
+            url: "http://ngw.m.jd.com/client.action?functionId=getBabelProductInfo&client=wh5&clientVersion=1.0.0",
+            data: {
+                ids: curIds
+            },
+            success: handleData
+        };
+        request(option);
+    }*/
+
+    function render(option, el, template, data) {
+        var view = jw.view(option);
+        new view({
+            el: el,
+            template: template,
+            data: data
+        }).render();
+    };
+
+    //上报埋点并跳转（非必须）
+    function sendAndJump($ct, eventId) {
+        var event_param = $ct.attr("data-event_param"),
+                jumpUrl = $ct.attr("data-jumpUrl");
+        util.sendMPing({
+            event_id: eventId,
+            event_param: event_param
+        });
+        if (jumpUrl) {
+            spinner.stop();
+            setTimeout(function() {
+                util.jump(jumpUrl);
+            }, 200);
+        }
+    }
+    })
+</script>
+
+<script src="//static.360buyimg.com/jdcsh/babel/dist/js/babelparser.js" async defer></script>
+</body>
+</html>
