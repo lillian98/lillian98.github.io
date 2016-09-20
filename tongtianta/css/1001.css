@@ -1,0 +1,263 @@
+@charset "UTF-8";
+.wrapper {
+  font-family: "Microsoft YaHei", Verdana,Arial,Helvetica,sans-serif;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+.wrap-banner img {
+  display: block; }
+
+.wrap-flr0 {
+  background-color: #97f0f8; }
+
+.wrap-flr1 {
+  background-color: #66eea8; }
+
+.wrap-flr2 {
+  background-color: #cb97f8; }
+
+.wrap-flr3 {
+  background-color: #f8f097; }
+
+.floor-hd img {
+  display: block; }
+
+.z-three {
+  padding: 0.28375rem 0.227rem 0.46819rem 0.36888rem;
+  font-size: 0; }
+
+.z-three a {
+  display: inline-block;
+  width: 4.97981rem;
+  height: 7.23563rem;
+  margin-right: 0.14188rem;
+  text-align: center;
+  background-color: #fff; }
+
+.z-three img {
+  margin: 5%;
+  width: 90%;
+  display: block; }
+
+.z-three .goods-name {
+  display: block;
+  font-size: 0.51075rem;
+  font-weight: bold;
+  color: #000000;
+  padding: 0.14188rem 0.14188rem 0;
+  height: 0.99313rem;
+  line-height: 0.99313rem;
+  overflow: hidden; }
+
+.z-three .goods-price {
+  font-size: 0.65263rem;
+  color: #c30c0c;
+  font-weight: bold;
+  height: 0.92219rem;
+  line-height: 0.92219rem; }
+
+/*  banner-overflow-wrap */
+.wrap-banner {
+  position: relative; }
+
+.banner-overflow-wrap {
+  position: absolute;
+  top: 6.10063rem;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 27; }
+
+.banner-overflow-wrap .banner-balloon-div {
+  position: relative;
+  width: 141.875rem;
+  height: 15.40763rem;
+  font-size: 0;
+  margin-left: 4.11438rem;
+  transition: all .3s; }
+
+.banner-overflow-wrap .banner-balloon {
+  display: inline-block;
+  margin: 0 0.38306rem;
+  height: 8.76788rem;
+  width: 7.46263rem;
+  transition: all .3s;
+  position: relative;
+  vertical-align: top; }
+
+.banner-overflow-wrap .banner-balloon img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%; }
+
+.banner-overflow-wrap .banner-balloon .balloon-img-brand {
+  width: 5.3345rem;
+  height: 5.03656rem;
+  left: 0.86544rem;
+  top: 1.00731rem;
+  opacity: 1; }
+
+.banner-overflow-wrap .balloon-text {
+  left: 0.86544rem;
+  top: 6.48369rem;
+  position: absolute;
+  width: 4.90888rem;
+  height: 0.681rem;
+  line-height: 0.681rem;
+  color: #89207e;
+  font-size: 0.51075rem;
+  font-weight: bold;
+  text-align: center; }
+
+.banner-overflow-wrap .balloon-active .balloon-img-active {
+  opacity: 1;
+  /*width: 526px/$ppr;
+  height: 618px/$ppr;*/ }
+
+.banner-overflow-wrap .balloon-no-active .balloon-img-brand {
+  width: 4.49744rem;
+  height: 4.24206rem;
+  left: 1.30525rem;
+  top: 1.53225rem;
+  opacity: 0.6; }
+
+.banner-overflow-wrap .balloon-no-active .balloon-text {
+  width: 3.80225rem;
+  left: 1.30525rem;
+  top: 6.08644rem;
+  color: #89207e;
+  font-size: 0.3405rem;
+  overflow: hidden;
+  display: block; }
+
+.banner-overflow-wrap .balloon-no-active .balloon-img-no-active {
+  opacity: 1;
+  height: 7.3775rem;
+  width: 6.27088rem;
+  top: 0.69519rem;
+  left: 0.59588rem; }
+
+/* banner-status-wrap */
+.banner-status-wrap {
+  position: absolute;
+  top: 14.35775rem;
+  left: 0;
+  width: 100%;
+  height: 5.61825rem; }
+
+.banner-status-wrap .banner-ani {
+  position: absolute;
+  transition: all .5s; }
+
+.banner-status-wrap .banner-ani img {
+  display: block;
+  width: 100%; }
+
+.banner-ani-rope {
+  left: 1.75925rem;
+  left: 1.95788rem;
+  top: 0;
+  width: 6.39856rem;
+  height: 4.994rem;
+  overflow: hidden; }
+
+.banner-status-wrap .banner-ani-rope .banner-ani-rope-active, .banner-status-wrap .banner-ani-rope .banner-ani-rope-yjs {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.banner-status-wrap .banner-ani-rope .banner-ani-rope-active {
+  width: 6.39856rem;
+  height: 4.994rem; }
+
+.banner-status-wrap .banner-ani-rope .banner-ani-rope-yjs {
+  width: 4.80956rem;
+  height: 2.89425rem; }
+
+.banner-ani-joy {
+  top: -2.11394rem;
+  left: 8.88138rem;
+  left: 9.08rem;
+  width: 4.72444rem;
+  z-index: 28; }
+
+.banner-ani-btn {
+  width: 9.88869rem;
+  height: 2.93681rem;
+  top: 2.58213rem;
+  left: 3.12125rem;
+  left: 3.31988rem;
+  overflow: hidden; }
+
+.banner-ani-btn-text {
+  width: 5.24938rem;
+  left: 5.41963rem;
+  left: 5.61825rem;
+  top: 2.6105rem; }
+
+.banner-status-wrap .banner-ani-btn-text img, .banner-status-wrap .banner-ani-rope img, .banner-status-wrap .banner-ani-btn img {
+  display: none; }
+
+.banner-ani-gas {
+  width: 1.50388rem;
+  left: 13.44975rem;
+  left: 13.67675rem;
+  top: 4.00088rem;
+  opacity: 0; }
+
+/* banner-status-active、banner-status-wks、banner-status-yjs */
+.wrap-banner .banner-status-yjs .banner-ani-rope {
+  width: 4.80956rem;
+  height: 2.89425rem;
+  top: 2.08556rem; }
+
+.banner-status-active .banner-ani-btn-text .banner-ani-btn-text-daqi, .banner-status-active .banner-ani-rope .banner-ani-rope-active, .banner-status-active .banner-ani-btn .banner-ani-btn-active, .banner-status-wks .banner-ani-rope .banner-ani-rope-active, .banner-status-wks .banner-ani-btn .banner-ani-btn-active {
+  display: block; }
+
+.banner-status-wks .banner-ani-btn-text .banner-ani-btn-text-wks {
+  display: block; }
+
+.banner-status-yjs .banner-ani-btn-text .banner-ani-btn-text-yjs, .banner-status-yjs .banner-ani-rope .banner-ani-rope-yjs, .banner-status-yjs .banner-ani-btn .banner-ani-btn-yjs {
+  display: block; }
+
+/* banner-status-wrap-hide */
+.banner-status-wrap-hide .banner-ani {
+  opacity: 0; }
+
+.banner-status-wrap-hide .banner-ani-rope {
+  width: 0;
+  opacity: 1;
+  transition: all .3s; }
+
+.banner-status-wrap-hide .banner-ani-btn, .banner-status-wrap-hide .banner-ani-btn-text {
+  transition: all .2s .3s;
+  /*top: 389px/$ppr;
+  height: 0;
+  opacity: 1;*/ }
+
+/* banner-status-wrap-show */
+.banner-status-wrap-show .banner-ani {
+  opacity: 1; }
+
+.banner-status-wrap-show .banner-ani-rope-active {
+  transition: all .2s .3s;
+  width: 6.39856rem; }
+
+.banner-status-wrap-show .banner-ani-rope-yjs {
+  transition: all .2s .3s;
+  width: 4.80956rem; }
+
+.banner-status-wrap-show .banner-ani-btn, .banner-status-wrap-show .banner-ani-btn-text {
+  transition: all .3s;
+  /*top: 182px/$ppr;
+  height: 207px/$ppr;*/ }
+
+.banner-status-wrap-show .banner-ani-gas {
+  opacity: 0; }
+
+/*# sourceMappingURL=1001.css.map */

@@ -1,0 +1,330 @@
+@charset "utf-8";
+$divide: 4.54;
+$pswWidth: 320;
+$ppr: 320px/$divide/1rem;// 定义单位
+
+// https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+@mixin toRem($property, $values...) {
+  $max: length($values);
+  $remValues: '';
+  @for $i from 1 through $max {
+    $value: nth($values, $i) * $divide / $pswWidth;
+    $remValues: #{$remValues + $value}rem;
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+  #{$property}: $remValues;
+}
+
+.wrapper{
+  font-family: "Microsoft YaHei", Verdana,Arial,Helvetica,sans-serif;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.wrap-banner img{
+  display: block;
+}
+
+.wrap-flr0{
+  background-color: #97f0f8;
+}
+
+.wrap-flr1{
+background-color: #66eea8;
+}
+
+.wrap-flr2{
+  background-color: #cb97f8;
+ }
+
+.wrap-flr3{
+  background-color: #f8f097;
+}
+
+.floor-hd img{
+  display: block;
+}
+.z-three{
+  @include toRem(padding,20,16,33,26);
+  font-size: 0;
+}
+
+.z-three a{
+  display: inline-block;
+  width: 351px/$ppr;
+  height: 510px/$ppr;
+  margin-right: 10px/$ppr;
+  text-align: center;
+  background-color: #fff;
+}
+
+.z-three img{
+  margin: 5%;
+  width: 90%;
+  display: block;
+}
+
+.z-three .goods-name{
+  display: block;
+  font-size: 36px/$ppr;
+  font-weight: bold;
+  color: #000000;
+  padding: 10px/$ppr 10px/$ppr 0;
+  height: 70px/$ppr;
+  line-height: 70px/$ppr;
+  overflow: hidden;
+}
+
+.z-three .goods-price{
+  font-size: 46px/$ppr;
+  color: #c30c0c;
+  font-weight: bold;
+  height: 65px/$ppr;
+  line-height: 65px/$ppr;
+}
+
+/*  banner-overflow-wrap */
+.wrap-banner{
+  position: relative;
+}
+
+.banner-overflow-wrap{
+  position: absolute;
+  top:430px/$ppr;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 27;
+}
+
+.banner-overflow-wrap .banner-balloon-div{
+  position: relative;
+  width: 10000px/$ppr;
+  height: 1086px/$ppr;
+  font-size: 0;
+  margin-left: 290px/$ppr;
+  transition:all .3s;
+}
+
+.banner-overflow-wrap .banner-balloon{
+  display: inline-block;
+  margin:0 27px/$ppr;
+  height: 618px/$ppr;
+  width: 526px/$ppr;
+  transition: all .3s;
+  position: relative;
+  vertical-align: top;
+}
+
+.banner-overflow-wrap .banner-balloon img{
+  position: absolute;
+  top:0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-overflow-wrap .banner-balloon .balloon-img-brand{
+  width: 376px/$ppr;
+  height: 355px/$ppr;
+  left: 61px/$ppr;
+  top: 71px/$ppr;
+  opacity: 1;
+}
+
+.banner-overflow-wrap .balloon-text{
+  left: 61px/$ppr;
+  top: 457px/$ppr;
+  position: absolute;
+  width: 346px/$ppr;
+  height: 48px/$ppr;
+  line-height: 48px/$ppr;
+  color: #89207e;
+  font-size: 36px/$ppr;
+  font-weight: bold;
+  text-align: center;
+}
+
+.banner-overflow-wrap .balloon-active .balloon-img-active{
+  opacity: 1;
+  /*width: 526px/$ppr;
+  height: 618px/$ppr;*/
+}
+
+.banner-overflow-wrap .balloon-no-active .balloon-img-brand{
+  width: 317px/$ppr;
+  height: 299px/$ppr;
+  left: 92px/$ppr;
+  top: 108px/$ppr;
+  opacity: 0.6;
+}
+
+.banner-overflow-wrap .balloon-no-active .balloon-text{
+  width: 268px/$ppr;
+  left: 92px/$ppr;
+  top: 429px/$ppr;
+  color: #89207e;
+  font-size: 24px/$ppr;
+  overflow: hidden;
+  display: block;
+}
+
+.banner-overflow-wrap .balloon-no-active .balloon-img-no-active{
+  opacity: 1;
+  height: 520px/$ppr;
+  width: 442px/$ppr;
+  top: 49px/$ppr;
+  left: 42px/$ppr;
+}
+
+/* banner-status-wrap */
+.banner-status-wrap{
+  position: absolute;
+  top:1012px/$ppr;
+  left: 0;
+  width: 100%;
+  height: 396px/$ppr;
+}
+
+.banner-status-wrap .banner-ani{
+  position: absolute;
+  transition: all .5s;
+}
+
+.banner-status-wrap .banner-ani img{
+  display: block;
+  width: 100%;
+}
+
+.banner-ani-rope{
+  left: 124px/$ppr;
+  left: 138px/$ppr;
+  top: 0;
+  width: 451px/$ppr;
+  height: 352px/$ppr;
+  overflow: hidden;
+}
+
+.banner-status-wrap .banner-ani-rope .banner-ani-rope-active,.banner-status-wrap .banner-ani-rope .banner-ani-rope-yjs{
+  position: absolute;
+  top:0;
+  left: 0;
+}
+
+.banner-status-wrap .banner-ani-rope .banner-ani-rope-active{
+  width: 451px/$ppr;
+  height: 352px/$ppr;
+}
+
+.banner-status-wrap .banner-ani-rope .banner-ani-rope-yjs{
+  width: 339px/$ppr;
+  height: 204px/$ppr;
+}
+
+.banner-ani-joy{
+  top: -149px/$ppr;
+  left: 626px/$ppr;
+  left: 640px/$ppr;
+  width: 333px/$ppr;
+  z-index: 28;
+}
+
+.banner-ani-btn{
+  width: 697px/$ppr;
+  height: 207px/$ppr;
+  top: 182px/$ppr;
+  left: 220px/$ppr;
+  left: 234px/$ppr;
+  overflow: hidden;
+
+}
+
+.banner-ani-btn-text{
+  width: 370px/$ppr;
+  left: 382px/$ppr;
+  left: 396px/$ppr;
+  top: 184px/$ppr;
+}
+
+.banner-status-wrap .banner-ani-btn-text img, .banner-status-wrap .banner-ani-rope img,.banner-status-wrap .banner-ani-btn img{
+  display: none;
+}
+
+.banner-ani-gas{
+  width: 106px/$ppr;
+  left: 948px/$ppr;
+  left: 964px/$ppr;
+  top: 282px/$ppr;
+  opacity: 0;
+}
+
+/* banner-status-active、banner-status-wks、banner-status-yjs */
+.wrap-banner .banner-status-yjs .banner-ani-btn{
+
+}
+
+.wrap-banner .banner-status-yjs .banner-ani-rope{
+  width: 339px/$ppr;
+  height: 204px/$ppr;
+  top: 147px/$ppr;
+}
+
+.banner-status-active .banner-ani-btn-text .banner-ani-btn-text-daqi,.banner-status-active .banner-ani-rope .banner-ani-rope-active,.banner-status-active .banner-ani-btn .banner-ani-btn-active,.banner-status-wks .banner-ani-rope .banner-ani-rope-active,.banner-status-wks .banner-ani-btn .banner-ani-btn-active{
+  display: block;
+}
+
+.banner-status-wks .banner-ani-btn-text .banner-ani-btn-text-wks{
+  display: block;
+}
+
+.banner-status-yjs .banner-ani-btn-text .banner-ani-btn-text-yjs,.banner-status-yjs .banner-ani-rope .banner-ani-rope-yjs,.banner-status-yjs .banner-ani-btn .banner-ani-btn-yjs{
+  display: block;
+}
+
+/* banner-status-wrap-hide */
+.banner-status-wrap-hide .banner-ani{
+  opacity: 0;
+}
+
+.banner-status-wrap-hide .banner-ani-rope{
+  width: 0;
+  opacity: 1;
+  transition: all .3s;
+}
+
+.banner-status-wrap-hide .banner-ani-btn,.banner-status-wrap-hide .banner-ani-btn-text{
+  transition: all .2s .3s;
+  /*top: 389px/$ppr;
+  height: 0;
+  opacity: 1;*/
+}
+
+/* banner-status-wrap-show */
+.banner-status-wrap-show .banner-ani{
+  opacity: 1;
+}
+
+.banner-status-wrap-show .banner-ani-rope-active{
+  transition: all .2s .3s;
+  width: 451px/$ppr;
+}
+
+.banner-status-wrap-show .banner-ani-rope-yjs{
+  transition: all .2s .3s;
+  width: 339px/$ppr;
+}
+
+.banner-status-wrap-show .banner-ani-btn,.banner-status-wrap-show .banner-ani-btn-text{
+  transition: all .3s;
+  /*top: 182px/$ppr;
+  height: 207px/$ppr;*/
+}
+
+.banner-status-wrap-show .banner-ani-gas{
+  opacity: 0;
+}
