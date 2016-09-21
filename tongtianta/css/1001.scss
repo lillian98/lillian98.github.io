@@ -17,12 +17,143 @@ $ppr: 320px/$divide/1rem;// 定义单位
   #{$property}: $remValues;
 }
 
+/* wrapper-loading */
+.wrapper-loading{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  background: url(http://img14.360buyimg.com/cms/jfs/t3058/302/2527076938/968/51e7f8d3/57e261f5Na97210c4.png) repeat-x #5ec1ff;
+  transition: opacity .2s;
+  -webkit-transition: opacity .2s;
+  -o-transition: opacity .2s;
+}
+
+.wrapper-loading img{
+  position: absolute;
+}
+
+.wrapper-loading .banner-balloon{
+  position: absolute;
+  z-index: 27;
+}
+
+.wrapper-loading .balloon-img-active{
+  width: 372px/$ppr;
+  height: 435px/$ppr;
+  top: 198px/$ppr;
+  left: 394px/$ppr;
+}
+
+.wrapper-loading .balloon-img-brand{
+  display: none;
+}
+
+.wrapper-loading .balloon-text{
+  width: 220px/$ppr;
+  left: 435px/$ppr;
+  top: 511px/$ppr;
+}
+
+.wrapper-loading .banner-status-wrap{
+  top: 599px/$ppr;
+}
+
+.wrapper-loading .banner-status-wrap .banner-ani-rope{
+  left: 239px/$ppr;
+  left: 257px/$ppr;
+  width: 329px/$ppr;
+}
+
+.wrapper-loading .banner-status-wrap .banner-ani-btn{
+  left: 310px/$ppr;
+  left: 328px/$ppr;
+  top: 132px/$ppr;
+  width: 509px/$ppr;
+  height: 154px/$ppr;
+}
+
+.wrapper-loading .banner-status-wrap .banner-ani-joy{
+  width: 226px/$ppr;
+  height: 246px/$ppr;
+  top: -52px/$ppr;
+  left: 528px/$ppr;
+  left: 556px/$ppr;
+  z-index: 30;
+}
+
+.wrapper-loading .banner-status-wrap .banner-ani-gas{
+  width: 79px/$ppr;
+  height: 56px/$ppr;
+  top: 205px/$ppr;
+  left: 843px/$ppr;
+  left: 861px/$ppr;
+}
+
+.wrapper-loading .banner-status-wrap .banner-ani{
+  opacity: 1;
+  overflow: visible;
+}
+
+.wrapper-loading .banner-status-wrap .banner-ani img{
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* loading-process */
+.loading-process{
+  position: absolute;
+  top: 1148px/$ppr;
+  left: 112px/$ppr;
+  width: 878px/$ppr;
+  height: 60px/$ppr;
+  background: #c3d386;
+  border-radius: 30px/$ppr;
+  text-align: center;
+}
+
+.loading-process-ed{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 30px/$ppr;
+  background: #fed819;
+}
+
+.loading-process-no{
+  color: #fff;
+  font-size: 40px/$ppr;
+  font-weight: bold;
+}
+
+.loading-process p{
+  color: #0063a0;
+  font-size: 40px/$ppr;
+  line-height: 90px/$ppr;
+}
+
+/* bt_nav_module */
+.bt_nav_module.buttom_suction{
+  z-index: 999;
+}
+
+/* wrapper */
+
 .wrapper{
   font-family: "Microsoft YaHei", Verdana,Arial,Helvetica,sans-serif;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  opacity: 0;
+  transition: opacity .1s .2s;
+  -webkit-transition: opacity .1s  .2s;
+  -o-transition: opacity .1s  .2s;
 }
 
 .wrap-banner img{
@@ -104,7 +235,7 @@ background-color: #66eea8;
 .banner-overflow-wrap .banner-balloon-div{
   position: relative;
   width: 10000px/$ppr;
-  height: 1086px/$ppr;
+  /*height: 1086px/$ppr;*///@fixme delete
   font-size: 0;
   margin-left: 290px/$ppr;
   transition:all .3s;
@@ -137,7 +268,7 @@ background-color: #66eea8;
   opacity: 1;
 }
 
-.banner-overflow-wrap .balloon-text{
+.balloon-text{
   left: 61px/$ppr;
   top: 457px/$ppr;
   position: absolute;
@@ -148,6 +279,7 @@ background-color: #66eea8;
   font-size: 36px/$ppr;
   font-weight: bold;
   text-align: center;
+  overflow: hidden;
 }
 
 .banner-overflow-wrap .balloon-active .balloon-img-active{
@@ -194,6 +326,7 @@ background-color: #66eea8;
 .banner-status-wrap .banner-ani{
   position: absolute;
   transition: all .5s;
+  opacity: 0;
 }
 
 .banner-status-wrap .banner-ani img{
@@ -241,7 +374,7 @@ background-color: #66eea8;
   left: 220px/$ppr;
   left: 234px/$ppr;
   overflow: hidden;
-
+  z-index: 29;
 }
 
 .banner-ani-btn-text{
@@ -268,7 +401,7 @@ background-color: #66eea8;
 
 }
 
-.wrap-banner .banner-status-yjs .banner-ani-rope{
+.wrap-banner .banner-status-yjs .banner-ani-rope-yjs{
   width: 339px/$ppr;
   height: 204px/$ppr;
   top: 147px/$ppr;
@@ -294,11 +427,11 @@ background-color: #66eea8;
 .banner-status-wrap-hide .banner-ani-rope{
   width: 0;
   opacity: 1;
-  transition: all .3s;
+  transition: opacity .3s;
 }
 
 .banner-status-wrap-hide .banner-ani-btn,.banner-status-wrap-hide .banner-ani-btn-text{
-  transition: all .2s .3s;
+  transition: opacity .3s;
   /*top: 389px/$ppr;
   height: 0;
   opacity: 1;*/
@@ -310,17 +443,17 @@ background-color: #66eea8;
 }
 
 .banner-status-wrap-show .banner-ani-rope-active{
-  transition: all .2s .3s;
+  transition: opacity .2s .3s;
   width: 451px/$ppr;
 }
 
 .banner-status-wrap-show .banner-ani-rope-yjs{
-  transition: all .2s .3s;
+  transition: opacity .2s .3s;
   width: 339px/$ppr;
 }
 
 .banner-status-wrap-show .banner-ani-btn,.banner-status-wrap-show .banner-ani-btn-text{
-  transition: all .3s;
+  transition: opacity .3s;
   /*top: 182px/$ppr;
   height: 207px/$ppr;*/
 }

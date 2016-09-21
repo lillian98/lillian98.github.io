@@ -71,9 +71,6 @@
                         }
                         var rem = width / 16;
                         docEl.style.fontSize = rem + 'px';
-                        if(window.location.href.indexOf('/visualediting/visualEditing.html?veBean.pageInstanceId')>-1){
-                            docEl.style.fontSize = '20px';
-                        }
                     };
 
                     win.addEventListener('resize', function() {
@@ -203,14 +200,68 @@
     </div>
 </div>
 <!--E container -->
+<!-- S loading -->
+<div class="wrapper-loading" id="wrapperLoading">
+    <div class="loading-ani">
+        <div class="banner-balloon balloon-active">
+            <img src="http://img30.360buyimg.com/cms/jfs/t3235/82/2302056846/90205/a9d6eec1/57df8924Nd56326b5.png" alt="" class="balloon-img-active">
+            <img src="http://img14.360buyimg.com/cms/jfs/t3106/364/2468944530/38532/ec9f0258/57e0dcfcN85d9f938.png" alt="" class="balloon-img-brand">
+            <span class="balloon-text">JOY手机游乐园</span>
+        </div>
+        <div class="banner-status-wrap">
+            <!-- banner-status-active、banner-status-wks、banner-status-yjs -->
+            <div class="banner-ani banner-ani-rope">
+                <img src="http://img13.360buyimg.com/cms/jfs/t3301/161/2325139147/34091/b1be51b6/57dfdaf7N36b21bf2.png" alt="" class="banner-ani-rope-active"/>
+            </div>
+            <div class="banner-ani banner-ani-btn" id="">
+                <img src="http://img12.360buyimg.com/cms/jfs/t3079/181/2369165304/38627/11d30cbb/57dfdaf7Nce07c048.png" alt="" class="banner-ani-btn-active"/>
+            </div>
+            <div class="banner-ani banner-ani-joy"><img src="http://img30.360buyimg.com/cms/jfs/t3217/164/2326929637/74925/2d451599/57dfdaf7Ne066f6ce.png" alt=""/></div>
+            <div class="banner-ani banner-ani-gas"><img src="http://img14.360buyimg.com/cms/jfs/t3067/342/2353427324/2517/6c407c6b/57dfdaf6N6a713957.png" alt=""/></div>
+        </div>
+    </div>
+
+    <div class="loading-process">
+        <div class="loading-process-no" id="loadingProcessNo">30%</div>
+        <div class="loading-process-ed" id="loadingProcess" style="width: 30%"></div>
+        <p>Loading</p>
+    </div>
+</div>
+<!-- E loading -->
+<!-- S nav -->
+<div class="buttom_suction bt_nav_module bt_3x" style="background-color:#0063a0;">
+    <ul>
+        <li class="cur">
+            <a class="J_ping" href="javascript:void(0);" target="_self" report-eventid="Babel_BottomNevigation" report-eventparam="00006528_201642_00087061_00702323_1_2" report-pagename="http://h5.m.jd.com/active/2U6YTCS93szF8S37NBwgQn79AKYd/index.html" report-pageparam="11299" report-eventlevel="3">
+                <div class="bt_img_wrap no_bg_img">
+                    <img data-src="" src="//m.360buyimg.com/babel/s358x358_jfs/t3283/356/2370782551/6949/cd335e22/57e0d63aN4e3cbac4.png!q70.jpg" alt="" class="fadein">
+                    <img data-src="" src="//m.360buyimg.com/babel/s358x358_jfs/t3292/338/2325317327/11797/bf5d74b8/57e0d664N1f040392.png!q70.jpg" class="fadein">
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="J_ping" href="http://m.jd.com" target="_self" report-eventid="Babel_BottomNevigation" report-eventparam="00006528_201642_00087061_00702325_3_2" report-pagename="http://h5.m.jd.com/active/2U6YTCS93szF8S37NBwgQn79AKYd/index.html" report-pageparam="11299" report-eventlevel="3">
+                <div class="bt_img_wrap no_bg_img">
+                    <img data-src="" src="//m.360buyimg.com/babel/s358x358_jfs/t3052/181/2391879646/6907/3b19375a/57e0d9ceNe0533dcf.png!q70.jpg" alt="" class="fadein">
+                    <img data-src="" src="//m.360buyimg.com/babel/s358x358_jfs/t3214/195/2343296436/6993/864de6ad/57e0d9d8Nb8d0f5ef.png!q70.jpg" class="fadein">
+                </div>
+            </a>
+        </li>
+        <li>
+            <a class="J_ping" href="http://m.jd.com" target="_self" report-eventid="Babel_BottomNevigation" report-eventparam="00006528_201642_00087061_00702331_5_2" report-pagename="http://h5.m.jd.com/active/2U6YTCS93szF8S37NBwgQn79AKYd/index.html" report-pageparam="11299" report-eventlevel="3">
+                <div class="bt_img_wrap no_bg_img">
+                    <img data-src="" src="//m.360buyimg.com/babel/s358x358_jfs/t3067/263/2415282401/7450/87f768a5/57e0d6a8N7c9a3e30.png!q70.jpg" alt="" class="fadein">
+                    <img data-src="" src="//m.360buyimg.com/babel/s358x358_jfs/t3145/145/2369635059/7491/ffb27c80/57e0d6b9N59828ab9.png!q70.jpg" class="fadein">
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- E nav -->
 <!-- S wrapper -->
-<div class="wrapper">
+<div class="wrapper" id="wrapper">
     <!-- S banner -->
     <div class="wrap-banner">
-        <!-- @fixme： 测试用，要删除 -->
-        <div onclick="$('#bannerStatusWrap').removeClass('banner-status-wrap-show').addClass('banner-status-wrap-hide')">隐藏动画</div>
-        <div onclick="$('#bannerStatusWrap').removeClass('banner-status-wrap-hide').addClass('banner-status-wrap-show')">显示动画</div>
-
         <img src="http://img12.360buyimg.com/cms/jfs/t3289/226/2298505682/137299/4b8f3706/57df991fN02e1f595.jpg"
              alt="" width="100%"/>
         <img src="http://img10.360buyimg.com/cms/jfs/t3166/81/2289497998/26569/8a2f9222/57df9933N29fbc460.png" alt="" width="100%"/>
@@ -242,7 +293,7 @@
                 </span>
             </div>
         </div>
-        <div class="banner-status-wrap banner-status-active" id="bannerStatusWrap">
+        <div class="banner-status-wrap banner-status-active banner-status-wrap-show" id="bannerStatusWrap">
             <!-- banner-status-active、banner-status-wks、banner-status-yjs -->
                 <div class="banner-ani banner-ani-rope">
                     <img src="http://img13.360buyimg.com/cms/jfs/t3301/161/2325139147/34091/b1be51b6/57dfdaf7N36b21bf2.png" alt="" class="banner-ani-rope-active"/>
@@ -250,7 +301,7 @@
                 </div>
                 <div class="banner-ani banner-ani-joy"><img src="http://img30.360buyimg.com/cms/jfs/t3217/164/2326929637/74925/2d451599/57dfdaf7Ne066f6ce.png" alt=""/></div>
 
-                <div class="banner-ani banner-ani-btn">
+                <div class="banner-ani banner-ani-btn" id="startBtn">
                     <img src="http://img12.360buyimg.com/cms/jfs/t3079/181/2369165304/38627/11d30cbb/57dfdaf7Nce07c048.png" alt="" class="banner-ani-btn-active"/>
                     <img src="http://img10.360buyimg.com/cms/jfs/t3304/56/2425710266/182522/3711ab0d/57e11be9N6622ea44.png" alt="" class="banner-ani-btn-yjs"/>
                 </div>
@@ -289,13 +340,517 @@
     </a>
     <% }) %>
 </script>
+
+
+
+
+
+
+<script src="//static.360buyimg.com/jdcsh/babel/dist/js/babelparser.js"></script>
 <script type="text/javascript" src="js/spin.min.js"></script>
 <script type="text/javascript" src="js/zepto.js"></script>
 <script type="text/javascript" src="js/jworker.js"></script>
 <script type="text/javascript" src="js/request.js"></script>
-<script type="text/javascript">
-    $(function(){
 
+
+<script type="text/javascript">
+    window.PreLoad = function (a, b) {
+        var c = b || {};
+        this.source = a, this.count = 0, this.total = a.length, this.onload = c.onload, this.prefix = c.prefix || "", this.init()
+    };
+    PreLoad.prototype.init = function () {
+        var a = this;
+        a.source.forEach(function (b) {
+            var c = b.substr(b.lastIndexOf(".") + 1).toLowerCase(), d = a.prefix + b;
+            switch (c) {
+                case"js":
+                    a.script.call(a, d);
+                    break;
+                case"css":
+                    a.stylesheet.call(a, d);
+                    break;
+                case"svg":
+                case"jpg":
+                case"gif":
+                case"png":
+                case"jpeg":
+                    a.image.call(a, d)
+            }
+        })
+    }, PreLoad.prototype.getProgress = function () {
+        return Math.round(this.count / this.total * 100)
+    }, PreLoad.prototype.image = function (a) {
+        var b = document.createElement("img");
+        this.load(b, a), b.src = a
+    }, PreLoad.prototype.stylesheet = function (a) {
+        var b = document.createElement("link");
+        this.load(b, a), b.rel = "stylesheet", b.type = "text/css", b.href = a, document.head.appendChild(b)
+    }, PreLoad.prototype.script = function (a) {
+        var b = document.createElement("script");
+        this.load(b, a), b.type = "text/javascript", b.src = a, document.head.appendChild(b)
+    }, PreLoad.prototype.load = function (a, b) {
+        var c = this;
+        a.onload = a.onerror = a.onabort = function (a) {
+            c.onload && c.onload({count: ++c.count, total: c.total, item: b, type: a.type})
+        }
+    };
+</script>
+<script type="text/javascript">
+    Array.prototype.unique = function () {
+        this.sort();
+        var re = [this[0]];
+        for (var i = 1; i < this.length; i++) {
+            if (this[i] !== re[re.length - 1]) {
+                re.push(this[i]);
+            }
+        }
+        return re;
+    };
+    require(['zepto', 'http://h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/js/jdShare.js'], function ($, jdShare) {
+        var getCookie = function (name) {
+            var strCookie = document.cookie;
+            var arrCookie = strCookie.split("; ");
+            for (var i = 0; i < arrCookie.length; i++) {
+                var arr = arrCookie[i].split("=");
+                if (name == arr[0]) {
+                    return arr[1];
+                }
+            }
+            return "";
+        };
+
+        var getQueryString = function (name) {
+            var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return unescape(r[2]);
+            }
+            return null;
+        };
+
+        var maskHtml = '<div id="wrapperMask" style="display:none;position:fixed;top:0;left:0;z-index:100;width:100%;height:100%;background-color:rgba(0,0,0,.5);"></div>';
+
+        var mask = (function () {
+
+            var can_not_move = function () {
+                return false;
+            };
+
+            $('body').append(maskHtml);
+
+            return {
+                show: function () {
+                    $('#wrapper').show();
+                    $('#wrapperMask').show();
+                    $('body,html')
+                            .on('touchmove', can_not_move);
+                },
+                hide: function () {
+                    $('#wrapper').hide();
+                    $('#wrapperMask').hide();
+                    $('body,html')
+                            .off('touchmove', can_not_move);
+                }
+            };
+        })();
+
+        var tips = (function (text) {
+            return {
+                show: function () {
+                    $('#wrapperTips').html(text).show();
+                },
+                hide: function () {
+                    $('#wrapperTips').hide();
+                },
+            }
+        })();
+
+
+
+        var floor = (function () {
+            var list = [], items = [
+                {
+                    id  : 1,
+                    src1: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/icon-1-s.png',
+                    src2: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/icon-1.png'
+                },
+                {
+                    id  : 2,
+                    src1: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/icon-2-s.png',
+                    src2: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/icon-2.png'
+                },
+                {
+                    id  : 3,
+                    src1: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/icon-3-s.png',
+                    src2: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/icon-3.png'
+                },
+                {
+                    id  : 4,
+                    src1: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/icon-4-s.png',
+                    src2: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/icon-4.png'
+                },
+            ];
+
+            var style, positions = [
+                {id: 1, top: 150, left: 13},
+                {id: 2, top: 365, left: 32},
+                {id: 3, top: 628.375, left: 90},
+                {id: 4, top: 980.265, left: 20},
+                {id: 5, top: 1246.696, left: 5},
+                {id: 6, top: 1391, left: 85},
+                {id: 7, top: 1623.721, left: -5},
+                {id: 8, top: 1817.04, left: 35},
+            ];
+
+            var $page = $('#J_bableOptPage');
+            var pageHeight = $page.height();
+            //pageHeight=4758.13;
+
+            var html = '<div id=wrapperIcons style="height:' + pageHeight + 'px;">';
+            list = list.concat(items).concat(items);
+            list.sort(function () {
+                return Math.random() > 0.5;
+            });
+            $.each(list, function (key, value) {
+                style = positions[key];
+                html += '<div class="wrapper-icon-item" id="wrapperIconItem' + (key + 1) + '" data-id="' + value.id +
+                        '" style="top:' + (style.top / pageHeight * 100) + '%;left:' + style.left + '%;"><img src="' + value.src1 + '" alt=""></div>';
+            });
+            html += '</div>';
+
+            var _list = [], _item = null;
+            var collect = function (id) {
+                $.each(items, function (key, value) {
+                    if (value.id == id) {
+                        _item = value;
+                        return false;
+                    }
+                });
+                _list.push(id);
+                _list = _list.unique();
+                $('.process-item-' + id, '#processList')
+                        .css({
+                            backgroundImage: 'url(' + _item.src2 + ')'
+                        });
+            };
+
+            var check = function () {
+                if (_list.length == 4) {
+                    return true;
+                }
+                return false;
+            };
+
+            return {
+                open : function () {
+                    $('#wrapperProcess')
+                            .before(html);
+                    $('.wrapper-icon-item', '#wrapperIcons')
+                            .on('tap', function () {
+                                collect($(this).data('id'));
+                                $(this).addClass('active').fadeOut(200);
+                            });
+                },
+                close: function () {
+                    $('#wrapperIcons').remove();
+                    $('#wrapperProcess').hide();
+                },
+                check: function () {
+                    return check();
+                },
+                res  : function () {
+                    var l = [];
+                    $.each(items, function (key, value) {
+                        l.push(value.src1);
+                        l.push(value.src2);
+                    });
+                    return l;
+                },
+            };
+        })();
+
+        var state = (function () {
+
+            var list = [
+                {
+                    id : 1,
+                    src: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/success-text-1.png'
+                },
+                {
+                    id : 2,
+                    src: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/success-text-2.png'
+                },
+                {
+                    id : 3,
+                    src: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/success-text-3.png'
+                },
+                {
+                    id : 4,
+                    src: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/success-text-4.png'
+                },
+                {
+                    id : 5,
+                    src: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/success-text-5.png'
+                },
+                {
+                    id : 6,
+                    src: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/success-text-6.png'
+                },
+                //{id: 7, src: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/success-text-7.png'},
+                {
+                    id : 8,
+                    src: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/success-text-8.png'
+                },
+                {
+                    id : 9,
+                    src: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/success-text-9.png'
+                },
+                {
+                    id : 10,
+                    src: '//h5.m.jd.com/active/YHxu7oUPY8tTHjqCTVFGwkp1LU1/pages/8782/img/success-text-10.png'
+                },
+            ];
+
+            return {
+                success: function (id) {
+                    //tips.show('寻宝通关成功!正在抽奖中...');
+                    $('#wrapperGetting')
+                            .fadeIn(500, function () {
+                                apis.lottery(list);
+                            });
+                },
+                fail   : function () {
+                    $('#wrapperFail')
+                            .fadeIn();
+                },
+                close  : function () {
+                    mask.hide();
+                    $('#wrapperSuccess,#wrapperFail,#wrapperShare')
+                            .fadeOut();
+                },
+                res    : function () {
+                    var l = [];
+                    $.each(list, function (key, value) {
+                        l.push(value.src);
+                    });
+                    return l;
+                },
+            };
+
+        })();
+        //@fixme delete start obj,process obj
+
+        var apis = (function () {
+
+            var _sid = null;
+
+            var jiang0 = function (r) {
+                var lotteryContent = r.data.lotteryContent;
+                var id = parseInt(lotteryContent.split('|')[0]);
+                console.log(r);
+                $.each(r.list, function (key, value) {
+                    if (id == value.id) {
+                        item = value;
+                        return false;
+                    }
+                });
+                $('#successText').attr('src', item.src);
+                $('#wrapperSuccess')
+                        .fadeIn();
+            };
+
+            var jiang1 = function () {
+                //alert('很遗憾,未中奖!');
+                $('#wrapperError')
+                        .fadeIn();
+                setTimeout(function () {
+                    $('#closeBtn2')
+                            .trigger('click');
+                }, 3000);
+            };
+
+            var jiang = [
+                {code: '0', text: '中奖', func: jiang0},
+                {code: '1', text: '未中奖', func: jiang1},
+                {code: '1-1', text: '活动尚未开始', func: jiang1},
+                {code: '1-2', text: '活动已经结束', func: jiang1},
+                {code: '1-3', text: '该抽奖组件尚未开始', func: jiang1},
+                {code: '1-4', text: '该抽奖组件已经结束', func: jiang1},
+                {code: '3-1', text: '用户风险等级不满足', func: jiang1},
+                {code: '3-2', text: '等级不够', func: jiang1},
+                {code: '4-2', text: '抽奖次数不足', func: jiang1},
+                {code: '4-5', text: '中奖次数不足', func: jiang1},
+                {code: '5-1', text: '优惠券库存扣减失败', func: jiang1},
+                {code: '5-2', text: '优惠券发放失败', func: jiang1},
+                {code: '5-3', text: '保存领奖信息失败', func: jiang1},
+                {code: '5-4', text: '更新用户领奖信息失败', func: jiang1},
+                {code: '6-1', text: '未中奖', func: jiang1},
+                {code: '6-2', text: '优惠券发发数量限制', func: jiang1},
+                {code: '6-3', text: '该组件的优惠券全部发完', func: jiang1},
+                {code: '6-4', text: '该分期的优惠券全部发完', func: jiang1},
+            ];
+
+            var jiangFunc = function (data, list) {
+                $('#wrapperGetting').fadeOut();
+                console.log(data);
+                switch (data.code) {
+                    case '3':
+                        console.log('未登录');
+                        window.parent.location.href = 'https://passport.m.jd.com/user/login.action?v=1&returnurl=' + encodeURIComponent(window.parent.location.href);
+                        break;
+                    case '0':
+                        console.log('通信成功');
+                        $.each(jiang, function (key, value) {
+                            if (value.code == data.subCode) {
+                                if (value.func != '') {
+                                    value.func.call(this, {data : data, list : list});
+                                }
+                                return false;
+                            }
+                        });
+                        break;
+                    case '1':
+                        console.log('通信失败');
+                        break;
+                        tips.hide();
+                }
+            };
+
+            return {
+                isLogin     : function () {
+                    var sid = getQueryString('sid') || getCookie('sid');
+                    console.log(sid);
+                    return $.get('http://h5.m.jd.com/h5api.jsp?functionid=h5CheckLogin&sid=' + sid, function (r) {
+                        if (typeof r == 'string') {
+                            r = JSON.parse(r);
+                        }
+                        if (r.errno == 0 && r.code == '0') {
+                            _sid = r.sid;
+                            //start.hide();
+                            //process.go();
+                            apis.queryLottery();
+                            return _sid;
+                        } else {
+                            //window.parent.location.href = 'https://passport.m.jd.com/user/login.action?v=1&returnurl=' + encodeURIComponent(window.parent.location.href);
+                            apis.queryLottery();
+                            return false;
+                        }
+                    });
+                },
+                lottery     : function () {
+                    babel.babelActivityLuckDraw({
+                        data   : {
+                            sid: _sid,//sessionId
+                            aid: '3SuRYXJPCmnjBnib1FUVhUmvTG3',//activityId
+                            pid: '6611',//pageId
+                            mid: '2dZ8PbS7iZ4tzyaS8uQammzLiRkQ'//moduleId
+                        },
+                        success: function (r) {
+                            setTimeout(function () {
+                                //jiangFunc(r, list);//@fixme 领券提示
+                            }, 1000);
+                        },
+                        error  : function (r) {
+                            console.log(r);
+                            //alert('很遗憾,未中奖!');
+                            $('#wrapperError')
+                                    .fadeIn();
+                            setTimeout(function () {
+                                $('#closeBtn2')
+                                        .trigger('click');
+                            }, 3000);
+                        }
+                    });
+                },
+                queryLottery: function (func) {
+                    //http://h5.m.jd.com/h5api.jsp?functionid=babelQueryActivity&client=wh5&clientVersion=1.0.0&body=%7B%22activityId%22:%223s5b2SYhoRHC3tQhRUNQjrkvXxxU%22,%22pageId%22:%2200004630%22,%22moduleId%22:%223NAUWTsCKojGQ9MsFiE5uphC66wu%22%7D&sid=0f966e3a1115cad0f545e4a7eedfbe58&_=1471859918268&callback=jsonp2
+                    _sid = getQueryString('sid') || getCookie('sid');
+                    console.log(_sid);
+                    $.get('http://h5.m.jd.com/h5api.jsp', {
+                        functionid: 'babelQueryActivity&client=wh5&clientVersion=1.0.0&',
+                        body      : JSON.stringify({
+                            "activityId": "3SuRYXJPCmnjBnib1FUVhUmvTG3",
+                            "pageId"    : "6611",
+                            "moduleId"  : "2dZ8PbS7iZ4tzyaS8uQammzLiRkQ",
+                            "sid"       : _sid,
+                        })
+                    }, func);
+                }
+            }
+
+        })();
+
+        var loadImg = function (func) {
+            var tasks = (function () {
+                var list = [
+                    '//img12.360buyimg.com/cms/jfs/t3289/226/2298505682/137299/4b8f3706/57df991fN02e1f595.jpg',
+                    '//img10.360buyimg.com/cms/jfs/t3166/81/2289497998/26569/8a2f9222/57df9933N29fbc460.png',
+                    '//img30.360buyimg.com/cms/jfs/t3235/82/2302056846/90205/a9d6eec1/57df8924Nd56326b5.png',
+                    '//img13.360buyimg.com/cms/jfs/t3301/161/2325139147/34091/b1be51b6/57dfdaf7N36b21bf2.png',
+                    '//img30.360buyimg.com/cms/jfs/t3217/164/2326929637/74925/2d451599/57dfdaf7Ne066f6ce.png',
+                    '//img12.360buyimg.com/cms/jfs/t3079/181/2369165304/38627/11d30cbb/57dfdaf7Nce07c048.png',
+                    '//img14.360buyimg.com/cms/jfs/t3286/207/2398056037/13032/66d78972/57dfdaf7N0a26e064.png',
+                    '//img14.360buyimg.com/cms/jfs/t3067/342/2353427324/2517/6c407c6b/57dfdaf6N6a713957.png',
+                    '//img30.360buyimg.com/cms/jfs/t3046/309/2271453327/196729/a30c84c1/57dfa7d4N0eeb2ec1.png',
+                    '//img30.360buyimg.com/cms/jfs/t3259/182/2433158820/64042/57e4dd4/57e11604Na1ba2db3.png',
+                    '//img10.360buyimg.com/cms/jfs/t3241/96/2431014972/9048/6d743729/57e10f14N52dfb393.png',
+                    '//img13.360buyimg.com/cms/jfs/t3163/62/2475907306/6022/65bc2551/57e110aaNeba2314c.png'
+                ];
+                return list;
+            })();
+
+            new PreLoad(tasks, {
+                onload: function (load) {
+                    if (load.count == load.total) {
+                        func();
+                    }
+                }
+            });
+        };
+
+        var init = (function () {
+            try {
+                jdShare && jdShare.setShareInfo({
+                    title   : 'Apple新品首发预约  全民寻宝赢免单神券!',
+                    content : 'Apple新品首发预约  全民寻宝赢免单神券!',
+                    url     : 'http://h5.m.jd.com/active/3wX17ys13EaDtijVP6KnfrBucNhV/index.html',
+                    img     : 'http://img12.360buyimg.com/cms/jfs/t3052/363/1513970130/12752/bb074aac/57ce649bNb5a7ef99.jpg',
+                    channel : '',
+                    callback: null
+                });
+            } catch (e) {
+                if (e.name === "JdShareException") {
+                    alert(e.toString());
+                } else {
+                    alert(e.message)
+                }
+            }
+            loadImg(function () {
+                /* hide loading */
+                $('#wrapperLoading').css('opacity',0);
+                $('#wrapper').css('opacity',1);
+                setTimeout(function(){
+                    $('#wrapperLoading').hide();
+                },200)
+                apis.queryLottery(function (r) {
+                    console.log('init queryLottery',r)
+                    if (typeof r == 'string') {
+                        r = JSON.parse(r);
+                    }
+                    if (r.errno == '0' && r.subCode == '1') {
+                        apis.queryLottery(arguments.callee);
+                    } else {
+                        //@fixme now!如果已使用抽奖次数即领券，显示已领券框；如果未领券，显示默认状态
+                        var leftLuckDrawNum = parseInt(r.leftLuckDrawNum);
+                        if (leftLuckDrawNum != NaN && r.leftLuckDrawNum > 0) {
+                            //alert('还没抽奖')
+                        }
+                    }
+                });
+                floorInit();
+            });
+
+        })();
 
         //当前日期顺序对应品牌商品组id：
         var brandsGoods = ['00133338','00133339','00133340','00133341'];//360、乐视、小米、魅族
@@ -335,6 +890,7 @@
                 statusWrap:$('#bannerStatusWrap'),
                 icon:$('#bannerBalloonDiv .banner-balloon'),
                 marginLeftBase:290,
+                hideAniTime:350,
                 handleEvent:function(event){
                     var self = this;     //this指events对象
                     if(event.type == 'touchstart'){
@@ -378,36 +934,41 @@
                                 if(this.index !== 0) {
                                     this.index -= 1;
                                     this.statusWrap.removeClass('banner-status-wrap-show').addClass('banner-status-wrap-hide');
+                                    /* 保证隐藏动画执行完之后再切换状态，否则会出现闪的画面 */
                                     setTimeout(function(){
+                                        that.statusChange();
                                         that.statusWrap.removeClass('banner-status-wrap-hide').addClass('banner-status-wrap-show');
-                                    },500);
+                                    },that.hideAniTime);
                                 }
                             }else if(endPos.x < -10){
                                 if(this.index !== this.icon.length-1) {
                                     this.index += 1;
                                     this.statusWrap.removeClass('banner-status-wrap-show').addClass('banner-status-wrap-hide');
                                     setTimeout(function(){
+                                        that.statusChange();
                                         that.statusWrap.removeClass('banner-status-wrap-hide').addClass('banner-status-wrap-show');
-                                    },500);
+                                    },that.hideAniTime);
                                 }
                             }
                         }
                         this.icon.eq(this.index).removeClass('balloon-no-active').addClass('balloon-active');
-                        /* banner-status-active、banner-status-wks、banner-status-yjs */
-                        if(this.index > curDateIndex){
-                            this.statusWrap.removeClass('banner-status-active banner-status-yjs').addClass('banner-status-wks');
-                        }
-                        else if(this.index < curDateIndex){
-                            this.statusWrap.removeClass('banner-status-active banner-status-wks').addClass('banner-status-yjs');
-                        }
-                        else{
-                            this.statusWrap.removeClass('banner-status-yjs banner-status-wks').addClass('banner-status-active');
-                        }
                         this.slider.style.marginLeft = this.marginLeftBase/(320/4.54) * (1 - 2*this.index) + 'rem';
                     }
                     //解绑事件
                     this.slider.removeEventListener('touchmove',this,false);
                     this.slider.removeEventListener('touchend',this,false);
+                },
+                statusChange:function(){
+                    /* banner-status-active、banner-status-wks、banner-status-yjs */
+                    if(this.index > curDateIndex){
+                        this.statusWrap.removeClass('banner-status-active banner-status-yjs').addClass('banner-status-wks');
+                    }
+                    else if(this.index < curDateIndex){
+                        this.statusWrap.removeClass('banner-status-active banner-status-wks').addClass('banner-status-yjs');
+                    }
+                    else{
+                        this.statusWrap.removeClass('banner-status-yjs banner-status-wks').addClass('banner-status-active');
+                    }
                 }
             },
 
@@ -421,7 +982,7 @@
         };
 
 
-        floorInit();
+
         function floorInit(){
             slider.init();//初始化slider
             for( var i=0;i<brandsGoods.length;i++){
@@ -570,28 +1131,50 @@
             }).render();
         };
 
-        //上报埋点并跳转（非必须）
-        function sendAndJump($ct, eventId) {
-            var event_param = $ct.attr("data-event_param"),
-                    jumpUrl = $ct.attr("data-jumpUrl");
-            util.sendMPing({
-                event_id: eventId,
-                event_param: event_param
-            });
-            if (jumpUrl) {
-                spinner.stop();
-                setTimeout(function() {
-                    util.jump(jumpUrl);
-                }, 200);
-            }
-        }
-
-
-
+        $('#startBtn')
+                .on('tap', function () {
+                    apis.isLogin();
+                    return false;
+                });
+        $('#tryBtn')
+                .on('tap', function () {
+                    start.show();
+                    return false;
+                });
+        $('#closeBtn1')
+                .on('click', function () {
+                    start.hide();
+                    return false;
+                });
+        $('#closeBtn2,#backBtn,#closeBtn3')
+                .on('click', function () {
+                    state.close();
+                    return false;
+                });
+        $('#shareBtn')
+                .on('tap', function () {
+                    try {
+                        jdShare && jdShare.callSharePane({
+                            title   : 'Apple新品首发预约  全民寻宝赢免单神券!',
+                            content : 'Apple新品首发预约  全民寻宝赢免单神券!',
+                            url     : 'http://h5.m.jd.com/active/3wX17ys13EaDtijVP6KnfrBucNhV/index.html',
+                            img     : 'http://img12.360buyimg.com/cms/jfs/t3052/363/1513970130/12752/bb074aac/57ce649bNb5a7ef99.jpg',
+                            channel : '',
+                            callback: function () {
+                                $('#closeBtn2').trigger('click');
+                            }
+                        });
+                    } catch (e) {
+                        if (e.name === "JdShareException") {
+                            alert(e.toString());
+                        } else {
+                            alert(e.message)
+                        }
+                    }
+                    return false;
+                });
     })
 
 </script>
-
-<script src="//static.360buyimg.com/jdcsh/babel/dist/js/babelparser.js" async defer></script>
 </body>
 </html>
