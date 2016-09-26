@@ -349,13 +349,15 @@
             </div>
             <div class="banner-ani banner-ani-joy"></div>
             <div class="banner-ani banner-ani-btn-tip"><img src="http://img11.360buyimg.com/cms/jfs/t3283/135/2560953824/13919/749b2e25/57e34f81Nb3e25202.png" alt=""/></div>
-            <div class="banner-ani banner-ani-btn" id="startBtn">
+            <div class="banner-ani banner-ani-btn">
                 <img src="http://img12.360buyimg.com/cms/jfs/t3079/181/2369165304/38627/11d30cbb/57dfdaf7Nce07c048.png" alt="" class="banner-ani-btn-active"/>
                 <img src="http://img10.360buyimg.com/cms/jfs/t3304/56/2425710266/182522/3711ab0d/57e11be9N6622ea44.png" alt="" class="banner-ani-btn-yjs"/>
             </div>
-            <div class="banner-ani banner-ani-btn-text" id="startTextBtn"><img src="http://img14.360buyimg.com/cms/jfs/t3286/207/2398056037/13032/66d78972/57dfdaf7N0a26e064.png" alt="" class="banner-ani-btn-text-daqi"/><img
+            <div class="banner-ani banner-ani-btn-text"><img src="http://img14.360buyimg.com/cms/jfs/t3286/207/2398056037/13032/66d78972/57dfdaf7N0a26e064.png" alt="" class="banner-ani-btn-text-daqi"/><img
                     src="http://img10.360buyimg.com/cms/jfs/t3241/96/2431014972/9048/6d743729/57e10f14N52dfb393.png" alt="" class="banner-ani-btn-text-wks"/><img
                     src="http://img13.360buyimg.com/cms/jfs/t3163/62/2475907306/6022/65bc2551/57e110aaNeba2314c.png" alt="" class="banner-ani-btn-text-yjs"/></div>
+            <div class="banner-ani-btn banner-btn-mask" id="startBtn"></div>
+            <div class="banner-ani-btn-text banner-btn-mask" id="startTextBtn"></div>
             <div class="banner-ani banner-ani-gas"><img src="http://img14.360buyimg.com/cms/jfs/t3067/342/2353427324/2517/6c407c6b/57dfdaf6N6a713957.png" alt=""/></div>
         </div>
         <!-- S banner-btn -->
@@ -384,22 +386,22 @@
         <a href="javascript:;" id="shareBtn" class="suc-btn suc-btn-share"></a>
     </div>
     <!-- E tips -->
-<!-- S rule -->
-<div class="wrapper-rule" id="wrapperRule">
-    <h4 class="rule-hd">活动规则</h4>
-    <div class="rule-bd">
-        <p>1、活动时间：09月27日 00:00:00 - 10月07日23:59:59；</p>
-        <p>2、活动期间，每天登录活动页面，参加给品牌打气的活动，每天可以给一个品牌打气，完成给气球打气的任务，即有机会获得一张优惠券；</p>
-        <p>3、每天每位用户最多给品牌打气3次；</p>
-        <p>4、优惠券使用范围：</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;①品类券仅限京东自营手机品类使用，特殊注明不可使用东券商品除外；</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;②品牌券仅限该品牌的京东自营手机使用，具体适用范围以优惠券说明为准；</p>
-        <p>5、优惠券有效期： 以优惠券说明为准。</p>
+    <!-- S rule -->
+    <div class="wrapper-rule" id="wrapperRule">
+        <h4 class="rule-hd">活动规则</h4>
+        <div class="rule-bd">
+            <p>1、活动时间：09月27日 00:00:00 - 10月07日23:59:59；</p>
+            <p>2、活动期间，每天登录活动页面，参加给品牌打气的活动，每天可以给一个品牌打气，完成给气球打气的任务，即有机会获得一张优惠券；</p>
+            <p>3、每天每位用户最多给品牌打气3次；</p>
+            <p>4、优惠券使用范围：</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;①品类券仅限京东自营手机品类使用，特殊注明不可使用东券商品除外；</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;②品牌券仅限该品牌的京东自营手机使用，具体适用范围以优惠券说明为准；</p>
+            <p>5、优惠券有效期： 以优惠券说明为准。</p>
+        </div>
+        <a href="javascript:void(0)" id="closeRule" class="rule-btn-close"></a>
+        <a href="javascript:void(0)" id="closeRule1" class="rule-btn-known"></a>
     </div>
-    <a href="javascript:void(0)" id="closeRule" class="rule-btn-close"></a>
-    <a href="javascript:void(0)" id="closeRule1" class="rule-btn-known"></a>
-</div>
-<!-- E rule -->
+    <!-- E rule -->
     <!-- S tips-press-error -->
     <div id="wrapperError">
         <p class="wrapper-error-text"></p>
@@ -535,7 +537,7 @@
                         $('#wrapperSuccess').fadeIn();
                     };
 
-                    var noLotteryText = ['哎呀，换个姿势再玩一次','不要着急，休息，休息一下','点啊点，点到外婆桥'];
+                    var noLotteryText = ['哎呀，<br>换个姿势再玩一次','不要着急，<br>休息，休息一下','点啊点，<br>点到外婆桥'];
                     var pageInfo = {
                         aid: '3SuRYXJPCmnjBnib1FUVhUmvTG3',//activityId
                         pid: '6611',//pageId
@@ -560,7 +562,7 @@
                         }
                         $('.balloon-active').addClass('balloon-active-reset').removeClass('balloon-active-boom');
                         $('#bannerStatusWrap').removeClass('banner-status-ani');//打气动画暂停复位
-                            $('#wrapperError').fadeIn(500);
+                        $('#wrapperError').fadeIn(500);
 
                         setTimeout(function () {
                             $('#wrapperError')
@@ -601,12 +603,12 @@
                                 break;
                             case '0':
                                 console.log('通信成功');
-                                    if(parseInt(data.leftLuckDrawNum) == 0){
-                                        setTimeout(function(){
-                                            $('#wrapper').addClass('wrapper-no-chance');
-                                            $('#wrapper .banner-ani-btn-tip img').attr('src','//img14.360buyimg.com/cms/jfs/t3124/32/2779487336/4276/e1b98981/57e66d72N797f94d1.png');
-                                        },3000);
-                                    }
+                                if(parseInt(data.leftLuckDrawNum) == 0){
+                                    setTimeout(function(){
+                                        $('#wrapper').addClass('wrapper-no-chance');
+                                        $('#wrapper .banner-ani-btn-tip img').attr('src','//img14.360buyimg.com/cms/jfs/t3124/32/2779487336/4276/e1b98981/57e66d72N797f94d1.png');
+                                    },3000);
+                                }
                                 $.each(jiang, function (key, value) {
                                     if (value.code == data.subCode) {
                                         if (value.func != '') {
@@ -697,33 +699,33 @@
                             '//img12.360buyimg.com/cms/jfs/t3190/300/2804327546/8869/f4350281/57e63a38N6d10ceaf.png',/* rope */
                             '//img12.360buyimg.com/cms/jfs/t3280/13/2811486113/4117/f48f5895/57e63a39N2332e626.png',/* btn-text-wks */
                             '//img14.360buyimg.com/cms/jfs/t3277/113/2811645988/2466/19222c01/57e63a38Nf01f2410.png',/* btn-text-yjs */
-                                '//img11.360buyimg.com/cms/jfs/t3280/338/2796531845/5321/fbd88e3/57e63a38N47b9158b.png',/* back to main icon */
-                                '//img13.360buyimg.com/cms/jfs/t3286/25/2918335255/1575/e1837486/57e63a38Nfd0ee8f8.png',/* rule */
-                                '//img14.360buyimg.com/cms/jfs/t3094/129/2716181686/4900/bb7df838/57e63a38N5a89310f.png',/* tips-changandabaoqiqiu */
-                                '//img13.360buyimg.com/cms/jfs/t3049/12/2779613853/55281/97c40087/57e63a38N4022257e.png',/* btn-yjs */
-                                '//img10.360buyimg.com/cms/jfs/t3202/71/2815028378/11874/98f4dabb/57e63a38Neb8a0a29.png',/* logo1 */
-                                '//img30.360buyimg.com/cms/jfs/t3196/46/2761063910/10302/fbfd0d8/57e63a39N1d8f40eb.png',/* logo2 */
-                                '//img30.360buyimg.com/cms/jfs/t3226/120/2776180455/13269/3983c1a1/57e63a38Nc3cc48ab.png',/* logo3 */
-                                '//img12.360buyimg.com/cms/jfs/t3064/180/2821390936/9795/e3fbd632/57e63a38N9d3b5f6e.png',/* logo4 */
-                                '//img10.360buyimg.com/cms/jfs/t3163/140/2736658456/9419/e78ddc8b/57e63a38Nc3ff0b10.png',/* logo5 */
-                                '//img12.360buyimg.com/cms/jfs/t3157/50/2794386732/11800/3738347b/57e63a39Na602ee87.png',/* logo6 */
-                                '//img10.360buyimg.com/cms/jfs/t3274/243/2751977959/10156/14edd781/57e63a38N5e18b5d8.png',/* logo7 */
-                                '//img10.360buyimg.com/cms/jfs/t3190/317/2786249584/8810/ce310899/57e63a39N903d770a.png',/* logo8 */
-                                '//img12.360buyimg.com/cms/jfs/t3211/108/2771581744/9350/cfb018fb/57e63a38Ne2aa8fd1.png',/* logo9 */
-                                '//img11.360buyimg.com/cms/jfs/t3253/344/2834759483/23257/7595cf89/57e63a38N87723b89.png',/* logo10 */
-                                '//img12.360buyimg.com/cms/jfs/t3154/106/2780633075/15851/fc366141/57e63a38Nbf2ebab7.png',/* logo11 */
-                                '//img14.360buyimg.com/cms/jfs/t3124/32/2779487336/4276/e1b98981/57e66d72N797f94d1.png',/* tips-used */
-                                '//img11.360buyimg.com/cms/jfs/t3112/276/2808643506/4066/5754bb11/57e66d73Ne069d963.png',/* suc-brand logo 1*/
-                                '//img13.360buyimg.com/cms/jfs/t3109/353/2828904558/3918/b882ccf2/57e66d73N4e9cc807.png',
-                                '//img12.360buyimg.com/cms/jfs/t3049/207/2838450169/6090/80d6a6fa/57e66d72Nbadf2087.png',
-                                '//img20.360buyimg.com/cms/jfs/t3262/228/2743437704/2894/7db85657/57e66d72Nc11586a2.png',
-                                '//img10.360buyimg.com/cms/jfs/t3307/302/2741307652/2316/bb95e628/57e66d72Na86fc64b.png',
-                                '//img12.360buyimg.com/cms/jfs/t3271/52/2866174717/5219/97a60119/57e66d72Nce6a4ee9.png',
-                                '//img13.360buyimg.com/cms/jfs/t3175/240/2785228070/3146/fdc1d03f/57e66d72N1527dffb.png',
-                                '//img12.360buyimg.com/cms/jfs/t3247/220/2793065401/2198/d396553e/57e66d72N37837557.png',
-                                '//img13.360buyimg.com/cms/jfs/t3265/228/2775699679/2139/ad1205f3/57e66d72N91b04bac.png',
-                                '//img14.360buyimg.com/cms/jfs/t3151/146/2733453105/16534/84199e0f/57e66d72Ncfbca768.png',
-                                '//img30.360buyimg.com/cms/jfs/t3202/141/2776006399/5223/fd691d4f/57e66d72N66b14b37.png'
+                            '//img11.360buyimg.com/cms/jfs/t3280/338/2796531845/5321/fbd88e3/57e63a38N47b9158b.png',/* back to main icon */
+                            '//img13.360buyimg.com/cms/jfs/t3286/25/2918335255/1575/e1837486/57e63a38Nfd0ee8f8.png',/* rule */
+                            '//img14.360buyimg.com/cms/jfs/t3094/129/2716181686/4900/bb7df838/57e63a38N5a89310f.png',/* tips-changandabaoqiqiu */
+                            '//img13.360buyimg.com/cms/jfs/t3049/12/2779613853/55281/97c40087/57e63a38N4022257e.png',/* btn-yjs */
+                            '//img10.360buyimg.com/cms/jfs/t3202/71/2815028378/11874/98f4dabb/57e63a38Neb8a0a29.png',/* logo1 */
+                            '//img30.360buyimg.com/cms/jfs/t3196/46/2761063910/10302/fbfd0d8/57e63a39N1d8f40eb.png',/* logo2 */
+                            '//img30.360buyimg.com/cms/jfs/t3226/120/2776180455/13269/3983c1a1/57e63a38Nc3cc48ab.png',/* logo3 */
+                            '//img12.360buyimg.com/cms/jfs/t3064/180/2821390936/9795/e3fbd632/57e63a38N9d3b5f6e.png',/* logo4 */
+                            '//img10.360buyimg.com/cms/jfs/t3163/140/2736658456/9419/e78ddc8b/57e63a38Nc3ff0b10.png',/* logo5 */
+                            '//img12.360buyimg.com/cms/jfs/t3157/50/2794386732/11800/3738347b/57e63a39Na602ee87.png',/* logo6 */
+                            '//img10.360buyimg.com/cms/jfs/t3274/243/2751977959/10156/14edd781/57e63a38N5e18b5d8.png',/* logo7 */
+                            '//img10.360buyimg.com/cms/jfs/t3190/317/2786249584/8810/ce310899/57e63a39N903d770a.png',/* logo8 */
+                            '//img12.360buyimg.com/cms/jfs/t3211/108/2771581744/9350/cfb018fb/57e63a38Ne2aa8fd1.png',/* logo9 */
+                            '//img11.360buyimg.com/cms/jfs/t3253/344/2834759483/23257/7595cf89/57e63a38N87723b89.png',/* logo10 */
+                            '//img12.360buyimg.com/cms/jfs/t3154/106/2780633075/15851/fc366141/57e63a38Nbf2ebab7.png',/* logo11 */
+                            '//img14.360buyimg.com/cms/jfs/t3124/32/2779487336/4276/e1b98981/57e66d72N797f94d1.png',/* tips-used */
+                            '//img11.360buyimg.com/cms/jfs/t3112/276/2808643506/4066/5754bb11/57e66d73Ne069d963.png',/* suc-brand logo 1*/
+                            '//img13.360buyimg.com/cms/jfs/t3109/353/2828904558/3918/b882ccf2/57e66d73N4e9cc807.png',
+                            '//img12.360buyimg.com/cms/jfs/t3049/207/2838450169/6090/80d6a6fa/57e66d72Nbadf2087.png',
+                            '//img20.360buyimg.com/cms/jfs/t3262/228/2743437704/2894/7db85657/57e66d72Nc11586a2.png',
+                            '//img10.360buyimg.com/cms/jfs/t3307/302/2741307652/2316/bb95e628/57e66d72Na86fc64b.png',
+                            '//img12.360buyimg.com/cms/jfs/t3271/52/2866174717/5219/97a60119/57e66d72Nce6a4ee9.png',
+                            '//img13.360buyimg.com/cms/jfs/t3175/240/2785228070/3146/fdc1d03f/57e66d72N1527dffb.png',
+                            '//img12.360buyimg.com/cms/jfs/t3247/220/2793065401/2198/d396553e/57e66d72N37837557.png',
+                            '//img13.360buyimg.com/cms/jfs/t3265/228/2775699679/2139/ad1205f3/57e66d72N91b04bac.png',
+                            '//img14.360buyimg.com/cms/jfs/t3151/146/2733453105/16534/84199e0f/57e66d72Ncfbca768.png',
+                            '//img30.360buyimg.com/cms/jfs/t3202/141/2776006399/5223/fd691d4f/57e66d72N66b14b37.png'
                         ];
                         return list;
                     })();
@@ -845,7 +847,7 @@
                         statusWrap:$('#bannerStatusWrap'),
                         icon:$('#bannerBalloonDiv .banner-balloon'),
                         marginLeftBase:290,
-                        hideAniTime:350,
+                        hideAniTime:400,
                         handleEvent:function(event){
                             var self = this;     //this指events对象
                             if(event.type == 'touchstart'){
@@ -1126,8 +1128,8 @@
                     },
                     touchmove: function(){
                         /*alert('move');
-                        clearTimeout(timeOutEvent);
-                        timeOutEvent = 0;*/
+                         clearTimeout(timeOutEvent);
+                         timeOutEvent = 0;*/
                     },
                     touchend: function(){
                         clearTimeout(timeOutEvent);
