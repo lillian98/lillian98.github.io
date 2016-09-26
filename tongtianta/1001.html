@@ -423,7 +423,7 @@
 </script>
 <script id="branchHallHdTpl" type="text/x-template">
     <% obj.list.forEach(function(item, index){ %>
-    <a href="<%= item.url %>" target="_blank">
+    <a href="<%= item.link %>" target="_blank">
         <img src="<%= item.pictureUrl %>" width="100%" height="auto"
              data-jumpUrl="<%= item.linkType %>,<%= item.link %>"
              data-event_param="<%= obj.groupName %>_<%= item.name %>_<%= item.link %>"
@@ -670,7 +670,7 @@
                         queryLottery: function (func) {
                             _sid = getQueryString('sid') || getCookie('sid');
                             console.log(_sid);
-                            $.get('http://h5.m.jd.com/h5api.jsp', {
+                            $.get('http://h5.m.jd.com/h5api.new', {
                                 functionid: 'babelQueryActivity&client=wh5&clientVersion=1.0.0&',
                                 body      : JSON.stringify({
                                     "activityId": pageInfo.aid,
